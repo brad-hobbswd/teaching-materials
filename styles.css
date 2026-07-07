@@ -1085,6 +1085,387 @@ color:#94A3B8;
 }
 
 /* ==========================================
+   STUDIES PAGE
+========================================== */
+
+.study-hero{
+
+background:linear-gradient(135deg,#EAF7FD,#EEF9EB);
+
+padding:90px 0;
+
+text-align:center;
+
+}
+
+.breadcrumb{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:25px;
+
+font-size:.95rem;
+
+color:var(--light-text);
+
+}
+
+.breadcrumb a{
+
+color:var(--blue);
+
+font-weight:600;
+
+}
+
+.study-hero h1{
+
+font-size:3.5rem;
+
+margin-bottom:20px;
+
+}
+
+.study-hero p{
+
+max-width:750px;
+
+margin:0 auto 40px;
+
+font-size:1.1rem;
+
+}
+
+.hero-search{
+
+display:flex;
+
+max-width:650px;
+
+margin:auto;
+
+background:white;
+
+border-radius:999px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.hero-search input{
+
+flex:1;
+
+padding:18px 24px;
+
+border:none;
+
+outline:none;
+
+font-size:1rem;
+
+}
+
+.hero-search button{
+
+padding:0 35px;
+
+background:var(--blue);
+
+color:white;
+
+font-weight:700;
+
+border:none;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+}
+
+.hero-search button:hover{
+
+background:#2379B5;
+
+}
+
+/* FILTERS */
+
+.study-filters{
+
+padding:70px 0;
+
+background:white;
+
+}
+
+.filter-buttons{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin-top:30px;
+
+}
+
+.filter-buttons button,
+.filter-btn{
+
+padding:14px 28px;
+
+border-radius:999px;
+
+background:#F3F7FA;
+
+border:2px solid transparent;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.filter-buttons button:hover,
+.filter-btn:hover,
+.filter-buttons .active{
+
+background:var(--green);
+
+color:white;
+
+}
+
+/* FEATURED STUDY */
+
+.featured-study{
+
+background:#F8FBFC;
+
+}
+
+.featured-study-card{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+background:white;
+
+padding:50px;
+
+border-radius:30px;
+
+box-shadow:var(--shadow);
+
+}
+
+.featured-label{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:999px;
+
+background:var(--green);
+
+color:white;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
+.featured-text h2{
+
+font-size:2.7rem;
+
+margin-bottom:20px;
+
+}
+
+.featured-highlights{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+margin:35px 0;
+
+}
+
+.featured-highlights div{
+
+background:#F7FAFC;
+
+padding:15px;
+
+border-radius:15px;
+
+font-weight:600;
+
+}
+
+.featured-image img{
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+}
+
+/* STUDY LIBRARY */
+
+.study-library{
+
+background:white;
+
+}
+
+.study-stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+text-align:center;
+
+margin:30px 0;
+
+padding-top:20px;
+
+border-top:1px solid var(--border);
+
+}
+
+.study-stats strong{
+
+display:block;
+
+font-size:1.5rem;
+
+color:var(--blue);
+
+}
+
+.study-stats span{
+
+font-size:.85rem;
+
+color:var(--light-text);
+
+}
+
+.study-button{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:14px 24px;
+
+background:var(--blue);
+
+color:white;
+
+font-weight:700;
+
+border-radius:999px;
+
+transition:var(--transition);
+
+}
+
+.study-button:hover{
+
+background:var(--green);
+
+transform:translateY(-3px);
+
+}
+
+/* SITE STATS */
+
+.site-stats{
+
+padding:100px 0;
+
+background:linear-gradient(135deg,#2D8FD5,#69B34C);
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+.stat-card{
+
+background:white;
+
+padding:45px 25px;
+
+text-align:center;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+}
+
+.stat-card h2{
+
+font-size:3rem;
+
+color:var(--blue);
+
+margin-bottom:10px;
+
+}
+
+.stat-card p{
+
+color:var(--light-text);
+
+font-weight:600;
+
+}
+
+/* ==========================================
    RESPONSIVE
 ========================================== */
 
@@ -1222,6 +1603,46 @@ width:100%;
 }
 
 .newsletter button{
+
+padding:18px;
+
+}
+
+   .featured-study-card{
+
+grid-template-columns:1fr;
+
+}
+
+.featured-highlights{
+
+grid-template-columns:1fr;
+
+}
+
+.study-stats{
+
+grid-template-columns:1fr;
+
+gap:15px;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-search{
+
+flex-direction:column;
+
+border-radius:20px;
+
+}
+
+.hero-search button{
 
 padding:18px;
 
