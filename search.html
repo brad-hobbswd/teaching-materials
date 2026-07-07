@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Search Resources | Little Explorers Learning Hub
+
+</title>
+
+<meta
+name="description"
+content="Search curriculum studies, activities, lesson plans, printables, interest areas, and classroom resources for Early Head Start, Head Start, Preschool, and Pre-K.">
+
+<meta
+name="keywords"
+content="Search curriculum, preschool activities, Head Start resources, lesson plans, printables">
+
+<meta
+name="author"
+content="Bradley Hobbs">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@600;700;800&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="styles.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header>
+
+<div class="container nav-container">
+
+<a
+href="index.html"
+class="logo">
+
+<img
+src="images/logo.png"
+alt="Little Explorers Learning Hub Logo">
+
+<div>
+
+<h1>
+
+Little Explorers
+
+</h1>
+
+<span>
+
+Learning Hub
+
+</span>
+
+</div>
+
+</a>
+
+<form
+class="search-bar"
+id="main-search">
+
+<input
+id="searchInput"
+type="search"
+placeholder="Search studies, lesson plans, activities, printables..."
+
+autocomplete="off">
+
+<button
+type="submit">
+
+🔍
+
+</button>
+
+</form>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="studies.html">Studies</a></li>
+
+<li><a href="ages/index.html">Age Groups</a></li>
+
+<li><a href="lesson-plans.html">Lesson Plans</a></li>
+
+<li><a href="printables.html">Printables</a></li>
+
+<li><a href="resources.html">Teacher Resources</a></li>
+
+<li><a href="about.html">About</a></li>
+
+</ul>
+
+</nav>
+
+<button class="mobile-menu">
+
+☰
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="study-hero">
+
+<div class="container">
+
+<div class="breadcrumb">
+
+<a href="index.html">
+
+Home
+
+</a>
+
+<span>
+
+›
+
+</span>
+
+<span>
+
+Search
+
+</span>
+
+</div>
+
+<h1>
+
+Find Teaching Resources Instantly
+
+</h1>
+
+<p>
+
+Search hundreds of studies, lesson plans, classroom activities, interest areas, printables, songs, books, assessments, and teacher resources from one place.
+
+</p>
+
+<div class="hero-search">
+
+<input
+id="heroSearch"
+type="search"
+placeholder="Try searching for Trees, Water, Leaves, Math, Art..."
+
+autocomplete="off">
+
+<button
+id="searchButton">
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     SEARCH FILTERS
+========================================== -->
+
+<section class="study-filters">
+
+<div class="container">
+
+<h2>
+
+Search Categories
+
+</h2>
+
+<div class="filter-buttons">
+
+<button class="active">
+
+Everything
+
+</button>
+
+<button>
+
+Studies
+
+</button>
+
+<button>
+
+Activities
+
+</button>
+
+<button>
+
+Lesson Plans
+
+</button>
+
+<button>
+
+Printables
+
+</button>
+
+<button>
+
+Interest Areas
+
+</button>
+
+<button>
+
+Books
+
+</button>
+
+<button>
+
+Songs
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     SEARCH RESULTS
+========================================== -->
+
+<section class="study-library">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Search Results
+
+</h2>
+
+<p>
+
+Results will appear below.
+
+</p>
+
+</div>
+
+<div
+id="searchResults"
+class="study-grid">
+
+<!-- JavaScript will insert results here -->
+
+</div>
+
+<div
+id="noResults"
+class="text-center"
+style="display:none;">
+
+<h3>
+
+No resources were found.
+
+</h3>
+
+<p>
+
+Try searching for another word or phrase.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- ==========================================
+     POPULAR SEARCHES
+========================================== -->
+
+<section class="teacher-favorites">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Popular Searches
+
+</h2>
+
+<p>
+
+Quickly explore some of the most searched classroom resources.
+
+</p>
+
+</div>
+
+<div class="favorite-grid">
+
+<a href="studies/trees/index.html" class="favorite-card">
+
+<div class="favorite-icon">
+
+🌳
+
+</div>
+
+<h3>
+
+Trees
+
+</h3>
+
+<p>
+
+Nature, leaves, bark, seasons, and outdoor learning.
+
+</p>
+
+</a>
+
+<a href="studies/water/index.html" class="favorite-card">
+
+<div class="favorite-icon">
+
+💧
+
+</div>
+
+<h3>
+
+Water
+
+</h3>
+
+<p>
+
+Science investigations, pouring, floating, and measuring.
+
+</p>
+
+</a>
+
+<a href="studies/balls/index.html" class="favorite-card">
+
+<div class="favorite-icon">
+
+⚽
+
+</div>
+
+<h3>
+
+Balls
+
+</h3>
+
+<p>
+
+Movement, rolling, bouncing, measuring, and prediction.
+
+</p>
+
+</a>
+
+<a href="lesson-plans.html" class="favorite-card">
+
+<div class="favorite-icon">
+
+📅
+
+</div>
+
+<h3>
+
+Lesson Plans
+
+</h3>
+
+<p>
+
+Weekly classroom planning resources.
+
+</p>
+
+</a>
+
+<a href="interest-areas/art.html" class="favorite-card">
+
+<div class="favorite-icon">
+
+🎨
+
+</div>
+
+<h3>
+
+Art Activities
+
+</h3>
+
+<p>
+
+Creative projects using affordable classroom materials.
+
+</p>
+
+</a>
+
+<a href="printables.html" class="favorite-card">
+
+<div class="favorite-icon">
+
+🖨️
+
+</div>
+
+<h3>
+
+Printables
+
+</h3>
+
+<p>
+
+Ready to print classroom resources.
+
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     SEARCH TIPS
+========================================== -->
+
+<section class="why-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Search Tips
+
+</h2>
+
+<p>
+
+Find exactly what you're looking for with simple keywords.
+
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<div class="why-icon">
+
+🔍
+
+</div>
+
+<h3>
+
+Search by Study
+
+</h3>
+
+<p>
+
+Examples: Trees, Water, Balls, Buildings, Clothing, Pets.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+
+🎨
+
+</div>
+
+<h3>
+
+Search by Activity
+
+</h3>
+
+<p>
+
+Examples: Painting, Counting, Sorting, Matching, Cutting.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+
+📚
+
+</div>
+
+<h3>
+
+Search by Interest Area
+
+</h3>
+
+<p>
+
+Blocks, Discovery, Art, Library, Music, Dramatic Play, Writing.
+
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+
+👶
+
+</div>
+
+<h3>
+
+Search by Age
+
+</h3>
+
+<p>
+
+Early Head Start, 2 to 3 Years, Preschool, or Pre Kindergarten.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FEATURED RESOURCES
+========================================== -->
+
+<section class="featured-studies">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Featured Resources
+
+</h2>
+
+<p>
+
+New and popular classroom resources teachers are exploring.
+
+</p>
+
+</div>
+
+<div class="study-grid">
+
+<article class="study-card">
+
+<img src="images/studies/trees.jpg" alt="Trees Study">
+
+<div class="study-content">
+
+<span class="study-tag green">
+
+Featured
+
+</span>
+
+<h3>
+
+Trees Study
+
+</h3>
+
+<p>
+
+A complete four week investigation filled with hands on activities.
+
+</p>
+
+<div class="study-footer">
+
+<span>
+
+🌳 Nature Study
+
+</span>
+
+<a href="studies/trees/index.html">
+
+Explore →
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="study-card">
+
+<img src="images/studies/water.jpg" alt="Water Study">
+
+<div class="study-content">
+
+<span class="study-tag aqua">
+
+Science
+
+</span>
+
+<h3>
+
+Water Study
+
+</h3>
+
+<p>
+
+Children investigate floating, sinking, melting, and measuring.
+
+</p>
+
+<div class="study-footer">
+
+<span>
+
+💧 STEM
+
+</span>
+
+<a href="studies/water/index.html">
+
+Explore →
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="study-card">
+
+<img src="images/studies/buildings.jpg" alt="Buildings Study">
+
+<div class="study-content">
+
+<span class="study-tag orange">
+
+Engineering
+
+</span>
+
+<h3>
+
+Buildings Study
+
+</h3>
+
+<p>
+
+Design, build, compare, and solve engineering challenges.
+
+</p>
+
+<div class="study-footer">
+
+<span>
+
+🏗️ Engineering
+
+</span>
+
+<a href="studies/buildings/index.html">
+
+Explore →
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- ==========================================
+     SITE STATISTICS
+========================================== -->
+
+<section class="site-stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h2>
+
+20+
+
+</h2>
+
+<p>
+
+Curriculum Studies
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+1,000+
+
+</h2>
+
+<p>
+
+Classroom Activities
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+500+
+
+</h2>
+
+<p>
+
+Printable Resources
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>
+
+100%
+
+</h2>
+
+<p>
+
+Budget Friendly Ideas
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     NEWSLETTER
+========================================== -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<div class="newsletter-box">
+
+<div class="newsletter-content">
+
+<span class="newsletter-tag">
+
+📬 FREE TEACHER RESOURCES
+
+</span>
+
+<h2>
+
+Stay Inspired All Year Long
+
+</h2>
+
+<p>
+
+Join thousands of Early Head Start, Head Start, Preschool, and Pre Kindergarten educators receiving free lesson plans, classroom activities, curriculum studies, printables, teacher tips, and family engagement ideas delivered directly to their inbox.
+
+</p>
+
+<ul class="newsletter-benefits">
+
+<li>✅ Weekly Lesson Plans</li>
+
+<li>✅ Classroom Activities</li>
+
+<li>✅ Free Printables</li>
+
+<li>✅ New Curriculum Studies</li>
+
+</ul>
+
+</div>
+
+<form
+class="newsletter-form"
+action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+method="POST"
+target="hidden_iframe">
+
+<input
+type="email"
+name="YOUR_ENTRY_ID"
+placeholder="Enter your email address"
+required>
+
+<button
+type="submit">
+
+Join Free
+
+</button>
+
+</form>
+
+<iframe
+name="hidden_iframe"
+style="display:none;"></iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>
+
+Little Explorers Learning Hub
+
+</h3>
+
+<p>
+
+Helping educators create meaningful learning experiences through affordable, hands on curriculum resources for Early Head Start, Head Start, Preschool, and Pre Kindergarten classrooms.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Browse
+
+</h4>
+
+<ul>
+
+<li><a href="studies.html">Studies</a></li>
+
+<li><a href="ages/index.html">Age Groups</a></li>
+
+<li><a href="lesson-plans.html">Lesson Plans</a></li>
+
+<li><a href="interest-areas/index.html">Interest Areas</a></li>
+
+<li><a href="printables.html">Printables</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Teacher Resources
+
+</h4>
+
+<ul>
+
+<li><a href="resources.html">Teacher Resources</a></li>
+
+<li><a href="assessment.html">Assessment</a></li>
+
+<li><a href="circle-time.html">Circle Time</a></li>
+
+<li><a href="family-engagement.html">Family Engagement</a></li>
+
+<li><a href="about.html">About</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Support
+
+</h4>
+
+<ul>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li><a href="privacy.html">Privacy Policy</a></li>
+
+<li><a href="terms.html">Terms of Use</a></li>
+
+<li><a href="search.html">Search</a></li>
+
+<li><a href="index.html">Home</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Little Explorers Learning Hub. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="search-index.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
