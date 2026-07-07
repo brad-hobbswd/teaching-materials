@@ -1,0 +1,1271 @@
+/* ==========================================
+   LITTLE EXPLORERS LEARNING HUB
+   Master Stylesheet
+========================================== */
+
+:root{
+
+    --blue:#2D8FD5;
+    --green:#69B34C;
+    --yellow:#F4C542;
+    --orange:#F2994A;
+    --coral:#E76F51;
+    --purple:#8E7DF2;
+    --teal:#22B8B2;
+    --aqua:#5BC0EB;
+
+    --background:#F7FAFC;
+    --card:#FFFFFF;
+
+    --text:#334155;
+    --light-text:#64748B;
+
+    --border:#E2E8F0;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:22px;
+
+    --transition:.35s ease;
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+background:var(--background);
+color:var(--text);
+line-height:1.6;
+
+}
+
+img{
+
+display:block;
+width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+color:inherit;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+width:min(1280px,92%);
+margin:auto;
+
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,
+h2,
+h3,
+h4{
+
+font-family:'Nunito',sans-serif;
+font-weight:800;
+color:var(--text);
+
+}
+
+.section-title{
+
+text-align:center;
+margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+font-size:2.5rem;
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+max-width:700px;
+margin:auto;
+color:var(--light-text);
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+position:sticky;
+top:0;
+z-index:999;
+background:white;
+box-shadow:0 3px 18px rgba(0,0,0,.06);
+
+}
+
+.nav-container{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 0;
+gap:25px;
+
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.logo img{
+
+width:70px;
+height:70px;
+object-fit:contain;
+
+}
+
+.logo h1{
+
+font-size:1.5rem;
+
+}
+
+.logo span{
+
+display:block;
+color:var(--green);
+font-weight:600;
+
+}
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-bar{
+
+flex:1;
+display:flex;
+max-width:520px;
+background:#F3F7FA;
+border-radius:100px;
+overflow:hidden;
+
+}
+
+.search-bar input{
+
+flex:1;
+padding:15px 20px;
+border:none;
+background:none;
+outline:none;
+font-size:.95rem;
+
+}
+
+.search-bar button{
+
+width:70px;
+border:none;
+background:var(--blue);
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:var(--transition);
+
+}
+
+.search-bar button:hover{
+
+background:#2379B5;
+
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav ul{
+
+display:flex;
+gap:28px;
+
+}
+
+nav a{
+
+font-weight:600;
+position:relative;
+transition:var(--transition);
+
+}
+
+nav a:hover{
+
+color:var(--green);
+
+}
+
+nav a::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:3px;
+background:var(--green);
+border-radius:100px;
+transition:var(--transition);
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+.mobile-menu{
+
+display:none;
+background:none;
+border:none;
+font-size:2rem;
+cursor:pointer;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+padding:90px 0;
+
+}
+
+.hero-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:70px;
+
+}
+
+.eyebrow{
+
+display:inline-block;
+padding:10px 18px;
+border-radius:100px;
+background:#EAF7FD;
+color:var(--blue);
+font-weight:700;
+margin-bottom:25px;
+
+}
+
+.hero h2{
+
+font-size:4rem;
+line-height:1.1;
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:1.15rem;
+color:var(--light-text);
+margin-bottom:40px;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.hero-buttons{
+
+display:flex;
+gap:20px;
+margin-bottom:35px;
+
+}
+
+.btn{
+
+padding:16px 34px;
+border-radius:100px;
+font-weight:700;
+transition:var(--transition);
+
+}
+
+.btn-primary{
+
+background:var(--blue);
+color:white;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px);
+box-shadow:var(--shadow);
+
+}
+
+.btn-secondary{
+
+background:white;
+border:2px solid var(--border);
+
+}
+
+.btn-secondary:hover{
+
+background:var(--green);
+color:white;
+border-color:var(--green);
+
+}
+
+/* ==========================================
+   HERO IMAGE
+========================================== */
+
+.hero-image img{
+
+border-radius:35px;
+box-shadow:var(--shadow);
+
+}
+
+
+/* ==========================================
+   AGE SECTION
+========================================== */
+
+.age-section{
+
+padding:90px 0;
+
+}
+
+.age-grid{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+
+}
+
+.age-card{
+
+background:var(--card);
+border-radius:var(--radius);
+padding:40px 30px;
+text-align:center;
+box-shadow:var(--shadow);
+transition:var(--transition);
+border:2px solid transparent;
+
+}
+
+.age-card:hover{
+
+transform:translateY(-10px);
+border-color:var(--green);
+
+}
+
+.age-icon{
+
+font-size:4rem;
+margin-bottom:25px;
+
+}
+
+.age-card h3{
+
+margin-bottom:10px;
+font-size:1.5rem;
+
+}
+
+.age-card p{
+
+color:var(--light-text);
+margin-bottom:20px;
+
+}
+
+.age-card span{
+
+color:var(--blue);
+font-weight:700;
+
+}
+
+/* ==========================================
+   FEATURED STUDIES
+========================================== */
+
+.featured-studies{
+
+padding:100px 0;
+background:white;
+
+}
+
+.study-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+gap:35px;
+
+}
+
+.study-card{
+
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:var(--transition);
+
+}
+
+.study-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.study-card img{
+
+height:240px;
+object-fit:cover;
+transition:.5s;
+
+}
+
+.study-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.study-content{
+
+padding:28px;
+
+}
+
+.study-content h3{
+
+margin:18px 0 15px;
+font-size:1.6rem;
+
+}
+
+.study-content p{
+
+color:var(--light-text);
+margin-bottom:25px;
+
+}
+
+.study-footer{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.study-footer span{
+
+font-size:.9rem;
+color:var(--green);
+font-weight:700;
+
+}
+
+.study-footer a{
+
+color:var(--blue);
+font-weight:700;
+
+}
+
+/* ==========================================
+   STUDY TAGS
+========================================== */
+
+.study-tag{
+
+display:inline-block;
+padding:8px 14px;
+border-radius:100px;
+font-size:.8rem;
+font-weight:700;
+color:white;
+
+}
+
+.blue{
+
+background:var(--blue);
+
+}
+
+.green{
+
+background:var(--green);
+
+}
+
+.orange{
+
+background:var(--orange);
+
+}
+
+.aqua{
+
+background:var(--aqua);
+
+}
+
+.coral{
+
+background:var(--coral);
+
+}
+
+.purple{
+
+background:var(--purple);
+
+}
+
+/* ==========================================
+   TEACHER FAVORITES
+========================================== */
+
+.teacher-favorites{
+
+padding:100px 0;
+
+}
+
+.favorite-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+
+}
+
+.favorite-card{
+
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:var(--shadow);
+text-align:center;
+transition:var(--transition);
+
+}
+
+.favorite-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.favorite-icon{
+
+font-size:3rem;
+margin-bottom:20px;
+
+}
+
+.favorite-card h3{
+
+margin-bottom:15px;
+
+}
+
+.favorite-card p{
+
+color:var(--light-text);
+
+}
+
+/* ==========================================
+   NEWEST ACTIVITIES
+========================================== */
+
+.new-activities{
+
+padding:100px 0;
+background:#F9FCFE;
+
+}
+
+.activity-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+
+}
+
+.activity-card{
+
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:var(--shadow);
+transition:var(--transition);
+
+}
+
+.activity-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.activity-badge{
+
+display:inline-block;
+background:var(--green);
+color:white;
+padding:8px 18px;
+border-radius:100px;
+font-size:.8rem;
+font-weight:700;
+margin-bottom:20px;
+
+}
+
+.activity-card h3{
+
+margin-bottom:15px;
+
+}
+
+.activity-card p{
+
+color:var(--light-text);
+margin-bottom:25px;
+
+}
+
+.activity-meta{
+
+display:flex;
+justify-content:space-between;
+font-size:.9rem;
+font-weight:600;
+color:var(--blue);
+
+}
+
+/* ==========================================
+   INTEREST AREAS
+========================================== */
+
+.interest-areas{
+
+padding:100px 0;
+
+}
+
+.interest-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+
+}
+
+.interest-card{
+
+padding:35px;
+border-radius:28px;
+color:white;
+text-align:center;
+transition:var(--transition);
+box-shadow:var(--shadow);
+
+}
+
+.interest-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.interest-icon{
+
+font-size:3.5rem;
+margin-bottom:20px;
+
+}
+
+.interest-card h3{
+
+color:white;
+margin-bottom:15px;
+
+}
+
+.interest-card p{
+
+opacity:.95;
+line-height:1.7;
+
+}
+
+.interest-card.blue{
+
+background:#3B82F6;
+
+}
+
+.interest-card.green{
+
+background:#22C55E;
+
+}
+
+.interest-card.yellow{
+
+background:#FACC15;
+color:#374151;
+
+}
+
+.interest-card.yellow h3{
+
+color:#374151;
+
+}
+
+.interest-card.orange{
+
+background:#F97316;
+
+}
+
+.interest-card.purple{
+
+background:#8B5CF6;
+
+}
+
+.interest-card.teal{
+
+background:#14B8A6;
+
+}
+
+.interest-card.coral{
+
+background:#EF4444;
+
+}
+
+.interest-card.aqua{
+
+background:#06B6D4;
+
+}
+
+/* ==========================================
+   SEASONAL LEARNING
+========================================== */
+
+.season-section{
+
+padding:100px 0;
+background:white;
+
+}
+
+.season-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+
+}
+
+.season-card{
+
+background:var(--card);
+padding:45px 30px;
+text-align:center;
+border-radius:30px;
+box-shadow:var(--shadow);
+transition:var(--transition);
+font-size:4rem;
+
+}
+
+.season-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.season-card h3{
+
+margin:20px 0 15px;
+font-size:1.8rem;
+
+}
+
+.season-card p{
+
+font-size:1rem;
+color:var(--light-text);
+
+}
+
+/* ==========================================
+   WHY SECTION
+========================================== */
+
+.why-section{
+
+padding:100px 0;
+
+}
+
+.why-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+
+}
+
+.why-card{
+
+background:white;
+padding:40px 30px;
+border-radius:25px;
+text-align:center;
+box-shadow:var(--shadow);
+transition:var(--transition);
+
+}
+
+.why-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.why-icon{
+
+font-size:3rem;
+margin-bottom:20px;
+
+}
+
+.why-card h3{
+
+margin-bottom:15px;
+
+}
+
+.why-card p{
+
+color:var(--light-text);
+
+}
+
+/* ==========================================
+   NEWSLETTER
+========================================== */
+
+.newsletter{
+
+padding:100px 0;
+
+}
+
+.newsletter-box{
+
+background:linear-gradient(135deg,#2D8FD5,#69B34C);
+padding:60px;
+border-radius:35px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+color:white;
+
+}
+
+.newsletter-box h2{
+
+color:white;
+font-size:2.5rem;
+margin-bottom:15px;
+
+}
+
+.newsletter-box p{
+
+opacity:.95;
+
+}
+
+.newsletter form{
+
+display:flex;
+background:white;
+border-radius:100px;
+overflow:hidden;
+min-width:420px;
+
+}
+
+.newsletter input{
+
+flex:1;
+padding:18px 25px;
+border:none;
+outline:none;
+font-size:1rem;
+
+}
+
+.newsletter button{
+
+background:var(--orange);
+color:white;
+border:none;
+padding:0 35px;
+cursor:pointer;
+font-weight:700;
+transition:var(--transition);
+
+}
+
+.newsletter button:hover{
+
+background:#E67E22;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+background:#233143;
+color:white;
+margin-top:100px;
+
+}
+
+.footer-grid{
+
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:60px;
+padding:80px 0;
+
+}
+
+footer h3,
+footer h4{
+
+color:white;
+margin-bottom:20px;
+
+}
+
+footer p{
+
+color:#CBD5E1;
+line-height:1.8;
+
+}
+
+footer li{
+
+margin-bottom:14px;
+
+}
+
+footer a{
+
+color:#CBD5E1;
+transition:var(--transition);
+
+}
+
+footer a:hover{
+
+color:white;
+
+}
+
+.footer-bottom{
+
+text-align:center;
+padding:30px;
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-bottom p{
+
+color:#94A3B8;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-badges{
+
+justify-content:center;
+
+}
+
+.nav-container{
+
+flex-wrap:wrap;
+
+}
+
+.footer-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.newsletter-box{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.newsletter form{
+
+min-width:100%;
+width:100%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+display:none;
+
+}
+
+.mobile-menu{
+
+display:block;
+
+}
+
+.search-bar{
+
+order:3;
+width:100%;
+max-width:100%;
+
+}
+
+.hero h2{
+
+font-size:2.7rem;
+
+}
+
+.section-title h2{
+
+font-size:2rem;
+
+}
+
+.age-grid,
+.study-grid,
+.favorite-grid,
+.activity-grid,
+.interest-grid,
+.season-grid,
+.why-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-badges{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+.newsletter form{
+
+flex-direction:column;
+border-radius:20px;
+
+}
+
+.newsletter input{
+
+width:100%;
+
+}
+
+.newsletter button{
+
+padding:18px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero{
+
+padding:60px 0;
+
+}
+
+.hero h2{
+
+font-size:2.2rem;
+
+}
+
+.logo img{
+
+width:55px;
+height:55px;
+
+}
+
+.logo h1{
+
+font-size:1.2rem;
+
+}
+
+.section-title{
+
+margin-bottom:45px;
+
+}
+
+.newsletter-box{
+
+padding:40px 25px;
+
+}
+
+}
