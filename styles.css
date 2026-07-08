@@ -1285,6 +1285,8 @@ box-shadow:var(--shadow);
 /* STUDY LIBRARY */
 
 .study-library{
+    
+    padding:100px 0;
 
 background:white;
 
