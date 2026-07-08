@@ -1,7 +1,4 @@
 
-body{
-    background:red !important;
-}
 /* ==========================================
    LITTLE EXPLORERS LEARNING HUB
    Master Stylesheet
@@ -1679,21 +1676,17 @@ transition:.7s;
 
 }
 
+/*
 .js section{
-
-opacity:0;
-
-transform:translateY(40px);
-
+    opacity:0;
+    transform:translateY(40px);
 }
 
 .js section.visible{
-
-opacity:1;
-
-transform:none;
-
+    opacity:1;
+    transform:none;
 }
+*/
 
 /* ==========================================
    MOBILE
