@@ -507,9 +507,27 @@ transform:translateY(-10px);
 
 .study-card img{
 
-height:240px;
+width:100%;
+aspect-ratio:1 / 1;
 object-fit:cover;
+display:block;
 transition:.5s;
+
+}
+
+.study-card{
+
+display:flex;
+flex-direction:column;
+height:100%;
+
+}
+
+.study-content{
+
+display:flex;
+flex-direction:column;
+flex:1;
 
 }
 
@@ -544,6 +562,7 @@ margin-bottom:25px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+margin-top:auto;
 
 }
 
