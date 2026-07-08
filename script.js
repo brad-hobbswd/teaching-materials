@@ -47,26 +47,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ======================================
-       Newsletter
-    ====================================== */
+   Newsletter
+   ====================================== */
+const newsletter = document.querySelector(".newsletter-form");
 
-    const newsletter = document.querySelector(".newsletter-form");
+if (newsletter) {
 
-    if (newsletter) {
+    newsletter.addEventListener("submit", function () {
 
-        newsletter.addEventListener("submit", () => {
+        const button = newsletter.querySelector("button");
 
-            setTimeout(() => {
+        button.textContent = "Joining...";
 
-                alert("🎉 Thank you for subscribing to Little Explorers Learning Hub!");
+        button.disabled = true;
 
-                newsletter.reset();
+        setTimeout(() => {
 
-            }, 800);
+            button.textContent = "✓ Welcome!";
 
-        });
+            newsletter.reset();
 
-    }
+        }, 1500);
+
+    });
+
+}
 
     /* ======================================
        Smooth Scroll
@@ -95,24 +100,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ======================================
-       Search Bars
-    ====================================== */
+   Search
+====================================== */
 
-    document.querySelectorAll('input[type="search"]').forEach(search => {
+document.querySelectorAll(".search-bar").forEach(form => {
 
-        search.addEventListener("focus", () => {
+    form.addEventListener("submit", function(e){
 
-            search.parentElement.classList.add("search-active");
+        e.preventDefault();
 
-        });
+        const input = form.querySelector("input");
 
-        search.addEventListener("blur", () => {
+        const query = input.value.trim();
 
-            search.parentElement.classList.remove("search-active");
+        if(query !== ""){
 
-        });
+            window.location.href =
+                "search.html?q=" +
+                encodeURIComponent(query);
+
+        }
 
     });
+
+});
 
     /* ======================================
        Study Cards
@@ -135,6 +146,56 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+
+   /* ======================================
+   Card Animation
+====================================== */
+
+document.querySelectorAll(
+
+".study-card,.favorite-card,.activity-card,.interest-card,.season-card,.why-card,.age-card"
+
+).forEach(card=>{
+
+card.addEventListener("mouseenter",()=>{
+
+card.style.transform="translateY(-8px)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform="";
+
+});
+
+});
+
+   /* ======================================
+   Fade In Sections
+====================================== */
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{
+threshold:.15
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+observer.observe(section);
+
+});
 
     /* ======================================
        Back To Top Button
