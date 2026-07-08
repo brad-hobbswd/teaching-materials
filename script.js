@@ -1,5 +1,4 @@
 
-alert("JavaScript is loading");
 /* ==========================================
    LITTLE EXPLORERS LEARNING HUB
    Master JavaScript
