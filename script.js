@@ -194,27 +194,35 @@ card.style.transform="";
    Fade In Sections
 ====================================== */
 
-const observer = new IntersectionObserver(entries=>{
+const sections = document.querySelectorAll("section");
 
-entries.forEach(entry=>{
+if ("IntersectionObserver" in window) {
 
-if(entry.isIntersecting){
+    const observer = new IntersectionObserver((entries, observer) => {
 
-entry.target.classList.add("visible");
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+} else {
+
+    sections.forEach(section => section.classList.add("visible"));
 
 }
-
-});
-
-},{
-threshold:.15
-});
-
-document.querySelectorAll("section").forEach(section=>{
-
-observer.observe(section);
-
-});
 
     /* ======================================
        Back To Top Button
