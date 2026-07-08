@@ -127,7 +127,25 @@ margin-bottom:70px;
 .section-title h2{
 
 font-size:2.5rem;
-margin-bottom:15px;
+margin-bottom:18px;
+position:relative;
+display:inline-block;
+
+}
+
+.section-title h2::after{
+
+content:"";
+display:block;
+width:80px;
+height:6px;
+margin:18px auto 0;
+border-radius:100px;
+background:linear-gradient(
+90deg,
+var(--blue),
+var(--green)
+);
 
 }
 
@@ -301,9 +319,8 @@ cursor:pointer;
 ========================================== */
 
 .hero{
-
-padding:90px 0;
-
+    padding:90px 0;
+    background:#ffffff;
 }
 
 .hero-grid{
@@ -410,9 +427,8 @@ box-shadow:var(--shadow);
 ========================================== */
 
 .age-section{
-
-padding:90px 0;
-
+    padding:90px 0;
+    background:#F7FCFF;
 }
 
 .age-grid{
@@ -475,10 +491,8 @@ font-weight:700;
 ========================================== */
 
 .featured-studies{
-
-padding:100px 0;
-background:white;
-
+    padding:100px 0;
+    background:#FFFBEA;
 }
 
 .study-grid{
@@ -637,9 +651,8 @@ background:var(--purple);
 ========================================== */
 
 .teacher-favorites{
-
-padding:100px 0;
-
+    padding:100px 0;
+    background:#FFFFFF;
 }
 
 .favorite-grid{
@@ -693,7 +706,7 @@ color:var(--light-text);
 .new-activities{
 
 padding:100px 0;
-background:#F9FCFE;
+background:#EEFDF6;
 
 }
 
@@ -762,9 +775,8 @@ color:var(--blue);
 ========================================== */
 
 .interest-areas{
-
-padding:100px 0;
-
+    padding:100px 0;
+    background:#FFF6FC;
 }
 
 .interest-grid{
@@ -875,7 +887,7 @@ background:#06B6D4;
 .season-section{
 
 padding:100px 0;
-background:white;
+background:#FFF8EF;
 
 }
 
@@ -924,9 +936,8 @@ color:var(--light-text);
 ========================================== */
 
 .why-section{
-
-padding:100px 0;
-
+    padding:100px 0;
+    background:#F4F3FF;
 }
 
 .why-grid{
