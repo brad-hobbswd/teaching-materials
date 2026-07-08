@@ -1527,7 +1527,57 @@ width:100%;
 
 .input-group{
 
-width:100%;
+display:flex;
+
+align-items:center;
+
+background:white;
+
+border:2px solid var(--border);
+
+border-radius:18px;
+
+padding:0 18px;
+
+transition:var(--transition);
+
+}
+
+.input-group:focus-within{
+
+border-color:var(--blue);
+
+box-shadow:0 0 0 4px rgba(45,143,213,.15);
+
+}
+
+.input-icon{
+
+font-size:1.2rem;
+
+margin-right:12px;
+
+opacity:.7;
+
+}
+
+.input-group input{
+
+flex:1;
+
+height:60px;
+
+border:none;
+
+outline:none;
+
+background:transparent;
+
+font-size:1rem;
+
+color:var(--text);
+
+padding:0;
 
 }
 
