@@ -13,6 +13,7 @@
     --purple:#8E7DF2;
     --teal:#22B8B2;
     --aqua:#5BC0EB;
+    --white:#FFFFFF;
 
     --background:#F7FAFC;
     --card:#FFFFFF;
@@ -940,80 +941,6 @@ color:var(--light-text);
 
 }
 
-/* ==========================================
-   NEWSLETTER
-========================================== */
-
-.newsletter{
-
-padding:100px 0;
-
-}
-
-.newsletter-box{
-
-background:linear-gradient(135deg,#2D8FD5,#69B34C);
-padding:60px;
-border-radius:35px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:40px;
-color:white;
-
-}
-
-.newsletter-box h2{
-
-color:white;
-font-size:2.5rem;
-margin-bottom:15px;
-
-}
-
-.newsletter-box p{
-
-opacity:.95;
-
-}
-
-.newsletter form{
-
-display:flex;
-background:white;
-border-radius:100px;
-overflow:hidden;
-min-width:420px;
-
-}
-
-.newsletter input{
-
-flex:1;
-padding:18px 25px;
-border:none;
-outline:none;
-font-size:1rem;
-
-}
-
-.newsletter button{
-
-background:var(--orange);
-color:white;
-border:none;
-padding:0 35px;
-cursor:pointer;
-font-weight:700;
-transition:var(--transition);
-
-}
-
-.newsletter button:hover{
-
-background:#E67E22;
-
-}
 
 /* ==========================================
    FOOTER
@@ -1485,17 +1412,17 @@ var(--green)
 
 display:grid;
 
-grid-template-columns:2fr 1fr;
+grid-template-columns:1.6fr 1fr;
 
-gap:60px;
+gap:50px;
 
 align-items:center;
 
-background:var(--white);
+background:var(--card);
 
-padding:60px;
+padding:50px;
 
-border-radius:25px;
+border-radius:28px;
 
 box-shadow:var(--shadow);
 
@@ -1519,7 +1446,11 @@ padding:8px 18px;
 
 margin-bottom:20px;
 
-background:rgba(45,143,213,.10);
+background:#EAF7FD;
+
+color:var(--blue);
+
+border:1px solid rgba(45,143,213,.15);
 
 color:var(--blue);
 
@@ -1539,7 +1470,7 @@ border-radius:999px;
 
 margin-bottom:20px;
 
-font-size:clamp(2rem,4vw,2.8rem);
+font-size:clamp(2rem,4vw,2.5rem);
 
 line-height:1.2;
 
@@ -1589,15 +1520,15 @@ color:var(--text);
 
 display:flex;
 
-flex-direction:column;
+align-items:center;
 
-gap:18px;
+gap:12px;
 
 }
 
 .newsletter-form input{
 
-width:100%;
+flex:1;
 
 padding:18px 22px;
 
@@ -1605,11 +1536,9 @@ border:2px solid var(--border);
 
 border-radius:16px;
 
-background:var(--white);
+background:var(--card);
 
 font-size:1rem;
-
-transition:var(--transition);
 
 }
 
@@ -1625,11 +1554,11 @@ box-shadow:0 0 0 4px rgba(45,143,213,.15);
 
 .newsletter-form button{
 
-padding:18px 24px;
+padding:18px 32px;
 
 background:var(--blue);
 
-color:var(--white);
+color:var(--card);
 
 font-size:1rem;
 
@@ -1642,6 +1571,8 @@ border-radius:16px;
 cursor:pointer;
 
 transition:var(--transition);
+
+white-space:nowrap;
 
 }
 
@@ -1751,20 +1682,6 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-.newsletter-box{
-
-flex-direction:column;
-text-align:center;
-
-}
-
-.newsletter form{
-
-min-width:100%;
-width:100%;
-
-}
-
 }
 
 @media(max-width:768px){
@@ -1833,26 +1750,27 @@ text-align:center;
 
 }
 
-.newsletter form{
+.newsletter-form{
 
 flex-direction:column;
-border-radius:20px;
 
 }
 
-.newsletter input{
+.newsletter-form input,
+.newsletter-form button{
 
 width:100%;
+height:60px;
 
 }
 
-.newsletter button{
+.newsletter-form button{
 
 padding:18px;
 
 }
 
-   .featured-study-card{
+.featured-study-card{
 
 grid-template-columns:1fr;
 
