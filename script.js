@@ -22,6 +22,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+   /* ======================================
+   Active Navigation
+====================================== */
+
+const current = window.location.pathname.split("/").pop();
+
+document.querySelectorAll("nav a").forEach(link=>{
+
+const href = link.getAttribute("href");
+
+if(href && href.endsWith(current)){
+
+link.classList.add("active");
+
+}
+
+});
+
     /* ======================================
        Sticky Header
     ====================================== */
