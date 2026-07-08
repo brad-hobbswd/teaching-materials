@@ -1667,16 +1667,11 @@ transform:translateY(0);
 }
 
 section{
-
-opacity:1;
-
-transform:none;
-
-transition:.7s;
-
+    opacity:1;
+    transform:translateY(0);
+    transition:opacity .7s ease, transform .7s ease;
 }
 
-/*
 .js section{
     opacity:0;
     transform:translateY(40px);
@@ -1684,9 +1679,8 @@ transition:.7s;
 
 .js section.visible{
     opacity:1;
-    transform:none;
+    transform:translateY(0);
 }
-*/
 
 /* ==========================================
    MOBILE
