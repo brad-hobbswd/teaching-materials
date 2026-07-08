@@ -1665,15 +1665,23 @@ transform:translateY(0);
 
 section{
 
-opacity:0;
+opacity:1;
 
-transform:translateY(40px);
+transform:none;
 
 transition:.7s;
 
 }
 
-section.visible{
+.js section{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+.js section.visible{
 
 opacity:1;
 
