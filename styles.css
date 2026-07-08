@@ -1519,12 +1519,24 @@ color:var(--text);
 .newsletter-form{
 
 display:flex;
-
-align-items:center;
-
-gap:12px;
+flex-direction:column;
+gap:16px;
+width:100%;
 
 }
+
+.input-group{
+
+width:100%;
+
+}
+
+.newsletter-card button{
+
+width:100%;
+
+}
+
 
 .newsletter-form input{
 
