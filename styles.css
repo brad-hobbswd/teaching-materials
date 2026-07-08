@@ -1592,6 +1592,24 @@ transform:translateY(0);
 
 }
 
+section{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:.7s;
+
+}
+
+section.visible{
+
+opacity:1;
+
+transform:none;
+
+}
+
 /* ==========================================
    MOBILE
 ========================================== */
