@@ -2,7 +2,7 @@
    LITTLE EXPLORERS LEARNING HUB
    Master JavaScript
 ========================================== */
-
+document.documentElement.classList.add("js");
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ======================================
