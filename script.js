@@ -11,17 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ====================================== */
 
     const mobileButton = document.querySelector(".mobile-menu");
-    const navigation = document.querySelector("nav");
+const navigation = document.querySelector("nav");
 
-    if (mobileButton && navigation) {
+if (mobileButton && navigation) {
 
-        mobileButton.addEventListener("click", () => {
+    mobileButton.addEventListener("click", () => {
 
-            navigation.classList.toggle("show");
+        navigation.classList.toggle("active");
 
-        });
+    });
 
-    }
+}
 
    /* ======================================
    Active Navigation
