@@ -648,9 +648,11 @@ nav a.active::after{
 
     display:grid;
 
-    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-columns:repeat(3,1fr);
 
     gap:36px;
+
+    align-items:stretch;
 
 }
 
@@ -659,6 +661,8 @@ nav a.active::after{
     display:flex;
 
     flex-direction:column;
+
+    height:100%;
 
     background:#fff;
 
@@ -685,12 +689,8 @@ nav a.active::after{
 .study-card img{
 
     width:100%;
-
-    height:270px;
-
+    aspect-ratio:1 / 1;
     object-fit:cover;
-
-    transition:.4s;
 
 }
 
@@ -708,7 +708,7 @@ nav a.active::after{
 
     flex:1;
 
-    padding:30px;
+    padding:28px;
 
 }
 
