@@ -349,18 +349,133 @@ nav a.active::after{
    MOBILE BUTTON
 ========================================== */
 
+/* ==========================================
+   STAR MENU FINAL FIX
+========================================== */
+
+
 .mobile-menu{
 
-    display:none;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:52px;
+
+    height:52px;
 
     border:none;
-    background:none;
 
-    font-size:2rem;
+    background:white;
+
+    border-radius:50%;
 
     cursor:pointer;
 
+    font-size:2rem;
+
+    z-index:2000;
+
 }
+
+
+.menu-star{
+
+    display:block;
+
+}
+
+
+.menu-close{
+
+    display:none;
+
+}
+
+
+/* OPEN BUTTON */
+
+.mobile-menu.active .menu-star{
+
+    display:none;
+
+}
+
+
+.mobile-menu.active .menu-close{
+
+    display:block;
+
+}
+
+
+/* NAV HIDDEN BY DEFAULT */
+
+nav{
+
+    display:none;
+
+}
+
+
+/* NAV OPEN */
+
+nav.active{
+
+    display:block;
+
+    width:100%;
+
+    background:#FFFFFF;
+
+    padding:25px 0;
+
+}
+
+
+nav.active ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+/* ALL DEVICES */
+
+.nav-container{
+
+    position:relative;
+
+}
+
+
+
+@media(min-width:769px){
+
+nav.active{
+
+    position:absolute;
+
+    top:92px;
+
+    left:0;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+
+}
+
+
 
 /* ==========================================
    HERO
@@ -5191,321 +5306,93 @@ nav a{
 }
 
 /* ==========================================
-   FINAL HEADER RESPONSIVE FIX
+   LITTLE EXPLORERS UNIVERSAL STAR MENU
 ========================================== */
+
 
 .nav-container{
 
-    min-height:92px;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:20px;
-    flex-wrap:wrap;
-
-}
-
-
-.logo{
-
-    flex-shrink:0;
-
-}
-
-
-.search-bar{
-
-    flex:1;
-    min-width:250px;
-    max-width:450px;
-
-}
-
-
-nav{
-
-    flex:1;
-
-}
-
-
-nav ul{
-
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:18px;
 
 }
 
 
 .mobile-menu{
 
-    display:none;
-
-}
-
-
-
-@media(max-width:1100px){
-
-    .nav-container{
-
-        justify-content:center;
-
-    }
-
-
-    .search-bar{
-
-        order:3;
-        flex-basis:100%;
-        max-width:none;
-
-    }
-
-
-    nav{
-
-        width:100%;
-
-    }
-
-
-    nav ul{
-
-        justify-content:center;
-
-    }
-
-}
-
-
-
-@media(max-width:768px){
-
-
-    .nav-container{
-
-        justify-content:space-between;
-
-    }
-
-
-    .mobile-menu{
-
-        display:block;
-
-    }
-
-
-    nav{
-
-        display:none;
-        width:100%;
-
-    }
-
-
-    nav.active{
-
-        display:block;
-
-    }
-
-
-    nav ul{
-
-        flex-direction:column;
-        align-items:center;
-
-    }
-
-
-    nav a{
-
-        width:100%;
-        text-align:center;
-
-    }
-
-}
-
-/* ==========================================
-   FINAL MOBILE NAVIGATION FIX
-========================================== */
-
-
-@media(max-width:768px){
-
-
-.nav-container{
-
     display:flex;
-    flex-wrap:wrap;
+
     align-items:center;
-
-}
-
-
-.logo{
-
-    order:1;
-
-}
-
-
-.mobile-menu{
-
-    order:2;
-    display:block;
-
-}
-
-
-.search-bar{
-
-    order:3;
-    width:100%;
-    margin-top:15px;
-
-}
-
-
-nav{
-
-    order:4;
-    width:100%;
-
-}
-
-
-nav ul{
-
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:0;
-
-}
-
-
-nav li{
-
-    width:100%;
-    text-align:center;
-
-}
-
-
-nav a{
-
-    display:block;
-    width:100%;
-    padding:15px;
-
-}
-
-
-}
-
-
-/* ==========================================
-   UNIVERSAL HAMBURGER MENU
-========================================== */
-
-
-.mobile-menu{
-
-    display:flex;
-
-    flex-direction:column;
 
     justify-content:center;
 
-    align-items:center;
+    width:52px;
 
-    gap:6px;
-
-    width:50px;
-
-    height:50px;
+    height:52px;
 
     border:none;
 
     background:#FFFFFF;
 
-    border-radius:14px;
+    border-radius:50%;
 
     cursor:pointer;
 
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    font-size:2rem;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    order:3;
 
 }
 
 
-.mobile-menu span{
+.menu-star{
 
     display:block;
 
-    width:24px;
+}
 
-    height:3px;
 
-    background:var(--blue);
+.menu-close{
 
-    border-radius:10px;
+    display:none;
 
-    transition:.3s ease;
+    color:var(--blue);
 
 }
 
 
 
-/* OPEN STATE */
+.mobile-menu.active .menu-star{
 
-.mobile-menu.active span:nth-child(1){
-
-    transform:
-    translateY(9px)
-    rotate(45deg);
+    display:none;
 
 }
 
 
-.mobile-menu.active span:nth-child(2){
+.mobile-menu.active .menu-close{
 
-    opacity:0;
-
-}
-
-
-.mobile-menu.active span:nth-child(3){
-
-    transform:
-    translateY(-9px)
-    rotate(-45deg);
+    display:block;
 
 }
 
 
-/* SHOW MENU BUTTON EVERYWHERE */
 
-@media(min-width:769px){
-
-.mobile-menu{
-
-    display:flex;
-
-}
+/* NAV CLOSED */
 
 nav{
 
     display:none;
 
 }
+
+
+
+/* NAV OPEN */
 
 nav.active{
 
@@ -5525,19 +5412,56 @@ nav.active{
 
     box-shadow:var(--shadow);
 
+    z-index:1500;
+
 }
 
 
-nav ul{
+nav.active ul{
+
+    display:flex;
 
     flex-direction:column;
 
     align-items:center;
 
-    gap:15px;
+    gap:18px;
 
 }
 
+
+
+nav.active a{
+
+    padding:12px;
+
+}
+
+
+
+/* SEARCH */
+
+.search-bar{
+
+    flex:1;
+
+}
+
+
+
+/* ALL DEVICES */
+
+@media(max-width:1100px){
+
+    .search-bar{
+
+        order:4;
+
+        flex-basis:100%;
+
+        max-width:none;
+
+    }
 
 }
 
@@ -5545,74 +5469,26 @@ nav ul{
 
 @media(max-width:768px){
 
-.mobile-menu{
+    .logo{
 
-    display:flex;
+        order:1;
 
-}
-
-}
+    }
 
 
-/* ==========================================
-   LITTLE EXPLORERS STAR MENU BUTTON
-========================================== */
+    .mobile-menu{
 
-.mobile-menu{
+        order:2;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:52px;
-    height:52px;
-
-    border:none;
-    background:#FFFFFF;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:2rem;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
-
-}
+    }
 
 
-.menu-star{
+    .search-bar{
 
-    display:block;
+        order:3;
 
-    transition:.3s ease;
+        width:100%;
 
-}
-
-
-.menu-close{
-
-    display:none;
-
-    font-size:2rem;
-
-    color:var(--blue);
-
-}
-
-
-
-/* OPEN MENU */
-
-.mobile-menu.active .menu-star{
-
-    display:none;
-
-}
-
-
-.mobile-menu.active .menu-close{
-
-    display:block;
+    }
 
 }
