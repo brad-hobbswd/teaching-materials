@@ -712,17 +712,7 @@ nav a.active::after{
 
 }
 
-.study-card img{
 
-    width:100%;
-
-    height:auto;
-
-    aspect-ratio:1 / 1;
-
-    object-fit:cover;
-
-}
 
 .study-card:hover img{
 
@@ -4667,13 +4657,38 @@ nav a{
 }
 
 
+/* ==========================================
+   FEATURED STUDIES SQUARE IMAGES FIX
+========================================== */
+
 .featured-studies .study-card img{
 
     width:100%;
 
-    height:240px;
+    aspect-ratio:1 / 1;
+
+    height:auto;
 
     object-fit:cover;
+
+    display:block;
+
+}
+
+.featured-studies .study-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+
+.featured-studies .study-content{
+
+    flex:1;
 
 }
 
