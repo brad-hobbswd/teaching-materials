@@ -4399,3 +4399,533 @@ nav a{
     }
 
 }
+
+/* ==========================================
+   LIBRARY PAGE
+========================================== */
+
+
+/* ==========================================
+   LIBRARY HERO
+========================================== */
+
+.library-page .study-hero,
+.study-hero{
+
+    padding:120px 0 100px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #F8FCFF,
+        #EEF8F2
+    );
+
+    text-align:center;
+
+}
+
+
+.study-hero .breadcrumb{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+    font-size:.95rem;
+
+}
+
+
+.study-hero h1{
+
+    max-width:1000px;
+
+    margin:0 auto 20px;
+
+    font-size:clamp(2.8rem,5vw,4.5rem);
+
+}
+
+
+.hero-subtitle{
+
+    font-size:1.6rem;
+
+    color:var(--blue);
+
+    margin-bottom:25px;
+
+}
+
+
+.study-hero p{
+
+    max-width:950px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:var(--light-text);
+
+}
+
+
+
+/* ==========================================
+   LIBRARY SEARCH
+========================================== */
+
+
+.hero-search{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:0;
+
+    margin:45px auto 30px;
+
+    max-width:700px;
+
+}
+
+
+.hero-search input{
+
+    flex:1;
+
+    padding:18px 25px;
+
+    border-radius:50px 0 0 50px;
+
+    border:1px solid var(--border);
+
+    font-size:1rem;
+
+}
+
+
+.hero-search button{
+
+    padding:0 35px;
+
+    border:none;
+
+    border-radius:0 50px 50px 0;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+
+
+/* ==========================================
+   POPULAR SEARCH TAGS
+========================================== */
+
+
+.hero-tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+
+.hero-tags a{
+
+    background:white;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+.hero-tags a:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* ==========================================
+   LIBRARY COLLECTION GRID
+========================================== */
+
+
+.interest-areas .interest-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+.interest-areas .interest-card{
+
+    min-height:340px;
+
+    padding:35px 30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+.interest-areas .interest-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+
+.interest-areas .interest-card h3{
+
+    font-size:1.35rem;
+
+    margin-bottom:15px;
+
+}
+
+
+.interest-areas .interest-card p{
+
+    font-size:.98rem;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+   FEATURED COLLECTIONS
+========================================== */
+
+
+.featured-studies{
+
+    padding:110px 0;
+
+    background:#F8FBFD;
+
+}
+
+
+.featured-studies .study-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+.featured-studies .study-card{
+
+    overflow:hidden;
+
+}
+
+
+.featured-studies .study-card img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+}
+
+
+
+/* ==========================================
+   POPULAR RESOURCES
+========================================== */
+
+
+.teacher-favorites{
+
+    padding:110px 0;
+
+}
+
+
+.teacher-favorites .favorite-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+.teacher-favorites .favorite-card{
+
+    min-height:280px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+}
+
+
+.favorite-icon{
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* ==========================================
+   NEW ARRIVALS
+========================================== */
+
+
+.new-activities{
+
+    padding:110px 0;
+
+    background:#FFFBEA;
+
+}
+
+
+.new-activities .activity-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+.activity-link{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    font-weight:700;
+
+    color:var(--blue);
+
+}
+
+
+
+/* ==========================================
+   LIBRARY NUMBERS
+========================================== */
+
+
+.why-section{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+
+.why-section .why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+.why-section .why-card{
+
+    min-height:330px;
+
+    text-align:center;
+
+}
+
+
+.why-card h2{
+
+    font-size:2.8rem;
+
+    color:var(--blue);
+
+    margin:15px 0;
+
+}
+
+
+
+/* ==========================================
+   MEMBER SECTION
+========================================== */
+
+
+.newsletter{
+
+    padding:120px 0;
+
+}
+
+
+.custom-resource-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+
+.custom-resource-list li{
+
+    list-style:none;
+
+    background:#F8FBFD;
+
+    padding:10px 15px;
+
+    border-radius:12px;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:1200px){
+
+    .interest-areas .interest-grid,
+    .teacher-favorites .favorite-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+
+    .why-section .why-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .featured-studies .study-grid,
+    .new-activities .activity-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .interest-areas .interest-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .hero-search{
+
+        flex-direction:column;
+
+    }
+
+
+    .hero-search input,
+    .hero-search button{
+
+        border-radius:50px;
+
+        width:100%;
+
+        min-height:55px;
+
+    }
+
+
+    .featured-studies .study-grid,
+    .interest-areas .interest-grid,
+    .teacher-favorites .favorite-grid,
+    .new-activities .activity-grid,
+    .why-section .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .custom-resource-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
