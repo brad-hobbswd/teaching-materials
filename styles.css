@@ -1889,68 +1889,9 @@ nav a{
 
 @media (max-width:480px){
 
-.container{
-
-    padding:0 20px;
-
-}
-
-.logo img{
-
-    width:56px;
-
-    height:56px;
-
-}
-
-.logo h1{
-
-    font-size:1.25rem;
-
-}
-
-.hero h2{
-
-    font-size:2rem;
-
-}
-
-.section-title h2{
-
-    font-size:2rem;
-
-}
-
-.newsletter-box{
-
-    padding:35px 25px;
-
-}
-
-.newsletter-card{
-
-    padding:30px;
-
-}
-
-@media (max-width:480px){
-
     .container{
 
         padding:0 20px;
-
-    }
-
-    .logo img{
-
-        width:56px;
-        height:56px;
-
-    }
-
-    .logo h1{
-
-        font-size:1.25rem;
 
     }
 
@@ -1966,52 +1907,9 @@ nav a{
 
     }
 
-    .hero p{
+    .season-grid{
 
-        font-size:1rem;
-
-    }
-
-    .section-title{
-
-        margin-bottom:45px;
-
-    }
-
-    .section-title h2{
-
-        font-size:2rem;
-
-    }
-
-    .newsletter-box{
-
-        padding:35px 25px;
-
-    }
-
-    .newsletter-card{
-
-        padding:30px;
-
-    }
-
-    .newsletter-content h2{
-
-        font-size:2rem;
-
-    }
-
-    .newsletter-form button{
-
-        width:100%;
-
-    }
-
-    .btn{
-
-        width:100%;
-        min-width:0;
+        grid-template-columns:1fr;
 
     }
 
