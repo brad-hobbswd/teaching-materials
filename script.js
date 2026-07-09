@@ -15,13 +15,13 @@ const navigation = document.querySelector("nav");
 
 if (mobileButton && navigation) {
 
-    mobileButton.addEventListener("click", () => {
+   mobileButton.addEventListener("click", () => {
 
-        navigation.classList.toggle("active");
+    navigation.classList.toggle("active");
 
-    });
+    mobileButton.classList.toggle("active");
 
-}
+});
 
   /* ======================================
    Active Navigation
