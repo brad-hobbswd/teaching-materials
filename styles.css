@@ -5189,3 +5189,145 @@ nav a{
     }
 
 }
+
+/* ==========================================
+   FINAL HEADER RESPONSIVE FIX
+========================================== */
+
+.nav-container{
+
+    min-height:92px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+
+.logo{
+
+    flex-shrink:0;
+
+}
+
+
+.search-bar{
+
+    flex:1;
+    min-width:250px;
+    max-width:450px;
+
+}
+
+
+nav{
+
+    flex:1;
+
+}
+
+
+nav ul{
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+
+}
+
+
+.mobile-menu{
+
+    display:none;
+
+}
+
+
+
+@media(max-width:1100px){
+
+    .nav-container{
+
+        justify-content:center;
+
+    }
+
+
+    .search-bar{
+
+        order:3;
+        flex-basis:100%;
+        max-width:none;
+
+    }
+
+
+    nav{
+
+        width:100%;
+
+    }
+
+
+    nav ul{
+
+        justify-content:center;
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .nav-container{
+
+        justify-content:space-between;
+
+    }
+
+
+    .mobile-menu{
+
+        display:block;
+
+    }
+
+
+    nav{
+
+        display:none;
+        width:100%;
+
+    }
+
+
+    nav.active{
+
+        display:block;
+
+    }
+
+
+    nav ul{
+
+        flex-direction:column;
+        align-items:center;
+
+    }
+
+
+    nav a{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+}
