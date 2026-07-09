@@ -2761,3 +2761,426 @@ nav a{
     }
 
 }
+
+/* ==========================================
+   AGE PAGE
+========================================== */
+
+.age-hero{
+
+    padding:100px 0;
+
+    background:linear-gradient(
+        135deg,
+        #EAF7FD 0%,
+        #F7FCFF 100%
+    );
+
+}
+
+.age-hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.age-hero h1{
+
+    font-size:clamp(3rem,5vw,4.5rem);
+
+    margin-bottom:25px;
+
+}
+
+.age-hero p{
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:var(--light-text);
+
+    margin-bottom:40px;
+
+}
+
+.age-hero-image img{
+
+    width:100%;
+
+    max-width:600px;
+
+    margin:auto;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+   QUICK FACTS
+========================================== */
+
+.quick-facts{
+
+    padding:90px 0;
+
+    background:#FFFFFF;
+
+}
+
+.facts-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.fact-card{
+
+    background:#FFFFFF;
+
+    text-align:center;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.fact-card h3{
+
+    font-size:2.2rem;
+
+    color:var(--blue);
+
+    margin-bottom:12px;
+
+}
+
+.fact-card p{
+
+    color:var(--light-text);
+
+}
+
+/* ==========================================
+   DEVELOPMENT DOMAINS
+========================================== */
+
+.development-section{
+
+    padding:110px 0;
+
+    background:#F8FBFD;
+
+}
+
+.development-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+.development-card{
+
+    background:#FFFFFF;
+
+    border-radius:26px;
+
+    padding:40px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.development-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.development-icon{
+
+    font-size:3.5rem;
+
+    margin-bottom:20px;
+
+}
+
+.development-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.development-card p{
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   FEATURED ACTIVITIES
+========================================== */
+
+.activities-section{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.activities-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.activity-item{
+
+    background:#FFFFFF;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.activity-item:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.activity-item img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+}
+
+.activity-content{
+
+    padding:30px;
+
+}
+
+.activity-content h3{
+
+    margin-bottom:15px;
+
+}
+
+.activity-content p{
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   LEARNING CENTERS
+========================================== */
+
+.centers-section{
+
+    padding:110px 0;
+
+    background:#FFFBEA;
+
+}
+
+.centers-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.center-card{
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.center-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.center-card span{
+
+    display:block;
+
+    font-size:3rem;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+   TEACHER RESOURCES
+========================================== */
+
+.teacher-resources{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.resources-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.resource-card{
+
+    background:#F8FBFD;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+.resource-card:hover{
+
+    background:#FFFFFF;
+
+    transform:translateY(-6px);
+
+}
+
+.resource-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.resource-card p{
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .facts-grid,
+    .centers-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .age-hero-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .development-grid,
+    .activities-grid,
+    .resources-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .facts-grid,
+    .development-grid,
+    .activities-grid,
+    .centers-grid,
+    .resources-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
