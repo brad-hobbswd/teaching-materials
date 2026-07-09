@@ -23,24 +23,28 @@ if (mobileButton && navigation) {
 
 }
 
-   /* ======================================
+  /* ======================================
    Active Navigation
 ====================================== */
 
-const current = window.location.pathname.split("/").pop();
+const currentPath = window.location.pathname;
 
-document.querySelectorAll("nav a").forEach(link=>{
+document.querySelectorAll("nav a").forEach(link => {
 
-const href = link.getAttribute("href");
+    link.classList.remove("active");
 
-if(href && href.endsWith(current)){
+    const href = new URL(link.href).pathname;
 
-link.classList.add("active");
-
-}
+    if (
+        currentPath === href ||
+        (currentPath.startsWith("/teaching-materials/studies/") && href.endsWith("/studies.html")) ||
+        (currentPath.startsWith("/teaching-materials/library/") && href.endsWith("/library/index.html")) ||
+        (currentPath.startsWith("/teaching-materials/ages/") && href.endsWith("/ages/index.html"))
+    ) {
+        link.classList.add("active");
+    }
 
 });
-
     /* ======================================
        Sticky Header
     ====================================== */
