@@ -264,11 +264,53 @@ header{
    NAVIGATION
 ========================================== */
 
+nav{
+
+    flex-shrink:0;
+
+}
+
+nav ul{
+
+    display:flex;
+    align-items:center;
+    gap:28px;
+
+    list-style:none;
+
+    margin:0;
+    padding:0;
+
+}
+
+nav li{
+
+    margin:0;
+    padding:0;
+
+}
+
 nav a{
+
+    display:block;
 
     position:relative;
 
     padding:10px 0;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    transition:.25s ease;
+
+}
+
+nav a:hover{
+
+    color:var(--blue);
 
 }
 
@@ -286,11 +328,11 @@ nav a::after{
 
     height:3px;
 
-    transform:translateX(-50%);
-
     background:var(--green);
 
     border-radius:999px;
+
+    transform:translateX(-50%);
 
     transition:.25s ease;
 
@@ -302,6 +344,7 @@ nav a.active::after{
     width:70%;
 
 }
+
 /* ==========================================
    MOBILE BUTTON
 ========================================== */
