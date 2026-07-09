@@ -648,11 +648,11 @@ nav a.active::after{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 
     gap:36px;
 
-    align-items:stretch;
+    align-items:start;
 
 }
 
@@ -662,19 +662,19 @@ nav a.active::after{
 
     flex-direction:column;
 
-    height:100%;
+    overflow:hidden;
 
-    background:#fff;
+    background:#FFFFFF;
 
     border-radius:28px;
-
-    overflow:hidden;
 
     border:1px solid var(--border);
 
     box-shadow:var(--shadow);
 
     transition:var(--transition);
+
+    height:100%;
 
 }
 
@@ -689,7 +689,11 @@ nav a.active::after{
 .study-card img{
 
     width:100%;
+
+    height:auto;
+
     aspect-ratio:1 / 1;
+
     object-fit:cover;
 
 }
