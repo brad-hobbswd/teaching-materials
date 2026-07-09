@@ -3324,3 +3324,540 @@ nav a{
     color:var(--light-text);
 
 }
+
+/* ==========================================
+   CLASSROOM INTEREST AREAS
+========================================== */
+
+#centers{
+
+    padding:110px 0;
+
+    background:#FFFBEA;
+
+}
+
+.center-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.center-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:#FFFFFF;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.center-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.10);
+
+}
+
+.center-card{
+
+    font-size:3rem;
+
+}
+
+.center-card h3{
+
+    font-size:1.5rem;
+
+    margin:20px 0 15px;
+
+    color:var(--text);
+
+}
+
+.center-card p{
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    color:var(--light-text);
+
+}
+
+/* ==========================================
+   POPULAR CURRICULUM STUDIES
+========================================== */
+
+.books-section{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.books-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.book-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:#FFFFFF;
+
+    padding:40px 30px;
+
+    border-radius:26px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.book-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.book-card{
+
+    font-size:3rem;
+
+}
+
+.book-card h3{
+
+    margin:20px 0 15px;
+
+    font-size:1.6rem;
+
+}
+
+.book-card p{
+
+    flex:1;
+
+    line-height:1.8;
+
+    color:var(--light-text);
+
+    margin-bottom:30px;
+
+}
+
+.book-card .study-button{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   DEVELOPMENTAL MILESTONES
+========================================== */
+
+#assessment{
+
+    padding:110px 0;
+
+    background:#F8FBFD;
+
+}
+
+.assessment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+.assessment-card{
+
+    background:#FFFFFF;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    transition:var(--transition);
+
+}
+
+.assessment-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--green);
+
+}
+
+/* ==========================================
+   DAILY LEARNING EXPERIENCES
+========================================== */
+
+.study-dashboard{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+    text-align:center;
+
+}
+
+.study-dashboard h2{
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+
+}
+
+.study-dashboard> .container> p{
+
+    max-width:760px;
+
+    margin:0 auto 60px;
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+}
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.dashboard-card{
+
+    background:#F8FBFD;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow);
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    background:#FFFFFF;
+
+}
+
+.dashboard-card{
+
+    font-size:3rem;
+
+}
+
+.dashboard-card h3{
+
+    margin-top:20px;
+
+    font-size:1.35rem;
+
+}
+
+/* ==========================================
+   PRINTABLES
+========================================== */
+
+#downloads{
+
+    padding:110px 0;
+
+    background:#EEFDF6;
+
+}
+
+.download-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.download-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    min-height:220px;
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+    padding:35px;
+
+}
+
+.download-card:hover{
+
+    transform:translateY(-8px);
+
+    color:var(--blue);
+
+}
+
+/* ==========================================
+   AGE NAVIGATION
+========================================== */
+
+.week-navigation{
+
+    padding:80px 0;
+
+    background:#FFFFFF;
+
+}
+
+.week-nav-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.week-nav-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:120px;
+
+    background:#F8FBFD;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.week-nav-card:hover{
+
+    background:var(--blue);
+
+    color:#FFFFFF;
+
+}
+
+.week-nav-card.next{
+
+    background:var(--green);
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================
+   FAMILY ENGAGEMENT
+========================================== */
+
+#family{
+
+    padding:110px 0;
+
+    background:#FFF8EF;
+
+}
+
+.family-card{
+
+    max-width:950px;
+
+    margin:auto;
+
+    background:#FFFFFF;
+
+    border-radius:30px;
+
+    padding:70px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.family-card h3{
+
+    font-size:2.5rem;
+
+    margin-bottom:25px;
+
+}
+
+.family-card p{
+
+    color:var(--light-text);
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+
+}
+
+/* ==========================================
+   AGE PAGE RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .materials-grid,
+    .center-grid,
+    .books-grid,
+    .dashboard-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .week-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .assessment-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .download-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .materials-grid,
+    .center-grid,
+    .books-grid,
+    .dashboard-grid,
+    .download-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .week-nav-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .family-card{
+
+        padding:40px 30px;
+
+    }
+
+}
