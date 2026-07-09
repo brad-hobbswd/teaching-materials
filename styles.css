@@ -4929,3 +4929,248 @@ nav a{
     }
 
 }
+
+/* ==========================================
+   LIBRARY MEMBERSHIP
+========================================== */
+
+
+.library-membership{
+
+    padding:120px 0;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #EEF8FF,
+        #F3FFF6
+    );
+
+}
+
+
+
+.membership-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+
+.membership-tag{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    background:#FFFFFF;
+
+    color:var(--blue);
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.membership-content h2{
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.membership-content p{
+
+    max-width:650px;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:var(--light-text);
+
+}
+
+
+
+.membership-benefits{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+
+
+.membership-benefits div{
+
+    background:#FFFFFF;
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+
+
+.membership-card{
+
+    background:#FFFFFF;
+
+    padding:50px 40px;
+
+    border-radius:32px;
+
+    text-align:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+
+
+.membership-icon{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.membership-card h3{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.membership-card p{
+
+    color:var(--light-text);
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.membership-card .input-group{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid var(--border);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.membership-card input{
+
+    flex:1;
+
+    border:none;
+
+    padding:18px;
+
+}
+
+
+
+.membership-card button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--blue);
+
+    color:#FFFFFF;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+
+.membership-card small{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:var(--light-text);
+
+}
+
+
+
+@media(max-width:900px){
+
+    .membership-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .membership-benefits{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .membership-content h2{
+
+        font-size:2.3rem;
+
+    }
+
+}
