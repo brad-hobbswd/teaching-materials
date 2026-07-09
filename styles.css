@@ -1306,7 +1306,7 @@ nav a.active::after{
 
 .why-section{
 
-    padding:110px 0;
+    padding:80px 0;
 
     background:#F4F3FF;
 
@@ -1316,41 +1316,40 @@ nav a.active::after{
 
     display:grid;
 
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(4,280px);
 
-    gap:30px;
+    justify-content:center;
+
+    gap:32px;
 
 }
 
 .why-card{
 
-    background:#FFFFFF;
+    text-align:center;
 
-    border:1px solid var(--border);
+    background:#FFFFFF;
 
     border-radius:26px;
 
-    padding:40px 30px;
+    border:1px solid var(--border);
 
-    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 
-    box-shadow:var(--shadow);
-
-    transition:var(--transition);
+    transition:.3s ease;
 
 }
 
 .why-card:hover{
 
-    transform:translateY(-8px);
-
+     transform:translateY(-8px);
 }
 
 .why-icon{
 
-    font-size:3rem;
+    font-size:2.5rem;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
 }
 
@@ -4285,7 +4284,7 @@ nav a{
 
 .why-section{
 
-    padding:110px 0;
+    padding:80px 0;
 
     background:#FFF9ED;
 
