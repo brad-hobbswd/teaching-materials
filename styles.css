@@ -1250,9 +1250,13 @@ nav a.active::after{
 
 .season-card p{
 
+    font-size:1rem;
+
+    line-height:1.7;
+
     color:var(--light-text);
 
-    line-height:1.8;
+    margin:0;
 
 }
 
