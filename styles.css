@@ -4002,4 +4002,391 @@ nav a{
 
 }
 
+/* ==========================================
+   CONTACT PAGE
+========================================== */
 
+/* Hero */
+
+.study-hero{
+
+    padding:120px 0 90px;
+
+    text-align:center;
+
+    background:linear-gradient(135deg,#F6FBFF,#EDF8FF);
+
+}
+
+.study-hero h1{
+
+    font-size:clamp(2.8rem,5vw,4.2rem);
+
+    margin:25px 0;
+
+}
+
+.study-hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:var(--light-text);
+
+}
+
+/* ==========================================
+   CONTACT INFORMATION
+========================================== */
+
+.teacher-favorites{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.teacher-favorites .favorite-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:40px;
+
+}
+
+.teacher-favorites>.container>.favorite-card{
+
+    max-width:900px;
+
+    margin:0 auto 50px;
+
+    text-align:center;
+
+}
+
+.teacher-favorites .favorite-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding:40px 30px;
+
+    min-height:270px;
+
+    background:#FFFFFF;
+
+    border-radius:26px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.teacher-favorites .favorite-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.teacher-favorites .favorite-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.teacher-favorites h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+.teacher-favorites p{
+
+    line-height:1.8;
+
+    color:var(--light-text);
+
+}
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+.featured-study{
+
+    padding:110px 0;
+
+    background:#F8FBFD;
+
+}
+
+.contact-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.contact-form .input-group{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+}
+
+.contact-form .input-icon{
+
+    width:65px;
+
+    text-align:center;
+
+    font-size:1.3rem;
+
+    color:var(--blue);
+
+}
+
+.contact-form input{
+
+    flex:1;
+
+    border:none;
+
+    padding:18px 20px;
+
+    font-size:1rem;
+
+    background:none;
+
+}
+
+.contact-form textarea{
+
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    min-height:180px;
+
+    resize:vertical;
+
+    font:inherit;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    outline:none;
+
+    border-color:var(--blue);
+
+}
+
+.contact-form button{
+
+    width:220px;
+
+}
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.new-activities{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.new-activities .activity-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.new-activities .activity-card{
+
+    min-height:260px;
+
+    padding:35px;
+
+}
+
+.new-activities h3{
+
+    margin-bottom:18px;
+
+}
+
+.new-activities p{
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   COLLABORATION
+========================================== */
+
+.why-section{
+
+    padding:110px 0;
+
+    background:#FFF9ED;
+
+}
+
+.why-section .why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:28px;
+
+}
+
+.why-section .why-card{
+
+    min-height:260px;
+
+}
+
+.why-section .why-icon{
+
+    font-size:3rem;
+
+}
+
+/* ==========================================
+   SOCIAL
+========================================== */
+
+.interest-areas{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.interest-areas .interest-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.interest-areas .interest-card{
+
+    min-height:260px;
+
+}
+
+/* ==========================================
+   NEWSLETTER
+========================================== */
+
+.newsletter{
+
+    padding:120px 0;
+
+    background:#F8FBFD;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .teacher-favorites .favorite-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .why-section .why-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .interest-areas .interest-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .teacher-favorites .favorite-grid,
+
+    .new-activities .activity-grid,
+
+    .why-section .why-grid,
+
+    .interest-areas .interest-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-form button{
+
+        width:100%;
+
+    }
+
+}
