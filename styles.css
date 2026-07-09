@@ -1188,7 +1188,7 @@ nav a.active::after{
 
 .season-section{
 
-    padding:110px 0;
+    padding:100px 0;
 
     background:#FFF8EF;
 
@@ -1198,7 +1198,7 @@ nav a.active::after{
 
     display:grid;
 
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(4,1fr);
 
     gap:30px;
 
@@ -1212,39 +1212,47 @@ nav a.active::after{
 
     align-items:center;
 
+    justify-content:flex-start;
+
     text-align:center;
 
-    background:#FFFFFF;
+    background:#fff;
 
-    padding:45px 30px;
+    padding:40px 30px;
 
-    border-radius:28px;
+    border-radius:24px;
 
-    border:1px solid var(--border);
+    border:1px solid #E5E7EB;
 
-    box-shadow:var(--shadow);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 
-    transition:var(--transition);
+    transition:.3s ease;
 
 }
 
 .season-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-6px);
 
 }
 
-.season-card{
+.season-icon{
 
-    font-size:1rem;
+    font-size:3.5rem;
+
+    line-height:1;
+
+    margin-bottom:18px;
 
 }
 
 .season-card h3{
 
-    font-size:1.6rem;
+    font-size:1.75rem;
 
-    margin:18px 0 15px;
+    margin-bottom:16px;
+
+    color:#334155;
 
 }
 
@@ -1254,32 +1262,11 @@ nav a.active::after{
 
     line-height:1.7;
 
-    color:var(--light-text);
+    color:#64748B;
 
     margin:0;
 
-}
-
-/* Only enlarge the emoji */
-
-.season-card:first-child::before,
-.season-card:nth-child(2)::before,
-.season-card:nth-child(3)::before,
-.season-card:nth-child(4)::before{
-
-    display:block;
-
-    font-size:4rem;
-
-    margin-bottom:18px;
-
-}
-
-.season-icon{
-
-    font-size:4rem;
-
-    margin-bottom:20px;
+    max-width:230px;
 
 }
 
