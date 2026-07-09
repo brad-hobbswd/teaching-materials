@@ -1226,8 +1226,6 @@ nav a.active::after{
 
     transition:var(--transition);
 
-    font-size:4rem;
-
 }
 
 .season-card:hover{
@@ -1236,11 +1234,17 @@ nav a.active::after{
 
 }
 
+.season-card{
+
+    font-size:1rem;
+
+}
+
 .season-card h3{
 
-    font-size:1.7rem;
+    font-size:1.6rem;
 
-    margin:20px 0 15px;
+    margin:18px 0 15px;
 
 }
 
@@ -1249,6 +1253,29 @@ nav a.active::after{
     color:var(--light-text);
 
     line-height:1.8;
+
+}
+
+/* Only enlarge the emoji */
+
+.season-card:first-child::before,
+.season-card:nth-child(2)::before,
+.season-card:nth-child(3)::before,
+.season-card:nth-child(4)::before{
+
+    display:block;
+
+    font-size:4rem;
+
+    margin-bottom:18px;
+
+}
+
+.season-icon{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
 
 }
 
