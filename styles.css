@@ -3184,3 +3184,143 @@ nav a{
     }
 
 }
+
+/* ==========================================
+   MATERIALS
+========================================== */
+
+.materials-section{
+
+    padding:110px 0;
+
+    background:#FFFFFF;
+
+}
+
+.materials-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+.material-card{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.material-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--green);
+
+}
+
+/* ==========================================
+   SAMPLE DAILY SCHEDULE
+========================================== */
+
+.study-weeks{
+
+    padding:110px 0;
+
+    background:#F8FBFD;
+
+}
+
+.week-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+.week-card{
+
+    background:#FFFFFF;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.week-number{
+
+    display:inline-block;
+
+    background:var(--blue);
+
+    color:#FFFFFF;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    margin-bottom:20px;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+}
+
+.week-card h3{
+
+    margin-bottom:18px;
+
+}
+
+.week-card p{
+
+    color:var(--light-text);
+
+    margin-bottom:25px;
+
+    line-height:1.8;
+
+}
+
+.week-card ul{
+
+    padding-left:20px;
+
+    list-style:disc;
+
+}
+
+.week-card li{
+
+    margin-bottom:10px;
+
+    color:var(--light-text);
+
+}
