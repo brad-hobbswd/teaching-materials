@@ -646,7 +646,306 @@ grid-template-columns:1fr;
 
 }
 
+/* ==========================================
+FINAL MUSIC PAGE POLISH
+========================================== */
 
+
+.material-card{
+
+position:relative;
+
+overflow:hidden;
+
+min-height:360px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+transition:.3s ease;
+
+}
+
+
+
+.material-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.12);
+
+}
+
+
+
+.material-content{
+
+padding:40px 35px 45px;
+
+display:flex;
+
+flex-direction:column;
+
+flex:1;
+
+}
+
+
+
+.material-card h3{
+
+font-family:"Nunito";
+
+font-size:1.7rem;
+
+margin-bottom:18px;
+
+}
+
+
+
+.material-card p{
+
+font-size:1.05rem;
+
+line-height:1.9;
+
+color:var(--light);
+
+max-width:280px;
+
+margin:0 auto;
+
+}
+
+
+
+
+
+/* LEARNING CARDS */
+
+
+.learning-section{
+
+padding:110px 0;
+
+background:white;
+
+}
+
+
+
+.learning-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+.learning-card{
+
+padding:35px 25px;
+
+border-radius:28px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+transition:.3s ease;
+
+}
+
+
+
+.learning-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.learning-icon{
+
+width:85px;
+
+height:85px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+font-size:2.8rem;
+
+background:white;
+
+}
+
+
+
+.learning-card h3{
+
+font-family:"Nunito";
+
+font-size:1.45rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.learning-card p{
+
+color:var(--light);
+
+}
+
+
+
+.learning-card:nth-child(1){
+
+background:#EAF7FD;
+
+border-top:8px solid var(--blue);
+
+}
+
+
+
+.learning-card:nth-child(2){
+
+background:#EEFDF6;
+
+border-top:8px solid var(--green);
+
+}
+
+
+
+.learning-card:nth-child(3){
+
+background:#FFF4E8;
+
+border-top:8px solid var(--orange);
+
+}
+
+
+
+.learning-card:nth-child(4){
+
+background:#F5F0FF;
+
+border-top:8px solid var(--purple);
+
+}
+
+
+
+
+
+/* DOWNLOAD CARD POLISH */
+
+
+.download-card{
+
+position:relative;
+
+overflow:hidden;
+
+transition:.3s ease;
+
+}
+
+
+
+.download-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:var(--shadow);
+
+}
+
+
+
+.download-card::after{
+
+content:"→";
+
+position:absolute;
+
+bottom:20px;
+
+right:25px;
+
+font-size:1.5rem;
+
+color:var(--blue);
+
+font-weight:bold;
+
+}
+
+
+
+
+
+/* FULL RESPONSIVE FIX */
+
+
+@media(max-width:1200px){
+
+
+.learning-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:650px){
+
+
+.learning-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.material-card{
+
+min-height:auto;
+
+}
+
+
+}
 
 </style>
 
