@@ -1647,6 +1647,130 @@ padding:35px 25px;
 
 }
 
+
+   /* ==========================================
+   MATERIAL CARD TEXT SPACING FIX
+========================================== */
+
+
+.material-card{
+
+min-height:360px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+}
+
+
+
+.material-content{
+
+padding:40px 35px 45px;
+
+display:flex;
+
+flex-direction:column;
+
+flex:1;
+
+}
+
+
+
+.material-icon{
+
+font-size:4rem;
+
+margin-bottom:25px;
+
+}
+
+
+
+.material-card h3{
+
+font-family:"Nunito";
+
+font-size:1.7rem;
+
+margin-bottom:18px;
+
+}
+
+
+
+.material-card p{
+
+font-size:1.05rem;
+
+line-height:1.9;
+
+color:var(--light);
+
+max-width:280px;
+
+margin:0 auto;
+
+}
+
+
+
+.material-link{
+
+margin-top:auto;
+
+padding-top:25px;
+
+font-weight:800;
+
+}
+
+   .materials-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:40px;
+
+}
+
+   @media(max-width:1200px){
+
+.materials-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.material-card{
+
+min-height:340px;
+
+}
+
+}
+
+   @media(max-width:650px){
+
+.material-card{
+
+min-height:auto;
+
+}
+
+.material-content{
+
+padding:35px 25px 40px;
+
+}
+
+}
+
 </style>
 
 </head>
