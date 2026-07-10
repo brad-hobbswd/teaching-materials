@@ -2218,19 +2218,7 @@ nav a{
    STUDY HERO
 ========================================== */
 
-.study-hero{
 
-    padding:90px 0;
-
-    background:linear-gradient(
-        135deg,
-        #EAF7FD 0%,
-        #F8FBFD 100%
-    );
-
-    text-align:center;
-
-}
 
 .study-hero .container{
 
@@ -2390,7 +2378,16 @@ nav a{
 
 }
 
-.filter-buttons button,
+.filter-buttons{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px;
+
+}
+
+
 .filter-btn{
 
     display:inline-flex;
@@ -2399,7 +2396,11 @@ nav a{
 
     justify-content:center;
 
-    padding:14px 24px;
+    min-width:170px;
+
+    height:52px;
+
+    padding:0 26px;
 
     border-radius:999px;
 
@@ -2409,11 +2410,35 @@ nav a{
 
     color:var(--text);
 
-    font-weight:600;
+    font-weight:700;
 
     cursor:pointer;
 
-    transition:var(--transition);
+    transition:all .3s ease;
+
+}
+
+
+.filter-btn:hover{
+
+    background:var(--green);
+
+    border-color:var(--green);
+
+    color:#FFFFFF;
+
+    transform:translateY(-3px);
+
+}
+
+
+.filter-btn.active{
+
+    background:var(--blue);
+
+    border-color:var(--blue);
+
+    color:#FFFFFF;
 
 }
 
@@ -4665,13 +4690,19 @@ nav a{
 
     display:flex;
 
-    justify-content:center;
-
-    gap:0;
-
-    margin:45px auto 30px;
-
     max-width:700px;
+
+    margin:45px auto 0;
+
+    overflow:hidden;
+
+    border-radius:999px;
+
+    background:#FFFFFF;
+
+    border:2px solid var(--border);
+
+    box-shadow:var(--shadow);
 
 }
 
@@ -4682,9 +4713,9 @@ nav a{
 
     padding:18px 25px;
 
-    border-radius:50px 0 0 50px;
+    border:none;
 
-    border:1px solid var(--border);
+    outline:none;
 
     font-size:1rem;
 
@@ -4693,20 +4724,28 @@ nav a{
 
 .hero-search button{
 
-    padding:0 35px;
+    min-width:130px;
 
     border:none;
 
-    border-radius:0 50px 50px 0;
-
     background:var(--blue);
 
-    color:white;
+    color:#FFFFFF;
 
     font-weight:700;
 
+    cursor:pointer;
+
+    transition:.3s ease;
+
 }
 
+
+.hero-search button:hover{
+
+    background:var(--green);
+
+}
 
 
 /* ==========================================
