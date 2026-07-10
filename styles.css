@@ -1897,8 +1897,7 @@ nav ul{
 
 .mobile-menu{
 
-    display:block;
-
+     display:flex;
     margin-left:auto;
 
 }
