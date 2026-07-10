@@ -6722,3 +6722,89 @@ nav.active a{
     }
 
 }
+/* ==========================================
+   CARD HEIGHT FIX
+   Allows content to grow naturally
+========================================== */
+
+
+.favorite-card,
+.why-card,
+.dashboard-card{
+
+    height:auto;
+
+    min-height:320px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+}
+
+
+.favorite-card p,
+.why-card p,
+.dashboard-card p{
+
+    flex:1;
+
+}
+
+
+.favorite-card h3,
+.why-card h3,
+.dashboard-card h3{
+
+    margin-bottom:15px;
+
+}
+
+
+/* Longer content cards */
+
+.favorite-card,
+.why-card{
+
+    padding:40px 32px;
+
+}
+
+
+/* About page library cards */
+
+.featured-studies .favorite-card{
+
+    min-height:240px;
+
+    justify-content:center;
+
+}
+
+
+/* Teaching philosophy cards */
+
+.study-dashboard .dashboard-card{
+
+    min-height:330px;
+
+    padding:40px 30px;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .favorite-card,
+    .why-card,
+    .dashboard-card{
+
+        min-height:auto;
+
+    }
+
+}
