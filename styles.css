@@ -2346,6 +2346,10 @@ nav a{
    FILTERS
 ========================================== */
 
+/* ==========================================
+   FILTERS
+========================================== */
+
 .study-filters{
 
     padding:60px 0;
@@ -2355,6 +2359,7 @@ nav a{
     border-bottom:1px solid var(--border);
 
 }
+
 
 .study-filters h2{
 
@@ -2366,6 +2371,7 @@ nav a{
 
 }
 
+
 .filter-buttons{
 
     display:flex;
@@ -2374,15 +2380,6 @@ nav a{
 
     justify-content:center;
 
-    gap:18px;
-
-}
-
-.filter-buttons{
-
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
     gap:16px;
 
 }
@@ -2439,27 +2436,6 @@ nav a{
     border-color:var(--blue);
 
     color:#FFFFFF;
-
-}
-
-.filter-buttons button:hover,
-.filter-btn:hover{
-
-    background:var(--green);
-
-    color:#FFFFFF;
-
-    border-color:var(--green);
-
-}
-
-.filter-buttons .active{
-
-    background:var(--blue);
-
-    color:#FFFFFF;
-
-    border-color:var(--blue);
 
 }
 
