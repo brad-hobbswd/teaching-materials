@@ -6594,3 +6594,131 @@ nav.active a{
     }
 
 }
+
+/* ==========================================
+   FINAL BUTTON CONSISTENCY FIX
+========================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:220px;
+
+    height:58px;
+
+    padding:0 35px;
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    text-align:center;
+
+    transition:.3s ease;
+
+    cursor:pointer;
+
+}
+
+
+.btn-primary{
+
+    background:var(--blue);
+
+    color:#FFFFFF;
+
+    border:2px solid var(--blue);
+
+}
+
+
+.btn-primary:hover{
+
+    background:var(--green);
+
+    border-color:var(--green);
+
+    color:#FFFFFF;
+
+    transform:translateY(-4px);
+
+}
+
+
+.btn-secondary{
+
+    background:#FFFFFF;
+
+    color:var(--text);
+
+    border:2px solid var(--border);
+
+}
+
+
+.btn-secondary:hover{
+
+    background:var(--green);
+
+    color:#FFFFFF;
+
+    border-color:var(--green);
+
+    transform:translateY(-4px);
+
+}
+
+
+/* Newsletter buttons */
+
+.newsletter .hero-buttons{
+
+    justify-content:flex-start;
+
+}
+
+
+@media(max-width:768px){
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
+}
