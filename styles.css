@@ -5929,3 +5929,489 @@ nav.active a{
 
 
 }
+
+/* ==========================================
+   PRE KINDERGARTEN PAGE FINAL OVERRIDES
+========================================== */
+
+
+/* ==========================================
+   PRE-K HERO
+========================================== */
+
+.study-banner{
+
+    padding:100px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #EEF8FF,
+        #F4FFF3
+    );
+
+}
+
+
+.study-banner-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+.study-banner h1{
+
+    font-size:clamp(3rem,5vw,4.5rem);
+
+    margin:20px 0;
+
+}
+
+
+.study-banner p{
+
+    color:var(--light-text);
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+
+.study-label{
+
+    display:inline-block;
+
+    background:#EAF7FD;
+
+    color:var(--blue);
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+}
+
+
+.study-banner img{
+
+    width:100%;
+
+    border-radius:32px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+
+/* ==========================================
+   LEARNING FOCUS CARDS
+========================================== */
+
+
+.study-dashboard{
+
+    padding:110px 0;
+
+}
+
+
+
+.study-dashboard > .container > h2{
+
+    text-align:center;
+
+    font-size:2.8rem;
+
+    margin-bottom:15px;
+
+}
+
+
+.study-dashboard > .container > p{
+
+    max-width:750px;
+
+    text-align:center;
+
+    margin:0 auto 60px;
+
+    color:var(--light-text);
+
+}
+
+
+
+.study-dashboard .dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.study-dashboard .dashboard-card{
+
+    min-height:220px;
+
+    background:white;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:3rem;
+
+    transition:.3s ease;
+
+}
+
+
+
+.study-dashboard .dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.study-dashboard .dashboard-card h3{
+
+    margin-top:20px;
+
+    font-size:1.35rem;
+
+}
+
+
+
+/* ==========================================
+   PRE-K STUDY CARDS
+========================================== */
+
+
+.study-library{
+
+    padding:110px 0;
+
+    background:#F8FBFD;
+
+}
+
+
+
+.study-library .study-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+
+
+.study-library .study-card{
+
+    background:white;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.study-library .study-card img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+}
+
+
+
+.study-library .study-content{
+
+    padding:30px;
+
+}
+
+
+
+.study-library .study-content h3{
+
+    font-size:1.6rem;
+
+    margin:18px 0;
+
+}
+
+
+
+.study-library .study-content p{
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+    color:var(--light-text);
+
+}
+
+
+
+.study-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+    margin:25px 0;
+
+}
+
+
+.study-stats div{
+
+    background:#F8FBFD;
+
+    padding:15px 8px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+
+
+.study-stats strong{
+
+    display:block;
+
+    color:var(--blue);
+
+}
+
+
+
+
+/* ==========================================
+   KINDERGARTEN READINESS
+========================================== */
+
+
+.materials-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.material-card{
+
+    min-height:180px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    font-size:1.1rem;
+
+    background:white;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid var(--border);
+
+}
+
+
+
+/* ==========================================
+   POPULAR BOOKS
+========================================== */
+
+
+.books-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.book-card{
+
+    min-height:330px;
+
+    padding:35px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.book-card:first-letter{
+
+    font-size:1rem;
+
+}
+
+
+.book-card h3{
+
+    font-size:1.35rem;
+
+    margin:20px 0;
+
+}
+
+
+
+.book-card p{
+
+    font-size:.95rem;
+
+    color:var(--light-text);
+
+    line-height:1.7;
+
+}
+
+
+
+
+/* ==========================================
+   PRE-K RESPONSIVE
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+.study-library .study-grid,
+.books-grid,
+.materials-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.study-dashboard .dashboard-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.study-banner-grid{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+
+.study-library .study-grid,
+.books-grid,
+.materials-grid,
+.study-dashboard .dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.study-banner{
+
+    padding:70px 0;
+
+}
+
+
+}
