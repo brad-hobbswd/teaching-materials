@@ -2381,6 +2381,7 @@ nav a{
     justify-content:center;
 
     gap:16px;
+    width:100%;
 
 }
 
@@ -2438,6 +2439,15 @@ nav a{
     color:#FFFFFF;
 
 }
+
+.study-filters .container{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
 
 /* ==========================================
    FEATURED STUDY
