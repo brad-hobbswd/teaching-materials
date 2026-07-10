@@ -6444,3 +6444,153 @@ nav.active a{
 
 
 }
+
+/* ==========================================
+   NEWSLETTER FINAL DESIGN
+========================================== */
+
+.newsletter{
+
+    padding:110px 0;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
+
+}
+
+
+.newsletter-box{
+
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    gap:60px;
+
+    align-items:center;
+
+    background:#FFFFFF;
+
+    padding:60px;
+
+    border-radius:32px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.newsletter-content h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
+}
+
+
+.newsletter-content p{
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+}
+
+
+.newsletter-benefits{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+
+.newsletter-benefits li{
+
+    background:#F8FBFD;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+}
+
+
+.newsletter-form input{
+
+    height:58px;
+
+    width:100%;
+
+    border:2px solid var(--border);
+
+    border-radius:18px;
+
+    padding:0 20px;
+
+    font-size:1rem;
+
+    margin-bottom:15px;
+
+}
+
+
+.newsletter-form button{
+
+    height:58px;
+
+    width:100%;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:var(--blue);
+
+    color:#FFFFFF;
+
+    font-weight:700;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+}
+
+
+.newsletter-form button:hover{
+
+    background:var(--green);
+
+}
+
+
+@media(max-width:900px){
+
+    .newsletter-box{
+
+        grid-template-columns:1fr;
+
+        padding:40px 25px;
+
+    }
+
+
+    .newsletter-benefits{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
