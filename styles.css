@@ -3546,6 +3546,7 @@ nav a{
 
 }
 
+
 .books-grid{
 
     display:grid;
@@ -3555,6 +3556,8 @@ nav a{
     gap:30px;
 
 }
+
+
 
 .book-card{
 
@@ -3568,9 +3571,11 @@ nav a{
 
     background:#FFFFFF;
 
-    padding:40px 30px;
+    padding:35px 28px;
 
-    border-radius:26px;
+    min-height:360px;
+
+    border-radius:28px;
 
     border:1px solid var(--border);
 
@@ -3580,41 +3585,110 @@ nav a{
 
 }
 
+
+
 .book-card:hover{
 
     transform:translateY(-8px);
 
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
 }
 
-.book-card{
+
+
+/* Emoji/Icon */
+
+.book-card > :first-child{
 
     font-size:3rem;
 
+    line-height:1;
+
+    margin-bottom:20px;
+
 }
+
+
+
+/* Title */
 
 .book-card h3{
 
-    margin:20px 0 15px;
+    font-size:1.55rem;
 
-    font-size:1.6rem;
+    margin-bottom:15px;
+
+    color:var(--text);
 
 }
+
+
+
+/* Description */
 
 .book-card p{
 
     flex:1;
 
-    line-height:1.8;
+    font-size:.95rem;
+
+    line-height:1.7;
 
     color:var(--light-text);
 
-    margin-bottom:30px;
+    margin-bottom:28px;
+
+    max-width:240px;
 
 }
+
+
+
+/* Button */
 
 .book-card .study-button{
 
     width:100%;
+
+    padding:14px 20px;
+
+    border-radius:50px;
+
+    font-size:.95rem;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:1200px){
+
+    .books-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .books-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .book-card{
+
+        min-height:auto;
+
+    }
 
 }
 
@@ -5489,5 +5563,369 @@ nav.active a{
         width:100%;
 
     }
+
+}
+
+/* ==========================================
+   LITTLE EXPLORERS AGE PAGE FINAL OVERRIDES
+   Applies to:
+   early-head-start.html
+   2-3.html
+   3-4.html
+   4-5.html
+========================================== */
+
+
+/* ==========================================
+   AGE PAGE SECTIONS
+========================================== */
+
+.age-hero,
+.quick-facts,
+.development-section,
+.materials-section,
+.study-weeks,
+#centers,
+.books-section,
+#assessment,
+.why-section,
+.study-dashboard,
+#downloads,
+.week-navigation,
+#family,
+.featured-study,
+.newsletter{
+
+    width:100%;
+
+}
+
+
+/* ==========================================
+   SECTION TITLES
+========================================== */
+
+.age-hero .section-title,
+.quick-facts .section-title,
+.development-section .section-title,
+.materials-section .section-title,
+.study-weeks .section-title,
+.books-section .section-title{
+
+    max-width:850px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+
+/* ==========================================
+   POPULAR CURRICULUM STUDIES
+========================================== */
+
+
+.books-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.book-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:#FFFFFF;
+
+    min-height:360px;
+
+    padding:35px 28px;
+
+    border-radius:28px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s ease;
+
+}
+
+
+
+.book-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.book-card > *:first-child{
+
+    font-size:3rem;
+
+    line-height:1;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.book-card h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.book-card p{
+
+    font-size:.95rem;
+
+    line-height:1.75;
+
+    color:var(--light-text);
+
+    max-width:250px;
+
+    flex:1;
+
+}
+
+
+
+.book-card .study-button{
+
+    margin-top:25px;
+
+    width:100%;
+
+}
+
+
+
+/* ==========================================
+   DEVELOPMENT CARDS
+========================================== */
+
+.development-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+
+.development-card{
+
+    min-height:300px;
+
+}
+
+
+
+/* ==========================================
+   ELOF DOMAIN CARDS
+========================================== */
+
+.materials-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+.material-card{
+
+    min-height:220px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    font-size:1.05rem;
+
+    line-height:1.6;
+
+}
+
+
+
+/* ==========================================
+   CLASSROOM CENTERS
+========================================== */
+
+
+.center-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+.center-card{
+
+    min-height:300px;
+
+}
+
+
+
+/* ==========================================
+   DAILY LEARNING DASHBOARD
+========================================== */
+
+
+.dashboard-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+
+
+.dashboard-card{
+
+    min-height:220px;
+
+}
+
+
+
+/* ==========================================
+   PRINTABLE RESOURCE CARDS
+========================================== */
+
+
+.download-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+
+
+.download-card{
+
+    min-height:220px;
+
+    font-size:1.05rem;
+
+}
+
+
+
+/* ==========================================
+   FAMILY SECTION
+========================================== */
+
+
+.family-card{
+
+    max-width:950px;
+
+}
+
+
+
+/* ==========================================
+   AGE PAGE RESPONSIVE
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+.books-grid,
+.materials-grid,
+.center-grid,
+.dashboard-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:992px){
+
+
+.development-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.books-grid,
+.materials-grid,
+.center-grid,
+.dashboard-grid,
+.development-grid,
+.download-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.book-card{
+
+    min-height:auto;
+
+}
+
+
+
+.age-hero{
+
+    padding:70px 0;
+
+}
+
+
+
+.family-card{
+
+    padding:40px 25px;
+
+}
+
 
 }
