@@ -720,7 +720,331 @@ grid-template-columns:1fr;
 
 }
 
+/* ==========================================
+FINAL CARD POLISH
+========================================== */
 
+.material-card,
+.learning-card,
+.download-card{
+
+position:relative;
+
+overflow:hidden;
+
+transition:.3s ease;
+
+}
+
+
+
+.material-card:hover,
+.learning-card:hover,
+.download-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+
+
+/* ==========================================
+LEARNING CONNECTIONS
+========================================== */
+
+.learning-section{
+
+padding:110px 0;
+
+background:white;
+
+}
+
+
+
+.learning-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+.learning-card{
+
+padding:35px 25px;
+
+border-radius:28px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+}
+
+
+
+.learning-icon{
+
+width:85px;
+
+height:85px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+font-size:2.8rem;
+
+background:white;
+
+}
+
+
+
+.learning-card h3{
+
+font-family:"Nunito";
+
+font-size:1.45rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.learning-card p{
+
+color:var(--light);
+
+line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+TEACHER RESOURCE CENTER
+========================================== */
+
+.download-center{
+
+padding:110px 0;
+
+background:#F8FBFD;
+
+}
+
+
+
+.download-box{
+
+background:white;
+
+padding:60px;
+
+border-radius:35px;
+
+box-shadow:var(--shadow);
+
+}
+
+
+
+.download-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+
+
+.download-card{
+
+background:white;
+
+border-radius:28px;
+
+padding:40px 30px;
+
+text-align:center;
+
+border:1px solid var(--border);
+
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+
+
+.download-icon{
+
+font-size:3.5rem;
+
+margin-bottom:20px;
+
+}
+
+
+
+.download-card h3{
+
+font-family:"Nunito";
+
+font-size:1.5rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.download-card p{
+
+color:var(--light);
+
+line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+MATERIAL CARD SPACING
+========================================== */
+
+
+.material-card{
+
+min-height:360px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+}
+
+
+
+.material-content{
+
+padding:40px 35px 45px;
+
+display:flex;
+
+flex-direction:column;
+
+flex:1;
+
+}
+
+
+
+.material-card h3{
+
+font-family:"Nunito";
+
+font-size:1.7rem;
+
+margin-bottom:18px;
+
+}
+
+
+
+.material-card p{
+
+font-size:1.05rem;
+
+line-height:1.9;
+
+color:var(--light);
+
+max-width:280px;
+
+margin:0 auto;
+
+}
+
+
+
+/* ==========================================
+RESPONSIVE FIXES
+========================================== */
+
+
+@media(max-width:1200px){
+
+.learning-grid,
+.materials-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:900px){
+
+.download-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+@media(max-width:650px){
+
+.learning-grid,
+.materials-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.download-box{
+
+padding:35px 25px;
+
+}
+
+
+.material-card{
+
+min-height:auto;
+
+}
+
+}
 
 </style>
 
