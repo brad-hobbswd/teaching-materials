@@ -2346,10 +2346,6 @@ nav a{
    FILTERS
 ========================================== */
 
-/* ==========================================
-   FILTERS
-========================================== */
-
 .study-filters{
 
     padding:60px 0;
@@ -2357,6 +2353,8 @@ nav a{
     background:#FFFFFF;
 
     border-bottom:1px solid var(--border);
+
+    width:100%;
 
 }
 
@@ -2372,6 +2370,17 @@ nav a{
 }
 
 
+.study-filters .container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
 .filter-buttons{
 
     display:flex;
@@ -2380,7 +2389,10 @@ nav a{
 
     justify-content:center;
 
+    align-items:center;
+
     gap:16px;
+
     width:100%;
 
 }
@@ -2437,14 +2449,6 @@ nav a{
     border-color:var(--blue);
 
     color:#FFFFFF;
-
-}
-
-.study-filters .container{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
 
 }
 
