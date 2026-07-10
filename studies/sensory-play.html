@@ -1177,6 +1177,476 @@ margin-bottom:70px;
 
 }
 
+   /* ==========================================
+   SENSORY MATERIAL COLLECTION
+========================================== */
+
+
+.materials-section{
+
+padding:110px 0;
+
+background:#FFFBEA;
+
+}
+
+
+
+.materials-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+.material-card{
+
+background:white;
+
+border-radius:28px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+transition:.3s ease;
+
+text-align:center;
+
+}
+
+
+
+.material-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.material-card img{
+
+width:100%;
+
+aspect-ratio:1/1;
+
+object-fit:cover;
+
+}
+
+
+
+.material-content{
+
+padding:30px;
+
+}
+
+
+
+.material-tag{
+
+display:inline-block;
+
+padding:7px 15px;
+
+border-radius:50px;
+
+font-size:.8rem;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+}
+
+
+
+.material-card h3{
+
+font-family:"Nunito";
+
+font-size:1.5rem;
+
+margin-bottom:12px;
+
+}
+
+
+
+.material-card p{
+
+color:var(--light);
+
+line-height:1.8;
+
+}
+
+
+
+.material-link{
+
+display:inline-flex;
+
+margin-top:20px;
+
+color:var(--blue);
+
+font-weight:800;
+
+}
+
+
+
+
+
+/* ==========================================
+   DEVELOPMENT CONNECTIONS
+========================================== */
+
+
+.learning-section{
+
+padding:110px 0;
+
+background:white;
+
+}
+
+
+
+.learning-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+.learning-card{
+
+padding:35px 25px;
+
+border-radius:28px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+border:1px solid var(--border);
+
+transition:.3s ease;
+
+}
+
+
+
+.learning-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.learning-icon{
+
+width:85px;
+
+height:85px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+font-size:2.8rem;
+
+background:white;
+
+}
+
+
+
+.learning-card h3{
+
+font-family:"Nunito";
+
+font-size:1.45rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.learning-card p{
+
+color:var(--light);
+
+}
+
+
+
+.learning-card.cognitive{
+
+background:#EAF7FD;
+
+border-top:8px solid var(--blue);
+
+}
+
+
+
+.learning-card.language{
+
+background:#EEFDF6;
+
+border-top:8px solid var(--green);
+
+}
+
+
+
+.learning-card.physical{
+
+background:#FFF4E8;
+
+border-top:8px solid var(--orange);
+
+}
+
+
+
+.learning-card.social{
+
+background:#F5F0FF;
+
+border-top:8px solid var(--purple);
+
+}
+
+
+
+
+
+/* ==========================================
+   TEACHER RESOURCE CENTER
+========================================== */
+
+
+.download-center{
+
+padding:110px 0;
+
+background:#F8FBFD;
+
+}
+
+
+
+.download-box{
+
+background:white;
+
+padding:60px;
+
+border-radius:35px;
+
+box-shadow:var(--shadow);
+
+}
+
+
+
+.download-box h2{
+
+font-family:"Nunito";
+
+font-size:2.8rem;
+
+margin:20px 0;
+
+}
+
+
+
+.download-box p{
+
+color:var(--light);
+
+max-width:750px;
+
+}
+
+
+
+.download-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+
+
+.download-card{
+
+background:#FFFFFF;
+
+border-radius:28px;
+
+padding:40px 30px;
+
+text-align:center;
+
+border:1px solid var(--border);
+
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+transition:.3s ease;
+
+}
+
+
+
+.download-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow);
+
+}
+
+
+
+.download-icon{
+
+font-size:3.5rem;
+
+margin-bottom:20px;
+
+}
+
+
+
+.download-card h3{
+
+font-family:"Nunito";
+
+font-size:1.5rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.download-card p{
+
+color:var(--light);
+
+line-height:1.8;
+
+}
+
+
+
+.download-card a{
+
+display:inline-flex;
+
+margin-top:20px;
+
+background:var(--blue);
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:50px;
+
+font-weight:800;
+
+}
+
+
+
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:1200px){
+
+.materials-grid,
+.learning-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:900px){
+
+.download-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+@media(max-width:650px){
+
+.materials-grid,
+.learning-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.download-box{
+
+padding:35px 25px;
+
+}
+
+
+}
+
 </style>
 
 </head>
