@@ -7097,3 +7097,118 @@ nav.active a{
     }
 
 }
+
+/* ==========================================
+   DEVELOPMENTAL MILESTONES FIX
+========================================== */
+
+.assessment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+
+.assessment-card{
+
+    min-height:auto;
+
+    height:auto;
+
+    padding:28px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    justify-content:flex-start;
+
+}
+
+
+@media(max-width:768px){
+
+    .assessment-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ==========================================
+   ESSENTIAL QUESTIONS
+========================================== */
+
+.question-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.question-card{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+    line-height:1.7;
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+}
+
+
+.question-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--green);
+
+}
+
+
+
+@media(max-width:992px){
+
+    .question-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .question-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
