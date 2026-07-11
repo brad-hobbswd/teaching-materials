@@ -7039,3 +7039,61 @@ nav.active a{
     }
 
 }
+
+/* ==========================================
+   FINAL CARD HEIGHT FIX
+   STEP 5 CLEANUP
+========================================== */
+
+
+.study-card,
+.book-card,
+.material-card,
+.center-card,
+.dashboard-card,
+.assessment-card{
+
+    height:auto;
+
+    min-height:280px;
+
+}
+
+
+.study-content,
+.book-card,
+.material-card,
+.center-card,
+.dashboard-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.study-content p,
+.book-card p,
+.material-card p,
+.center-card p{
+
+    flex-grow:1;
+
+}
+
+
+@media(max-width:768px){
+
+    .study-card,
+    .book-card,
+    .material-card,
+    .center-card,
+    .dashboard-card,
+    .assessment-card{
+
+        min-height:auto;
+
+    }
+
+}
