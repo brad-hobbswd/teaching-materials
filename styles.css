@@ -7212,3 +7212,26 @@ nav.active a{
     }
 
 }
+
+/* ==========================================
+   BOOK CARD TYPOGRAPHY FIX
+========================================== */
+
+.book-card h3{
+
+    font-size:1.35rem;
+
+    line-height:1.25;
+
+    min-height:auto;
+
+}
+
+
+.book-card p{
+
+    font-size:1rem;
+
+    line-height:1.7;
+
+}
