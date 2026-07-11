@@ -6942,3 +6942,100 @@ nav.active a{
     color:#FFFFFF;
 
 }
+
+/* ==========================================
+   FINAL NEWSLETTER OVERRIDE
+   STEP 4 CLEANUP
+========================================== */
+
+.newsletter{
+
+    padding:110px 0;
+
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--green)
+    );
+
+}
+
+
+.newsletter-box{
+
+    display:grid;
+
+    grid-template-columns:1.4fr .9fr;
+
+    gap:60px;
+
+    align-items:center;
+
+    background:#FFFFFF;
+
+    padding:60px;
+
+    border-radius:32px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.newsletter-card{
+
+    background:#F8FBFD;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    border:1px solid var(--border);
+
+}
+
+
+.newsletter-form button{
+
+    height:58px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:var(--blue);
+
+    color:#FFFFFF;
+
+    font-weight:700;
+
+}
+
+
+.newsletter-form button:hover{
+
+    background:var(--green);
+
+}
+
+
+@media(max-width:992px){
+
+    .newsletter-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .newsletter-box{
+
+        padding:35px 25px;
+
+    }
+
+}
