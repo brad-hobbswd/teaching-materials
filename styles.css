@@ -7235,3 +7235,92 @@ nav.active a{
     line-height:1.7;
 
 }
+
+/* ==========================================
+   SONGS & MOVEMENT
+========================================== */
+
+
+.songs-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+.song-card{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+.song-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.song-card h3{
+
+    font-size:1.35rem;
+
+    margin:20px 0 15px;
+
+}
+
+
+.song-card p{
+
+    color:var(--light-text);
+
+    line-height:1.7;
+
+}
+
+
+.song-card:first-child{
+
+    font-size:2rem;
+
+}
+
+
+
+@media(max-width:1200px){
+
+    .songs-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .songs-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
