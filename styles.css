@@ -4534,18 +4534,6 @@ nav a{
 }
 
 /* ==========================================
-   NEWSLETTER
-========================================== */
-
-.newsletter{
-
-    padding:120px 0;
-
-    background:#F8FBFD;
-
-}
-
-/* ==========================================
    RESPONSIVE
 ========================================== */
 
@@ -7610,5 +7598,21 @@ nav.active a{
 .song-card{
 
     font-size:1rem;
+
+}
+
+@media(max-width:768px){
+
+    .newsletter-box{
+
+        padding:35px 25px;
+
+    }
+
+    .newsletter-content h2{
+
+        font-size:2rem;
+
+    }
 
 }
