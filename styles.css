@@ -7724,3 +7724,20 @@ background:#f7fafc;
 text-align:center;
 
 }
+
+/* ==========================================
+   SCIENCE & STEM DISCOVERY TEXT FIX
+========================================== */
+
+.interest-section .interest-card h3{
+
+    color:var(--text);
+
+}
+
+
+.interest-section .interest-card p{
+
+    color:var(--light-text);
+
+}
