@@ -8123,3 +8123,395 @@ text-align:center;
 
 
 }
+
+/* ==========================================
+   WEEKLY STUDY PAGES
+   LITTLE EXPLORERS LEARNING HUB
+========================================== */
+
+
+/* WEEK HERO */
+
+.week-banner {
+
+padding:120px 0 100px;
+
+background:
+linear-gradient(
+135deg,
+#EEF8FF,
+#F4FFF3
+);
+
+text-align:center;
+
+}
+
+
+.week-banner .eyebrow {
+
+font-family:"Nunito", sans-serif;
+
+font-weight:800;
+
+text-transform:uppercase;
+
+letter-spacing:2px;
+
+color:var(--green);
+
+margin-bottom:20px;
+
+}
+
+
+.week-banner h1 {
+
+font-size:clamp(3rem,6vw,5rem);
+
+margin-bottom:25px;
+
+color:var(--dark-text);
+
+}
+
+
+.week-banner p {
+
+max-width:850px;
+
+margin:auto;
+
+font-size:1.2rem;
+
+line-height:1.8;
+
+color:var(--light-text);
+
+}
+
+
+
+/* WEEK OVERVIEW */
+
+.week-overview {
+
+padding:100px 0;
+
+background:white;
+
+}
+
+
+.overview-grid {
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+
+
+.overview-card {
+
+background:#F8FBFD;
+
+padding:35px;
+
+border-radius:24px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+}
+
+
+
+.overview-card h3 {
+
+font-family:"Nunito",sans-serif;
+
+font-size:1.3rem;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+color:var(--green);
+
+}
+
+
+
+.overview-card p {
+
+line-height:1.7;
+
+}
+
+
+
+/* DAILY WEEK SECTIONS */
+
+.week-day {
+
+padding:90px 0;
+
+}
+
+
+.week-day:nth-child(even) {
+
+background:#FAFCF7;
+
+}
+
+
+
+.day-header {
+
+text-align:center;
+
+margin-bottom:45px;
+
+}
+
+
+.day-header h2 {
+
+font-size:2.8rem;
+
+margin-bottom:15px;
+
+}
+
+
+
+.day-header p {
+
+font-size:1.15rem;
+
+color:var(--light-text);
+
+}
+
+
+
+/* DAILY ACTIVITY CARDS */
+
+
+.daily-card {
+
+background:white;
+
+padding:45px;
+
+border-radius:28px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+margin-bottom:30px;
+
+}
+
+
+
+.daily-title {
+
+font-family:"Nunito",sans-serif;
+
+font-weight:800;
+
+font-size:1.35rem;
+
+color:var(--green);
+
+margin-top:25px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.daily-card p {
+
+font-size:1.05rem;
+
+line-height:1.8;
+
+}
+
+
+
+/* MATERIALS BOX */
+
+
+.materials {
+
+background:#F4FFF3;
+
+padding:25px;
+
+border-radius:20px;
+
+margin-top:20px;
+
+}
+
+
+
+.materials ul {
+
+padding-left:25px;
+
+line-height:2;
+
+}
+
+
+
+/* WEEK SUMMARY */
+
+
+.week-summary {
+
+padding:110px 0;
+
+background:#FFFBEA;
+
+}
+
+
+
+.summary-card {
+
+background:white;
+
+padding:60px;
+
+border-radius:32px;
+
+box-shadow:var(--shadow);
+
+text-align:center;
+
+}
+
+
+
+.summary-card h2 {
+
+margin-bottom:45px;
+
+}
+
+
+
+.summary-grid {
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+
+
+.summary-grid div {
+
+padding:30px;
+
+background:#F8FBFD;
+
+border-radius:20px;
+
+}
+
+
+
+.summary-grid h3 {
+
+color:var(--green);
+
+font-family:"Nunito",sans-serif;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:1000px){
+
+
+.overview-grid {
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.summary-grid {
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.week-banner {
+
+padding:90px 20px;
+
+}
+
+
+.week-day {
+
+padding:60px 20px;
+
+}
+
+
+.overview-grid {
+
+grid-template-columns:1fr;
+
+}
+
+
+.daily-card {
+
+padding:30px;
+
+}
+
+
+.summary-card {
+
+padding:35px 20px;
+
+}
+
+
+}
