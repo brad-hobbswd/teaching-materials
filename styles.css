@@ -9458,3 +9458,60 @@ line-height:1.6;
 margin-top:15px;
 
 }
+
+
+/* ==========================================
+   STUDIES PAGE SQUARE CARD STYLE
+========================================== */
+
+
+.study-library .study-card,
+.featured-studies .study-card {
+
+    border-radius:0;
+
+}
+
+
+
+.study-library .study-card img,
+.featured-studies .study-card img {
+
+    aspect-ratio:1 / 1;
+
+    height:auto;
+
+    object-fit:cover;
+
+    border-radius:0;
+
+}
+
+
+
+.study-library .study-content,
+.featured-studies .study-content {
+
+    padding:35px;
+
+}
+
+
+
+.study-library .study-card:hover,
+.featured-studies .study-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+
+/* Square card buttons */
+
+.study-button {
+
+    border-radius:0;
+
+}
