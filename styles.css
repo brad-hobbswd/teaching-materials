@@ -9705,3 +9705,32 @@ margin-top:15px;
 
 
 }
+
+/* ==========================================
+   WHITE LEARNING CENTER CARDS TEXT FIX
+========================================== */
+
+
+.centers-section .interest-card{
+
+    background:#FFFFFF;
+
+    color:var(--text);
+
+}
+
+
+
+.centers-section .interest-card h3{
+
+    color:var(--text);
+
+}
+
+
+
+.centers-section .interest-card p{
+
+    color:var(--light-text);
+
+}
