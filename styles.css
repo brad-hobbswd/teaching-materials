@@ -10027,3 +10027,85 @@ margin-top:15px;
     }
 
 }
+
+/* ==========================================
+   CURRICULUM CATEGORY CARDS TEXT FIX
+========================================== */
+
+
+.interest-card p{
+
+    color:#334155;
+
+    opacity:1;
+
+}
+
+
+.interest-card a{
+
+    margin-top:20px;
+
+    color:#2D8FD5;
+
+    font-weight:700;
+
+}
+
+
+.interest-card a:hover{
+
+    color:#69B34C;
+
+}
+
+/* ==========================================
+   CURRICULUM LIBRARY CARD FIX
+========================================== */
+
+
+.curriculum-card{
+
+    background:#FFFFFF;
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.curriculum-card h3{
+
+    color:#1F3B57;
+
+}
+
+
+.curriculum-card p{
+
+    color:#64748B;
+
+    opacity:1;
+
+}
+
+
+.curriculum-card a{
+
+    margin-top:20px;
+
+    color:var(--blue);
+
+    font-weight:700;
+
+}
+
+
+.curriculum-card a:hover{
+
+    color:var(--green);
+
+}
