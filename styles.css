@@ -9515,3 +9515,193 @@ margin-top:15px;
     border-radius:0;
 
 }
+
+
+/* ==========================================
+   STUDY PAGE FINAL CARD FIXES
+========================================== */
+
+
+/* QUICK FACTS FOUR COLUMN LAYOUT */
+
+.quick-facts .stats-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    max-width:1400px;
+    margin:60px auto;
+    padding:0 32px;
+
+}
+
+
+.quick-facts .stat-card{
+
+    min-height:190px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.quick-facts .stat-card h2{
+
+    font-size:3rem;
+
+    color:var(--green);
+
+    margin-bottom:12px;
+
+}
+
+
+
+.quick-facts .stat-card p{
+
+    color:var(--light-text);
+
+    font-weight:700;
+
+}
+
+
+
+
+
+
+/* LEARNING CENTER CARDS */
+
+.centers-section{
+
+    padding:110px 0;
+
+    background:#FFFBEA;
+
+}
+
+
+
+.centers-section .interest-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+}
+
+
+
+.centers-section .interest-card{
+
+    min-height:260px;
+
+    background:#FFFFFF;
+
+    color:var(--text);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+
+
+.centers-section .interest-card h3{
+
+    color:var(--blue);
+
+    margin-bottom:18px;
+
+}
+
+
+
+.centers-section .interest-card p{
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+}
+
+
+
+.centers-section .interest-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+/* FOOTER LOGO FIX */
+
+.footer-logo img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    padding:8px;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+
+.quick-facts .stats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.centers-section .interest-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
