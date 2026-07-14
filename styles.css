@@ -9919,3 +9919,130 @@ margin-top:15px;
     }
 
 }
+
+/* ==========================================
+   FINAL STUDY HERO FIX
+   Signs / Wheels / Bread / Boxes / Studies
+========================================== */
+
+
+.study-hero{
+
+    width:100%;
+
+    padding:120px 0 100px;
+
+    text-align:center;
+
+}
+
+
+.study-hero .container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+}
+
+
+
+.study-hero .breadcrumb{
+
+    justify-content:center;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.study-hero h1{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    font-size:clamp(3rem,5vw,4.5rem);
+
+    line-height:1.1;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.study-hero h1 span{
+
+    display:inline-flex;
+
+}
+
+
+
+.study-hero p{
+
+    max-width:850px;
+
+    margin:0 auto 45px;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:var(--light-text);
+
+}
+
+
+
+.study-hero .hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.study-hero .btn{
+
+    min-width:190px;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .study-hero h1{
+
+        flex-direction:column;
+
+    }
+
+
+    .study-hero .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+
+    .study-hero .btn{
+
+        width:100%;
+
+    }
+
+}
