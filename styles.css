@@ -10167,3 +10167,9 @@ margin-top:15px;
     font-size: 0.95rem;
 
 }
+
+/* CURRICULUM PAGE ONLY GRID FIX */
+.featured-studies .study-card-grid{
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
