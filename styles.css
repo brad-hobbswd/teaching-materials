@@ -2248,13 +2248,11 @@ nav a{
 
 .study-filters{
 
-    padding:60px 0;
+    padding:35px 0 45px;
 
     background:#FFFFFF;
 
     border-bottom:1px solid var(--border);
-
-    width:100%;
 
 }
 
@@ -2300,34 +2298,17 @@ nav a{
 
 .filter-btn{
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
     min-width:170px;
 
-    height:52px;
+    height:50px;
 
-    padding:0 26px;
+    padding:0 30px;
 
     border-radius:999px;
 
-    border:2px solid var(--border);
-
-    background:#FFFFFF;
-
-    color:var(--text);
-
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:all .3s ease;
+    font-size:.95rem;
 
 }
-
 
 .filter-btn:hover{
 
