@@ -9824,3 +9824,98 @@ margin-top:15px;
     }
 
 }
+
+/* ==========================================
+   STUDY LEARNING GOALS CARDS FINAL FIX
+========================================== */
+
+
+.objectives-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.objectives-grid > div{
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px 30px;
+
+    min-height:220px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+
+.objectives-grid > div:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.objectives-grid h3{
+
+    font-size:1.35rem;
+
+    margin-bottom:18px;
+
+    color:var(--text);
+
+}
+
+
+
+.objectives-grid p{
+
+    color:var(--light-text);
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+
+
+
+/* TABLET */
+
+@media(max-width:1100px){
+
+    .objectives-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .objectives-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
