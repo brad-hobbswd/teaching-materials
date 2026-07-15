@@ -10401,3 +10401,34 @@ margin-top:15px;
     padding:30px;
 
 }
+/* TEST CURRICULUM CARDS */
+
+.featured-studies .study-card-grid {
+
+    display:grid !important;
+
+    grid-template-columns:repeat(3, 1fr) !important;
+
+    gap:50px !important;
+
+}
+
+
+.featured-studies .study-card {
+
+    width:100% !important;
+
+    max-width:none !important;
+
+}
+
+
+.featured-studies .study-card img {
+
+    height:350px !important;
+
+    aspect-ratio:1 / 1 !important;
+
+    object-fit:cover !important;
+
+}
