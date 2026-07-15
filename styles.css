@@ -10432,3 +10432,145 @@ margin-top:15px;
     object-fit:cover !important;
 
 }
+
+/* =============================================
+   FAMILY ENGAGEMENT LIBRARY ENHANCEMENTS
+=============================================*/
+
+/* Hero Section */
+.library-hero {
+  padding: 80px 0;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+.library-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.library-hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #333;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.library-hero .btn {
+  margin: 5px;
+}
+
+/* Study Card Grid */
+.study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.study-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.study-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Images in cards square and cover */
+.study-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Study content */
+.study-content {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.study-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.study-content p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.study-footer {
+  text-align: right;
+}
+
+.study-footer a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e73be;
+  transition: color 0.2s;
+}
+
+.study-footer a:hover {
+  color: #145a8a;
+}
+
+/* Section headers */
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer Enhancements */
+footer {
+  background: #1e3a8a;
+  color: #fff;
+  padding: 50px 0 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .library-hero h1 {
+    font-size: 2rem;
+  }
+
+  .library-hero p {
+    font-size: 1rem;
+  }
+}
