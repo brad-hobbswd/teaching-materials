@@ -10291,3 +10291,76 @@ margin-top:15px;
     }
 
 }
+/* ==========================================
+   CURRICULUM FEATURED STUDY CARDS
+========================================== */
+
+.study-card-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(360px,1fr));
+
+    gap:40px;
+
+    align-items:stretch;
+
+}
+
+
+.study-card-grid .study-card img{
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    object-fit:cover;
+
+}
+
+
+.study-card-grid .study-content{
+
+    padding:35px;
+
+}
+
+
+.study-card-grid .study-content h3{
+
+    font-size:1.8rem;
+
+    margin-bottom:18px;
+
+}
+
+
+.study-card-grid .study-content p{
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+}
+
+
+@media(max-width:1200px){
+
+    .study-card-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .study-card-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
