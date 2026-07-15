@@ -10364,3 +10364,40 @@ margin-top:15px;
     }
 
 }
+
+/* ==========================================
+   CURRICULUM STUDY GRID SIZE
+========================================== */
+
+.featured-studies .study-grid{
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:40px;
+
+}
+
+
+.featured-studies .study-card{
+
+    min-height:520px;
+
+}
+
+
+.featured-studies .study-card img{
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    object-fit:cover;
+
+}
+
+
+.featured-studies .study-content{
+
+    padding:30px;
+
+}
