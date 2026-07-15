@@ -10173,3 +10173,121 @@ margin-top:15px;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
 }
+
+/* ==========================================
+   CURRICULUM FEATURED STUDY CARDS
+========================================== */
+
+.study-card-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:32px;
+
+    align-items:stretch;
+
+}
+
+
+.study-card-grid .study-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#FFFFFF;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s ease;
+
+}
+
+
+.study-card-grid .study-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.study-card-grid .study-card img{
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    object-fit:cover;
+
+}
+
+
+.study-card-grid .study-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    padding:28px;
+
+}
+
+
+.study-card-grid .study-content h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+
+.study-card-grid .study-content p{
+
+    flex:1;
+
+    color:var(--light-text);
+
+    line-height:1.7;
+
+}
+
+
+.study-card-grid .study-footer{
+
+    margin-top:25px;
+
+}
+
+
+
+@media(max-width:1200px){
+
+    .study-card-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .study-card-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
