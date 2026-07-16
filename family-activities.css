@@ -1,0 +1,45 @@
+/* Family Activities Page Specific Adjustments */
+.study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.study-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.study-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.study-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.study-content h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.study-content p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.study-footer a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1e73be;
+}
+
+.study-footer a:hover {
+  color: #145a8a;
+}
