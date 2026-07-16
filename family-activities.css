@@ -107,13 +107,14 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Footer logo adjustments for family-activities page */
 footer .footer-logo img {
-    width: 60px;       /* reduce if necessary */
-    height: 60px;      /* maintain aspect ratio */
-    object-fit: contain;
-    padding: 10px;     /* adds space around the logo */
-    border-radius: 50%; /* keeps it circular if you want */
-    background: #fff;  /* optional: ensures logo isn’t flush with footer bg */
+    width: 100px;         /* increase logo size */
+    height: auto;         /* keep original aspect ratio */
+    object-fit: contain;  /* prevent stretching */
+    padding: 0;           /* remove extra white padding */
+    border-radius: 0;     /* optional: no circular mask */
+    background: none;     /* remove background */
     display: block;
-    margin: 0 auto;    /* centers the logo in its container */
+    margin: 0 auto;       /* center horizontally */
 }
