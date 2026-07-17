@@ -226,3 +226,36 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* ------------------------
+   Logo & Header Text
+------------------------ */
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* space between image and text */
+}
+
+header .logo img {
+    width: 80px;      /* adjust size as needed */
+    height: 80px;
+    object-fit: contain; /* ensures image stays proportionate */
+    border-radius: 12px; /* optional, slightly rounded edges */
+}
+
+header .logo div h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0;
+}
+
+header .logo div span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #fff;
+    display: block;
+    line-height: 1.2;
+}
