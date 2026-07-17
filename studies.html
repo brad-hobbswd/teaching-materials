@@ -4,30 +4,38 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Studies | Little Explorers Learning Hub</title>
+<title>Curriculum Studies | Little Explorers Learning Hub</title>
 
-<meta name="description" content="Explore affordable classroom studies, lesson plans, activities, and resources for Early Head Start, Head Start, Preschool, and Pre-K.">
+<meta name="description" content="Explore engaging curriculum studies for Early Head Start, Head Start, Preschool, and Pre Kindergarten. Discover hands on investigations, lesson plans, printable resources, family engagement activities, and classroom ideas designed to inspire curiosity and meaningful learning.">
 
-<meta name="keywords" content="Head Start Studies, Preschool Studies, Creative Curriculum Activities, Early Childhood Lesson Plans">
+<meta name="keywords" content="curriculum studies, preschool curriculum, head start studies, early childhood investigations, preschool lesson plans, creative curriculum, classroom themes, teacher resources">
+
+<meta name="author" content="Little Explorers Learning Hub">
+
+<meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="studies.css">
+
+<link rel="icon" href="favicon.ico">
 
 </head>
 
 <body>
 
-<!-- ===========================
+<!-- ==========================================
      HEADER
-============================ -->
+========================================== -->
 
-<header>
+<header class="site-header">
 
 <div class="container nav-container">
 
@@ -35,7 +43,7 @@
 
 <img src="logo.png" alt="Little Explorers Learning Hub Logo">
 
-<div>
+<div class="logo-text">
 
 <h1>Little Explorers</h1>
 
@@ -45,13 +53,14 @@
 
 </a>
 
-<form class="search-bar">
+<form class="search-bar" role="search">
 
 <input
 type="search"
-placeholder="Search studies, activities, books, printables...">
+placeholder="Search studies, activities, printables..."
+aria-label="Search the website">
 
-<button type="submit">
+<button type="submit" aria-label="Search">
 
 🔍
 
@@ -59,7 +68,7 @@ placeholder="Search studies, activities, books, printables...">
 
 </form>
 
-<nav>
+<nav class="main-nav" aria-label="Primary Navigation">
 
 <ul>
 
@@ -68,16 +77,20 @@ placeholder="Search studies, activities, books, printables...">
 <li><a href="studies.html" class="active">Studies</a></li>
 
 <li><a href="ages/index.html">Age Groups</a></li>
+
 <li><a href="lesson-plans.html">Lesson Plans</a></li>
+
 <li><a href="printables.html">Printables</a></li>
+
 <li><a href="resources.html">Teacher Resources</a></li>
+
 <li><a href="about.html">About</a></li>
 
 </ul>
 
 </nav>
 
-<button class="mobile-menu">
+<button class="mobile-menu" aria-label="Open Navigation">
 
 ☰
 
@@ -87,160 +100,211 @@ placeholder="Search studies, activities, books, printables...">
 
 </header>
 
-<!-- ===========================
-     HERO
-============================ -->
+<!-- ==========================================
+     MAIN CONTENT
+========================================== -->
+<main>
 
+     <!-- ==========================================
+     HERO
+========================================== -->
 <section class="study-hero">
 
-<div class="container">
+<div class="container hero-grid">
 
-<div class="breadcrumb">
+<div class="hero-content">
 
-<a href="index.html">Home</a>
+<span class="hero-eyebrow">
 
-<span>›</span>
+Explore • Discover • Inspire
 
-<span>Studies</span>
-
-</div>
+</span>
 
 <h1>
 
-Explore Our Studies
+Curriculum Studies That Bring Learning to Life
 
 </h1>
 
 <p>
 
-Hands on investigations designed for Early Head Start, Head Start,
-Preschool, and Pre-K classrooms using affordable everyday materials.
+Discover engaging investigations thoughtfully designed for Early Head Start, Head Start, Preschool, and Pre Kindergarten classrooms. Each study encourages curiosity, creativity, collaboration, and meaningful hands on learning while supporting every area of child development.
 
 </p>
 
+<div class="hero-actions">
+
+<a href="#study-library" class="btn btn-primary">
+
+Browse Studies
+
+</a>
+
+<a href="contact.html" class="btn btn-secondary">
+
+Request a Custom Study
+
+</a>
+
+</div>
+
 <div class="hero-search">
+
+<form>
 
 <input
 type="search"
-placeholder="Search a study...">
+placeholder="Search curriculum studies...">
 
-<button>
+<button type="submit">
 
 Search
 
 </button>
 
+</form>
+
+</div>
+
+<div class="hero-highlights">
+
+<div class="highlight">
+
+<strong>20+</strong>
+
+<span>Curriculum Studies</span>
+
+</div>
+
+<div class="highlight">
+
+<strong>1000+</strong>
+
+<span>Hands On Activities</span>
+
+</div>
+
+<div class="highlight">
+
+<strong>500+</strong>
+
+<span>Printable Resources</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img
+src="images/studies-hero.webp"
+alt="Children participating in hands on classroom investigations">
+
 </div>
 
 </div>
 
 </section>
 
-<!-- ===========================
-     QUICK FILTERS
-============================ -->
+<!-- ==========================================
+     STUDY CATEGORIES
+========================================== -->
 
-<div class="filter-buttons">
-
-<a href="studies/index.html" class="filter-btn active">
-All Studies
-</a>
-
-<a href="ages/early-head-start.html" class="filter-btn">
-Early Head Start
-</a>
-
-<a href="ages/2-3.html" class="filter-btn">
-2 to 3 Years
-</a>
-
-<a href="ages/3-4.html" class="filter-btn">
-3 to 4 Years
-</a>
-
-<a href="ages/4-5.html" class="filter-btn">
-4 to 5 Years
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===========================
-     FEATURED STUDY
-============================ -->
-
-<section class="featured-study">
+<section class="study-categories">
 
 <div class="container">
 
-<div class="featured-study-card">
+<div class="section-heading">
 
-<div class="featured-text">
+<span>
 
-<span class="featured-label">
-
-Featured Study
+Find the Perfect Study
 
 </span>
 
 <h2>
 
-🌳 Trees
+Browse by Category or Age
 
 </h2>
 
 <p>
 
-Children discover trees through outdoor exploration, science,
-art, literacy, dramatic play, and hands on investigations using
-materials found right outside the classroom.
+Whether you're planning a science investigation, dramatic play experience, literacy theme, or seasonal exploration, finding the right study has never been easier.
 
 </p>
 
-<div class="featured-highlights">
+</div>
 
-<div>
+<div class="category-groups">
 
-📅 Four Week Investigation
+<div class="category-group">
+
+<h3>
+
+Study Categories
+
+</h3>
+
+<div class="category-chips">
+
+<a href="#" class="chip active">All Studies</a>
+
+<a href="#" class="chip">Nature</a>
+
+<a href="#" class="chip">STEM</a>
+
+<a href="#" class="chip">Literacy</a>
+
+<a href="#" class="chip">Sensory</a>
+
+<a href="#" class="chip">Art</a>
+
+<a href="#" class="chip">Community</a>
+
+<a href="#" class="chip">Health</a>
 
 </div>
 
-<div>
-
-💲 Budget Friendly
-
 </div>
 
-<div>
+<div class="category-group">
 
-📚 40+ Activities
+<h3>
 
-</div>
+Age Groups
 
-<div>
+</h3>
 
-🖨️ Printables Included
+<div class="category-chips">
 
-</div>
+<a href="ages/early-head-start.html" class="chip">
 
-</div>
+Early Head Start
 
-<a href="studies/trees/index.html" class="btn btn-primary">
+</a>
 
-Open Tree Study
+<a href="ages/2-3.html" class="chip">
+
+2 to 3 Years
+
+</a>
+
+<a href="ages/3-4.html" class="chip">
+
+3 to 4 Years
+
+</a>
+
+<a href="ages/4-5.html" class="chip">
+
+4 to 5 Years
 
 </a>
 
 </div>
-
-<div class="featured-image">
-
-<img
-src="studies/trees/trees-banner.png"
-alt="Tree Study">
 
 </div>
 
@@ -250,27 +314,351 @@ alt="Tree Study">
 
 </section>
 
-<!-- ===========================
-     STUDY LIBRARY
-============================ -->
+<!-- ==========================================
+     WHY OUR STUDIES
+========================================== -->
 
-<section class="study-library">
+<section class="study-features">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
+
+<span>
+
+Why Teachers Love Our Studies
+
+</span>
 
 <h2>
 
-Browse All Studies
+Everything You Need for Meaningful Learning
 
 </h2>
 
 <p>
 
-Choose a study below to explore lesson plans,
-interest areas, assessments, printables,
-and family engagement ideas.
+Each curriculum study is thoughtfully designed to reduce planning time while providing engaging experiences that inspire exploration, creativity, and joyful learning.
+
+</p>
+
+</div>
+
+<div class="features-grid">
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+📚
+
+</div>
+
+<h3>
+
+Complete Lesson Plans
+
+</h3>
+
+<p>
+
+Ready to use daily and weekly lesson plans with engaging activities and clear learning goals.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+🖨️
+
+</div>
+
+<h3>
+
+Printable Resources
+
+</h3>
+
+<p>
+
+Classroom materials, journals, signs, labels, family activities, and teaching tools ready to print.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+🎨
+
+</div>
+
+<h3>
+
+Hands On Experiences
+
+</h3>
+
+<p>
+
+Art, STEM, literacy, dramatic play, music, movement, sensory exploration, and outdoor learning.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+🌱
+
+</div>
+
+<h3>
+
+Whole Child Development
+
+</h3>
+
+<p>
+
+Activities intentionally designed to support cognitive, social, emotional, language, and physical development.
+
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+     <!-- ==========================================
+     FEATURED STUDY
+========================================== -->
+
+<section class="featured-study">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+
+Featured Curriculum Study
+
+</span>
+
+<h2>
+
+Start Your Classroom Adventure
+
+</h2>
+
+<p>
+
+Explore one of our most popular investigations and discover how meaningful, hands on experiences can transform your classroom.
+
+</p>
+
+</div>
+
+<div class="featured-study-card">
+
+<div class="featured-image">
+
+<img
+src="studies/trees/trees-banner.png"
+alt="Children exploring trees">
+
+</div>
+
+<div class="featured-content">
+
+<span class="featured-tag">
+
+🌳 Nature Study
+
+</span>
+
+<h2>
+
+The Trees Study
+
+</h2>
+
+<p>
+
+Children investigate the amazing world of trees through observation, exploration, science, literacy, art, mathematics, dramatic play, and outdoor discovery. This comprehensive study encourages curiosity while helping children build meaningful connections with the natural world.
+
+</p>
+
+<div class="featured-highlights">
+
+<div class="highlight-item">
+
+<span>📅</span>
+
+<div>
+
+<strong>Four Week Investigation</strong>
+
+<p>Flexible daily learning experiences.</p>
+
+</div>
+
+</div>
+
+<div class="highlight-item">
+
+<span>🎨</span>
+
+<div>
+
+<strong>Forty Plus Activities</strong>
+
+<p>Art, STEM, literacy, music, sensory, and more.</p>
+
+</div>
+
+</div>
+
+<div class="highlight-item">
+
+<span>🖨️</span>
+
+<div>
+
+<strong>Printable Resources</strong>
+
+<p>Ready to print classroom materials and journals.</p>
+
+</div>
+
+</div>
+
+<div class="highlight-item">
+
+<span>🌱</span>
+
+<div>
+
+<strong>Family Engagement</strong>
+
+<p>Activities that extend learning beyond the classroom.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="featured-buttons">
+
+<a href="studies/trees/index.html" class="btn btn-primary">
+
+Explore the Tree Study
+
+</a>
+
+<a href="#study-library" class="btn btn-secondary">
+
+Browse All Studies
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+     <!-- ==========================================
+     STUDY LIBRARY
+========================================== -->
+
+<section class="study-library" id="study-library">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+
+Curriculum Library
+
+</span>
+
+<h2>
+
+Browse Our Complete Collection of Studies
+
+</h2>
+
+<p>
+
+Each curriculum study includes engaging lesson plans, printable resources, classroom activities, family engagement ideas, and hands on learning experiences designed specifically for early childhood classrooms.
+
+</p>
+
+</div>
+
+<!-- Library Toolbar -->
+
+<div class="library-toolbar">
+
+<div class="library-search">
+
+<input
+type="search"
+placeholder="Search curriculum studies...">
+
+</div>
+
+<div class="library-options">
+
+<select>
+
+<option>All Categories</option>
+<option>Nature</option>
+<option>STEM</option>
+<option>Literacy</option>
+<option>Sensory</option>
+<option>Art</option>
+<option>Community</option>
+
+</select>
+
+<select>
+
+<option>Sort By</option>
+<option>Newest</option>
+<option>Alphabetical</option>
+<option>Most Popular</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="library-summary">
+
+<p>
+
+Showing our growing collection of curriculum studies for Early Head Start, Head Start, Preschool, and Pre Kindergarten.
 
 </p>
 
@@ -278,67 +666,43 @@ and family engagement ideas.
 
 <div class="study-grid">
 
-<!-- BALLS -->
-
-<article class="study-card">
+     <article class="study-card">
 
 <img src="balls.png" alt="Balls Study">
 
 <div class="study-content">
 
-<span class="study-tag blue">
+<span class="study-tag movement">
 
-Movement
-
-</span>
+Movement</span>
 
 <h3>Balls</h3>
 
 <p>
 
-Investigate rolling, bouncing, speed, weight, size, measurement, and motion through playful exploration.
+Investigate rolling, bouncing, speed, measurement, and motion through playful exploration and hands on discovery.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>4 Weeks</span>
 
-<strong>4</strong>
+<span>45+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>45+</strong>
-
-<span>Activities</span>
+<span>Printable Resources</span>
 
 </div>
 
-<div>
+<a href="studies/balls/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/balls/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
 </div>
 
 </article>
-
-<!-- TREES -->
 
 <article class="study-card">
 
@@ -346,59 +710,37 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag green">
+<span class="study-tag nature">
 
-Nature
-
-</span>
+Nature</span>
 
 <h3>Trees</h3>
 
 <p>
 
-Observe leaves, bark, branches, roots, habitats, weather, and seasonal changes through outdoor discovery.
+Observe leaves, bark, branches, roots, habitats, weather, and seasonal changes through outdoor investigations.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>4 Weeks</span>
 
-<strong>4</strong>
+<span>42+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>42+</strong>
-
-<span>Activities</span>
+<span>Printable Resources</span>
 
 </div>
 
-<div>
+<a href="studies/trees/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/trees/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
 </div>
 
 </article>
-
-<!-- BUILDINGS -->
 
 <article class="study-card">
 
@@ -406,59 +748,37 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag orange">
+<span class="study-tag stem">
 
-Engineering
-
-</span>
+Engineering</span>
 
 <h3>Buildings</h3>
 
 <p>
 
-Design, build, compare, and solve problems using cardboard boxes, blocks, and recycled materials.
+Design, compare, and build structures while encouraging creativity, teamwork, and problem solving.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>4 Weeks</span>
 
-<strong>4</strong>
+<span>40+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>40+</strong>
-
-<span>Activities</span>
+<span>Printable Resources</span>
 
 </div>
 
-<div>
+<a href="studies/buildings/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/buildings/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
 </div>
 
 </article>
-
-<!-- CLOTHES -->
 
 <article class="study-card">
 
@@ -466,59 +786,37 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag purple">
+<span class="study-tag community">
 
-Daily Life
-
-</span>
+Daily Life</span>
 
 <h3>Clothes</h3>
 
 <p>
 
-Explore clothing, weather, occupations, seasons, fabrics, and cultures through hands on experiences.
+Discover clothing, weather, occupations, seasons, fabrics, and cultures through meaningful experiences.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>4 Weeks</span>
 
-<strong>4</strong>
+<span>38+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>38+</strong>
-
-<span>Activities</span>
+<span>Printable Resources</span>
 
 </div>
 
-<div>
+<a href="studies/clothes/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/clothes/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
 </div>
 
 </article>
-
-<!-- PETS -->
 
 <article class="study-card">
 
@@ -526,59 +824,37 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag coral">
+<span class="study-tag health">
 
-Community
-
-</span>
+Community</span>
 
 <h3>Pets</h3>
 
 <p>
 
-Learn about caring for pets while building empathy, responsibility, language, and science skills.
+Learn how to care for animals while building empathy, responsibility, language, and science skills.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>4 Weeks</span>
 
-<strong>4</strong>
+<span>36+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>36+</strong>
-
-<span>Activities</span>
+<span>Printable Resources</span>
 
 </div>
 
-<div>
+<a href="studies/pets/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/pets/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
 </div>
 
 </article>
-
-<!-- WATER -->
 
 <article class="study-card">
 
@@ -586,51 +862,31 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag aqua">
+<span class="study-tag science">
 
-Science
-
-</span>
+Science</span>
 
 <h3>Water</h3>
 
 <p>
 
-Pour, splash, float, sink, freeze, melt, and investigate the amazing properties of water.
+Investigate floating, sinking, freezing, melting, pouring, and the amazing properties of water.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>4 Weeks</span>
 
-<strong>4</strong>
+<span>44+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>44+</strong>
-
-<span>Activities</span>
+<span>Printable Resources</span>
 
 </div>
 
-<div>
+<a href="studies/water/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/water/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
@@ -638,7 +894,7 @@ Explore Study →
 
 </article>
 
-<!-- WHEELS -->
+     <!-- WHEELS -->
 
 <article class="study-card">
 
@@ -646,7 +902,7 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag blue">
+<span class="study-tag transportation">
 
 Transportation
 
@@ -656,41 +912,23 @@ Transportation
 
 <p>
 
-Discover how wheels move people and objects through building, testing, and imaginative play.
+Discover how wheels help people and objects move while exploring motion, transportation, engineering, and problem solving.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>📅 4 Weeks</span>
 
-<strong>4</strong>
+<span>🎨 40+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>40+</strong>
-
-<span>Activities</span>
+<span>🖨️ Printables</span>
 
 </div>
 
-<div>
+<a href="studies/wheels/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/wheels/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
@@ -706,7 +944,7 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag green">
+<span class="study-tag nature">
 
 Nature
 
@@ -716,41 +954,23 @@ Nature
 
 <p>
 
-Plant seeds, observe growth, care for living things, and discover how gardens change over time.
+Plant seeds, observe growth, care for living things, and discover how gardens change throughout the seasons.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>📅 4 Weeks</span>
 
-<strong>4</strong>
+<span>🎨 48+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>48+</strong>
-
-<span>Activities</span>
+<span>🖨️ Printables</span>
 
 </div>
 
-<div>
+<a href="studies/gardening/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/gardening/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
@@ -766,7 +986,7 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag orange">
+<span class="study-tag engineering">
 
 Engineering
 
@@ -776,41 +996,23 @@ Engineering
 
 <p>
 
-Transform ordinary cardboard boxes into imaginative creations while exploring size, shape, and design.
+Transform ordinary cardboard boxes into creative structures while exploring design, construction, imagination, and teamwork.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>📅 4 Weeks</span>
 
-<strong>4</strong>
+<span>🎨 35+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>35+</strong>
-
-<span>Activities</span>
+<span>🖨️ Printables</span>
 
 </div>
 
-<div>
+<a href="studies/boxes/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/boxes/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
@@ -826,7 +1028,7 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag yellow">
+<span class="study-tag cooking">
 
 Cooking
 
@@ -836,41 +1038,23 @@ Cooking
 
 <p>
 
-Mix, measure, knead, bake, taste, and discover how bread is made around the world.
+Mix, measure, knead, bake, and discover how bread is made while learning about nutrition and cultures around the world.
 
 </p>
 
-<div class="study-stats">
+<div class="study-meta">
 
-<div>
+<span>📅 4 Weeks</span>
 
-<strong>4</strong>
+<span>🎨 34+ Activities</span>
 
-<span>Weeks</span>
-
-</div>
-
-<div>
-
-<strong>34+</strong>
-
-<span>Activities</span>
+<span>🖨️ Printables</span>
 
 </div>
 
-<div>
+<a href="studies/bread/index.html" class="btn btn-primary">
 
-<strong>FREE</strong>
-
-<span>Materials</span>
-
-</div>
-
-</div>
-
-<a href="studies/bread/index.html" class="study-button">
-
-Explore Study →
+Explore Study
 
 </a>
 
@@ -886,22 +1070,34 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag blue">Literacy</span>
+<span class="study-tag literacy">
+
+Literacy
+
+</span>
 
 <h3>Signs</h3>
 
 <p>
-Explore community signs, symbols, letters, colors, and communication through everyday experiences.
+
+Explore symbols, letters, colors, maps, and community signs while strengthening literacy and communication skills.
+
 </p>
 
-<div class="study-stats">
-<div><strong>4</strong><span>Weeks</span></div>
-<div><strong>35+</strong><span>Activities</span></div>
-<div><strong>FREE</strong><span>Materials</span></div>
+<div class="study-meta">
+
+<span>📅 4 Weeks</span>
+
+<span>🎨 35+ Activities</span>
+
+<span>🖨️ Printables</span>
+
 </div>
 
-<a href="studies/signs/index.html" class="study-button">
-Explore Study →
+<a href="studies/signs/index.html" class="btn btn-primary">
+
+Explore Study
+
 </a>
 
 </div>
@@ -912,33 +1108,46 @@ Explore Study →
 
 <article class="study-card">
 
-<img src="studies/stemsimplemachines.png" alt="Simple Machines">
+<img src="studies/stemsimplemachines.png" alt="Simple Machines Study">
 
 <div class="study-content">
 
-<span class="study-tag orange">STEM</span>
+<span class="study-tag stem">
+
+STEM
+
+</span>
 
 <h3>Simple Machines</h3>
 
 <p>
-Push, pull, lift, and investigate how simple machines make work easier.
+
+Push, pull, lift, roll, and investigate how simple machines help people solve everyday problems.
+
 </p>
 
-<div class="study-stats">
-<div><strong>4</strong><span>Weeks</span></div>
-<div><strong>45+</strong><span>Activities</span></div>
-<div><strong>FREE</strong><span>Materials</span></div>
+<div class="study-meta">
+
+<span>📅 4 Weeks</span>
+
+<span>🎨 45+ Activities</span>
+
+<span>🖨️ Printables</span>
+
 </div>
 
-<a href="studies/simple-machines/index.html" class="study-button">
-Explore Study →
+<a href="studies/simple-machines/index.html" class="btn btn-primary">
+
+Explore Study
+
 </a>
 
 </div>
 
 </article>
 
-<!-- SAND -->
+
+     <!-- SAND -->
 
 <article class="study-card">
 
@@ -946,22 +1155,34 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag yellow">Sensory</span>
+<span class="study-tag sensory">
+
+Sensory
+
+</span>
 
 <h3>Sand</h3>
 
 <p>
-Dig, pour, measure, sift, and build while exploring texture and science.
+
+Dig, sift, pour, measure, and build while exploring texture, science, mathematics, and imaginative play.
+
 </p>
 
-<div class="study-stats">
-<div><strong>4</strong><span>Weeks</span></div>
-<div><strong>38+</strong><span>Activities</span></div>
-<div><strong>FREE</strong><span>Materials</span></div>
+<div class="study-meta">
+
+<span>📅 4 Weeks</span>
+
+<span>🎨 38+ Activities</span>
+
+<span>🖨️ Printables</span>
+
 </div>
 
-<a href="studies/sand/index.html" class="study-button">
-Explore Study →
+<a href="studies/sand/index.html" class="btn btn-primary">
+
+Explore Study
+
 </a>
 
 </div>
@@ -972,56 +1193,80 @@ Explore Study →
 
 <article class="study-card">
 
-<img src="studies/engineeringtubestunnels.png" alt="Tubes and Tunnels">
+<img src="studies/engineeringtubestunnels.png" alt="Tubes and Tunnels Study">
 
 <div class="study-content">
 
-<span class="study-tag purple">Engineering</span>
+<span class="study-tag engineering">
+
+Engineering
+
+</span>
 
 <h3>Tubes & Tunnels</h3>
 
 <p>
-Build pathways, ramps, tunnels, and marble runs while encouraging engineering thinking.
+
+Design pathways, tunnels, ramps, and marble runs while encouraging creativity, engineering, and problem solving.
+
 </p>
 
-<div class="study-stats">
-<div><strong>4</strong><span>Weeks</span></div>
-<div><strong>40+</strong><span>Activities</span></div>
-<div><strong>FREE</strong><span>Materials</span></div>
+<div class="study-meta">
+
+<span>📅 4 Weeks</span>
+
+<span>🎨 40+ Activities</span>
+
+<span>🖨️ Printables</span>
+
 </div>
 
-<a href="studies/tubes/index.html" class="study-button">
-Explore Study →
+<a href="studies/tubes/index.html" class="btn btn-primary">
+
+Explore Study
+
 </a>
 
 </div>
 
 </article>
 
-<!-- REDUCE REUSE RECYCLE -->
+<!-- REDUCE REUSE & RECYCLE -->
 
 <article class="study-card">
 
-<img src="studies/environment.png" alt="Reduce Reuse Recycle">
+<img src="studies/environment.png" alt="Reduce Reuse and Recycle Study">
 
 <div class="study-content">
 
-<span class="study-tag green">Environment</span>
+<span class="study-tag environment">
+
+Environment
+
+</span>
 
 <h3>Reduce, Reuse & Recycle</h3>
 
 <p>
-Learn how everyday materials can be reused while caring for our environment.
+
+Help children care for the Earth by exploring recycling, conservation, and creative ways to reuse everyday materials.
+
 </p>
 
-<div class="study-stats">
-<div><strong>4</strong><span>Weeks</span></div>
-<div><strong>42+</strong><span>Activities</span></div>
-<div><strong>FREE</strong><span>Materials</span></div>
+<div class="study-meta">
+
+<span>📅 4 Weeks</span>
+
+<span>🎨 42+ Activities</span>
+
+<span>🖨️ Printables</span>
+
 </div>
 
-<a href="studies/recycle/index.html" class="study-button">
-Explore Study →
+<a href="studies/recycle/index.html" class="btn btn-primary">
+
+Explore Study
+
 </a>
 
 </div>
@@ -1036,22 +1281,34 @@ Explore Study →
 
 <div class="study-content">
 
-<span class="study-tag coral">Health</span>
+<span class="study-tag health">
+
+Health
+
+</span>
 
 <h3>Exercise</h3>
 
 <p>
-Move, stretch, jump, balance, and discover why healthy bodies love movement.
+
+Move, stretch, jump, balance, and discover why physical activity helps us stay healthy, strong, and active every day.
+
 </p>
 
-<div class="study-stats">
-<div><strong>4</strong><span>Weeks</span></div>
-<div><strong>40+</strong><span>Activities</span></div>
-<div><strong>FREE</strong><span>Materials</span></div>
+<div class="study-meta">
+
+<span>📅 4 Weeks</span>
+
+<span>🎨 40+ Activities</span>
+
+<span>🖨️ Printables</span>
+
 </div>
 
-<a href="studies/exercise/index.html" class="study-button">
-Explore Study →
+<a href="studies/exercise/index.html" class="btn btn-primary">
+
+Explore Study
+
 </a>
 
 </div>
@@ -1065,61 +1322,117 @@ Explore Study →
 </section>
 
 
-<!-- ==========================================
+     <!-- ==========================================
      CUSTOM STUDY REQUESTS
 ========================================== -->
 
-<section class="featured-study">
+<section class="custom-study">
 
 <div class="container">
 
-<div class="featured-study-card">
+<div class="custom-study-card">
 
-<div class="featured-text">
+<div class="custom-image">
 
-<span class="featured-label">
+<img
+src="studies/studiescustom.png"
+alt="Custom curriculum studies">
 
-CUSTOM STUDIES
+</div>
+
+<div class="custom-content">
+
+<span class="section-tag">
+
+Custom Curriculum
 
 </span>
 
 <h2>
 
-Need a Study That Isn't Here?
+Need a Study That Isn't in Our Library?
 
 </h2>
 
 <p>
 
-We're always creating new investigations for early childhood classrooms. If you're looking for a study that isn't currently available, let us know. We also create customized curriculum studies, lesson plans, printable resources, dramatic play materials, bulletin board ideas, and classroom activities tailored to your program.
+Every classroom is unique, and sometimes you need a study designed specifically for your children, interests, or program goals. We create custom curriculum studies that are engaging, developmentally appropriate, and ready for the classroom.
 
 </p>
 
-<div class="featured-highlights">
+<p>
 
-<div>🌱 Personalized Studies</div>
+Whether you're looking for a brand new investigation, seasonal theme, dramatic play center, printable resource, or complete lesson plan collection, we'd love to help bring your ideas to life.
 
-<div>📚 Complete Lesson Plans</div>
+</p>
 
-<div>🖨️ Custom Printables</div>
+<div class="custom-features">
 
-<div>🎨 Classroom Activities</div>
+<div class="custom-item">
+
+<span>📚</span>
+
+<p>Complete Curriculum Studies</p>
 
 </div>
 
+<div class="custom-item">
+
+<span>📅</span>
+
+<p>Weekly Lesson Plans</p>
+
+</div>
+
+<div class="custom-item">
+
+<span>🖨️</span>
+
+<p>Printable Classroom Resources</p>
+
+</div>
+
+<div class="custom-item">
+
+<span>🎨</span>
+
+<p>Hands On Activities</p>
+
+</div>
+
+<div class="custom-item">
+
+<span>🏡</span>
+
+<p>Family Engagement Ideas</p>
+
+</div>
+
+<div class="custom-item">
+
+<span>⭐</span>
+
+<p>Personalized Requests</p>
+
+</div>
+
+</div>
+
+<div class="custom-buttons">
+
 <a href="contact.html" class="btn btn-primary">
 
-Request a Custom Study →
+Request a Custom Study
+
+</a>
+
+<a href="about.html" class="btn btn-secondary">
+
+Learn More
 
 </a>
 
 </div>
-
-<div class="featured-image">
-
-<img
-src="studies/studiescustom.png"
-alt="Custom curriculum studies">
 
 </div>
 
@@ -1129,16 +1442,45 @@ alt="Custom curriculum studies">
 
 </section>
 
+<!-- ==========================================
+     SITE STATISTICS
+========================================== -->
+
+<section class="site-stats">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+
+Growing Together
+
+</span>
+
+<h2>
+
+Supporting Early Childhood Educators
+
+</h2>
+
+<p>
+
+We're continually creating new curriculum studies and classroom resources to help teachers spend less time planning and more time inspiring children.
+
+</p>
+
+</div>
 
 <div class="stats-grid">
 
 <div class="stat-card">
 
-<h2>
+<h3>
 
 20+
 
-</h2>
+</h3>
 
 <p>
 
@@ -1150,11 +1492,11 @@ Curriculum Studies
 
 <div class="stat-card">
 
-<h2>
+<h3>
 
 1,000+
 
-</h2>
+</h3>
 
 <p>
 
@@ -1166,11 +1508,11 @@ Hands On Activities
 
 <div class="stat-card">
 
-<h2>
+<h3>
 
 500+
 
-</h2>
+</h3>
 
 <p>
 
@@ -1182,11 +1524,11 @@ Printable Resources
 
 <div class="stat-card">
 
-<h2>
+<h3>
 
 100+
 
-</h2>
+</h3>
 
 <p>
 
@@ -1198,10 +1540,12 @@ Lesson Plans
 
 </div>
 
-<!-- NEWSLETTER -->
+</div>
 
-<!-- ==========================================
-     JOIN THE LITTLE EXPLORERS COMMUNITY
+</section>
+
+     <!-- ==========================================
+     NEWSLETTER
 ========================================== -->
 
 <section class="newsletter">
@@ -1214,25 +1558,25 @@ Lesson Plans
 
 <span class="newsletter-tag">
 
-🍎 LITTLE EXPLORERS COMMUNITY
+Join the Little Explorers Community
 
 </span>
 
 <h2>
 
-Discover New Studies Every Month
+Never Miss a New Curriculum Study
 
 </h2>
 
 <p>
 
-Join thousands of Early Head Start, Head Start, Preschool, and Pre Kindergarten educators receiving curriculum studies, lesson plans, printable resources, classroom activities, teaching tips, family engagement ideas, and updates whenever new custom resources become available.
+Receive updates whenever new curriculum studies, printable resources, lesson plans, classroom activities, and teaching ideas are added to Little Explorers Learning Hub.
 
 </p>
 
 <div class="newsletter-benefits">
 
-<div>🌳 Curriculum Studies</div>
+<div>🌳 New Curriculum Studies</div>
 
 <div>📅 Weekly Lesson Plans</div>
 
@@ -1240,9 +1584,9 @@ Join thousands of Early Head Start, Head Start, Preschool, and Pre Kindergarten 
 
 <div>🎨 Classroom Activities</div>
 
-<div>⭐ Teaching Tips</div>
+<div>📚 Teaching Tips</div>
 
-<div>🎨 Custom Resources</div>
+<div>⭐ Exclusive Updates</div>
 
 </div>
 
@@ -1270,12 +1614,6 @@ target="hidden_iframe">
 
 <div class="input-group">
 
-<span class="input-icon">
-
-✉️
-
-</span>
-
 <input
 type="email"
 name="YOUR_ENTRY_ID"
@@ -1286,7 +1624,7 @@ required>
 
 <button type="submit">
 
-Join the Community →
+Join the Community
 
 </button>
 
@@ -1294,7 +1632,7 @@ Join the Community →
 
 <small>
 
-Receive new studies and classroom ideas every week.
+Receive updates whenever new studies become available.
 
 </small>
 
@@ -1311,13 +1649,17 @@ style="display:none;">
 
 </section>
 
-<!-- FOOTER -->
+</main>
 
-<footer>
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="site-footer">
 
 <div class="container footer-grid">
 
-<div>
+<div class="footer-about">
 
 <h3>
 
@@ -1327,7 +1669,7 @@ Little Explorers Learning Hub
 
 <p>
 
-Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten teachers create engaging learning experiences through affordable curriculum studies, lesson plans, printable resources, and classroom activities.
+Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten educators create engaging learning experiences through curriculum studies, lesson plans, printable resources, and classroom activities.
 
 </p>
 
@@ -1337,7 +1679,7 @@ Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten teachers c
 
 <h4>
 
-Studies
+Curriculum Studies
 
 </h4>
 
@@ -1361,7 +1703,7 @@ Studies
 
 <h4>
 
-Explore
+Resources
 
 </h4>
 
