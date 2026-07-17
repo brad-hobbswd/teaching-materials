@@ -1040,7 +1040,7 @@ section{
 
     align-items:flex-start;
 
-    gap:1rem;
+    gap:.75rem;
 
     padding:1.35rem;
 
@@ -1049,8 +1049,6 @@ section{
     border-radius:18px;
 
     border:1px solid var(--border);
-
-    transition:var(--transition);
 
 }
 
@@ -1062,14 +1060,9 @@ section{
 
 }
 
-.highlight-item>span{
-
-    width:56px;
-    height:56px;
+.highlight-item > span{
 
     flex-shrink:0;
-
-    border-radius:16px;
 
     display:flex;
 
@@ -1077,15 +1070,16 @@ section{
 
     justify-content:center;
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
+    font-size:2rem;
 
-    color:#fff;
+    background:none;
 
-    font-size:1.4rem;
+    width:auto;
+    height:auto;
+
+    border-radius:0;
+
+    box-shadow:none;
 
 }
 
@@ -1618,131 +1612,70 @@ section{
 }
 
 /* =====================================================
-   STATISTICS
+   SITE STATISTICS
 ===================================================== */
 
-.statistics{
-
+.site-stats{
     background:#f3f8f3;
-
 }
 
-.statistics-grid{
-
+.stats-grid{
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
+    grid-template-columns:repeat(4,1fr);
     gap:2rem;
-
+    margin-top:3rem;
 }
 
 .stat-card{
-
     background:#fff;
-
-    text-align:center;
-
-    padding:2.75rem 2rem;
-
-    border-radius:24px;
-
     border:1px solid var(--border);
-
+    border-radius:24px;
+    padding:2.75rem 2rem;
+    text-align:center;
     box-shadow:var(--shadow-sm);
-
     transition:var(--transition);
-
-}
-
-.stat-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:var(--shadow-lg);
-
-}
-
-.stat-number{
-
-    display:block;
-
-    font-family:"Nunito",sans-serif;
-
-    font-size:3rem;
-
-    font-weight:800;
-
-    color:var(--primary);
-
-    margin-bottom:.5rem;
-
-    line-height:1;
-
-}
-
-.stat-label{
-
-    display:block;
-
-    font-weight:700;
-
-    color:var(--text-dark);
-
-    margin-bottom:.75rem;
-
-}
-
-.stat-card p{
-
-    font-size:.95rem;
-
-    line-height:1.7;
-
-}
-
-/* =====================================================
-   OPTIONAL COUNT-UP ANIMATION
-===================================================== */
-
-.stat-card{
-
     position:relative;
-
     overflow:hidden;
-
 }
 
 .stat-card::before{
-
     content:"";
-
     position:absolute;
-
-    left:0;
     top:0;
-
+    left:0;
     width:100%;
     height:4px;
-
     background:linear-gradient(
         90deg,
         var(--primary),
         var(--secondary)
     );
-
     transform:scaleX(0);
-
-    transition:.35s;
-
     transform-origin:left;
+    transition:.35s;
+}
 
+.stat-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-lg);
 }
 
 .stat-card:hover::before{
-
     transform:scaleX(1);
+}
 
+.stat-card h3{
+    font-family:"Nunito",sans-serif;
+    font-size:3rem;
+    color:var(--primary);
+    margin-bottom:.5rem;
+    line-height:1;
+}
+
+.stat-card p{
+    color:var(--text-dark);
+    font-weight:600;
+    margin:0;
 }
 
 /* =====================================================
@@ -1961,8 +1894,8 @@ select:focus-visible{
     }
 
     .hero-highlights,
-    .featured-highlights,
-    .statistics-grid{
+.featured-highlights,
+.stats-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
@@ -2017,8 +1950,8 @@ select:focus-visible{
 @media (max-width:600px){
 
     .hero-highlights,
-    .featured-highlights,
-    .statistics-grid{
+.featured-highlights,
+.stats-grid{
         grid-template-columns:1fr;
     }
 
