@@ -1924,10 +1924,17 @@ section{
 
 
 .footer-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    grid-template-columns:minmax(360px, 2fr) 1fr 1fr 1fr;
+
     gap:3rem;
+
     margin-bottom:3rem;
+
+    align-items:start;
+
 }
 
 .site-footer h3,
