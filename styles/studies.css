@@ -1579,94 +1579,51 @@ section{
 
 }
 
+/* White heading */
 .custom-study-content h2{
-
     color:#fff;
-
-    margin-bottom:1.25rem;
-
 }
 
+/* White paragraph */
 .custom-study-content p{
-
-    color:rgba(255,255,255,.92);
-
-    max-width:720px;
-
-    line-height:1.8;
-
-    margin-bottom:2rem;
-
+    color:rgba(255,255,255,.96);
 }
 
-.custom-study-features{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,minmax(180px,1fr));
-
-    gap:1rem;
-
-}
-
+/* White list text */
 .custom-study-features li{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:.75rem;
-
-    padding:.9rem 1rem;
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(6px);
-
+    color:#fff;
+    font-weight:600;
 }
 
+/* White text inside each feature */
+.custom-study-features li span,
+.custom-study-features li strong,
+.custom-study-features li p{
+    color:#fff;
+}
+
+/* Gold icon */
 .custom-study-features i,
 .custom-study-features svg{
-
     color:var(--secondary);
-
-    font-size:1.1rem;
-
 }
 
-.custom-study-action{
-
-    position:relative;
-    z-index:2;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-}
-
-.custom-study-action .btn{
-
-    background:#fff;
-
-    color:var(--primary);
-
-    min-width:230px;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-}
-
-.custom-study-action .btn:hover{
-
-    background:var(--secondary);
-
+/* Make all links white if any exist */
+.custom-study a{
     color:#fff;
+}
 
+/* Buttons */
+.custom-study .btn-secondary{
+    background:#fff;
+    color:var(--primary);
+    border-color:#fff;
+}
+
+.custom-study .btn-secondary:hover{
+    background:var(--secondary);
+    border-color:var(--secondary);
+    color:#fff;
 }
 
 /* =====================================================
