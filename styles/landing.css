@@ -1,142 +1,250 @@
-/* Landing Page Styles */
-body.landing-page {
-    font-family: 'Inter', sans-serif;
-    background: #fdfcf9;
-    color: #222;
-    margin: 0;
-    padding: 0;
+/* ==============================
+   Landing Page Styles
+============================== */
+
+/* Root colors */
+:root {
+  --primary-blue: #2f80ed;
+  --secondary-gray: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --text-light: #555555;
+  --footer-bg: #2f80ed;
+  --footer-text: #ffffff;
+  --btn-radius: 6px;
+  --container-width: 1200px;
+  --spacing: 1.5rem;
 }
 
+/* Global */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--secondary-gray);
+  margin: 0;
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text-dark);
+  margin: 0 0 1rem 0;
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
 header {
-    background-color: #ffcb05; /* Head Start yellow */
-    padding: 10px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #1a3e5b;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-header .logo span {
-    font-weight: 600;
-    color: #1a3e5b;
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-text {
+  margin-left: 10px;
+}
+
+.logo-text h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.logo-text span {
+  font-size: 0.95rem;
+  color: #27ae60;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    color: #1a3e5b;
-    text-decoration: none;
-    font-weight: 600;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
 }
 
 nav ul li a.active {
-    color: #ff6f00;
+  font-weight: bold;
 }
 
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+}
+
+/* HERO */
 .hero.landing-hero {
-    background-color: #1a3e5b;
-    color: #fff;
-    text-align: center;
-    padding: 80px 20px;
+  background: linear-gradient(to bottom, #e6f2f9, #ffffff);
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.hero-buttons a {
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: 700;
-    margin: 5px;
-    display: inline-block;
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: var(--btn-radius);
+  font-weight: 600;
+  transition: 0.3s ease;
+  display: inline-block;
 }
 
 .btn-primary {
-    background-color: #ffcb05;
-    color: #1a3e5b;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1f5bb5;
 }
 
 .btn-secondary {
-    background-color: #fff;
-    color: #1a3e5b;
-    border: 2px solid #1a3e5b;
+  background-color: #ffffff;
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+}
+
+/* FEATURED CARDS */
+.featured-sections {
+  padding: 60px 0;
+}
+
+.section-header h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.card {
-    display: block;
-    background-color: #fff;
-    color: #1a3e5b;
-    text-decoration: none;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.cards-grid .card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+.cards-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-    background-color: #ffcb05;
-    color: #1a3e5b;
-    padding: 20px 0;
-    font-weight: 600;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 60px 0 30px 0;
 }
 
 footer a {
-    color: #1a3e5b;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+  color: var(--footer-text);
+  display: block;
+  margin-bottom: 8px;
 }
 
 .footer-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 15px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
 }
 
-/* Responsive */
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
 
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  nav ul {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
 }
