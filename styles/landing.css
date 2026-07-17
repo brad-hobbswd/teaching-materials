@@ -338,23 +338,21 @@ header{
 ========================================== */
 
 .search-bar{
-
     display:flex;
+    align-items:stretch;
 
-    align-items:center;
-
-    flex:1;
-
+    width:100%;
     max-width:420px;
 
-    border:1px solid var(--border);
+    height:52px;
 
     background:#fff;
+
+    border:1px solid var(--border);
 
     border-radius:999px;
 
     overflow:hidden;
-
 }
 
 .search-bar input{
@@ -363,9 +361,11 @@ header{
 
     border:none;
 
-    padding:15px 18px;
+    padding:0 18px;
 
-    background:transparent;
+    font-size:.95rem;
+
+    background:#fff;
 
     outline:none;
 
@@ -375,13 +375,33 @@ header{
 
     width:58px;
 
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     border:none;
 
     background:var(--primary);
 
     color:#fff;
 
+    padding:0;
+
+    margin:0;
+
+    border-radius:0;
+
     cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.search-bar button:hover{
+
+    background:var(--primary-dark);
 
 }
 
