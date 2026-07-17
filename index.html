@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Little Explorers Learning Hub</title>
 <meta name="description" content="Affordable lesson plans, classroom activities, printables, and teaching resources for Early Head Start, Head Start, Preschool, and Pre-K educators.">
+<meta name="keywords" content="Head Start, Early Head Start, Preschool, Pre-K, Lesson Plans, Classroom Activities, Teaching Resources">
+<meta name="author" content="Little Explorers Team">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://brad-hobbswd.github.io/teaching-materials/styles/landing.css">
+
+<link rel="stylesheet" href="styles/landing.css">
 </head>
+
 <body class="landing-page">
 
 <!-- HEADER -->
@@ -20,35 +28,38 @@
         <span>Learning Hub</span>
       </div>
     </a>
+
     <form class="search-bar">
       <input type="search" placeholder="Search activities, studies, lesson plans, printables...">
       <button type="submit">🔍</button>
     </form>
+
     <nav>
       <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Studies</a></li>
-        <li><a href="#">Age Groups</a></li>
-        <li><a href="#">Lesson Plans</a></li>
-        <li><a href="#">Printables</a></li>
-        <li><a href="#">Teacher Resources</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="studies.html">Studies</a></li>
+        <li><a href="library/index.html">Age Groups</a></li>
+        <li><a href="teacher-resources.html">Lesson Plans</a></li>
+        <li><a href="printables.html">Printables</a></li>
+        <li><a href="teacher-resources.html">Teacher Resources</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+
     <button class="mobile-menu">☰</button>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-card">
-      <span class="eyebrow">Affordable • Hands-On • Teacher Created</span>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="eyebrow">Affordable • Hands On • Teacher Created</span>
       <h2>Every Child Learns Through Wonder</h2>
       <p>Helping Early Head Start, Head Start, Preschool, and Pre-K teachers create meaningful learning experiences using affordable, everyday classroom materials.</p>
       <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">Browse Studies</a>
-        <a href="#" class="btn btn-secondary">Explore Age Groups</a>
+        <a href="library/index.html" class="btn btn-primary">Browse Studies</a>
+        <a href="library/index.html" class="btn btn-secondary">Explore Age Groups</a>
       </div>
       <div class="hero-badges">
         <div>💲 Budget Friendly</div>
@@ -56,10 +67,13 @@
         <div>🧩 Easy Preparation</div>
       </div>
     </div>
+    <div class="hero-image">
+      <img src="images/hero.jpg" alt="Children exploring and learning together">
+    </div>
   </div>
 </section>
 
-<!-- AGE GROUPS -->
+<!-- AGE SECTION -->
 <section class="age-section">
   <div class="container">
     <div class="section-title">
@@ -67,10 +81,30 @@
       <p>Choose an age group to discover activities, lesson plans, studies, and classroom resources.</p>
     </div>
     <div class="age-grid">
-      <a href="#" class="age-card"><div class="age-icon">👶</div><h3>Early Head Start</h3><p>Birth to 3 Years</p><span>Explore →</span></a>
-      <a href="#" class="age-card"><div class="age-icon">🚂</div><h3>Head Start</h3><p>2 to 3 Years</p><span>Explore →</span></a>
-      <a href="#" class="age-card"><div class="age-icon">🎨</div><h3>Preschool</h3><p>3 to 4 Years</p><span>Explore →</span></a>
-      <a href="#" class="age-card"><div class="age-icon">🎓</div><h3>Pre-K</h3><p>4 to 5 Years</p><span>Explore →</span></a>
+      <a href="library/head-start/index.html" class="age-card">
+        <div class="age-icon">👶</div>
+        <h3>Early Head Start</h3>
+        <p>Birth to 3 Years</p>
+        <span>Explore →</span>
+      </a>
+      <a href="library/head-start/index.html" class="age-card">
+        <div class="age-icon">🚂</div>
+        <h3>Head Start</h3>
+        <p>2 to 3 Years</p>
+        <span>Explore →</span>
+      </a>
+      <a href="library/preschool/index.html" class="age-card">
+        <div class="age-icon">🎨</div>
+        <h3>Preschool</h3>
+        <p>3 to 4 Years</p>
+        <span>Explore →</span>
+      </a>
+      <a href="library/pre-k/index.html" class="age-card">
+        <div class="age-icon">🎓</div>
+        <h3>Pre-K</h3>
+        <p>4 to 5 Years</p>
+        <span>Explore →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -83,21 +117,44 @@
       <p>Project based investigations designed to spark curiosity, creativity, and hands-on learning.</p>
     </div>
     <div class="study-grid">
-      <article class="study-card"><img src="images/studies/balls.jpg" alt="Balls Study"><div class="study-content"><span class="study-tag blue">Movement</span><h3>Balls</h3><p>Investigate rolling, bouncing, measuring, comparing, and predicting using a variety of balls.</p><div class="study-footer"><span>💲 Free Materials</span><a href="#">Explore →</a></div></div></article>
-      <article class="study-card"><img src="images/studies/trees.jpg" alt="Trees Study"><div class="study-content"><span class="study-tag green">Nature</span><h3>Trees</h3><p>Explore leaves, bark, branches, seasons, habitats, and outdoor discovery.</p><div class="study-footer"><span>🌿 Outdoor Learning</span><a href="#">Explore →</a></div></div></article>
-      <article class="study-card"><img src="images/studies/buildings.jpg" alt="Buildings Study"><div class="study-content"><span class="study-tag orange">Engineering</span><h3>Buildings</h3><p>Build, stack, design, compare, and solve problems using recycled classroom materials.</p><div class="study-footer"><span>♻️ Recycled Supplies</span><a href="#">Explore →</a></div></div></article>
-      <article class="study-card"><img src="images/studies/water.jpg" alt="Water Study"><div class="study-content"><span class="study-tag aqua">Science</span><h3>Water</h3><p>Pour, splash, freeze, melt, measure, and discover the amazing properties of water.</p><div class="study-footer"><span>💧 STEM Learning</span><a href="#">Explore →</a></div></div></article>
-      <article class="study-card"><img src="images/studies/pets.jpg" alt="Pets Study"><div class="study-content"><span class="study-tag coral">Community</span><h3>Pets</h3><p>Learn how people care for pets while building empathy and responsibility.</p><div class="study-footer"><span>❤️ Social Emotional</span><a href="#">Explore →</a></div></div></article>
-      <article class="study-card"><img src="images/studies/clothes.jpg" alt="Clothes Study"><div class="study-content"><span class="study-tag purple">Daily Life</span><h3>Clothes</h3><p>Investigate clothing from different seasons, jobs, cultures, and weather conditions.</p><div class="study-footer"><span>👕 Dramatic Play</span><a href="#">Explore →</a></div></div></article>
+      <article class="study-card">
+        <img src="images/studies/balls.jpg" alt="Balls Study">
+        <div class="study-content">
+          <span class="study-tag blue">Movement</span>
+          <h3>Balls</h3>
+          <p>Investigate rolling, bouncing, measuring, comparing, and predicting using a variety of balls.</p>
+          <div class="study-footer"><span>💲 Free Materials</span><a href="#">Explore →</a></div>
+        </div>
+      </article>
+      <article class="study-card">
+        <img src="images/studies/trees.jpg" alt="Trees Study">
+        <div class="study-content">
+          <span class="study-tag green">Nature</span>
+          <h3>Trees</h3>
+          <p>Explore leaves, bark, branches, seasons, habitats, and outdoor discovery.</p>
+          <div class="study-footer"><span>🌿 Outdoor Learning</span><a href="#">Explore →</a></div>
+        </div>
+      </article>
+      <article class="study-card">
+        <img src="images/studies/buildings.jpg" alt="Buildings Study">
+        <div class="study-content">
+          <span class="study-tag orange">Engineering</span>
+          <h3>Buildings</h3>
+          <p>Build, stack, design, compare, and solve problems using recycled classroom materials.</p>
+          <div class="study-footer"><span>♻️ Recycled Supplies</span><a href="#">Explore →</a></div>
+        </div>
+      </article>
+      <!-- add other featured studies as needed -->
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="container footer-grid">
     <div>
       <h3>Little Explorers</h3>
-      <p>Helping teachers create meaningful learning experiences through affordable, hands-on activities.</p>
+      <p>Helping teachers create meaningful learning experiences through affordable, hands on activities.</p>
     </div>
     <div>
       <h4>Studies</h4>
