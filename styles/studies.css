@@ -1514,24 +1514,17 @@ section{
 }
 
 /* =====================================================
-   CUSTOM STUDY REQUEST
+   CUSTOM STUDY
 ===================================================== */
 
 .custom-study{
-    background:linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #f7faf7 100%
-    );
+    background:linear-gradient(180deg,#ffffff 0%,#f7faf7 100%);
 }
 
 .custom-study-card{
-
     display:grid;
-    grid-template-columns:1fr auto;
-
-    gap:3rem;
-
+    grid-template-columns:1fr 1fr;
+    gap:4rem;
     align-items:center;
 
     padding:4rem;
@@ -1542,88 +1535,105 @@ section{
         #5f9368
     );
 
-    color:#fff;
-
     border-radius:32px;
-
     overflow:hidden;
-
-    position:relative;
-
+    color:#fff;
     box-shadow:var(--shadow-lg);
-
 }
 
-.custom-study-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:340px;
-    height:340px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.08);
-
-    top:-120px;
-    right:-120px;
-
+.custom-image img{
+    width:100%;
+    border-radius:24px;
+    display:block;
 }
 
-.custom-study-content{
-
-    position:relative;
-    z-index:2;
-
-}
-
-/* White heading */
-.custom-study-content h2{
+.custom-content{
     color:#fff;
 }
 
-/* White paragraph */
-.custom-study-content p{
-    color:rgba(255,255,255,.96);
+.custom-content h2{
+    color:#fff;
+    margin:1rem 0;
 }
 
-/* White list text */
-.custom-study-features li{
+.custom-content p{
+    color:rgba(255,255,255,.95);
+    margin-bottom:1.5rem;
+    line-height:1.8;
+}
+
+.section-tag{
+    display:inline-block;
+
+    background:rgba(255,255,255,.18);
+
     color:#fff;
+
+    padding:.55rem 1.1rem;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    margin-bottom:1rem;
+}
+
+.custom-features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+    margin:2rem 0;
+}
+
+.custom-item{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+
+    padding:1rem;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.12);
+}
+
+.custom-item span{
+    font-size:1.5rem;
+}
+
+.custom-item p{
+    color:#fff;
+    margin:0;
     font-weight:600;
 }
 
-/* White text inside each feature */
-.custom-study-features li span,
-.custom-study-features li strong,
-.custom-study-features li p{
-    color:#fff;
+.custom-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
 }
 
-/* Gold icon */
-.custom-study-features i,
-.custom-study-features svg{
-    color:var(--secondary);
-}
-
-/* Make all links white if any exist */
-.custom-study a{
-    color:#fff;
-}
-
-/* Buttons */
-.custom-study .btn-secondary{
+.custom-buttons .btn-primary{
     background:#fff;
     color:var(--primary);
-    border-color:#fff;
 }
 
-.custom-study .btn-secondary:hover{
+.custom-buttons .btn-primary:hover{
     background:var(--secondary);
-    border-color:var(--secondary);
     color:#fff;
+}
+
+.custom-buttons .btn-secondary{
+    border:2px solid #fff;
+    color:#fff;
+    background:transparent;
+}
+
+.custom-buttons .btn-secondary:hover{
+    background:#fff;
+    color:var(--primary);
 }
 
 /* =====================================================
