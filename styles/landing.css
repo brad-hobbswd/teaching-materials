@@ -1,238 +1,240 @@
 /* ==============================
-   Landing Page Styles
+   Landing Page CSS
 ============================== */
 
-/* Base page styles */
-body.landing-page {
-    font-family: 'Inter', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-/* ==============================
-   Header / Navigation
-============================== */
+body.landing-page {
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
 header {
-    background-color: #1e73be; /* Head Start blue */
-    color: #fff;
-    padding: 15px 0;
+  background-color: #ffffff;
+  padding: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
 }
 
 header .logo img {
-    width: 60px;
-    height: auto;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
 }
 
 header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
 header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 6px 8px;
-    transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: color 0.2s;
 }
 
 header nav ul li a.active,
 header nav ul li a:hover {
-    background-color: #145a8a;
-    border-radius: 4px;
+  color: #e94e1b; /* Head Start Orange color */
 }
 
 /* Mobile menu button */
-header .mobile-menu {
-    display: none;
+button.mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
 }
 
-/* ==============================
-   Hero Section
-============================== */
-.hero.landing-hero {
-    background-color: #e3f2fd; /* light blue */
-    text-align: center;
-    padding: 60px 20px 40px;
-    position: relative;
+/* Hero Section */
+.landing-hero {
+  background: #ffd600 url('https://brad-hobbswd.github.io/teaching-materials/library/images/hero-image.png') no-repeat center bottom;
+  background-size: cover;
+  text-align: center;
+  padding: 80px 20px;
+  color: #101b2b; /* Dark blue for contrast */
 }
 
-.hero.landing-hero h1 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #1e73be;
+.landing-hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
 }
 
-.hero.landing-hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #222;
+.landing-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-.hero.landing-hero .hero-buttons a {
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: 600;
-    margin: 0 10px;
-    display: inline-block;
-    transition: background 0.3s;
+.hero-buttons a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin: 5px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.hero.landing-hero .btn-primary {
-    background-color: #1e73be;
-    color: #fff;
+.hero-buttons .btn-primary {
+  background-color: #e94e1b;
+  color: #fff;
 }
 
-.hero.landing-hero .btn-primary:hover {
-    background-color: #145a8a;
+.hero-buttons .btn-primary:hover {
+  background-color: #c63e16;
 }
 
-.hero.landing-hero .btn-secondary {
-    background-color: #fff;
-    color: #1e73be;
-    border: 2px solid #1e73be;
+.hero-buttons .btn-secondary {
+  background-color: #101b2b;
+  color: #fff;
 }
 
-.hero.landing-hero .btn-secondary:hover {
-    background-color: #1e73be;
-    color: #fff;
+.hero-buttons .btn-secondary:hover {
+  background-color: #0a0f16;
 }
 
-.hero-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 30px;
-    border-radius: 12px;
+/* Featured Sections */
+.featured-sections .section-header {
+  text-align: center;
+  margin: 50px 0 25px;
 }
 
-/* ==============================
-   Featured Sections / Cards
-============================== */
-.featured-sections {
-    padding: 60px 20px;
-    background-color: #fff;
+.featured-sections h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #101b2b;
+  margin-bottom: 10px;
 }
 
-.section-header h2 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 2rem;
-    color: #1e73be;
-    margin-bottom: 10px;
-}
-
-.section-header p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-    color: #555;
+.featured-sections p {
+  font-size: 1rem;
+  color: #555;
 }
 
 /* Cards Grid */
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
 }
 
 .cards-grid .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #e3f2fd;
-    color: #1e73be;
-    padding: 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #222;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cards-grid .card img {
-    max-width: 80px;
-    margin-bottom: 15px;
+  max-width: 100px;
+  margin-bottom: 15px;
 }
 
 .cards-grid .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* ==============================
-   Footer
-============================== */
+/* Footer */
 footer {
-    background-color: #1e73be;
-    color: #fff;
-    padding: 40px 20px;
+  background-color: #101b2b;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 0.9rem;
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
+footer .footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer .footer-column h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.footer-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
-    margin-bottom: 20px;
+footer .footer-column a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 6px;
 }
 
-.footer-column h4 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    margin-bottom: 10px;
+footer .footer-column a:hover {
+  text-decoration: underline;
 }
 
-.footer-bottom {
-    text-align: center;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    padding-top: 15px;
+footer .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #ccc;
 }
 
-/* ==============================
-   Responsive
-============================== */
-@media (max-width: 900px) {
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+/* Responsive */
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+  button.mobile-menu {
+    display: block;
+  }
 
-    .cards-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 
-@media (max-width: 600px) {
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
+  .landing-hero h1 {
+    font-size: 2rem;
+  }
 
-    .hero.landing-hero h1 {
-        font-size: 2rem;
-    }
+  .landing-hero p {
+    font-size: 1rem;
+  }
 }
