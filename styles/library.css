@@ -333,9 +333,9 @@ HEADER
 
     align-items:center;
 
-    min-height:92px;
+    min-height:84px;
 
-    gap:3rem;
+    gap:2.5rem;
 
 }
 
@@ -345,30 +345,51 @@ HEADER
 
     align-items:center;
 
-    gap:14px;
+    gap:12px;
 
-    white-space:nowrap;
+    flex-shrink:0;
 
 }
 
 .logo img{
 
-    width:60px;
-    height:60px;
+    width:58px;
+
+    height:58px;
+
+}
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    line-height:1.15;
 
 }
 
 .logo-title{
 
-    font-size:1.35rem;
+    font-family:"Nunito",sans-serif;
 
-    line-height:1.1;
+    font-size:1rem;
+
+    font-weight:800;
+
+    color:var(--primary-dark);
 
 }
 
 .logo-subtitle{
 
-    font-size:.92rem;
+    font-size:.82rem;
+
+    font-weight:600;
+
+    color:var(--primary);
 
 }
 
@@ -380,23 +401,23 @@ HEADER
 
     align-items:center;
 
-    gap:1.75rem;
-
-    min-width:0;
+    gap:2rem;
 
 }
 
 .main-nav a{
 
-    white-space:nowrap;
-
     position:relative;
 
-    padding:.4rem 0;
+    white-space:nowrap;
 
-    font-size:.98rem;
+    font-size:1rem;
 
     font-weight:600;
+
+    color:var(--text);
+
+    padding:.5rem 0;
 
 }
 
@@ -406,13 +427,13 @@ HEADER
 
     position:absolute;
 
-    left:0;
-    right:0;
-    bottom:-12px;
+    left:50%;
+
+    bottom:-10px;
+
+    transform:translateX(-50%);
 
     width:0;
-
-    margin:auto;
 
     height:3px;
 
@@ -420,7 +441,7 @@ HEADER
 
     background:var(--primary);
 
-    transition:.3s;
+    transition:width .3s ease;
 
 }
 
@@ -433,15 +454,23 @@ HEADER
 
 .search-btn{
 
+    width:36px;
+
+    height:36px;
+
     display:flex;
 
     align-items:center;
 
-    justify-content:flex-end;
+    justify-content:center;
 
-    width:44px;
+}
 
-    height:44px;
+.search-btn svg{
+
+    width:18px;
+
+    height:18px;
 
 }
 
