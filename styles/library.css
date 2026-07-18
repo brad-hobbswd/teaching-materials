@@ -153,8 +153,8 @@ section{
 
 .container{
 
-    width:min(100% - 2rem,var(--container));
-    margin-inline:auto;
+    width:min(92%,var(--container));
+    margin:auto;
 
 }
 
@@ -303,25 +303,29 @@ button,
 }
 
 
-/*=========================================
+/*==========================================================
 HEADER
-=========================================*/
+==========================================================*/
 
 .site-header{
 
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:999;
 
-    background:#ffffff;
+    background:rgba(255,255,255,.95);
 
-    border-bottom:1px solid #e8ecef;
+    backdrop-filter:blur(16px);
 
-    box-shadow:0 2px 14px rgba(0,0,0,.04);
+    border-bottom:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
 
 }
 
 .header-row{
+
+    min-height:90px;
 
     display:flex;
 
@@ -329,9 +333,7 @@ HEADER
 
     justify-content:space-between;
 
-    min-height:88px;
-
-    gap:2rem;
+    gap:28px;
 
 }
 
@@ -341,18 +343,15 @@ HEADER
 
     align-items:center;
 
-    gap:1rem;
+    gap:15px;
 
     flex-shrink:0;
-
-    text-decoration:none;
 
 }
 
 .logo img{
 
     width:64px;
-
     height:64px;
 
     object-fit:contain;
@@ -365,43 +364,45 @@ HEADER
 
     flex-direction:column;
 
-    line-height:1.15;
-
 }
 
 .logo-title{
 
     font-family:"Nunito",sans-serif;
 
-    font-size:1.9rem;
+    font-size:1.45rem;
 
     font-weight:800;
 
     color:var(--primary-dark);
 
+    line-height:1.1;
+
 }
 
 .logo-subtitle{
 
-    margin-top:.25rem;
+    color:var(--primary);
 
-    font-size:1rem;
+    font-size:.95rem;
 
     font-weight:700;
-
-    color:var(--primary);
 
 }
 
 .main-nav{
 
+    margin-left:auto;
+
+}
+
+.main-nav ul{
+
     display:flex;
 
     align-items:center;
 
-    gap:1.6rem;
-
-    margin-left:auto;
+    gap:24px;
 
 }
 
@@ -409,19 +410,29 @@ HEADER
 
     position:relative;
 
-    color:var(--text);
+    display:inline-flex;
 
-    font-size:.98rem;
+    align-items:center;
+
+    padding:6px 0;
+
+    font-size:.95rem;
 
     font-weight:600;
 
-    text-decoration:none;
+    color:var(--text);
 
-    transition:color .25s ease;
+    transition:var(--transition);
 
 }
 
 .main-nav a:hover{
+
+    color:var(--primary);
+
+}
+
+.main-nav a.active{
 
     color:var(--primary);
 
@@ -435,13 +446,13 @@ HEADER
 
     left:0;
 
-    bottom:-10px;
+    bottom:-6px;
 
     width:0;
 
     height:3px;
 
-    border-radius:20px;
+    border-radius:999px;
 
     background:var(--primary);
 
@@ -457,13 +468,11 @@ HEADER
 
 }
 
-.main-nav a.active{
-
-    color:var(--primary-dark);
-
-}
-
 .search-btn{
+
+    width:44px;
+
+    height:44px;
 
     display:flex;
 
@@ -471,23 +480,13 @@ HEADER
 
     justify-content:center;
 
-    width:42px;
+    margin-left:20px;
 
-    height:42px;
+    border-radius:50%;
 
-    margin-left:1rem;
+    color:var(--text);
 
-    background:none;
-
-    border:none;
-
-    color:#2c3642;
-
-    cursor:pointer;
-
-    transition:
-        color .25s ease,
-        transform .25s ease;
+    transition:var(--transition);
 
 }
 
@@ -501,9 +500,11 @@ HEADER
 
 .search-btn:hover{
 
-    color:var(--primary);
+    background:var(--primary);
 
-    transform:scale(1.08);
+    color:#fff;
+
+    transform:translateY(-2px);
 
 }
 
@@ -1925,7 +1926,7 @@ button:hover{
 
         justify-content:center;
 
-        padding:1rem 0;
+        padding:18px 0;
 
     }
 
@@ -1941,11 +1942,21 @@ button:hover{
 
         width:100%;
 
+        margin:0;
+
+    }
+
+    .main-nav ul{
+
         justify-content:center;
 
         flex-wrap:wrap;
 
-        gap:1rem 1.5rem;
+        gap:18px 24px;
+
+    }
+
+    .search-btn{
 
         margin:0;
 
@@ -1966,66 +1977,39 @@ button:hover{
 
     }
 
-    .header-row{
-
-        gap:1rem;
-
-    }
-
-    .logo{
-
-        justify-content:center;
-
-        width:100%;
-
-    }
-
     .logo img{
 
-        width:56px;
+        width:52px;
 
-        height:56px;
+        height:52px;
 
     }
 
     .logo-title{
 
-        font-size:1.5rem;
+        font-size:1.2rem;
 
     }
 
     .logo-subtitle{
 
-        font-size:.9rem;
+        font-size:.85rem;
 
     }
 
-    .main-nav{
+    .main-nav ul{
 
-        width:100%;
-
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-        gap:.85rem 1rem;
+        gap:14px;
 
     }
 
     .main-nav a{
 
-        font-size:.92rem;
-
-    }
-
-    .search-btn{
-
-        display:none;
+        font-size:.9rem;
 
     }
 
 }
-
 
 /*==========================================================
   SMALL PHONES
