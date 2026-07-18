@@ -314,9 +314,7 @@ HEADER
     top:0;
     z-index:999;
 
-    background:rgba(255,255,255,.95);
-
-    backdrop-filter:blur(16px);
+    background:#fff;
 
     border-bottom:1px solid var(--border);
 
@@ -330,14 +328,14 @@ HEADER
 
     grid-template-columns:
         auto
-        minmax(0,1fr)
+        1fr
         auto;
 
     align-items:center;
 
-    min-height:90px;
+    min-height:92px;
 
-    column-gap:2rem;
+    gap:3rem;
 
 }
 
@@ -347,9 +345,9 @@ HEADER
 
     align-items:center;
 
-    gap:.85rem;
+    gap:14px;
 
-    flex-shrink:0;
+    white-space:nowrap;
 
 }
 
@@ -358,27 +356,11 @@ HEADER
     width:60px;
     height:60px;
 
-    object-fit:contain;
-
-}
-
-.logo-text{
-
-    display:flex;
-    font-size:1.35rem;
-    flex-direction:column;
-
 }
 
 .logo-title{
 
-    font-family:"Nunito",sans-serif;
-
-     font-size:.9rem;
-
-    font-weight:800;
-
-    color:var(--primary-dark);
+    font-size:1.35rem;
 
     line-height:1.1;
 
@@ -386,21 +368,11 @@ HEADER
 
 .logo-subtitle{
 
-    color:var(--primary);
-
-    font-size:.95rem;
-
-    font-weight:700;
+    font-size:.92rem;
 
 }
 
 .main-nav{
-
-    width:100%;
-
-}
-
-.main-nav ul{
 
     display:flex;
 
@@ -408,41 +380,23 @@ HEADER
 
     align-items:center;
 
-    gap:2rem;
+    gap:1.75rem;
 
-    width:100%;
+    min-width:0;
 
 }
 
 .main-nav a{
 
+    white-space:nowrap;
+
     position:relative;
 
-    display:inline-flex;
+    padding:.4rem 0;
 
-    align-items:center;
-
-    padding:6px 0;
-
-    font-size:.95rem;
+    font-size:.98rem;
 
     font-weight:600;
-
-    color:var(--text);
-
-    transition:var(--transition);
-
-}
-
-.main-nav a:hover{
-
-    color:var(--primary);
-
-}
-
-.main-nav a.active{
-
-    color:var(--primary);
 
 }
 
@@ -453,10 +407,12 @@ HEADER
     position:absolute;
 
     left:0;
-
-    bottom:-10px;
+    right:0;
+    bottom:-12px;
 
     width:0;
+
+    margin:auto;
 
     height:3px;
 
@@ -464,12 +420,11 @@ HEADER
 
     background:var(--primary);
 
-    transition:width .3s ease;
+    transition:.3s;
 
 }
 
 .main-nav a:hover::after,
-
 .main-nav a.active::after{
 
     width:100%;
@@ -478,41 +433,15 @@ HEADER
 
 .search-btn{
 
-    width:44px;
-
-    height:44px;
-
     display:flex;
 
     align-items:center;
 
-    justify-content:center;
+    justify-content:flex-end;
 
-     margin-left:2.25rem;
+    width:44px;
 
-    border-radius:50%;
-
-    color:var(--text);
-
-    transition:var(--transition);
-
-}
-
-.search-btn svg{
-
-    width:22px;
-
-    height:22px;
-
-}
-
-.search-btn:hover{
-
-    background:var(--primary);
-
-    color:#fff;
-
-    transform:translateY(-2px);
+    height:44px;
 
 }
 
