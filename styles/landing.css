@@ -460,6 +460,58 @@ header{
 }
 
 /* ==========================================
+   HEADER ACTIONS
+========================================== */
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-left:20px;
+    flex-shrink:0;
+}
+
+.search-toggle{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:transparent;
+    color:var(--text);
+    transition:var(--transition);
+}
+
+.search-toggle:hover{
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.mobile-menu{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    padding:0;
+    margin:0;
+    border:none;
+    border-radius:12px;
+    background:var(--primary);
+    color:#fff;
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.mobile-menu:hover{
+    background:var(--primary-dark);
+}
+
+/* ==========================================
    HERO
 ========================================== */
 
@@ -1641,22 +1693,16 @@ footer{
 }
 
 
-@media (max-width:900px){
-
-.search-bar{
-
-    display:none;
-
-}
+@media (max-width:1100px){
 
 .main-nav{
     display:none;
 }
 
 .mobile-menu{
-
-    display:block;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .age-grid,
