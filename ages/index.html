@@ -30,6 +30,9 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@600;700;800&display=swap"
     rel="stylesheet">
+    
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <link
     rel="stylesheet"
@@ -49,126 +52,62 @@
 
         <a href="../index.html" class="logo">
 
-            <img
-                src="../logo.png"
-                alt="Little Explorers Learning Hub Logo">
+            <img src="../logo.png" alt="Little Explorers Learning Hub Logo">
 
             <div class="logo-text">
-
                 <h1>Little Explorers</h1>
-
                 <span>Learning Hub</span>
-
             </div>
 
         </a>
 
-        <form
-            class="search-bar"
-            role="search">
-
-            <input
-                type="search"
-                placeholder="Search activities, lesson plans, studies..."
-                aria-label="Search the website">
-
-            <button
-                type="submit"
-                aria-label="Search">
-
-                🔍
-
-            </button>
-
-        </form>
-
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Primary Navigation">
 
             <ul>
 
-                <li>
+                <li><a href="../index.html">Home</a></li>
 
-                    <a href="../index.html">
+                <li><a href="../studies.html">Studies</a></li>
 
-                        Home
+                <li><a href="../library/index.html">Library</a></li>
 
-                    </a>
+                <li><a href="index.html" class="active">Age Groups</a></li>
 
-                </li>
+                <li><a href="../lesson-plans.html">Lesson Plans</a></li>
 
-                <li>
+                <li><a href="../printables.html">Printables</a></li>
 
-                    <a href="../studies.html">
+                <li><a href="../resources.html">Teacher Resources</a></li>
 
-                        Studies
+                <li><a href="../about.html">About</a></li>
 
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a
-                        href="index.html"
-                        class="active">
-
-                        Age Groups
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../lesson-plans.html">
-
-                        Lesson Plans
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../printables.html">
-
-                        Printables
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../resources.html">
-
-                        Teacher Resources
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../about.html">
-
-                        About
-
-                    </a>
-
-                </li>
+                <li><a href="../contact.html">Contact</a></li>
 
             </ul>
 
         </nav>
 
-        <button
-            class="mobile-menu"
-            aria-label="Open navigation">
+        <div class="header-actions">
 
-            ☰
+            <a href="../search.html"
+               class="search-toggle"
+               aria-label="Search">
 
-        </button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </a>
+
+            <button
+                class="mobile-menu"
+                type="button"
+                aria-label="Open Navigation"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
 
     </div>
 
