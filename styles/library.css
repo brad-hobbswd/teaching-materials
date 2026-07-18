@@ -153,9 +153,15 @@ section{
 
 .container{
 
-    width:min(96%,1440px);
+    width:min(92%,1280px);
+    margin:0 auto;
 
-    margin:auto;
+}
+
+/* Give only the header a little extra room */
+.site-header .container{
+
+    width:min(96%,1400px);
 
 }
 
