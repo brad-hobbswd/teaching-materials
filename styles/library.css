@@ -161,7 +161,7 @@ section{
 /* Give only the header a little extra room */
 .site-header .container{
 
-    width:min(96%,1400px);
+    width:min(94%,1320px);
 
 }
 
@@ -407,7 +407,9 @@ HEADER
 
     align-items:center;
 
-    gap:2rem;
+    gap:1.75rem;
+
+    flex:1;
 
 }
 
@@ -470,13 +472,15 @@ HEADER
 
     justify-content:center;
 
+    margin-left:.5rem;
+
 }
 
 .search-btn svg{
 
-    width:18px;
+    width:16px;
 
-    height:18px;
+    height:16px;
 
 }
 
