@@ -234,8 +234,8 @@ section{
 .logo{
     display:flex;
     align-items:center;
-    gap:16px;
-    flex:0 0 auto;
+    gap:18px;
+    flex-shrink:0;
 }
 
 .logo img{
@@ -252,16 +252,20 @@ section{
 
 .logo-text h1{
     margin:0;
-    font-size:1.45rem;
-    line-height:1.1;
+    font-size:1.5rem;
+    line-height:1.05;
+    font-weight:800;
+    letter-spacing:-.02em;
     white-space:nowrap;
 }
 
 .logo-text span{
-    margin-top:2px;
-    font-size:.95rem;
+    margin-top:4px;
+    font-size:.82rem;
     font-weight:700;
-    line-height:1;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--primary);
 }
 
 /*=====================================================
@@ -330,17 +334,20 @@ section{
 }
 
 .search-toggle{
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:12px;
+    border-radius:50%;
+    background:transparent;
+    transition:var(--transition);
 }
 
 .search-toggle:hover{
-    background:var(--primary-light);
-    color:var(--primary-dark);
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-2px);
 }
 
 /*=====================================================
