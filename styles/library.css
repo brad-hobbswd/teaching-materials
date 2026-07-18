@@ -303,9 +303,9 @@ button,
 }
 
 
-/*==========================================================
-  HEADER
-==========================================================*/
+/*=========================================
+HEADER
+=========================================*/
 
 .site-header{
 
@@ -313,64 +313,95 @@ button,
     top:0;
     z-index:1000;
 
-    background:rgba(255,255,255,.95);
+    background:#ffffff;
 
-    backdrop-filter:blur(18px);
+    border-bottom:1px solid #e8ecef;
 
-    border-bottom:1px solid var(--border);
+    box-shadow:0 2px 14px rgba(0,0,0,.04);
 
 }
 
-.nav-container{
+.header-row{
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     min-height:88px;
+
+    gap:2rem;
 
 }
 
 .logo{
 
     display:flex;
+
     align-items:center;
+
     gap:1rem;
 
-    font-weight:700;
+    flex-shrink:0;
+
+    text-decoration:none;
 
 }
 
 .logo img{
 
     width:64px;
+
     height:64px;
+
     object-fit:contain;
 
 }
 
-.logo-text h1{
-
-    font-size:1.3rem;
-    margin:0;
-
-}
-
-.logo-text span{
-
-    display:block;
-
-    color:var(--text-muted);
-
-    font-size:.9rem;
-
-}
-
-.main-nav ul{
+.logo-text{
 
     display:flex;
+
+    flex-direction:column;
+
+    line-height:1.15;
+
+}
+
+.logo-title{
+
+    font-family:"Nunito",sans-serif;
+
+    font-size:1.9rem;
+
+    font-weight:800;
+
+    color:var(--primary-dark);
+
+}
+
+.logo-subtitle{
+
+    margin-top:.25rem;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.main-nav{
+
+    display:flex;
+
     align-items:center;
-    gap:2rem;
+
+    gap:1.6rem;
+
+    margin-left:auto;
 
 }
 
@@ -380,14 +411,17 @@ button,
 
     color:var(--text);
 
+    font-size:.98rem;
+
     font-weight:600;
 
-    transition:color var(--transition);
+    text-decoration:none;
+
+    transition:color .25s ease;
 
 }
 
-.main-nav a:hover,
-.main-nav a.active{
+.main-nav a:hover{
 
     color:var(--primary);
 
@@ -400,56 +434,78 @@ button,
     position:absolute;
 
     left:0;
-    bottom:-8px;
+
+    bottom:-10px;
 
     width:0;
-    height:2px;
+
+    height:3px;
+
+    border-radius:20px;
 
     background:var(--primary);
 
-    transition:width var(--transition);
+    transition:width .3s ease;
 
 }
 
 .main-nav a:hover::after,
+
 .main-nav a.active::after{
 
     width:100%;
 
 }
 
-.header-actions{
+.main-nav a.active{
+
+    color:var(--primary-dark);
+
+}
+
+.search-btn{
 
     display:flex;
+
     align-items:center;
-    gap:.75rem;
+
+    justify-content:center;
+
+    width:42px;
+
+    height:42px;
+
+    margin-left:1rem;
+
+    background:none;
+
+    border:none;
+
+    color:#2c3642;
+
+    cursor:pointer;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
 
 }
 
-.search-toggle,
-.mobile-menu{
+.search-btn svg{
 
-    width:46px;
-    height:46px;
+    width:22px;
 
-    display:grid;
-    place-items:center;
-
-    border-radius:50%;
-
-    background:var(--surface-alt);
-
-    transition:all var(--transition);
+    height:22px;
 
 }
 
-.search-toggle:hover,
-.mobile-menu:hover{
+.search-btn:hover{
 
-    background:var(--primary-light);
+    color:var(--primary);
+
+    transform:scale(1.08);
 
 }
-
 
 /*==========================================================
   HERO
@@ -1861,34 +1917,41 @@ button:hover{
   TABLET
 ==========================================================*/
 
-@media (max-width:992px){
+@media (max-width:1100px){
+
+    .header-row{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        padding:1rem 0;
+
+    }
+
+    .logo{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
 
     .main-nav{
 
-        display:none;
+        width:100%;
 
-    }
+        justify-content:center;
 
-    .hero-stats{
+        flex-wrap:wrap;
 
-        grid-template-columns:repeat(2,1fr);
+        gap:1rem 1.5rem;
 
-    }
-
-    .membership-wrapper{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .footer-grid{
-
-        grid-template-columns:repeat(2,1fr);
+        margin:0;
 
     }
 
 }
-
 
 
 /*==========================================================
@@ -1897,60 +1960,71 @@ button:hover{
 
 @media (max-width:768px){
 
-    section{
+    .site-header{
 
-        padding:4rem 0;
-
-    }
-
-    .container{
-
-        width:min(100% - 1.5rem,var(--container));
+        position:relative;
 
     }
 
-    .library-search{
+    .header-row{
 
-        flex-direction:column;
-
-    }
-
-    .hero-stats{
-
-        grid-template-columns:1fr;
+        gap:1rem;
 
     }
 
-    .stats-grid{
+    .logo{
 
-        grid-template-columns:1fr;
+        justify-content:center;
 
-    }
-
-    .membership-features{
-
-        grid-template-columns:1fr;
+        width:100%;
 
     }
 
-    .footer-grid{
+    .logo img{
 
-        grid-template-columns:1fr;
+        width:56px;
 
-        gap:2.5rem;
+        height:56px;
 
     }
 
-    .footer-bottom{
+    .logo-title{
 
-        flex-direction:column;
+        font-size:1.5rem;
 
-        text-align:center;
+    }
+
+    .logo-subtitle{
+
+        font-size:.9rem;
+
+    }
+
+    .main-nav{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:.85rem 1rem;
+
+    }
+
+    .main-nav a{
+
+        font-size:.92rem;
+
+    }
+
+    .search-btn{
+
+        display:none;
 
     }
 
 }
-
 
 
 /*==========================================================
