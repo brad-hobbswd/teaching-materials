@@ -7,19 +7,22 @@ document.documentElement.classList.add("js");
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ======================================
-       Mobile Navigation
-    ====================================== */
+   Mobile Navigation
+====================================== */
 
-    const mobileButton = document.querySelector(".mobile-menu");
-const navigation = document.querySelector("nav");
+const mobileButton = document.querySelector(".mobile-menu");
+const navigation = document.querySelector(".main-nav");
 
 if (mobileButton && navigation) {
 
     mobileButton.addEventListener("click", () => {
 
-        navigation.classList.toggle("active");
+        navigation.classList.toggle("show");
 
-        mobileButton.classList.toggle("active");
+        mobileButton.setAttribute(
+            "aria-expanded",
+            navigation.classList.contains("show")
+        );
 
     });
 
@@ -99,50 +102,57 @@ if (newsletter) {
 }
 
     /* ======================================
-       Smooth Scroll
-    ====================================== */
+   Smooth Scroll
+====================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-        anchor.addEventListener("click", function(e) {
+    anchor.addEventListener("click", function (e) {
 
-            e.preventDefault();
+        const targetId = this.getAttribute("href");
 
-            const target = document.querySelector(this.getAttribute("href"));
+        if (targetId === "#") return;
 
-            if (target) {
+        const target = document.querySelector(targetId);
 
-                target.scrollIntoView({
+        if (!target) return;
 
-                    behavior: "smooth"
+        e.preventDefault();
 
-                });
-
-            }
-
+        target.scrollIntoView({
+            behavior: "smooth"
         });
 
     });
 
-    /* ======================================
+});
+
+   /* ======================================
    Search
 ====================================== */
 
-document.querySelectorAll(".search-bar").forEach(form => {
+document.querySelectorAll(".search-bar, .hero-search").forEach(search => {
 
-    form.addEventListener("submit", function(e){
+    const form = search.tagName === "FORM"
+        ? search
+        : search.closest("form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
-        const input = form.querySelector("input");
+        const input = form.querySelector('input[type="search"], input[type="text"]');
+
+        if (!input) return;
 
         const query = input.value.trim();
 
-        if(query !== ""){
+        if (query) {
 
             window.location.href =
-                "search.html?q=" +
-                encodeURIComponent(query);
+                "search.html?q=" + encodeURIComponent(query);
 
         }
 
