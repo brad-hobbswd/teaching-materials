@@ -410,70 +410,53 @@ header{
    NAVIGATION
 ========================================== */
 
-nav ul{
+.main-nav{
+    margin-left:auto;
+}
 
+.main-nav ul{
     display:flex;
-
     align-items:center;
-
     gap:24px;
-
+    list-style:none;
+    margin:0;
+    padding:0;
 }
 
-nav a{
-
+.main-nav a{
     position:relative;
-
+    display:inline-flex;
+    align-items:center;
+    padding:6px 0;
     font-weight:600;
-
     color:var(--text);
-
-    padding-bottom:6px;
-
-}
-
-nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:0;
-
-    width:0;
-
-    height:3px;
-
-    background:var(--primary);
-
-    border-radius:999px;
-
+    text-decoration:none;
     transition:var(--transition);
-
 }
 
-nav a:hover::after,
-nav a.active::after{
-
-    width:100%;
-
-}
-
-.mobile-menu{
-
-    display:none;
-
-    background:none;
-
-    border:none;
-
-    font-size:2rem;
-
-    cursor:pointer;
-
+.main-nav a:hover{
     color:var(--primary);
+}
 
+.main-nav a.active{
+    color:var(--primary);
+}
+
+.main-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:3px;
+    border-radius:999px;
+    background:var(--primary);
+    transition:width .30s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after{
+    width:100%;
 }
 
 /* ==========================================
@@ -1666,10 +1649,8 @@ footer{
 
 }
 
-nav{
-
+.main-nav{
     display:none;
-
 }
 
 .mobile-menu{
