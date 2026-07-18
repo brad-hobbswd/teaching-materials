@@ -330,14 +330,14 @@ HEADER
 
     grid-template-columns:
         auto
-        1fr
+        minmax(0,1fr)
         auto;
 
     align-items:center;
 
-    column-gap:3rem;
-
     min-height:90px;
+
+    column-gap:2rem;
 
 }
 
@@ -396,8 +396,7 @@ HEADER
 
 .main-nav{
 
-    margin-left:auto;
-    margin-right:2rem;
+    width:100%;
 
 }
 
@@ -405,9 +404,13 @@ HEADER
 
     display:flex;
 
+    justify-content:center;
+
     align-items:center;
 
-    gap:2.4rem;
+    gap:2rem;
+
+    width:100%;
 
 }
 
