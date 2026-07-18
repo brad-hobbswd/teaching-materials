@@ -222,9 +222,8 @@ section{
 .nav-container{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:2rem;
     min-height:90px;
+    gap:32px;
 }
 
 /*=====================================================
@@ -234,8 +233,8 @@ section{
 .logo{
     display:flex;
     align-items:center;
-    gap:1rem;
-    flex-shrink:0;
+    gap:16px;
+    flex:0 0 auto;
 }
 
 .logo img{
@@ -254,14 +253,13 @@ section{
     margin:0;
     font-size:1.45rem;
     line-height:1.1;
+    white-space:nowrap;
 }
 
 .logo-text span{
-    display:block;
-    margin-top:.15rem;
+    margin-top:2px;
     font-size:.95rem;
     font-weight:700;
-    color:var(--primary);
     line-height:1;
 }
 
@@ -270,23 +268,27 @@ section{
 =====================================================*/
 
 .main-nav{
-    margin-left:auto;
+    flex:1;
+    display:flex;
+    justify-content:center;
 }
 
 .main-nav ul{
     display:flex;
     align-items:center;
-    gap:1.5rem;
+    gap:34px;
+    margin:0;
+    padding:0;
 }
 
 .main-nav a{
     position:relative;
-    display:inline-flex;
+    display:flex;
     align-items:center;
-    padding:.35rem 0;
+    height:90px;
     font-weight:600;
     color:var(--text);
-    transition:var(--transition);
+    transition:.3s ease;
 }
 
 .main-nav a:hover{
@@ -301,12 +303,14 @@ section{
     content:"";
     position:absolute;
     left:0;
-    bottom:-10px;
+    right:0;
+    bottom:20px;
+    margin:auto;
     width:0;
     height:3px;
     border-radius:999px;
     background:var(--primary);
-    transition:width .3s ease;
+    transition:.3s ease;
 }
 
 .main-nav a:hover::after,
@@ -321,19 +325,18 @@ section{
 .header-actions{
     display:flex;
     align-items:center;
-    gap:1rem;
-    margin-left:1rem;
+    justify-content:flex-end;
+    flex:0 0 auto;
+    gap:12px;
 }
 
 .search-toggle{
+    width:42px;
+    height:42px;
     display:flex;
     align-items:center;
     justify-content:center;
-    width:46px;
-    height:46px;
-    border-radius:14px;
-    color:var(--primary);
-    transition:var(--transition);
+    border-radius:12px;
 }
 
 .search-toggle:hover{
