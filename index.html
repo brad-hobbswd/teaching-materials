@@ -29,7 +29,11 @@
      HEADER
 ========================================== -->
 
-<header>
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="site-header">
 
 <div class="container nav-container">
 
@@ -47,28 +51,15 @@
 
 </a>
 
-<form class="search-bar" action="search.html" method="get">
-
-<input
-type="search"
-name="q"
-placeholder="Search studies, lesson plans, printables, and classroom resources...">
-
-<button type="submit">
-
-🔍
-
-</button>
-
-</form>
-
-<nav>
+<nav class="main-nav">
 
 <ul>
 
 <li><a href="index.html" class="active">Home</a></li>
 
 <li><a href="studies.html">Studies</a></li>
+
+<li><a href="library/index.html">Library</a></li>
 
 <li><a href="ages/index.html">Age Groups</a></li>
 
@@ -80,11 +71,27 @@ placeholder="Search studies, lesson plans, printables, and classroom resources..
 
 <li><a href="about.html">About</a></li>
 
+<li><a href="contact.html">Contact</a></li>
+
 </ul>
 
 </nav>
 
-<button class="mobile-menu">
+<div class="header-actions">
+
+<a href="search.html"
+class="search-toggle"
+aria-label="Search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</a>
+
+<button
+class="mobile-menu"
+type="button"
+aria-label="Open Navigation"
+aria-expanded="false">
 
 ☰
 
@@ -92,8 +99,9 @@ placeholder="Search studies, lesson plans, printables, and classroom resources..
 
 </div>
 
-</header>
+</div>
 
+</header>
 <!-- ==========================================
      HERO
 ========================================== -->
