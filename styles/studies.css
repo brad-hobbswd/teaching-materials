@@ -282,12 +282,13 @@ section{
 
 .main-nav a{
     position:relative;
-    display:flex;
+    display:inline-flex;
     align-items:center;
-    height:90px;
+    padding:6px 0;
     font-weight:600;
     color:var(--text);
-    transition:.3s ease;
+    text-decoration:none;
+    transition:var(--transition);
 }
 
 .main-nav a:hover{
@@ -302,14 +303,12 @@ section{
     content:"";
     position:absolute;
     left:0;
-    right:0;
-    bottom:20px;
-    margin:auto;
+    bottom:-6px;
     width:0;
     height:3px;
     border-radius:999px;
     background:var(--primary);
-    transition:.3s ease;
+    transition:width var(--transition);
 }
 
 .main-nav a:hover::after,
