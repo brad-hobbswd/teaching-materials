@@ -36,6 +36,9 @@ content="Early Childhood Library, Preschool Resources, Head Start, Creative Curr
 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@700;800&display=swap"
 rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <link rel="stylesheet" href="https://brad-hobbswd.github.io/teaching-materials/styles/library.css">
 
 <link
@@ -47,69 +50,75 @@ type="image/png">
 
 <body>
 
+<!-- ==========================================
+     SITE HEADER
+========================================== -->
 <header class="site-header">
 
-    <div class="container header-row">
+    <div class="container nav-container">
 
         <a href="../index.html" class="logo">
 
-            <img src="../logo.png"
-                 alt="Little Explorers Learning Hub Logo">
+            <img
+                src="../logo.png"
+                alt="Little Explorers Learning Hub Logo">
 
             <div class="logo-text">
-
-                <span class="logo-title">
-                    Little Explorers
-                </span>
-
-                <span class="logo-subtitle">
-                    Learning Hub
-                </span>
-
+                <h1>Little Explorers</h1>
+                <span>Learning Hub</span>
             </div>
 
         </a>
 
-        <nav class="main-nav">
+        <nav class="main-nav" id="primary-navigation" aria-label="Primary Navigation">
 
-            <a href="../index.html">Home</a>
+            <ul>
 
-            <a href="../studies.html">Studies</a>
+                <li><a href="../index.html">Home</a></li>
 
-            <a href="index.html" class="active">Library</a>
+                <li><a href="../studies.html">Studies</a></li>
 
-            <a href="../ages/index.html">Age Groups</a>
+                <li><a href="index.html" class="active">Library</a></li>
 
-            <a href="../lesson-plans.html">Lesson Plans</a>
+                <li><a href="../ages/index.html">Age Groups</a></li>
 
-            <a href="../printables.html">Printables</a>
+                <li><a href="../lesson-plans.html">Lesson Plans</a></li>
 
-            <a href="../resources.html">Teacher Resources</a>
+                <li><a href="../printables.html">Printables</a></li>
 
-            <a href="../about.html">About</a>
+                <li><a href="../resources.html">Teacher Resources</a></li>
 
-            <a href="../contact.html">Contact</a>
+                <li><a href="../about.html">About</a></li>
+
+                <li><a href="../contact.html">Contact</a></li>
+
+            </ul>
 
         </nav>
 
-        <button class="search-btn" aria-label="Search">
+        <div class="header-actions">
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.2"
-                stroke-linecap="round"
-                stroke-linejoin="round">
+            <a
+                href="../search.html"
+                class="search-toggle"
+                aria-label="Search">
 
-                <circle cx="11" cy="11" r="7"></circle>
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </a>
 
-            </svg>
+            <button
+                class="mobile-menu"
+                type="button"
+                aria-label="Open Navigation"
+                aria-controls="primary-navigation"
+                aria-expanded="false">
 
-        </button>
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
 
     </div>
 
