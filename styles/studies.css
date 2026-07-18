@@ -204,200 +204,203 @@ section{
 
 }
 
-/* =====================================================
-   HEADER
-===================================================== */
+/*=====================================================
+  HEADER
+=====================================================*/
 
 .site-header{
-
     position:sticky;
     top:0;
     z-index:1000;
-
     background:rgba(255,255,255,.96);
-
     backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(0,0,0,.05);
-
+    -webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.06);
     box-shadow:0 4px 20px rgba(0,0,0,.04);
-
 }
 
 .nav-container{
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     gap:2rem;
-
-    min-height:86px;
-
+    min-height:90px;
 }
 
-.logo{
+/*=====================================================
+  LOGO
+=====================================================*/
 
+.logo{
     display:flex;
     align-items:center;
-
     gap:1rem;
-
     flex-shrink:0;
-
 }
 
 .logo img{
-
-    width:58px;
-    height:58px;
-
+    width:64px;
+    height:64px;
     object-fit:contain;
+}
 
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .logo-text h1{
-
-    font-size:1.4rem;
-
     margin:0;
-
+    font-size:1.45rem;
+    line-height:1.1;
 }
 
 .logo-text span{
-
     display:block;
-
-    font-size:.9rem;
-
-    color:var(--primary);
-
+    margin-top:.15rem;
+    font-size:.95rem;
     font-weight:700;
-
-}
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-.search-bar{
-
-    display:flex;
-
-    align-items:center;
-
-    flex:1;
-
-    max-width:420px;
-
-    background:#fff;
-
-    border:1px solid var(--border);
-
-    border-radius:999px;
-
-    overflow:hidden;
-
-}
-
-.search-bar input{
-
-    flex:1;
-
-    border:none;
-
-    background:none;
-
-    padding:.95rem 1.25rem;
-
-    outline:none;
-
-}
-
-.search-bar button{
-
-    width:54px;
-    height:54px;
-
     color:var(--primary);
-
+    line-height:1;
 }
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/*=====================================================
+  NAVIGATION
+=====================================================*/
+
+.main-nav{
+    margin-left:auto;
+}
 
 .main-nav ul{
-
     display:flex;
-
     align-items:center;
-
-    gap:1.75rem;
-
+    gap:1.5rem;
 }
 
 .main-nav a{
-
     position:relative;
-
-    font-weight:600;
-
-    color:var(--text);
-
+    display:inline-flex;
+    align-items:center;
     padding:.35rem 0;
-
+    font-weight:600;
+    color:var(--text);
+    transition:var(--transition);
 }
 
 .main-nav a:hover{
-
     color:var(--primary);
-
 }
 
 .main-nav a.active{
-
     color:var(--primary);
-
 }
 
-.main-nav a.active::after,
-.main-nav a:hover::after{
-
+.main-nav a::after{
     content:"";
-
     position:absolute;
-
     left:0;
-    bottom:-8px;
-
-    width:100%;
+    bottom:-10px;
+    width:0;
     height:3px;
-
     border-radius:999px;
-
     background:var(--primary);
-
+    transition:width .3s ease;
 }
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+.main-nav a:hover::after,
+.main-nav a.active::after{
+    width:100%;
+}
+
+/*=====================================================
+  HEADER ACTIONS
+=====================================================*/
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin-left:1rem;
+}
+
+.search-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    color:var(--primary);
+    transition:var(--transition);
+}
+
+.search-toggle:hover{
+    background:var(--primary-light);
+    color:var(--primary-dark);
+}
+
+/*=====================================================
+  MOBILE MENU
+=====================================================*/
 
 .mobile-menu{
-
     display:none;
-
+    align-items:center;
+    justify-content:center;
     width:48px;
     height:48px;
-
     border-radius:12px;
-
     background:var(--primary);
-
     color:#fff;
-
     font-size:1.4rem;
+    transition:var(--transition);
+}
+
+.mobile-menu:hover{
+    background:var(--primary-dark);
+}
+
+/*=====================================================
+  RESPONSIVE HEADER
+=====================================================*/
+
+@media (max-width:1100px){
+
+    .nav-container{
+        min-height:82px;
+    }
+
+    .main-nav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:flex;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .logo img{
+        width:56px;
+        height:56px;
+    }
+
+    .logo-text h1{
+        font-size:1.2rem;
+    }
+
+    .logo-text span{
+        font-size:.82rem;
+    }
+
+    .nav-container{
+        gap:1rem;
+        min-height:78px;
+    }
 
 }
 
