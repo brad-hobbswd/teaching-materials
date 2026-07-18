@@ -222,8 +222,9 @@ section{
 .nav-container{
     display:flex;
     align-items:center;
+    justify-content:space-between;
     min-height:90px;
-    gap:32px;
+    gap:28px;
 }
 
 /*=====================================================
@@ -323,9 +324,9 @@ section{
 .header-actions{
     display:flex;
     align-items:center;
-    justify-content:flex-end;
-    flex:0 0 auto;
-    gap:12px;
+    flex-shrink:0;
+    gap:10px;
+    margin-left:20px;
 }
 
 .search-toggle{
