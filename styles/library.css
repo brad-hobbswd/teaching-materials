@@ -153,7 +153,8 @@ section{
 
 .container{
 
-    width:min(95%,1400px);
+    width:min(96%,1440px);
+
     margin:auto;
 
 }
@@ -325,15 +326,18 @@ HEADER
 
 .header-row{
 
-    min-height:90px;
+    display:grid;
 
-    display:flex;
+    grid-template-columns:
+        auto
+        1fr
+        auto;
 
     align-items:center;
 
-    justify-content:space-between;
+    column-gap:3rem;
 
-    gap:3rem;
+    min-height:90px;
 
 }
 
@@ -343,7 +347,7 @@ HEADER
 
     align-items:center;
 
-    gap:15px;
+    gap:.85rem;
 
     flex-shrink:0;
 
@@ -351,8 +355,8 @@ HEADER
 
 .logo img{
 
-    width:64px;
-    height:64px;
+    width:60px;
+    height:60px;
 
     object-fit:contain;
 
@@ -361,7 +365,7 @@ HEADER
 .logo-text{
 
     display:flex;
-
+    font-size:1.35rem;
     flex-direction:column;
 
 }
@@ -370,7 +374,7 @@ HEADER
 
     font-family:"Nunito",sans-serif;
 
-    font-size:1.45rem;
+     font-size:.9rem;
 
     font-weight:800;
 
@@ -400,8 +404,10 @@ HEADER
 .main-nav ul{
 
     display:flex;
+
     align-items:center;
-    gap:2rem;
+
+    gap:2.4rem;
 
 }
 
