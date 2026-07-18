@@ -1431,7 +1431,7 @@ FOOTER
 
     color:#fff;
 
-    padding:5rem 0 0;
+    padding:3rem 0 0;
 
 }
 
@@ -1439,11 +1439,11 @@ FOOTER
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:1.45fr 1fr 1fr 1fr;
 
-    gap:3rem;
+    gap:2.5rem;
 
-    padding:4rem 0;
+    padding:2.5rem 0;
 
     align-items:start;
 
@@ -1451,41 +1451,45 @@ FOOTER
 
 .footer-about h3{
 
-    font-size:1.45rem;
+    color:#fff;
+
+    font-size:1.7rem;
 
     font-weight:800;
 
-    color:#fff;
+    line-height:1.15;
 
-    margin-bottom:1rem;
+    margin:0 0 1rem;
+
+    max-width:340px;
 
 }
 
 .footer-about p{
 
-    font-size:1.02rem;
+    max-width:340px;
 
-    line-height:1.8;
+    font-size:1rem;
+
+    line-height:1.7;
 
     color:rgba(255,255,255,.82);
-
-    max-width:360px;
 
 }
 
 .footer-column h4{
 
-    font-size:1rem;
+    color:#fff;
+
+    font-size:.95rem;
 
     font-weight:700;
 
     text-transform:uppercase;
 
-    letter-spacing:.08em;
+    letter-spacing:.12em;
 
-    color:#fff;
-
-    margin-bottom:1.4rem;
+    margin:0 0 1rem;
 
 }
 
@@ -1495,13 +1499,13 @@ FOOTER
 
     flex-direction:column;
 
-    gap:.9rem;
+    gap:.75rem;
 
 }
 
 .footer-column a{
 
-    color:rgba(255,255,255,.75);
+    color:rgba(255,255,255,.78);
 
     transition:.25s;
 
@@ -1515,9 +1519,9 @@ FOOTER
 
 .footer-bottom{
 
-    margin-top:4rem;
+    margin-top:2rem;
 
-    padding:1.5rem 0;
+    padding:1rem 0;
 
     border-top:1px solid rgba(255,255,255,.12);
 
@@ -1527,9 +1531,9 @@ FOOTER
 
 .footer-bottom p{
 
-    font-size:.95rem;
+    color:rgba(255,255,255,.7);
 
-    color:rgba(255,255,255,.65);
+    font-size:.92rem;
 
 }
 
