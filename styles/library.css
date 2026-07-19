@@ -51,6 +51,7 @@
     --transition:.35s ease;
 
     --container:1280px;
+    --navy:#1b4332;
 
 }
 
@@ -165,6 +166,266 @@ section{
 
 }
 
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header{
+    position:sticky;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    background:#fff;
+    border-bottom:1px solid #e8edf2;
+    box-shadow:0 8px 24px rgba(0,0,0,.05);
+}
+
+.nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:2rem;
+    min-height:84px;
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:.9rem;
+    text-decoration:none;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+}
+
+.logo-text h1{
+    margin:0;
+    font-size:1.25rem;
+    font-weight:800;
+    color:var(--primary-dark);
+}
+
+.logo-text span{
+    margin-top:.15rem;
+    font-size:.9rem;
+    font-weight:600;
+    color:#6b7a90;
+}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.main-nav{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.main-nav ul{
+    display:flex;
+    align-items:center;
+    gap:1.6rem;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.main-nav a{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    padding:.45rem 0;
+    text-decoration:none;
+    color:#425466;
+    font-weight:600;
+    font-size:.96rem;
+    transition:.25s ease;
+}
+
+.main-nav a:hover{
+    color:var(--primary);
+}
+
+.main-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:3px;
+    border-radius:100px;
+    background:var(--primary);
+    transition:.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after{
+    width:100%;
+}
+
+.main-nav a.active{
+    color:var(--primary);
+}
+
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:.85rem;
+    flex-shrink:0;
+}
+
+.search-toggle{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    text-decoration:none;
+    color:var(--primary-dark);
+    background:#f3f7fa;
+    transition:.25s ease;
+}
+
+.search-toggle:hover{
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.search-toggle i{
+    font-size:1rem;
+}
+
+.mobile-menu{
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#f3f7fa;
+    color:var(--primary-dark);
+    transition:.25s ease;
+}
+
+.mobile-menu:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:1100px){
+
+.main-nav ul{
+    gap:1rem;
+}
+
+.main-nav a{
+    font-size:.9rem;
+}
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:900px){
+
+.nav-container{
+    min-height:78px;
+}
+
+.mobile-menu{
+    display:grid;
+    place-items:center;
+}
+
+.main-nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    display:none;
+    background:#fff;
+    border-top:1px solid #e7ebef;
+    box-shadow:0 18px 35px rgba(0,0,0,.08);
+}
+
+.main-nav.open{
+    display:block;
+}
+
+.main-nav ul{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    padding:1rem 0;
+}
+
+.main-nav li{
+    width:100%;
+}
+
+.main-nav a{
+    display:block;
+    width:100%;
+    padding:1rem 1.5rem;
+}
+
+.main-nav a::after{
+    display:none;
+}
+
+.search-toggle{
+    display:none;
+}
+
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px){
+
+.logo img{
+    width:50px;
+    height:50px;
+}
+
+.logo-text h1{
+    font-size:1.05rem;
+}
+
+.logo-text span{
+    font-size:.8rem;
+}
+
+}
 
 /*==========================================================
   TYPOGRAPHY
@@ -310,179 +571,8 @@ button,
 }
 
 
-/*==========================================================
-HEADER
-==========================================================*/
 
-.site-header{
 
-    position:sticky;
-    top:0;
-    z-index:999;
-
-    background:#fff;
-
-    border-bottom:1px solid var(--border);
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.header-row{
-
-    display:grid;
-
-    grid-template-columns:
-        auto
-        1fr
-        auto;
-
-    align-items:center;
-
-    min-height:84px;
-
-    gap:2.5rem;
-
-}
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    flex-shrink:0;
-
-}
-
-.logo img{
-
-    width:58px;
-
-    height:58px;
-
-}
-
-.logo-text{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    line-height:1.15;
-
-}
-
-.logo-title{
-
-    font-family:"Nunito",sans-serif;
-
-    font-size:1rem;
-
-    font-weight:800;
-
-    color:var(--primary-dark);
-
-}
-
-.logo-subtitle{
-
-    font-size:.82rem;
-
-    font-weight:600;
-
-    color:var(--primary);
-
-}
-
-.main-nav{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:1.75rem;
-
-    flex:1;
-
-}
-
-.main-nav a{
-
-    position:relative;
-
-    white-space:nowrap;
-
-    font-size:1rem;
-
-    font-weight:600;
-
-    color:var(--text);
-
-    padding:.5rem 0;
-
-}
-
-.main-nav a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:-10px;
-
-    transform:translateX(-50%);
-
-    width:0;
-
-    height:3px;
-
-    border-radius:999px;
-
-    background:var(--primary);
-
-    transition:width .3s ease;
-
-}
-
-.main-nav a:hover::after,
-.main-nav a.active::after{
-
-    width:100%;
-
-}
-
-.search-btn{
-
-    width:36px;
-
-    height:36px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin-left:.5rem;
-
-}
-
-.search-btn svg{
-
-    width:16px;
-
-    height:16px;
-
-}
 
 /*==========================================================
   HERO
@@ -1889,145 +1979,6 @@ button:hover{
 }
 
 
-
-/*==========================================================
-  TABLET
-==========================================================*/
-
-@media (max-width:1100px){
-
-    .header-row{
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-        padding:18px 0;
-
-    }
-
-    .logo{
-
-        width:100%;
-
-        justify-content:center;
-
-    }
-
-    .main-nav{
-
-        width:100%;
-
-        margin:0;
-
-    }
-
-    .main-nav ul{
-
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-        gap:18px 24px;
-
-    }
-
-    .search-btn{
-
-        margin:0;
-
-    }
-
-}
-
-
-/*==========================================================
-  MOBILE
-==========================================================*/
-
-@media (max-width:768px){
-
-    .site-header{
-
-        position:relative;
-
-    }
-
-    .logo img{
-
-        width:52px;
-
-        height:52px;
-
-    }
-
-    .logo-title{
-
-        font-size:1.2rem;
-
-    }
-
-    .logo-subtitle{
-
-        font-size:.85rem;
-
-    }
-
-    .main-nav ul{
-
-        gap:14px;
-
-    }
-
-    .main-nav a{
-
-        font-size:.9rem;
-
-    }
-
-}
-
-/*==========================================================
-  SMALL PHONES
-==========================================================*/
-
-@media (max-width:480px){
-
-    h1{
-
-        font-size:2.3rem;
-
-    }
-
-    h2{
-
-        font-size:1.9rem;
-
-    }
-
-    .section-heading{
-
-        margin-bottom:3rem;
-
-    }
-
-    .collection-content,
-    .resource-card,
-    .recent-content,
-    .benefit-card,
-    .membership-card{
-
-        padding:1.5rem;
-
-    }
-
-    .hero-stats div{
-
-        padding:1.5rem;
-
-    }
-
-}
 
 
 
