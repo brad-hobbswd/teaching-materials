@@ -2269,3 +2269,28 @@ section{
 
 }
 
+.site-footer .btn{
+
+    display:inline-flex !important;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:1rem 2rem;
+
+    background:#ffffff !important;
+
+    color:var(--primary-dark) !important;
+
+    border:2px solid #ffffff !important;
+
+    font-size:1rem !important;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    line-height:1;
+
+}
