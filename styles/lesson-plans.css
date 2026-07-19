@@ -295,26 +295,6 @@ section{
     gap:1rem;
 }
 
-.search-toggle{
-    display:grid;
-    place-items:center;
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    background:var(--primary-light);
-    color:var(--primary);
-    transition:var(--transition);
-}
-
-.search-toggle:hover{
-    background:var(--primary);
-    color:#fff;
-}
-
-.search-toggle i{
-    font-size:1rem;
-}
-
 /*==================================================
   MOBILE MENU
 ==================================================*/
