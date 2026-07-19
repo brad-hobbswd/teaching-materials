@@ -301,18 +301,15 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    border:1px solid var(--border);
     border-radius:50%;
-    background:var(--white);
+    background:transparent;
     color:var(--primary);
-    text-decoration:none;
     transition:var(--transition);
-    box-shadow:var(--shadow-sm);
 }
 
 .search-toggle:hover{
     background:var(--primary);
-    color:#ffffff;
+    color:#fff;
     transform:translateY(-2px);
 }
 
@@ -343,58 +340,6 @@ section{
 .mobile-menu:hover{
     background:var(--primary-dark);
 }
-
-
-
-/*==================================================
-  NAVIGATION
-==================================================*/
-
-.main-nav ul{
-    display:flex;
-    align-items:center;
-    gap:1.6rem;
-}
-
-.main-nav a{
-    font-weight:600;
-    color:var(--text);
-    transition:var(--transition);
-    position:relative;
-}
-
-.main-nav a:hover,
-.main-nav a.active{
-    color:var(--primary);
-}
-
-.main-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-8px;
-    width:0;
-    height:2px;
-    background:var(--primary);
-    transition:var(--transition);
-}
-
-.main-nav a:hover::after,
-.main-nav a.active::after{
-    width:100%;
-}
-
-.mobile-menu{
-    display:none;
-    width:52px;
-    height:52px;
-    border-radius:14px;
-    background:var(--primary);
-    color:#fff;
-    font-size:1.4rem;
-}
-
-
 
 /*==================================================
   HERO
