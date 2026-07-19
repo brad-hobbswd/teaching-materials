@@ -2007,6 +2007,32 @@ section{
 
 }
 
+.resources-cta .hero-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    margin-top:2rem;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:2rem;
+
+}
+
 
 /* =====================================================
    FOOTER
