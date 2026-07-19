@@ -4,28 +4,23 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Teacher Resources | Little Explorers Learning Hub</title>
 
-<meta
-name="description"
-content="Discover classroom management resources, assessment tools, planning templates, professional development, family engagement ideas, and teaching supports for Early Head Start, Head Start, Preschool, and Pre Kindergarten educators.">
+<meta name="description"
+content="Professional classroom resources, printable forms, assessment tools, planning templates, and teaching supports for Early Head Start, Head Start, Preschool, and Pre Kindergarten educators.">
 
-<meta
-name="keywords"
-content="teacher resources, preschool resources, classroom management, assessment, planning templates, ELOF, professional development, Head Start resources">
+<meta name="keywords"
+content="teacher resources, preschool resources, classroom management, assessments, printables, lesson planning, Head Start, ELOF">
 
-<meta
-name="author"
+<meta name="author"
 content="Little Explorers Learning Hub">
 
-<meta
-name="robots"
-content="index, follow">
+<meta name="robots"
+content="index,follow">
+
+<link rel="icon" href="favicon.ico">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -34,62 +29,40 @@ href="https://fonts.gstatic.com"
 crossorigin>
 
 <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link
 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@600;700;800&display=swap"
 rel="stylesheet">
 
 <link
 rel="stylesheet"
-href="https://brad-hobbswd.github.io/teaching-materials/styles/resources.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<link
-rel="icon"
-href="favicon.ico">
+<link rel="stylesheet" href="https://brad-hobbswd.github.io/teaching-materials/styles/resources.css">
 
 </head>
 
 <body>
 
-<!-- ==========================================
-     HEADER
-========================================== -->
-
 <header class="site-header">
 
 <div class="container nav-container">
 
-<a
-href="index.html"
-class="logo">
+<a href="index.html" class="logo">
 
 <img
-src="logo.png"
-alt="Little Explorers Learning Hub Logo">
+src="images/logo.png"
+alt="Little Explorers Learning Hub">
 
 <div class="logo-text">
 
-<h1>
+<h1>Little Explorers</h1>
 
-Little Explorers
-
-</h1>
-
-<span>
-
-Learning Hub
-
-</span>
+<span>Learning Hub</span>
 
 </div>
 
 </a>
 
-<nav
-class="main-nav"
-aria-label="Primary Navigation">
+<nav class="main-nav" aria-label="Primary Navigation">
 
 <ul>
 
@@ -99,13 +72,13 @@ aria-label="Primary Navigation">
 
 <li><a href="library/index.html">Library</a></li>
 
-<li><a href="ages/index.html">Age Groups</a></li>
-
 <li><a href="lesson-plans.html">Lesson Plans</a></li>
 
 <li><a href="printables.html">Printables</a></li>
 
-<li><a href="resources.html" class="active">Teacher Resources</a></li>
+<li><a href="ages/index.html">Age Groups</a></li>
+
+<li><a href="resources.html" class="active">Resources</a></li>
 
 <li><a href="about.html">About</a></li>
 
@@ -132,7 +105,7 @@ type="button"
 aria-label="Open Navigation"
 aria-expanded="false">
 
-☰
+<i class="fa-solid fa-bars"></i>
 
 </button>
 
@@ -142,15 +115,7 @@ aria-expanded="false">
 
 </header>
 
-<!-- ==========================================
-     MAIN CONTENT
-========================================== -->
-
 <main>
-
-     <!-- ==========================================
-     HERO
-========================================== -->
 
 <section class="resources-hero">
 
@@ -160,31 +125,39 @@ aria-expanded="false">
 
 <span class="hero-eyebrow">
 
-Support • Teach • Inspire
+Teacher Resource Center
 
 </span>
 
 <h1>
 
-Teacher Resources That Make Every Day Easier
+Professional Teaching Resources Designed to Support Every Classroom
 
 </h1>
 
 <p>
 
-Discover classroom management tools, assessment resources, planning templates, printable forms, family engagement materials, and professional development guides thoughtfully created for Early Head Start, Head Start, Preschool, and Pre Kindergarten educators.
+Discover practical classroom management strategies, assessment resources,
+planning templates, editable forms, family engagement materials,
+professional development guides, and printable tools created specifically
+for Early Head Start, Head Start, Preschool, and Pre Kindergarten
+educators.
 
 </p>
 
 <div class="hero-actions">
 
-<a href="#resource-library" class="btn btn-primary">
+<a
+href="#resource-library"
+class="btn btn-primary">
 
 Browse Resources
 
 </a>
 
-<a href="contact.html" class="btn btn-secondary">
+<a
+href="contact.html"
+class="btn btn-secondary">
 
 Request a Resource
 
@@ -194,13 +167,16 @@ Request a Resource
 
 <div class="hero-search">
 
-<form>
+<form action="search.html">
 
 <input
 type="search"
-placeholder="Search teacher resources...">
+name="q"
+placeholder="Search resources...">
 
 <button type="submit">
+
+<i class="fa-solid fa-magnifying-glass"></i>
 
 Search
 
@@ -216,7 +192,7 @@ Search
 
 <strong>500+</strong>
 
-<span>Teaching Resources</span>
+<span>Teacher Resources</span>
 
 </div>
 
@@ -242,9 +218,17 @@ Search
 
 <div class="hero-image">
 
+<picture>
+
+<source
+srcset="images/resources/hero.webp"
+type="image/webp">
+
 <img
-src="hero-resources.png"
-alt="Teacher organizing classroom materials with children engaged in learning">
+src="images/resources/hero.jpg"
+alt="Early childhood teacher working with preschool children">
+
+</picture>
 
 </div>
 
@@ -252,9 +236,10 @@ alt="Teacher organizing classroom materials with children engaged in learning">
 
 </section>
 
-     <!-- ==========================================
+
+     <!-- =====================================================
      RESOURCE CATEGORIES
-========================================== -->
+===================================================== -->
 
 <section class="resource-categories">
 
@@ -264,19 +249,19 @@ alt="Teacher organizing classroom materials with children engaged in learning">
 
 <span>
 
-Find the Right Resource
+Browse by Category
 
 </span>
 
 <h2>
 
-Browse by Topic or Teaching Need
+Find the Right Teaching Resource
 
 </h2>
 
 <p>
 
-Whether you're organizing your classroom, planning lessons, completing assessments, or strengthening family partnerships, you'll find practical resources designed to support every part of your teaching day.
+Whether you're planning lessons, documenting observations, organizing your classroom, or partnering with families, you'll find practical resources created specifically for early childhood educators.
 
 </p>
 
@@ -284,7 +269,7 @@ Whether you're organizing your classroom, planning lessons, completing assessmen
 
 <div class="category-groups">
 
-<div class="category-group">
+<article class="category-group">
 
 <h3>
 
@@ -294,53 +279,25 @@ Teaching Resources
 
 <div class="category-chips">
 
-<a href="#" class="chip active">
+<a href="#" class="chip active">All Resources</a>
 
-All Resources
+<a href="#">Classroom Management</a>
 
-</a>
+<a href="#">Assessment</a>
 
-<a href="#">
+<a href="#">Planning</a>
 
-Classroom Management
+<a href="#">ELOF</a>
 
-</a>
+<a href="#">Professional Development</a>
 
-<a href="#">
-
-Assessment
-
-</a>
-
-<a href="#">
-
-Planning
-
-</a>
-
-<a href="#">
-
-ELOF
-
-</a>
-
-<a href="#">
-
-Family Engagement
-
-</a>
-
-<a href="#">
-
-Professional Development
-
-</a>
+<a href="#">Family Engagement</a>
 
 </div>
 
-</div>
+</article>
 
-<div class="category-group">
+<article class="category-group">
 
 <h3>
 
@@ -350,45 +307,21 @@ Quick Access
 
 <div class="category-chips">
 
-<a href="printables.html">
+<a href="printables.html">Printables</a>
 
-Printables
+<a href="lesson-plans.html">Lesson Plans</a>
 
-</a>
+<a href="library/index.html">Teaching Library</a>
 
-<a href="lesson-plans.html">
+<a href="ages/index.html">Age Groups</a>
 
-Lesson Plans
+<a href="contact.html">Request Resources</a>
 
-</a>
-
-<a href="library/index.html">
-
-Teaching Library
-
-</a>
-
-<a href="ages/index.html">
-
-Age Groups
-
-</a>
-
-<a href="contact.html">
-
-Request Resources
-
-</a>
-
-<a href="about.html">
-
-About
-
-</a>
+<a href="about.html">About</a>
 
 </div>
 
-</div>
+</article>
 
 </div>
 
@@ -396,12 +329,13 @@ About
 
 </section>
 
+<!-- =====================================================
+     RESOURCE LIBRARY
+===================================================== -->
 
-     <!-- ==========================================
-     FEATURED RESOURCES
-========================================== -->
-
-<section class="resource-library" id="resource-library">
+<section
+class="resource-library"
+id="resource-library">
 
 <div class="container">
 
@@ -415,13 +349,14 @@ Teacher Resource Library
 
 <h2>
 
-Explore Our Most Popular Teaching Resources
+Explore Our Most Popular Resources
 
 </h2>
 
 <p>
 
-Discover practical tools, editable templates, printable materials, and professional resources designed to save planning time while supporting meaningful learning experiences.
+Save planning time with classroom resources designed for Early Head Start,
+Head Start, Preschool, and Pre Kindergarten teachers.
 
 </p>
 
@@ -442,9 +377,9 @@ placeholder="Search teacher resources...">
 <select>
 
 <option>All Categories</option>
-<option>Classroom Management</option>
 <option>Assessment</option>
 <option>Planning</option>
+<option>Classroom Management</option>
 <option>ELOF</option>
 <option>Family Engagement</option>
 <option>Professional Development</option>
@@ -456,7 +391,7 @@ placeholder="Search teacher resources...">
 <option>Sort By</option>
 <option>Newest</option>
 <option>Most Popular</option>
-<option>Alphabetical</option>
+<option>A to Z</option>
 
 </select>
 
@@ -468,13 +403,15 @@ placeholder="Search teacher resources...">
 
 <p>
 
-Browse our growing collection of classroom resources created specifically for Early Head Start, Head Start, Preschool, and Pre Kindergarten educators.
+Growing library of practical teaching resources for today's early childhood educator.
 
 </p>
 
 </div>
 
 <div class="study-grid">
+
+<!-- CARD -->
 
 <article class="study-card">
 
@@ -498,17 +435,19 @@ Classroom Management
 
 <p>
 
-Build positive classroom routines, organize learning spaces, improve transitions, and support children's success every day.
+Positive guidance strategies, classroom routines,
+transition ideas, behavior supports, and organization
+tools that help children thrive.
 
 </p>
 
 <div class="study-meta">
 
-<span>Behavior Supports</span>
+<span>Behavior</span>
 
-<span>Printable Tools</span>
+<span>Routines</span>
 
-<span>Daily Routines</span>
+<span>Centers</span>
 
 </div>
 
@@ -524,11 +463,13 @@ Explore Resource
 
 </article>
 
+<!-- CARD -->
+
 <article class="study-card">
 
 <img
 src="images/resources/assessment.jpg"
-alt="Assessment Resources">
+alt="Assessment">
 
 <div class="study-content">
 
@@ -546,7 +487,10 @@ Observation & Assessment
 
 <p>
 
-Documentation forms, developmental checklists, anecdotal records, portfolios, and assessment guidance.
+Observation forms, anecdotal records,
+developmental checklists,
+portfolio documentation,
+and assessment guidance.
 
 </p>
 
@@ -554,9 +498,9 @@ Documentation forms, developmental checklists, anecdotal records, portfolios, an
 
 <span>Observation</span>
 
-<span>Checklists</span>
+<span>Forms</span>
 
-<span>Documentation</span>
+<span>Growth</span>
 
 </div>
 
@@ -572,11 +516,13 @@ Explore Resource
 
 </article>
 
+<!-- CARD -->
+
 <article class="study-card">
 
 <img
 src="images/resources/planning.jpg"
-alt="Planning Tools">
+alt="Planning">
 
 <div class="study-content">
 
@@ -594,7 +540,10 @@ Planning Templates
 
 <p>
 
-Weekly lesson plans, curriculum maps, schedules, calendars, and editable planning resources.
+Editable lesson plans,
+weekly planning pages,
+curriculum maps,
+and classroom schedules.
 
 </p>
 
@@ -602,9 +551,9 @@ Weekly lesson plans, curriculum maps, schedules, calendars, and editable plannin
 
 <span>Lesson Plans</span>
 
-<span>Calendars</span>
-
 <span>Templates</span>
+
+<span>Calendars</span>
 
 </div>
 
@@ -620,11 +569,13 @@ Explore Resource
 
 </article>
 
+<!-- CARD -->
+
 <article class="study-card">
 
 <img
 src="images/resources/elof.jpg"
-alt="ELOF Resources">
+alt="ELOF">
 
 <div class="study-content">
 
@@ -642,15 +593,17 @@ ELOF Resources
 
 <p>
 
-Practical teaching supports aligned with every Early Learning Outcomes Framework domain.
+Activities, teaching strategies,
+and classroom ideas aligned with every
+Early Learning Outcomes Framework domain.
 
 </p>
 
 <div class="study-meta">
 
-<span>Domains</span>
+<span>ELOF</span>
 
-<span>Teaching Ideas</span>
+<span>Domains</span>
 
 <span>Activities</span>
 
@@ -667,6 +620,8 @@ Explore Resource
 </div>
 
 </article>
+
+<!-- CARD -->
 
 <article class="study-card">
 
@@ -690,7 +645,10 @@ Family Engagement
 
 <p>
 
-Strengthen home and school partnerships through communication tools and family involvement resources.
+Strengthen partnerships with newsletters,
+family activities,
+conference resources,
+and communication tools.
 
 </p>
 
@@ -716,6 +674,8 @@ Explore Resource
 
 </article>
 
+<!-- CARD -->
+
 <article class="study-card">
 
 <img
@@ -738,7 +698,10 @@ Professional Development
 
 <p>
 
-Articles, leadership ideas, classroom strategies, continuing education, and teacher inspiration.
+Leadership articles,
+teaching strategies,
+research based practices,
+and professional learning resources.
 
 </p>
 
@@ -746,9 +709,9 @@ Articles, leadership ideas, classroom strategies, continuing education, and teac
 
 <span>Leadership</span>
 
-<span>Strategies</span>
+<span>Training</span>
 
-<span>Learning</span>
+<span>Research</span>
 
 </div>
 
@@ -770,10 +733,9 @@ Explore Resource
 
 </section>
 
-
-     <!-- ==========================================
+     <!-- =====================================================
      POPULAR TEACHING TOOLS
-========================================== -->
+===================================================== -->
 
 <section class="resource-features">
 
@@ -795,7 +757,7 @@ Popular Teaching Tools Used Every Day
 
 <p>
 
-Save planning time and stay organized with practical classroom resources designed to support instruction, documentation, communication, and daily routines.
+Discover practical resources that help you stay organized, strengthen instruction, document learning, and build engaging classroom environments.
 
 </p>
 
@@ -819,9 +781,18 @@ Lesson Plan Templates
 
 <p>
 
-Editable weekly lesson plans that make organizing learning experiences simple, consistent, and developmentally appropriate.
+Editable weekly and monthly lesson plan templates designed around developmentally appropriate practice.
 
 </p>
+
+<a
+href="resources/planning.html"
+class="text-link">
+
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </article>
 
@@ -841,9 +812,18 @@ Observation Forms
 
 <p>
 
-Document children's growth with easy to use observation records, anecdotal notes, and assessment templates.
+Simple documentation forms, anecdotal records, developmental checklists, and portfolio pages.
 
 </p>
+
+<a
+href="resources/assessment.html"
+class="text-link">
+
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </article>
 
@@ -863,9 +843,18 @@ Classroom Labels
 
 <p>
 
-Create organized learning environments using editable labels for shelves, centers, cubbies, supplies, and classroom materials.
+Editable classroom labels for centers, cubbies, supplies, shelves, and organization systems.
 
 </p>
+
+<a
+href="printables/classroom-labels.html"
+class="text-link">
+
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </article>
 
@@ -885,9 +874,18 @@ Family Communication
 
 <p>
 
-Strengthen partnerships with newsletters, conference forms, family engagement activities, and take home resources.
+Family newsletters, conference forms, communication logs, calendars, and engagement resources.
 
 </p>
+
+<a
+href="resources/family-engagement.html"
+class="text-link">
+
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </article>
 
@@ -901,15 +899,24 @@ Strengthen partnerships with newsletters, conference forms, family engagement ac
 
 <h3>
 
-Learning Center Resources
+Learning Centers
 
 </h3>
 
 <p>
 
-Support dramatic play, literacy, STEM, art, discovery, music, and sensory learning with ready to use classroom materials.
+Ready to use resources for dramatic play, literacy, STEM, science, art, music, and sensory learning.
 
 </p>
+
+<a
+href="resources/classroom-centers.html"
+class="text-link">
+
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </article>
 
@@ -929,9 +936,18 @@ Teacher Checklists
 
 <p>
 
-Stay organized with classroom opening, closing, cleaning, safety, and monthly planning checklists.
+Daily, weekly, monthly, and annual classroom checklists that help keep every program organized.
 
 </p>
+
+<a
+href="resources/checklists.html"
+class="text-link">
+
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
 
 </article>
 
@@ -941,9 +957,9 @@ Stay organized with classroom opening, closing, cleaning, safety, and monthly pl
 
 </section>
 
-     <!-- ==========================================
+<!-- =====================================================
      PRINTABLE RESOURCE LIBRARY
-========================================== -->
+===================================================== -->
 
 <section class="printable-library">
 
@@ -953,7 +969,7 @@ Stay organized with classroom opening, closing, cleaning, safety, and monthly pl
 
 <span>
 
-Printable Resource Library
+Printable Library
 
 </span>
 
@@ -965,27 +981,35 @@ Ready to Print Classroom Resources
 
 <p>
 
-Download professionally designed classroom materials created for Early Head Start, Head Start, Preschool, and Pre Kindergarten educators. Every printable is designed to save preparation time while creating engaging learning environments.
+Professionally designed printable resources created to save teachers time while supporting engaging learning experiences.
 
 </p>
 
 </div>
 
-<div class="study-grid">
+<div class="printable-grid">
 
-<article class="study-card">
+<!-- CARD -->
+
+<article class="printable-card">
+
+<div class="print-preview">
 
 <img
 src="images/printables/classroom-labels.jpg"
 alt="Editable Classroom Labels">
 
-<div class="study-content">
+</div>
 
-<span class="study-tag organization">
+<div class="print-content">
 
-Organization
+<div class="file-tags">
 
-</span>
+<span class="file-tag">Editable</span>
+
+<span class="file-tag">PDF</span>
+
+</div>
 
 <h3>
 
@@ -995,25 +1019,23 @@ Editable Classroom Labels
 
 <p>
 
-Organize shelves, learning centers, cubbies, supplies, and classroom materials with editable labels.
+Organize centers, cubbies, shelves, storage areas, and classroom supplies with printable labels.
 
 </p>
 
-<div class="study-meta">
+<div class="download-meta">
 
-<span>Editable</span>
+<span>Instant Download</span>
 
 <span>PDF</span>
-
-<span>Printable</span>
 
 </div>
 
 <a
 href="printables/classroom-labels.html"
-class="btn btn-primary">
+class="btn btn-primary download-btn">
 
-View Printables
+View Printable
 
 </a>
 
@@ -1021,19 +1043,27 @@ View Printables
 
 </article>
 
-<article class="study-card">
+<!-- CARD -->
+
+<article class="printable-card">
+
+<div class="print-preview">
 
 <img
 src="images/printables/centers.jpg"
 alt="Learning Center Signs">
 
-<div class="study-content">
+</div>
 
-<span class="study-tag classroom">
+<div class="print-content">
 
-Centers
+<div class="file-tags">
 
-</span>
+<span class="file-tag">Editable</span>
+
+<span class="file-tag">Centers</span>
+
+</div>
 
 <h3>
 
@@ -1043,25 +1073,23 @@ Learning Center Signs
 
 <p>
 
-Beautiful classroom signs for dramatic play, blocks, art, writing, science, music, and more.
+Beautiful classroom signs for dramatic play, blocks, writing, STEM, music, science, and more.
 
 </p>
 
-<div class="study-meta">
-
-<span>Centers</span>
-
-<span>Editable</span>
+<div class="download-meta">
 
 <span>Printable</span>
+
+<span>PDF</span>
 
 </div>
 
 <a
 href="printables/center-signs.html"
-class="btn btn-primary">
+class="btn btn-primary download-btn">
 
-View Printables
+View Printable
 
 </a>
 
@@ -1069,19 +1097,27 @@ View Printables
 
 </article>
 
-<article class="study-card">
+<!-- CARD -->
+
+<article class="printable-card">
+
+<div class="print-preview">
 
 <img
 src="images/printables/newsletters.jpg"
 alt="Newsletter Templates">
 
-<div class="study-content">
+</div>
 
-<span class="study-tag communication">
+<div class="print-content">
 
-Families
+<div class="file-tags">
 
-</span>
+<span class="file-tag">Monthly</span>
+
+<span class="file-tag">Editable</span>
+
+</div>
 
 <h3>
 
@@ -1091,25 +1127,23 @@ Newsletter Templates
 
 <p>
 
-Editable monthly newsletters designed to strengthen communication between school and home.
+Editable newsletters that strengthen communication between school and home.
 
 </p>
 
-<div class="study-meta">
-
-<span>Editable</span>
-
-<span>Monthly</span>
+<div class="download-meta">
 
 <span>Family Ready</span>
+
+<span>Printable</span>
 
 </div>
 
 <a
 href="printables/newsletters.html"
-class="btn btn-primary">
+class="btn btn-primary download-btn">
 
-View Printables
+View Printable
 
 </a>
 
@@ -1117,19 +1151,27 @@ View Printables
 
 </article>
 
-<article class="study-card">
+<!-- CARD -->
+
+<article class="printable-card">
+
+<div class="print-preview">
 
 <img
 src="images/printables/calendar.jpg"
 alt="Calendar Resources">
 
-<div class="study-content">
+</div>
 
-<span class="study-tag planning">
+<div class="print-content">
 
-Planning
+<div class="file-tags">
 
-</span>
+<span class="file-tag">Calendar</span>
+
+<span class="file-tag">Seasonal</span>
+
+</div>
 
 <h3>
 
@@ -1139,25 +1181,23 @@ Calendar Resources
 
 <p>
 
-Calendar numbers, months, weather pieces, days of the week, and seasonal classroom materials.
+Months, days, weather cards, classroom calendars, and seasonal learning materials.
 
 </p>
 
-<div class="study-meta">
-
-<span>Calendar</span>
-
-<span>Seasonal</span>
+<div class="download-meta">
 
 <span>Printable</span>
+
+<span>Editable</span>
 
 </div>
 
 <a
 href="printables/calendars.html"
-class="btn btn-primary">
+class="btn btn-primary download-btn">
 
-View Printables
+View Printable
 
 </a>
 
@@ -1165,19 +1205,27 @@ View Printables
 
 </article>
 
-<article class="study-card">
+<!-- CARD -->
+
+<article class="printable-card">
+
+<div class="print-preview">
 
 <img
 src="images/printables/jobs.jpg"
 alt="Classroom Jobs">
 
-<div class="study-content">
+</div>
 
-<span class="study-tag leadership">
+<div class="print-content">
 
-Leadership
+<div class="file-tags">
 
-</span>
+<span class="file-tag">Leadership</span>
+
+<span class="file-tag">Editable</span>
+
+</div>
 
 <h3>
 
@@ -1187,25 +1235,23 @@ Classroom Job Charts
 
 <p>
 
-Encourage responsibility with helper charts, classroom jobs, and leadership cards.
+Encourage responsibility and independence with colorful classroom helper charts.
 
 </p>
 
-<div class="study-meta">
+<div class="download-meta">
 
-<span>Responsibility</span>
+<span>PDF</span>
 
-<span>Editable</span>
-
-<span>Printable</span>
+<span>Instant Download</span>
 
 </div>
 
 <a
 href="printables/classroom-jobs.html"
-class="btn btn-primary">
+class="btn btn-primary download-btn">
 
-View Printables
+View Printable
 
 </a>
 
@@ -1213,19 +1259,27 @@ View Printables
 
 </article>
 
-<article class="study-card">
+<!-- CARD -->
+
+<article class="printable-card">
+
+<div class="print-preview">
 
 <img
 src="images/printables/forms.jpg"
 alt="Teacher Forms">
 
-<div class="study-content">
+</div>
 
-<span class="study-tag assessment">
+<div class="print-content">
 
-Forms
+<div class="file-tags">
 
-</span>
+<span class="file-tag">Forms</span>
+
+<span class="file-tag">Editable</span>
+
+</div>
 
 <h3>
 
@@ -1235,25 +1289,23 @@ Teacher Forms
 
 <p>
 
-Attendance sheets, anecdotal notes, observation forms, planning pages, and parent contact logs.
+Attendance sheets, observation logs, planning pages, parent contact records, and documentation forms.
 
 </p>
 
-<div class="study-meta">
-
-<span>Forms</span>
-
-<span>Editable</span>
+<div class="download-meta">
 
 <span>Daily Use</span>
+
+<span>Printable</span>
 
 </div>
 
 <a
 href="printables/teacher-forms.html"
-class="btn btn-primary">
+class="btn btn-primary download-btn">
 
-View Printables
+View Printable
 
 </a>
 
@@ -1267,9 +1319,10 @@ View Printables
 
 </section>
 
-     <!-- ==========================================
+
+     <!-- =====================================================
      TEACHING EXCELLENCE
-========================================== -->
+===================================================== -->
 
 <section class="teaching-excellence">
 
@@ -1291,7 +1344,9 @@ Teaching Excellence Starts Here
 
 <p>
 
-Continue growing your knowledge and confidence with practical strategies, classroom inspiration, leadership ideas, and research based practices that strengthen teaching and improve outcomes for young children.
+Continue strengthening your classroom practice with practical strategies,
+professional learning, and research based ideas that support children's
+development while helping teachers grow with confidence.
 
 </p>
 
@@ -1315,13 +1370,19 @@ Learning Environments
 
 <p>
 
-Design engaging classroom spaces that encourage independence, creativity, exploration, and meaningful learning.
+Create engaging classroom spaces that inspire curiosity,
+independence,
+creativity,
+and meaningful exploration.
 
 </p>
 
-<a href="resources/classroom-environment.html" class="text-link">
+<a
+href="resources/classroom-environment.html"
+class="text-link">
 
-Learn More →
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
 
 </a>
 
@@ -1343,13 +1404,19 @@ Positive Guidance
 
 <p>
 
-Build respectful relationships while encouraging self regulation, cooperation, empathy, and positive behavior.
+Build respectful relationships while encouraging self regulation,
+cooperation,
+empathy,
+and positive behavior.
 
 </p>
 
-<a href="resources/guidance.html" class="text-link">
+<a
+href="resources/guidance.html"
+class="text-link">
 
-Learn More →
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
 
 </a>
 
@@ -1371,13 +1438,18 @@ Play Based Learning
 
 <p>
 
-Discover practical ways to encourage curiosity, exploration, problem solving, and joyful learning through play.
+Support learning through hands on experiences,
+purposeful play,
+and developmentally appropriate teaching practices.
 
 </p>
 
-<a href="resources/play-based-learning.html" class="text-link">
+<a
+href="resources/play-based-learning.html"
+class="text-link">
 
-Learn More →
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
 
 </a>
 
@@ -1399,13 +1471,19 @@ Documentation
 
 <p>
 
-Capture children's learning through observations, portfolios, displays, and meaningful assessment practices.
+Capture children's growth using observations,
+learning stories,
+portfolios,
+and authentic assessment.
 
 </p>
 
-<a href="resources/documentation.html" class="text-link">
+<a
+href="resources/documentation.html"
+class="text-link">
 
-Learn More →
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
 
 </a>
 
@@ -1427,13 +1505,18 @@ Inclusive Classrooms
 
 <p>
 
-Create welcoming environments where every child feels valued, respected, supported, and included.
+Create welcoming classrooms where every child feels valued,
+supported,
+and included every day.
 
 </p>
 
-<a href="resources/inclusive-practices.html" class="text-link">
+<a
+href="resources/inclusive-practices.html"
+class="text-link">
 
-Learn More →
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
 
 </a>
 
@@ -1443,7 +1526,7 @@ Learn More →
 
 <div class="feature-icon">
 
-☀️
+🌱
 
 </div>
 
@@ -1455,13 +1538,20 @@ Teacher Wellness
 
 <p>
 
-Support your own well being with encouragement, organization strategies, and healthy teaching habits.
+Healthy teachers build healthy classrooms.
+Discover ideas for balance,
+organization,
+encouragement,
+and professional wellness.
 
 </p>
 
-<a href="resources/teacher-wellness.html" class="text-link">
+<a
+href="resources/teacher-wellness.html"
+class="text-link">
 
-Learn More →
+Learn More
+<i class="fa-solid fa-arrow-right"></i>
 
 </a>
 
@@ -1473,51 +1563,29 @@ Learn More →
 
 </section>
 
-     <!-- ==========================================
-     FEATURED TEACHING GUIDE
-========================================== -->
+<!-- =====================================================
+     FEATURED GUIDE
+===================================================== -->
 
 <section class="featured-resource">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="featured-resource-wrapper">
 
-<span>
-
-Featured Teaching Guide
-
-</span>
-
-<h2>
-
-Build a Classroom Where Every Child Thrives
-
-</h2>
-
-<p>
-
-Explore one of our most popular professional learning resources filled with practical strategies, classroom ideas, and developmentally appropriate practices that help educators create engaging learning environments.
-
-</p>
-
-</div>
-
-<div class="featured-resource-card">
-
-<div class="featured-image">
+<div class="featured-resource-image">
 
 <img
 src="images/resources/featured-guide.jpg"
-alt="Teacher working with preschool children">
+alt="Teacher reading with preschool children">
 
 </div>
 
-<div class="featured-content">
+<div class="featured-resource-content">
 
-<span class="featured-tag">
+<span class="hero-eyebrow">
 
-⭐ Editor's Pick
+Editor's Choice
 
 </span>
 
@@ -1529,119 +1597,54 @@ Creating Meaningful Learning Through Play
 
 <p>
 
-Discover how intentional play encourages creativity, language development, problem solving, social emotional growth, and joyful learning. This comprehensive guide provides practical classroom strategies, center ideas, observation tips, and teacher supports that can be implemented immediately.
+Intentional play builds language,
+problem solving,
+creativity,
+social emotional development,
+and joyful learning.
+
+This comprehensive guide shares classroom ideas,
+learning center inspiration,
+teacher strategies,
+and practical activities that can be implemented immediately.
 
 </p>
 
-<div class="featured-highlights">
+<ul class="feature-list">
 
-<div class="highlight-item">
+<li>
 
-<span>
+Practical classroom strategies
 
-📚
+</li>
 
-</span>
+<li>
 
-<div>
+Learning center ideas
 
-<strong>
+</li>
 
-Practical Strategies
+<li>
 
-</strong>
+Observation and assessment tips
 
-<p>
+</li>
 
-Easy ideas you can use immediately.
+<li>
 
-</p>
+Family engagement suggestions
 
-</div>
+</li>
 
-</div>
+<li>
 
-<div class="highlight-item">
+Professional teaching supports
 
-<span>
+</li>
 
-🧩
+</ul>
 
-</span>
-
-<div>
-
-<strong>
-
-Learning Centers
-
-</strong>
-
-<p>
-
-Activities for every classroom area.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="highlight-item">
-
-<span>
-
-👨‍👩‍👧
-
-</span>
-
-<div>
-
-<strong>
-
-Family Connections
-
-</strong>
-
-<p>
-
-Extend learning beyond the classroom.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="highlight-item">
-
-<span>
-
-🌱
-
-</span>
-
-<div>
-
-<strong>
-
-Professional Growth
-
-</strong>
-
-<p>
-
-Build confidence as an educator.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="featured-buttons">
+<div class="hero-actions">
 
 <a
 href="resources/play-based-learning.html"
@@ -1655,7 +1658,7 @@ Read the Guide
 href="#resource-library"
 class="btn btn-secondary">
 
-Browse All Resources
+Browse Resources
 
 </a>
 
@@ -1669,122 +1672,44 @@ Browse All Resources
 
 </section>
 
-
-     <!-- ==========================================
+<!-- =====================================================
      CALL TO ACTION
-========================================== -->
+===================================================== -->
 
 <section class="resources-cta">
 
 <div class="container">
 
-<div class="cta-card">
-
-<span class="cta-eyebrow">
-
-Need Something Specific?
-
-</span>
-
 <h2>
 
-Ready to Support Your Classroom
+Ready to Support Your Classroom?
 
 </h2>
 
 <p>
 
-Whether you're searching for classroom printables, lesson planning tools, assessment resources, or family engagement materials, Little Explorers Learning Hub is continually growing to meet the needs of early childhood educators. If you cannot find the resource you're looking for today, let us know. It may already be in development.
+Little Explorers Learning Hub continues to grow with new printable
+resources,
+teaching guides,
+lesson plans,
+assessment tools,
+and classroom materials.
+
+If you don't see what you're looking for,
+let us know.
+It may already be in development.
 
 </p>
 
-<div class="cta-features">
-
-<div class="cta-feature">
-
-<span>
-
-📄
-
-</span>
-
-<p>
-
-Printable Resources
-
-</p>
-
-</div>
-
-<div class="cta-feature">
-
-<span>
-
-🧸
-
-</span>
-
-<p>
-
-Classroom Activities
-
-</p>
-
-</div>
-
-<div class="cta-feature">
-
-<span>
-
-📚
-
-</span>
-
-<p>
-
-Teaching Guides
-
-</p>
-
-</div>
-
-<div class="cta-feature">
-
-<span>
-
-🌱
-
-</span>
-
-<p>
-
-Professional Growth
-
-</p>
-
-</div>
-
-</div>
-
-<div class="cta-buttons">
+<div class="hero-actions">
 
 <a
 href="contact.html"
-class="btn btn-primary">
+class="btn">
 
 Request a Resource
 
 </a>
-
-<a
-href="library/index.html"
-class="btn btn-secondary">
-
-Browse the Library
-
-</a>
-
-</div>
 
 </div>
 
@@ -1794,9 +1719,9 @@ Browse the Library
 
 </main>
 
-<!-- ==========================================
+<!-- =====================================================
      FOOTER
-========================================== -->
+===================================================== -->
 
 <footer class="site-footer">
 
@@ -1804,7 +1729,7 @@ Browse the Library
 
 <div class="footer-grid">
 
-<div>
+<div class="footer-column">
 
 <h3>
 
@@ -1814,19 +1739,24 @@ Little Explorers Learning Hub
 
 <p>
 
-Supporting Early Head Start, Head Start, Preschool, and Pre Kindergarten educators with research based teaching resources, classroom inspiration, curriculum studies, and printable materials.
+Supporting Early Head Start,
+Head Start,
+Preschool,
+and Pre Kindergarten educators with practical teaching resources,
+professional development,
+and classroom inspiration.
 
 </p>
 
 </div>
 
-<div>
+<div class="footer-column">
 
-<h4>
+<h3>
 
 Explore
 
-</h4>
+</h3>
 
 <ul>
 
@@ -1834,43 +1764,27 @@ Explore
 
 <li><a href="resources.html">Resources</a></li>
 
+<li><a href="lesson-plans.html">Lesson Plans</a></li>
+
+<li><a href="printables.html">Printables</a></li>
+
 <li><a href="library/index.html">Library</a></li>
 
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Information
+
+</h3>
+
+<ul>
+
 <li><a href="about.html">About</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4>
-
-Popular Resources</h4>
-
-<ul>
-
-<li><a href="resources/classroom-management.html">Classroom Management</a></li>
-
-<li><a href="resources/assessment.html">Assessment Tools</a></li>
-
-<li><a href="resources/planning.html">Planning Templates</a></li>
-
-<li><a href="resources/family-engagement.html">Family Engagement</a></li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h4>
-
-Connect
-
-</h4>
-
-<ul>
 
 <li><a href="contact.html">Contact</a></li>
 
@@ -1878,9 +1792,33 @@ Connect
 
 <li><a href="terms.html">Terms of Use</a></li>
 
-<li><a href="copyright.html">Copyright</a></li>
-
 </ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>
+
+Connect
+
+</h3>
+
+<p>
+
+Have a resource idea?
+
+We'd love to hear from you.
+
+</p>
+
+<a
+href="contact.html"
+class="btn btn-secondary">
+
+Contact Us
+
+</a>
 
 </div>
 
@@ -1890,7 +1828,8 @@ Connect
 
 <p>
 
-© 2026 Little Explorers Learning Hub. All rights reserved.
+© 2026 Little Explorers Learning Hub.
+All Rights Reserved.
 
 </p>
 
@@ -1900,8 +1839,7 @@ Connect
 
 </footer>
 
-<script src="script.js"></script>
+<script src="js/main.js"></script>
 
 </body>
-
 </html>
