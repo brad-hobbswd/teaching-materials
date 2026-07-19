@@ -295,17 +295,53 @@ section{
     gap:1rem;
 }
 
+.search-toggle{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--border);
+    border-radius:50%;
+    background:var(--white);
+    color:var(--primary);
+    text-decoration:none;
+    transition:var(--transition);
+    box-shadow:var(--shadow-sm);
+}
+
+.search-toggle:hover{
+    background:var(--primary);
+    color:#ffffff;
+    transform:translateY(-2px);
+}
+
+.search-toggle i{
+    font-size:1rem;
+    line-height:1;
+}
+
 /*==================================================
   MOBILE MENU
 ==================================================*/
 
 .mobile-menu{
     display:none;
-    background:none;
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:var(--primary);
+    color:#ffffff;
     border:none;
-    color:var(--primary);
-    font-size:2rem;
     cursor:pointer;
+    font-size:1.4rem;
+    align-items:center;
+    justify-content:center;
+    transition:var(--transition);
+}
+
+.mobile-menu:hover{
+    background:var(--primary-dark);
 }
 
 
