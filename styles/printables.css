@@ -548,7 +548,7 @@ HEADER
     align-items:center;
     justify-content:space-between;
     min-height:90px;
-    gap:28px;
+    gap:16px;
 }
 
 /*==============================
@@ -601,15 +601,20 @@ MAIN NAVIGATION
 
 .main-nav{
     margin-left:auto;
+    flex:1;
+    display:flex;
+    justify-content:center;
+    min-width:0;
 }
 
 .main-nav ul{
     display:flex;
     align-items:center;
-    gap:24px;
+    gap:18px;
     margin:0;
     padding:0;
     list-style:none;
+    flex-wrap:nowrap;
 }
 
 .main-nav a{
@@ -621,6 +626,7 @@ MAIN NAVIGATION
     color:var(--text);
     text-decoration:none;
     transition:var(--transition);
+    white-space:nowrap;
 }
 
 .main-nav a:hover{
