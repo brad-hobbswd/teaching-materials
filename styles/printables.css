@@ -678,23 +678,22 @@ HEADER ACTIONS
 }
 
 .search-toggle{
-
-    display:grid;
-    place-items:center;
-
     width:46px;
     height:46px;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
     border-radius:50%;
-
     background:var(--primary-light);
-
     color:var(--primary);
-
-    transition:var(--transition);
-
 }
 
+.search-toggle i{
+    display:block;
+    font-size:1rem;
+    line-height:1;
+    color:inherit;
+}
 .search-toggle:hover{
 
     background:var(--primary);
