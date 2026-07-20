@@ -80,7 +80,7 @@ document.querySelectorAll("nav a").forEach(link => {
        Sticky Header
     ====================================== */
 
-    const header = document.querySelector("header");
+    const header = document.querySelector(".site-header");
 
     if (header) {
 
@@ -187,28 +187,6 @@ document.querySelectorAll(".search-bar, .hero-search").forEach(search => {
 });
 
     /* ======================================
-       Study Cards
-    ====================================== */
-
-    const studyCards = document.querySelectorAll(".study-card");
-
-    studyCards.forEach(card => {
-
-        card.addEventListener("mouseenter", () => {
-
-            card.classList.add("hover");
-
-        });
-
-        card.addEventListener("mouseleave", () => {
-
-            card.classList.remove("hover");
-
-        });
-
-    });
-
-   /* ======================================
    Card Animation
 ====================================== */
 
