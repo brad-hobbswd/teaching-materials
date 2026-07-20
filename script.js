@@ -6,7 +6,7 @@
 document.documentElement.classList.add("js");
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ======================================
+  /* ======================================
    Mobile Navigation
 ====================================== */
 
@@ -19,10 +19,36 @@ if (mobileButton && navigation) {
 
         navigation.classList.toggle("show");
 
-        mobileButton.setAttribute(
-            "aria-expanded",
-            navigation.classList.contains("show")
-        );
+        const expanded = navigation.classList.contains("show");
+
+        mobileButton.setAttribute("aria-expanded", expanded);
+
+    });
+
+    document.querySelectorAll(".main-nav a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navigation.classList.remove("show");
+
+            mobileButton.setAttribute("aria-expanded","false");
+
+        });
+
+    });
+
+    document.addEventListener("click", e => {
+
+        if (
+            !navigation.contains(e.target) &&
+            !mobileButton.contains(e.target)
+        ) {
+
+            navigation.classList.remove("show");
+
+            mobileButton.setAttribute("aria-expanded","false");
+
+        }
 
     });
 
