@@ -354,10 +354,44 @@ section{
   MOBILE MENU
 =====================================================*/
 
+.mobile-menu{
 
+    display:none;
+
+    width:48px;
+    height:48px;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
 
 .mobile-menu:hover{
+
     background:var(--primary-dark);
+
+}
+
+.mobile-menu:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:3px;
+
 }
 
 /*=====================================================
@@ -2115,10 +2149,6 @@ select:focus-visible{
         order:3;
         width:100%;
         max-width:none;
-    }
-
-    .main-nav{
-        display:none;
     }
 
     .mobile-menu{
