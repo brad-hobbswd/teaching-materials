@@ -1567,44 +1567,68 @@ FOOTER
 
 @media (max-width:900px){
 
-.search-bar{
+    .nav-container{
+        position:relative;
+    }
 
-    display:none;
+    .search-bar{
+        display:none;
+    }
 
-}
+    .mobile-menu{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
 
-.main-nav{
+    .main-nav{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#fff;
+        border-top:1px solid var(--border);
+        box-shadow:var(--shadow);
+        z-index:1000;
+    }
 
-    display:none;
+    .main-nav.active{
+        display:block;
+    }
 
-}
+    .main-nav ul{
+        display:flex;
+        flex-direction:column;
+        gap:0;
+        width:100%;
+    }
 
-.mobile-menu{
+    .main-nav li{
+        width:100%;
+    }
 
-    display:block;
+    .main-nav a{
+        display:block;
+        width:100%;
+        padding:1rem 1.5rem;
+        border-bottom:1px solid var(--border);
+    }
 
-}
+    .hero-highlights{
+        grid-template-columns:1fr;
+    }
 
-.hero-highlights{
+    .study-grid,
+    .learning-grid,
+    .favorite-grid,
+    .age-grid{
+        grid-template-columns:1fr;
+    }
 
-    grid-template-columns:1fr;
-
-}
-
-.study-grid,
-.learning-grid,
-.favorite-grid,
-.age-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.newsletter-benefits{
-
-    grid-template-columns:1fr;
-
-}
+    .newsletter-benefits{
+        grid-template-columns:1fr;
+    }
 
 }
 
