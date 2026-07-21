@@ -62,8 +62,10 @@ alt="Little Explorers Learning Hub">
 
 </a>
 
-<nav class="main-nav" aria-label="Primary Navigation">
-
+<nav
+    id="primary-navigation"
+    class="main-nav"
+    aria-label="Primary Navigation">
 <ul>
 
                 <li><a href="index.html">Home</a></li>
@@ -100,15 +102,15 @@ aria-label="Search">
 </a>
 
 <button
-class="mobile-menu"
-type="button"
-aria-label="Open Navigation"
-aria-expanded="false">
+    class="mobile-menu"
+    type="button"
+    aria-label="Open Navigation"
+    aria-controls="primary-navigation"
+    aria-expanded="false">
 
-<i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars"></i>
 
 </button>
-
 </div>
 
 </div>
@@ -1839,7 +1841,7 @@ All Rights Reserved.
 
 </footer>
 
-<script src="script.js"></script>
-
+<script src="js/resources.js"></script>
+  
 </body>
 </html>
