@@ -10,60 +10,60 @@ document.addEventListener("DOMContentLoaded", () => {
     ====================================== */
 
     const mobileButton = document.querySelector(".mobile-menu");
-    const navigation = document.querySelector(".main-nav");
+const navigation = document.querySelector(".main-nav");
 
-    if (mobileButton && navigation) {
+if (mobileButton && navigation) {
 
-        mobileButton.addEventListener("click", (event) => {
+    mobileButton.addEventListener("click", function (event) {
 
-    event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
-            navigation.classList.toggle("show");
+        navigation.classList.toggle("show");
 
-            const expanded = navigation.classList.contains("show");
+        const expanded = navigation.classList.contains("show");
 
-            mobileButton.setAttribute("aria-expanded", expanded);
+        this.setAttribute("aria-expanded", expanded);
 
-            mobileButton.innerHTML = expanded
-                ? '<i class="fa-solid fa-xmark"></i>'
-                : '<i class="fa-solid fa-bars"></i>';
+        this.innerHTML = expanded
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
 
-        });
+    });
 
-        navigation.querySelectorAll("a").forEach(link => {
+    navigation.addEventListener("click", function (event) {
 
-            link.addEventListener("click", () => {
+        event.stopPropagation();
 
-                navigation.classList.remove("show");
+    });
 
-                mobileButton.setAttribute("aria-expanded", "false");
+    navigation.querySelectorAll("a").forEach(link => {
 
-                mobileButton.innerHTML =
-                    '<i class="fa-solid fa-bars"></i>';
+        link.addEventListener("click", () => {
 
-            });
+            navigation.classList.remove("show");
 
-        });
+            mobileButton.setAttribute("aria-expanded", "false");
 
-        document.addEventListener("click", event => {
-
-            if (
-                !navigation.contains(event.target) &&
-                !mobileButton.contains(event.target)
-            ) {
-
-                navigation.classList.remove("show");
-
-                mobileButton.setAttribute("aria-expanded", "false");
-
-                mobileButton.innerHTML =
-                    '<i class="fa-solid fa-bars"></i>';
-
-            }
+            mobileButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
 
         });
 
-    }
+    });
+
+    document.addEventListener("click", () => {
+
+        navigation.classList.remove("show");
+
+        mobileButton.setAttribute("aria-expanded", "false");
+
+        mobileButton.innerHTML =
+            '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+}
 
     /* ======================================
        Sticky Header
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
        Newsletter
     ====================================== */
 
-    const newsletter = document.querySelector(".newsletter");
+    const newsletter = document.querySelector("form.newsletter");
 
     if (newsletter) {
 
