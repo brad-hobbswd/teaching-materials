@@ -5942,7 +5942,7 @@ select:-webkit-autofill {
 
     display: grid;
 
-    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    
 
     gap: 3rem;
 
