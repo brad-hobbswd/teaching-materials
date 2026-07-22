@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mobileButton && navigation) {
 
-        mobileButton.addEventListener("click", () => {
+        mobileButton.addEventListener("click", (event) => {
+
+    event.stopPropagation();
 
             navigation.classList.toggle("show");
 
