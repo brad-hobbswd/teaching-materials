@@ -61,8 +61,10 @@ alt="Little Explorers Learning Hub">
 
 </a>
 
-<nav class="main-nav"
-aria-label="Primary Navigation">
+<nav
+    id="primary-navigation"
+    class="main-nav"
+    aria-label="Primary Navigation">
 
 <ul>
 
@@ -99,10 +101,11 @@ aria-label="Search">
 </a>
 
 <button
-class="mobile-menu"
-type="button"
-aria-label="Open Navigation"
-aria-expanded="false">
+    class="mobile-menu"
+    type="button"
+    aria-label="Open Navigation"
+    aria-controls="primary-navigation"
+    aria-expanded="false">
 
 <i class="fa-solid fa-bars"></i>
 
