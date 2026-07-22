@@ -303,6 +303,8 @@ section{
 
     min-height:88px;
 
+    position:relative;
+
 }
 
 .logo{
@@ -1970,11 +1972,95 @@ padding:5rem 0;
 
 display:none;
 
+position:absolute;
+
+top:100%;
+
+left:0;
+
+width:100%;
+
+background:#fff;
+
+border-top:1px solid var(--border);
+
+border-radius:0 0 20px 20px;
+
+box-shadow:var(--shadow-md);
+
+overflow:hidden;
+
+z-index:1000;
+
+}
+
+.main-nav.active{
+
+display:block;
+
+animation:menuFade .25s ease;
+
+}
+
+.main-nav ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:0;
+
+padding:0;
+
+}
+
+.main-nav li{
+
+width:100%;
+
+}
+
+.main-nav a{
+
+display:block;
+
+padding:1rem 1.5rem;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.main-nav a:hover{
+
+background:var(--primary-light);
+
+}
+
+.main-nav a::after,
+
+.main-nav a.active::after{
+
+display:none;
+
 }
 
 .mobile-menu{
 
-display:block;
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:46px;
+
+height:46px;
+
+background:none;
+
+font-size:1.5rem;
+
+color:var(--primary);
 
 }
 
@@ -2140,3 +2226,22 @@ font-size:2rem;
 
 }
 
+@keyframes menuFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(-10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
