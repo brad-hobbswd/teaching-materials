@@ -348,21 +348,45 @@ function initializeContactForm() {
        Submit
     ========================================== */
 
-    form.addEventListener("submit", event => {
+   form.addEventListener("submit", event => {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        let valid = true;
+    /* ==========================================
+       Spam Protection
+    ========================================== */
 
-        requiredFields.forEach(field => {
+    if (!checkHoneypot(form)) {
 
-            if (!validateField(field)) {
+        return;
 
-                valid = false;
+    }
 
-            }
+    if (!canSubmit()) {
 
-        });
+        showFormMessage(
+
+            "Please wait a few seconds before submitting again.",
+
+            "error"
+
+        );
+
+        return;
+
+    }
+
+    let valid = true;
+
+    requiredFields.forEach(field => {
+
+        if (!validateField(field)) {
+
+            valid = false;
+
+        }
+
+    });
 
         if (!valid) {
 
@@ -375,20 +399,54 @@ function initializeContactForm() {
 
         }
 
-        startLoading(submitButton);
+       startLoading(submitButton);
 
-        setTimeout(() => {
+fetch("YOUR_FORM_ENDPOINT", {
 
-            stopLoading(submitButton);
+    method: "POST",
 
-            showFormMessage(
-                "Thank you! Your message has been sent successfully.",
-                "success"
-            );
+    body: new FormData(form),
 
-            form.reset();
+    headers: {
 
-        }, 1500);
+        Accept: "application/json"
+
+    }
+
+})
+.then(response => {
+
+    stopLoading(submitButton);
+
+    if (response.ok) {
+
+        showFormMessage(
+            "Thank you! Your message has been sent.",
+            "success"
+        );
+
+        form.reset();
+
+    } else {
+
+        showFormMessage(
+            "Sorry, something went wrong. Please try again.",
+            "error"
+        );
+
+    }
+
+})
+.catch(() => {
+
+    stopLoading(submitButton);
+
+    showFormMessage(
+        "Unable to connect. Please try again later.",
+        "error"
+    );
+
+});
 
     });
 
@@ -911,36 +969,20 @@ function initializeNewsletter() {
 
     if (!form) return;
 
-    const emailInput = form.querySelector('input[type="email"]');
-    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButton =
+        form.querySelector('button[type="submit"]');
 
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
 
         event.preventDefault();
 
-        if (!emailInput) return;
-
-        const email = emailInput.value.trim();
+        const email =
+            form.querySelector('input[type="email"]').value.trim();
 
         if (!validateEmail(email)) {
 
             showNewsletterMessage(
                 "Please enter a valid email address.",
-                "error"
-            );
-
-            emailInput.focus();
-
-            return;
-
-        }
-
-        const storageKey = `newsletter_${email.toLowerCase()}`;
-
-        if (localStorage.getItem(storageKey)) {
-
-            showNewsletterMessage(
-                "This email is already subscribed.",
                 "error"
             );
 
@@ -950,22 +992,71 @@ function initializeNewsletter() {
 
         startNewsletterLoading(submitButton);
 
-        setTimeout(() => {
+        try {
+
+            const response = await fetch(
+                "https://formspree.io/f/YOUR_FORM_ID",
+                {
+
+                    method: "POST",
+
+                    body: new FormData(form),
+
+                    headers: {
+
+                        Accept: "application/json"
+
+                    }
+
+                }
+
+            );
 
             stopNewsletterLoading(submitButton);
 
-            localStorage.setItem(storageKey, "subscribed");
+            if (response.ok) {
+
+                showNewsletterMessage(
+
+                    "Thank you for subscribing! You'll receive future updates from Little Explorers Learning Hub.",
+
+                    "success"
+
+                );
+
+                announce("Newsletter subscription successful.");
+
+                form.reset();
+
+            }
+
+            else {
+
+                showNewsletterMessage(
+
+                    "Subscription failed. Please try again.",
+
+                    "error"
+
+                );
+
+            }
+
+        }
+
+        catch (error) {
+
+            stopNewsletterLoading(submitButton);
 
             showNewsletterMessage(
-                "Thank you for subscribing to our newsletter!",
-                "success"
+
+                "Unable to connect. Please check your internet connection and try again.",
+
+                "error"
+
             );
 
-            announce("Newsletter subscription successful.");
-
-            form.reset();
-
-        }, 1500);
+        }
 
     });
 
@@ -1448,31 +1539,6 @@ window.addEventListener("resize", () => {
 
 });
 
-/* ==========================================================
-   Page Visibility
-========================================================== */
-
-document.addEventListener(
-
-    "visibilitychange",
-
-    () => {
-
-        if (document.hidden) {
-
-            console.log("Page hidden.");
-
-        }
-
-        else {
-
-            console.log("Page visible.");
-
-        }
-
-    }
-
-);
 
 /* ==========================================================
    Clipboard Helper
@@ -1560,44 +1626,6 @@ function throttle(callback, limit = 100) {
     };
 
 }
-
-/* ==========================================================
-   Browser Detection
-========================================================== */
-
-const browser = {
-
-    touch:
-        "ontouchstart" in window,
-
-    supportsObserver:
-        "IntersectionObserver" in window,
-
-    supportsClipboard:
-        !!navigator.clipboard
-
-};
-
-/* ==========================================================
-   Performance Logging
-========================================================== */
-
-window.addEventListener("load", () => {
-
-    if (!("performance" in window)) return;
-
-    const navigation =
-        performance.getEntriesByType("navigation")[0];
-
-    if (!navigation) return;
-
-    console.log(
-
-        `Contact page loaded in ${Math.round(navigation.loadEventEnd)} ms`
-
-    );
-
-});
 
 /* ==========================================================
    Initialize Custom Events
