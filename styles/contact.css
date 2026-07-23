@@ -5858,10 +5858,6 @@ select:-webkit-autofill {
 
 }
 
-/* ======================================================
-   FOOTER
-   Part 11
-====================================================== */
 
 /* ======================================
    FOOTER
@@ -5926,7 +5922,7 @@ select:-webkit-autofill {
    CONTAINER
 ====================================== */
 
-.footer-container {
+.site-footer .container {
 
     position: relative;
 
@@ -5942,9 +5938,11 @@ select:-webkit-autofill {
 
     display: grid;
 
-    grid-template-columns: 2.4fr 1fr 1fr 1.3fr;
+    grid-template-columns: minmax(320px, 2fr) 1fr 1fr 1.2fr;
 
-    gap: 3rem;
+    gap: 4rem;
+
+    align-items: start;
 
     padding-bottom: 3rem;
 
@@ -5956,19 +5954,35 @@ select:-webkit-autofill {
 
 .footer-brand img {
 
-    max-width: 220px;
+    width: 80px;
 
-    margin-bottom: 1.5rem;
+    height: 80px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin-bottom: 1.25rem;
 
 }
 
 .footer-brand p {
 
+    max-width: 420px;
+
     color: rgba(255,255,255,.82);
 
     line-height: 1.8;
 
-    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+
+    margin-bottom: 1rem;
+
+    color: var(--white);
+
+    font-size: 2rem;
 
 }
 
@@ -6022,25 +6036,37 @@ select:-webkit-autofill {
 
     margin-bottom: 1.5rem;
 
+    font-size: 1.5rem;
+
 }
 
 /* ======================================
    LINKS
 ====================================== */
 
-.footer-links {
+.footer-links,
+.footer-contact {
 
-    display: flex;
+    list-style: none;
 
-    flex-direction: column;
+    padding: 0;
 
-    gap: .9rem;
+    margin: 0;
+
+}
+
+.footer-links li,
+.footer-contact li {
+
+    margin-bottom: 1rem;
 
 }
 
 .footer-links a {
 
     color: rgba(255,255,255,.82);
+
+    text-decoration: none;
 
     transition: var(--transition);
 
@@ -6097,6 +6123,18 @@ select:-webkit-autofill {
     color: rgba(255,255,255,.82);
 
     margin: 0;
+
+}
+
+.footer-contact li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: .75rem;
+
+    line-height: 1.7;
 
 }
 
@@ -6208,11 +6246,13 @@ select:-webkit-autofill {
    TABLET
 ====================================== */
 
-@media (max-width:992px){
+@media (max-width: 992px) {
 
-    .footer-grid{
+    .footer-grid {
 
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns: 1fr 1fr;
+
+        gap: 3rem;
 
     }
 
@@ -6269,6 +6309,36 @@ select:-webkit-autofill {
     .back-to-top:hover{
 
         transform:translateX(50%) translateY(-4px);
+
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+    .footer-brand {
+
+        margin-inline: auto;
+
+    }
+
+    .footer-social {
+
+        justify-content: center;
+
+    }
+
+    .footer-contact li {
+
+        justify-content: center;
 
     }
 
