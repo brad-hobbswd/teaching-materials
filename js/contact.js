@@ -24,42 +24,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-/* ==========================================================
+/* ======================================
    Mobile Navigation
-========================================================== */
+====================================== */
 
-function initializeNavigation() {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const mobileButton = document.querySelector(".mobile-menu");
-    const navigation = document.querySelector(".main-nav");
+    const mobileButton = document.getElementById("mobile-menu-button");
+    const navigation = document.getElementById("primary-navigation");
 
     if (!mobileButton || !navigation) return;
 
-    mobileButton.addEventListener("click", event => {
+    mobileButton.addEventListener("click", (event) => {
 
         event.stopPropagation();
 
         navigation.classList.toggle("active");
-        mobileButton.classList.toggle("active");
 
         const expanded =
-            mobileButton.getAttribute("aria-expanded") === "true";
+            navigation.classList.contains("active");
 
         mobileButton.setAttribute(
             "aria-expanded",
-            String(!expanded)
+            expanded
         );
+
+        mobileButton.innerHTML = expanded
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
 
     });
 
-    document.addEventListener("click", event => {
+    document.addEventListener("click", (event) => {
 
-        if (!navigation.contains(event.target) &&
-            !mobileButton.contains(event.target)) {
+        if (
+            !navigation.contains(event.target) &&
+            !mobileButton.contains(event.target)
+        ) {
 
             navigation.classList.remove("active");
-            mobileButton.classList.remove("active");
-            mobileButton.setAttribute("aria-expanded", "false");
+
+            mobileButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
 
         }
 
@@ -70,14 +81,20 @@ function initializeNavigation() {
         link.addEventListener("click", () => {
 
             navigation.classList.remove("active");
-            mobileButton.classList.remove("active");
-            mobileButton.setAttribute("aria-expanded", "false");
+
+            mobileButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileButton.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
 
         });
 
     });
 
-}
+});
 
 /* ==========================================================
    Smooth Scrolling
