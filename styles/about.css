@@ -798,3 +798,737 @@ section{
     }
 
 }
+
+/*==================================================
+    OUR STORY
+==================================================*/
+
+.our-story{
+
+    background:var(--white);
+
+}
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:5rem;
+
+    align-items:center;
+
+}
+
+.story-image{
+
+    position:relative;
+
+}
+
+.story-image img{
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    transition:transform .4s ease;
+
+}
+
+.story-image:hover img{
+
+    transform:scale(1.02);
+
+}
+
+.story-content h3{
+
+    margin-bottom:1.5rem;
+
+    font-size:2rem;
+
+}
+
+.story-content p{
+
+    margin-bottom:1.5rem;
+
+}
+
+.story-highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.5rem;
+
+    margin-top:2rem;
+
+}
+
+.highlight-box{
+
+    background:#fff;
+
+    padding:2rem;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.highlight-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.highlight-box i{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.highlight-box h4{
+
+    margin-bottom:.75rem;
+
+}
+
+/*==================================================
+    MISSION
+==================================================*/
+
+.mission-section{
+
+    background:linear-gradient(
+        180deg,
+        #f7faf8,
+        #eef6f0
+    );
+
+}
+
+.mission-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+.mission-card{
+
+    background:#fff;
+
+    padding:3rem 2.5rem;
+
+    border-radius:var(--radius-lg);
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.mission-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.mission-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 1.5rem;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    font-size:2.5rem;
+
+}
+
+.mission-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.values-list{
+
+    margin-top:1.5rem;
+
+    display:grid;
+
+    gap:.75rem;
+
+}
+
+.values-list li{
+
+    font-weight:600;
+
+    color:var(--text-light);
+
+}
+
+/*==================================================
+    TIMELINE
+==================================================*/
+
+.timeline-section{
+
+    background:var(--white);
+
+}
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:30px;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    gap:2rem;
+
+    margin-bottom:3rem;
+
+}
+
+.timeline-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.timeline-dot{
+
+    width:64px;
+
+    height:64px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    border:6px solid var(--primary);
+
+    flex-shrink:0;
+
+    z-index:2;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.timeline-content{
+
+    flex:1;
+
+    background:#fff;
+
+    padding:2rem;
+
+    border-radius:var(--radius-md);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.timeline-content:hover{
+
+    transform:translateX(8px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.timeline-content h3{
+
+    margin-bottom:1rem;
+
+}
+
+/*==================================================
+    RESPONSIVE
+==================================================*/
+
+@media (max-width:992px){
+
+    .story-grid{
+
+        grid-template-columns:1fr;
+
+        gap:3rem;
+
+    }
+
+    .mission-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .story-content{
+
+        text-align:center;
+
+    }
+
+    .story-highlights{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .timeline::before{
+
+        left:20px;
+
+    }
+
+    .timeline-item{
+
+        gap:1rem;
+
+    }
+
+    .timeline-dot{
+
+        width:42px;
+
+        height:42px;
+
+        border-width:4px;
+
+    }
+
+    .timeline-content{
+
+        padding:1.5rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .highlight-box{
+
+        padding:1.5rem;
+
+    }
+
+    .mission-card{
+
+        padding:2rem;
+
+    }
+
+    .timeline-content{
+
+        padding:1.25rem;
+
+    }
+
+}
+
+/*==================================================
+    PURPOSE
+==================================================*/
+
+.purpose-section{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #f7faf8
+    );
+
+}
+
+.purpose-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+.purpose-content h2{
+
+    margin-bottom:1.5rem;
+
+}
+
+.purpose-content p{
+
+    margin-bottom:1.5rem;
+
+}
+
+.purpose-list{
+
+    display:grid;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+.purpose-list li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+}
+
+.purpose-list i{
+
+    color:var(--primary);
+
+    font-size:1.2rem;
+
+    margin-top:.25rem;
+
+}
+
+.purpose-image img{
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/*==================================================
+    TEACHING PHILOSOPHY
+==================================================*/
+
+.philosophy-section{
+
+    background:var(--off-white);
+
+}
+
+.philosophy-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+.philosophy-card{
+
+    background:#fff;
+
+    padding:2.5rem;
+
+    border-radius:var(--radius-lg);
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.philosophy-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.philosophy-card i{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 1.5rem;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.philosophy-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+/*==================================================
+    MEET THE CREATOR
+==================================================*/
+
+.creator-section{
+
+    background:#ffffff;
+
+}
+
+.creator-grid{
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+}
+
+.creator-photo{
+
+    text-align:center;
+
+}
+
+.creator-photo img{
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.creator-photo h3{
+
+    margin-top:1.5rem;
+
+}
+
+.creator-photo p{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.creator-content h2{
+
+    margin-bottom:1.5rem;
+
+}
+
+.creator-content p{
+
+    margin-bottom:1.5rem;
+
+}
+
+.creator-credentials{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.5rem;
+
+    margin-top:2rem;
+
+}
+
+.credential{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    padding:1.75rem;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.credential:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.credential h4{
+
+    color:var(--primary);
+
+    margin-bottom:.75rem;
+
+}
+
+.credential i{
+
+    color:var(--secondary);
+
+    font-size:1.5rem;
+
+    margin-bottom:1rem;
+
+}
+
+/*==================================================
+    RESPONSIVE
+==================================================*/
+
+@media (max-width:1100px){
+
+    .purpose-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .creator-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .philosophy-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .creator-credentials{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .philosophy-card{
+
+        padding:2rem;
+
+    }
+
+    .credential{
+
+        padding:1.5rem;
+
+    }
+
+}
+
