@@ -5869,6 +5869,8 @@ select:-webkit-autofill {
 
     overflow: hidden;
 
+    padding: 4rem 0 2rem;
+
     background: linear-gradient(
         135deg,
         #183b2a 0%,
@@ -5928,6 +5930,8 @@ select:-webkit-autofill {
 
     z-index: 2;
 
+    padding-inline: clamp(2rem,4vw,4rem);
+
 }
 
 /* ======================================
@@ -5938,7 +5942,7 @@ select:-webkit-autofill {
 
     display: grid;
 
-    grid-template-columns: minmax(320px, 2fr) 1fr 1fr 1.2fr;
+    grid-template-columns: minmax(300px, 2.1fr) 1fr 1fr 1fr;
 
     gap: 4rem;
 
@@ -5966,21 +5970,21 @@ select:-webkit-autofill {
 
 .footer-brand p {
 
-    max-width: 430px;
+    max-width: 380px;
 
-    color: rgba(255,255,255,.82);
+    line-height: 1.75;
 
-    line-height: 1.8;
+    margin-bottom: 2rem;
 
 }
 
 .footer-brand h3 {
 
-    margin-bottom: 1.5rem;
+    margin: 0 0 1rem;
 
-    color: var(--white);
+    font-size: 1.9rem;
 
-    font-size: 1.75rem;
+    line-height: 1.2;
 
 }
 
@@ -5992,7 +5996,9 @@ select:-webkit-autofill {
 
     display: flex;
 
-    gap: .75rem;
+    gap: .9rem;
+
+    margin-top: 1.5rem;
 
 }
 
@@ -6062,19 +6068,15 @@ select:-webkit-autofill {
 
 .footer-links a {
 
-    color: rgba(255,255,255,.82);
+    position: relative;
 
-    text-decoration: none;
-
-    transition: var(--transition);
+    transition: color .3s ease;
 
 }
 
 .footer-links a:hover {
 
     color: var(--white);
-
-    padding-left: .35rem;
 
 }
 
@@ -6132,7 +6134,15 @@ select:-webkit-autofill {
 
     gap: .75rem;
 
-    line-height: 1.7;
+}
+
+.footer-contact i {
+
+    width: 22px;
+
+    margin-top: 0;
+
+    flex-shrink: 0;
 
 }
 
@@ -6146,7 +6156,7 @@ select:-webkit-autofill {
 
     background: rgba(255,255,255,.12);
 
-    margin: 3rem 0 2rem;
+    margin: 2.5rem 0;
 
 }
 
@@ -6162,11 +6172,9 @@ select:-webkit-autofill {
 
     align-items: center;
 
-    gap: 2rem;
+    flex-wrap: wrap;
 
-    padding-bottom: 2rem;
-
-    padding-top: 2rem;
+    row-gap: 1rem;
 
 }
 
@@ -6811,6 +6819,8 @@ html {
 
         color:#000 !important;
 
+        padding-top: 5rem;
+
     }
 
 }
@@ -7125,6 +7135,67 @@ html {
 
 }
 
+/* ======================================
+   RESPONSIVE FOOTER
+====================================== */
+
+@media (max-width: 992px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 3rem;
+
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+
+        text-align: center;
+
+    }
+
+    .footer-brand {
+
+        margin: 0 auto;
+
+    }
+
+    .footer-social {
+
+        justify-content: center;
+
+    }
+
+    .footer-contact li {
+
+        justify-content: center;
+
+    }
+
+    .footer-bottom-links {
+
+        justify-content: center;
+
+    }
+
+}
 /* ======================================
    END OF STYLESHEET
 ====================================== */
