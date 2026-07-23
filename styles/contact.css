@@ -6773,32 +6773,23 @@ html {
 
     gap: 2rem;
 
-    min-height: 80px;
+    min-height: 90px;
+
+    padding:0 1rem;
 
 }
 
-.logo {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: .85rem;
-
-    text-decoration: none;
-
-    flex-shrink: 0;
-
+.logo{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    flex-shrink:0;
+    min-width:270px;
 }
 
-.logo img {
-
-    width: 60px;
-
-    height: 60px;
-
-    object-fit: contain;
-
+.logo img{
+    width:64px;
+    height:64px;
 }
 
 .logo-text {
@@ -6841,7 +6832,7 @@ html {
 
     align-items: center;
 
-    gap: 1.5rem;
+    gap:2.25rem;
 
     list-style: none;
 
@@ -6869,9 +6860,11 @@ html {
 
 }
 
-.main-nav a.active {
+.main-nav a.active{
 
-    color: var(--primary);
+    color:var(--primary);
+
+    font-weight:700;
 
 }
 
