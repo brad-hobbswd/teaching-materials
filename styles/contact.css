@@ -3894,7 +3894,7 @@ select:-webkit-autofill {
    CONTAINER
 ====================================== */
 
-.faq-wrapper {
+.faq-container {
 
     max-width: 900px;
 
@@ -3969,6 +3969,7 @@ select:-webkit-autofill {
     font-size: 1.1rem;
 
     color: var(--heading);
+    font-weight:700;
 
 }
 
@@ -4012,9 +4013,11 @@ select:-webkit-autofill {
 
     transition:
 
-        max-height .45s ease,
+       max-height .45s ease,
 
-        padding .35s ease;
+       padding .35s ease,
+
+       opacity .35s ease;
 
     padding: 0 2rem;
 
@@ -4022,9 +4025,10 @@ select:-webkit-autofill {
 
 .faq-item.active .faq-answer {
 
-    max-height: 500px;
+    max-height: 1000px;
 
     padding: 0 2rem 2rem;
+    opacity:1;
 
 }
 
@@ -4051,6 +4055,10 @@ select:-webkit-autofill {
 .faq-item.active {
 
     border-color: var(--primary);
+
+    box-shadow:
+
+        0 15px 40px rgba(47,133,90,.12);
 
 }
 
@@ -4102,7 +4110,11 @@ select:-webkit-autofill {
 
 .faq-question:hover i {
 
-    transform: scale(1.15);
+    transform:
+
+        scale(1.15)
+
+        rotate(-10deg);
 
 }
 
@@ -5786,7 +5798,7 @@ select:-webkit-autofill {
 
     .promise-quote blockquote{
 
-        font-size:1.1rem;
+        font-size:1.15rem;
 
     }
 
