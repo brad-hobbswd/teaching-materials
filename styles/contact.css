@@ -5944,7 +5944,7 @@ select:-webkit-autofill {
 
     align-items: start;
 
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 
 }
 
@@ -5954,21 +5954,19 @@ select:-webkit-autofill {
 
 .footer-brand img {
 
-    width: 80px;
+    width: 72px;
 
-    height: 80px;
-
-    object-fit: contain;
+    height: 72px;
 
     display: block;
 
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 
 }
 
 .footer-brand p {
 
-    max-width: 420px;
+    max-width: 430px;
 
     color: rgba(255,255,255,.82);
 
@@ -5978,11 +5976,11 @@ select:-webkit-autofill {
 
 .footer-brand h3 {
 
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     color: var(--white);
 
-    font-size: 2rem;
+    font-size: 1.75rem;
 
 }
 
@@ -6058,7 +6056,7 @@ select:-webkit-autofill {
 .footer-links li,
 .footer-contact li {
 
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
 
 }
 
@@ -6130,7 +6128,7 @@ select:-webkit-autofill {
 
     display: flex;
 
-    align-items: flex-start;
+    align-items: center;
 
     gap: .75rem;
 
@@ -6167,6 +6165,8 @@ select:-webkit-autofill {
     gap: 2rem;
 
     padding-bottom: 2rem;
+
+    padding-top: 2rem;
 
 }
 
