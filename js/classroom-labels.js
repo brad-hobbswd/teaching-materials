@@ -1176,7 +1176,7 @@ ${state.subtitle}
 
                 if (entry.isIntersecting) {
 
-                    entry.target.classList.add("visible");
+                    entry.target.classList.add("show");
 
                 }
 
