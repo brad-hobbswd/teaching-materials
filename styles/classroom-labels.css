@@ -2747,21 +2747,29 @@ grid-template-columns:1fr;
 
 .faq-grid{
 
+    max-width:950px;
+
+    margin:0 auto;
+
     display:grid;
 
-    gap:1.5rem;
+    gap:1rem;
 
 }
 
 .faq-card{
 
-    background:#fff;
+    background:#ffffff;
+
+    border:1px solid var(--border);
 
     border-radius:1rem;
 
     box-shadow:var(--shadow-sm);
 
-    border:1px solid var(--border);
+    overflow:hidden;
+
+    transition:var(--transition);
 
 }
 
@@ -2775,17 +2783,35 @@ grid-template-columns:1fr;
 
 .faq-question{
 
+    width:100%;
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
 
-    padding:1.5rem;
+    padding:1.5rem 2rem;
+
+    background:#ffffff;
+
+    border:none;
 
     cursor:pointer;
 
+    text-align:left;
+
+    font:inherit;
+
     font-weight:700;
+
+    color:var(--gray-900);
+
+}
+
+.faq-question span{
+
+    font-size:1.1rem;
 
 }
 
@@ -2793,7 +2819,9 @@ grid-template-columns:1fr;
 
     color:var(--primary);
 
-    transition:.3s;
+    transition:transform .3s ease;
+
+    flex-shrink:0;
 
 }
 
@@ -2805,11 +2833,19 @@ grid-template-columns:1fr;
 
 .faq-answer{
 
+    display:none;
+
     padding:0 2rem 2rem;
+
+}
+
+.faq-answer p{
+
+    margin:0;
 
     color:var(--gray-700);
 
-    display:none;
+    line-height:1.8;
 
 }
 
