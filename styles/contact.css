@@ -6667,8 +6667,11 @@ html {
 
     gap: 2rem;
 
-    min-heigh1t: 90px;
-   }
+    min-height: 100px;
+
+    padding: 0 1rem;
+
+}
 
 /* ==========================================
    LOGO
