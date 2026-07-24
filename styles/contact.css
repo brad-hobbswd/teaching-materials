@@ -5174,6 +5174,12 @@ select:-webkit-autofill {
     padding:1.5rem;
 }
 
+   .newsletter-section{
+
+    padding-bottom:2rem;
+
+}
+
 }
 
 /* ======================================================
@@ -5195,6 +5201,7 @@ select:-webkit-autofill {
         180deg,
         #ffffff 0%,
         #f8fcf9 100%);
+    padding-top:2rem;
 
 }
 
