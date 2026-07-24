@@ -2095,15 +2095,15 @@ grid-template-columns:1fr;
 
 .print-settings{
 
+    margin-top:4rem;
+
     background:#ffffff;
 
     border-radius:1.5rem;
 
-    box-shadow:var(--shadow);
-
     padding:2.5rem;
 
-    margin-top:3rem;
+    box-shadow:var(--shadow);
 
 }
 
@@ -2113,13 +2113,15 @@ grid-template-columns:1fr;
 
     color:var(--primary);
 
+    text-align:center;
+
 }
 
 .settings-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:2rem;
 
@@ -2135,21 +2137,35 @@ grid-template-columns:1fr;
 
 .setting label{
 
-    margin-bottom:.6rem;
-
     font-weight:700;
+
+    margin-bottom:.5rem;
+
+    color:var(--gray-900);
 
 }
 
 .setting select{
 
+    width:100%;
+
     padding:1rem;
 
     border:1px solid var(--border);
 
-    border-radius:.8rem;
+    border-radius:.85rem;
 
-    background:#ffffff;
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+.setting select:focus{
+
+    border-color:var(--primary);
+
+    outline:none;
 
 }
 
@@ -2163,7 +2179,7 @@ grid-template-columns:1fr;
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
     gap:1rem;
 
@@ -2171,15 +2187,19 @@ grid-template-columns:1fr;
 
 .print-actions button{
 
-    padding:1rem;
+    padding:1rem 1.5rem;
 
     border:none;
 
     border-radius:999px;
 
-    color:#ffffff;
+    color:#fff;
 
     font-weight:700;
+
+    font-size:1rem;
+
+    cursor:pointer;
 
     transition:.3s;
 
@@ -2187,10 +2207,9 @@ grid-template-columns:1fr;
 
 .print-actions button:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
 }
-
 #previewSheet{
 
     background:var(--blue);
