@@ -2833,9 +2833,17 @@ grid-template-columns:1fr;
 
 .faq-answer{
 
-    display:none;
+    max-height:0;
 
-    padding:0 2rem 2rem;
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:max-height .35s ease,
+               opacity .35s ease,
+               padding .35s ease;
+
+    padding:0 2rem;
 
 }
 
@@ -2851,7 +2859,11 @@ grid-template-columns:1fr;
 
 .faq-card.active .faq-answer{
 
-    display:block;
+    max-height:300px;
+
+    opacity:1;
+
+    padding:0 2rem 1.5rem;
 
 }
 
