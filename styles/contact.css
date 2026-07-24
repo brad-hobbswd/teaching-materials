@@ -5033,19 +5033,21 @@ select:-webkit-autofill {
 
 .newsletter-grid{
     display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:4rem;
-    align-items:center;
+    grid-template-columns:minmax(0,1.35fr) minmax(360px,.9fr);
+    gap:5rem;
+    align-items:start;
 }
 
 .newsletter-content h2{
-    margin:1rem 0 1.5rem;
+    margin:.75rem 0 1.25rem;
+    max-width:14ch;
 }
 
 .newsletter-content p{
     color:var(--gray-600);
     font-size:1.05rem;
     line-height:1.8;
+    max-width:700px;
 }
 
 .newsletter-benefits{
@@ -5058,9 +5060,10 @@ select:-webkit-autofill {
 .newsletter-benefits div{
     display:flex;
     align-items:center;
-    gap:.75rem;
-    padding:1rem;
+    gap:.85rem;
+    padding:1.15rem 1.25rem;
     background:#fff;
+    border:1px solid var(--gray-200);
     border-radius:var(--radius);
     box-shadow:var(--shadow-sm);
     transition:var(--transition);
@@ -5079,6 +5082,8 @@ select:-webkit-autofill {
 .newsletter-form-card{
     background:#fff;
     padding:3rem;
+    margin-top:1rem;
+    border:1px solid var(--gray-200);
     border-radius:var(--radius-xl);
     box-shadow:var(--shadow-lg);
 }
@@ -5141,6 +5146,7 @@ select:-webkit-autofill {
 
 .newsletter-grid{
     grid-template-columns:1fr;
+    gap:3rem;
 }
 
 .newsletter-content{
@@ -5153,6 +5159,7 @@ select:-webkit-autofill {
 
 .newsletter-form-card{
     padding:2rem;
+    margin-top:0;
 }
 
 }
