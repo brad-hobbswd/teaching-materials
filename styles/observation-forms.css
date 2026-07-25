@@ -1,0 +1,2653 @@
+/* ==========================================
+   LITTLE EXPLORERS LEARNING HUB
+   Observation Forms Stylesheet
+   Part 1 of 8
+
+   TABLE OF CONTENTS
+
+   1. Root Variables
+   2. Reset
+   3. Base Styles
+   4. Typography
+   5. Container
+   6. Buttons
+   7. Header
+   8. Navigation
+========================================== */
+
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root{
+
+    --primary:#34c759;
+    --primary-dark:#28a745;
+    --secondary:#4dabf7;
+    --accent:#ffb84d;
+    --purple:#9b5de5;
+    --pink:#ff6fae;
+
+    --dark:#243447;
+    --text:#495057;
+    --light:#f8fbfd;
+    --white:#ffffff;
+
+    --border:#e5edf4;
+
+    --shadow-sm:0 3px 10px rgba(0,0,0,.06);
+    --shadow-md:0 12px 30px rgba(0,0,0,.08);
+    --shadow-lg:0 18px 40px rgba(0,0,0,.12);
+
+    --radius-sm:12px;
+    --radius:18px;
+    --radius-lg:28px;
+
+    --transition:.3s ease;
+
+    --max-width:1200px;
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Nunito",sans-serif;
+    color:var(--text);
+    background:var(--light);
+    line-height:1.7;
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+    transition:var(--transition);
+
+}
+
+button{
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+    transition:var(--transition);
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,
+h2,
+h3,
+h4{
+
+    font-family:"Fredoka",sans-serif;
+    color:var(--dark);
+    font-weight:700;
+    line-height:1.2;
+
+}
+
+h1{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+}
+
+h2{
+
+    font-size:clamp(2rem,4vw,3rem);
+
+}
+
+h3{
+
+    font-size:1.35rem;
+
+}
+
+p{
+
+    color:var(--text);
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:min(92%,var(--max-width));
+    margin-inline:auto;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.7rem;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+    color:var(--white);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn-secondary{
+
+    background:var(--white);
+    color:var(--primary);
+    border:2px solid var(--primary);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--primary);
+    color:var(--white);
+
+}
+
+/* ==========================================
+   SITE HEADER
+========================================== */
+
+.site-header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.site-header .container{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    min-height:90px;
+
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:1rem;
+
+}
+
+.logo img{
+
+    width:62px;
+    height:62px;
+    object-fit:contain;
+
+}
+
+.logo-title{
+
+    display:block;
+
+    font-family:"Fredoka",sans-serif;
+    font-size:1.35rem;
+    font-weight:700;
+
+    color:var(--dark);
+
+}
+
+.logo-subtitle{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-weight:700;
+    font-size:.95rem;
+
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.main-nav ul{
+
+    display:flex;
+    align-items:center;
+    gap:2rem;
+
+}
+
+.main-nav a{
+
+    position:relative;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+}
+
+.main-nav a:hover{
+
+    color:var(--primary);
+
+}
+
+.main-nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:3px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after{
+
+    width:100%;
+
+}
+
+.main-nav a.active{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   MOBILE BUTTON
+========================================== */
+
+.mobile-menu{
+
+    display:none;
+
+    width:52px;
+    height:52px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+    color:var(--white);
+
+    font-size:1.25rem;
+
+    align-items:center;
+    justify-content:center;
+
+}
+
+/* ==========================================
+   PART 2 OF 8
+
+   9. Breadcrumb
+   10. Hero
+   11. Hero Features
+   12. Hero Buttons
+   13. Statistics
+========================================== */
+
+/* ==========================================
+   BREADCRUMB
+========================================== */
+
+.breadcrumb-section{
+
+    background:#eef8f2;
+    border-bottom:1px solid var(--border);
+
+    padding:1rem 0;
+
+}
+
+.breadcrumb ol{
+
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:.75rem;
+
+    font-size:.95rem;
+    font-weight:700;
+
+}
+
+.breadcrumb a{
+
+    color:var(--primary);
+
+}
+
+.breadcrumb a:hover{
+
+    color:var(--primary-dark);
+
+}
+
+.breadcrumb li[aria-current="page"]{
+
+    color:var(--dark);
+
+}
+
+.breadcrumb i{
+
+    color:#9aa7b4;
+    font-size:.8rem;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.page-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(135deg,#e8fff0 0%,#f6fcff 100%);
+
+    padding:5.5rem 0;
+
+}
+
+.page-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    background:rgba(52,199,89,.08);
+
+    top:-220px;
+    right:-180px;
+
+}
+
+.page-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(77,171,247,.08);
+
+    bottom:-180px;
+    left:-140px;
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+
+    text-align:center;
+
+    margin:0 auto;
+
+}
+
+.section-tag{
+
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    padding:.7rem 1.3rem;
+
+    border-radius:999px;
+
+    box-shadow:var(--shadow-sm);
+
+    margin-bottom:1.5rem;
+
+}
+
+.section-tag i{
+
+    color:var(--accent);
+
+}
+
+.hero-content h1{
+
+    margin-bottom:1.5rem;
+
+}
+
+.hero-intro{
+
+    font-size:1.15rem;
+
+    max-width:760px;
+
+    margin:0 auto 2.5rem;
+
+}
+
+/* ==========================================
+   HERO FEATURES
+========================================== */
+
+.hero-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1.25rem;
+
+    margin-bottom:2.5rem;
+
+}
+
+.hero-feature{
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    padding:1.5rem 1rem;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.hero-feature:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.hero-feature i{
+
+    display:block;
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:.9rem;
+
+}
+
+/* ==========================================
+   HERO BUTTONS
+========================================== */
+
+.hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+/* ==========================================
+   STATISTICS
+========================================== */
+
+.stats-section{
+
+    padding:5rem 0;
+
+    background:var(--white);
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+.stat-card{
+
+    background:var(--light);
+
+    border-radius:22px;
+
+    padding:2.5rem 1.5rem;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.stat-card i{
+
+    font-size:2.6rem;
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.stat-card h2{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+    margin-bottom:.5rem;
+
+}
+
+.stat-card p{
+
+    font-weight:700;
+
+    color:var(--dark);
+
+}
+
+/* ==========================================
+   PART 3 OF 8
+
+   14. Shared Section Styles
+   15. Why Observation Matters
+   16. Step Cards
+   17. Observation Resources
+========================================== */
+
+/* ==========================================
+   SHARED SECTION STYLES
+========================================== */
+
+section{
+
+    padding:6rem 0;
+
+}
+
+.section-heading{
+
+    max-width:760px;
+
+    margin:0 auto 4rem;
+
+    text-align:center;
+
+}
+
+.section-heading h2{
+
+    margin:1rem 0 1rem;
+
+}
+
+.section-heading p{
+
+    font-size:1.08rem;
+
+    color:var(--text);
+
+}
+
+/* ==========================================
+   WHY OBSERVATION MATTERS
+========================================== */
+
+.importance-section{
+
+    background:linear-gradient(
+        180deg,
+        #f8fbfd 0%,
+        #ffffff 100%
+    );
+
+}
+
+.steps-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+.step-card{
+
+    position:relative;
+
+    background:var(--white);
+
+    padding:2.5rem 2rem;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    overflow:hidden;
+
+}
+
+.step-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.step-number{
+
+    position:absolute;
+
+    top:18px;
+    right:20px;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-weight:700;
+
+    font-size:.95rem;
+
+}
+
+.step-card i{
+
+    font-size:2.7rem;
+
+    color:var(--primary);
+
+    margin-bottom:1.25rem;
+
+}
+
+.step-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.step-card p{
+
+    font-size:.98rem;
+
+}
+
+/* ==========================================
+   OBSERVATION RESOURCES
+========================================== */
+
+.label-categories{
+
+    background:var(--light);
+
+}
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+.category-card{
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:2.25rem;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.category-icon{
+
+    width:72px;
+    height:72px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:1.5rem;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.category-icon i{
+
+    color:var(--white);
+
+    font-size:2rem;
+
+}
+
+.category-card h3{
+
+    margin-bottom:.9rem;
+
+}
+
+.category-card p{
+
+    margin-bottom:1.25rem;
+
+}
+
+.category-card ul{
+
+    margin-bottom:2rem;
+
+}
+
+.category-card li{
+
+    position:relative;
+
+    padding-left:1.6rem;
+
+    margin-bottom:.75rem;
+
+}
+
+.category-card li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.category-button{
+
+    margin-top:auto;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:.9rem 1.5rem;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.category-button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   PART 4 OF 8
+
+   18. Observation Methods
+   19. Theme Cards
+   20. Featured Theme
+   21. Featured Observation Forms
+========================================== */
+
+/* ==========================================
+   OBSERVATION METHODS
+========================================== */
+
+.classroom-themes{
+
+    background:#ffffff;
+
+}
+
+.theme-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+.theme-card{
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.theme-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.theme-preview{
+
+    height:150px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.theme-preview i{
+
+    font-size:3rem;
+
+    color:var(--white);
+
+}
+
+.theme-card h3{
+
+    padding:1.75rem 1.75rem .75rem;
+
+}
+
+.theme-card p{
+
+    padding:0 1.75rem;
+
+    flex:1;
+
+}
+
+.theme-button{
+
+    margin:1.75rem;
+
+    padding:1rem;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-weight:700;
+
+}
+
+.theme-button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================
+   THEME COLORS
+========================================== */
+
+.rainbow-theme{
+
+    background:linear-gradient(
+        135deg,
+        #ff6b6b,
+        #ffb84d
+    );
+
+}
+
+.woodland-theme{
+
+    background:linear-gradient(
+        135deg,
+        #2ecc71,
+        #66d17a
+    );
+
+}
+
+.ocean-theme{
+
+    background:linear-gradient(
+        135deg,
+        #4dabf7,
+        #5cc8ff
+    );
+
+}
+
+.safari-theme{
+
+    background:linear-gradient(
+        135deg,
+        #f4a261,
+        #e76f51
+    );
+
+}
+
+.boho-theme{
+
+    background:linear-gradient(
+        135deg,
+        #b388eb,
+        #9b5de5
+    );
+
+}
+
+.custom-theme{
+
+    background:linear-gradient(
+        135deg,
+        #34c759,
+        #4dabf7
+    );
+
+}
+
+/* ==========================================
+   FEATURED THEME
+========================================== */
+
+.featured-theme{
+
+    border:3px solid var(--primary);
+
+    position:relative;
+
+}
+
+.featured-theme::before{
+
+    content:"Featured";
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    background:var(--accent);
+
+    color:var(--dark);
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   FEATURED OBSERVATION FORMS
+========================================== */
+
+.related-resources{
+
+    background:var(--light);
+
+}
+
+.resources-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+.resource-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:2rem;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.resource-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.resource-icon{
+
+    width:72px;
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:1.5rem;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--secondary),
+        var(--primary)
+    );
+
+}
+
+.resource-icon i{
+
+    color:var(--white);
+
+    font-size:2rem;
+
+}
+
+.resource-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.resource-card p{
+
+    margin-bottom:2rem;
+
+    flex:1;
+
+}
+
+.resource-card .btn{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   PART 5 OF 8
+
+   22. Best Practices
+   23. Tips Grid
+   24. FAQ
+   25. Final CTA
+========================================== */
+
+/* ==========================================
+   BEST PRACTICES
+========================================== */
+
+.teacher-tips{
+
+    background:#ffffff;
+
+}
+
+.tips-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+.tip-card{
+
+    background:var(--white);
+
+    padding:2rem;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    border-top:5px solid transparent;
+
+}
+
+.tip-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-md);
+
+    border-color:var(--primary);
+
+}
+
+.tip-card i{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+    margin-bottom:1.25rem;
+
+}
+
+.tip-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.tip-card p{
+
+    font-size:.97rem;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq-section{
+
+    background:var(--light);
+
+}
+
+.faq-grid{
+
+    display:grid;
+
+    gap:1.5rem;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.faq-card{
+
+    background:var(--white);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1.4rem 1.75rem;
+
+    background:none;
+
+    color:var(--dark);
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    text-align:left;
+
+}
+
+.faq-question:hover{
+
+    background:#f7fcf8;
+
+}
+
+.faq-question i{
+
+    color:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.faq-card.active .faq-question i{
+
+    transform:rotate(180deg);
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+    background:#fcfcfc;
+
+}
+
+.faq-card.active .faq-answer{
+
+    max-height:300px;
+
+}
+
+.faq-answer p{
+
+    padding:0 1.75rem 1.75rem;
+
+}
+
+/* ==========================================
+   FINAL CTA
+========================================== */
+
+.final-cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:var(--white);
+
+    text-align:center;
+
+}
+
+.final-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-180px;
+    right:-120px;
+
+}
+
+.final-cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+    bottom:-120px;
+    left:-80px;
+
+}
+
+.final-cta .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.final-cta h2{
+
+    color:var(--white);
+
+    margin-bottom:1.25rem;
+
+}
+
+.final-cta p{
+
+    color:rgba(255,255,255,.95);
+
+    max-width:760px;
+
+    margin:0 auto 2.5rem;
+
+    font-size:1.1rem;
+
+}
+
+.final-cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+.final-cta .btn-primary{
+
+    background:var(--white);
+
+    color:var(--primary);
+
+}
+
+.final-cta .btn-primary:hover{
+
+    background:#f3f3f3;
+
+}
+
+.final-cta .btn-secondary{
+
+    background:transparent;
+
+    color:var(--white);
+
+    border:2px solid rgba(255,255,255,.8);
+
+}
+
+.final-cta .btn-secondary:hover{
+
+    background:rgba(255,255,255,.15);
+
+    border-color:var(--white);
+
+}
+
+/* ==========================================
+   PART 6 OF 8
+
+   26. Newsletter
+   27. Footer
+   28. Footer Columns
+   29. Footer Bottom
+   30. Back To Top
+========================================== */
+
+/* ==========================================
+   NEWSLETTER
+========================================== */
+
+.newsletter{
+
+    background:linear-gradient(
+        135deg,
+        #eefbf2,
+        #f7fcff
+    );
+
+}
+
+.newsletter-wrapper{
+
+    max-width:800px;
+
+    margin:0 auto;
+
+    padding:4rem 3rem;
+
+    text-align:center;
+
+    background:var(--white);
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.newsletter-wrapper i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:1.5rem;
+
+}
+
+.newsletter-wrapper h2{
+
+    margin-bottom:1rem;
+
+}
+
+.newsletter-wrapper p{
+
+    margin-bottom:2rem;
+
+}
+
+.newsletter-form{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+.newsletter-form input{
+
+    flex:1;
+
+    min-width:260px;
+
+    padding:1rem 1.25rem;
+
+    border:2px solid var(--border);
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    transition:var(--transition);
+
+}
+
+.newsletter-form input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(52,199,89,.15);
+
+}
+
+.newsletter-form button{
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+}
+
+.newsletter-form button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer{
+
+    background:var(--dark);
+
+    color:#d8e1ea;
+
+    padding:5rem 0 2rem;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr
+    1fr
+    1fr
+    1fr;
+
+    gap:3rem;
+
+}
+
+.footer-title{
+
+    color:var(--white);
+
+    margin-bottom:.25rem;
+
+}
+
+.footer-subtitle{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:1.5rem;
+
+}
+
+.footer-column h3{
+
+    color:var(--white);
+
+    margin-bottom:1.25rem;
+
+}
+
+.footer-column p{
+
+    color:#d8e1ea;
+
+}
+
+.footer-column ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.9rem;
+
+}
+
+.footer-column a{
+
+    color:#d8e1ea;
+
+    transition:var(--transition);
+
+}
+
+.footer-column a:hover{
+
+    color:var(--primary);
+
+    padding-left:6px;
+
+}
+
+/* ==========================================
+   FOOTER BUTTON
+========================================== */
+
+.footer-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:1.5rem;
+
+    padding:.9rem 1.6rem;
+
+    background:var(--primary);
+
+    color:var(--white) !important;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+}
+
+.footer-button:hover{
+
+    background:var(--primary-dark);
+
+    padding-left:1.6rem;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   FOOTER BOTTOM
+========================================== */
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:2rem;
+
+    flex-wrap:wrap;
+
+    margin-top:4rem;
+
+    padding-top:2rem;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+}
+
+.footer-bottom p{
+
+    color:#b7c3cf;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:1.5rem;
+
+}
+
+.footer-links a{
+
+    color:#d8e1ea;
+
+    font-weight:600;
+
+}
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    font-size:1.25rem;
+
+    box-shadow:var(--shadow-lg);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:all .35s ease;
+
+    z-index:999;
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.back-to-top:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-5px);
+
+}
+
+/* ==========================================
+   PART 7 OF 8
+
+   31. Mobile Navigation
+   32. Large Tablets
+   33. Tablets
+   34. Mobile
+   35. Small Phones
+========================================== */
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+.mobile-menu{
+
+    display:none;
+
+}
+
+@media (max-width:900px){
+
+    .mobile-menu{
+
+        display:flex;
+
+    }
+
+    .main-nav{
+
+        position:absolute;
+
+        top:100%;
+        left:0;
+        right:0;
+
+        background:var(--white);
+
+        box-shadow:var(--shadow-md);
+
+        border-top:1px solid var(--border);
+
+        max-height:0;
+
+        overflow:hidden;
+
+        transition:max-height .35s ease;
+
+    }
+
+    .main-nav.active{
+
+        max-height:500px;
+
+    }
+
+    .main-nav ul{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:0;
+
+        padding:1rem 0;
+
+    }
+
+    .main-nav li{
+
+        width:100%;
+
+    }
+
+    .main-nav a{
+
+        display:block;
+
+        width:100%;
+
+        padding:1rem 1.75rem;
+
+    }
+
+    .main-nav a::after{
+
+        display:none;
+
+    }
+
+}
+
+/* ==========================================
+   LARGE TABLETS
+========================================== */
+
+@media (max-width:1200px){
+
+    .hero-features{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .theme-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .resources-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .tips-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:5rem 0;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .steps-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .category-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+    }
+
+    .section-heading{
+
+        margin-bottom:3rem;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    h1{
+
+        font-size:2.4rem;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+    }
+
+    .page-hero{
+
+        padding:4rem 0;
+
+    }
+
+    .hero-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .steps-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .theme-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .resources-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tips-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .newsletter-wrapper{
+
+        padding:3rem 2rem;
+
+    }
+
+    .newsletter-form{
+
+        flex-direction:column;
+
+    }
+
+    .newsletter-form input{
+
+        width:100%;
+
+    }
+
+    .newsletter-form button{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footer-button{
+
+        width:100%;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .footer-links{
+
+        justify-content:center;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width:576px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    section{
+
+        padding:4rem 0;
+
+    }
+
+    .section-tag{
+
+        font-size:.9rem;
+
+    }
+
+    .hero-feature{
+
+        padding:1.25rem;
+
+    }
+
+    .step-card,
+    .category-card,
+    .theme-card,
+    .resource-card,
+    .tip-card{
+
+        border-radius:18px;
+
+    }
+
+    .newsletter-wrapper{
+
+        padding:2.25rem 1.5rem;
+
+        border-radius:20px;
+
+    }
+
+    .back-to-top{
+
+        width:50px;
+
+        height:50px;
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+}
+
+/* ==========================================
+   PART 8 OF 8
+
+   36. Animations
+   37. Accessibility
+   38. Utility Classes
+   39. Print Styles
+========================================== */
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-feature:hover i,
+.resource-card:hover .resource-icon,
+.category-card:hover .category-icon,
+.theme-card:hover .theme-preview{
+
+    animation:float 2s ease-in-out infinite;
+
+}
+
+.section-heading,
+.stat-card,
+.step-card,
+.category-card,
+.theme-card,
+.resource-card,
+.tip-card,
+.faq-card,
+.newsletter-wrapper{
+
+    animation:fadeUp .7s ease both;
+
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible{
+
+    outline:3px solid var(--secondary);
+
+    outline-offset:4px;
+
+}
+
+input::placeholder{
+
+    color:#9aa7b4;
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+/* ==========================================
+   SMOOTH TRANSITIONS
+========================================== */
+
+.stat-card,
+.step-card,
+.category-card,
+.theme-card,
+.resource-card,
+.tip-card,
+.faq-card,
+.hero-feature,
+.btn,
+.category-button,
+.theme-button,
+.footer-button,
+.back-to-top{
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+
+}
+
+/* ==========================================
+   IMAGE UTILITIES
+========================================== */
+
+img{
+
+    height:auto;
+
+}
+
+.logo img{
+
+    transition:transform .3s ease;
+
+}
+
+.logo:hover img{
+
+    transform:rotate(-6deg) scale(1.06);
+
+}
+
+/* ==========================================
+   TEXT UTILITIES
+========================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+/* ==========================================
+   SPACING UTILITIES
+========================================== */
+
+.mt-1{
+
+    margin-top:1rem;
+
+}
+
+.mt-2{
+
+    margin-top:2rem;
+
+}
+
+.mt-3{
+
+    margin-top:3rem;
+
+}
+
+.mb-1{
+
+    margin-bottom:1rem;
+
+}
+
+.mb-2{
+
+    margin-bottom:2rem;
+
+}
+
+.mb-3{
+
+    margin-bottom:3rem;
+
+}
+
+/* ==========================================
+   DISPLAY UTILITIES
+========================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.visible{
+
+    display:block !important;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf4f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================
+   PRINT STYLES
+========================================== */
+
+@media print{
+
+    .site-header,
+    .mobile-menu,
+    .hero-buttons,
+    .newsletter,
+    .site-footer,
+    .back-to-top{
+
+        display:none !important;
+
+    }
+
+    body{
+
+        background:#ffffff;
+
+        color:#000000;
+
+    }
+
+    section{
+
+        padding:1.5rem 0;
+
+        break-inside:avoid;
+
+    }
+
+    .theme-card,
+    .category-card,
+    .resource-card,
+    .tip-card,
+    .step-card{
+
+        box-shadow:none;
+
+        border:1px solid #cccccc;
+
+    }
+
+}
+
+/* ==========================================
+   END OF STYLESHEET
+========================================== */
