@@ -1,0 +1,394 @@
+/* ==========================================
+   LITTLE EXPLORERS LEARNING HUB
+   Copyright Page Styles
+========================================== */
+
+.page-header{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:7rem 0;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:var(--white);
+
+}
+
+.page-header::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-180px;
+
+    left:-150px;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.page-header::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-180px;
+
+    right:-150px;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.page-header .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.page-header h1{
+
+    color:var(--white);
+
+    font-size:clamp(2.75rem,5vw,4.5rem);
+
+    margin-bottom:1rem;
+
+}
+
+.page-header p{
+
+    color:rgba(255,255,255,.92);
+
+    font-size:1.15rem;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   LEGAL SECTION
+========================================== */
+
+.legal-page{
+
+    padding:6rem 0;
+
+    background:linear-gradient(
+        180deg,
+        #f8fbff 0%,
+        #ffffff 100%
+    );
+
+}
+
+.legal-page .container{
+
+    max-width:1000px;
+
+}
+
+/* ==========================================
+   LEGAL CARD
+========================================== */
+
+.legal-card{
+
+    background:var(--white);
+
+    border-radius:28px;
+
+    padding:3rem;
+
+    margin-bottom:2.5rem;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.legal-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.legal-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.legal-card h2{
+
+    color:var(--heading);
+
+    margin-bottom:1.25rem;
+
+    font-size:1.8rem;
+
+}
+
+.legal-card p{
+
+    color:var(--gray-600);
+
+    margin-bottom:1.25rem;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+.legal-card p:last-child{
+
+    margin-bottom:0;
+
+}
+
+/* ==========================================
+   LISTS
+========================================== */
+
+.legal-card ul{
+
+    display:grid;
+
+    gap:1rem;
+
+    margin-top:1.5rem;
+
+}
+
+.legal-card li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    color:var(--gray-700);
+
+    line-height:1.8;
+
+}
+
+.legal-card li::before{
+
+    content:"✓";
+
+    width:30px;
+
+    height:30px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================
+   STRONG TEXT
+========================================== */
+
+.legal-card strong{
+
+    color:var(--heading);
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.legal-card a{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.legal-card a:hover{
+
+    color:var(--primary-dark);
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.legal-footer{
+
+    padding:2.5rem 0;
+
+    background:#16213d;
+
+    text-align:center;
+
+}
+
+.legal-footer p{
+
+    color:#d8e3f4;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+    .page-header{
+
+        padding:5.5rem 0;
+
+    }
+
+    .legal-card{
+
+        padding:2.5rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .page-header{
+
+        padding:4.5rem 0;
+
+    }
+
+    .legal-page{
+
+        padding:4rem 0;
+
+    }
+
+    .legal-card{
+
+        padding:2rem;
+
+        border-radius:22px;
+
+    }
+
+    .legal-card h2{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .page-header h1{
+
+        font-size:2.3rem;
+
+    }
+
+    .page-header p{
+
+        font-size:1rem;
+
+    }
+
+    .legal-card{
+
+        padding:1.75rem;
+
+    }
+
+    .legal-card li{
+
+        gap:.75rem;
+
+        font-size:.95rem;
+
+    }
+
+    .legal-card li::before{
+
+        width:26px;
+
+        height:26px;
+
+        font-size:.8rem;
+
+    }
+
+}
