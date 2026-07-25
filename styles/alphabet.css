@@ -6739,9 +6739,9 @@ nav a.active{
 
 }
 
-/* ==========================================
-   PREMIUM FOOTER
-========================================== */
+/*=========================================
+  FOOTER
+=========================================*/
 
 .site-footer{
 
@@ -6749,15 +6749,17 @@ nav a.active{
 
     overflow:hidden;
 
-    background:linear-gradient(
-        180deg,
-        #16213E 0%,
-        #101828 100%
-    );
+    margin-top:8rem;
 
-    color:rgba(255,255,255,.88);
+    padding:7rem 0 2rem;
+
+    background:#16213d;
+
+    color:#e5edf9;
 
 }
+
+/* Decorative circles */
 
 .site-footer::before{
 
@@ -6765,17 +6767,17 @@ nav a.active{
 
     position:absolute;
 
-    top:-220px;
+    top:-180px;
 
     left:-180px;
 
-    width:500px;
+    width:420px;
 
-    height:500px;
+    height:420px;
 
     border-radius:50%;
 
-    background:rgba(79,70,229,.08);
+    background:rgba(79,70,229,.10);
 
 }
 
@@ -6785,37 +6787,27 @@ nav a.active{
 
     position:absolute;
 
-    bottom:-220px;
+    right:-220px;
 
-    right:-180px;
+    bottom:-180px;
 
-    width:460px;
+    width:500px;
 
-    height:460px;
+    height:500px;
 
     border-radius:50%;
 
-    background:rgba(16,185,129,.06);
+    background:rgba(16,185,129,.08);
 
 }
 
-/* ==========================================
-   FOOTER WRAPPER
-========================================== */
-
-.footer-wrapper{
+.site-footer .container{
 
     position:relative;
 
     z-index:2;
 
-    padding:5rem 0 2rem;
-
 }
-
-/* ==========================================
-   FOOTER GRID
-========================================== */
 
 .footer-grid{
 
@@ -6823,135 +6815,41 @@ nav a.active{
 
     grid-template-columns:2fr 1fr 1fr 1fr;
 
-    gap:3rem;
+    gap:5rem;
 
     margin-bottom:4rem;
 
 }
 
-/* ==========================================
-   BRAND
-========================================== */
+/*=========================================
+  HEADINGS
+=========================================*/
 
-.footer-brand{
-
-    max-width:420px;
-
-}
-
-.footer-logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:1rem;
-
-    margin-bottom:1.5rem;
-
-}
-
-.footer-logo img{
-
-    width:64px;
-
-    height:64px;
-
-    object-fit:contain;
-
-}
-
-.footer-logo h2{
+.footer-grid h3,
+.footer-grid h4{
 
     color:#ffffff;
 
-    margin:0;
+    font-size:1.45rem;
 
-    font-size:1.7rem;
-
-}
-
-.footer-brand p{
-
-    line-height:1.9;
-
-    margin-bottom:2rem;
-
-    color:rgba(255,255,255,.75);
-
-}
-
-/* ==========================================
-   SOCIAL LINKS
-========================================== */
-
-.footer-social{
-
-    display:flex;
-
-    gap:1rem;
-
-    flex-wrap:wrap;
-
-}
-
-.footer-social a{
-
-    width:48px;
-
-    height:48px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.08);
-
-    color:#ffffff;
-
-    transition:var(--transition);
-
-}
-
-.footer-social a:hover{
-
-    background:var(--primary);
-
-    transform:translateY(-6px);
-
-}
-
-/* ==========================================
-   FOOTER HEADINGS
-========================================== */
-
-.footer-column h3{
-
-    color:#ffffff;
-
-    margin-bottom:1.5rem;
-
-    font-size:1.25rem;
+    margin-bottom:1.35rem;
 
     position:relative;
 
 }
 
-.footer-column h3::after{
+.footer-grid h3::after,
+.footer-grid h4::after{
 
     content:"";
 
     display:block;
 
-    width:55px;
+    width:56px;
 
     height:3px;
 
-    margin-top:.75rem;
+    margin-top:.8rem;
 
     border-radius:999px;
 
@@ -6963,11 +6861,25 @@ nav a.active{
 
 }
 
-/* ==========================================
-   FOOTER LINKS
-========================================== */
+/*=========================================
+  PARAGRAPH
+=========================================*/
 
-.footer-links{
+.footer-grid p{
+
+    color:#c7d3e8;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+/*=========================================
+  LINKS
+=========================================*/
+
+.footer-grid ul{
 
     display:grid;
 
@@ -6975,21 +6887,15 @@ nav a.active{
 
 }
 
-.footer-links a{
+.footer-grid a{
 
-    display:inline-flex;
+    color:#eef4ff;
 
-    align-items:center;
-
-    gap:.65rem;
-
-    color:rgba(255,255,255,.75);
-
-    transition:var(--transition);
+    transition:.3s ease;
 
 }
 
-.footer-links a:hover{
+.footer-grid a:hover{
 
     color:#ffffff;
 
@@ -6997,45 +6903,27 @@ nav a.active{
 
 }
 
-.footer-links a::before{
+/*=========================================
+  SOCIAL
+=========================================*/
 
-    content:"›";
-
-    color:var(--secondary);
-
-    font-size:1rem;
-
-}
-
-/* ==========================================
-   CONTACT INFO
-========================================== */
-
-.footer-contact{
-
-    display:grid;
-
-    gap:1.25rem;
-
-}
-
-.footer-contact li{
+.social-links{
 
     display:flex;
 
-    align-items:flex-start;
+    gap:1rem;
 
-    gap:.9rem;
-
-    color:rgba(255,255,255,.75);
+    margin-top:2rem;
 
 }
 
-.footer-contact i{
+.social-links a{
 
-    width:42px;
+    width:52px;
 
-    height:42px;
+    height:52px;
+
+    border-radius:50%;
 
     display:flex;
 
@@ -7043,173 +6931,41 @@ nav a.active{
 
     justify-content:center;
 
-    border-radius:50%;
-
     background:rgba(255,255,255,.08);
-
-    color:var(--secondary);
-
-    flex-shrink:0;
-
-}
-
-/* ==========================================
-   FOOTER NEWSLETTER
-========================================== */
-
-.footer-newsletter{
-
-    margin-top:2rem;
-
-}
-
-.footer-newsletter form{
-
-    display:flex;
-
-    margin-top:1rem;
-
-    background:rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-}
-
-.footer-newsletter input{
-
-    flex:1;
-
-    border:none;
-
-    background:transparent;
 
     color:#ffffff;
 
-    padding:1rem 1.2rem;
+    transition:.35s ease;
 
 }
 
-.footer-newsletter input::placeholder{
-
-    color:rgba(255,255,255,.55);
-
-}
-
-.footer-newsletter input:focus{
-
-    outline:none;
-
-}
-
-.footer-newsletter button{
-
-    border:none;
-
-    padding:0 1.5rem;
+.social-links a:hover{
 
     background:var(--primary);
-
-    color:#ffffff;
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
-}
-
-.footer-newsletter button:hover{
-
-    background:var(--secondary);
-
-}
-
-/* ==========================================
-   FOOTER STATS
-========================================== */
-
-.footer-stats{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:1.5rem;
-
-    margin-bottom:3rem;
-
-}
-
-.footer-stat{
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:22px;
-
-    padding:2rem;
-
-    text-align:center;
-
-    transition:var(--transition);
-
-}
-
-.footer-stat:hover{
-
-    background:rgba(255,255,255,.09);
 
     transform:translateY(-6px);
 
 }
 
-.footer-stat h3{
-
-    color:#ffffff;
-
-    margin-bottom:.4rem;
-
-    font-size:2rem;
-
-}
-
-.footer-stat p{
-
-    color:rgba(255,255,255,.72);
-
-    margin:0;
-
-}
-
-/* ==========================================
-   FOOTER BOTTOM
-========================================== */
+/*=========================================
+  COPYRIGHT
+=========================================*/
 
 .footer-bottom{
 
-    border-top:1px solid rgba(255,255,255,.08);
+    border-top:1px solid rgba(255,255,255,.12);
 
     padding-top:2rem;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:2rem;
-
-    flex-wrap:wrap;
+    text-align:center;
 
 }
 
 .footer-bottom p{
 
-    margin:0;
+    color:#d5def0;
 
-    color:rgba(255,255,255,.65);
+    font-size:1rem;
 
 }
 
