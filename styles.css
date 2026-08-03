@@ -799,13 +799,12 @@ nav.active{
 
 .study-card{
 
-    display:flex;
-
-    flex-direction:column;
+    display:grid;
+    grid-template-rows:auto 1fr;
 
     overflow:hidden;
 
-    background:#FFFFFF;
+    background:#fff;
 
     border-radius:28px;
 
@@ -815,7 +814,21 @@ nav.active{
 
     transition:var(--transition);
 
-    height:100%;
+}
+
+.study-card img{
+
+    width:100%;
+
+    height:340px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    display:block;
+
+    transition:transform .35s ease;
 
 }
 
