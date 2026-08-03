@@ -1079,11 +1079,19 @@ section{
 
 }
 
-.study-card img{
+.study-image{
+
+    aspect-ratio:1/1;
+
+    overflow:hidden;
+
+}
+
+.study-image img{
 
     width:100%;
 
-    height:250px;
+    height:100%;
 
     object-fit:cover;
 
