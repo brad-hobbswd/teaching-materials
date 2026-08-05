@@ -2002,28 +2002,46 @@ header{
 @media (max-width:480px){
 
     .interest-card,
-
     .favorite-card{
-
         padding:2rem;
-
     }
 
     .stat-card{
-
         padding:2rem;
-
     }
-    
-    @media (max-width:900px){
+
+}
+
+@media (max-width:900px){
 
     .navbar{
-
         flex-direction:column;
-
-        padding:1rem 0;
-
     }
+
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:1rem;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+}
 
     .nav-menu{
 
