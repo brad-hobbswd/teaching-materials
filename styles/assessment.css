@@ -1,10 +1,11 @@
 /*==================================================
   LITTLE EXPLORERS LEARNING HUB
   OBSERVATION & ASSESSMENT
-  MASTER STYLESHEET
 
+  MASTER STYLESHEET
   PART 1
-  DESIGN SYSTEM
+
+  Foundation
 ==================================================*/
 
 
@@ -15,67 +16,63 @@
 
 :root{
 
-    /* Brand Colors */
+    --primary:#5C6BC0;
 
-    --primary:#65558F;
+    --primary-dark:#4354B4;
 
-    --primary-dark:#4D4074;
+    --primary-light:#EEF1FF;
 
-    --primary-light:#F3F0FB;
+    --secondary:#4FC3F7;
 
-    --secondary:#72B6E6;
+    --secondary-light:#EEF9FF;
 
-    --secondary-dark:#4F99CF;
+    --green:#66BB6A;
 
-    --secondary-light:#EDF8FF;
+    --green-light:#EEF9EF;
 
-    --success:#68A96B;
+    --orange:#FFA726;
 
-    --success-light:#EFF8F0;
+    --orange-light:#FFF5E8;
 
-    --gold:#E7B84B;
+    --purple:#9575CD;
 
-    --gold-light:#FFF7E5;
+    --purple-light:#F5F1FF;
 
-    --danger:#D76767;
+    --gold:#F2C94C;
 
-    --background:#F8FAFD;
+    --gold-light:#FFF9E3;
 
     --surface:#FFFFFF;
 
-    --surface-alt:#F5F7FB;
+    --surface-alt:#F8FAFD;
 
-    --heading:#2F3240;
+    --background:#F3F6FB;
 
-    --text:#4F5564;
+    --heading:#243042;
 
-    --muted:#707789;
+    --text:#596274;
 
-    --border:#E4E8F1;
+    --muted:#7A8597;
 
-    /* Shadows */
+    --border:#E4EAF3;
 
-    --shadow-xs:0 2px 6px rgba(0,0,0,.05);
+    --shadow-xs:0 2px 8px rgba(0,0,0,.05);
 
-    --shadow-sm:0 8px 22px rgba(101,85,143,.08);
+    --shadow-sm:0 10px 25px rgba(25,40,70,.08);
 
-    --shadow:0 15px 35px rgba(101,85,143,.12);
+    --shadow:0 20px 45px rgba(25,40,70,.12);
 
-    --shadow-lg:0 28px 65px rgba(101,85,143,.18);
+    --shadow-lg:0 30px 70px rgba(25,40,70,.16);
 
-    /* Radius */
-
-    --radius-sm:14px;
+    --radius-sm:16px;
 
     --radius:24px;
 
     --radius-lg:36px;
 
-    /* Layout */
+    --transition:.35s ease;
 
     --container:1280px;
-
-    --transition:.35s ease;
 
 }
 
@@ -85,13 +82,19 @@
   RESET
 ==================================================*/
 
-*,
-*::before,
-*::after{
+*{
 
     margin:0;
 
     padding:0;
+
+    box-sizing:border-box;
+
+}
+
+*::before,
+
+*::after{
 
     box-sizing:border-box;
 
@@ -111,7 +114,7 @@ body{
 
     color:var(--text);
 
-    line-height:1.7;
+    line-height:1.75;
 
     overflow-x:hidden;
 
@@ -129,26 +132,21 @@ img{
 
 }
 
-picture{
-
-    display:block;
-
-}
-
 a{
 
-    text-decoration:none;
-
     color:inherit;
+
+    text-decoration:none;
 
     transition:var(--transition);
 
 }
 
 button,
+
 input,
-textarea,
-select{
+
+textarea{
 
     font:inherit;
 
@@ -164,12 +162,6 @@ button{
 
 }
 
-ul{
-
-    list-style:none;
-
-}
-
 
 
 /*==================================================
@@ -177,10 +169,12 @@ ul{
 ==================================================*/
 
 h1,
+
 h2,
+
 h3,
-h4,
-h5{
+
+h4{
 
     font-family:"Nunito",sans-serif;
 
@@ -194,13 +188,13 @@ h5{
 
 h1{
 
-    font-size:clamp(3rem,5vw,4.8rem);
+    font-size:clamp(3rem,6vw,4.8rem);
 
 }
 
 h2{
 
-    font-size:clamp(2rem,4vw,3.25rem);
+    font-size:clamp(2.2rem,4vw,3.25rem);
 
 }
 
@@ -210,28 +204,16 @@ h3{
 
 }
 
-h4{
-
-    font-size:1.2rem;
-
-}
-
 p{
 
     color:var(--muted);
 
 }
 
-strong{
-
-    color:var(--heading);
-
-}
-
 
 
 /*==================================================
-  GLOBAL LAYOUT
+  LAYOUT
 ==================================================*/
 
 .container{
@@ -244,9 +226,33 @@ strong{
 
 section{
 
+    padding:6rem 0;
+
     position:relative;
 
-    padding:6rem 0;
+}
+
+
+
+/*==================================================
+  HEADER
+==================================================*/
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+
+    box-shadow:0 4px 16px rgba(0,0,0,.05);
 
 }
 
@@ -258,11 +264,11 @@ section{
 
 .section-title{
 
-    text-align:center;
-
     max-width:760px;
 
     margin:0 auto 4rem;
+
+    text-align:center;
 
 }
 
@@ -274,13 +280,21 @@ section{
 
 .section-title p{
 
-    font-size:1.05rem;
+    font-size:1.08rem;
 
-    line-height:1.8;
+    line-height:1.9;
 
 }
 
-.section-tag{
+
+
+/*==================================================
+  LABELS
+==================================================*/
+
+.section-tag,
+
+.featured-label{
 
     display:inline-flex;
 
@@ -288,9 +302,7 @@ section{
 
     justify-content:center;
 
-    padding:.65rem 1.3rem;
-
-    margin-bottom:1rem;
+    padding:.7rem 1.35rem;
 
     border-radius:999px;
 
@@ -302,9 +314,11 @@ section{
 
     font-weight:700;
 
-    letter-spacing:.05em;
+    letter-spacing:.06em;
 
     text-transform:uppercase;
+
+    margin-bottom:1rem;
 
 }
 
@@ -322,7 +336,7 @@ section{
 
     justify-content:center;
 
-    gap:.7rem;
+    gap:.6rem;
 
     padding:1rem 2rem;
 
@@ -334,33 +348,13 @@ section{
 
 }
 
-.btn-primary{
-
-    background:var(--primary);
-
-    color:#fff;
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.btn-primary:hover{
-
-    background:var(--primary-dark);
-
-    transform:translateY(-4px);
-
-    box-shadow:var(--shadow);
-
-}
-
 .btn-secondary{
 
-    background:#fff;
-
-    color:var(--primary);
+    background:#ffffff;
 
     border:2px solid var(--primary);
+
+    color:var(--primary);
 
 }
 
@@ -368,351 +362,9 @@ section{
 
     background:var(--primary);
 
-    color:#fff;
+    color:#ffffff;
 
-}
-
-
-
-/*==================================================
-  CARDS
-==================================================*/
-
-.card{
-
-    background:#fff;
-
-    border-radius:var(--radius);
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow-sm);
-
-    transition:var(--transition);
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:var(--shadow);
-
-}
-
-
-
-/*==================================================
-  IMAGES
-==================================================*/
-
-.rounded-image{
-
-    overflow:hidden;
-
-    border-radius:30px;
-
-    box-shadow:var(--shadow-lg);
-
-}
-
-.rounded-image img{
-
-    transition:transform .7s ease;
-
-}
-
-.rounded-image:hover img{
-
-    transform:scale(1.05);
-
-}
-
-
-
-/*==================================================
-  DECORATIVE BACKGROUNDS
-==================================================*/
-
-.gradient-background{
-
-    background:
-
-        radial-gradient(
-
-            circle at top right,
-
-            rgba(114,182,230,.18),
-
-            transparent 40%
-
-        ),
-
-        radial-gradient(
-
-            circle at bottom left,
-
-            rgba(101,85,143,.10),
-
-            transparent 45%
-
-        ),
-
-        linear-gradient(
-
-            180deg,
-
-            #ffffff,
-
-            var(--primary-light)
-
-        );
-
-}
-
-
-
-/*==================================================
-  DECORATIVE SHAPES
-==================================================*/
-
-.circle{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-}
-
-.circle.small{
-
-    width:120px;
-
-    height:120px;
-
-}
-
-.circle.medium{
-
-    width:240px;
-
-    height:240px;
-
-}
-
-.circle.large{
-
-    width:420px;
-
-    height:420px;
-
-}
-
-.circle.primary{
-
-    background:rgba(101,85,143,.08);
-
-}
-
-.circle.secondary{
-
-    background:rgba(114,182,230,.10);
-
-}
-
-.circle.gold{
-
-    background:rgba(231,184,75,.12);
-
-}
-
-
-
-/*==================================================
-  ANIMATIONS
-==================================================*/
-
-.fade-up{
-
-    opacity:0;
-
-    transform:translateY(35px);
-
-    transition:
-
-        opacity .7s ease,
-
-        transform .7s ease;
-
-}
-
-.fade-up.active{
-
-    opacity:1;
-
-    transform:none;
-
-}
-
-.scale-in{
-
-    opacity:0;
-
-    transform:scale(.95);
-
-    transition:
-
-        opacity .6s ease,
-
-        transform .6s ease;
-
-}
-
-.scale-in.active{
-
-    opacity:1;
-
-    transform:scale(1);
-
-}
-
-
-
-/*==================================================
-  UTILITIES
-==================================================*/
-
-.text-center{
-
-    text-align:center;
-
-}
-
-.mt-1{
-
-    margin-top:1rem;
-
-}
-
-.mt-2{
-
-    margin-top:2rem;
-
-}
-
-.mt-3{
-
-    margin-top:3rem;
-
-}
-
-.mb-1{
-
-    margin-bottom:1rem;
-
-}
-
-.mb-2{
-
-    margin-bottom:2rem;
-
-}
-
-.mb-3{
-
-    margin-bottom:3rem;
-
-}
-
-
-
-/*==================================================
-  RESPONSIVE FOUNDATION
-==================================================*/
-
-@media (max-width:992px){
-
-    section{
-
-        padding:5rem 0;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    section{
-
-        padding:4rem 0;
-
-    }
-
-    .container{
-
-        width:94%;
-
-    }
-
-    h1{
-
-        font-size:2.8rem;
-
-    }
-
-    h2{
-
-        font-size:2.2rem;
-
-    }
-
-}
-
-@media (max-width:480px){
-
-    h1{
-
-        font-size:2.2rem;
-
-    }
-
-    h2{
-
-        font-size:1.9rem;
-
-    }
-
-    .btn{
-
-        width:100%;
-
-    }
-
-}
-
-/*==================================================
-  HEADER
-==================================================*/
-
-header{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
-    background:rgba(255,255,255,.95);
-
-    backdrop-filter:blur(16px);
-
-    -webkit-backdrop-filter:blur(16px);
-
-    border-bottom:1px solid rgba(0,0,0,.06);
-
-    box-shadow:0 6px 22px rgba(0,0,0,.05);
+    transform:translateY(-4px);
 
 }
 
@@ -724,27 +376,31 @@ header{
 
 .study-hero{
 
-    position:relative;
-
     overflow:hidden;
-
-    padding:7rem 0;
 
     background:
 
-        radial-gradient(circle at top right,
-        rgba(114,182,230,.18),
-        transparent 40%),
+    radial-gradient(circle at top right,
 
-        radial-gradient(circle at bottom left,
-        rgba(101,85,143,.10),
-        transparent 45%),
+    rgba(79,195,247,.16),
 
-        linear-gradient(
-            180deg,
-            #ffffff,
-            var(--primary-light)
-        );
+    transparent 38%),
+
+    radial-gradient(circle at bottom left,
+
+    rgba(92,107,192,.10),
+
+    transparent 45%),
+
+    linear-gradient(
+
+    180deg,
+
+    #ffffff,
+
+    var(--primary-light)
+
+    );
 
 }
 
@@ -754,17 +410,17 @@ header{
 
     position:absolute;
 
-    width:420px;
+    width:450px;
 
-    height:420px;
+    height:450px;
+
+    right:-150px;
+
+    top:-150px;
 
     border-radius:50%;
 
-    top:-160px;
-
-    right:-120px;
-
-    background:rgba(114,182,230,.12);
+    background:rgba(79,195,247,.12);
 
 }
 
@@ -774,17 +430,17 @@ header{
 
     position:absolute;
 
-    width:260px;
+    width:300px;
 
-    height:260px;
+    height:300px;
 
-    border-radius:50%;
+    left:-100px;
 
     bottom:-120px;
 
-    left:-90px;
+    border-radius:50%;
 
-    background:rgba(101,85,143,.08);
+    background:rgba(92,107,192,.08);
 
 }
 
@@ -808,9 +464,7 @@ header{
 
     max-width:760px;
 
-    font-size:1.12rem;
-
-    line-height:1.9;
+    font-size:1.1rem;
 
     margin-bottom:2.5rem;
 
@@ -826,15 +480,13 @@ header{
 
     display:flex;
 
-    align-items:center;
-
     flex-wrap:wrap;
 
-    gap:.75rem;
+    gap:.7rem;
+
+    align-items:center;
 
     margin-bottom:1.5rem;
-
-    font-size:.95rem;
 
     color:var(--muted);
 
@@ -850,39 +502,7 @@ header{
 
 .breadcrumb span{
 
-    color:#9aa1af;
-
-}
-
-
-
-/*==================================================
-  HERO LABEL
-==================================================*/
-
-.featured-label{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:.7rem 1.4rem;
-
-    border-radius:999px;
-
-    background:var(--primary-light);
-
-    color:var(--primary);
-
-    font-size:.82rem;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    letter-spacing:.05em;
+    font-size:.95rem;
 
 }
 
@@ -904,17 +524,17 @@ header{
 
 .hero-badges div{
 
-    padding:.85rem 1.4rem;
-
-    border-radius:999px;
-
     background:#ffffff;
 
     border:1px solid var(--border);
 
-    box-shadow:var(--shadow-sm);
+    border-radius:999px;
+
+    padding:.9rem 1.4rem;
 
     font-weight:700;
+
+    box-shadow:var(--shadow-xs);
 
     transition:var(--transition);
 
@@ -924,11 +544,105 @@ header{
 
     transform:translateY(-5px);
 
-    box-shadow:var(--shadow);
+    box-shadow:var(--shadow-sm);
 
 }
 
 
+
+/*==================================================
+  ANIMATIONS
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+
+    opacity .6s ease,
+
+    transform .6s ease;
+
+}
+
+.fade-up.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+
+/*==================================================
+  RESPONSIVE
+==================================================*/
+
+@media (max-width:992px){
+
+    section{
+
+        padding:5rem 0;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .study-hero{
+
+        text-align:center;
+
+    }
+
+    .breadcrumb{
+
+        justify-content:center;
+
+    }
+
+    .hero-badges{
+
+        justify-content:center;
+
+    }
+
+    h1{
+
+        font-size:2.9rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .hero-badges{
+
+        flex-direction:column;
+
+    }
+
+    .hero-badges div{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
 
 /*==================================================
   FEATURED STUDY
@@ -944,29 +658,27 @@ header{
 
     display:grid;
 
-    grid-template-columns:1.1fr .9fr;
+    grid-template-columns:1fr 1fr;
 
     gap:4rem;
 
     align-items:center;
 
-    background:#fff;
+    background:#ffffff;
 
-    border-radius:34px;
+    border-radius:36px;
 
-    padding:3rem;
+    padding:3.5rem;
 
     border:1px solid var(--border);
 
     box-shadow:var(--shadow);
 
-    overflow:hidden;
-
 }
 
-.featured-study:nth-of-type(even) .featured-study-card{
+.featured-study:nth-child(even) .featured-study-card{
 
-    grid-template-columns:.9fr 1.1fr;
+    grid-template-columns:1fr 1fr;
 
 }
 
@@ -1004,15 +716,15 @@ header{
 
     background:#ffffff;
 
-    padding:1rem 1.25rem;
+    border:1px solid var(--border);
 
     border-radius:18px;
 
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow-xs);
+    padding:1rem 1.2rem;
 
     font-weight:600;
+
+    box-shadow:var(--shadow-xs);
 
     transition:var(--transition);
 
@@ -1020,7 +732,7 @@ header{
 
 .featured-highlights div:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
     box-shadow:var(--shadow-sm);
 
@@ -1046,24 +758,24 @@ header{
 
     object-fit:cover;
 
-    border-radius:30px;
+    border-radius:28px;
 
     box-shadow:var(--shadow-lg);
 
-    transition:transform .7s ease;
+    transition:transform .8s ease;
 
 }
 
 .featured-image:hover img{
 
-    transform:scale(1.05);
+    transform:scale(1.04);
 
 }
 
 
 
 /*==================================================
-  WHY SECTION
+  OBSERVATION METHODS
 ==================================================*/
 
 .why-section{
@@ -1094,9 +806,9 @@ header{
 
     background:#ffffff;
 
-    border:1px solid var(--border);
+    border-radius:30px;
 
-    border-radius:28px;
+    border:1px solid var(--border);
 
     padding:2.5rem;
 
@@ -1118,9 +830,9 @@ header{
 
     position:absolute;
 
-    left:0;
-
     top:0;
+
+    left:0;
 
     width:100%;
 
@@ -1161,7 +873,7 @@ header{
 
 
 /*==================================================
-  WHY ICON
+  WHY ICONS
 ==================================================*/
 
 .why-icon{
@@ -1172,15 +884,15 @@ header{
 
     margin:0 auto 1.5rem;
 
-    border-radius:50%;
-
-    background:var(--primary-light);
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    background:var(--primary-light);
+
+    border-radius:50%;
 
     font-size:2.3rem;
 
@@ -1201,83 +913,7 @@ header{
 
 
 /*==================================================
-  RESPONSIVE
-==================================================*/
-
-@media (max-width:992px){
-
-    .featured-study-card{
-
-        grid-template-columns:1fr;
-
-        gap:3rem;
-
-    }
-
-    .featured-study:nth-of-type(even) .featured-study-card{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media (max-width:768px){
-
-    .study-hero{
-
-        text-align:center;
-
-        padding:5rem 0;
-
-    }
-
-    .study-hero p{
-
-        margin-inline:auto;
-
-    }
-
-    .breadcrumb{
-
-        justify-content:center;
-
-    }
-
-    .hero-badges{
-
-        justify-content:center;
-
-    }
-
-    .featured-highlights{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-@media (max-width:480px){
-
-    .hero-badges{
-
-        flex-direction:column;
-
-    }
-
-    .hero-badges div{
-
-        width:100%;
-
-        text-align:center;
-
-    }
-
-}
-
-/*==================================================
-  FEATURED STUDIES
+  STUDY GRID
 ==================================================*/
 
 .featured-studies{
@@ -1295,6 +931,12 @@ header{
     gap:2rem;
 
 }
+
+
+
+/*==================================================
+  STUDY CARD
+==================================================*/
 
 .study-card{
 
@@ -1342,6 +984,12 @@ header{
 
 }
 
+
+
+/*==================================================
+  STUDY CONTENT
+==================================================*/
+
 .study-content{
 
     display:flex;
@@ -1351,54 +999,6 @@ header{
     flex:1;
 
     padding:2rem;
-
-}
-
-.study-tag{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    width:max-content;
-
-    padding:.55rem 1rem;
-
-    border-radius:999px;
-
-    font-size:.78rem;
-
-    font-weight:700;
-
-    letter-spacing:.05em;
-
-    text-transform:uppercase;
-
-    margin-bottom:1rem;
-
-}
-
-.study-tag.blue{
-
-    background:#EAF4FF;
-
-    color:#2F79C6;
-
-}
-
-.study-tag.green{
-
-    background:#EDF8EE;
-
-    color:#458E48;
-
-}
-
-.study-tag.purple{
-
-    background:#F3EDFF;
-
-    color:#7552D5;
 
 }
 
@@ -1414,7 +1014,7 @@ header{
 
     line-height:1.8;
 
-    margin-bottom:1.75rem;
+    margin-bottom:1.5rem;
 
 }
 
@@ -1434,14 +1034,120 @@ header{
 
 .study-content a:hover{
 
-    color:var(--secondary-dark);
+    color:var(--secondary);
 
 }
 
 
 
 /*==================================================
-  INTEREST AREAS
+  STUDY TAGS
+==================================================*/
+
+.study-tag{
+
+    display:inline-flex;
+
+    width:max-content;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.55rem 1rem;
+
+    margin-bottom:1rem;
+
+    border-radius:999px;
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+}
+
+.study-tag.blue{
+
+    background:#EAF4FF;
+
+    color:#2D7DD2;
+
+}
+
+.study-tag.green{
+
+    background:#EEF9EF;
+
+    color:#4C9A4D;
+
+}
+
+.study-tag.orange{
+
+    background:#FFF3E4;
+
+    color:#DD8A16;
+
+}
+
+.study-tag.purple{
+
+    background:#F4EEFF;
+
+    color:#7A58D6;
+
+}
+
+
+
+/*==================================================
+  RESPONSIVE
+==================================================*/
+
+@media (max-width:992px){
+
+    .featured-study-card{
+
+        grid-template-columns:1fr;
+
+        gap:3rem;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .featured-highlights{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .study-content{
+
+        padding:1.75rem;
+
+    }
+
+    .why-card{
+
+        padding:2rem;
+
+    }
+
+}
+
+/*==================================================
+  ASSESSMENT LIBRARY
 ==================================================*/
 
 .interest-areas{
@@ -1454,7 +1160,7 @@ header{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
     gap:2rem;
 
@@ -1464,9 +1170,11 @@ header{
 
     background:#ffffff;
 
-    border-radius:28px;
+    border-radius:30px;
 
-    padding:2.25rem;
+    padding:2.5rem;
+
+    border:1px solid var(--border);
 
     border-top:6px solid transparent;
 
@@ -1478,33 +1186,33 @@ header{
 
 .interest-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
-    box-shadow:var(--shadow);
+    box-shadow:var(--shadow-lg);
 
 }
 
 .interest-card.blue{
 
-    border-color:#69A9F3;
+    border-top-color:#4FC3F7;
 
 }
 
 .interest-card.green{
 
-    border-color:#6EBB73;
+    border-top-color:#66BB6A;
 
 }
 
 .interest-card.orange{
 
-    border-color:#F1A64B;
+    border-top-color:#FFA726;
 
 }
 
 .interest-card.purple{
 
-    border-color:#8C71D6;
+    border-top-color:#9575CD;
 
 }
 
@@ -1514,19 +1222,19 @@ header{
 
     height:82px;
 
-    border-radius:22px;
-
-    background:var(--primary-light);
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
 
-    font-size:2rem;
+    border-radius:22px;
 
     margin-bottom:1.5rem;
+
+    background:var(--primary-light);
+
+    font-size:2rem;
 
 }
 
@@ -1538,7 +1246,7 @@ header{
 
 .interest-card p{
 
-    line-height:1.8;
+    line-height:1.85;
 
 }
 
@@ -1552,15 +1260,15 @@ header{
 
     background:
 
-        linear-gradient(
+    linear-gradient(
 
-            135deg,
+    135deg,
 
-            var(--primary),
+    var(--primary),
 
-            var(--secondary)
+    var(--secondary)
 
-        );
+    );
 
 }
 
@@ -1578,11 +1286,11 @@ header{
 
     background:rgba(255,255,255,.10);
 
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.18);
 
     border-radius:28px;
-
-    border:1px solid rgba(255,255,255,.20);
 
     padding:2.5rem;
 
@@ -1612,7 +1320,7 @@ header{
 
 .stat-card p{
 
-    color:rgba(255,255,255,.95);
+    color:rgba(255,255,255,.92);
 
     font-weight:600;
 
@@ -1621,7 +1329,7 @@ header{
 
 
 /*==================================================
-  TEACHER FAVORITES
+  PORTFOLIO SECTION
 ==================================================*/
 
 .teacher-favorites{
@@ -1644,13 +1352,13 @@ header{
 
     background:#ffffff;
 
-    padding:2.5rem;
-
     border-radius:30px;
 
     border:1px solid var(--border);
 
     box-shadow:var(--shadow-sm);
+
+    padding:2.5rem;
 
     transition:var(--transition);
 
@@ -1670,13 +1378,13 @@ header{
 
     height:84px;
 
-    border-radius:22px;
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    border-radius:24px;
 
     background:var(--secondary-light);
 
@@ -1694,7 +1402,59 @@ header{
 
 .favorite-card p{
 
-    line-height:1.8;
+    line-height:1.85;
+
+}
+
+
+
+/*==================================================
+  AUTHENTIC ASSESSMENT
+==================================================*/
+
+.featured-study:nth-of-type(2){
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #ffffff,
+
+    var(--surface-alt)
+
+    );
+
+}
+
+.featured-study:nth-of-type(2) .featured-image{
+
+    order:1;
+
+}
+
+.featured-study:nth-of-type(2) .featured-text{
+
+    order:2;
+
+}
+
+
+
+/*==================================================
+  PROGRESS MONITORING
+==================================================*/
+
+.featured-studies:nth-of-type(3){
+
+    background:#ffffff;
+
+}
+
+.featured-studies:nth-of-type(3) .study-card{
+
+    height:100%;
 
 }
 
@@ -1708,15 +1468,15 @@ header{
 
     background:
 
-        linear-gradient(
+    linear-gradient(
 
-            180deg,
+    180deg,
 
-            #ffffff,
+    var(--surface-alt),
 
-            var(--surface-alt)
+    #ffffff
 
-        );
+    );
 
 }
 
@@ -1730,7 +1490,95 @@ header{
 
     background:var(--gold-light);
 
-    font-size:2.4rem;
+}
+
+
+
+/*==================================================
+  CARD EFFECTS
+==================================================*/
+
+.study-card,
+
+.favorite-card,
+
+.interest-card,
+
+.why-card{
+
+    will-change:transform;
+
+}
+
+.study-card::after,
+
+.favorite-card::after,
+
+.interest-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    border-radius:inherit;
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    rgba(255,255,255,.08),
+
+    transparent
+
+    );
+
+}
+
+.study-card:hover::after,
+
+.favorite-card:hover::after,
+
+.interest-card:hover::after{
+
+    opacity:1;
+
+}
+
+
+
+/*==================================================
+  IMAGE EFFECTS
+==================================================*/
+
+.study-card{
+
+    position:relative;
+
+}
+
+.study-card img{
+
+    transition:
+
+    transform .8s ease,
+
+    filter .4s ease;
+
+}
+
+.study-card:hover img{
+
+    filter:brightness(1.05);
 
 }
 
@@ -1752,15 +1600,9 @@ header{
 
 @media (max-width:768px){
 
-    .study-grid,
-
     .interest-grid,
 
-    .favorite-grid{
-
-        grid-template-columns:1fr;
-
-    }
+    .favorite-grid,
 
     .stats-grid{
 
@@ -1772,13 +1614,11 @@ header{
 
 @media (max-width:480px){
 
-    .study-content,
-
     .interest-card,
 
     .favorite-card{
 
-        padding:1.75rem;
+        padding:2rem;
 
     }
 
@@ -1789,30 +1629,6 @@ header{
     }
 
 }
-
-/*==================================================
-  PROFESSIONAL RESOURCES
-==================================================*/
-
-.interest-areas:last-of-type{
-
-    background:#ffffff;
-
-}
-
-.interest-areas:last-of-type .interest-card{
-
-    text-align:center;
-
-}
-
-.interest-areas:last-of-type .interest-icon{
-
-    background:var(--gold-light);
-
-}
-
-
 
 /*==================================================
   FREE DOWNLOADS
@@ -1838,7 +1654,7 @@ header{
 
 }
 
-.featured-studies:last-of-type .study-card::after{
+.featured-studies:last-of-type .study-card::before{
 
     content:"FREE";
 
@@ -1848,26 +1664,28 @@ header{
 
     right:20px;
 
-    padding:.45rem .9rem;
+    padding:.45rem .85rem;
 
     border-radius:999px;
 
-    background:var(--success);
+    background:var(--green);
 
     color:#ffffff;
 
-    font-size:.75rem;
+    font-size:.72rem;
 
     font-weight:700;
 
-    letter-spacing:.05em;
+    letter-spacing:.08em;
+
+    z-index:10;
 
 }
 
 
 
 /*==================================================
-  RELATED RESOURCES
+  MORE TEACHER RESOURCES
 ==================================================*/
 
 .teacher-favorites:last-of-type{
@@ -1878,13 +1696,25 @@ header{
 
 .teacher-favorites:last-of-type .favorite-card{
 
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
     text-align:center;
 
 }
 
-.teacher-favorites:last-of-type .favorite-icon{
+.teacher-favorites:last-of-type .favorite-card p{
 
-    background:var(--primary-light);
+    flex:1;
+
+}
+
+.teacher-favorites:last-of-type .btn{
+
+    margin-top:2rem;
 
 }
 
@@ -1908,8 +1738,6 @@ header{
 
         );
 
-    padding:7rem 0;
-
 }
 
 .newsletter-box{
@@ -1920,45 +1748,23 @@ header{
 
     gap:3rem;
 
+    align-items:center;
+
     background:rgba(255,255,255,.08);
 
-    backdrop-filter:blur(18px);
-
-    border-radius:36px;
+    border-radius:40px;
 
     padding:4rem;
 
-    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
 
 }
 
 .newsletter-content{
 
     color:#ffffff;
-
-}
-
-.newsletter-tag{
-
-    display:inline-flex;
-
-    padding:.65rem 1.3rem;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,.15);
-
-    color:#ffffff;
-
-    font-size:.8rem;
-
-    font-weight:700;
-
-    margin-bottom:1.5rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:.05em;
 
 }
 
@@ -1974,9 +1780,35 @@ header{
 
     color:rgba(255,255,255,.92);
 
+    margin-bottom:2rem;
+
     line-height:1.9;
 
-    margin-bottom:2rem;
+}
+
+.newsletter-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.7rem 1.4rem;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.14);
+
+    color:#ffffff;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    margin-bottom:1.25rem;
+
+    text-transform:uppercase;
 
 }
 
@@ -1994,23 +1826,27 @@ header{
 
     background:rgba(255,255,255,.12);
 
-    border-radius:18px;
-
     padding:1rem;
+
+    border-radius:18px;
 
     font-weight:600;
 
-    color:#ffffff;
-
 }
+
+
+
+/*==================================================
+  NEWSLETTER FORM
+==================================================*/
 
 .newsletter-card{
 
     background:#ffffff;
 
-    border-radius:30px;
+    padding:2.75rem;
 
-    padding:2.5rem;
+    border-radius:32px;
 
     box-shadow:var(--shadow-lg);
 
@@ -2036,11 +1872,17 @@ header{
 
 }
 
-.newsletter-form input{
+.input-group{
 
     width:100%;
 
-    padding:1rem 1.2rem;
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:1rem 1.25rem;
 
     border-radius:16px;
 
@@ -2050,13 +1892,13 @@ header{
 
 }
 
-.newsletter-form input:focus{
+.input-group input:focus{
 
     outline:none;
 
     border-color:var(--primary);
 
-    box-shadow:0 0 0 4px rgba(101,85,143,.10);
+    box-shadow:0 0 0 4px rgba(92,107,192,.12);
 
 }
 
@@ -2092,9 +1934,9 @@ header{
 
 footer{
 
-    background:#232838;
+    background:#1E2432;
 
-    color:rgba(255,255,255,.80);
+    color:rgba(255,255,255,.82);
 
     padding:5rem 0 2rem;
 
@@ -2102,7 +1944,7 @@ footer{
 
 footer a{
 
-    transition:var(--transition);
+    color:inherit;
 
 }
 
@@ -2120,13 +1962,13 @@ footer a:hover{
 
 ::-webkit-scrollbar{
 
-    width:11px;
+    width:12px;
 
 }
 
 ::-webkit-scrollbar-track{
 
-    background:#eef2f8;
+    background:#edf1f7;
 
 }
 
@@ -2152,7 +1994,7 @@ footer a:hover{
 
 ::selection{
 
-    background:rgba(101,85,143,.18);
+    background:rgba(92,107,192,.18);
 
     color:var(--heading);
 
@@ -2164,11 +2006,13 @@ footer a:hover{
   ACCESSIBILITY
 ==================================================*/
 
-button:focus-visible,
 a:focus-visible,
+
+button:focus-visible,
+
 input:focus-visible{
 
-    outline:3px solid rgba(101,85,143,.28);
+    outline:3px solid rgba(92,107,192,.35);
 
     outline-offset:4px;
 
@@ -2212,7 +2056,9 @@ input:focus-visible{
 
     .interest-card,
 
-    .why-card{
+    .why-card,
+
+    .stat-card{
 
         box-shadow:none;
 
@@ -2225,7 +2071,7 @@ input:focus-visible{
 
 
 /*==================================================
-  RESPONSIVE
+  LARGE TABLETS
 ==================================================*/
 
 @media (max-width:1200px){
@@ -2237,6 +2083,12 @@ input:focus-visible{
     }
 
 }
+
+
+
+/*==================================================
+  TABLETS
+==================================================*/
 
 @media (max-width:768px){
 
@@ -2260,11 +2112,35 @@ input:focus-visible{
 
 }
 
+
+
+/*==================================================
+  PHONES
+==================================================*/
+
 @media (max-width:480px){
+
+    section{
+
+        padding:4rem 0;
+
+    }
 
     .newsletter-card{
 
         padding:2rem;
+
+    }
+
+    .newsletter-content{
+
+        text-align:center;
+
+    }
+
+    .newsletter-tag{
+
+        margin-inline:auto;
 
     }
 
@@ -2284,9 +2160,31 @@ input:focus-visible{
 
 .why-card,
 
-.stat-card{
+.stat-card,
+
+.newsletter-card{
 
     will-change:transform;
+
+}
+
+
+
+/*==================================================
+  SMOOTH HOVER EFFECTS
+==================================================*/
+
+.study-card:hover,
+
+.favorite-card:hover,
+
+.interest-card:hover,
+
+.why-card:hover,
+
+.newsletter-card:hover{
+
+    transition:all .35s ease;
 
 }
 
