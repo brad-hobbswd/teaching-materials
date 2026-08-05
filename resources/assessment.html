@@ -30,6 +30,10 @@ href="https://fonts.gstatic.com"
 crossorigin>
 
 <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link
 href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800&display=swap"
 rel="stylesheet">
 
@@ -43,31 +47,35 @@ href="../styles/assessment.css">
 
 <header class="site-header">
 
-    <div class="container">
+    <div class="container nav-container">
 
-        <nav class="navbar">
+        <a href="../index.html" class="logo">
 
-            <a href="../index.html" class="logo">
+            <img
+            src="../logo.png"
+            alt="Little Explorers Learning Hub Logo">
 
-                <img
-                src="../images/logo.png"
-                alt="Little Explorers Learning Hub">
+            <div class="logo-text">
+
+                <h1>
+
+                    Little Explorers
+
+                </h1>
 
                 <span>
 
-                    Little Explorers Learning Hub
+                    Learning Hub
 
                 </span>
 
-            </a>
+            </div>
 
-            <button class="menu-toggle" aria-label="Open Navigation">
+        </a>
 
-                ☰
+        <nav class="main-nav" aria-label="Primary Navigation">
 
-            </button>
-
-            <ul class="nav-menu">
+            <ul>
 
                 <li>
 
@@ -83,7 +91,47 @@ href="../styles/assessment.css">
 
                     <a href="../studies.html">
 
-                        Curriculum Studies
+                        Studies
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="../library/index.html">
+
+                        Library
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="../ages/index.html">
+
+                        Age Groups
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="../lesson-plans.html">
+
+                        Lesson Plans
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="../printables.html">
+
+                        Printables
 
                     </a>
 
@@ -94,36 +142,6 @@ href="../styles/assessment.css">
                     <a href="../teacher-resources.html" class="active">
 
                         Teacher Resources
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../printable-library.html">
-
-                        Printable Library
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../assessment-center.html">
-
-                        Assessment Center
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="../behavior-center.html">
-
-                        Behavior Center
 
                     </a>
 
@@ -151,15 +169,30 @@ href="../styles/assessment.css">
 
             </ul>
 
-            <a
-            href="../teacher-resources.html"
-            class="btn btn-primary">
+        </nav>
 
-                Browse Resources
+        <div class="header-actions">
+
+            <a
+            href="../search.html"
+            class="search-toggle"
+            aria-label="Search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
 
             </a>
 
-        </nav>
+            <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Open Navigation"
+            aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
 
     </div>
 
