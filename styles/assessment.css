@@ -1,0 +1,2297 @@
+/*==================================================
+  LITTLE EXPLORERS LEARNING HUB
+  OBSERVATION & ASSESSMENT
+  MASTER STYLESHEET
+
+  PART 1
+  DESIGN SYSTEM
+==================================================*/
+
+
+
+/*==================================================
+  CSS VARIABLES
+==================================================*/
+
+:root{
+
+    /* Brand Colors */
+
+    --primary:#65558F;
+
+    --primary-dark:#4D4074;
+
+    --primary-light:#F3F0FB;
+
+    --secondary:#72B6E6;
+
+    --secondary-dark:#4F99CF;
+
+    --secondary-light:#EDF8FF;
+
+    --success:#68A96B;
+
+    --success-light:#EFF8F0;
+
+    --gold:#E7B84B;
+
+    --gold-light:#FFF7E5;
+
+    --danger:#D76767;
+
+    --background:#F8FAFD;
+
+    --surface:#FFFFFF;
+
+    --surface-alt:#F5F7FB;
+
+    --heading:#2F3240;
+
+    --text:#4F5564;
+
+    --muted:#707789;
+
+    --border:#E4E8F1;
+
+    /* Shadows */
+
+    --shadow-xs:0 2px 6px rgba(0,0,0,.05);
+
+    --shadow-sm:0 8px 22px rgba(101,85,143,.08);
+
+    --shadow:0 15px 35px rgba(101,85,143,.12);
+
+    --shadow-lg:0 28px 65px rgba(101,85,143,.18);
+
+    /* Radius */
+
+    --radius-sm:14px;
+
+    --radius:24px;
+
+    --radius-lg:36px;
+
+    /* Layout */
+
+    --container:1280px;
+
+    --transition:.35s ease;
+
+}
+
+
+
+/*==================================================
+  RESET
+==================================================*/
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+img{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+picture{
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:var(--transition);
+
+}
+
+button,
+input,
+textarea,
+select{
+
+    font:inherit;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    background:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+
+
+/*==================================================
+  TYPOGRAPHY
+==================================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5{
+
+    font-family:"Nunito",sans-serif;
+
+    color:var(--heading);
+
+    line-height:1.15;
+
+    font-weight:800;
+
+}
+
+h1{
+
+    font-size:clamp(3rem,5vw,4.8rem);
+
+}
+
+h2{
+
+    font-size:clamp(2rem,4vw,3.25rem);
+
+}
+
+h3{
+
+    font-size:1.45rem;
+
+}
+
+h4{
+
+    font-size:1.2rem;
+
+}
+
+p{
+
+    color:var(--muted);
+
+}
+
+strong{
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+  GLOBAL LAYOUT
+==================================================*/
+
+.container{
+
+    width:min(92%,var(--container));
+
+    margin-inline:auto;
+
+}
+
+section{
+
+    position:relative;
+
+    padding:6rem 0;
+
+}
+
+
+
+/*==================================================
+  SECTION TITLES
+==================================================*/
+
+.section-title{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:0 auto 4rem;
+
+}
+
+.section-title h2{
+
+    margin-bottom:1rem;
+
+}
+
+.section-title p{
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+}
+
+.section-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.65rem 1.3rem;
+
+    margin-bottom:1rem;
+
+    border-radius:999px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+}
+
+
+
+/*==================================================
+  BUTTONS
+==================================================*/
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.7rem;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-secondary{
+
+    background:#fff;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+
+/*==================================================
+  CARDS
+==================================================*/
+
+.card{
+
+    background:#fff;
+
+    border-radius:var(--radius);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+/*==================================================
+  IMAGES
+==================================================*/
+
+.rounded-image{
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.rounded-image img{
+
+    transition:transform .7s ease;
+
+}
+
+.rounded-image:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*==================================================
+  DECORATIVE BACKGROUNDS
+==================================================*/
+
+.gradient-background{
+
+    background:
+
+        radial-gradient(
+
+            circle at top right,
+
+            rgba(114,182,230,.18),
+
+            transparent 40%
+
+        ),
+
+        radial-gradient(
+
+            circle at bottom left,
+
+            rgba(101,85,143,.10),
+
+            transparent 45%
+
+        ),
+
+        linear-gradient(
+
+            180deg,
+
+            #ffffff,
+
+            var(--primary-light)
+
+        );
+
+}
+
+
+
+/*==================================================
+  DECORATIVE SHAPES
+==================================================*/
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+}
+
+.circle.small{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+.circle.medium{
+
+    width:240px;
+
+    height:240px;
+
+}
+
+.circle.large{
+
+    width:420px;
+
+    height:420px;
+
+}
+
+.circle.primary{
+
+    background:rgba(101,85,143,.08);
+
+}
+
+.circle.secondary{
+
+    background:rgba(114,182,230,.10);
+
+}
+
+.circle.gold{
+
+    background:rgba(231,184,75,.12);
+
+}
+
+
+
+/*==================================================
+  ANIMATIONS
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+
+        opacity .7s ease,
+
+        transform .7s ease;
+
+}
+
+.fade-up.active{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.scale-in{
+
+    opacity:0;
+
+    transform:scale(.95);
+
+    transition:
+
+        opacity .6s ease,
+
+        transform .6s ease;
+
+}
+
+.scale-in.active{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+
+/*==================================================
+  UTILITIES
+==================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{
+
+    margin-top:1rem;
+
+}
+
+.mt-2{
+
+    margin-top:2rem;
+
+}
+
+.mt-3{
+
+    margin-top:3rem;
+
+}
+
+.mb-1{
+
+    margin-bottom:1rem;
+
+}
+
+.mb-2{
+
+    margin-bottom:2rem;
+
+}
+
+.mb-3{
+
+    margin-bottom:3rem;
+
+}
+
+
+
+/*==================================================
+  RESPONSIVE FOUNDATION
+==================================================*/
+
+@media (max-width:992px){
+
+    section{
+
+        padding:5rem 0;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    section{
+
+        padding:4rem 0;
+
+    }
+
+    .container{
+
+        width:94%;
+
+    }
+
+    h1{
+
+        font-size:2.8rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    h2{
+
+        font-size:1.9rem;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
+
+/*==================================================
+  HEADER
+==================================================*/
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+    box-shadow:0 6px 22px rgba(0,0,0,.05);
+
+}
+
+
+
+/*==================================================
+  HERO
+==================================================*/
+
+.study-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:7rem 0;
+
+    background:
+
+        radial-gradient(circle at top right,
+        rgba(114,182,230,.18),
+        transparent 40%),
+
+        radial-gradient(circle at bottom left,
+        rgba(101,85,143,.10),
+        transparent 45%),
+
+        linear-gradient(
+            180deg,
+            #ffffff,
+            var(--primary-light)
+        );
+
+}
+
+.study-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    top:-160px;
+
+    right:-120px;
+
+    background:rgba(114,182,230,.12);
+
+}
+
+.study-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    bottom:-120px;
+
+    left:-90px;
+
+    background:rgba(101,85,143,.08);
+
+}
+
+.study-hero .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.study-hero h1{
+
+    margin:1rem 0 1.5rem;
+
+    max-width:900px;
+
+}
+
+.study-hero p{
+
+    max-width:760px;
+
+    font-size:1.12rem;
+
+    line-height:1.9;
+
+    margin-bottom:2.5rem;
+
+}
+
+
+
+/*==================================================
+  BREADCRUMB
+==================================================*/
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:.75rem;
+
+    margin-bottom:1.5rem;
+
+    font-size:.95rem;
+
+    color:var(--muted);
+
+}
+
+.breadcrumb a{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.breadcrumb span{
+
+    color:#9aa1af;
+
+}
+
+
+
+/*==================================================
+  HERO LABEL
+==================================================*/
+
+.featured-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:.7rem 1.4rem;
+
+    border-radius:999px;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.05em;
+
+}
+
+
+
+/*==================================================
+  HERO BADGES
+==================================================*/
+
+.hero-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+.hero-badges div{
+
+    padding:.85rem 1.4rem;
+
+    border-radius:999px;
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.hero-badges div:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+/*==================================================
+  FEATURED STUDY
+==================================================*/
+
+.featured-study{
+
+    background:#ffffff;
+
+}
+
+.featured-study-card{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:4rem;
+
+    align-items:center;
+
+    background:#fff;
+
+    border-radius:34px;
+
+    padding:3rem;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+}
+
+.featured-study:nth-of-type(even) .featured-study-card{
+
+    grid-template-columns:.9fr 1.1fr;
+
+}
+
+.featured-text h2{
+
+    margin-bottom:1.5rem;
+
+}
+
+.featured-text p{
+
+    line-height:1.9;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+/*==================================================
+  FEATURED HIGHLIGHTS
+==================================================*/
+
+.featured-highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+}
+
+.featured-highlights div{
+
+    background:#ffffff;
+
+    padding:1rem 1.25rem;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-xs);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.featured-highlights div:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+
+/*==================================================
+  FEATURED IMAGE
+==================================================*/
+
+.featured-image{
+
+    position:relative;
+
+}
+
+.featured-image img{
+
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow-lg);
+
+    transition:transform .7s ease;
+
+}
+
+.featured-image:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*==================================================
+  WHY SECTION
+==================================================*/
+
+.why-section{
+
+    background:linear-gradient(
+
+        180deg,
+
+        var(--surface-alt),
+
+        #ffffff
+
+    );
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+.why-card{
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:2.5rem;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.why-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--primary),
+
+        var(--secondary)
+
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.why-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+
+
+/*==================================================
+  WHY ICON
+==================================================*/
+
+.why-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 1.5rem;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:2.3rem;
+
+}
+
+.why-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.why-card p{
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+  RESPONSIVE
+==================================================*/
+
+@media (max-width:992px){
+
+    .featured-study-card{
+
+        grid-template-columns:1fr;
+
+        gap:3rem;
+
+    }
+
+    .featured-study:nth-of-type(even) .featured-study-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .study-hero{
+
+        text-align:center;
+
+        padding:5rem 0;
+
+    }
+
+    .study-hero p{
+
+        margin-inline:auto;
+
+    }
+
+    .breadcrumb{
+
+        justify-content:center;
+
+    }
+
+    .hero-badges{
+
+        justify-content:center;
+
+    }
+
+    .featured-highlights{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .hero-badges{
+
+        flex-direction:column;
+
+    }
+
+    .hero-badges div{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+/*==================================================
+  FEATURED STUDIES
+==================================================*/
+
+.featured-studies{
+
+    background:#ffffff;
+
+}
+
+.study-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:2rem;
+
+}
+
+.study-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.study-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.study-card img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    transition:transform .8s ease;
+
+}
+
+.study-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.study-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    padding:2rem;
+
+}
+
+.study-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    width:max-content;
+
+    padding:.55rem 1rem;
+
+    border-radius:999px;
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+
+    margin-bottom:1rem;
+
+}
+
+.study-tag.blue{
+
+    background:#EAF4FF;
+
+    color:#2F79C6;
+
+}
+
+.study-tag.green{
+
+    background:#EDF8EE;
+
+    color:#458E48;
+
+}
+
+.study-tag.purple{
+
+    background:#F3EDFF;
+
+    color:#7552D5;
+
+}
+
+.study-content h3{
+
+    margin-bottom:1rem;
+
+}
+
+.study-content p{
+
+    flex:1;
+
+    line-height:1.8;
+
+    margin-bottom:1.75rem;
+
+}
+
+.study-content a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+.study-content a:hover{
+
+    color:var(--secondary-dark);
+
+}
+
+
+
+/*==================================================
+  INTEREST AREAS
+==================================================*/
+
+.interest-areas{
+
+    background:var(--surface-alt);
+
+}
+
+.interest-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+.interest-card{
+
+    background:#ffffff;
+
+    border-radius:28px;
+
+    padding:2.25rem;
+
+    border-top:6px solid transparent;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.interest-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.interest-card.blue{
+
+    border-color:#69A9F3;
+
+}
+
+.interest-card.green{
+
+    border-color:#6EBB73;
+
+}
+
+.interest-card.orange{
+
+    border-color:#F1A64B;
+
+}
+
+.interest-card.purple{
+
+    border-color:#8C71D6;
+
+}
+
+.interest-icon{
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:22px;
+
+    background:var(--primary-light);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:2rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.interest-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.interest-card p{
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+  STATISTICS
+==================================================*/
+
+.site-stats{
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--primary),
+
+            var(--secondary)
+
+        );
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:2rem;
+
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:28px;
+
+    border:1px solid rgba(255,255,255,.20);
+
+    padding:2.5rem;
+
+    text-align:center;
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.stat-card h2{
+
+    color:#ffffff;
+
+    font-size:3rem;
+
+    margin-bottom:.5rem;
+
+}
+
+.stat-card p{
+
+    color:rgba(255,255,255,.95);
+
+    font-weight:600;
+
+}
+
+
+
+/*==================================================
+  TEACHER FAVORITES
+==================================================*/
+
+.teacher-favorites{
+
+    background:#ffffff;
+
+}
+
+.favorite-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+.favorite-card{
+
+    background:#ffffff;
+
+    padding:2.5rem;
+
+    border-radius:30px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.favorite-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.favorite-icon{
+
+    width:84px;
+
+    height:84px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--secondary-light);
+
+    font-size:2.2rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+.favorite-card h3{
+
+    margin-bottom:1rem;
+
+}
+
+.favorite-card p{
+
+    line-height:1.8;
+
+}
+
+
+
+/*==================================================
+  OBSERVATION CYCLE
+==================================================*/
+
+.why-section:last-of-type{
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #ffffff,
+
+            var(--surface-alt)
+
+        );
+
+}
+
+.why-section:last-of-type .why-card{
+
+    text-align:center;
+
+}
+
+.why-section:last-of-type .why-icon{
+
+    background:var(--gold-light);
+
+    font-size:2.4rem;
+
+}
+
+
+
+/*==================================================
+  RESPONSIVE
+==================================================*/
+
+@media (max-width:1100px){
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .study-grid,
+
+    .interest-grid,
+
+    .favorite-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .study-content,
+
+    .interest-card,
+
+    .favorite-card{
+
+        padding:1.75rem;
+
+    }
+
+    .stat-card{
+
+        padding:2rem;
+
+    }
+
+}
+
+/*==================================================
+  PROFESSIONAL RESOURCES
+==================================================*/
+
+.interest-areas:last-of-type{
+
+    background:#ffffff;
+
+}
+
+.interest-areas:last-of-type .interest-card{
+
+    text-align:center;
+
+}
+
+.interest-areas:last-of-type .interest-icon{
+
+    background:var(--gold-light);
+
+}
+
+
+
+/*==================================================
+  FREE DOWNLOADS
+==================================================*/
+
+.featured-studies:last-of-type{
+
+    background:linear-gradient(
+
+        180deg,
+
+        var(--surface-alt),
+
+        #ffffff
+
+    );
+
+}
+
+.featured-studies:last-of-type .study-card{
+
+    position:relative;
+
+}
+
+.featured-studies:last-of-type .study-card::after{
+
+    content:"FREE";
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    padding:.45rem .9rem;
+
+    border-radius:999px;
+
+    background:var(--success);
+
+    color:#ffffff;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+}
+
+
+
+/*==================================================
+  RELATED RESOURCES
+==================================================*/
+
+.teacher-favorites:last-of-type{
+
+    background:var(--surface-alt);
+
+}
+
+.teacher-favorites:last-of-type .favorite-card{
+
+    text-align:center;
+
+}
+
+.teacher-favorites:last-of-type .favorite-icon{
+
+    background:var(--primary-light);
+
+}
+
+
+
+/*==================================================
+  NEWSLETTER
+==================================================*/
+
+.newsletter{
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            var(--primary),
+
+            var(--secondary)
+
+        );
+
+    padding:7rem 0;
+
+}
+
+.newsletter-box{
+
+    display:grid;
+
+    grid-template-columns:1.15fr .85fr;
+
+    gap:3rem;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:36px;
+
+    padding:4rem;
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+.newsletter-content{
+
+    color:#ffffff;
+
+}
+
+.newsletter-tag{
+
+    display:inline-flex;
+
+    padding:.65rem 1.3rem;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.15);
+
+    color:#ffffff;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    margin-bottom:1.5rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.05em;
+
+}
+
+.newsletter-content h2{
+
+    color:#ffffff;
+
+    margin-bottom:1rem;
+
+}
+
+.newsletter-content p{
+
+    color:rgba(255,255,255,.92);
+
+    line-height:1.9;
+
+    margin-bottom:2rem;
+
+}
+
+.newsletter-benefits{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1rem;
+
+}
+
+.newsletter-benefits div{
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:18px;
+
+    padding:1rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+}
+
+.newsletter-card{
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    padding:2.5rem;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.newsletter-card h3{
+
+    margin-bottom:.75rem;
+
+}
+
+.newsletter-card p{
+
+    margin-bottom:2rem;
+
+}
+
+.newsletter-form{
+
+    display:grid;
+
+    gap:1.25rem;
+
+}
+
+.newsletter-form input{
+
+    width:100%;
+
+    padding:1rem 1.2rem;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.newsletter-form input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(101,85,143,.10);
+
+}
+
+.newsletter-form button{
+
+    padding:1rem;
+
+    border-radius:16px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.newsletter-form button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/*==================================================
+  FOOTER
+==================================================*/
+
+footer{
+
+    background:#232838;
+
+    color:rgba(255,255,255,.80);
+
+    padding:5rem 0 2rem;
+
+}
+
+footer a{
+
+    transition:var(--transition);
+
+}
+
+footer a:hover{
+
+    color:#ffffff;
+
+}
+
+
+
+/*==================================================
+  SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:11px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2f8;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+
+/*==================================================
+  TEXT SELECTION
+==================================================*/
+
+::selection{
+
+    background:rgba(101,85,143,.18);
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+  ACCESSIBILITY
+==================================================*/
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible{
+
+    outline:3px solid rgba(101,85,143,.28);
+
+    outline-offset:4px;
+
+}
+
+
+
+/*==================================================
+  PRINT
+==================================================*/
+
+@media print{
+
+    header,
+
+    footer,
+
+    .newsletter{
+
+        display:none;
+
+    }
+
+    body{
+
+        background:#ffffff;
+
+    }
+
+    section{
+
+        padding:2rem 0;
+
+        page-break-inside:avoid;
+
+    }
+
+    .study-card,
+
+    .favorite-card,
+
+    .interest-card,
+
+    .why-card{
+
+        box-shadow:none;
+
+        border:1px solid #cccccc;
+
+    }
+
+}
+
+
+
+/*==================================================
+  RESPONSIVE
+==================================================*/
+
+@media (max-width:1200px){
+
+    .newsletter-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .newsletter{
+
+        padding:5rem 0;
+
+    }
+
+    .newsletter-box{
+
+        padding:2.5rem;
+
+    }
+
+    .newsletter-benefits{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .newsletter-card{
+
+        padding:2rem;
+
+    }
+
+}
+
+
+
+/*==================================================
+  PERFORMANCE
+==================================================*/
+
+.study-card,
+
+.favorite-card,
+
+.interest-card,
+
+.why-card,
+
+.stat-card{
+
+    will-change:transform;
+
+}
+
+
+
+/*==================================================
+  END OF STYLESHEET
+==================================================*/
