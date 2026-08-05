@@ -2625,7 +2625,7 @@ nav a.active::after{
 
     border-radius:28px;
 
-    padding:2rem;
+    padding:1.75rem;
 
     text-align:center;
 
@@ -2633,11 +2633,7 @@ nav a.active::after{
 
     flex-direction:column;
 
-    justify-content:flex-start;
-
     align-items:center;
-
-    min-height:340px;
 
     box-shadow:var(--shadow-sm);
 
@@ -2655,7 +2651,21 @@ nav a.active::after{
 
 .season-icon{
 
-    font-size:3rem;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    font-size:2.5rem;
 
     margin-bottom:1.25rem;
 
@@ -2665,19 +2675,23 @@ nav a.active::after{
 
 .season-card h3{
 
-    font-size:1.45rem;
+    font-size:1.3rem;
 
-    margin-bottom:1rem;
+    margin-bottom:.65rem;
 
 }
 
 .season-card p{
 
-    font-size:1rem;
+    margin:0;
 
-    line-height:1.7;
+    font-size:.95rem;
+
+    line-height:1.45;
 
     color:var(--muted);
+
+    max-width:240px;
 
 }
 
