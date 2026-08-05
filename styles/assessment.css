@@ -384,23 +384,25 @@ header{
 
     backdrop-filter:blur(16px);
 
+    -webkit-backdrop-filter:blur(16px);
+
     border-bottom:1px solid var(--border);
 
     box-shadow:var(--shadow-xs);
 
 }
 
-.navbar{
+.nav-container{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    gap:2rem;
+    justify-content:space-between;
 
-    min-height:88px;
+    min-height:90px;
+
+    gap:2rem;
 
 }
 
@@ -412,27 +414,63 @@ header{
 
     gap:1rem;
 
-    font-family:"Nunito",sans-serif;
-
-    font-weight:800;
-
-    font-size:1.2rem;
-
-    color:var(--heading);
+    flex-shrink:0;
 
 }
 
 .logo img{
 
-    width:54px;
+    width:58px;
 
-    height:54px;
+    height:58px;
 
     object-fit:contain;
 
 }
 
-.nav-menu{
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo-text h1{
+
+    margin:0;
+
+    font-size:1.45rem;
+
+    font-weight:800;
+
+    line-height:1.05;
+
+    color:var(--heading);
+
+}
+
+.logo-text span{
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--primary);
+
+}
+
+.main-nav{
+
+    margin-left:auto;
+
+}
+
+.main-nav ul{
 
     display:flex;
 
@@ -444,17 +482,33 @@ header{
 
 }
 
-.nav-menu a{
-
-    color:var(--heading);
-
-    font-weight:600;
+.main-nav a{
 
     position:relative;
 
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:.35rem 0;
+
+    font-weight:600;
+
+    color:var(--heading);
+
+    transition:var(--transition);
+
 }
 
-.nav-menu a::after{
+.main-nav a:hover,
+
+.main-nav a.active{
+
+    color:var(--primary);
+
+}
+
+.main-nav a::after{
 
     content:"";
 
@@ -468,33 +522,201 @@ header{
 
     height:3px;
 
+    border-radius:999px;
+
     background:var(--primary);
 
-    transition:.3s;
+    transition:width .3s ease;
 
 }
 
-.nav-menu a:hover::after,
+.main-nav a:hover::after,
 
-.nav-menu .active::after{
+.main-nav a.active::after{
 
     width:100%;
 
 }
 
-.nav-menu a:hover,
+.header-actions{
 
-.nav-menu .active{
+    display:flex;
 
-    color:var(--primary);
+    align-items:center;
+
+    gap:.75rem;
+
+    margin-left:1.5rem;
 
 }
 
-.menu-toggle{
+.search-toggle{
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:var(--heading);
+
+    transition:var(--transition);
+
+}
+
+.search-toggle:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+}
+
+.mobile-menu{
 
     display:none;
 
-    font-size:2rem;
+    width:48px;
+
+    height:48px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    font-size:1.35rem;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.mobile-menu:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==================================================
+  RESPONSIVE NAVIGATION
+==================================================*/
+
+@media (max-width:1100px){
+
+    .nav-container{
+
+        position:relative;
+
+    }
+
+    .main-nav{
+
+        display:none;
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:#ffffff;
+
+        border-top:1px solid var(--border);
+
+        box-shadow:var(--shadow);
+
+        z-index:999;
+
+    }
+
+    .main-nav.active{
+
+        display:block;
+
+    }
+
+    .main-nav ul{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+    }
+
+    .main-nav li{
+
+        width:100%;
+
+    }
+
+    .main-nav a{
+
+        display:block;
+
+        padding:1rem 1.5rem;
+
+        border-bottom:1px solid var(--border);
+
+    }
+
+    .main-nav a::after{
+
+        display:none;
+
+    }
+
+    .mobile-menu{
+
+        display:flex;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .logo img{
+
+        width:52px;
+
+        height:52px;
+
+    }
+
+    .logo-text h1{
+
+        font-size:1.2rem;
+
+    }
+
+    .logo-text span{
+
+        font-size:.75rem;
+
+    }
+
+    .nav-container{
+
+        min-height:80px;
+
+    }
 
 }
 
