@@ -2605,21 +2605,11 @@ nav a.active::after{
   CREATING CALMING SPACES
 ==================================================*/
 
-.season-section{
-
-    background:linear-gradient(
-        180deg,
-        #ffffff,
-        var(--surface-alt)
-    );
-
-}
-
 .season-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:2rem;
 
@@ -2629,15 +2619,7 @@ nav a.active::after{
 
 .season-card{
 
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    text-align:center;
-
-    background:#ffffff;
+    background:#fff;
 
     border:1px solid var(--border);
 
@@ -2645,11 +2627,21 @@ nav a.active::after{
 
     padding:2rem;
 
+    text-align:center;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    min-height:340px;
+
     box-shadow:var(--shadow-sm);
 
     transition:var(--transition);
-
-    height:100%;
 
 }
 
@@ -2661,11 +2653,11 @@ nav a.active::after{
 
 }
 
-.season-card .season-icon{
+.season-icon{
 
     font-size:3rem;
 
-    margin-bottom:1rem;
+    margin-bottom:1.25rem;
 
     line-height:1;
 
@@ -2677,22 +2669,17 @@ nav a.active::after{
 
     margin-bottom:1rem;
 
-    color:var(--heading);
-
 }
 
 .season-card p{
 
     font-size:1rem;
 
-    line-height:1.8;
+    line-height:1.7;
 
     color:var(--muted);
 
-    margin:0;
-
 }
-
 
 /*==================================================
   NEWSLETTER
