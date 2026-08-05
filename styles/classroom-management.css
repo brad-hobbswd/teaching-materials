@@ -2602,19 +2602,15 @@ nav a.active::after{
 
 
 /*==================================================
-  SEASON SECTION
+  CREATING CALMING SPACES
 ==================================================*/
 
 .season-section{
 
     background:linear-gradient(
-
         180deg,
-
         #ffffff,
-
         var(--surface-alt)
-
     );
 
 }
@@ -2623,27 +2619,37 @@ nav a.active::after{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
     gap:2rem;
+
+    align-items:stretch;
 
 }
 
 .season-card{
 
-    background:#fff;
+    display:flex;
 
-    border-radius:28px;
+    flex-direction:column;
 
-    padding:2.5rem;
+    align-items:center;
 
     text-align:center;
 
+    background:#ffffff;
+
     border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:2rem;
 
     box-shadow:var(--shadow-sm);
 
     transition:var(--transition);
+
+    height:100%;
 
 }
 
@@ -2655,24 +2661,37 @@ nav a.active::after{
 
 }
 
-.season-card{
+.season-card .season-icon{
 
     font-size:3rem;
+
+    margin-bottom:1rem;
+
+    line-height:1;
 
 }
 
 .season-card h3{
 
-    margin:1.25rem 0;
+    font-size:1.45rem;
+
+    margin-bottom:1rem;
+
+    color:var(--heading);
 
 }
 
 .season-card p{
 
-    line-height:1.85;
+    font-size:1rem;
+
+    line-height:1.8;
+
+    color:var(--muted);
+
+    margin:0;
 
 }
-
 
 
 /*==================================================
