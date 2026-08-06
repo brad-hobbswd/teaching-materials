@@ -3,75 +3,183 @@
   OBSERVATION & ASSESSMENT
 
   assessment.js
+
+  PART 1
+  INITIALIZATION
+  MOBILE NAVIGATION
 ==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    "use strict";
+
+
+
+    /*==================================================
+      ELEMENTS
+    ==================================================*/
+
+    const header = document.querySelector(".site-header");
 
     const menuButton = document.querySelector(".mobile-menu");
 
     const navigation = document.querySelector(".main-nav");
 
-    const navLinks = document.querySelectorAll(".main-nav a");
-
-    const header = document.querySelector(".site-header");
+    const navigationLinks = document.querySelectorAll(".main-nav a");
 
 
 
-    /*==============================================
-      MOBILE MENU
-    ==============================================*/
+    /*==================================================
+      MOBILE MENU FUNCTIONS
+    ==================================================*/
 
-    if(menuButton && navigation){
+    function openMenu(){
 
-        menuButton.addEventListener("click", () => {
+        if(!navigation || !menuButton) return;
 
-            navigation.classList.toggle("active");
+        navigation.classList.add("active");
 
-            const expanded = navigation.classList.contains("active");
+        menuButton.setAttribute("aria-expanded","true");
 
-            menuButton.setAttribute("aria-expanded", expanded);
-
-            menuButton.innerHTML = expanded ? "✕" : "☰";
-
-        });
+        menuButton.innerHTML = "✕";
 
     }
 
 
 
-    /*==============================================
-      CLOSE MENU AFTER CLICKING A LINK
-    ==============================================*/
+    function closeMenu(){
 
-    navLinks.forEach(link => {
+        if(!navigation || !menuButton) return;
 
-        link.addEventListener("click", () => {
+        navigation.classList.remove("active");
 
-            navigation.classList.remove("active");
+        menuButton.setAttribute("aria-expanded","false");
 
-            menuButton.setAttribute("aria-expanded","false");
+        menuButton.innerHTML = "☰";
 
-            menuButton.innerHTML = "☰";
+    }
 
-        });
+
+
+    function toggleMenu(){
+
+        if(!navigation) return;
+
+        navigation.classList.contains("active")
+
+            ? closeMenu()
+
+            : openMenu();
+
+    }
+
+
+
+    /*==================================================
+      MOBILE MENU EVENT
+    ==================================================*/
+
+    if(menuButton){
+
+        menuButton.addEventListener("click",toggleMenu);
+
+    }
+
+
+
+    /*==================================================
+      CLOSE MENU WHEN LINK IS CLICKED
+    ==================================================*/
+
+    navigationLinks.forEach(link=>{
+
+        link.addEventListener("click",closeMenu);
+
+    });
+
+
+        /*==================================================
+      PART 2
+      HEADER EFFECTS
+      WINDOW EVENTS
+    ==================================================*/
+
+
+
+    /*==================================================
+      HEADER ON SCROLL
+    ==================================================*/
+
+    function updateHeader(){
+
+        if(!header) return;
+
+        if(window.scrollY > 20){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+
+
+
+    /*==================================================
+      CLOSE MENU WHEN CLICKING OUTSIDE
+    ==================================================*/
+
+    document.addEventListener("click",(event)=>{
+
+        if(
+            !navigation ||
+            !menuButton ||
+            !navigation.classList.contains("active")
+        ){
+            return;
+        }
+
+        if(
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ){
+
+            closeMenu();
+
+        }
 
     });
 
 
 
-    /*==============================================
-      CLOSE MENU WHEN RETURNING TO DESKTOP
-    ==============================================*/
+    /*==================================================
+      CLOSE MENU WITH ESCAPE KEY
+    ==================================================*/
 
-    window.addEventListener("resize", () => {
+    document.addEventListener("keydown",(event)=>{
+
+        if(event.key === "Escape"){
+
+            closeMenu();
+
+        }
+
+    });
+
+
+
+    /*==================================================
+      CLOSE MENU WHEN RETURNING TO DESKTOP
+    ==================================================*/
+
+    window.addEventListener("resize",()=>{
 
         if(window.innerWidth > 1100){
 
-            navigation.classList.remove("active");
-
-            menuButton.setAttribute("aria-expanded","false");
-
-            menuButton.innerHTML = "☰";
+            closeMenu();
 
         }
 
@@ -79,56 +187,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /*==============================================
-      HEADER SHADOW ON SCROLL
-    ==============================================*/
+    /*==================================================
+      WINDOW SCROLL
+    ==================================================*/
 
-    window.addEventListener("scroll", () => {
-
-        if(window.scrollY > 15){
-
-            header.style.boxShadow = "0 12px 30px rgba(25,40,70,.10)";
-
-        }
-
-        else{
-
-            header.style.boxShadow = "0 4px 16px rgba(0,0,0,.05)";
-
-        }
-
-    });
+    window.addEventListener("scroll",updateHeader);
 
 
 
-    /*==============================================
-      FADE UP ANIMATION
-    ==============================================*/
+    /*==================================================
+      INITIALIZE HEADER
+    ==================================================*/
 
-    const fadeItems = document.querySelectorAll(".fade-up");
-
-    if(fadeItems.length){
-
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("active");
-
-                }
-
-            });
-
-        },{
-
-            threshold:.15
-
-        });
-
-        fadeItems.forEach(item => observer.observe(item));
-
-    }
-
-});
+    updateHeader();
