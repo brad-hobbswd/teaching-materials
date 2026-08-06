@@ -473,7 +473,9 @@ input:focus-visible{
 
 .site-header.scrolled{
 
-    box-shadow:0 12px 32px rgba(25,40,70,.12);
+    box-shadow:0 12px 30px rgba(25,40,70,.12);
+
+    border-bottom:1px solid rgba(0,0,0,.08);
 
 }
 
