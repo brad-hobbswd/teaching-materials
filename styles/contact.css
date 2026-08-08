@@ -7010,6 +7010,267 @@ html {
     }
 
 }
+
+/* ======================================================
+   LITTLE EXPLORERS PROMISE
+====================================================== */
+
+.our-promise {
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f7fbf8 100%
+    );
+}
+
+
+/* Decorative background */
+
+.our-promise::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -220px;
+    left: -180px;
+    border-radius: 50%;
+    background: rgba(47, 133, 90, 0.055);
+    pointer-events: none;
+}
+
+.our-promise::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    right: -180px;
+    bottom: -180px;
+    border-radius: 50%;
+    background: rgba(49, 130, 206, 0.045);
+    pointer-events: none;
+}
+
+
+/* Promise card */
+
+.our-promise .promise-card {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 4rem 4.5rem;
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+
+/* Top accent */
+
+.our-promise .promise-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+}
+
+
+/* Star */
+
+.our-promise .promise-card > i {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--accent);
+    font-size: 1.8rem;
+    box-shadow:
+        0 8px 22px rgba(47, 133, 90, 0.10);
+}
+
+
+/* Heading */
+
+.our-promise .promise-card h2 {
+    margin: 0 0 1.25rem;
+    color: var(--heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+}
+
+
+/* Description */
+
+.our-promise .promise-card > p {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    color: var(--gray-600);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* Promise values */
+
+.our-promise .promise-values {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+
+/* Individual promise value */
+
+.our-promise .promise-values > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    padding: 1.5rem 1rem;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Hover */
+
+.our-promise .promise-values > div:hover {
+    transform: translateY(-6px);
+    background: var(--white);
+    border-color: rgba(47, 133, 90, 0.25);
+    box-shadow: var(--shadow);
+}
+
+
+/* Promise icons */
+
+.our-promise .promise-values > div i {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 0.85rem;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+
+/* Icon hover */
+
+.our-promise .promise-values > div:hover i {
+    transform: scale(1.08);
+}
+
+
+/* Promise labels */
+
+.our-promise .promise-values > div span {
+    color: var(--heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 992px) {
+
+    .our-promise {
+        padding: 5rem 0;
+    }
+
+    .our-promise .promise-card {
+        padding: 3.5rem 3rem;
+    }
+
+    .our-promise .promise-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+
+    .our-promise {
+        padding: 4rem 0;
+    }
+
+    .our-promise .promise-card {
+        padding: 3rem 1.5rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .our-promise .promise-card h2 {
+        font-size: 2rem;
+    }
+
+    .our-promise .promise-card > p {
+        font-size: 1rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .our-promise .promise-values {
+        grid-template-columns: 1fr;
+    }
+
+    .our-promise .promise-values > div {
+        min-height: 125px;
+    }
+
+}
+
+
+/* ======================================================
+   SMALL MOBILE
+====================================================== */
+
+@media (max-width: 480px) {
+
+    .our-promise .promise-card {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .our-promise .promise-card > i {
+        width: 68px;
+        height: 68px;
+        font-size: 1.5rem;
+    }
+
+}
 /* ======================================
    END OF STYLESHEET
 ====================================== */
