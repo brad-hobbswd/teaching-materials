@@ -577,120 +577,122 @@ section{
 }
 
 /*==================================================
-    HERO IMAGE
+    ABOUT HERO IMAGE
 ==================================================*/
 
-.hero-image{
+.hero-image {
+    position: relative;
 
-    position:relative;
+    width: 100%;
 
-    padding:0 95px;
+    padding: 0;
+}
+
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 620px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 32px;
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/*==================================================
+    FLOATING BUBBLES
+==================================================*/
+
+.floating-card {
+
+    position: absolute;
+
+    z-index: 5;
+
+    width: 225px;
+
+    padding: 1.35rem 1.5rem;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
 
 }
 
-.hero-image img{
 
-    display:block;
+/* Left bubble */
 
-    width:100%;
+.card-one {
 
-    height:auto;
+    top: 7%;
 
-    border-radius:var(--radius-lg);
+    left: -35px;
 
-    box-shadow:var(--shadow-lg);
+}
 
-    object-fit:cover;
+
+/* Right bubble */
+
+.card-two {
+
+    right: -35px;
+
+    bottom: 7%;
 
 }
 
 
 /*==================================================
-    HERO FLOATING CARDS
+    BUBBLE CONTENT
 ==================================================*/
 
-.floating-card{
+.floating-card i {
 
-    position:absolute;
+    display: block;
 
-    z-index:3;
+    margin-bottom: .65rem;
 
-    width:215px;
+    color: var(--secondary);
 
-    padding:1.35rem 1.4rem;
-
-    background:rgba(255,255,255,.98);
-
-    border:1px solid rgba(255,255,255,.95);
-
-    border-radius:24px;
-
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
+    font-size: 1.45rem;
 
 }
 
 
-/* Creative Learning */
+.floating-card h4 {
 
-.card-one{
+    margin: 0 0 .45rem;
 
-    top:10%;
+    color: var(--heading);
 
-    left:0;
+    font-size: 1.05rem;
 
-}
-
-
-/* Professional Growth */
-
-.card-two{
-
-    right:0;
-
-    bottom:10%;
+    line-height: 1.3;
 
 }
 
 
-/* Icon */
+.floating-card p {
 
-.floating-card i{
+    margin: 0;
 
-    display:block;
+    color: var(--text-light);
 
-    color:var(--secondary);
+    font-size: .95rem;
 
-    font-size:1.5rem;
-
-    margin-bottom:.65rem;
-
-}
-
-
-/* Title */
-
-.floating-card h4{
-
-    margin-bottom:.45rem;
-
-    color:var(--heading);
-
-    font-size:1.05rem;
-
-}
-
-
-/* Description */
-
-.floating-card p{
-
-    margin:0;
-
-    color:var(--text-light);
-
-    font-size:.95rem;
-
-    line-height:1.65;
+    line-height: 1.65;
 
 }
 
