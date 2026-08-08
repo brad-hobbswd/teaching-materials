@@ -873,183 +873,344 @@ WHY ICON
 
 }
 
-
 /*==================================================
-STUDY GRID
+FAMILY CONFERENCE RESOURCES
 ==================================================*/
 
-.study-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-
-    gap:2rem;
-
-}
-
-
-/*==================================================
-STUDY CARD
-==================================================*/
-
-.study-card{
+.conference-resources{
 
     background:#ffffff;
 
-    border-radius:24px;
+}
 
-    overflow:hidden;
 
-    border:1px solid var(--border);
+/*==================================================
+CONFERENCE STAGE
+==================================================*/
 
-    box-shadow:var(--shadow-sm);
+.conference-stage{
 
-    transition:var(--transition);
+    margin-bottom:4rem;
+
+}
+
+.conference-stage:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/*==================================================
+STAGE HEADING
+==================================================*/
+
+.stage-heading{
 
     display:flex;
 
-    flex-direction:column;
+    align-items:center;
 
-    height:100%;
+    gap:1.25rem;
 
-}
+    margin-bottom:1.5rem;
 
-.study-card:hover{
+    padding-bottom:1rem;
 
-    transform:translateY(-10px);
-
-    box-shadow:var(--shadow-lg);
+    border-bottom:1px solid var(--border);
 
 }
 
+.stage-number{
 
-/*==================================================
-STUDY CARD IMAGE
-==================================================*/
+    width:58px;
 
-.study-card img{
-
-    display:block;
-
-    width:100%;
-
-    aspect-ratio:1 / 1;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    transition:transform .5s ease;
-
-}
-
-.study-card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-
-/*==================================================
-STUDY CONTENT
-==================================================*/
-
-.study-content{
+    height:58px;
 
     display:flex;
-
-    flex-direction:column;
-
-    flex:1;
-
-    padding:2rem;
-
-}
-
-.study-content h3{
-
-    margin:.75rem 0 1rem;
-
-}
-
-.study-content p{
-
-    margin-bottom:1.75rem;
-
-    flex:1;
-
-}
-
-.study-content a{
-
-    font-weight:700;
-
-    color:var(--primary);
-
-    transition:var(--transition);
-
-}
-
-.study-content a:hover{
-
-    color:var(--secondary);
-
-}
-
-
-/*==================================================
-STUDY TAGS
-==================================================*/
-
-.study-tag{
-
-    display:inline-flex;
 
     align-items:center;
 
     justify-content:center;
 
-    width:max-content;
+    flex-shrink:0;
 
-    padding:.45rem 1rem;
+    border-radius:16px;
 
-    border-radius:999px;
+    background:var(--primary);
 
     color:#ffffff;
+
+    font-family:"Nunito",sans-serif;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+}
+
+.stage-heading span{
+
+    display:block;
+
+    margin-bottom:.2rem;
+
+    color:var(--primary);
 
     font-size:.82rem;
 
     font-weight:700;
 
-    letter-spacing:.3px;
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
 
 }
 
-.study-tag.blue{
+.stage-heading h3{
 
-    background:var(--blue);
+    margin:0;
 
-}
+    color:var(--heading);
 
-.study-tag.green{
-
-    background:var(--green);
+    font-size:1.5rem;
 
 }
 
-.study-tag.orange{
 
-    background:var(--orange);
+/*==================================================
+CONFERENCE RESOURCE GRID
+==================================================*/
+
+.conference-resource-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1.5rem;
 
 }
 
-.study-tag.purple{
 
-    background:var(--purple);
+/*==================================================
+CONFERENCE RESOURCE
+==================================================*/
+
+.conference-resource{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1.5rem;
+
+    padding:2rem;
+
+    background:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
 
 }
 
+.conference-resource:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(44,110,73,.25);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/*==================================================
+RESOURCE ICON
+==================================================*/
+
+.resource-icon{
+
+    width:68px;
+
+    height:68px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:18px;
+
+    font-size:1.45rem;
+
+}
+
+.resource-icon.blue{
+
+    background:#edf4ff;
+
+    color:var(--blue);
+
+}
+
+.resource-icon.green{
+
+    background:#eaf7ee;
+
+    color:var(--green);
+
+}
+
+.resource-icon.orange{
+
+    background:#fff3df;
+
+    color:var(--orange);
+
+}
+
+.resource-icon.purple{
+
+    background:#f4ecff;
+
+    color:var(--purple);
+
+}
+
+
+/*==================================================
+RESOURCE CONTENT
+==================================================*/
+
+.resource-content{
+
+    flex:1;
+
+}
+
+.resource-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    width:max-content;
+
+    margin-bottom:.6rem;
+
+    padding:.35rem .8rem;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+}
+
+.resource-label.blue{
+
+    background:#edf4ff;
+
+    color:var(--blue);
+
+}
+
+.resource-label.green{
+
+    background:#eaf7ee;
+
+    color:var(--green);
+
+}
+
+.resource-label.orange{
+
+    background:#fff3df;
+
+    color:var(--orange);
+
+}
+
+.resource-label.purple{
+
+    background:#f4ecff;
+
+    color:var(--purple);
+
+}
+
+.resource-content h3{
+
+    margin:0 0 .75rem;
+
+    color:var(--heading);
+
+    font-size:1.35rem;
+
+}
+
+.resource-content p{
+
+    margin:0 0 1.25rem;
+
+    color:var(--text-light);
+
+}
+
+
+/*==================================================
+RESOURCE DOWNLOAD
+==================================================*/
+
+.resource-download{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:.75rem 1.1rem;
+
+    border-radius:10px;
+
+    background:#f3f8f5;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+    transition:var(--transition);
+
+}
+
+.resource-download:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    transform:translateX(3px);
+
+}
+
+.resource-download i{
+
+    font-size:.85rem;
+
+}
 
 /*==================================================
 INTEREST GRID
@@ -1770,6 +1931,75 @@ MOBILE
         flex-direction:column;
 
         text-align:center;
+
+    }
+
+}
+
+/*==================================================
+CONFERENCE RESOURCE RESPONSIVE
+==================================================*/
+
+@media (max-width:900px){
+
+    .conference-resource-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/*==================================================
+CONFERENCE RESOURCE MOBILE
+==================================================*/
+
+@media (max-width:650px){
+
+    .stage-heading{
+
+        align-items:flex-start;
+
+    }
+
+    .stage-number{
+
+        width:50px;
+
+        height:50px;
+
+        border-radius:14px;
+
+    }
+
+    .stage-heading h3{
+
+        font-size:1.25rem;
+
+    }
+
+    .conference-resource{
+
+        flex-direction:column;
+
+        padding:1.5rem;
+
+    }
+
+    .resource-icon{
+
+        width:58px;
+
+        height:58px;
+
+    }
+
+    .resource-download{
+
+        width:100%;
+
+        justify-content:center;
 
     }
 
