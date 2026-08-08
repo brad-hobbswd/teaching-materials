@@ -1087,6 +1087,8 @@ STUDY CARD IMAGE
 
     width:100%;
 
+    height:auto;
+
     aspect-ratio:1 / 1;
 
     object-fit:cover;
@@ -1889,12 +1891,6 @@ RESPONSIVE
 
     }
 
-    .study-card img{
-
-        height:220px;
-
-    }
-
     .newsletter-box{
 
         padding:2rem;
@@ -1902,4 +1898,3 @@ RESPONSIVE
     }
 
 }
-
