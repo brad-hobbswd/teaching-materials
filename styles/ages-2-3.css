@@ -6442,3 +6442,379 @@ li:nth-child(4) a:hover {
 
 }
 
+/* =========================================================
+   PART 19
+   FINAL CLEANUP & INTEGRATION
+   HEAD START | AGES 2–3 YEARS
+========================================================= */
+
+
+/* =========================================================
+   SECTION TITLE SYSTEM
+========================================================= */
+
+.section-title {
+    max-width: 760px;
+
+    margin:
+        0 auto 42px;
+
+    text-align: center;
+}
+
+.section-title h2 {
+    margin-bottom: 12px;
+
+    color:
+        var(--age-navy);
+}
+
+.section-title p {
+    margin: 0;
+
+    color:
+        var(--age-text-light);
+
+    font-size:
+        0.94rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   SECTION SPACING CONSISTENCY
+========================================================= */
+
+#centers,
+#assessment,
+#downloads,
+#family {
+    scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
+   GLOBAL BUTTON SAFETY
+========================================================= */
+
+.btn,
+.study-button {
+    -webkit-tap-highlight-color: transparent;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   GLOBAL CARD IMAGE SAFETY
+========================================================= */
+
+.card img,
+.study-card img,
+.book-card img,
+.featured-image img,
+.age-hero-image img {
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   LINK TRANSITION SAFETY
+========================================================= */
+
+a {
+    -webkit-tap-highlight-color:
+        rgba(120, 214, 208, 0.15);
+}
+
+
+/* =========================================================
+   FORM SAFETY
+========================================================= */
+
+input::placeholder {
+    opacity: 1;
+}
+
+input:disabled,
+button:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY / LONG TEXT PROTECTION
+========================================================= */
+
+.card,
+.fact-card,
+.development-card,
+.material-card,
+.week-card,
+.center-card,
+.book-card,
+.assessment-card,
+.why-card,
+.dashboard-card,
+.download-card,
+.week-nav-card,
+.family-card,
+.featured-study-card,
+.newsletter-box {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   TOUCH TARGETS
+========================================================= */
+
+@media (pointer: coarse) {
+
+    nav a {
+        min-height: 42px;
+
+        display: inline-flex;
+
+        align-items: center;
+    }
+
+    .study-button {
+        min-height: 42px;
+    }
+
+    .week-nav-card {
+        min-height: 62px;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT STYLES
+========================================================= */
+
+@media print {
+
+    header {
+        position: static;
+
+        box-shadow: none;
+    }
+
+    .search-bar,
+    .mobile-menu,
+    nav,
+    .hero-buttons,
+    .newsletter,
+    .week-navigation,
+    footer {
+        display: none !important;
+    }
+
+    .age-hero,
+    .study-dashboard {
+        background:
+            var(--age-white);
+
+        color:
+            #000000;
+    }
+
+    .age-hero-grid,
+    .featured-study-card {
+        display: block;
+    }
+
+    .age-hero-image,
+    .featured-image {
+        margin-top: 25px;
+    }
+
+    .development-card,
+    .material-card,
+    .week-card,
+    .center-card,
+    .book-card,
+    .assessment-card,
+    .why-card,
+    .dashboard-card,
+    .download-card,
+    .family-card {
+        break-inside: avoid;
+
+        box-shadow: none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION CLASS
+========================================================= */
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   USED BY ages-2-3.js
+========================================================= */
+
+@media (max-width: 760px) {
+
+    nav.mobile-nav-open {
+        display: block;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        right: 0;
+
+        z-index: 1000;
+
+        padding:
+            12px 4% 18px;
+
+        background:
+            var(--age-white);
+
+        border-top:
+            1px solid
+            var(--age-border-light);
+
+        border-bottom:
+            1px solid
+            var(--age-border-light);
+
+        box-shadow:
+            0 12px 28px
+            rgba(41, 70, 90, 0.12);
+    }
+
+    nav.mobile-nav-open ul {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+    }
+
+    nav.mobile-nav-open li {
+        width: 100%;
+    }
+
+    nav.mobile-nav-open a {
+        width: 100%;
+
+        min-height: 46px;
+
+        display: flex;
+
+        align-items: center;
+
+        padding:
+            11px 14px;
+
+        border-radius:
+            10px;
+    }
+
+    nav.mobile-nav-open a:hover {
+        background:
+            var(--age-soft-aqua);
+    }
+
+    nav.mobile-nav-open a.active {
+        background:
+            var(--age-soft-sunshine);
+
+        color:
+            var(--age-deep-sunshine);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE BODY PROTECTION
+========================================================= */
+
+@media (max-width: 760px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* =========================================================
+   FINAL MOBILE SPACING
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+        margin-bottom: 9px;
+    }
+
+    .section-title p {
+        font-size:
+            0.87rem;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN PROTECTION
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: 94%;
+    }
+
+    h1 {
+        font-size:
+            2rem;
+    }
+
+    h2 {
+        font-size:
+            1.7rem;
+    }
+
+    .btn {
+        min-height: 44px;
+
+        padding:
+            10px 15px;
+
+        font-size:
+            0.82rem;
+    }
+
+}
