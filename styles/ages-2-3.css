@@ -1,0 +1,6444 @@
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   HEAD START | AGES 2–3 YEARS
+   ages-2-3.css
+
+   Toddler / Young Preschool Color System
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    /* ==========================================
+       AGE 2–3 PRIMARY COLORS
+    ========================================== */
+
+    --age-sunshine: #F6D365;
+    --age-soft-sunshine: #FFF8DE;
+    --age-deep-sunshine: #A87912;
+
+    --age-aqua: #78D6D0;
+    --age-soft-aqua: #E9FAF8;
+    --age-deep-aqua: #328B87;
+
+    --age-coral: #EF9A8D;
+    --age-soft-coral: #FFF0ED;
+    --age-deep-coral: #B85E53;
+
+    --age-green: #91CFA9;
+    --age-soft-green: #EDF8F1;
+    --age-deep-green: #4B8D65;
+
+    --age-orange: #F4B477;
+    --age-soft-orange: #FFF3E7;
+    --age-deep-orange: #B76B29;
+
+    --age-purple: #B8A8DF;
+    --age-soft-purple: #F4F0FC;
+    --age-deep-purple: #7562A7;
+
+    --age-blue: #82BDE0;
+    --age-soft-blue: #EDF7FC;
+    --age-deep-blue: #39789B;
+
+
+    /* ==========================================
+       WARM NEUTRALS
+    ========================================== */
+
+    --age-cream: #FFFBF4;
+
+    --age-warm-white: #FFFDF9;
+
+    --age-white: #FFFFFF;
+
+
+    /* ==========================================
+       TEXT COLORS
+    ========================================== */
+
+    --age-navy: #29465A;
+
+    --age-soft-navy: #496577;
+
+    --age-text: #435767;
+
+    --age-text-light: #71818D;
+
+
+    /* ==========================================
+       BORDERS
+    ========================================== */
+
+    --age-border: #E4E9EC;
+
+    --age-border-light: #EEF2F4;
+
+
+    /* ==========================================
+       SHADOWS
+    ========================================== */
+
+    --age-shadow-soft:
+        0 8px 24px
+        rgba(41, 70, 90, 0.07);
+
+    --age-shadow-card:
+        0 10px 28px
+        rgba(41, 70, 90, 0.10);
+
+    --age-shadow-hover:
+        0 16px 34px
+        rgba(41, 70, 90, 0.14);
+
+
+    /* ==========================================
+       BORDER RADIUS
+    ========================================== */
+
+    --age-radius-small: 10px;
+
+    --age-radius: 18px;
+
+    --age-radius-large: 26px;
+
+
+    /* ==========================================
+       LAYOUT
+    ========================================== */
+
+    --age-max-width: 1200px;
+
+
+    /* ==========================================
+       TRANSITIONS
+    ========================================== */
+
+    --age-transition: 0.25s ease;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    padding: 0;
+
+    min-width: 320px;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    background:
+        var(--age-warm-white);
+
+    color:
+        var(--age-text);
+
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width:
+        min(92%, var(--age-max-width));
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        var(--age-navy);
+
+    line-height: 1.2;
+}
+
+h1 {
+    font-size:
+        clamp(
+            2.4rem,
+            5vw,
+            4rem
+        );
+}
+
+h2 {
+    font-size:
+        clamp(
+            1.85rem,
+            3vw,
+            2.6rem
+        );
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+    background:
+        var(--age-sunshine);
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline:
+        3px solid
+        rgba(120, 214, 208, 0.75);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE TEXT SAFETY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
+
+/* =========================================================
+   PART 2
+   HEADER & NAVIGATION
+   HEAD START | AGES 2–3 YEARS
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 253, 249, 0.97);
+
+    border-bottom:
+        1px solid
+        var(--age-border-light);
+
+    box-shadow:
+        0 3px 15px
+        rgba(41, 70, 90, 0.06);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   NAVIGATION CONTAINER
+========================================================= */
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 52px;
+
+    height: 52px;
+
+    object-fit: contain;
+}
+
+.logo h1 {
+    margin: 0;
+
+    font-size: 1.35rem;
+
+    line-height: 1.05;
+
+    color:
+        var(--age-navy);
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color:
+        var(--age-deep-aqua);
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   HEADER SEARCH
+========================================================= */
+
+.search-bar {
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+
+    max-width: 315px;
+
+    margin-left: auto;
+}
+
+.search-bar input {
+    width: 100%;
+
+    min-height: 42px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        var(--age-border);
+
+    border-right: 0;
+
+    border-radius:
+        22px 0 0 22px;
+
+    outline: none;
+
+    background:
+        var(--age-white);
+
+    color:
+        var(--age-text);
+
+    transition:
+        var(--age-transition);
+}
+
+.search-bar input::placeholder {
+    color:
+        var(--age-text-light);
+
+    opacity: 0.85;
+}
+
+.search-bar input:focus {
+    border-color:
+        var(--age-aqua);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(120, 214, 208, 0.20);
+}
+
+.search-bar button {
+    width: 46px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius:
+        0 22px 22px 0;
+
+    background:
+        var(--age-aqua);
+
+    color:
+        var(--age-navy);
+
+    transition:
+        var(--age-transition);
+}
+
+.search-bar button:hover {
+    background:
+        var(--age-deep-aqua);
+
+    color:
+        var(--age-white);
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+nav {
+    flex-shrink: 0;
+}
+
+nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+
+    padding: 0;
+}
+
+nav a {
+    display: block;
+
+    padding:
+        9px 11px;
+
+    border-radius: 11px;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    color:
+        var(--age-soft-navy);
+
+    white-space: nowrap;
+
+    transition:
+        var(--age-transition);
+}
+
+nav a:hover {
+    background:
+        var(--age-soft-aqua);
+
+    color:
+        var(--age-deep-aqua);
+}
+
+nav a.active {
+    background:
+        var(--age-sunshine);
+
+    color:
+        var(--age-navy);
+
+    box-shadow:
+        0 3px 8px
+        rgba(168, 121, 18, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+    display: none;
+
+    width: 44px;
+
+    height: 44px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background:
+        var(--age-soft-aqua);
+
+    color:
+        var(--age-navy);
+
+    font-size: 1.3rem;
+
+    transition:
+        var(--age-transition);
+}
+
+.mobile-menu:hover {
+    background:
+        var(--age-aqua);
+}
+
+.mobile-menu:active {
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================================================
+   TABLET HEADER
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+
+        padding-top: 12px;
+
+        padding-bottom: 12px;
+    }
+
+    .search-bar {
+        order: 3;
+
+        flex-basis: 100%;
+
+        max-width: none;
+
+        margin-left: 0;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 760px) {
+
+    header {
+        position: relative;
+    }
+
+    .nav-container {
+        min-height: 70px;
+
+        flex-wrap: nowrap;
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+    }
+
+    .logo img {
+        width: 44px;
+
+        height: 44px;
+    }
+
+    .logo h1 {
+        font-size: 1.12rem;
+    }
+
+    .logo span {
+        font-size: 0.72rem;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+
+        margin-left: auto;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .logo div {
+        display: none;
+    }
+
+    .logo img {
+        width: 46px;
+
+        height: 46px;
+    }
+
+    .mobile-menu {
+        width: 42px;
+
+        height: 42px;
+    }
+
+}
+
+/* =========================================================
+   PART 3
+   HERO
+   HEAD START | AGES 2–3 YEARS
+========================================================= */
+
+
+/* =========================================================
+   AGE HERO
+========================================================= */
+
+.age-hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        88px 0 92px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--age-soft-sunshine) 0%,
+            var(--age-soft-aqua) 52%,
+            var(--age-soft-green) 100%
+        );
+}
+
+
+/* =========================================================
+   DECORATIVE HERO CIRCLES
+========================================================= */
+
+.age-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+
+    height: 310px;
+
+    top: -155px;
+
+    right: -85px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.52);
+}
+
+.age-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 210px;
+
+    bottom: -110px;
+
+    left: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(244, 180, 119, 0.20);
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.age-hero .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.age-hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.92fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.age-hero-content {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    margin-bottom: 17px;
+
+    padding:
+        6px 13px;
+
+    border-radius: 30px;
+
+    background:
+        var(--age-sunshine);
+
+    color:
+        var(--age-navy);
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+
+    box-shadow:
+        0 4px 10px
+        rgba(168, 121, 18, 0.10);
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.age-hero-content h1 {
+    max-width: 650px;
+
+    margin-bottom: 19px;
+
+    font-size:
+        clamp(
+            2.8rem,
+            5.5vw,
+            4.5rem
+        );
+
+    color:
+        var(--age-navy);
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+/* =========================================================
+   HERO PARAGRAPH
+========================================================= */
+
+.age-hero-content p {
+    max-width: 650px;
+
+    margin-bottom: 29px;
+
+    color:
+        var(--age-text);
+
+    font-size:
+        clamp(
+            0.95rem,
+            1.5vw,
+            1.05rem
+        );
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding:
+        11px 19px;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 12px;
+
+    font-size: 0.88rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    transition:
+        transform var(--age-transition),
+        background var(--age-transition),
+        color var(--age-transition),
+        border-color var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.btn:hover {
+    transform:
+        translateY(-2px);
+}
+
+.btn:active {
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.btn-primary {
+    background:
+        var(--age-aqua);
+
+    color:
+        var(--age-navy);
+
+    box-shadow:
+        0 6px 14px
+        rgba(50, 139, 135, 0.14);
+}
+
+.btn-primary:hover {
+    background:
+        var(--age-deep-aqua);
+
+    color:
+        var(--age-white);
+
+    box-shadow:
+        0 8px 18px
+        rgba(50, 139, 135, 0.20);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.btn-secondary {
+    background:
+        var(--age-white);
+
+    color:
+        var(--age-navy);
+
+    border-color:
+        var(--age-border);
+}
+
+.btn-secondary:hover {
+    background:
+        var(--age-soft-orange);
+
+    border-color:
+        var(--age-orange);
+
+    color:
+        var(--age-deep-orange);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.age-hero-image {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 9px;
+}
+
+
+/* =========================================================
+   HERO IMAGE DECORATIVE FRAME
+========================================================= */
+
+.age-hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        28px;
+
+    background:
+        var(--age-sunshine);
+
+    transform:
+        rotate(2.5deg);
+
+    z-index: 0;
+}
+
+.age-hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border-radius:
+        23px;
+
+    background:
+        var(--age-aqua);
+
+    transform:
+        rotate(-1.5deg);
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.age-hero-image img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border:
+        5px solid
+        var(--age-white);
+
+    border-radius:
+        21px;
+
+    box-shadow:
+        var(--age-shadow-card);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .age-hero {
+        padding:
+            72px 0 78px;
+    }
+
+    .age-hero-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 40px;
+    }
+
+    .age-hero-content {
+        max-width: 760px;
+    }
+
+    .age-hero-image {
+        width: min(100%, 650px);
+
+        margin:
+            0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .age-hero {
+        padding:
+            55px 0 62px;
+    }
+
+    .age-hero-grid {
+        gap: 31px;
+    }
+
+    .age-hero-content h1 {
+        margin-bottom: 15px;
+
+        font-size: 2.55rem;
+    }
+
+    .age-hero-content p {
+        margin-bottom: 24px;
+
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .age-hero-image {
+        padding: 7px;
+    }
+
+    .age-hero-image::before {
+        border-radius:
+            22px;
+    }
+
+    .age-hero-image::after {
+        border-radius:
+            18px;
+    }
+
+    .age-hero-image img {
+        border-radius:
+            17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .age-hero {
+        padding:
+            48px 0 55px;
+    }
+
+    .age-hero-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .eyebrow {
+        font-size: 0.66rem;
+    }
+
+    .age-hero-image {
+        padding: 5px;
+    }
+
+}
+
+/* =========================================================
+   PART 4
+   QUICK FACTS
+   HEAD START | AGES 2–3 YEARS
+========================================================= */
+
+
+/* =========================================================
+   QUICK FACTS SECTION
+========================================================= */
+
+.quick-facts {
+    position: relative;
+
+    padding:
+        25px 0;
+
+    background:
+        var(--age-white);
+
+    border-bottom:
+        1px solid
+        var(--age-border-light);
+}
+
+
+/* =========================================================
+   FACTS GRID
+========================================================= */
+
+.facts-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   FACT CARD
+========================================================= */
+
+.fact-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        21px 17px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-cream);
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.fact-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--age-shadow-card);
+}
+
+
+/* =========================================================
+   DECORATIVE FACT CIRCLE
+========================================================= */
+
+.fact-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 70px;
+
+    top: -38px;
+
+    right: -25px;
+
+    border-radius: 50%;
+
+    opacity: 0.30;
+}
+
+
+/* =========================================================
+   FACT COLORS
+========================================================= */
+
+
+/* 24–36 Months */
+
+.fact-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-sunshine);
+}
+
+.fact-card:nth-child(1)::before {
+    background:
+        var(--age-sunshine);
+}
+
+
+/* Language */
+
+.fact-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-purple);
+}
+
+.fact-card:nth-child(2)::before {
+    background:
+        var(--age-purple);
+}
+
+
+/* Movement */
+
+.fact-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-aqua);
+}
+
+.fact-card:nth-child(3)::before {
+    background:
+        var(--age-aqua);
+}
+
+
+/* ELOF */
+
+.fact-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--age-green);
+}
+
+.fact-card:nth-child(4)::before {
+    background:
+        var(--age-green);
+}
+
+
+/* =========================================================
+   FACT NUMBER / MAIN VALUE
+========================================================= */
+
+.fact-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 5px;
+
+    font-size:
+        clamp(
+            1.35rem,
+            2.4vw,
+            1.8rem
+        );
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   FACT DESCRIPTION
+========================================================= */
+
+.fact-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color:
+        var(--age-text-light);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .facts-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .quick-facts {
+        padding:
+            17px 0;
+    }
+
+    .facts-grid {
+        gap: 9px;
+    }
+
+    .fact-card {
+        padding:
+            18px 10px;
+    }
+
+    .fact-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .fact-card p {
+        font-size: 0.72rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .fact-card {
+        border-radius:
+            var(--age-radius-small);
+    }
+
+    .fact-card h3 {
+        font-size: 1.28rem;
+    }
+
+    .fact-card p {
+        font-size: 0.68rem;
+    }
+
+}
+
+/* =========================================================
+   PART 5
+   DEVELOPMENT DOMAINS
+   HEAD START | AGES 2–3 YEARS
+========================================================= */
+
+
+/* =========================================================
+   DEVELOPMENT SECTION
+========================================================= */
+
+.development-section {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-warm-white);
+}
+
+
+/* =========================================================
+   DEVELOPMENT GRID
+========================================================= */
+
+.development-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   DEVELOPMENT CARD
+========================================================= */
+
+.development-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 245px;
+
+    padding:
+        29px 25px;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.development-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--age-shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.development-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    right: -55px;
+
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--age-transition),
+        opacity var(--age-transition);
+}
+
+.development-card:hover::after {
+    transform:
+        scale(1.25);
+
+    opacity: 0.28;
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.development-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-blue);
+}
+
+.development-card:nth-child(1)::after {
+    background:
+        var(--age-blue);
+}
+
+
+/* =========================================================
+   COGNITIVE
+========================================================= */
+
+.development-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-sunshine);
+}
+
+.development-card:nth-child(2)::after {
+    background:
+        var(--age-sunshine);
+}
+
+
+/* =========================================================
+   PHYSICAL
+========================================================= */
+
+.development-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-aqua);
+}
+
+.development-card:nth-child(3)::after {
+    background:
+        var(--age-aqua);
+}
+
+
+/* =========================================================
+   SOCIAL EMOTIONAL
+========================================================= */
+
+.development-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--age-coral);
+}
+
+.development-card:nth-child(4)::after {
+    background:
+        var(--age-coral);
+}
+
+
+/* =========================================================
+   CREATIVE ARTS
+========================================================= */
+
+.development-card:nth-child(5) {
+    border-top:
+        4px solid
+        var(--age-orange);
+}
+
+.development-card:nth-child(5)::after {
+    background:
+        var(--age-orange);
+}
+
+
+/* =========================================================
+   DISCOVERY
+========================================================= */
+
+.development-card:nth-child(6) {
+    border-top:
+        4px solid
+        var(--age-green);
+}
+
+.development-card:nth-child(6)::after {
+    background:
+        var(--age-green);
+}
+
+
+/* =========================================================
+   DEVELOPMENT ICON
+========================================================= */
+
+.development-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius:
+        16px;
+
+    font-size: 1.7rem;
+
+    transition:
+        transform var(--age-transition);
+}
+
+
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+
+/* Language */
+
+.development-card:nth-child(1)
+.development-icon {
+    background:
+        var(--age-soft-blue);
+}
+
+
+/* Cognitive */
+
+.development-card:nth-child(2)
+.development-icon {
+    background:
+        var(--age-soft-sunshine);
+}
+
+
+/* Physical */
+
+.development-card:nth-child(3)
+.development-icon {
+    background:
+        var(--age-soft-aqua);
+}
+
+
+/* Social Emotional */
+
+.development-card:nth-child(4)
+.development-icon {
+    background:
+        var(--age-soft-coral);
+}
+
+
+/* Creative Arts */
+
+.development-card:nth-child(5)
+.development-icon {
+    background:
+        var(--age-soft-orange);
+}
+
+
+/* Discovery */
+
+.development-card:nth-child(6)
+.development-icon {
+    background:
+        var(--age-soft-green);
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.development-card:hover
+.development-icon {
+    transform:
+        scale(1.07)
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   DEVELOPMENT TITLE
+========================================================= */
+
+.development-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   DEVELOPMENT DESCRIPTION
+========================================================= */
+
+.development-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color:
+        var(--age-text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .development-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .development-section {
+        padding:
+            65px 0;
+    }
+
+    .development-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 16px;
+    }
+
+    .development-card {
+        min-height: auto;
+
+        padding:
+            25px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .development-card {
+        padding:
+            22px 19px;
+    }
+
+    .development-icon {
+        width: 54px;
+
+        height: 54px;
+
+        margin-bottom: 15px;
+
+        border-radius:
+            14px;
+
+        font-size: 1.55rem;
+    }
+
+}
+
+/* =========================================================
+   PART 6
+   ELOF DOMAINS
+   LEARNING ACROSS EVERY ELOF DOMAIN
+========================================================= */
+
+
+/* =========================================================
+   MATERIALS SECTION
+========================================================= */
+
+.materials-section {
+    padding:
+        82px 0;
+
+    background:
+        var(--age-soft-sky);
+}
+
+
+/* =========================================================
+   MATERIALS GRID
+========================================================= */
+
+.materials-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   MATERIAL CARD
+========================================================= */
+
+.material-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        25px 18px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    color:
+        var(--age-navy);
+
+    font-size: 0.94rem;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.material-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--age-shadow-card);
+}
+
+
+/* =========================================================
+   MATERIAL CARD EMOJI
+========================================================= */
+
+.material-card:first-letter {
+    font-size: 2rem;
+}
+
+
+/* =========================================================
+   MATERIAL CARD COLORS
+========================================================= */
+
+
+/* Language & Communication */
+
+.material-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-blue);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-blue),
+            var(--age-white)
+        );
+}
+
+
+/* Social Emotional */
+
+.material-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-coral);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-coral),
+            var(--age-white)
+        );
+}
+
+
+/* Cognition */
+
+.material-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-sunshine);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-sunshine),
+            var(--age-white)
+        );
+}
+
+
+/* Perceptual Motor Physical */
+
+.material-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--age-aqua);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-aqua),
+            var(--age-white)
+        );
+}
+
+
+/* Literacy */
+
+.material-card:nth-child(5) {
+    border-top:
+        4px solid
+        var(--age-purple);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-purple),
+            var(--age-white)
+        );
+}
+
+
+/* Mathematics */
+
+.material-card:nth-child(6) {
+    border-top:
+        4px solid
+        var(--age-orange);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-orange),
+            var(--age-white)
+        );
+}
+
+
+/* Scientific Reasoning */
+
+.material-card:nth-child(7) {
+    border-top:
+        4px solid
+        var(--age-green);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-green),
+            var(--age-white)
+        );
+}
+
+
+/* Creative Arts */
+
+.material-card:nth-child(8) {
+    border-top:
+        4px solid
+        var(--age-coral);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--age-soft-coral),
+            var(--age-white)
+        );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .materials-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .materials-section {
+        padding:
+            65px 0;
+    }
+
+    .materials-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 13px;
+    }
+
+    .material-card {
+        min-height: 110px;
+
+        padding:
+            21px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .material-card {
+        min-height: 100px;
+
+        font-size: 0.88rem;
+    }
+
+}
+
+/* =========================================================
+   PART 7
+   SAMPLE DAILY SCHEDULE
+========================================================= */
+
+
+/* =========================================================
+   DAILY SCHEDULE SECTION
+========================================================= */
+
+.study-weeks {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-cream);
+}
+
+
+/* =========================================================
+   WEEK GRID
+========================================================= */
+
+.week-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   SCHEDULE CARD
+========================================================= */
+
+.week-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 330px;
+
+    padding:
+        31px 27px;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.week-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--age-shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.week-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 135px;
+
+    height: 135px;
+
+    right: -65px;
+
+    bottom: -65px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--age-transition);
+}
+
+.week-card:hover::after {
+    transform:
+        scale(1.25);
+}
+
+
+/* =========================================================
+   MORNING
+========================================================= */
+
+.week-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-sunshine);
+}
+
+.week-card:nth-child(1)::after {
+    background:
+        var(--age-sunshine);
+}
+
+
+/* =========================================================
+   MID MORNING
+========================================================= */
+
+.week-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-purple);
+}
+
+.week-card:nth-child(2)::after {
+    background:
+        var(--age-purple);
+}
+
+
+/* =========================================================
+   AFTERNOON
+========================================================= */
+
+.week-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-green);
+}
+
+.week-card:nth-child(3)::after {
+    background:
+        var(--age-green);
+}
+
+
+/* =========================================================
+   TIME LABEL
+========================================================= */
+
+.week-number {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 29px;
+
+    margin-bottom: 17px;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        20px;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TIME LABEL COLORS
+========================================================= */
+
+.week-card:nth-child(1) .week-number {
+    background:
+        var(--age-soft-sunshine);
+
+    color:
+        var(--age-deep-sunshine);
+}
+
+.week-card:nth-child(2) .week-number {
+    background:
+        var(--age-soft-purple);
+
+    color:
+        var(--age-deep-purple);
+}
+
+.week-card:nth-child(3) .week-number {
+    background:
+        var(--age-soft-green);
+
+    color:
+        var(--age-deep-green);
+}
+
+
+/* =========================================================
+   SCHEDULE TITLE
+========================================================= */
+
+.week-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 11px;
+
+    font-size: 1.3rem;
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   SCHEDULE DESCRIPTION
+========================================================= */
+
+.week-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 20px;
+
+    color:
+        var(--age-text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SCHEDULE LIST
+========================================================= */
+
+.week-card ul {
+    position: relative;
+
+    z-index: 2;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 16px 0 0;
+
+    border-top:
+        1px solid
+        var(--age-border-light);
+}
+
+.week-card li {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    padding-left: 19px;
+
+    color:
+        var(--age-text);
+
+    font-size: 0.81rem;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+.week-card li:last-child {
+    margin-bottom: 0;
+}
+
+.week-card li::before {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    top: 0.55em;
+
+    left: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--age-aqua);
+}
+
+
+/* =========================================================
+   INDIVIDUAL LIST COLORS
+========================================================= */
+
+.week-card:nth-child(1) li::before {
+    background:
+        var(--age-sunshine);
+}
+
+.week-card:nth-child(2) li::before {
+    background:
+        var(--age-purple);
+}
+
+.week-card:nth-child(3) li::before {
+    background:
+        var(--age-green);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .week-grid {
+        grid-template-columns:
+            1fr;
+
+        max-width: 700px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .week-card {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .study-weeks {
+        padding:
+            65px 0;
+    }
+
+    .week-grid {
+        gap: 15px;
+    }
+
+    .week-card {
+        padding:
+            26px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .week-card {
+        padding:
+            23px 19px;
+    }
+
+    .week-card h3 {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* =========================================================
+   PART 8
+   CLASSROOM INTEREST AREAS
+========================================================= */
+
+
+/* =========================================================
+   INTEREST AREA SECTION
+========================================================= */
+
+#centers {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-white);
+}
+
+
+/* =========================================================
+   CENTER GRID
+========================================================= */
+
+.center-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   CENTER CARD
+========================================================= */
+
+.center-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 225px;
+
+    padding:
+        27px 22px;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-cream);
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.center-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--age-shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.center-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    right: -45px;
+
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--age-transition);
+}
+
+.center-card:hover::after {
+    transform:
+        scale(1.3);
+}
+
+
+/* =========================================================
+   CENTER COLORS
+========================================================= */
+
+
+/* Blocks */
+
+.center-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-orange);
+}
+
+.center-card:nth-child(1)::after {
+    background:
+        var(--age-orange);
+}
+
+
+/* Art */
+
+.center-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-coral);
+}
+
+.center-card:nth-child(2)::after {
+    background:
+        var(--age-coral);
+}
+
+
+/* Library */
+
+.center-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-purple);
+}
+
+.center-card:nth-child(3)::after {
+    background:
+        var(--age-purple);
+}
+
+
+/* Discovery */
+
+.center-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--age-green);
+}
+
+.center-card:nth-child(4)::after {
+    background:
+        var(--age-green);
+}
+
+
+/* Dramatic Play */
+
+.center-card:nth-child(5) {
+    border-top:
+        4px solid
+        var(--age-coral);
+}
+
+.center-card:nth-child(5)::after {
+    background:
+        var(--age-coral);
+}
+
+
+/* Music & Movement */
+
+.center-card:nth-child(6) {
+    border-top:
+        4px solid
+        var(--age-aqua);
+}
+
+.center-card:nth-child(6)::after {
+    background:
+        var(--age-aqua);
+}
+
+
+/* Writing */
+
+.center-card:nth-child(7) {
+    border-top:
+        4px solid
+        var(--age-blue);
+}
+
+.center-card:nth-child(7)::after {
+    background:
+        var(--age-blue);
+}
+
+
+/* Sand & Water */
+
+.center-card:nth-child(8) {
+    border-top:
+        4px solid
+        var(--age-aqua);
+}
+
+.center-card:nth-child(8)::after {
+    background:
+        var(--age-aqua);
+}
+
+
+/* =========================================================
+   CENTER EMOJI
+========================================================= */
+
+.center-card > :first-child {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 2rem;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   CENTER TITLE
+========================================================= */
+
+.center-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 9px;
+
+    font-size: 1.15rem;
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   CENTER DESCRIPTION
+========================================================= */
+
+.center-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color:
+        var(--age-text-light);
+
+    font-size: 0.86rem;
+
+    line-height: 1.62;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .center-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    #centers {
+        padding:
+            65px 0;
+    }
+
+    .center-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+    }
+
+    .center-card {
+        min-height: auto;
+
+        padding:
+            25px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .center-card {
+        padding:
+            22px 19px;
+    }
+
+    .center-card > :first-child {
+        font-size: 1.8rem;
+    }
+
+}
+
+/* =========================================================
+   PART 9
+   POPULAR CURRICULUM STUDIES
+========================================================= */
+
+
+/* =========================================================
+   BOOKS / STUDIES SECTION
+========================================================= */
+
+.books-section {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-soft-green);
+}
+
+
+/* =========================================================
+   BOOKS GRID
+========================================================= */
+
+.books-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   STUDY CARD
+========================================================= */
+
+.book-card {
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 310px;
+
+    padding:
+        29px 23px;
+
+    border:
+        1px solid
+        rgba(75, 141, 101, 0.12);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.book-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--age-shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.book-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 115px;
+
+    height: 115px;
+
+    right: -50px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--age-transition);
+}
+
+.book-card:hover::after {
+    transform:
+        scale(1.3);
+}
+
+
+/* =========================================================
+   STUDY COLORS
+========================================================= */
+
+
+/* Trees */
+
+.book-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-green);
+}
+
+.book-card:nth-child(1)::after {
+    background:
+        var(--age-green);
+}
+
+
+/* Water */
+
+.book-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-aqua);
+}
+
+.book-card:nth-child(2)::after {
+    background:
+        var(--age-aqua);
+}
+
+
+/* Buildings */
+
+.book-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-orange);
+}
+
+.book-card:nth-child(3)::after {
+    background:
+        var(--age-orange);
+}
+
+
+/* Balls */
+
+.book-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--age-coral);
+}
+
+.book-card:nth-child(4)::after {
+    background:
+        var(--age-coral);
+}
+
+
+/* =========================================================
+   STUDY EMOJI
+========================================================= */
+
+.book-card > :first-child {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-bottom: 17px;
+
+    font-size: 2.2rem;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   STUDY TITLE
+========================================================= */
+
+.book-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 1.25rem;
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   STUDY DESCRIPTION
+========================================================= */
+
+.book-card p {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+    margin-bottom: 22px;
+
+    color:
+        var(--age-text-light);
+
+    font-size: 0.87rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   STUDY BUTTON
+========================================================= */
+
+.study-button {
+    position: relative;
+
+    z-index: 2;
+
+    align-self: flex-start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--age-soft-aqua);
+
+    color:
+        var(--age-deep-aqua);
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    transition:
+        background var(--age-transition),
+        color var(--age-transition),
+        transform var(--age-transition);
+}
+
+.study-button:hover {
+    background:
+        var(--age-deep-aqua);
+
+    color:
+        var(--age-white);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   INDIVIDUAL STUDY BUTTON COLORS
+========================================================= */
+
+.book-card:nth-child(1) .study-button {
+    background:
+        var(--age-soft-green);
+
+    color:
+        var(--age-deep-green);
+}
+
+.book-card:nth-child(1) .study-button:hover {
+    background:
+        var(--age-deep-green);
+
+    color:
+        var(--age-white);
+}
+
+
+.book-card:nth-child(2) .study-button {
+    background:
+        var(--age-soft-aqua);
+
+    color:
+        var(--age-deep-aqua);
+}
+
+.book-card:nth-child(2) .study-button:hover {
+    background:
+        var(--age-deep-aqua);
+
+    color:
+        var(--age-white);
+}
+
+
+.book-card:nth-child(3) .study-button {
+    background:
+        var(--age-soft-orange);
+
+    color:
+        var(--age-deep-orange);
+}
+
+.book-card:nth-child(3) .study-button:hover {
+    background:
+        var(--age-deep-orange);
+
+    color:
+        var(--age-white);
+}
+
+
+.book-card:nth-child(4) .study-button {
+    background:
+        var(--age-soft-coral);
+
+    color:
+        var(--age-deep-coral);
+}
+
+.book-card:nth-child(4) .study-button:hover {
+    background:
+        var(--age-deep-coral);
+
+    color:
+        var(--age-white);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .books-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .books-section {
+        padding:
+            65px 0;
+    }
+
+    .books-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+    }
+
+    .book-card {
+        min-height: auto;
+
+        padding:
+            25px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .book-card {
+        padding:
+            22px 19px;
+    }
+
+    .book-card > :first-child {
+        font-size: 2rem;
+    }
+
+}
+
+/* =========================================================
+   PART 10
+   DEVELOPMENTAL MILESTONES
+   ASSESSMENT
+========================================================= */
+
+
+/* =========================================================
+   ASSESSMENT SECTION
+========================================================= */
+
+#assessment {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-warm-white);
+}
+
+
+/* =========================================================
+   ASSESSMENT GRID
+========================================================= */
+
+.assessment-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   ASSESSMENT CARD
+========================================================= */
+
+.assessment-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 95px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        21px 22px;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-left:
+        5px solid
+        var(--age-aqua);
+
+    border-radius:
+        var(--age-radius-small);
+
+    background:
+        var(--age-white);
+
+    color:
+        var(--age-text);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition),
+        border-color var(--age-transition);
+}
+
+.assessment-card:hover {
+    transform:
+        translateX(4px);
+
+    box-shadow:
+        var(--age-shadow-card);
+}
+
+
+/* =========================================================
+   MILESTONE COLORS
+========================================================= */
+
+
+/* Language */
+
+.assessment-card:nth-child(1) {
+    border-left-color:
+        var(--age-blue);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-blue) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Literacy */
+
+.assessment-card:nth-child(2) {
+    border-left-color:
+        var(--age-purple);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-purple) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Social Development */
+
+.assessment-card:nth-child(3) {
+    border-left-color:
+        var(--age-coral);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-coral) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Problem Solving */
+
+.assessment-card:nth-child(4) {
+    border-left-color:
+        var(--age-sunshine);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-sunshine) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Fine Motor */
+
+.assessment-card:nth-child(5) {
+    border-left-color:
+        var(--age-orange);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-orange) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Gross Motor */
+
+.assessment-card:nth-child(6) {
+    border-left-color:
+        var(--age-aqua);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-aqua) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Imagination */
+
+.assessment-card:nth-child(7) {
+    border-left-color:
+        var(--age-purple);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-purple) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* Independence */
+
+.assessment-card:nth-child(8) {
+    border-left-color:
+        var(--age-green);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--age-soft-green) 0%,
+            var(--age-white) 24%
+        );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .assessment-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    #assessment {
+        padding:
+            65px 0;
+    }
+
+    .assessment-grid {
+        gap: 12px;
+    }
+
+    .assessment-card {
+        min-height: auto;
+
+        padding:
+            19px 18px;
+
+        font-size: 0.86rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .assessment-card {
+        padding:
+            17px 16px;
+
+        border-left-width:
+            4px;
+
+        font-size: 0.82rem;
+    }
+
+}
+
+/* =========================================================
+   PART 11
+   TEACHER TIPS
+========================================================= */
+
+
+/* =========================================================
+   TEACHER TIPS SECTION
+========================================================= */
+
+.why-section {
+    padding:
+        88px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--age-soft-coral) 0%,
+            var(--age-soft-sunshine) 48%,
+            var(--age-soft-green) 100%
+        );
+}
+
+
+/* =========================================================
+   TEACHER TIPS GRID
+========================================================= */
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   TEACHER TIP CARD
+========================================================= */
+
+.why-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        30px 23px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(41, 70, 90, 0.08);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.why-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--age-shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.why-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    right: -50px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--age-transition);
+}
+
+.why-card:hover::after {
+    transform:
+        scale(1.3);
+}
+
+
+/* =========================================================
+   TIP COLORS
+========================================================= */
+
+
+/* Build Relationships */
+
+.why-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--age-coral);
+}
+
+.why-card:nth-child(1)::after {
+    background:
+        var(--age-coral);
+}
+
+
+/* Follow Their Interests */
+
+.why-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--age-orange);
+}
+
+.why-card:nth-child(2)::after {
+    background:
+        var(--age-orange);
+}
+
+
+/* Encourage Conversation */
+
+.why-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--age-blue);
+}
+
+.why-card:nth-child(3)::after {
+    background:
+        var(--age-blue);
+}
+
+
+/* Celebrate Progress */
+
+.why-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--age-green);
+}
+
+.why-card:nth-child(4)::after {
+    background:
+        var(--age-green);
+}
+
+
+/* =========================================================
+   TIP ICON
+========================================================= */
+
+.why-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 64px;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0 auto 18px;
+
+    border-radius:
+        18px;
+
+    font-size: 1.8rem;
+
+    box-shadow:
+        inset 0 0 0 5px
+        rgba(255, 255, 255, 0.70);
+
+    transition:
+        transform var(--age-transition);
+}
+
+
+/* =========================================================
+   TIP ICON BACKGROUNDS
+========================================================= */
+
+.why-card:nth-child(1) .why-icon {
+    background:
+        var(--age-soft-coral);
+}
+
+.why-card:nth-child(2) .why-icon {
+    background:
+        var(--age-soft-orange);
+}
+
+.why-card:nth-child(3) .why-icon {
+    background:
+        var(--age-soft-blue);
+}
+
+.why-card:nth-child(4) .why-icon {
+    background:
+        var(--age-soft-green);
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.why-card:hover .why-icon {
+    transform:
+        scale(1.07)
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   TIP TITLE
+========================================================= */
+
+.why-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 1.17rem;
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   TIP DESCRIPTION
+========================================================= */
+
+.why-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color:
+        var(--age-text-light);
+
+    font-size: 0.88rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .why-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .why-section {
+        padding:
+            65px 0;
+    }
+
+    .why-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+    }
+
+    .why-card {
+        padding:
+            26px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .why-card {
+        padding:
+            23px 19px;
+    }
+
+    .why-icon {
+        width: 59px;
+
+        height: 59px;
+
+        margin-bottom: 16px;
+
+        border-radius:
+            16px;
+
+        font-size: 1.65rem;
+    }
+
+}
+
+/* =========================================================
+   PART 12
+   DAILY LEARNING EXPERIENCES
+   CLASSROOM DASHBOARD
+========================================================= */
+
+
+/* =========================================================
+   DASHBOARD SECTION
+========================================================= */
+
+.study-dashboard {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-navy);
+
+    color:
+        var(--age-white);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADING
+========================================================= */
+
+.study-dashboard h2 {
+    margin-bottom: 12px;
+
+    color:
+        var(--age-white);
+}
+
+.study-dashboard > .container > p {
+    max-width: 680px;
+
+    margin:
+        0 auto 35px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DASHBOARD CARD
+========================================================= */
+
+.dashboard-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 145px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding:
+        24px 21px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        transform var(--age-transition),
+        background var(--age-transition),
+        border-color var(--age-transition);
+}
+
+.dashboard-card:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================================
+   DASHBOARD DECORATIVE STRIPE
+========================================================= */
+
+.dashboard-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 5px;
+
+    background:
+        var(--age-aqua);
+}
+
+
+/* =========================================================
+   DASHBOARD COLORS
+========================================================= */
+
+
+/* Read Alouds */
+
+.dashboard-card:nth-child(1)::before {
+    background:
+        var(--age-purple);
+}
+
+
+/* Music & Movement */
+
+.dashboard-card:nth-child(2)::before {
+    background:
+        var(--age-aqua);
+}
+
+
+/* Creative Art */
+
+.dashboard-card:nth-child(3)::before {
+    background:
+        var(--age-coral);
+}
+
+
+/* Science Discovery */
+
+.dashboard-card:nth-child(4)::before {
+    background:
+        var(--age-green);
+}
+
+
+/* Building & Engineering */
+
+.dashboard-card:nth-child(5)::before {
+    background:
+        var(--age-orange);
+}
+
+
+/* Outdoor Exploration */
+
+.dashboard-card:nth-child(6)::before {
+    background:
+        var(--age-green);
+}
+
+
+/* Early Math */
+
+.dashboard-card:nth-child(7)::before {
+    background:
+        var(--age-sunshine);
+}
+
+
+/* Family Connections */
+
+.dashboard-card:nth-child(8)::before {
+    background:
+        var(--age-coral);
+}
+
+
+/* =========================================================
+   DASHBOARD ICON
+========================================================= */
+
+.dashboard-card > :first-child {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 12px;
+
+    font-size: 1.85rem;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   DASHBOARD TITLE
+========================================================= */
+
+.dashboard-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color:
+        var(--age-white);
+
+    font-size: 1rem;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   DASHBOARD RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .study-dashboard {
+        padding:
+            65px 0;
+    }
+
+    .dashboard-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 11px;
+    }
+
+    .dashboard-card {
+        min-height: 105px;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding:
+            19px 20px;
+    }
+
+    .dashboard-card > :first-child {
+        margin-bottom: 0;
+
+        flex-shrink: 0;
+
+        font-size: 1.65rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .dashboard-card {
+        min-height: 94px;
+
+        padding:
+            17px 18px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 0.92rem;
+    }
+
+}
+
+/* =========================================================
+   PART 13
+   POPULAR PRINTABLE RESOURCES
+========================================================= */
+
+
+/* =========================================================
+   DOWNLOAD SECTION
+========================================================= */
+
+#downloads {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-cream);
+}
+
+
+/* =========================================================
+   DOWNLOAD GRID
+========================================================= */
+
+.download-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 17px;
+}
+
+
+/* =========================================================
+   DOWNLOAD CARD
+========================================================= */
+
+.download-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 165px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        25px 20px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    color:
+        var(--age-navy);
+
+    font-size: 0.95rem;
+
+    font-weight: 800;
+
+    line-height: 1.45;
+
+    box-shadow:
+        var(--age-shadow-soft);
+
+    transition:
+        transform var(--age-transition),
+        box-shadow var(--age-transition),
+        border-color var(--age-transition);
+}
+
+.download-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--age-shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE TOP BAR
+========================================================= */
+
+.download-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 4px;
+
+    background:
+        var(--age-aqua);
+
+    transition:
+        height var(--age-transition);
+}
+
+.download-card:hover::before {
+    height: 7px;
+}
+
+
+/* =========================================================
+   DOWNLOAD CARD COLORS
+========================================================= */
+
+
+/* Lesson Plan Templates */
+
+.download-card:nth-child(1)::before {
+    background:
+        var(--age-sunshine);
+}
+
+
+/* Observation Forms */
+
+.download-card:nth-child(2)::before {
+    background:
+        var(--age-blue);
+}
+
+
+/* Learning Center Labels */
+
+.download-card:nth-child(3)::before {
+    background:
+        var(--age-orange);
+}
+
+
+/* Vocabulary Cards */
+
+.download-card:nth-child(4)::before {
+    background:
+        var(--age-purple);
+}
+
+
+/* Assessment Checklists */
+
+.download-card:nth-child(5)::before {
+    background:
+        var(--age-green);
+}
+
+
+/* Family Activities */
+
+.download-card:nth-child(6)::before {
+    background:
+        var(--age-coral);
+}
+
+
+/* =========================================================
+   DOWNLOAD ICON
+========================================================= */
+
+.download-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+
+    height: 95px;
+
+    right: -42px;
+
+    bottom: -42px;
+
+    border-radius: 50%;
+
+    background:
+        var(--age-soft-aqua);
+
+    opacity: 0.75;
+
+    transition:
+        transform var(--age-transition);
+}
+
+.download-card:hover::after {
+    transform:
+        scale(1.3);
+}
+
+
+/* =========================================================
+   MATCH DECORATIVE CIRCLE
+========================================================= */
+
+.download-card:nth-child(1)::after {
+    background:
+        var(--age-soft-sunshine);
+}
+
+.download-card:nth-child(2)::after {
+    background:
+        var(--age-soft-blue);
+}
+
+.download-card:nth-child(3)::after {
+    background:
+        var(--age-soft-orange);
+}
+
+.download-card:nth-child(4)::after {
+    background:
+        var(--age-soft-purple);
+}
+
+.download-card:nth-child(5)::after {
+    background:
+        var(--age-soft-green);
+}
+
+.download-card:nth-child(6)::after {
+    background:
+        var(--age-soft-coral);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .download-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    #downloads {
+        padding:
+            65px 0;
+    }
+
+    .download-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+    .download-card {
+        min-height: 125px;
+
+        padding:
+            21px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .download-card {
+        min-height: 115px;
+
+        font-size: 0.88rem;
+    }
+
+}
+
+/* =========================================================
+   PART 14
+   NEXT AGE GROUP NAVIGATION
+========================================================= */
+
+
+/* =========================================================
+   WEEK NAVIGATION SECTION
+========================================================= */
+
+.week-navigation {
+    padding:
+        28px 0;
+
+    background:
+        var(--age-white);
+
+    border-top:
+        1px solid
+        var(--age-border-light);
+
+    border-bottom:
+        1px solid
+        var(--age-border-light);
+}
+
+
+/* =========================================================
+   NAVIGATION GRID
+========================================================= */
+
+.week-nav-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   NAVIGATION CARD
+========================================================= */
+
+.week-nav-card {
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        16px 21px;
+
+    border:
+        1px solid
+        var(--age-border);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-cream);
+
+    color:
+        var(--age-navy);
+
+    font-size: 0.88rem;
+
+    font-weight: 800;
+
+    transition:
+        transform var(--age-transition),
+        background var(--age-transition),
+        border-color var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+
+/* =========================================================
+   PREVIOUS AGE GROUP
+========================================================= */
+
+.week-nav-card:first-child {
+    justify-content: flex-start;
+
+    border-left:
+        5px solid
+        var(--age-aqua);
+}
+
+.week-nav-card:first-child:hover {
+    background:
+        var(--age-soft-aqua);
+
+    border-color:
+        var(--age-aqua);
+
+    transform:
+        translateX(-3px);
+
+    box-shadow:
+        var(--age-shadow-soft);
+}
+
+
+/* =========================================================
+   NEXT AGE GROUP
+========================================================= */
+
+.week-nav-card.next {
+    justify-content: flex-end;
+
+    text-align: right;
+
+    border-right:
+        5px solid
+        var(--age-green);
+}
+
+.week-nav-card.next:hover {
+    background:
+        var(--age-soft-green);
+
+    border-color:
+        var(--age-green);
+
+    transform:
+        translateX(3px);
+
+    box-shadow:
+        var(--age-shadow-soft);
+}
+
+
+/* =========================================================
+   NAVIGATION ARROWS
+========================================================= */
+
+.week-nav-card:first-child {
+    color:
+        var(--age-deep-aqua);
+}
+
+.week-nav-card.next {
+    color:
+        var(--age-deep-green);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .week-nav-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .week-nav-card {
+        min-height: 62px;
+    }
+
+    .week-nav-card.next {
+        justify-content:
+            flex-start;
+
+        text-align:
+            left;
+
+        border-right:
+            1px solid
+            var(--age-border);
+
+        border-left:
+            5px solid
+            var(--age-green);
+    }
+
+    .week-nav-card.next:hover {
+        transform:
+            translateX(-3px);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .week-navigation {
+        padding:
+            20px 0;
+    }
+
+    .week-nav-grid {
+        gap: 10px;
+    }
+
+    .week-nav-card {
+        min-height: 58px;
+
+        padding:
+            14px 17px;
+
+        font-size: 0.8rem;
+    }
+
+}
+
+/* =========================================================
+   PART 15
+   FAMILY ENGAGEMENT
+   PARTNERING WITH FAMILIES
+========================================================= */
+
+
+/* =========================================================
+   FAMILY SECTION
+========================================================= */
+
+#family {
+    padding:
+        82px 0;
+
+    background:
+        var(--age-soft-coral);
+}
+
+
+/* =========================================================
+   FAMILY CARD
+========================================================= */
+
+.family-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        46px 50px;
+
+    border:
+        1px solid
+        rgba(184, 94, 83, 0.12);
+
+    border-radius:
+        var(--age-radius-large);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-card);
+}
+
+
+/* =========================================================
+   DECORATIVE FAMILY CIRCLE
+========================================================= */
+
+.family-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+
+    height: 230px;
+
+    top: -125px;
+
+    right: -75px;
+
+    border-radius: 50%;
+
+    background:
+        var(--age-soft-sunshine);
+
+    opacity: 0.85;
+}
+
+.family-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    bottom: -90px;
+
+    left: -55px;
+
+    border-radius: 50%;
+
+    background:
+        var(--age-soft-aqua);
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   FAMILY CONTENT
+========================================================= */
+
+.family-card h3,
+.family-card p,
+.family-card .btn {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   FAMILY HEADING
+========================================================= */
+
+.family-card h3 {
+    max-width: 700px;
+
+    margin-bottom: 14px;
+
+    font-size:
+        clamp(
+            1.65rem,
+            3vw,
+            2.25rem
+        );
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   FAMILY DESCRIPTION
+========================================================= */
+
+.family-card p {
+    max-width: 850px;
+
+    margin-bottom: 27px;
+
+    color:
+        var(--age-text);
+
+    font-size:
+        clamp(
+            0.9rem,
+            1.5vw,
+            1rem
+        );
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FAMILY BUTTON
+========================================================= */
+
+.family-card .btn-primary {
+    background:
+        var(--age-coral);
+
+    color:
+        var(--age-navy);
+
+    box-shadow:
+        0 6px 14px
+        rgba(184, 94, 83, 0.13);
+}
+
+.family-card .btn-primary:hover {
+    background:
+        var(--age-deep-coral);
+
+    color:
+        var(--age-white);
+
+    box-shadow:
+        0 8px 18px
+        rgba(184, 94, 83, 0.20);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 750px) {
+
+    #family {
+        padding:
+            65px 0;
+    }
+
+    .family-card {
+        padding:
+            36px 31px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .family-card {
+        padding:
+            31px 23px;
+
+        border-radius:
+            var(--age-radius);
+    }
+
+    .family-card p {
+        margin-bottom: 23px;
+
+        line-height: 1.7;
+    }
+
+    .family-card .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .family-card {
+        padding:
+            27px 19px;
+    }
+
+    .family-card h3 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* =========================================================
+   PART 16
+   FEATURED CLASSROOM ACTIVITIES
+   DISCOVER HUNDREDS OF CLASSROOM ACTIVITIES
+========================================================= */
+
+
+/* =========================================================
+   FEATURED STUDY SECTION
+========================================================= */
+
+.featured-study {
+    padding:
+        88px 0;
+
+    background:
+        var(--age-warm-white);
+}
+
+
+/* =========================================================
+   FEATURED STUDY CARD
+========================================================= */
+
+.featured-study-card {
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr 0.95fr;
+
+    min-height: 500px;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius-large);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-card);
+}
+
+
+/* =========================================================
+   FEATURED TEXT
+========================================================= */
+
+.featured-text {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        55px 55px 55px 58px;
+}
+
+
+/* =========================================================
+   FEATURED LABEL
+========================================================= */
+
+.featured-label {
+    display: inline-flex;
+
+    align-self: flex-start;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    margin-bottom: 17px;
+
+    padding:
+        6px 13px;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--age-soft-sunshine);
+
+    color:
+        var(--age-deep-sunshine);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FEATURED HEADING
+========================================================= */
+
+.featured-text h2 {
+    max-width: 610px;
+
+    margin-bottom: 16px;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3rem
+        );
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   FEATURED DESCRIPTION
+========================================================= */
+
+.featured-text p {
+    max-width: 620px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--age-text-light);
+
+    font-size:
+        clamp(
+            0.9rem,
+            1.5vw,
+            0.98rem
+        );
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   FEATURED HIGHLIGHTS
+========================================================= */
+
+.featured-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        10px 18px;
+
+    max-width: 600px;
+
+    margin-bottom: 29px;
+}
+
+.featured-highlights div {
+    position: relative;
+
+    padding-left: 23px;
+
+    color:
+        var(--age-text);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HIGHLIGHT DOT
+========================================================= */
+
+.featured-highlights div::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    top: 0.55em;
+
+    left: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--age-aqua);
+}
+
+
+/* =========================================================
+   HIGHLIGHT COLORS
+========================================================= */
+
+.featured-highlights div:nth-child(1)::before {
+    background:
+        var(--age-purple);
+}
+
+.featured-highlights div:nth-child(2)::before {
+    background:
+        var(--age-blue);
+}
+
+.featured-highlights div:nth-child(3)::before {
+    background:
+        var(--age-orange);
+}
+
+.featured-highlights div:nth-child(4)::before {
+    background:
+        var(--age-green);
+}
+
+
+/* =========================================================
+   FEATURED IMAGE
+========================================================= */
+
+.featured-image {
+    position: relative;
+
+    min-height: 100%;
+
+    overflow: hidden;
+
+    background:
+        var(--age-soft-green);
+}
+
+
+/* =========================================================
+   FEATURED IMAGE ACCENT
+========================================================= */
+
+.featured-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border:
+        4px solid
+        rgba(255, 255, 255, 0.70);
+
+    border-radius:
+        24px;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FEATURED IMAGE
+========================================================= */
+
+.featured-image img {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 500px;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.featured-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(41, 70, 90, 0.04),
+            rgba(41, 70, 90, 0.18)
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FEATURED BUTTON
+========================================================= */
+
+.featured-text .btn-primary {
+    align-self: flex-start;
+
+    background:
+        var(--age-aqua);
+
+    color:
+        var(--age-navy);
+}
+
+.featured-text .btn-primary:hover {
+    background:
+        var(--age-deep-aqua);
+
+    color:
+        var(--age-white);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .featured-study-card {
+        grid-template-columns:
+            1fr;
+    }
+
+    .featured-text {
+        padding:
+            45px 42px;
+    }
+
+    .featured-image {
+        min-height: 350px;
+    }
+
+    .featured-image img {
+        min-height: 350px;
+
+        max-height: 500px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .featured-study {
+        padding:
+            65px 0;
+    }
+
+    .featured-study-card {
+        border-radius:
+            var(--age-radius);
+
+        min-height: auto;
+    }
+
+    .featured-text {
+        padding:
+            34px 23px;
+    }
+
+    .featured-text h2 {
+        font-size:
+            1.85rem;
+    }
+
+    .featured-highlights {
+        grid-template-columns:
+            1fr;
+
+        gap: 9px;
+
+        margin-bottom: 24px;
+    }
+
+    .featured-text .btn {
+        width: 100%;
+    }
+
+    .featured-image {
+        min-height: 270px;
+    }
+
+    .featured-image img {
+        min-height: 270px;
+
+        max-height: 350px;
+    }
+
+    .featured-image::before {
+        inset: 12px;
+
+        border-radius:
+            17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .featured-text {
+        padding:
+            29px 19px;
+    }
+
+    .featured-text h2 {
+        font-size:
+            1.6rem;
+    }
+
+    .featured-text p {
+        font-size:
+            0.87rem;
+    }
+
+}
+
+/* =========================================================
+   PART 17
+   NEWSLETTER
+   FREE TEACHER RESOURCES
+========================================================= */
+
+
+/* =========================================================
+   NEWSLETTER SECTION
+========================================================= */
+
+.newsletter {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        88px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--age-soft-aqua) 0%,
+            var(--age-soft-sunshine) 50%,
+            var(--age-soft-coral) 100%
+        );
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND CIRCLES
+========================================================= */
+
+.newsletter::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    top: -150px;
+
+    left: -80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+}
+
+.newsletter::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+
+    height: 230px;
+
+    right: -85px;
+
+    bottom: -125px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.42);
+}
+
+
+/* =========================================================
+   NEWSLETTER CONTAINER
+========================================================= */
+
+.newsletter .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   NEWSLETTER BOX
+========================================================= */
+
+.newsletter-box {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr 0.85fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    padding:
+        48px;
+
+    border:
+        1px solid
+        rgba(41, 70, 90, 0.08);
+
+    border-radius:
+        var(--age-radius-large);
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    box-shadow:
+        var(--age-shadow-card);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+/* =========================================================
+   NEWSLETTER CONTENT
+========================================================= */
+
+.newsletter-content {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   NEWSLETTER TAG
+========================================================= */
+
+.newsletter-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    margin-bottom: 16px;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--age-soft-purple);
+
+    color:
+        var(--age-deep-purple);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   NEWSLETTER HEADING
+========================================================= */
+
+.newsletter-content h2 {
+    margin-bottom: 15px;
+
+    font-size:
+        clamp(
+            1.9rem,
+            4vw,
+            2.8rem
+        );
+
+    color:
+        var(--age-navy);
+}
+
+
+/* =========================================================
+   NEWSLETTER DESCRIPTION
+========================================================= */
+
+.newsletter-content p {
+    max-width: 680px;
+
+    margin-bottom: 23px;
+
+    color:
+        var(--age-text);
+
+    font-size:
+        0.93rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   NEWSLETTER BENEFITS
+========================================================= */
+
+.newsletter-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        9px 18px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.newsletter-benefits li {
+    position: relative;
+
+    padding-left: 23px;
+
+    color:
+        var(--age-text);
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+}
+
+.newsletter-benefits li::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+
+    height: 8px;
+
+    top: 0.55em;
+
+    left: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--age-aqua);
+}
+
+
+/* =========================================================
+   BENEFIT COLORS
+========================================================= */
+
+.newsletter-benefits li:nth-child(1)::before {
+    background:
+        var(--age-purple);
+}
+
+.newsletter-benefits li:nth-child(2)::before {
+    background:
+        var(--age-orange);
+}
+
+.newsletter-benefits li:nth-child(3)::before {
+    background:
+        var(--age-blue);
+}
+
+.newsletter-benefits li:nth-child(4)::before {
+    background:
+        var(--age-green);
+}
+
+.newsletter-benefits li:nth-child(5)::before {
+    background:
+        var(--age-sunshine);
+}
+
+.newsletter-benefits li:nth-child(6)::before {
+    background:
+        var(--age-coral);
+}
+
+
+/* =========================================================
+   NEWSLETTER FORM
+========================================================= */
+
+.newsletter-form {
+    padding:
+        30px;
+
+    border:
+        1px solid
+        var(--age-border-light);
+
+    border-radius:
+        var(--age-radius);
+
+    background:
+        var(--age-white);
+
+    box-shadow:
+        var(--age-shadow-soft);
+}
+
+
+/* =========================================================
+   FORM HEADING SUPPORT
+========================================================= */
+
+.newsletter-form::before {
+    content:
+        "Get new classroom resources delivered to you.";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+        var(--age-navy);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size: 1.18rem;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.input-group {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.input-icon {
+    position: absolute;
+
+    left: 14px;
+
+    z-index: 2;
+
+    font-size: 1rem;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   EMAIL INPUT
+========================================================= */
+
+.input-group input {
+    width: 100%;
+
+    min-height: 49px;
+
+    padding:
+        0 15px 0 43px;
+
+    border:
+        1px solid
+        var(--age-border);
+
+    border-radius:
+        12px;
+
+    outline: none;
+
+    background:
+        var(--age-cream);
+
+    color:
+        var(--age-text);
+
+    transition:
+        border-color var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.input-group input::placeholder {
+    color:
+        var(--age-text-light);
+}
+
+.input-group input:focus {
+    border-color:
+        var(--age-aqua);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(120, 214, 208, 0.20);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.newsletter-form button {
+    width: 100%;
+
+    min-height: 49px;
+
+    padding:
+        11px 18px;
+
+    border: 0;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--age-aqua);
+
+    color:
+        var(--age-navy);
+
+    font-size: 0.88rem;
+
+    font-weight: 800;
+
+    transition:
+        background var(--age-transition),
+        color var(--age-transition),
+        transform var(--age-transition),
+        box-shadow var(--age-transition);
+}
+
+.newsletter-form button:hover {
+    background:
+        var(--age-deep-aqua);
+
+    color:
+        var(--age-white);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(50, 139, 135, 0.18);
+}
+
+.newsletter-form button:disabled {
+    cursor: wait;
+
+    opacity: 0.7;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .newsletter-box {
+        grid-template-columns:
+            1fr;
+
+        gap: 30px;
+
+        padding:
+            38px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .newsletter {
+        padding:
+            65px 0;
+    }
+
+    .newsletter-box {
+        gap: 25px;
+
+        padding:
+            28px 21px;
+
+        border-radius:
+            var(--age-radius);
+    }
+
+    .newsletter-content h2 {
+        font-size:
+            1.8rem;
+    }
+
+    .newsletter-benefits {
+        grid-template-columns:
+            1fr;
+
+        gap: 8px;
+    }
+
+    .newsletter-form {
+        padding:
+            22px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .newsletter-box {
+        padding:
+            23px 17px;
+    }
+
+    .newsletter-content h2 {
+        font-size:
+            1.6rem;
+    }
+
+    .newsletter-content p {
+        font-size:
+            0.86rem;
+    }
+
+    .newsletter-form {
+        padding:
+            20px 15px;
+    }
+
+}
+
+/* =========================================================
+   PART 18
+   FOOTER
+   HEAD START | AGES 2–3 YEARS
+========================================================= */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        var(--age-navy);
+
+    color:
+        rgba(255, 255, 255, 0.76);
+}
+
+
+/* =========================================================
+   DECORATIVE FOOTER ACCENTS
+========================================================= */
+
+footer::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    top: -155px;
+
+    right: -65px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(120, 214, 208, 0.10);
+}
+
+footer::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 190px;
+
+    bottom: -120px;
+
+    left: -55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(246, 211, 101, 0.08);
+}
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+footer .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   FOOTER GRID
+========================================================= */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap:
+        45px;
+
+    padding:
+        65px 0 48px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-grid > div:first-child {
+    max-width: 390px;
+}
+
+.footer-grid > div:first-child h3 {
+    margin-bottom: 13px;
+
+    color:
+        var(--age-white);
+
+    font-size:
+        1.35rem;
+}
+
+.footer-grid > div:first-child h3::after {
+    content: "";
+
+    display: block;
+
+    width: 42px;
+
+    height: 3px;
+
+    margin-top: 11px;
+
+    border-radius: 10px;
+
+    background:
+        var(--age-aqua);
+}
+
+.footer-grid > div:first-child p {
+    margin-bottom: 0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 0.82rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+========================================================= */
+
+.footer-grid h4 {
+    margin-bottom: 15px;
+
+    color:
+        var(--age-white);
+
+    font-size: 0.95rem;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   FOOTER LIST
+========================================================= */
+
+.footer-grid ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.footer-grid li {
+    margin-bottom: 8px;
+}
+
+.footer-grid li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-grid a {
+    display: inline-block;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 0.8rem;
+
+    transition:
+        color var(--age-transition),
+        transform var(--age-transition);
+}
+
+.footer-grid a:hover {
+    color:
+        var(--age-aqua);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   FOOTER LINK ACCENT COLORS
+========================================================= */
+
+.footer-grid > div:nth-child(2)
+li:nth-child(1) a:hover {
+    color:
+        var(--age-sunshine);
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(2) a:hover {
+    color:
+        var(--age-green);
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(3) a:hover {
+    color:
+        var(--age-orange);
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(4) a:hover {
+    color:
+        var(--age-blue);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    padding:
+        20px 0;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            35px 45px;
+    }
+
+    .footer-grid > div:first-child {
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .footer-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 28px;
+
+        padding:
+            50px 0 35px;
+    }
+
+    .footer-grid > div:first-child {
+        max-width: 600px;
+    }
+
+    .footer-grid h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        padding:
+            17px 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .footer-grid {
+        gap: 25px;
+
+        padding:
+            42px 0 30px;
+    }
+
+    .footer-grid > div:first-child h3 {
+        font-size:
+            1.2rem;
+    }
+
+    .footer-grid > div:first-child p {
+        font-size:
+            0.78rem;
+    }
+
+}
+
