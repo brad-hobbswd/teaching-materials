@@ -1,0 +1,4999 @@
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   EARLY HEAD START
+   early-head-start.css
+
+   Universal Early Childhood Color System
+========================================================= */
+
+:root {
+
+    /* ==========================================
+       PRIMARY CLASSROOM COLORS
+    ========================================== */
+
+    --sky-blue: #8ECae6;
+    --soft-sky: #EAF7FC;
+    --deep-sky: #397D9D;
+
+    --mint: #9ED8C5;
+    --soft-mint: #EDF9F4;
+    --deep-mint: #438C72;
+
+    --sunshine: #F6D77A;
+    --soft-sunshine: #FFF9DF;
+    --deep-sunshine: #B58B19;
+
+    --peach: #F5B59F;
+    --soft-peach: #FFF1EB;
+    --deep-peach: #B9654D;
+
+    --coral: #EF9B8F;
+    --soft-coral: #FFF0ED;
+    --deep-coral: #B95D52;
+
+    --lavender: #B9ADDF;
+    --soft-lavender: #F4F0FC;
+    --deep-lavender: #7562A8;
+
+    --aqua: #81D4D0;
+    --soft-aqua: #EAFAFA;
+    --deep-aqua: #378E8B;
+
+
+    /* ==========================================
+       UNIVERSAL NEUTRALS
+    ========================================== */
+
+    --cream: #FFFAF2;
+    --warm-white: #FFFDF9;
+    --white: #FFFFFF;
+
+    --navy: #29445A;
+    --soft-navy: #46647A;
+
+    --text: #425466;
+    --text-light: #718096;
+
+    --border: #E5E9ED;
+    --border-light: #EDF1F3;
+
+
+    /* ==========================================
+       SHADOWS
+    ========================================== */
+
+    --shadow-soft:
+        0 8px 25px rgba(41, 68, 90, 0.08);
+
+    --shadow-card:
+        0 10px 30px rgba(41, 68, 90, 0.10);
+
+    --shadow-hover:
+        0 16px 35px rgba(41, 68, 90, 0.15);
+
+
+    /* ==========================================
+       BORDER RADIUS
+    ========================================== */
+
+    --radius-small: 10px;
+
+    --radius: 18px;
+
+    --radius-large: 26px;
+
+
+    /* ==========================================
+       LAYOUT
+    ========================================== */
+
+    --max-width: 1200px;
+
+
+    /* ==========================================
+       TRANSITIONS
+    ========================================== */
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    background: var(--warm-white);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   UNIVERSAL CONTAINER
+========================================================= */
+
+.container {
+    width: min(92%, var(--max-width));
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color: var(--navy);
+
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(
+        2.3rem,
+        5vw,
+        4rem
+    );
+}
+
+h2 {
+    font-size: clamp(
+        1.8rem,
+        3vw,
+        2.6rem
+    );
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+    background: var(--sky-blue);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(142, 202, 230, 0.65);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   PART 2
+   HEADER & NAVIGATION
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 253, 249, 0.97);
+
+    border-bottom: 1px solid var(--border-light);
+
+    box-shadow:
+        0 3px 15px rgba(41, 68, 90, 0.06);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   NAVIGATION CONTAINER
+========================================================= */
+
+.nav-container {
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 52px;
+
+    height: 52px;
+
+    object-fit: contain;
+}
+
+.logo h1 {
+    margin: 0;
+
+    font-size: 1.35rem;
+
+    color: var(--navy);
+
+    line-height: 1.05;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    color: var(--deep-sky);
+
+    letter-spacing: 0.04em;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.search-bar {
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+
+    max-width: 310px;
+
+    margin-left: auto;
+}
+
+.search-bar input {
+    width: 100%;
+
+    min-height: 42px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-right: 0;
+
+    border-radius:
+        22px 0 0 22px;
+
+    outline: none;
+
+    background: var(--white);
+
+    color: var(--text);
+
+    transition: var(--transition);
+}
+
+.search-bar input::placeholder {
+    color: var(--text-light);
+
+    opacity: 0.85;
+}
+
+.search-bar input:focus {
+    border-color: var(--sky-blue);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(142, 202, 230, 0.20);
+}
+
+.search-bar button {
+    width: 46px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius:
+        0 22px 22px 0;
+
+    background: var(--sky-blue);
+
+    color: var(--navy);
+
+    transition: var(--transition);
+}
+
+.search-bar button:hover {
+    background: var(--deep-sky);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+nav {
+    flex-shrink: 0;
+}
+
+nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+
+    padding: 0;
+}
+
+nav a {
+    display: block;
+
+    padding:
+        9px 11px;
+
+    border-radius: 11px;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    color: var(--soft-navy);
+
+    white-space: nowrap;
+
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background: var(--soft-sky);
+
+    color: var(--deep-sky);
+}
+
+nav a.active {
+    background: var(--sky-blue);
+
+    color: var(--navy);
+
+    box-shadow:
+        0 3px 8px
+        rgba(57, 125, 157, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu {
+    display: none;
+
+    width: 44px;
+
+    height: 44px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: var(--soft-sky);
+
+    color: var(--navy);
+
+    font-size: 1.3rem;
+
+    transition: var(--transition);
+}
+
+.mobile-menu:hover {
+    background: var(--sky-blue);
+}
+
+.mobile-menu:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   TABLET HEADER
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+
+        padding-top: 12px;
+
+        padding-bottom: 12px;
+    }
+
+    .search-bar {
+        order: 3;
+
+        flex-basis: 100%;
+
+        max-width: none;
+
+        margin-left: 0;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+@media (max-width: 760px) {
+
+    header {
+        position: relative;
+    }
+
+    .nav-container {
+        min-height: 70px;
+
+        flex-wrap: nowrap;
+
+        padding-top: 10px;
+
+        padding-bottom: 10px;
+    }
+
+    .logo img {
+        width: 44px;
+
+        height: 44px;
+    }
+
+    .logo h1 {
+        font-size: 1.12rem;
+    }
+
+    .logo span {
+        font-size: 0.72rem;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+
+        margin-left: auto;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .logo div {
+        display: none;
+    }
+
+    .logo img {
+        width: 46px;
+
+        height: 46px;
+    }
+
+    .mobile-menu {
+        width: 42px;
+
+        height: 42px;
+    }
+}
+
+/* =========================================================
+   PART 3
+   EARLY HEAD START HERO
+========================================================= */
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.study-hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 82px 0 88px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-sky) 0%,
+            #F2FAF7 52%,
+            var(--cream) 100%
+        );
+}
+
+
+/* =========================================================
+   SOFT DECORATIVE SHAPES
+========================================================= */
+
+.study-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    top: -120px;
+
+    right: 7%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(246, 215, 122, 0.28);
+}
+
+.study-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 210px;
+
+    bottom: -105px;
+
+    left: 4%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 181, 159, 0.22);
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.study-hero .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    font-size: 0.84rem;
+
+    font-weight: 700;
+
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--deep-sky);
+
+    transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--navy);
+
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.study-hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(
+            2.6rem,
+            6vw,
+            4.3rem
+        );
+
+    color: var(--navy);
+
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.study-hero p {
+    max-width: 850px;
+
+    margin-bottom: 32px;
+
+    font-size: 1.08rem;
+
+    line-height: 1.75;
+
+    color: var(--soft-navy);
+}
+
+
+/* =========================================================
+   HERO SEARCH
+========================================================= */
+
+.hero-search {
+    display: flex;
+
+    width: min(100%, 680px);
+
+    padding: 6px;
+
+    border:
+        1px solid
+        rgba(41, 68, 90, 0.08);
+
+    border-radius: 17px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-card);
+}
+
+.hero-search input {
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 50px;
+
+    padding:
+        12px 16px;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 0.95rem;
+}
+
+.hero-search input::placeholder {
+    color: var(--text-light);
+
+    opacity: 0.8;
+}
+
+.hero-search input:focus {
+    box-shadow:
+        inset 0 0 0 2px
+        rgba(142, 202, 230, 0.30);
+
+    border-radius: 11px;
+}
+
+.hero-search button {
+    min-height: 50px;
+
+    padding:
+        0 24px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: var(--sky-blue);
+
+    color: var(--navy);
+
+    font-weight: 800;
+
+    transition: var(--transition);
+}
+
+.hero-search button:hover {
+    background: var(--deep-sky);
+
+    color: var(--white);
+
+    transform: translateY(-1px);
+}
+
+.hero-search button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET HERO
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .study-hero {
+        padding:
+            60px 0 68px;
+    }
+
+    .study-hero h1 {
+        font-size:
+            clamp(
+                2.3rem,
+                9vw,
+                3.2rem
+            );
+    }
+
+    .study-hero p {
+        font-size: 0.98rem;
+
+        line-height: 1.7;
+    }
+
+    .hero-search {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE HERO
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .study-hero {
+        padding:
+            48px 0 58px;
+    }
+
+    .breadcrumb {
+        font-size: 0.78rem;
+
+        margin-bottom: 18px;
+    }
+
+    .study-hero h1 {
+        margin-bottom: 15px;
+
+        font-size: 2.25rem;
+    }
+
+    .study-hero p {
+        margin-bottom: 24px;
+
+        font-size: 0.93rem;
+    }
+
+    .hero-search {
+        flex-direction: column;
+
+        gap: 6px;
+
+        padding: 7px;
+    }
+
+    .hero-search input {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    .hero-search button {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    .study-hero::before {
+        width: 180px;
+
+        height: 180px;
+
+        right: -70px;
+
+        top: -70px;
+    }
+
+    .study-hero::after {
+        width: 130px;
+
+        height: 130px;
+
+        left: -55px;
+
+        bottom: -60px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-search button {
+        transform: none !important;
+    }
+
+}
+
+/* =========================================================
+   PART 4
+   QUICK OVERVIEW / STATISTICS
+========================================================= */
+
+
+/* =========================================================
+   STATS SECTION
+========================================================= */
+
+.site-stats {
+    padding: 30px 0;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+
+/* =========================================================
+   STATS GRID
+========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STAT CARD
+========================================================= */
+
+.stat-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--cream);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 75px;
+
+    height: 75px;
+
+    top: -32px;
+
+    right: -25px;
+
+    border-radius: 50%;
+
+    opacity: 0.35;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-card);
+}
+
+
+/* =========================================================
+   INDIVIDUAL CARD COLORS
+========================================================= */
+
+
+/* 0–3 Years */
+
+.stat-card:nth-child(1) {
+    background: var(--soft-sky);
+
+    border-color:
+        rgba(142, 202, 230, 0.35);
+}
+
+.stat-card:nth-child(1)::before {
+    background: var(--sky-blue);
+}
+
+
+/* Activities */
+
+.stat-card:nth-child(2) {
+    background: var(--soft-mint);
+
+    border-color:
+        rgba(158, 216, 197, 0.40);
+}
+
+.stat-card:nth-child(2)::before {
+    background: var(--mint);
+}
+
+
+/* Lesson Plans */
+
+.stat-card:nth-child(3) {
+    background: var(--soft-sunshine);
+
+    border-color:
+        rgba(246, 215, 122, 0.45);
+}
+
+.stat-card:nth-child(3)::before {
+    background: var(--sunshine);
+}
+
+
+/* Printables */
+
+.stat-card:nth-child(4) {
+    background: var(--soft-peach);
+
+    border-color:
+        rgba(245, 181, 159, 0.40);
+}
+
+.stat-card:nth-child(4)::before {
+    background: var(--peach);
+}
+
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.stat-card h2 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 5px;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.25rem
+        );
+
+    color: var(--navy);
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.stat-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   STAT ACCENT LINE
+========================================================= */
+
+.stat-card::after {
+    content: "";
+
+    display: block;
+
+    width: 34px;
+
+    height: 3px;
+
+    margin: 15px auto 0;
+
+    border-radius: 10px;
+
+    background: var(--navy);
+
+    opacity: 0.18;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .site-stats {
+        padding: 22px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding:
+            20px 14px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .stats-grid {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding:
+            18px 10px;
+
+        border-radius:
+            var(--radius-small);
+    }
+
+    .stat-card h2 {
+        font-size: 1.7rem;
+    }
+
+    .stat-card p {
+        font-size: 0.78rem;
+    }
+
+}
+
+/* =========================================================
+   PART 5
+   LEARNING THROUGH EVERYDAY EXPERIENCES
+   DEVELOPMENT AREAS
+========================================================= */
+
+
+/* =========================================================
+   DEVELOPMENT AREAS SECTION
+========================================================= */
+
+.interest-areas {
+    padding: 85px 0;
+
+    background: var(--warm-white);
+}
+
+
+/* =========================================================
+   DEVELOPMENT AREA GRID
+========================================================= */
+
+.interest-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   DEVELOPMENT AREA CARD
+========================================================= */
+
+.interest-card {
+    position: relative;
+
+    display: block;
+
+    min-height: 255px;
+
+    padding: 30px 24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.interest-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CORNER
+========================================================= */
+
+.interest-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    right: -50px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.interest-card:hover::after {
+    transform: scale(1.2);
+
+    opacity: 0.28;
+}
+
+
+/* =========================================================
+   ICON CONTAINER
+========================================================= */
+
+.interest-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 64px;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 21px;
+
+    border-radius: 18px;
+
+    font-size: 1.85rem;
+
+    line-height: 1;
+
+    transition:
+        transform var(--transition);
+}
+
+.interest-card:hover .interest-icon {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   COGNITIVE
+========================================================= */
+
+.interest-card.blue {
+    border-top:
+        4px solid
+        var(--sky-blue);
+}
+
+.interest-card.blue .interest-icon {
+    background: var(--soft-sky);
+}
+
+.interest-card.blue::after {
+    background: var(--sky-blue);
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.interest-card.green {
+    border-top:
+        4px solid
+        var(--mint);
+}
+
+.interest-card.green .interest-icon {
+    background: var(--soft-mint);
+}
+
+.interest-card.green::after {
+    background: var(--mint);
+}
+
+
+/* =========================================================
+   SOCIAL EMOTIONAL
+========================================================= */
+
+.interest-card.coral {
+    border-top:
+        4px solid
+        var(--coral);
+}
+
+.interest-card.coral .interest-icon {
+    background: var(--soft-coral);
+}
+
+.interest-card.coral::after {
+    background: var(--coral);
+}
+
+
+/* =========================================================
+   PHYSICAL DEVELOPMENT
+========================================================= */
+
+.interest-card.aqua {
+    border-top:
+        4px solid
+        var(--aqua);
+}
+
+.interest-card.aqua .interest-icon {
+    background: var(--soft-aqua);
+}
+
+.interest-card.aqua::after {
+    background: var(--aqua);
+}
+
+
+/* =========================================================
+   DEVELOPMENT AREA TITLE
+========================================================= */
+
+.interest-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   DEVELOPMENT AREA DESCRIPTION
+========================================================= */
+
+.interest-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .interest-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .interest-areas {
+        padding: 65px 0;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .interest-card {
+        min-height: auto;
+
+        padding:
+            26px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .interest-card {
+        padding:
+            23px 20px;
+    }
+
+    .interest-icon {
+        width: 58px;
+
+        height: 58px;
+
+        margin-bottom: 17px;
+
+        border-radius: 16px;
+
+        font-size: 1.7rem;
+    }
+
+}
+
+
+/* =========================================================
+   PART 6
+   FEATURED EARLY HEAD START ACTIVITIES
+========================================================= */
+
+
+/* =========================================================
+   FEATURED STUDIES SECTION
+========================================================= */
+
+.featured-studies {
+    padding: 85px 0;
+
+    background: var(--white);
+}
+
+
+/* =========================================================
+   STUDY GRID
+========================================================= */
+
+.study-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 26px;
+}
+
+
+/* =========================================================
+   STUDY CARD
+========================================================= */
+
+.study-card {
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.study-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   STUDY IMAGE
+========================================================= */
+
+.study-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: var(--soft-sky);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.study-card:hover img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   STUDY CONTENT
+========================================================= */
+
+.study-content {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 25px;
+}
+
+
+/* =========================================================
+   STUDY TAG
+========================================================= */
+
+.study-tag {
+    align-self: flex-start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        5px 11px;
+
+    margin-bottom: 14px;
+
+    border-radius: 30px;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   BLUE TAG
+========================================================= */
+
+.study-tag.blue {
+    background: var(--soft-sky);
+
+    color: var(--deep-sky);
+}
+
+
+/* =========================================================
+   GREEN TAG
+========================================================= */
+
+.study-tag.green {
+    background: var(--soft-mint);
+
+    color: var(--deep-mint);
+}
+
+
+/* =========================================================
+   PURPLE TAG
+========================================================= */
+
+.study-tag.purple {
+    background: var(--soft-lavender);
+
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   ORANGE / YELLOW TAG
+========================================================= */
+
+.study-tag.orange {
+    background: var(--soft-sunshine);
+
+    color: var(--deep-sunshine);
+}
+
+
+/* =========================================================
+   AQUA TAG
+========================================================= */
+
+.study-tag.aqua {
+    background: var(--soft-aqua);
+
+    color: var(--deep-aqua);
+}
+
+
+/* =========================================================
+   CORAL TAG
+========================================================= */
+
+.study-tag.coral {
+    background: var(--soft-coral);
+
+    color: var(--deep-coral);
+}
+
+
+/* =========================================================
+   STUDY TITLE
+========================================================= */
+
+.study-content h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.28rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   STUDY DESCRIPTION
+========================================================= */
+
+.study-content p {
+    margin-bottom: 22px;
+
+    color: var(--text-light);
+
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   STUDY FOOTER
+========================================================= */
+
+.study-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-top: auto;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid
+        var(--border-light);
+
+    font-size: 0.81rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STUDY FOOTER META
+========================================================= */
+
+.study-footer span {
+    color: var(--text-light);
+}
+
+
+/* =========================================================
+   STUDY FOOTER LINK
+========================================================= */
+
+.study-footer a {
+    color: var(--deep-sky);
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.study-footer a:hover {
+    color: var(--navy);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   COLOR ACCENTS FOR FEATURED CARDS
+========================================================= */
+
+.study-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--sky-blue);
+}
+
+.study-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--mint);
+}
+
+.study-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--lavender);
+}
+
+.study-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--sunshine);
+}
+
+.study-card:nth-child(5) {
+    border-top:
+        4px solid
+        var(--aqua);
+}
+
+.study-card:nth-child(6) {
+    border-top:
+        4px solid
+        var(--coral);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .study-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .featured-studies {
+        padding: 65px 0;
+    }
+
+    .study-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .study-card img {
+        height: 235px;
+    }
+
+    .study-content {
+        padding: 23px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .study-card img {
+        height: 210px;
+    }
+
+    .study-content {
+        padding: 21px;
+    }
+
+    .study-content h3 {
+        font-size: 1.18rem;
+    }
+
+    .study-footer {
+        font-size: 0.77rem;
+    }
+
+}
+
+/* =========================================================
+   PART 7
+   DAILY CARE & LEARNING ROUTINES
+========================================================= */
+
+
+/* =========================================================
+   ROUTINES SECTION
+========================================================= */
+
+.teacher-favorites {
+    padding: 85px 0;
+
+    background: var(--cream);
+}
+
+
+/* =========================================================
+   ROUTINES GRID
+========================================================= */
+
+.favorite-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   ROUTINE CARD
+========================================================= */
+
+.favorite-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 29px 27px;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.favorite-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   SOFT DECORATIVE BACKGROUND
+========================================================= */
+
+.favorite-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+
+    height: 95px;
+
+    right: -40px;
+
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    opacity: 0.15;
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.favorite-card:hover::after {
+    transform: scale(1.25);
+
+    opacity: 0.25;
+}
+
+
+/* =========================================================
+   ROUTINE CARD ACCENTS
+========================================================= */
+
+
+/* Feeding */
+
+.favorite-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--sky-blue);
+}
+
+.favorite-card:nth-child(1)::after {
+    background: var(--sky-blue);
+}
+
+
+/* Rest */
+
+.favorite-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--lavender);
+}
+
+.favorite-card:nth-child(2)::after {
+    background: var(--lavender);
+}
+
+
+/* Free Exploration */
+
+.favorite-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--sunshine);
+}
+
+.favorite-card:nth-child(3)::after {
+    background: var(--sunshine);
+}
+
+
+/* Caregiving */
+
+.favorite-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--peach);
+}
+
+.favorite-card:nth-child(4)::after {
+    background: var(--peach);
+}
+
+
+/* Outdoor */
+
+.favorite-card:nth-child(5) {
+    border-top:
+        4px solid
+        var(--mint);
+}
+
+.favorite-card:nth-child(5)::after {
+    background: var(--mint);
+}
+
+
+/* Songs */
+
+.favorite-card:nth-child(6) {
+    border-top:
+        4px solid
+        var(--aqua);
+}
+
+.favorite-card:nth-child(6)::after {
+    background: var(--aqua);
+}
+
+
+/* =========================================================
+   ROUTINE ICON
+========================================================= */
+
+.favorite-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 17px;
+
+    background: var(--soft-sky);
+
+    font-size: 1.75rem;
+
+    transition:
+        transform var(--transition);
+}
+
+.favorite-card:hover .favorite-icon {
+    transform:
+        scale(1.07)
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   INDIVIDUAL ICON COLORS
+========================================================= */
+
+.favorite-card:nth-child(1) .favorite-icon {
+    background: var(--soft-sky);
+}
+
+.favorite-card:nth-child(2) .favorite-icon {
+    background: var(--soft-lavender);
+}
+
+.favorite-card:nth-child(3) .favorite-icon {
+    background: var(--soft-sunshine);
+}
+
+.favorite-card:nth-child(4) .favorite-icon {
+    background: var(--soft-peach);
+}
+
+.favorite-card:nth-child(5) .favorite-icon {
+    background: var(--soft-mint);
+}
+
+.favorite-card:nth-child(6) .favorite-icon {
+    background: var(--soft-aqua);
+}
+
+
+/* =========================================================
+   ROUTINE TITLE
+========================================================= */
+
+.favorite-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   ROUTINE DESCRIPTION
+========================================================= */
+
+.favorite-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.91rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .favorite-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .teacher-favorites {
+        padding: 65px 0;
+    }
+
+    .favorite-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .favorite-card {
+        padding:
+            25px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .favorite-card {
+        padding:
+            22px 20px;
+    }
+
+    .favorite-icon {
+        width: 54px;
+
+        height: 54px;
+
+        margin-bottom: 15px;
+
+        border-radius: 15px;
+
+        font-size: 1.6rem;
+    }
+
+}
+
+
+/* =========================================================
+   PART 8
+   DEVELOPMENTAL MILESTONES
+========================================================= */
+
+
+/* =========================================================
+   MILESTONE SECTION
+========================================================= */
+
+.season-section {
+    padding: 85px 0;
+
+    background: var(--white);
+}
+
+
+/* =========================================================
+   MILESTONE GRID
+========================================================= */
+
+.season-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   MILESTONE CARD
+========================================================= */
+
+.season-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 285px;
+
+    padding: 30px 24px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.season-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.season-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    top: -55px;
+
+    right: -50px;
+
+    border-radius: 50%;
+
+    opacity: 0.18;
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+.season-card:hover::before {
+    transform: scale(1.2);
+
+    opacity: 0.27;
+}
+
+
+/* =========================================================
+   AGE GROUP COLORS
+========================================================= */
+
+
+/* Birth to 12 Months */
+
+.season-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--sky-blue);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--soft-sky) 0%,
+            var(--white) 55%
+        );
+}
+
+.season-card:nth-child(1)::before {
+    background: var(--sky-blue);
+}
+
+
+/* 12 to 24 Months */
+
+.season-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--mint);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--soft-mint) 0%,
+            var(--white) 55%
+        );
+}
+
+.season-card:nth-child(2)::before {
+    background: var(--mint);
+}
+
+
+/* 24 to 36 Months */
+
+.season-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--peach);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--soft-peach) 0%,
+            var(--white) 55%
+        );
+}
+
+.season-card:nth-child(3)::before {
+    background: var(--peach);
+}
+
+
+/* School Readiness */
+
+.season-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--sunshine);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--soft-sunshine) 0%,
+            var(--white) 55%
+        );
+}
+
+.season-card:nth-child(4)::before {
+    background: var(--sunshine);
+}
+
+
+/* =========================================================
+   MILESTONE ICON / EMOJI
+========================================================= */
+
+.season-card > :first-child {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 2.25rem;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   MILESTONE TITLE
+========================================================= */
+
+.season-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 12px;
+
+    font-size: 1.18rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   MILESTONE DESCRIPTION
+========================================================= */
+
+.season-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .season-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .season-section {
+        padding: 65px 0;
+    }
+
+    .season-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .season-card {
+        min-height: auto;
+
+        padding:
+            27px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .season-card {
+        padding:
+            24px 20px;
+    }
+
+    .season-card > :first-child {
+        font-size: 2rem;
+    }
+
+}
+
+
+/* =========================================================
+   PART 9
+   PARTNERING WITH FAMILIES
+   FAMILY ENGAGEMENT
+========================================================= */
+
+
+/* =========================================================
+   FAMILY SECTION
+========================================================= */
+
+.why-section {
+    padding: 85px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-mint) 0%,
+            #F5FBF8 55%,
+            var(--soft-sky) 100%
+        );
+}
+
+
+/* =========================================================
+   FAMILY GRID
+========================================================= */
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   FAMILY CARD
+========================================================= */
+
+.why-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px 24px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(67, 140, 114, 0.12);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+========================================================= */
+
+.why-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 115px;
+
+    height: 115px;
+
+    right: -55px;
+
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background: var(--soft-mint);
+
+    opacity: 0.8;
+
+    transition:
+        transform var(--transition);
+}
+
+.why-card:hover::after {
+    transform: scale(1.2);
+}
+
+
+/* =========================================================
+   FAMILY ICON
+========================================================= */
+
+.why-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 66px;
+
+    height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0 auto 19px;
+
+    border-radius: 50%;
+
+    background: var(--soft-mint);
+
+    font-size: 1.8rem;
+
+    box-shadow:
+        inset 0 0 0 5px
+        rgba(255, 255, 255, 0.75);
+
+    transition:
+        transform var(--transition);
+}
+
+.why-card:hover .why-icon {
+    transform:
+        scale(1.07);
+}
+
+
+/* =========================================================
+   INDIVIDUAL FAMILY ICON COLORS
+========================================================= */
+
+
+/* Family Activities */
+
+.why-card:nth-child(1) .why-icon {
+    background: var(--soft-sunshine);
+}
+
+
+/* Daily Reading */
+
+.why-card:nth-child(2) .why-icon {
+    background: var(--soft-lavender);
+}
+
+
+/* Healthy Relationships */
+
+.why-card:nth-child(3) .why-icon {
+    background: var(--soft-coral);
+}
+
+
+/* Learning At Home */
+
+.why-card:nth-child(4) .why-icon {
+    background: var(--soft-sky);
+}
+
+
+/* =========================================================
+   FAMILY CARD ACCENTS
+========================================================= */
+
+.why-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--sunshine);
+}
+
+.why-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--lavender);
+}
+
+.why-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--coral);
+}
+
+.why-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--sky-blue);
+}
+
+
+/* =========================================================
+   FAMILY CARD TITLE
+========================================================= */
+
+.why-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font-size: 1.18rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   FAMILY CARD DESCRIPTION
+========================================================= */
+
+.why-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .why-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .why-section {
+        padding: 65px 0;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .why-card {
+        padding:
+            27px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .why-card {
+        padding:
+            24px 20px;
+    }
+
+    .why-icon {
+        width: 60px;
+
+        height: 60px;
+
+        margin-bottom: 16px;
+
+        font-size: 1.65rem;
+    }
+
+}
+
+/* =========================================================
+   PART 10
+   PRINTABLE RESOURCES
+========================================================= */
+
+
+/* =========================================================
+   PRINTABLE RESOURCE SECTION
+========================================================= */
+
+.new-activities {
+    padding: 85px 0;
+
+    background: var(--warm-white);
+}
+
+
+/* =========================================================
+   RESOURCE GRID
+========================================================= */
+
+.activity-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   RESOURCE CARD
+========================================================= */
+
+.activity-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.activity-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   RESOURCE CARD COLOR ACCENTS
+========================================================= */
+
+.activity-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--mint);
+}
+
+.activity-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--sky-blue);
+}
+
+.activity-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--peach);
+}
+
+.activity-card:nth-child(4) {
+    border-top:
+        4px solid
+        var(--aqua);
+}
+
+.activity-card:nth-child(5) {
+    border-top:
+        4px solid
+        var(--lavender);
+}
+
+.activity-card:nth-child(6) {
+    border-top:
+        4px solid
+        var(--sunshine);
+}
+
+
+/* =========================================================
+   RESOURCE BADGE
+========================================================= */
+
+.activity-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 26px;
+
+    padding:
+        5px 11px;
+
+    margin-bottom: 17px;
+
+    border-radius: 20px;
+
+    background: var(--soft-sky);
+
+    color: var(--deep-sky);
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   BADGE VARIATIONS
+========================================================= */
+
+
+/* FREE */
+
+.activity-card:nth-child(1) .activity-badge,
+.activity-card:nth-child(4) .activity-badge {
+    background: var(--soft-mint);
+
+    color: var(--deep-mint);
+}
+
+
+/* POPULAR */
+
+.activity-card:nth-child(2) .activity-badge,
+.activity-card:nth-child(6) .activity-badge {
+    background: var(--soft-coral);
+
+    color: var(--deep-coral);
+}
+
+
+/* NEW */
+
+.activity-card:nth-child(3) .activity-badge,
+.activity-card:nth-child(5) .activity-badge {
+    background: var(--soft-lavender);
+
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   RESOURCE TITLE
+========================================================= */
+
+.activity-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   RESOURCE DESCRIPTION
+========================================================= */
+
+.activity-card p {
+    margin-bottom: 22px;
+
+    color: var(--text-light);
+
+    font-size: 0.91rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   RESOURCE METADATA
+========================================================= */
+
+.activity-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid
+        var(--border-light);
+}
+
+.activity-meta span {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 28px;
+
+    padding:
+        5px 9px;
+
+    border-radius: 8px;
+
+    background: var(--cream);
+
+    color: var(--text-light);
+
+    font-size: 0.74rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PRINTABLE INDICATOR
+========================================================= */
+
+.activity-meta span:first-child {
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .activity-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .new-activities {
+        padding: 65px 0;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .activity-card {
+        padding:
+            27px 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .activity-card {
+        padding:
+            23px 20px;
+    }
+
+    .activity-badge {
+        margin-bottom: 14px;
+    }
+
+}
+
+/* =========================================================
+   PART 11
+   CONTINUE EXPLORING EARLY HEAD START
+========================================================= */
+
+
+/* =========================================================
+   SECOND FEATURED STUDIES SECTION
+========================================================= */
+
+/*
+   The HTML intentionally reuses:
+
+   .featured-studies
+   .study-grid
+   .study-card
+   .study-tag
+   .study-content
+   .study-footer
+
+   The rules below give the final study section
+   its own visual identity without creating
+   unnecessary new HTML classes.
+*/
+
+
+.featured-studies + .newsletter {
+    border-top:
+        1px solid
+        var(--border-light);
+}
+
+
+/* =========================================================
+   THREE-CARD EXPLORATION LAYOUT
+========================================================= */
+
+.featured-studies .study-grid {
+    max-width: 1050px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   EXPLORATION STUDY IMAGES
+========================================================= */
+
+.featured-studies .study-card img {
+    height: 225px;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================================================
+   EXPLORATION CARD TAGS
+========================================================= */
+
+.featured-studies .study-tag {
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   EXPLORATION CARD COLORS
+========================================================= */
+
+
+/* Water Study */
+
+.featured-studies .study-card:nth-child(1) {
+    border-top:
+        4px solid
+        var(--aqua);
+}
+
+.featured-studies .study-card:nth-child(1) .study-tag {
+    background: var(--soft-aqua);
+
+    color: var(--deep-aqua);
+}
+
+
+/* Animals Study */
+
+.featured-studies .study-card:nth-child(2) {
+    border-top:
+        4px solid
+        var(--mint);
+}
+
+.featured-studies .study-card:nth-child(2) .study-tag {
+    background: var(--soft-mint);
+
+    color: var(--deep-mint);
+}
+
+
+/* Music & Movement */
+
+.featured-studies .study-card:nth-child(3) {
+    border-top:
+        4px solid
+        var(--lavender);
+}
+
+.featured-studies .study-card:nth-child(3) .study-tag {
+    background: var(--soft-lavender);
+
+    color: var(--deep-lavender);
+}
+
+
+/* =========================================================
+   EXPLORATION CARD CONTENT
+========================================================= */
+
+.featured-studies .study-content h3 {
+    margin-bottom: 10px;
+}
+
+.featured-studies .study-content p {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   EXPLORATION FOOTER
+========================================================= */
+
+.featured-studies .study-footer {
+    margin-top: auto;
+}
+
+.featured-studies .study-footer a {
+    color: var(--deep-sky);
+}
+
+
+/* =========================================================
+   EXPLORATION HOVER
+========================================================= */
+
+.featured-studies .study-card:hover {
+    transform: translateY(-7px);
+}
+
+.featured-studies .study-card:hover img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .featured-studies .study-grid {
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .featured-studies .study-card img {
+        height: 235px;
+    }
+
+}
+
+/* =========================================================
+   PART 12
+   NEWSLETTER / EDUCATOR COMMUNITY
+========================================================= */
+
+
+/* =========================================================
+   NEWSLETTER SECTION
+========================================================= */
+
+.newsletter {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-sky) 0%,
+            var(--soft-mint) 52%,
+            var(--soft-lavender) 100%
+        );
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND SHAPES
+========================================================= */
+
+.newsletter::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    top: -120px;
+
+    left: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+}
+
+.newsletter::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    right: -80px;
+
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(246, 215, 122, 0.25);
+}
+
+
+/* =========================================================
+   NEWSLETTER CONTAINER
+========================================================= */
+
+.newsletter .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   NEWSLETTER BOX
+========================================================= */
+
+.newsletter-box {
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 0.75fr;
+
+    align-items: center;
+
+    gap: 42px;
+
+    padding: 48px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.70);
+
+    border-radius: var(--radius-large);
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    box-shadow: var(--shadow-card);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   NEWSLETTER CONTENT
+========================================================= */
+
+.newsletter-content {
+    min-width: 0;
+}
+
+.newsletter-content h2 {
+    margin-bottom: 15px;
+
+    font-size:
+        clamp(
+            1.9rem,
+            3.5vw,
+            2.65rem
+        );
+
+    color: var(--navy);
+}
+
+.newsletter-content > p {
+    max-width: 650px;
+
+    margin-bottom: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   NEWSLETTER TAG
+========================================================= */
+
+.newsletter-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    margin-bottom: 16px;
+
+    padding:
+        6px 12px;
+
+    border-radius: 30px;
+
+    background: var(--soft-sky);
+
+    color: var(--deep-sky);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   NEWSLETTER BENEFITS
+========================================================= */
+
+.newsletter-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        11px 22px;
+
+    margin-top: 27px;
+}
+
+.newsletter-benefits div {
+    color: var(--soft-navy);
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NEWSLETTER SIGNUP CARD
+========================================================= */
+
+.newsletter-card {
+    padding: 31px;
+
+    border:
+        1px solid
+        var(--border-light);
+
+    border-radius: var(--radius);
+
+    background: var(--cream);
+
+    box-shadow:
+        0 7px 22px
+        rgba(41, 68, 90, 0.06);
+}
+
+.newsletter-card h3 {
+    margin-bottom: 9px;
+
+    font-size: 1.3rem;
+}
+
+.newsletter-card p {
+    margin-bottom: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NEWSLETTER FORM
+========================================================= */
+
+.newsletter-form {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   EMAIL INPUT
+========================================================= */
+
+.input-group {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 12px;
+
+    background: var(--white);
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+.input-group:focus-within {
+    border-color: var(--sky-blue);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(142, 202, 230, 0.20);
+}
+
+
+/* =========================================================
+   EMAIL ICON
+========================================================= */
+
+.input-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding-left: 13px;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   EMAIL INPUT FIELD
+========================================================= */
+
+.input-group input {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 46px;
+
+    padding:
+        10px 12px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 0.88rem;
+}
+
+.input-group input::placeholder {
+    color: var(--text-light);
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   SUBSCRIBE BUTTON
+========================================================= */
+
+.newsletter-form button {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 12px;
+
+    padding:
+        12px 18px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: var(--mint);
+
+    color: var(--navy);
+
+    font-size: 0.9rem;
+
+    font-weight: 800;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: var(--deep-mint);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(67, 140, 114, 0.18);
+}
+
+.newsletter-form button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   NEWSLETTER DISCLAIMER
+========================================================= */
+
+.newsletter-card small {
+    display: block;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    font-size: 0.7rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .newsletter-box {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 38px;
+    }
+
+    .newsletter-card {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin:
+            0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .newsletter {
+        padding: 65px 0;
+    }
+
+    .newsletter-box {
+        padding:
+            29px 22px;
+
+        border-radius:
+            var(--radius);
+    }
+
+    .newsletter-content h2 {
+        font-size: 1.9rem;
+    }
+
+    .newsletter-benefits {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .newsletter-card {
+        padding:
+            25px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .newsletter-box {
+        padding:
+            25px 18px;
+    }
+
+    .newsletter-card {
+        padding:
+            22px 18px;
+    }
+
+    .newsletter-tag {
+        font-size: 0.65rem;
+    }
+
+}
+
+
+/* =========================================================
+   PART 13
+   FOOTER
+========================================================= */
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding-top: 65px;
+
+    background: var(--navy);
+
+    color:
+        rgba(255, 255, 255, 0.76);
+}
+
+
+/* =========================================================
+   FOOTER GRID
+========================================================= */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        repeat(3, 1fr);
+
+    gap: 45px;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND COLUMN
+========================================================= */
+
+.footer-grid > div:first-child h3 {
+    margin-bottom: 14px;
+
+    color: var(--white);
+
+    font-size: 1.25rem;
+}
+
+.footer-grid > div:first-child p {
+    max-width: 440px;
+
+    margin-bottom: 0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+========================================================= */
+
+footer h4 {
+    margin-bottom: 16px;
+
+    color: var(--white);
+
+    font-size: 0.98rem;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   FOOTER LISTS
+========================================================= */
+
+footer ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 9px;
+}
+
+footer li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+footer a {
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 0.84rem;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+footer a:hover {
+    color: var(--sky-blue);
+}
+
+
+/* =========================================================
+   FOOTER COLUMN ACCENTS
+========================================================= */
+
+.footer-grid > div:not(:first-child) {
+    position: relative;
+}
+
+.footer-grid > div:not(:first-child)::before {
+    content: "";
+
+    display: block;
+
+    width: 28px;
+
+    height: 3px;
+
+    margin-bottom: 14px;
+
+    border-radius: 10px;
+
+    background: var(--sky-blue);
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   DIFFERENT FOOTER ACCENT COLORS
+========================================================= */
+
+.footer-grid > div:nth-child(2)::before {
+    background: var(--sky-blue);
+}
+
+.footer-grid > div:nth-child(3)::before {
+    background: var(--mint);
+}
+
+.footer-grid > div:nth-child(4)::before {
+    background: var(--sunshine);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    padding:
+        20px 0;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    max-width: none;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 0.76rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FOOTER LINK FOCUS
+========================================================= */
+
+footer a:focus-visible {
+    outline-color:
+        var(--sky-blue);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 38px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    footer {
+        padding-top: 50px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-bottom: 38px;
+    }
+
+    .footer-grid > div:first-child p {
+        max-width: none;
+    }
+
+    .footer-grid > div:not(:first-child)::before {
+        margin-bottom: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    footer {
+        padding-top: 45px;
+    }
+
+    .footer-grid {
+        gap: 27px;
+    }
+
+    .footer-bottom {
+        padding:
+            18px 0;
+    }
+
+}
+
+/* =========================================================
+   PART 14
+   GLOBAL RESPONSIVE & MOBILE POLISH
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE SAFETY
+========================================================= */
+
+html,
+body {
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 320px;
+}
+
+.container {
+    max-width: var(--max-width);
+}
+
+
+/* =========================================================
+   RESPONSIVE TEXT SAFETY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   RESPONSIVE IMAGES
+========================================================= */
+
+img {
+    height: auto;
+}
+
+.study-card img {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .container {
+        width: min(90%, 1280px);
+    }
+
+    .study-hero {
+        padding-top: 100px;
+
+        padding-bottom: 105px;
+    }
+
+    .interest-areas,
+    .featured-studies,
+    .teacher-favorites,
+    .season-section,
+    .why-section,
+    .new-activities {
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+    }
+
+    .newsletter {
+        padding-top: 105px;
+
+        padding-bottom: 105px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .container {
+        width: min(94%, 1120px);
+    }
+
+    .nav-container {
+        gap: 16px;
+    }
+
+    nav ul {
+        gap: 2px;
+    }
+
+    nav a {
+        padding:
+            8px 9px;
+
+        font-size: 0.82rem;
+    }
+
+    .search-bar {
+        max-width: 250px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .container {
+        width: min(92%, 960px);
+    }
+
+    /*
+       Header changes to two rows:
+       logo/navigation on top
+       search beneath
+    */
+
+    .nav-container {
+        min-height: auto;
+
+        flex-wrap: wrap;
+
+        padding-top: 12px;
+
+        padding-bottom: 12px;
+    }
+
+    .search-bar {
+        order: 3;
+
+        flex-basis: 100%;
+
+        max-width: none;
+
+        margin-left: 0;
+    }
+
+    nav {
+        margin-left: auto;
+    }
+
+
+    /* Four-column sections become two-column */
+
+    .interest-grid,
+    .season-grid,
+    .why-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Three-column cards become two-column */
+
+    .study-grid,
+    .favorite-grid,
+    .activity-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* Newsletter */
+
+    .newsletter-box {
+        grid-template-columns:
+            1fr 0.8fr;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .container {
+        width: min(92%, 720px);
+    }
+
+
+    /* -----------------------------------------
+       Header
+    ----------------------------------------- */
+
+    .nav-container {
+        flex-wrap: nowrap;
+
+        min-height: 74px;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+
+        margin-left: auto;
+    }
+
+
+    /* -----------------------------------------
+       Hero
+    ----------------------------------------- */
+
+    .study-hero {
+        padding:
+            65px 0 72px;
+    }
+
+    .study-hero h1 {
+        font-size:
+            clamp(
+                2.4rem,
+                7vw,
+                3.5rem
+            );
+    }
+
+
+    /* -----------------------------------------
+       Newsletter
+    ----------------------------------------- */
+
+    .newsletter-box {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+    }
+
+    .newsletter-card {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    /* -----------------------------------------
+       Footer
+    ----------------------------------------- */
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: min(92%, 620px);
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+        position: relative;
+    }
+
+    .nav-container {
+        min-height: 70px;
+
+        padding:
+            10px 0;
+    }
+
+    .logo img {
+        width: 44px;
+
+        height: 44px;
+    }
+
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .logo span {
+        font-size: 0.7rem;
+    }
+
+    .mobile-menu {
+        width: 43px;
+
+        height: 43px;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .study-hero {
+        padding:
+            48px 0 58px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 17px;
+
+        font-size: 0.76rem;
+
+        gap: 6px;
+    }
+
+    .study-hero h1 {
+        margin-bottom: 15px;
+
+        font-size: 2.25rem;
+
+        line-height: 1.12;
+    }
+
+    .study-hero p {
+        margin-bottom: 25px;
+
+        font-size: 0.94rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       HERO SEARCH
+    ===================================================== */
+
+    .hero-search {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 6px;
+
+        padding: 7px;
+    }
+
+    .hero-search input {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    .hero-search button {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+
+    /* =====================================================
+       STATS
+    ===================================================== */
+
+    .site-stats {
+        padding:
+            18px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding:
+            19px 10px;
+
+        border-radius:
+            var(--radius-small);
+    }
+
+    .stat-card h2 {
+        font-size: 1.7rem;
+    }
+
+    .stat-card p {
+        font-size: 0.76rem;
+    }
+
+
+    /* =====================================================
+       ALL MAJOR SECTIONS
+    ===================================================== */
+
+    .interest-areas,
+    .featured-studies,
+    .teacher-favorites,
+    .season-section,
+    .why-section,
+    .new-activities {
+        padding:
+            62px 0;
+    }
+
+
+    /* =====================================================
+       SECTION TITLES
+    ===================================================== */
+
+    .section-title {
+        margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+        margin-bottom: 10px;
+
+        font-size: 1.85rem;
+
+        line-height: 1.2;
+    }
+
+    .section-title p {
+        font-size: 0.91rem;
+
+        line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       DEVELOPMENT AREAS
+    ===================================================== */
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .interest-card {
+        min-height: auto;
+
+        padding:
+            25px 22px;
+    }
+
+
+    /* =====================================================
+       STUDY CARDS
+    ===================================================== */
+
+    .study-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .study-card img {
+        height: 235px;
+    }
+
+    .study-content {
+        padding:
+            23px;
+    }
+
+    .study-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .study-content p {
+        font-size: 0.9rem;
+    }
+
+
+    /* =====================================================
+       DAILY ROUTINES
+    ===================================================== */
+
+    .favorite-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .favorite-card {
+        padding:
+            25px 22px;
+    }
+
+
+    /* =====================================================
+       MILESTONES
+    ===================================================== */
+
+    .season-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .season-card {
+        min-height: auto;
+
+        padding:
+            26px 22px;
+    }
+
+
+    /* =====================================================
+       FAMILY
+    ===================================================== */
+
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .why-card {
+        padding:
+            26px 22px;
+    }
+
+
+    /* =====================================================
+       PRINTABLES
+    ===================================================== */
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .activity-card {
+        padding:
+            26px 22px;
+    }
+
+
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
+
+    .newsletter {
+        padding:
+            62px 0;
+    }
+
+    .newsletter-box {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding:
+            28px 21px;
+
+        border-radius:
+            var(--radius);
+    }
+
+    .newsletter-content h2 {
+        font-size: 1.85rem;
+    }
+
+    .newsletter-content > p {
+        font-size: 0.9rem;
+    }
+
+    .newsletter-benefits {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .newsletter-card {
+        padding:
+            25px 20px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+        padding-top: 50px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 29px;
+
+        padding-bottom: 38px;
+    }
+
+    .footer-grid > div:first-child p {
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .container {
+        width: min(93%, 390px);
+    }
+
+
+    /* -----------------------------------------
+       Header
+    ----------------------------------------- */
+
+    .logo div {
+        display: none;
+    }
+
+    .logo img {
+        width: 46px;
+
+        height: 46px;
+    }
+
+
+    /* -----------------------------------------
+       Hero
+    ----------------------------------------- */
+
+    .study-hero {
+        padding:
+            44px 0 54px;
+    }
+
+    .study-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .study-hero p {
+        font-size: 0.9rem;
+    }
+
+
+    /* -----------------------------------------
+       Stats
+    ----------------------------------------- */
+
+    .stats-grid {
+        gap: 8px;
+    }
+
+    .stat-card h2 {
+        font-size: 1.55rem;
+    }
+
+    .stat-card p {
+        font-size: 0.72rem;
+    }
+
+
+    /* -----------------------------------------
+       Cards
+    ----------------------------------------- */
+
+    .interest-card,
+    .favorite-card,
+    .season-card,
+    .why-card,
+    .activity-card {
+        padding:
+            22px 19px;
+    }
+
+    .study-content {
+        padding:
+            21px;
+    }
+
+    .study-card img {
+        height: 210px;
+    }
+
+
+    /* -----------------------------------------
+       Icons
+    ----------------------------------------- */
+
+    .interest-icon,
+    .favorite-icon {
+        width: 56px;
+
+        height: 56px;
+
+        border-radius: 15px;
+    }
+
+    .why-icon {
+        width: 60px;
+
+        height: 60px;
+    }
+
+
+    /* -----------------------------------------
+       Newsletter
+    ----------------------------------------- */
+
+    .newsletter-box {
+        padding:
+            24px 17px;
+    }
+
+    .newsletter-card {
+        padding:
+            21px 17px;
+    }
+
+
+    /* -----------------------------------------
+       Footer
+    ----------------------------------------- */
+
+    .footer-grid {
+        gap: 26px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: min(94%, 340px);
+    }
+
+    .study-hero h1 {
+        font-size: 1.95rem;
+    }
+
+    .stat-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .stat-card p {
+        font-size: 0.68rem;
+    }
+
+    .study-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    .study-card:hover,
+    .favorite-card:hover,
+    .interest-card:hover,
+    .season-card:hover,
+    .why-card:hover,
+    .activity-card:hover,
+    .stat-card:hover {
+        transform: none;
+    }
+
+    .study-card:hover img {
+        transform: none;
+    }
+
+}
