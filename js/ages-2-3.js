@@ -1,94 +1,34 @@
 /* =========================================================
    LITTLE EXPLORERS LEARNING HUB
    HEAD START | AGES 2–3 YEARS
-   ages-2-3.js
 
-   Page interactions:
-   • Mobile navigation
-   • Search
-   • Active navigation
-   • Smooth scrolling
-   • Newsletter feedback
-   • Header behavior
-   • Reduced motion support
-   • Back to top
-   • Accessibility support
+   JavaScript for:
+   2-3.html
+
+   Stylesheet:
+   ../styles/ages-2-3.css
+
+   Script:
+   ../js/ages-2-3.js
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     "use strict";
 
 
     /* =====================================================
-       ELEMENT REFERENCES
+       GLOBAL ELEMENTS
     ===================================================== */
 
-    const header =
-        document.querySelector("header");
-
-    const nav =
-        document.querySelector("nav");
-
-    const mobileMenu =
-        document.querySelector(".mobile-menu");
-
-    const searchForm =
-        document.querySelector(".search-bar");
-
-    const searchInput =
-        document.querySelector(".search-bar input");
-
-    const searchButton =
-        document.querySelector(".search-bar button");
-
-    const newsletterForm =
-        document.querySelector(".newsletter-form");
-
-    const newsletterInput =
-        newsletterForm
-            ? newsletterForm.querySelector("input")
-            : null;
-
-    const navLinks =
-        document.querySelectorAll("nav a");
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const searchForm = document.querySelector(".search-bar");
+    const searchInput = document.querySelector(".search-bar input");
 
     const prefersReducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        );
-
-
-    /* =====================================================
-       REDUCED MOTION
-    ===================================================== */
-
-    function applyMotionPreference() {
-
-        if (prefersReducedMotion.matches) {
-
-            document.documentElement
-                .classList.add("reduced-motion");
-
-        } else {
-
-            document.documentElement
-                .classList.remove("reduced-motion");
-
-        }
-
-    }
-
-    applyMotionPreference();
-
-    if (prefersReducedMotion.addEventListener) {
-
-        prefersReducedMotion.addEventListener(
-            "change",
-            applyMotionPreference
-        );
-
-    }
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 
     /* =====================================================
@@ -97,45 +37,126 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mobileMenu && nav) {
 
-        mobileMenu.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        mobileMenu.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-label", "Open navigation menu");
 
-        mobileMenu.setAttribute(
-            "aria-controls",
-            "main-navigation"
-        );
+        mobileMenu.addEventListener("click", function () {
 
-        if (!nav.id) {
-            nav.id = "main-navigation";
-        }
-
-
-        function openMobileMenu() {
-
-            nav.classList.add(
-                "mobile-nav-open"
-            );
+            const menuOpen =
+                nav.classList.toggle("mobile-nav-open");
 
             mobileMenu.setAttribute(
                 "aria-expanded",
-                "true"
+                menuOpen ? "true" : "false"
             );
 
             mobileMenu.setAttribute(
                 "aria-label",
-                "Close navigation menu"
+                menuOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
             );
 
-            document.body.classList.add(
-                "mobile-menu-active"
+            document.body.classList.toggle(
+                "mobile-menu-active",
+                menuOpen
             );
 
-        }
+        });
 
 
-        function closeMobileMenu() {
+        /* Close menu after selecting a navigation item */
+
+        const navigationLinks =
+            nav.querySelectorAll("a");
+
+        navigationLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                if (window.innerWidth <= 760) {
+
+                    nav.classList.remove(
+                        "mobile-nav-open"
+                    );
+
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    mobileMenu.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                    document.body.classList.remove(
+                        "mobile-menu-active"
+                    );
+
+                }
+
+            });
+
+        });
+
+
+        /* Close menu with Escape */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (
+                event.key === "Escape" &&
+                nav.classList.contains("mobile-nav-open")
+            ) {
+
+                nav.classList.remove(
+                    "mobile-nav-open"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                document.body.classList.remove(
+                    "mobile-menu-active"
+                );
+
+                mobileMenu.focus();
+
+            }
+
+        });
+
+
+        /* Close menu when clicking outside */
+
+        document.addEventListener("click", function (event) {
+
+            if (window.innerWidth > 760) {
+                return;
+            }
+
+            if (
+                !nav.classList.contains(
+                    "mobile-nav-open"
+                )
+            ) {
+                return;
+            }
+
+            if (
+                nav.contains(event.target) ||
+                mobileMenu.contains(event.target)
+            ) {
+                return;
+            }
 
             nav.classList.remove(
                 "mobile-nav-open"
@@ -155,194 +176,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 "mobile-menu-active"
             );
 
-        }
-
-
-        mobileMenu.addEventListener(
-            "click",
-            () => {
-
-                const isOpen =
-                    nav.classList.contains(
-                        "mobile-nav-open"
-                    );
-
-                if (isOpen) {
-
-                    closeMobileMenu();
-
-                } else {
-
-                    openMobileMenu();
-
-                }
-
-            }
-        );
-
-
-        /* ================================================
-           CLOSE AFTER NAVIGATION
-        ================================================ */
-
-        navLinks.forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    if (
-                        window.innerWidth <= 760
-                    ) {
-
-                        closeMobileMenu();
-
-                    }
-
-                }
-            );
-
         });
 
 
-        /* ================================================
-           CLOSE WITH ESCAPE
-        ================================================ */
+        /* Reset menu when returning to desktop */
 
-        document.addEventListener(
-            "keydown",
-            event => {
+        window.addEventListener("resize", function () {
 
-                if (
-                    event.key === "Escape" &&
-                    nav.classList.contains(
-                        "mobile-nav-open"
-                    )
-                ) {
+            if (window.innerWidth > 760) {
 
-                    closeMobileMenu();
-
-                    mobileMenu.focus();
-
-                }
-
-            }
-        );
-
-
-        /* ================================================
-           CLOSE WHEN CLICKING OUTSIDE
-        ================================================ */
-
-        document.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    window.innerWidth > 760
-                ) {
-                    return;
-                }
-
-                if (
-                    !nav.classList.contains(
-                        "mobile-nav-open"
-                    )
-                ) {
-                    return;
-                }
-
-                const clickedInsideNav =
-                    nav.contains(event.target);
-
-                const clickedMenu =
-                    mobileMenu.contains(
-                        event.target
-                    );
-
-                if (
-                    !clickedInsideNav &&
-                    !clickedMenu
-                ) {
-
-                    closeMobileMenu();
-
-                }
-
-            }
-        );
-
-
-        /* ================================================
-           RESET MOBILE NAV ON RESIZE
-        ================================================ */
-
-        window.addEventListener(
-            "resize",
-            () => {
-
-                if (
-                    window.innerWidth > 760
-                ) {
-
-                    closeMobileMenu();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       ACTIVE NAVIGATION
-    ===================================================== */
-
-    function updateActiveNavigation() {
-
-        const currentPage =
-            window.location.pathname
-                .split("/")
-                .pop()
-                .toLowerCase();
-
-        navLinks.forEach(link => {
-
-            const href =
-                link.getAttribute("href");
-
-            if (!href) {
-                return;
-            }
-
-            const linkPage =
-                href
-                    .split("#")[0]
-                    .split("/")
-                    .pop()
-                    .toLowerCase();
-
-            link.classList.remove(
-                "active"
-            );
-
-            link.removeAttribute(
-                "aria-current"
-            );
-
-            if (
-                linkPage &&
-                linkPage === currentPage
-            ) {
-
-                link.classList.add(
-                    "active"
+                nav.classList.remove(
+                    "mobile-nav-open"
                 );
 
-                link.setAttribute(
-                    "aria-current",
-                    "page"
+                mobileMenu.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                document.body.classList.remove(
+                    "mobile-menu-active"
                 );
 
             }
@@ -351,99 +209,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    updateActiveNavigation();
-
 
     /* =====================================================
-       SECTION NAVIGATION
-    ===================================================== */
-
-    navLinks.forEach(link => {
-
-        link.addEventListener(
-            "click",
-            event => {
-
-                const href =
-                    link.getAttribute("href");
-
-                if (!href) {
-                    return;
-                }
-
-                const hashIndex =
-                    href.indexOf("#");
-
-                if (
-                    hashIndex === -1
-                ) {
-                    return;
-                }
-
-                const hash =
-                    href.substring(
-                        hashIndex
-                    );
-
-                const target =
-                    document.querySelector(
-                        hash
-                    );
-
-                if (!target) {
-                    return;
-                }
-
-                event.preventDefault();
-
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
-
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top
-                    +
-                    window.scrollY
-                    -
-                    headerHeight
-                    -
-                    10;
-
-                const behavior =
-                    prefersReducedMotion.matches
-                        ? "auto"
-                        : "smooth";
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior
-                });
-
-                history.replaceState(
-                    null,
-                    "",
-                    hash
-                );
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       HEADER SCROLL STATE
+       HEADER SCROLL EFFECT
     ===================================================== */
 
     if (header) {
 
         function updateHeader() {
 
-            if (
-                window.scrollY > 12
-            ) {
+            if (window.scrollY > 20) {
 
                 header.classList.add(
                     "header-scrolled"
@@ -464,9 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener(
             "scroll",
             updateHeader,
-            {
-                passive: true
-            }
+            { passive: true }
         );
 
     }
@@ -476,22 +249,18 @@ document.addEventListener("DOMContentLoaded", () => {
        SEARCH
     ===================================================== */
 
-    if (
-        searchForm &&
-        searchInput
-    ) {
+    if (searchForm && searchInput) {
 
         searchForm.addEventListener(
             "submit",
-            event => {
+            function (event) {
 
                 event.preventDefault();
 
-                const query =
-                    searchInput.value
-                        .trim();
+                const searchTerm =
+                    searchInput.value.trim();
 
-                if (!query) {
+                if (!searchTerm) {
 
                     searchInput.focus();
 
@@ -500,18 +269,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 /*
-                 * If your site later has a dedicated
-                 * search page, replace this destination
-                 * with that page.
+                 * Search page is one level above this
+                 * ages folder.
+                 *
+                 * Example:
+                 *
+                 * 2-3.html
+                 * ../search.html
                  */
 
-                const searchURL =
-                    `search.html?q=${
-                        encodeURIComponent(query)
-                    }`;
-
                 window.location.href =
-                    searchURL;
+                    "../search.html?q=" +
+                    encodeURIComponent(searchTerm);
 
             }
         );
@@ -520,168 +289,226 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       SEARCH KEYBOARD SUPPORT
+       ACTIVE NAVIGATION
     ===================================================== */
 
-    if (searchInput) {
+    if (nav) {
 
-        searchInput.addEventListener(
-            "keydown",
-            event => {
+        const currentPage =
+            window.location.pathname
+                .split("/")
+                .pop()
+                .toLowerCase();
+
+        const navigationLinks =
+            nav.querySelectorAll("a");
+
+        navigationLinks.forEach(function (link) {
+
+            const href =
+                link.getAttribute("href");
+
+            if (!href) {
+                return;
+            }
+
+            const linkPage =
+                href
+                    .split("/")
+                    .pop()
+                    .split("#")[0]
+                    .toLowerCase();
+
+            /*
+             * The Age Groups link points to index.html,
+             * while this page is 2-3.html.
+             *
+             * Therefore we intentionally keep
+             * "Age Groups" active.
+             */
+
+            if (
+                linkPage === "index.html" &&
+                currentPage === "2-3.html"
+            ) {
+
+                link.classList.add("active");
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+                return;
+
+            }
+
+            if (
+                linkPage === currentPage
+            ) {
+
+                link.classList.add("active");
+
+                link.setAttribute(
+                    "aria-current",
+                    "page"
+                );
+
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SMOOTH INTERNAL NAVIGATION
+    ===================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+    internalLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetID =
+                    link.getAttribute("href");
 
                 if (
-                    event.key === "Escape"
+                    !targetID ||
+                    targetID === "#"
                 ) {
-
-                    searchInput.value = "";
-
-                    searchInput.blur();
-
+                    return;
                 }
 
-            }
-        );
+                const target =
+                    document.querySelector(
+                        targetID
+                    );
 
-    }
-
-
-    /* =====================================================
-       NEWSLETTER FORM
-    ===================================================== */
-
-    if (newsletterForm) {
-
-        newsletterForm.addEventListener(
-            "submit",
-            event => {
+                if (!target) {
+                    return;
+                }
 
                 event.preventDefault();
 
-                const email =
-                    newsletterInput
-                        ? newsletterInput.value.trim()
-                        : "";
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
 
-                if (!email) {
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight -
+                    15;
 
-                    if (newsletterInput) {
+                window.scrollTo({
 
-                        newsletterInput.focus();
+                    top: targetPosition,
 
-                    }
+                    behavior:
+                        prefersReducedMotion
+                            ? "auto"
+                            : "smooth"
 
-                    return;
+                });
 
-                }
-
-                if (
-                    !isValidEmail(email)
-                ) {
-
-                    showNewsletterMessage(
-                        "Please enter a valid email address."
-                    );
-
-                    if (newsletterInput) {
-
-                        newsletterInput.focus();
-
-                    }
-
-                    return;
-
-                }
-
-                const submitButton =
-                    newsletterForm.querySelector(
-                        "button"
-                    );
-
-                if (submitButton) {
-
-                    submitButton.disabled =
-                        true;
-
-                    submitButton.textContent =
-                        "Thank You!";
-
-                }
-
-                showNewsletterMessage(
-                    "You're signed up for Little Explorers resources!"
+                history.replaceState(
+                    null,
+                    "",
+                    targetID
                 );
-
-                /*
-                 * This is front-end feedback only.
-                 *
-                 * Connect this form to your email
-                 * service when the backend is ready.
-                 */
 
             }
         );
 
-    }
+    });
 
 
     /* =====================================================
-       EMAIL VALIDATION
+       SCROLL REVEAL
     ===================================================== */
 
-    function isValidEmail(email) {
+    const revealElements =
+        document.querySelectorAll(
+            [
+                ".development-card",
+                ".material-card",
+                ".week-card",
+                ".center-card",
+                ".book-card",
+                ".assessment-card",
+                ".why-card",
+                ".dashboard-card",
+                ".download-card"
+            ].join(",")
+        );
 
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-            .test(email);
+
+    if (
+        revealElements.length &&
+        !prefersReducedMotion &&
+        "IntersectionObserver" in window
+    ) {
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add(
+                "js-reveal"
+            );
+
+        });
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (
+                            !entry.isIntersecting
+                        ) {
+                            return;
+                        }
+
+                        entry.target.classList.add(
+                            "js-visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    });
+
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px 0px"
+                }
+            );
+
+
+        revealElements.forEach(function (element) {
+
+            revealObserver.observe(
+                element
+            );
+
+        });
 
     }
 
 
     /* =====================================================
-       NEWSLETTER MESSAGE
-    ===================================================== */
-
-    function showNewsletterMessage(message) {
-
-        let messageElement =
-            newsletterForm
-                ? newsletterForm.querySelector(
-                    ".form-message"
-                )
-                : null;
-
-        if (!newsletterForm) {
-            return;
-        }
-
-        if (!messageElement) {
-
-            messageElement =
-                document.createElement(
-                    "p"
-                );
-
-            messageElement.className =
-                "form-message";
-
-            messageElement.setAttribute(
-                "role",
-                "status"
-            );
-
-            newsletterForm.appendChild(
-                messageElement
-            );
-
-        }
-
-        messageElement.textContent =
-            message;
-
-    }
-
-
-    /* =====================================================
-       BACK TO TOP BUTTON
+       BACK TO TOP
     ===================================================== */
 
     let backToTop =
@@ -689,12 +516,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ".back-to-top"
         );
 
+
     if (!backToTop) {
 
         backToTop =
-            document.createElement(
-                "button"
-            );
+            document.createElement("button");
 
         backToTop.className =
             "back-to-top";
@@ -707,8 +533,12 @@ document.addEventListener("DOMContentLoaded", () => {
             "Back to top"
         );
 
-        backToTop.innerHTML =
-            "↑";
+        backToTop.setAttribute(
+            "title",
+            "Back to top"
+        );
+
+        backToTop.innerHTML = "↑";
 
         document.body.appendChild(
             backToTop
@@ -717,15 +547,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================================
-       BACK TO TOP VISIBILITY
-    ===================================================== */
-
     function updateBackToTop() {
 
-        if (
-            window.scrollY > 500
-        ) {
+        if (window.scrollY > 500) {
 
             backToTop.classList.add(
                 "visible"
@@ -741,31 +565,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     updateBackToTop();
+
 
     window.addEventListener(
         "scroll",
         updateBackToTop,
-        {
-            passive: true
-        }
+        { passive: true }
     );
 
 
-    /* =====================================================
-       BACK TO TOP ACTION
-    ===================================================== */
-
     backToTop.addEventListener(
         "click",
-        () => {
+        function () {
 
             window.scrollTo({
+
                 top: 0,
+
                 behavior:
-                    prefersReducedMotion.matches
+                    prefersReducedMotion
                         ? "auto"
                         : "smooth"
+
             });
 
         }
@@ -773,76 +596,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       INTERSECTION OBSERVER
-       REVEAL SECTIONS AS THEY ENTER VIEW
+       NEWSLETTER FORM
     ===================================================== */
 
-    if (
-        "IntersectionObserver"
-        in window &&
-        !prefersReducedMotion.matches
-    ) {
+    /*
+     * IMPORTANT:
+     *
+     * The newsletter form already submits to Google Forms.
+     *
+     * DO NOT preventDefault() here.
+     *
+     * The browser must be allowed to submit the form
+     * to Google Forms using the hidden iframe.
+     *
+     * We only provide a little visual feedback.
+     */
 
-        const revealElements =
-            document.querySelectorAll(
-                ".development-card, " +
-                ".material-card, " +
-                ".week-card, " +
-                ".center-card, " +
-                ".book-card, " +
-                ".assessment-card, " +
-                ".why-card, " +
-                ".dashboard-card, " +
-                ".download-card"
-            );
-
-        revealElements.forEach(
-            element => {
-
-                element.classList.add(
-                    "js-reveal"
-                );
-
-            }
+    const newsletterForm =
+        document.querySelector(
+            ".newsletter-form"
         );
 
 
-        const revealObserver =
-            new IntersectionObserver(
-                entries => {
+    if (newsletterForm) {
 
-                    entries.forEach(
-                        entry => {
+        newsletterForm.addEventListener(
+            "submit",
+            function () {
 
-                            if (
-                                !entry.isIntersecting
-                            ) {
-                                return;
-                            }
-
-                            entry.target.classList.add(
-                                "js-visible"
-                            );
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
+                const submitButton =
+                    newsletterForm.querySelector(
+                        "button[type='submit']"
                     );
 
-                },
-                {
-                    threshold: 0.12
+                if (submitButton) {
+
+                    submitButton.disabled =
+                        true;
+
+                    submitButton.textContent =
+                        "Joining...";
+
                 }
-            );
 
+                /*
+                 * Allow the native Google Forms
+                 * submission to continue.
+                 */
 
-        revealElements.forEach(
-            element => {
+                setTimeout(
+                    function () {
 
-                revealObserver.observe(
-                    element
+                        if (submitButton) {
+
+                            submitButton.textContent =
+                                "You're In!";
+
+                        }
+
+                    },
+                    1500
                 );
 
             }
@@ -852,82 +665,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       INITIAL PAGE HASH
+       HASH / ANCHOR POSITIONING
     ===================================================== */
 
-    if (
-        window.location.hash
-    ) {
+    function positionForHash() {
+
+        if (!window.location.hash) {
+            return;
+        }
 
         const target =
             document.querySelector(
                 window.location.hash
             );
 
-        if (target) {
-
-            setTimeout(
-                () => {
-
-                    const headerHeight =
-                        header
-                            ? header.offsetHeight
-                            : 0;
-
-                    window.scrollTo({
-                        top:
-                            target.getBoundingClientRect()
-                                .top
-                            +
-                            window.scrollY
-                            -
-                            headerHeight
-                            -
-                            10,
-                        behavior:
-                            prefersReducedMotion.matches
-                                ? "auto"
-                                : "smooth"
-                    });
-
-                },
-                100
-            );
-
+        if (!target) {
+            return;
         }
+
+        const headerHeight =
+            header
+                ? header.offsetHeight
+                : 0;
+
+        setTimeout(
+            function () {
+
+                window.scrollTo({
+
+                    top:
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        headerHeight -
+                        15,
+
+                    behavior:
+                        prefersReducedMotion
+                            ? "auto"
+                            : "smooth"
+
+                });
+
+            },
+            100
+        );
 
     }
 
 
-    /* =====================================================
-       YEAR
-       Automatically updates elements using .current-year
-    ===================================================== */
+    positionForHash();
 
-    const currentYear =
-        new Date().getFullYear();
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
 
     document
         .querySelectorAll(
             ".current-year"
         )
-        .forEach(
-            element => {
+        .forEach(function (element) {
 
-                element.textContent =
-                    currentYear;
+            element.textContent =
+                new Date().getFullYear();
 
-            }
-        );
+        });
 
 
     /* =====================================================
-       FINAL INITIALIZATION
+       PAGE READY
     ===================================================== */
 
-    document.documentElement
-        .classList.add(
-            "js-ready"
-        );
+    document.documentElement.classList.add(
+        "js-ready"
+    );
+
+
+    console.log(
+        "Little Explorers Learning Hub | Ages 2–3 JavaScript loaded."
+    );
 
 });
