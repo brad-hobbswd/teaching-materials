@@ -1,0 +1,1831 @@
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   PRESCHOOL | AGES 3–4 YEARS
+
+   ages-3-4.css
+
+   Preschool Theme
+   Same structure
+   Different developmental color identity
+========================================================= */
+
+
+/* =========================================================
+   PRESCHOOL COLOR SYSTEM
+========================================================= */
+
+:root {
+
+    /* ==========================================
+       PRIMARY PRESCHOOL COLORS
+    ========================================== */
+
+    --preschool-sage: #9FC6A5;
+    --preschool-soft-sage: #EEF7EF;
+    --preschool-deep-sage: #4F8058;
+
+    --preschool-sky: #8DBDDD;
+    --preschool-soft-sky: #EDF6FB;
+    --preschool-deep-sky: #397494;
+
+    --preschool-gold: #E9C46A;
+    --preschool-soft-gold: #FFF8E5;
+    --preschool-deep-gold: #A87918;
+
+    --preschool-terracotta: #D99178;
+    --preschool-soft-terracotta: #FFF0EB;
+    --preschool-deep-terracotta: #A85D49;
+
+    --preschool-lavender: #B7A7D9;
+    --preschool-soft-lavender: #F4F0FB;
+    --preschool-deep-lavender: #70609B;
+
+    --preschool-teal: #72B8B1;
+    --preschool-soft-teal: #EAF7F5;
+    --preschool-deep-teal: #397E78;
+
+    --preschool-coral: #E8A28F;
+    --preschool-soft-coral: #FFF1ED;
+    --preschool-deep-coral: #A85F50;
+
+
+    /* ==========================================
+       PRESCHOOL NEUTRALS
+    ========================================== */
+
+    --preschool-cream: #FFFDF8;
+
+    --preschool-warm-white: #FFFEFB;
+
+    --preschool-white: #FFFFFF;
+
+
+    /* ==========================================
+       TEXT
+    ========================================== */
+
+    --preschool-navy: #304C5A;
+
+    --preschool-soft-navy: #526B78;
+
+    --preschool-text: #465C68;
+
+    --preschool-text-light: #75858E;
+
+
+    /* ==========================================
+       BORDERS
+    ========================================== */
+
+    --preschool-border: #E2E8E5;
+
+    --preschool-border-light: #EDF1EF;
+
+
+    /* ==========================================
+       SHADOWS
+    ========================================== */
+
+    --preschool-shadow-soft:
+        0 8px 24px
+        rgba(48, 76, 90, 0.07);
+
+    --preschool-shadow-card:
+        0 10px 28px
+        rgba(48, 76, 90, 0.10);
+
+    --preschool-shadow-hover:
+        0 16px 34px
+        rgba(48, 76, 90, 0.14);
+
+
+    /* ==========================================
+       TRANSITION
+    ========================================== */
+
+    --preschool-transition:
+        0.25s ease;
+
+}
+
+
+/* =========================================================
+   GLOBAL PRESCHOOL FOUNDATION
+========================================================= */
+
+body {
+
+    background:
+        var(--preschool-warm-white);
+
+    color:
+        var(--preschool-text);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+
+    color:
+        var(--preschool-navy);
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    background:
+        var(--preschool-gold);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    background:
+        rgba(255, 254, 251, 0.97);
+
+    border-bottom-color:
+        var(--preschool-border-light);
+
+    box-shadow:
+        0 3px 15px
+        rgba(48, 76, 90, 0.06);
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo h1 {
+
+    color:
+        var(--preschool-navy);
+
+}
+
+.logo span {
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-bar input {
+
+    border-color:
+        var(--preschool-border);
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-text);
+
+}
+
+.search-bar input:focus {
+
+    border-color:
+        var(--preschool-teal);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(114, 184, 177, 0.20);
+
+}
+
+.search-bar button {
+
+    background:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+.search-bar button:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+nav a {
+
+    color:
+        var(--preschool-soft-navy);
+
+}
+
+nav a:hover {
+
+    background:
+        var(--preschool-soft-teal);
+
+    color:
+        var(--preschool-deep-teal);
+
+}
+
+nav a.active {
+
+    background:
+        var(--preschool-gold);
+
+    color:
+        var(--preschool-navy);
+
+    box-shadow:
+        0 3px 8px
+        rgba(168, 121, 24, 0.12);
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+
+    background:
+        var(--preschool-soft-teal);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+.mobile-menu:hover {
+
+    background:
+        var(--preschool-teal);
+
+}
+
+
+/* =========================================================
+   HERO / STUDY BANNER
+========================================================= */
+
+.study-banner {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--preschool-soft-gold) 0%,
+            var(--preschool-soft-sage) 52%,
+            var(--preschool-soft-sky) 100%
+        );
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb a {
+
+    color:
+        var(--preschool-deep-teal);
+
+}
+
+.breadcrumb a:hover {
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+
+/* =========================================================
+   STUDY LABEL
+========================================================= */
+
+.study-label {
+
+    background:
+        var(--preschool-gold);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.btn-primary {
+
+    background:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-navy);
+
+    box-shadow:
+        0 6px 14px
+        rgba(57, 126, 120, 0.14);
+
+}
+
+.btn-primary:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+.btn-secondary {
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-navy);
+
+    border-color:
+        var(--preschool-border);
+
+}
+
+.btn-secondary:hover {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+    border-color:
+        var(--preschool-terracotta);
+
+    color:
+        var(--preschool-deep-terracotta);
+
+}
+
+
+/* =========================================================
+   DEVELOPMENT SNAPSHOT
+========================================================= */
+
+.study-dashboard {
+
+    background:
+        var(--preschool-navy);
+
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.dashboard-card {
+
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    border-color:
+        rgba(255, 255, 255, 0.11);
+
+}
+
+.dashboard-card:hover {
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+}
+
+
+/* =========================================================
+   DASHBOARD ACCENTS
+========================================================= */
+
+.dashboard-card:nth-child(1)::before {
+    background:
+        var(--preschool-sky);
+}
+
+.dashboard-card:nth-child(2)::before {
+    background:
+        var(--preschool-gold);
+}
+
+.dashboard-card:nth-child(3)::before {
+    background:
+        var(--preschool-terracotta);
+}
+
+.dashboard-card:nth-child(4)::before {
+    background:
+        var(--preschool-sage);
+}
+
+.dashboard-card:nth-child(5)::before {
+    background:
+        var(--preschool-lavender);
+}
+
+.dashboard-card:nth-child(6)::before {
+    background:
+        var(--preschool-teal);
+}
+
+.dashboard-card:nth-child(7)::before {
+    background:
+        var(--preschool-gold);
+}
+
+.dashboard-card:nth-child(8)::before {
+    background:
+        var(--preschool-coral);
+}
+
+
+/* =========================================================
+   FEATURED STUDY
+========================================================= */
+
+.featured-study {
+
+    background:
+        var(--preschool-warm-white);
+
+}
+
+
+/* =========================================================
+   FEATURED CARD
+========================================================= */
+
+.featured-study-card {
+
+    border-color:
+        var(--preschool-border-light);
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-card);
+
+}
+
+
+/* =========================================================
+   FEATURED LABEL
+========================================================= */
+
+.featured-label {
+
+    background:
+        var(--preschool-soft-gold);
+
+    color:
+        var(--preschool-deep-gold);
+
+}
+
+
+/* =========================================================
+   FEATURED HIGHLIGHTS
+========================================================= */
+
+.featured-highlights div {
+
+    color:
+        var(--preschool-text);
+
+}
+
+.featured-highlights div:nth-child(1)::before {
+
+    background:
+        var(--preschool-sky);
+
+}
+
+.featured-highlights div:nth-child(2)::before {
+
+    background:
+        var(--preschool-gold);
+
+}
+
+.featured-highlights div:nth-child(3)::before {
+
+    background:
+        var(--preschool-sage);
+
+}
+
+.featured-highlights div:nth-child(4)::before {
+
+    background:
+        var(--preschool-terracotta);
+
+}
+
+
+/* =========================================================
+   FEATURED IMAGE
+========================================================= */
+
+.featured-image {
+
+    background:
+        var(--preschool-soft-sage);
+
+}
+
+.featured-image::after {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(48, 76, 90, 0.03),
+            rgba(48, 76, 90, 0.16)
+        );
+
+}
+
+
+/* =========================================================
+   ELOF MATERIALS
+========================================================= */
+
+.materials-section {
+
+    background:
+        var(--preschool-soft-sky);
+
+}
+
+
+/* =========================================================
+   MATERIAL CARDS
+========================================================= */
+
+.material-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        var(--preschool-border-light);
+
+    color:
+        var(--preschool-navy);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   MATERIAL CARD COLORS
+========================================================= */
+
+.material-card:nth-child(1) {
+
+    border-top-color:
+        var(--preschool-sky);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-sky),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(2) {
+
+    border-top-color:
+        var(--preschool-lavender);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-lavender),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(3) {
+
+    border-top-color:
+        var(--preschool-gold);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-gold),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(4) {
+
+    border-top-color:
+        var(--preschool-sage);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-sage),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(5) {
+
+    border-top-color:
+        var(--preschool-terracotta);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-terracotta),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(6) {
+
+    border-top-color:
+        var(--preschool-teal);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-teal),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(7) {
+
+    border-top-color:
+        var(--preschool-sage);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-sage),
+            var(--preschool-white)
+        );
+
+}
+
+.material-card:nth-child(8) {
+
+    border-top-color:
+        var(--preschool-lavender);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--preschool-soft-lavender),
+            var(--preschool-white)
+        );
+
+}
+
+
+/* =========================================================
+   DAILY ROUTINE
+========================================================= */
+
+.study-weeks {
+
+    background:
+        var(--preschool-cream);
+
+}
+
+
+/* =========================================================
+   ROUTINE CARDS
+========================================================= */
+
+.week-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        var(--preschool-border-light);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   ROUTINE ACCENTS
+========================================================= */
+
+.week-card:nth-child(1) {
+
+    border-top-color:
+        var(--preschool-gold);
+
+}
+
+.week-card:nth-child(2) {
+
+    border-top-color:
+        var(--preschool-sky);
+
+}
+
+.week-card:nth-child(3) {
+
+    border-top-color:
+        var(--preschool-sage);
+
+}
+
+
+/* =========================================================
+   ROUTINE LABELS
+========================================================= */
+
+.week-card:nth-child(1) .week-number {
+
+    background:
+        var(--preschool-soft-gold);
+
+    color:
+        var(--preschool-deep-gold);
+
+}
+
+.week-card:nth-child(2) .week-number {
+
+    background:
+        var(--preschool-soft-sky);
+
+    color:
+        var(--preschool-deep-sky);
+
+}
+
+.week-card:nth-child(3) .week-number {
+
+    background:
+        var(--preschool-soft-sage);
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+
+/* =========================================================
+   ROUTINE LIST COLORS
+========================================================= */
+
+.week-card:nth-child(1) li::before {
+
+    background:
+        var(--preschool-gold);
+
+}
+
+.week-card:nth-child(2) li::before {
+
+    background:
+        var(--preschool-sky);
+
+}
+
+.week-card:nth-child(3) li::before {
+
+    background:
+        var(--preschool-sage);
+
+}
+
+
+/* =========================================================
+   LEARNING CENTERS
+========================================================= */
+
+#centers {
+
+    background:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   CENTER CARDS
+========================================================= */
+
+.center-card {
+
+    background:
+        var(--preschool-cream);
+
+    border-color:
+        var(--preschool-border-light);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   CENTER COLORS
+========================================================= */
+
+.center-card:nth-child(1) {
+    border-top-color:
+        var(--preschool-terracotta);
+}
+
+.center-card:nth-child(2) {
+    border-top-color:
+        var(--preschool-coral);
+}
+
+.center-card:nth-child(3) {
+    border-top-color:
+        var(--preschool-lavender);
+}
+
+.center-card:nth-child(4) {
+    border-top-color:
+        var(--preschool-sage);
+}
+
+.center-card:nth-child(5) {
+    border-top-color:
+        var(--preschool-terracotta);
+}
+
+.center-card:nth-child(6) {
+    border-top-color:
+        var(--preschool-teal);
+}
+
+.center-card:nth-child(7) {
+    border-top-color:
+        var(--preschool-sky);
+}
+
+.center-card:nth-child(8) {
+    border-top-color:
+        var(--preschool-gold);
+}
+
+
+/* =========================================================
+   CURRICULUM STUDIES
+========================================================= */
+
+.books-section {
+
+    background:
+        var(--preschool-soft-sage);
+
+}
+
+
+/* =========================================================
+   BOOK CARDS
+========================================================= */
+
+.book-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        rgba(79, 128, 88, 0.12);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   STUDY CARD COLORS
+========================================================= */
+
+.book-card:nth-child(1) {
+
+    border-top-color:
+        var(--preschool-sage);
+
+}
+
+.book-card:nth-child(2) {
+
+    border-top-color:
+        var(--preschool-teal);
+
+}
+
+.book-card:nth-child(3) {
+
+    border-top-color:
+        var(--preschool-terracotta);
+
+}
+
+.book-card:nth-child(4) {
+
+    border-top-color:
+        var(--preschool-gold);
+
+}
+
+
+/* =========================================================
+   STUDY BUTTONS
+========================================================= */
+
+.book-card:nth-child(1) .study-button {
+
+    background:
+        var(--preschool-soft-sage);
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+.book-card:nth-child(1) .study-button:hover {
+
+    background:
+        var(--preschool-deep-sage);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+.book-card:nth-child(2) .study-button {
+
+    background:
+        var(--preschool-soft-teal);
+
+    color:
+        var(--preschool-deep-teal);
+
+}
+
+.book-card:nth-child(2) .study-button:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+.book-card:nth-child(3) .study-button {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+    color:
+        var(--preschool-deep-terracotta);
+
+}
+
+.book-card:nth-child(3) .study-button:hover {
+
+    background:
+        var(--preschool-deep-terracotta);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+.book-card:nth-child(4) .study-button {
+
+    background:
+        var(--preschool-soft-gold);
+
+    color:
+        var(--preschool-deep-gold);
+
+}
+
+.book-card:nth-child(4) .study-button:hover {
+
+    background:
+        var(--preschool-deep-gold);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   ASSESSMENT
+========================================================= */
+
+#assessment {
+
+    background:
+        var(--preschool-warm-white);
+
+}
+
+
+/* =========================================================
+   ASSESSMENT CARDS
+========================================================= */
+
+.assessment-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        var(--preschool-border-light);
+
+    border-left-color:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-text);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   MILESTONE COLORS
+========================================================= */
+
+.assessment-card:nth-child(1) {
+
+    border-left-color:
+        var(--preschool-sky);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-sky),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(2) {
+
+    border-left-color:
+        var(--preschool-lavender);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-lavender),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(3) {
+
+    border-left-color:
+        var(--preschool-gold);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-gold),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(4) {
+
+    border-left-color:
+        var(--preschool-terracotta);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-terracotta),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(5) {
+
+    border-left-color:
+        var(--preschool-coral);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-coral),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(6) {
+
+    border-left-color:
+        var(--preschool-teal);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-teal),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(7) {
+
+    border-left-color:
+        var(--preschool-sage);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-sage),
+            var(--preschool-white) 25%
+        );
+
+}
+
+.assessment-card:nth-child(8) {
+
+    border-left-color:
+        var(--preschool-lavender);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--preschool-soft-lavender),
+            var(--preschool-white) 25%
+        );
+
+}
+
+
+/* =========================================================
+   TEACHING STRATEGIES
+========================================================= */
+
+.why-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--preschool-soft-sage) 0%,
+            var(--preschool-soft-gold) 50%,
+            var(--preschool-soft-sky) 100%
+        );
+
+}
+
+
+/* =========================================================
+   STRATEGY CARDS
+========================================================= */
+
+.why-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        rgba(48, 76, 90, 0.08);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   STRATEGY ACCENTS
+========================================================= */
+
+.why-card:nth-child(1) {
+
+    border-top-color:
+        var(--preschool-gold);
+
+}
+
+.why-card:nth-child(2) {
+
+    border-top-color:
+        var(--preschool-sage);
+
+}
+
+.why-card:nth-child(3) {
+
+    border-top-color:
+        var(--preschool-sky);
+
+}
+
+.why-card:nth-child(4) {
+
+    border-top-color:
+        var(--preschool-terracotta);
+
+}
+
+
+/* =========================================================
+   STRATEGY ICONS
+========================================================= */
+
+.why-card:nth-child(1) .why-icon {
+
+    background:
+        var(--preschool-soft-gold);
+
+}
+
+.why-card:nth-child(2) .why-icon {
+
+    background:
+        var(--preschool-soft-sage);
+
+}
+
+.why-card:nth-child(3) .why-icon {
+
+    background:
+        var(--preschool-soft-sky);
+
+}
+
+.why-card:nth-child(4) .why-icon {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+}
+
+
+/* =========================================================
+   DAILY EXPERIENCES
+========================================================= */
+
+.study-dashboard h2 {
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   PRINTABLES
+========================================================= */
+
+#downloads {
+
+    background:
+        var(--preschool-cream);
+
+}
+
+
+/* =========================================================
+   DOWNLOAD CARDS
+========================================================= */
+
+.download-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        var(--preschool-border-light);
+
+    color:
+        var(--preschool-navy);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+/* =========================================================
+   DOWNLOAD ACCENTS
+========================================================= */
+
+.download-card:nth-child(1)::before {
+
+    background:
+        var(--preschool-gold);
+
+}
+
+.download-card:nth-child(2)::before {
+
+    background:
+        var(--preschool-sky);
+
+}
+
+.download-card:nth-child(3)::before {
+
+    background:
+        var(--preschool-terracotta);
+
+}
+
+.download-card:nth-child(4)::before {
+
+    background:
+        var(--preschool-lavender);
+
+}
+
+.download-card:nth-child(5)::before {
+
+    background:
+        var(--preschool-sage);
+
+}
+
+.download-card:nth-child(6)::before {
+
+    background:
+        var(--preschool-teal);
+
+}
+
+
+/* =========================================================
+   DOWNLOAD CIRCLES
+========================================================= */
+
+.download-card:nth-child(1)::after {
+
+    background:
+        var(--preschool-soft-gold);
+
+}
+
+.download-card:nth-child(2)::after {
+
+    background:
+        var(--preschool-soft-sky);
+
+}
+
+.download-card:nth-child(3)::after {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+}
+
+.download-card:nth-child(4)::after {
+
+    background:
+        var(--preschool-soft-lavender);
+
+}
+
+.download-card:nth-child(5)::after {
+
+    background:
+        var(--preschool-soft-sage);
+
+}
+
+.download-card:nth-child(6)::after {
+
+    background:
+        var(--preschool-soft-teal);
+
+}
+
+
+/* =========================================================
+   AGE GROUP NAVIGATION
+========================================================= */
+
+.week-navigation {
+
+    background:
+        var(--preschool-white);
+
+    border-top-color:
+        var(--preschool-border-light);
+
+    border-bottom-color:
+        var(--preschool-border-light);
+
+}
+
+
+.week-nav-card {
+
+    background:
+        var(--preschool-cream);
+
+    border-color:
+        var(--preschool-border);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+
+.week-nav-card:first-child {
+
+    border-left-color:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-deep-teal);
+
+}
+
+.week-nav-card:first-child:hover {
+
+    background:
+        var(--preschool-soft-teal);
+
+    border-color:
+        var(--preschool-teal);
+
+}
+
+
+.week-nav-card.next {
+
+    border-right-color:
+        var(--preschool-sage);
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+.week-nav-card.next:hover {
+
+    background:
+        var(--preschool-soft-sage);
+
+    border-color:
+        var(--preschool-sage);
+
+}
+
+
+/* =========================================================
+   FAMILY CONNECTION
+========================================================= */
+
+#family {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+}
+
+
+.family-card {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        rgba(168, 93, 73, 0.12);
+
+    box-shadow:
+        var(--preschool-shadow-card);
+
+}
+
+
+.family-card::before {
+
+    background:
+        var(--preschool-soft-gold);
+
+}
+
+.family-card::after {
+
+    background:
+        var(--preschool-soft-teal);
+
+}
+
+
+.family-card .btn-primary {
+
+    background:
+        var(--preschool-terracotta);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+.family-card .btn-primary:hover {
+
+    background:
+        var(--preschool-deep-terracotta);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--preschool-soft-sky) 0%,
+            var(--preschool-soft-sage) 50%,
+            var(--preschool-soft-gold) 100%
+        );
+
+}
+
+
+.newsletter-box {
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    border-color:
+        rgba(48, 76, 90, 0.08);
+
+    box-shadow:
+        var(--preschool-shadow-card);
+
+}
+
+
+.newsletter-tag {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+    color:
+        var(--preschool-deep-terracotta);
+
+}
+
+
+.newsletter-form {
+
+    background:
+        var(--preschool-white);
+
+    border-color:
+        var(--preschool-border-light);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+
+.input-group input {
+
+    background:
+        var(--preschool-cream);
+
+    border-color:
+        var(--preschool-border);
+
+}
+
+
+.input-group input:focus {
+
+    border-color:
+        var(--preschool-teal);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(114, 184, 177, 0.20);
+
+}
+
+
+.newsletter-form button {
+
+    background:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+
+.newsletter-form button:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    background:
+        var(--preschool-navy);
+
+}
+
+
+.footer-grid > div:first-child h3 {
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+.footer-grid > div:first-child h3::after {
+
+    background:
+        var(--preschool-teal);
+
+}
+
+
+.footer-grid a:hover {
+
+    color:
+        var(--preschool-teal);
+
+}
+
+
+/* =========================================================
+   FOOTER ACCENTS
+========================================================= */
+
+.footer-grid > div:nth-child(2)
+li:nth-child(1) a:hover {
+
+    color:
+        var(--preschool-gold);
+
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(2) a:hover {
+
+    color:
+        var(--preschool-sage);
+
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(3) a:hover {
+
+    color:
+        var(--preschool-terracotta);
+
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(4) a:hover {
+
+    color:
+        var(--preschool-sky);
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 760px) {
+
+    nav.mobile-nav-open {
+
+        background:
+            var(--preschool-white);
+
+        border-top-color:
+            var(--preschool-border-light);
+
+        border-bottom-color:
+            var(--preschool-border-light);
+
+        box-shadow:
+            0 12px 28px
+            rgba(48, 76, 90, 0.12);
+
+    }
+
+    nav.mobile-nav-open a:hover {
+
+        background:
+            var(--preschool-soft-teal);
+
+    }
+
+    nav.mobile-nav-open a.active {
+
+        background:
+            var(--preschool-soft-gold);
+
+        color:
+            var(--preschool-deep-gold);
+
+    }
+
+}
