@@ -1,42 +1,743 @@
 /* =========================================================
-   PRESCHOOL ADDITIONAL SECTIONS
-   Components used specifically by 3–4 HTML
+   LITTLE EXPLORERS LEARNING HUB
+   PRESCHOOL | AGES 3–4 YEARS
+
+   FILE:
+   styles/ages-3-4.css
+
+   PURPOSE:
+   Complete standalone stylesheet for 3-4.html.
+
+   IMPORTANT:
+   This file does NOT depend on styles.css.
 ========================================================= */
 
 
 /* =========================================================
-   GENERAL SECTION TEXT
+   1. PRESCHOOL COLOR SYSTEM
 ========================================================= */
 
-.section-title h2 {
+:root {
+
+    --preschool-sage: #9FC6A5;
+    --preschool-soft-sage: #EEF7EF;
+    --preschool-deep-sage: #4F8058;
+
+    --preschool-sky: #8DBDDD;
+    --preschool-soft-sky: #EDF6FB;
+    --preschool-deep-sky: #397494;
+
+    --preschool-gold: #E9C46A;
+    --preschool-soft-gold: #FFF8E5;
+    --preschool-deep-gold: #A87918;
+
+    --preschool-terracotta: #D99178;
+    --preschool-soft-terracotta: #FFF0EB;
+    --preschool-deep-terracotta: #A85D49;
+
+    --preschool-lavender: #B7A7D9;
+    --preschool-soft-lavender: #F4F0FB;
+    --preschool-deep-lavender: #70609B;
+
+    --preschool-teal: #72B8B1;
+    --preschool-soft-teal: #EAF7F5;
+    --preschool-deep-teal: #397E78;
+
+    --preschool-coral: #E8A28F;
+    --preschool-soft-coral: #FFF1ED;
+    --preschool-deep-coral: #A85F50;
+
+    --preschool-cream: #FFFDF8;
+    --preschool-warm-white: #FFFEFB;
+    --preschool-white: #FFFFFF;
+
+    --preschool-navy: #304C5A;
+    --preschool-soft-navy: #526B78;
+    --preschool-text: #465C68;
+    --preschool-text-light: #75858E;
+
+    --preschool-border: #E2E8E5;
+    --preschool-border-light: #EDF1EF;
+
+    --preschool-shadow-soft:
+        0 8px 24px rgba(48, 76, 90, 0.07);
+
+    --preschool-shadow-card:
+        0 10px 28px rgba(48, 76, 90, 0.10);
+
+    --preschool-shadow-hover:
+        0 16px 34px rgba(48, 76, 90, 0.14);
+
+    --preschool-transition:
+        0.25s ease;
+
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        var(--preschool-warm-white);
+
+    color:
+        var(--preschool-text);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+}
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+button,
+input {
+
+    font:
+        inherit;
+
+}
+
+button {
+
+    cursor:
+        pointer;
+
+}
+
+ul {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+
+    margin-top: 0;
+
+    color:
+        var(--preschool-navy);
+
+    font-family:
+        "Nunito",
+        Arial,
+        sans-serif;
+
+    line-height: 1.2;
+
+}
+
+p {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   3. ACCESSIBILITY
+========================================================= */
+
+::selection {
+
+    background:
+        var(--preschool-gold);
 
     color:
         var(--preschool-navy);
 
 }
 
-.section-title p {
+:focus-visible {
 
-    color:
-        var(--preschool-text);
+    outline:
+        3px solid var(--preschool-sky);
+
+    outline-offset:
+        3px;
 
 }
 
 
 /* =========================================================
-   HERO IMAGE
+   4. CONTAINER
 ========================================================= */
+
+.container {
+
+    width:
+        min(1180px, calc(100% - 40px));
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   5. HEADER
+========================================================= */
+
+header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    background:
+        rgba(255, 254, 251, 0.97);
+
+    border-bottom:
+        1px solid var(--preschool-border-light);
+
+    box-shadow:
+        0 3px 15px rgba(48, 76, 90, 0.06);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+.nav-container {
+
+    min-height:
+        82px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+}
+
+
+/* =========================================================
+   6. LOGO
+========================================================= */
+
+.logo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    flex-shrink:
+        0;
+
+}
+
+.logo img {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    object-fit:
+        contain;
+
+}
+
+.logo h1 {
+
+    margin:
+        0;
+
+    color:
+        var(--preschool-navy);
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        800;
+
+}
+
+.logo span {
+
+    display:
+        block;
+
+    color:
+        var(--preschool-deep-sage);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   7. SEARCH
+========================================================= */
+
+.search-bar {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex:
+        1;
+
+    max-width:
+        330px;
+
+    margin-left:
+        auto;
+
+}
+
+.search-bar input {
+
+    width:
+        100%;
+
+    min-height:
+        42px;
+
+    padding:
+        0 44px 0 15px;
+
+    border:
+        1px solid var(--preschool-border);
+
+    border-radius:
+        12px;
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-text);
+
+    outline:
+        none;
+
+    transition:
+        border-color var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.search-bar input::placeholder {
+
+    color:
+        var(--preschool-text-light);
+
+}
+
+.search-bar input:focus {
+
+    border-color:
+        var(--preschool-teal);
+
+    box-shadow:
+        0 0 0 3px rgba(114, 184, 177, 0.20);
+
+}
+
+.search-bar {
+
+    position:
+        relative;
+
+}
+
+.search-bar button {
+
+    position:
+        absolute;
+
+    right:
+        4px;
+
+    top:
+        4px;
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    border:
+        0;
+
+    border-radius:
+        9px;
+
+    background:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-navy);
+
+    transition:
+        background var(--preschool-transition),
+        color var(--preschool-transition);
+
+}
+
+.search-bar button:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
+}
+
+
+/* =========================================================
+   8. NAVIGATION
+========================================================= */
+
+nav ul {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    list-style:
+        none;
+
+}
+
+nav a {
+
+    display:
+        block;
+
+    padding:
+        9px 10px;
+
+    border-radius:
+        9px;
+
+    color:
+        var(--preschool-soft-navy);
+
+    font-size:
+        0.83rem;
+
+    font-weight:
+        600;
+
+    white-space:
+        nowrap;
+
+    transition:
+        background var(--preschool-transition),
+        color var(--preschool-transition);
+
+}
+
+nav a:hover {
+
+    background:
+        var(--preschool-soft-teal);
+
+    color:
+        var(--preschool-deep-teal);
+
+}
+
+nav a.active {
+
+    background:
+        var(--preschool-gold);
+
+    color:
+        var(--preschool-navy);
+
+    box-shadow:
+        0 3px 8px rgba(168, 121, 24, 0.12);
+
+}
+
+
+/* =========================================================
+   9. MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu {
+
+    display:
+        none;
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    margin-left:
+        auto;
+
+    border:
+        0;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--preschool-soft-teal);
+
+    color:
+        var(--preschool-navy);
+
+    font-size:
+        1.3rem;
+
+}
+
+.mobile-menu:hover {
+
+    background:
+        var(--preschool-teal);
+
+}
+
+
+/* =========================================================
+   10. HERO
+========================================================= */
+
+.study-banner {
+
+    padding:
+        70px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--preschool-soft-gold) 0%,
+            var(--preschool-soft-sage) 52%,
+            var(--preschool-soft-sky) 100%
+        );
+
+}
+
+.study-banner-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(360px, 0.95fr);
+
+    align-items:
+        center;
+
+    gap:
+        60px;
+
+}
+
+.breadcrumb {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        20px;
+
+    color:
+        var(--preschool-text-light);
+
+    font-size:
+        0.84rem;
+
+}
+
+.breadcrumb a {
+
+    color:
+        var(--preschool-deep-teal);
+
+    font-weight:
+        600;
+
+}
+
+.breadcrumb a:hover {
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+.study-label {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--preschool-gold);
+
+    color:
+        var(--preschool-navy);
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.08em;
+
+}
+
+.study-banner h1 {
+
+    margin:
+        17px 0 16px;
+
+    font-size:
+        clamp(2.5rem, 5vw, 4.3rem);
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -0.035em;
+
+}
+
+.study-banner p {
+
+    max-width:
+        680px;
+
+    margin-bottom:
+        28px;
+
+    color:
+        var(--preschool-text);
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.8;
+
+}
 
 .study-banner-grid > div:last-child {
 
-    background:
-        var(--preschool-soft-sage);
-
-    border-radius:
-        24px;
-
     overflow:
         hidden;
+
+    border:
+        7px solid rgba(255, 255, 255, 0.72);
+
+    border-radius:
+        26px;
+
+    background:
+        var(--preschool-soft-sage);
 
     box-shadow:
         var(--preschool-shadow-card);
@@ -45,14 +746,11 @@
 
 .study-banner-grid > div:last-child img {
 
-    display:
-        block;
-
     width:
         100%;
 
-    height:
-        auto;
+    aspect-ratio:
+        4 / 3;
 
     object-fit:
         cover;
@@ -61,25 +759,261 @@
 
 
 /* =========================================================
-   DASHBOARD TEXT
+   11. HERO BUTTONS
 ========================================================= */
 
-.study-dashboard p {
+.hero-buttons {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+}
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        46px;
+
+    padding:
+        0 20px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        11px;
+
+    font-weight:
+        700;
+
+    transition:
+        transform var(--preschool-transition),
+        background var(--preschool-transition),
+        border-color var(--preschool-transition),
+        color var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+.btn-primary {
+
+    background:
+        var(--preschool-teal);
 
     color:
-        rgba(255, 255, 255, 0.82);
+        var(--preschool-navy);
+
+    box-shadow:
+        0 6px 14px rgba(57, 126, 120, 0.14);
+
+}
+
+.btn-primary:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
+}
+
+.btn-secondary {
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-navy);
+
+    border-color:
+        var(--preschool-border);
+
+}
+
+.btn-secondary:hover {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+    border-color:
+        var(--preschool-terracotta);
+
+    color:
+        var(--preschool-deep-terracotta);
 
 }
 
 
 /* =========================================================
-   DASHBOARD CARD TEXT
+   12. COMMON SECTIONS
 ========================================================= */
 
-.dashboard-card {
+section {
+
+    padding:
+        78px 0;
+
+}
+
+.section-title {
+
+    max-width:
+        780px;
+
+    margin:
+        0 auto 40px;
+
+    text-align:
+        center;
+
+}
+
+.section-title h2 {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        clamp(1.8rem, 3vw, 2.55rem);
+
+}
+
+.section-title p {
+
+    margin:
+        0;
+
+    color:
+        var(--preschool-text);
+
+    line-height:
+        1.75;
+
+}
+
+
+/* =========================================================
+   13. STUDY DASHBOARD
+========================================================= */
+
+.study-dashboard {
+
+    background:
+        var(--preschool-navy);
 
     color:
         var(--preschool-white);
+
+}
+
+.study-dashboard h2 {
+
+    color:
+        var(--preschool-white);
+
+    text-align:
+        center;
+
+    font-size:
+        clamp(1.8rem, 3vw, 2.5rem);
+
+}
+
+.study-dashboard > .container > p {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto 38px;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    text-align:
+        center;
+
+    line-height:
+        1.75;
+
+}
+
+.dashboard-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+}
+
+.dashboard-card {
+
+    position:
+        relative;
+
+    min-height:
+        145px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        25px 18px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius:
+        17px;
+
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    color:
+        var(--preschool-white);
+
+    text-align:
+        center;
 
     transition:
         transform var(--preschool-transition),
@@ -88,27 +1022,1179 @@
 
 }
 
+.dashboard-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        4px;
+
+}
+
 .dashboard-card h3 {
+
+    margin:
+        12px 0 0;
 
     color:
         var(--preschool-white);
+
+    font-size:
+        1rem;
 
 }
 
 .dashboard-card:hover {
 
     transform:
-        translateY(-4px);
+        translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.13);
 
     box-shadow:
-        0 12px 28px
-        rgba(0, 0, 0, 0.12);
+        0 14px 30px rgba(0, 0, 0, 0.13);
+
+}
+
+.dashboard-card:nth-child(1)::before {
+    background: var(--preschool-sky);
+}
+
+.dashboard-card:nth-child(2)::before {
+    background: var(--preschool-gold);
+}
+
+.dashboard-card:nth-child(3)::before {
+    background: var(--preschool-terracotta);
+}
+
+.dashboard-card:nth-child(4)::before {
+    background: var(--preschool-sage);
+}
+
+.dashboard-card:nth-child(5)::before {
+    background: var(--preschool-lavender);
+}
+
+.dashboard-card:nth-child(6)::before {
+    background: var(--preschool-teal);
+}
+
+.dashboard-card:nth-child(7)::before {
+    background: var(--preschool-gold);
+}
+
+.dashboard-card:nth-child(8)::before {
+    background: var(--preschool-coral);
+}
+
+
+/* =========================================================
+   14. FEATURED STUDY
+========================================================= */
+
+.featured-study {
+
+    background:
+        var(--preschool-warm-white);
+
+}
+
+.featured-study-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 0.9fr;
+
+    align-items:
+        stretch;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-radius:
+        24px;
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-card);
+
+}
+
+.featured-text {
+
+    padding:
+        48px;
+
+}
+
+.featured-label {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--preschool-soft-gold);
+
+    color:
+        var(--preschool-deep-gold);
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+.featured-text h2 {
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        clamp(1.8rem, 3vw, 2.5rem);
+
+}
+
+.featured-text p {
+
+    color:
+        var(--preschool-text);
+
+    line-height:
+        1.75;
+
+}
+
+.featured-highlights {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        12px;
+
+    margin:
+        25px 0;
+
+}
+
+.featured-highlights div {
+
+    position:
+        relative;
+
+    padding-left:
+        18px;
+
+    color:
+        var(--preschool-text);
+
+    font-size:
+        0.94rem;
+
+    font-weight:
+        600;
+
+}
+
+.featured-highlights div::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0.62em;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+}
+
+.featured-highlights div:nth-child(1)::before {
+    background: var(--preschool-sky);
+}
+
+.featured-highlights div:nth-child(2)::before {
+    background: var(--preschool-gold);
+}
+
+.featured-highlights div:nth-child(3)::before {
+    background: var(--preschool-sage);
+}
+
+.featured-highlights div:nth-child(4)::before {
+    background: var(--preschool-terracotta);
+}
+
+.featured-image {
+
+    min-height:
+        360px;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--preschool-soft-sage);
+
+}
+
+.featured-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+.featured-study-card:hover .featured-image img {
+
+    transform:
+        scale(1.03);
 
 }
 
 
 /* =========================================================
-   ESSENTIAL QUESTIONS
+   15. ELOF MATERIALS
+========================================================= */
+
+.materials-section {
+
+    background:
+        var(--preschool-soft-sky);
+
+}
+
+.materials-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+}
+
+.material-card {
+
+    min-height:
+        150px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        25px 18px;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-top:
+        5px solid var(--preschool-teal);
+
+    border-radius:
+        16px;
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-navy);
+
+    text-align:
+        center;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.4;
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.material-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--preschool-shadow-hover);
+
+}
+
+.material-card:nth-child(1) {
+    border-top-color: var(--preschool-sky);
+    background: linear-gradient(180deg, var(--preschool-soft-sky), var(--preschool-white));
+}
+
+.material-card:nth-child(2) {
+    border-top-color: var(--preschool-lavender);
+    background: linear-gradient(180deg, var(--preschool-soft-lavender), var(--preschool-white));
+}
+
+.material-card:nth-child(3) {
+    border-top-color: var(--preschool-gold);
+    background: linear-gradient(180deg, var(--preschool-soft-gold), var(--preschool-white));
+}
+
+.material-card:nth-child(4) {
+    border-top-color: var(--preschool-sage);
+    background: linear-gradient(180deg, var(--preschool-soft-sage), var(--preschool-white));
+}
+
+.material-card:nth-child(5) {
+    border-top-color: var(--preschool-terracotta);
+    background: linear-gradient(180deg, var(--preschool-soft-terracotta), var(--preschool-white));
+}
+
+.material-card:nth-child(6) {
+    border-top-color: var(--preschool-teal);
+    background: linear-gradient(180deg, var(--preschool-soft-teal), var(--preschool-white));
+}
+
+.material-card:nth-child(7) {
+    border-top-color: var(--preschool-coral);
+    background: linear-gradient(180deg, var(--preschool-soft-coral), var(--preschool-white));
+}
+
+.material-card:nth-child(8) {
+    border-top-color: var(--preschool-lavender);
+    background: linear-gradient(180deg, var(--preschool-soft-lavender), var(--preschool-white));
+}
+
+
+/* =========================================================
+   16. DAILY ROUTINE
+========================================================= */
+
+.study-weeks {
+
+    background:
+        var(--preschool-cream);
+
+}
+
+.week-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        22px;
+
+}
+
+.week-card {
+
+    padding:
+        30px;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-top:
+        5px solid var(--preschool-gold);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.week-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--preschool-shadow-hover);
+
+}
+
+.week-card:nth-child(1) {
+    border-top-color: var(--preschool-gold);
+}
+
+.week-card:nth-child(2) {
+    border-top-color: var(--preschool-sky);
+}
+
+.week-card:nth-child(3) {
+    border-top-color: var(--preschool-sage);
+}
+
+.week-number {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        16px;
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        800;
+
+}
+
+.week-card:nth-child(1) .week-number {
+    background: var(--preschool-soft-gold);
+    color: var(--preschool-deep-gold);
+}
+
+.week-card:nth-child(2) .week-number {
+    background: var(--preschool-soft-sky);
+    color: var(--preschool-deep-sky);
+}
+
+.week-card:nth-child(3) .week-number {
+    background: var(--preschool-soft-sage);
+    color: var(--preschool-deep-sage);
+}
+
+.week-card h3 {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        1.3rem;
+
+}
+
+.week-card p {
+
+    color:
+        var(--preschool-text);
+
+    line-height:
+        1.7;
+
+}
+
+.week-card ul {
+
+    margin-top:
+        18px;
+
+    list-style:
+        none;
+
+}
+
+.week-card li {
+
+    position:
+        relative;
+
+    padding-left:
+        17px;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--preschool-text);
+
+    font-size:
+        0.9rem;
+
+}
+
+.week-card li::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0.7em;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+}
+
+.week-card:nth-child(1) li::before {
+    background: var(--preschool-gold);
+}
+
+.week-card:nth-child(2) li::before {
+    background: var(--preschool-sky);
+}
+
+.week-card:nth-child(3) li::before {
+    background: var(--preschool-sage);
+}
+
+
+/* =========================================================
+   17. LEARNING CENTERS
+========================================================= */
+
+#centers {
+
+    background:
+        var(--preschool-white);
+
+}
+
+.center-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        20px;
+
+}
+
+.center-card {
+
+    padding:
+        30px 24px;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-top:
+        5px solid var(--preschool-teal);
+
+    border-radius:
+        17px;
+
+    background:
+        var(--preschool-cream);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.center-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--preschool-shadow-hover);
+
+}
+
+.center-card h3 {
+
+    margin:
+        15px 0 9px;
+
+    font-size:
+        1.2rem;
+
+}
+
+.center-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--preschool-text);
+
+    line-height:
+        1.65;
+
+    font-size:
+        0.92rem;
+
+}
+
+.center-card:nth-child(1) {
+    border-top-color: var(--preschool-terracotta);
+}
+
+.center-card:nth-child(2) {
+    border-top-color: var(--preschool-coral);
+}
+
+.center-card:nth-child(3) {
+    border-top-color: var(--preschool-lavender);
+}
+
+.center-card:nth-child(4) {
+    border-top-color: var(--preschool-sage);
+}
+
+.center-card:nth-child(5) {
+    border-top-color: var(--preschool-terracotta);
+}
+
+.center-card:nth-child(6) {
+    border-top-color: var(--preschool-teal);
+}
+
+.center-card:nth-child(7) {
+    border-top-color: var(--preschool-sky);
+}
+
+.center-card:nth-child(8) {
+    border-top-color: var(--preschool-gold);
+}
+
+
+/* =========================================================
+   18. CURRICULUM STUDIES
+========================================================= */
+
+.books-section {
+
+    background:
+        var(--preschool-soft-sage);
+
+}
+
+.books-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        20px;
+
+}
+
+.book-card {
+
+    padding:
+        30px 24px;
+
+    border:
+        1px solid rgba(79, 128, 88, 0.12);
+
+    border-top:
+        5px solid var(--preschool-sage);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.book-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--preschool-shadow-hover);
+
+}
+
+.book-card h3 {
+
+    margin:
+        15px 0 10px;
+
+}
+
+.book-card p {
+
+    color:
+        var(--preschool-text);
+
+    line-height:
+        1.65;
+
+}
+
+.book-card:nth-child(1) {
+    border-top-color: var(--preschool-sage);
+}
+
+.book-card:nth-child(2) {
+    border-top-color: var(--preschool-teal);
+}
+
+.book-card:nth-child(3) {
+    border-top-color: var(--preschool-terracotta);
+}
+
+.book-card:nth-child(4) {
+    border-top-color: var(--preschool-gold);
+}
+
+.study-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-top:
+        12px;
+
+    padding:
+        9px 14px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        0.88rem;
+
+    font-weight:
+        800;
+
+    transition:
+        background var(--preschool-transition),
+        color var(--preschool-transition);
+
+}
+
+.book-card:nth-child(1) .study-button {
+    background: var(--preschool-soft-sage);
+    color: var(--preschool-deep-sage);
+}
+
+.book-card:nth-child(1) .study-button:hover {
+    background: var(--preschool-deep-sage);
+    color: var(--preschool-white);
+}
+
+.book-card:nth-child(2) .study-button {
+    background: var(--preschool-soft-teal);
+    color: var(--preschool-deep-teal);
+}
+
+.book-card:nth-child(2) .study-button:hover {
+    background: var(--preschool-deep-teal);
+    color: var(--preschool-white);
+}
+
+.book-card:nth-child(3) .study-button {
+    background: var(--preschool-soft-terracotta);
+    color: var(--preschool-deep-terracotta);
+}
+
+.book-card:nth-child(3) .study-button:hover {
+    background: var(--preschool-deep-terracotta);
+    color: var(--preschool-white);
+}
+
+.book-card:nth-child(4) .study-button {
+    background: var(--preschool-soft-gold);
+    color: var(--preschool-deep-gold);
+}
+
+.book-card:nth-child(4) .study-button:hover {
+    background: var(--preschool-deep-gold);
+    color: var(--preschool-white);
+}
+
+
+/* =========================================================
+   19. DEVELOPMENTAL MILESTONES
+========================================================= */
+
+#assessment {
+
+    background:
+        var(--preschool-warm-white);
+
+}
+
+.assessment-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        15px;
+
+}
+
+.assessment-card {
+
+    padding:
+        20px 22px;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-left:
+        5px solid var(--preschool-teal);
+
+    border-radius:
+        14px;
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-text);
+
+    font-weight:
+        600;
+
+    line-height:
+        1.55;
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.assessment-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--preschool-shadow-hover);
+
+}
+
+.assessment-card:nth-child(1) {
+    border-left-color: var(--preschool-sky);
+    background: linear-gradient(90deg, var(--preschool-soft-sky), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(2) {
+    border-left-color: var(--preschool-lavender);
+    background: linear-gradient(90deg, var(--preschool-soft-lavender), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(3) {
+    border-left-color: var(--preschool-gold);
+    background: linear-gradient(90deg, var(--preschool-soft-gold), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(4) {
+    border-left-color: var(--preschool-terracotta);
+    background: linear-gradient(90deg, var(--preschool-soft-terracotta), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(5) {
+    border-left-color: var(--preschool-coral);
+    background: linear-gradient(90deg, var(--preschool-soft-coral), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(6) {
+    border-left-color: var(--preschool-teal);
+    background: linear-gradient(90deg, var(--preschool-soft-teal), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(7) {
+    border-left-color: var(--preschool-sage);
+    background: linear-gradient(90deg, var(--preschool-soft-sage), var(--preschool-white) 25%);
+}
+
+.assessment-card:nth-child(8) {
+    border-left-color: var(--preschool-lavender);
+    background: linear-gradient(90deg, var(--preschool-soft-lavender), var(--preschool-white) 25%);
+}
+
+
+/* =========================================================
+   20. TEACHING STRATEGIES
+========================================================= */
+
+.why-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--preschool-soft-sage) 0%,
+            var(--preschool-soft-gold) 50%,
+            var(--preschool-soft-sky) 100%
+        );
+
+}
+
+.why-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        20px;
+
+}
+
+.why-card {
+
+    padding:
+        30px 24px;
+
+    border:
+        1px solid rgba(48, 76, 90, 0.08);
+
+    border-top:
+        5px solid var(--preschool-teal);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.why-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--preschool-shadow-hover);
+
+}
+
+.why-icon {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        17px;
+
+    border-radius:
+        14px;
+
+    font-size:
+        1.4rem;
+
+}
+
+.why-card h3 {
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        1.15rem;
+
+}
+
+.why-card p {
+
+    margin:
+        0;
+
+    color:
+        var(--preschool-text);
+
+    line-height:
+        1.65;
+
+    font-size:
+        0.91rem;
+
+}
+
+.why-card:nth-child(1) {
+    border-top-color: var(--preschool-gold);
+}
+
+.why-card:nth-child(1) .why-icon {
+    background: var(--preschool-soft-gold);
+}
+
+.why-card:nth-child(2) {
+    border-top-color: var(--preschool-sage);
+}
+
+.why-card:nth-child(2) .why-icon {
+    background: var(--preschool-soft-sage);
+}
+
+.why-card:nth-child(3) {
+    border-top-color: var(--preschool-sky);
+}
+
+.why-card:nth-child(3) .why-icon {
+    background: var(--preschool-soft-sky);
+}
+
+.why-card:nth-child(4) {
+    border-top-color: var(--preschool-terracotta);
+}
+
+.why-card:nth-child(4) .why-icon {
+    background: var(--preschool-soft-terracotta);
+}
+
+
+/* =========================================================
+   21. ESSENTIAL QUESTIONS
 ========================================================= */
 
 .question-grid {
@@ -122,18 +2208,9 @@
     gap:
         20px;
 
-    margin-top:
-        36px;
-
 }
 
 .question-card {
-
-    position:
-        relative;
-
-    padding:
-        28px 26px;
 
     min-height:
         130px;
@@ -144,29 +2221,31 @@
     align-items:
         center;
 
-    background:
-        var(--preschool-white);
+    padding:
+        26px;
 
     border:
-        1px solid
-        var(--preschool-border-light);
+        1px solid var(--preschool-border-light);
 
     border-left:
-        5px solid
-        var(--preschool-teal);
+        5px solid var(--preschool-teal);
 
     border-radius:
-        16px;
+        17px;
+
+    background:
+        var(--preschool-white);
 
     color:
         var(--preschool-navy);
 
     font-family:
         "Nunito",
+        Arial,
         sans-serif;
 
     font-size:
-        1.05rem;
+        1.03rem;
 
     font-weight:
         700;
@@ -179,50 +2258,7 @@
 
     transition:
         transform var(--preschool-transition),
-        box-shadow var(--preschool-transition),
-        border-color var(--preschool-transition);
-
-}
-
-.question-card:nth-child(1) {
-
-    border-left-color:
-        var(--preschool-sky);
-
-}
-
-.question-card:nth-child(2) {
-
-    border-left-color:
-        var(--preschool-gold);
-
-}
-
-.question-card:nth-child(3) {
-
-    border-left-color:
-        var(--preschool-sage);
-
-}
-
-.question-card:nth-child(4) {
-
-    border-left-color:
-        var(--preschool-terracotta);
-
-}
-
-.question-card:nth-child(5) {
-
-    border-left-color:
-        var(--preschool-lavender);
-
-}
-
-.question-card:nth-child(6) {
-
-    border-left-color:
-        var(--preschool-teal);
+        box-shadow var(--preschool-transition);
 
 }
 
@@ -236,9 +2272,33 @@
 
 }
 
+.question-card:nth-child(1) {
+    border-left-color: var(--preschool-sky);
+}
+
+.question-card:nth-child(2) {
+    border-left-color: var(--preschool-gold);
+}
+
+.question-card:nth-child(3) {
+    border-left-color: var(--preschool-sage);
+}
+
+.question-card:nth-child(4) {
+    border-left-color: var(--preschool-terracotta);
+}
+
+.question-card:nth-child(5) {
+    border-left-color: var(--preschool-lavender);
+}
+
+.question-card:nth-child(6) {
+    border-left-color: var(--preschool-teal);
+}
+
 
 /* =========================================================
-   SONGS & MOVEMENT
+   22. SONGS & MOVEMENT
 ========================================================= */
 
 #songs {
@@ -257,34 +2317,26 @@
         repeat(4, 1fr);
 
     gap:
-        22px;
-
-    margin-top:
-        36px;
+        20px;
 
 }
 
 .song-card {
 
-    position:
-        relative;
-
     padding:
         30px 24px;
 
-    background:
-        var(--preschool-white);
-
     border:
-        1px solid
-        var(--preschool-border-light);
+        1px solid var(--preschool-border-light);
 
     border-top:
-        5px solid
-        var(--preschool-teal);
+        5px solid var(--preschool-teal);
 
     border-radius:
         18px;
+
+    background:
+        var(--preschool-white);
 
     text-align:
         center;
@@ -292,50 +2344,29 @@
     box-shadow:
         var(--preschool-shadow-soft);
 
-    color:
-        var(--preschool-text);
-
     transition:
         transform var(--preschool-transition),
         box-shadow var(--preschool-transition);
 
 }
 
-.song-card:nth-child(1) {
+.song-card:hover {
 
-    border-top-color:
-        var(--preschool-sky);
+    transform:
+        translateY(-5px);
 
-}
-
-.song-card:nth-child(2) {
-
-    border-top-color:
-        var(--preschool-coral);
-
-}
-
-.song-card:nth-child(3) {
-
-    border-top-color:
-        var(--preschool-gold);
-
-}
-
-.song-card:nth-child(4) {
-
-    border-top-color:
-        var(--preschool-teal);
+    box-shadow:
+        var(--preschool-shadow-hover);
 
 }
 
 .song-card h3 {
 
     margin:
-        16px 0 10px;
+        15px 0 10px;
 
-    color:
-        var(--preschool-navy);
+    font-size:
+        1.15rem;
 
 }
 
@@ -350,9 +2381,133 @@
     line-height:
         1.65;
 
+    font-size:
+        0.91rem;
+
 }
 
-.song-card:hover {
+.song-card:nth-child(1) {
+    border-top-color: var(--preschool-sky);
+}
+
+.song-card:nth-child(2) {
+    border-top-color: var(--preschool-coral);
+}
+
+.song-card:nth-child(3) {
+    border-top-color: var(--preschool-gold);
+}
+
+.song-card:nth-child(4) {
+    border-top-color: var(--preschool-teal);
+}
+
+
+/* =========================================================
+   23. PRINTABLES
+========================================================= */
+
+#downloads {
+
+    background:
+        var(--preschool-cream);
+
+}
+
+.download-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+.download-card {
+
+    position:
+        relative;
+
+    min-height:
+        135px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        24px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-radius:
+        17px;
+
+    background:
+        var(--preschool-white);
+
+    color:
+        var(--preschool-navy);
+
+    text-align:
+        center;
+
+    font-family:
+        "Nunito",
+        Arial,
+        sans-serif;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+    transition:
+        transform var(--preschool-transition),
+        box-shadow var(--preschool-transition);
+
+}
+
+.download-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    height:
+        4px;
+
+}
+
+.download-card:hover {
 
     transform:
         translateY(-5px);
@@ -362,141 +2517,382 @@
 
 }
 
+.download-card:nth-child(1)::before {
+    background: var(--preschool-gold);
+}
+
+.download-card:nth-child(2)::before {
+    background: var(--preschool-sky);
+}
+
+.download-card:nth-child(3)::before {
+    background: var(--preschool-terracotta);
+}
+
+.download-card:nth-child(4)::before {
+    background: var(--preschool-lavender);
+}
+
+.download-card:nth-child(5)::before {
+    background: var(--preschool-sage);
+}
+
+.download-card:nth-child(6)::before {
+    background: var(--preschool-teal);
+}
+
 
 /* =========================================================
-   BOOK CARD TEXT
+   24. AGE NAVIGATION
 ========================================================= */
 
-.book-card h3 {
+.week-navigation {
+
+    padding:
+        38px 0;
+
+    background:
+        var(--preschool-white);
+
+    border-top:
+        1px solid var(--preschool-border-light);
+
+    border-bottom:
+        1px solid var(--preschool-border-light);
+
+}
+
+.week-nav-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        18px;
+
+}
+
+.week-nav-card {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        64px;
+
+    padding:
+        15px 20px;
+
+    border:
+        1px solid var(--preschool-border);
+
+    border-radius:
+        13px;
+
+    background:
+        var(--preschool-cream);
 
     color:
         var(--preschool-navy);
 
-}
-
-.book-card p {
-
-    color:
-        var(--preschool-text);
-
-}
-
-
-/* =========================================================
-   CENTER CARD TEXT
-========================================================= */
-
-.center-card h3 {
-
-    color:
-        var(--preschool-navy);
-
-}
-
-.center-card p {
-
-    color:
-        var(--preschool-text);
-
-}
-
-
-/* =========================================================
-   MATERIAL CARD HOVER
-========================================================= */
-
-.material-card {
+    font-weight:
+        700;
 
     transition:
         transform var(--preschool-transition),
-        box-shadow var(--preschool-transition);
+        background var(--preschool-transition),
+        border-color var(--preschool-transition);
 
 }
 
-.material-card:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        var(--preschool-shadow-hover);
-
-}
-
-
-/* =========================================================
-   WEEK CARD HOVER
-========================================================= */
-
-.week-card {
-
-    transition:
-        transform var(--preschool-transition),
-        box-shadow var(--preschool-transition);
-
-}
-
-.week-card:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        var(--preschool-shadow-hover);
-
-}
-
-
-/* =========================================================
-   ASSESSMENT CARD HOVER
-========================================================= */
-
-.assessment-card {
-
-    transition:
-        transform var(--preschool-transition),
-        box-shadow var(--preschool-transition);
-
-}
-
-.assessment-card:hover {
+.week-nav-card:hover {
 
     transform:
         translateY(-3px);
 
-    box-shadow:
-        var(--preschool-shadow-hover);
+}
+
+.week-nav-card:first-child {
+
+    border-left:
+        5px solid var(--preschool-teal);
+
+    color:
+        var(--preschool-deep-teal);
+
+}
+
+.week-nav-card:first-child:hover {
+
+    background:
+        var(--preschool-soft-teal);
+
+    border-color:
+        var(--preschool-teal);
+
+}
+
+.week-nav-card.next {
+
+    border-right:
+        5px solid var(--preschool-sage);
+
+    color:
+        var(--preschool-deep-sage);
+
+}
+
+.week-nav-card.next:hover {
+
+    background:
+        var(--preschool-soft-sage);
+
+    border-color:
+        var(--preschool-sage);
 
 }
 
 
 /* =========================================================
-   FAMILY CONNECTION TEXT
+   25. FAMILY CONNECTION
 ========================================================= */
+
+#family {
+
+    background:
+        var(--preschool-soft-terracotta);
+
+}
+
+.family-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        48px;
+
+    border:
+        1px solid rgba(168, 93, 73, 0.12);
+
+    border-radius:
+        24px;
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-card);
+
+}
+
+.family-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+    top:
+        -90px;
+
+    right:
+        -70px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--preschool-soft-gold);
+
+}
+
+.family-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        140px;
+
+    height:
+        140px;
+
+    bottom:
+        -70px;
+
+    left:
+        -50px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--preschool-soft-teal);
+
+}
+
+.family-card > * {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
 
 .family-card h3 {
 
-    color:
-        var(--preschool-navy);
+    margin-bottom:
+        14px;
+
+    font-size:
+        1.8rem;
 
 }
 
 .family-card p {
 
+    max-width:
+        850px;
+
     color:
         var(--preschool-text);
+
+    line-height:
+        1.8;
+
+}
+
+.family-card .btn-primary {
+
+    margin-top:
+        8px;
+
+    background:
+        var(--preschool-terracotta);
+
+    color:
+        var(--preschool-navy);
+
+}
+
+.family-card .btn-primary:hover {
+
+    background:
+        var(--preschool-deep-terracotta);
+
+    color:
+        var(--preschool-white);
 
 }
 
 
 /* =========================================================
-   NEWSLETTER TEXT
+   26. NEWSLETTER
 ========================================================= */
+
+.newsletter {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--preschool-soft-sky) 0%,
+            var(--preschool-soft-sage) 50%,
+            var(--preschool-soft-gold) 100%
+        );
+
+}
+
+.newsletter-box {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.15fr 0.85fr;
+
+    gap:
+        45px;
+
+    align-items:
+        center;
+
+    padding:
+        45px;
+
+    border:
+        1px solid rgba(48, 76, 90, 0.08);
+
+    border-radius:
+        24px;
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    box-shadow:
+        var(--preschool-shadow-card);
+
+}
+
+.newsletter-tag {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--preschool-soft-terracotta);
+
+    color:
+        var(--preschool-deep-terracotta);
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        800;
+
+}
 
 .newsletter-content h2 {
 
-    color:
-        var(--preschool-navy);
+    margin-bottom:
+        14px;
+
+    font-size:
+        clamp(1.7rem, 3vw, 2.4rem);
 
 }
 
@@ -505,6 +2901,28 @@
     color:
         var(--preschool-text);
 
+    line-height:
+        1.7;
+
+}
+
+.newsletter-benefits {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        7px 18px;
+
+    margin-top:
+        20px;
+
+    list-style:
+        none;
+
 }
 
 .newsletter-benefits li {
@@ -512,16 +2930,380 @@
     color:
         var(--preschool-text);
 
+    font-size:
+        0.9rem;
+
+}
+
+.newsletter-form {
+
+    padding:
+        25px;
+
+    border:
+        1px solid var(--preschool-border-light);
+
+    border-radius:
+        17px;
+
+    background:
+        var(--preschool-white);
+
+    box-shadow:
+        var(--preschool-shadow-soft);
+
+}
+
+.newsletter-form input {
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--preschool-border);
+
+    border-radius:
+        10px;
+
+    background:
+        var(--preschool-cream);
+
+    color:
+        var(--preschool-text);
+
+    outline:
+        none;
+
+}
+
+.newsletter-form input:focus {
+
+    border-color:
+        var(--preschool-teal);
+
+    box-shadow:
+        0 0 0 3px rgba(114, 184, 177, 0.20);
+
+}
+
+.newsletter-form button {
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    margin-top:
+        12px;
+
+    border:
+        0;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--preschool-teal);
+
+    color:
+        var(--preschool-navy);
+
+    font-weight:
+        800;
+
+    transition:
+        background var(--preschool-transition),
+        color var(--preschool-transition);
+
+}
+
+.newsletter-form button:hover {
+
+    background:
+        var(--preschool-deep-teal);
+
+    color:
+        var(--preschool-white);
+
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   27. FOOTER
 ========================================================= */
 
-@media (max-width: 1000px) {
+footer {
 
-    .question-grid {
+    padding-top:
+        60px;
+
+    background:
+        var(--preschool-navy);
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+}
+
+.footer-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr;
+
+    gap:
+        40px;
+
+}
+
+.footer-grid h3,
+.footer-grid h4 {
+
+    color:
+        var(--preschool-white);
+
+}
+
+.footer-grid h3 {
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        1.2rem;
+
+}
+
+.footer-grid h4 {
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        0.95rem;
+
+}
+
+.footer-grid > div:first-child h3::after {
+
+    content:
+        "";
+
+    display:
+        block;
+
+    width:
+        42px;
+
+    height:
+        3px;
+
+    margin-top:
+        10px;
+
+    border-radius:
+        3px;
+
+    background:
+        var(--preschool-teal);
+
+}
+
+.footer-grid p {
+
+    max-width:
+        390px;
+
+    margin:
+        0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.7;
+
+}
+
+.footer-grid ul {
+
+    list-style:
+        none;
+
+}
+
+.footer-grid li {
+
+    margin-bottom:
+        9px;
+
+}
+
+.footer-grid a {
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size:
+        0.88rem;
+
+    transition:
+        color var(--preschool-transition);
+
+}
+
+.footer-grid a:hover {
+
+    color:
+        var(--preschool-teal);
+
+}
+
+.footer-bottom {
+
+    margin-top:
+        45px;
+
+    padding:
+        20px 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    text-align:
+        center;
+
+}
+
+.footer-bottom p {
+
+    margin:
+        0;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size:
+        0.78rem;
+
+}
+
+
+/* =========================================================
+   28. FOOTER AGE GROUP ACCENTS
+========================================================= */
+
+.footer-grid > div:nth-child(2)
+li:nth-child(1) a:hover {
+
+    color:
+        var(--preschool-gold);
+
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(2) a:hover {
+
+    color:
+        var(--preschool-sage);
+
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(3) a:hover {
+
+    color:
+        var(--preschool-terracotta);
+
+}
+
+.footer-grid > div:nth-child(2)
+li:nth-child(4) a:hover {
+
+    color:
+        var(--preschool-sky);
+
+}
+
+
+/* =========================================================
+   29. TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-container {
+
+        gap:
+            14px;
+
+    }
+
+    .search-bar {
+
+        max-width:
+            250px;
+
+    }
+
+    nav a {
+
+        padding:
+            8px 7px;
+
+        font-size:
+            0.77rem;
+
+    }
+
+    .study-banner-grid {
+
+        gap:
+            40px;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .materials-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .center-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .books-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .why-grid {
 
         grid-template-columns:
             repeat(2, 1fr);
@@ -538,16 +3320,108 @@
 }
 
 
-@media (max-width: 760px) {
+/* =========================================================
+   30. MOBILE NAVIGATION
+========================================================= */
 
-    .question-grid {
+@media (max-width: 900px) {
 
-        grid-template-columns:
-            1fr;
+    .nav-container {
+
+        flex-wrap:
+            wrap;
+
+        padding:
+            12px 0;
 
     }
 
-    .songs-grid {
+    .search-bar {
+
+        order:
+            3;
+
+        flex:
+            1 0 100%;
+
+        max-width:
+            none;
+
+        margin:
+            0;
+
+    }
+
+    nav {
+
+        display:
+            none;
+
+        width:
+            100%;
+
+        order:
+            4;
+
+        padding:
+            8px 0 4px;
+
+    }
+
+    nav.mobile-nav-open {
+
+        display:
+            block;
+
+        background:
+            var(--preschool-white);
+
+        border-top:
+            1px solid var(--preschool-border-light);
+
+        border-bottom:
+            1px solid var(--preschool-border-light);
+
+        box-shadow:
+            0 12px 28px rgba(48, 76, 90, 0.12);
+
+    }
+
+    nav ul {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+    nav a {
+
+        padding:
+            11px 13px;
+
+    }
+
+    nav a.active {
+
+        background:
+            var(--preschool-soft-gold);
+
+        color:
+            var(--preschool-deep-gold);
+
+    }
+
+    .mobile-menu {
+
+        display:
+            block;
+
+    }
+
+    .study-banner-grid {
 
         grid-template-columns:
             1fr;
@@ -556,11 +3430,276 @@
 
     .study-banner-grid > div:last-child {
 
-        margin-top:
-            24px;
+        max-width:
+            700px;
 
-        border-radius:
-            18px;
+        margin:
+            0 auto;
+
+    }
+
+    .featured-study-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .featured-image {
+
+        min-height:
+            300px;
+
+        order:
+            -1;
+
+    }
+
+    .question-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .download-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .newsletter-box {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   31. PHONE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+
+        width:
+            min(100% - 28px, 1180px);
+
+    }
+
+    section {
+
+        padding:
+            58px 0;
+
+    }
+
+    .nav-container {
+
+        min-height:
+            70px;
+
+    }
+
+    .logo img {
+
+        width:
+            44px;
+
+        height:
+            44px;
+
+    }
+
+    .logo h1 {
+
+        font-size:
+            1rem;
+
+    }
+
+    .logo span {
+
+        font-size:
+            0.68rem;
+
+    }
+
+    .study-banner {
+
+        padding:
+            50px 0;
+
+    }
+
+    .study-banner h1 {
+
+        font-size:
+            2.5rem;
+
+    }
+
+    .study-banner p {
+
+        font-size:
+            0.96rem;
+
+    }
+
+    .hero-buttons {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+    .btn {
+
+        width:
+            100%;
+
+    }
+
+    .dashboard-grid,
+    .materials-grid,
+    .center-grid,
+    .books-grid,
+    .why-grid,
+    .songs-grid,
+    .question-grid,
+    .download-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .week-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .assessment-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .featured-text {
+
+        padding:
+            30px 24px;
+
+    }
+
+    .featured-highlights {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .featured-image {
+
+        min-height:
+            240px;
+
+    }
+
+    .family-card {
+
+        padding:
+            32px 24px;
+
+    }
+
+    .newsletter-box {
+
+        padding:
+            28px 22px;
+
+    }
+
+    .newsletter-benefits {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .week-nav-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   32. SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .study-banner h1 {
+
+        font-size:
+            2.15rem;
+
+    }
+
+    .study-label {
+
+        font-size:
+            0.68rem;
+
+    }
+
+    .section-title h2 {
+
+        font-size:
+            1.75rem;
+
+    }
+
+    .dashboard-card {
+
+        min-height:
+            125px;
+
+    }
+
+    .material-card {
+
+        min-height:
+            125px;
 
     }
 
@@ -570,14 +3709,17 @@
             auto;
 
         padding:
-            24px 22px;
+            22px;
+
+        font-size:
+            0.96rem;
 
     }
 
-    .song-card {
+    .family-card h3 {
 
-        padding:
-            26px 22px;
+        font-size:
+            1.5rem;
 
     }
 
@@ -585,22 +3727,27 @@
 
 
 /* =========================================================
-   SMALL MOBILE
+   33. REDUCED MOTION
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (prefers-reduced-motion: reduce) {
 
-    .question-card {
+    html {
 
-        font-size:
-            1rem;
+        scroll-behavior:
+            auto;
 
     }
 
-    .song-card h3 {
+    *,
+    *::before,
+    *::after {
 
-        font-size:
-            1.1rem;
+        transition:
+            none !important;
+
+        animation:
+            none !important;
 
     }
 
