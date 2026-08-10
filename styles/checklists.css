@@ -1,0 +1,2179 @@
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   TEACHER CHECKLISTS
+   checklists.css
+========================================================= */
+
+:root {
+
+    --primary:#65558F;
+    --primary-dark:#4F4372;
+    --primary-light:#F3F0FA;
+
+    --secondary:#8BB8E8;
+    --secondary-light:#EEF6FE;
+
+    --accent:#E6B94C;
+    --accent-light:#FFF8E5;
+
+    --background:#FAFBFD;
+    --surface:#FFFFFF;
+    --surface-alt:#F7F8FC;
+
+    --text-dark:#2F2F3A;
+    --text:#4A4E59;
+    --text-light:#6A6F7C;
+
+    --border:#E4E7F0;
+
+    --shadow-sm:0 4px 12px rgba(101,85,143,.08);
+    --shadow:0 12px 30px rgba(101,85,143,.12);
+    --shadow-lg:0 22px 55px rgba(101,85,143,.18);
+
+    --radius:18px;
+    --radius-lg:28px;
+
+    --transition:.3s ease;
+
+    --container:1280px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    color:
+        var(--text);
+
+    background:
+        var(--background);
+
+    line-height:
+        1.7;
+
+}
+
+
+img {
+
+    max-width:
+        100%;
+
+    display:
+        block;
+
+}
+
+
+a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+button {
+
+    font:
+        inherit;
+
+}
+
+
+.container {
+
+    width:
+        min(92%, var(--container));
+
+    margin-inline:
+        auto;
+
+}
+
+
+section {
+
+    padding:
+        6rem 0;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        var(--text-dark);
+
+    line-height:
+        1.2;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    background:
+        rgba(255,255,255,.97);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.nav-container {
+
+    width:
+        min(92%, var(--container));
+
+    min-height:
+        90px;
+
+    margin-inline:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+}
+
+
+.logo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.logo img {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.logo-text {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.logo-text strong {
+
+    color:
+        var(--primary-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.35rem;
+
+    line-height:
+        1.05;
+
+}
+
+
+.logo-text small {
+
+    margin-top:
+        4px;
+
+    color:
+        var(--primary);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.main-nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+    margin-left:
+        auto;
+
+}
+
+
+.main-nav a {
+
+    color:
+        var(--text);
+
+    font-size:
+        .88rem;
+
+    font-weight:
+        700;
+
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color:
+        var(--primary);
+
+}
+
+
+.header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.header-resource-link {
+
+    padding:
+        .65rem 1rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .78rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.mobile-menu {
+
+    display:
+        none;
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    border:
+        0;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--primary);
+
+}
+
+
+.mobile-menu span {
+
+    display:
+        block;
+
+    width:
+        20px;
+
+    height:
+        2px;
+
+    margin:
+        4px auto;
+
+    background:
+        #fff;
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb-bar {
+
+    background:
+        var(--primary-light);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.breadcrumb {
+
+    min-height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        .55rem;
+
+    font-size:
+        .8rem;
+
+}
+
+
+.breadcrumb a {
+
+    color:
+        var(--primary);
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        1rem 1.8rem;
+
+    border-radius:
+        999px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition);
+
+}
+
+
+.btn-primary {
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+.btn-primary:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.btn-secondary {
+
+    background:
+        #fff;
+
+    color:
+        var(--primary);
+
+    border:
+        2px solid var(--primary);
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.checklist-hero {
+
+    padding:
+        7rem 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            var(--primary-light) 55%,
+            var(--secondary-light)
+        );
+
+}
+
+
+.hero-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap:
+        5rem;
+
+    align-items:
+        center;
+
+}
+
+
+.eyebrow,
+.section-eyebrow {
+
+    display:
+        inline-flex;
+
+    margin-bottom:
+        1rem;
+
+    padding:
+        .45rem 1rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .05em;
+
+}
+
+
+.hero-copy h1 {
+
+    margin:
+        0 0 1.25rem;
+
+    font-size:
+        clamp(2.8rem,5vw,4.5rem);
+
+}
+
+
+.hero-lead {
+
+    max-width:
+        720px;
+
+    margin-bottom:
+        1rem;
+
+    color:
+        var(--primary);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.hero-description {
+
+    max-width:
+        680px;
+
+    margin-bottom:
+        2rem;
+
+}
+
+
+.hero-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        1rem;
+
+}
+
+
+/* =========================================================
+   HERO PREVIEW
+========================================================= */
+
+.hero-checklist {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+}
+
+
+.checklist-preview {
+
+    width:
+        min(100%,430px);
+
+    padding:
+        2rem;
+
+    background:
+        #fff;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        26px;
+
+    box-shadow:
+        var(--shadow-lg);
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.preview-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding-bottom:
+        1.25rem;
+
+    margin-bottom:
+        1rem;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.preview-header span {
+
+    display:
+        block;
+
+    color:
+        var(--primary);
+
+    font-size:
+        .65rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+.preview-header strong {
+
+    display:
+        block;
+
+    margin-top:
+        .25rem;
+
+    color:
+        var(--text-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.preview-check {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        1.25rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.preview-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        .8rem;
+
+    padding:
+        .75rem 0;
+
+}
+
+
+.preview-box {
+
+    width:
+        22px;
+
+    height:
+        22px;
+
+    flex-shrink:
+        0;
+
+    border:
+        2px solid var(--primary);
+
+    border-radius:
+        6px;
+
+}
+
+
+.preview-item.completed .preview-box {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+.preview-item.completed .preview-box::after {
+
+    content:
+        "✓";
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.preview-item.completed p {
+
+    color:
+        var(--text-light);
+
+    text-decoration:
+        line-through;
+
+}
+
+
+.preview-item p {
+
+    margin:
+        0;
+
+    font-size:
+        .82rem;
+
+}
+
+
+.preview-progress {
+
+    margin-top:
+        1rem;
+
+    padding-top:
+        1rem;
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.preview-progress > span {
+
+    display:
+        block;
+
+    margin-bottom:
+        .5rem;
+
+    color:
+        var(--text-light);
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        700;
+
+}
+
+
+.progress-track {
+
+    height:
+        7px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+}
+
+
+.progress-fill {
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+        var(--primary);
+
+}
+
+
+/* =========================================================
+   CHECKLIST NAVIGATION
+========================================================= */
+
+.checklist-navigation {
+
+    padding:
+        0;
+
+    margin-top:
+        -2.5rem;
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+}
+
+
+.checklist-tabs {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        1rem;
+
+}
+
+
+.checklist-tab {
+
+    min-height:
+        110px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        auto 1fr;
+
+    grid-template-rows:
+        auto auto;
+
+    column-gap:
+        .8rem;
+
+    align-items:
+        center;
+
+    padding:
+        1.25rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        20px;
+
+    background:
+        #fff;
+
+    color:
+        var(--text);
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        var(--transition);
+
+}
+
+
+.checklist-tab:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.checklist-tab.active {
+
+    background:
+        var(--primary);
+
+    border-color:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+.checklist-tab > span {
+
+    grid-row:
+        1 / span 2;
+
+    font-size:
+        1.7rem;
+
+}
+
+
+.checklist-tab strong {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1rem;
+
+}
+
+
+.checklist-tab small {
+
+    font-size:
+        .7rem;
+
+    opacity:
+        .75;
+
+}
+
+
+/* =========================================================
+   CHECKLIST LIBRARY
+========================================================= */
+
+.checklist-library {
+
+    background:
+        #fff;
+
+}
+
+
+.section-heading {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto 3.5rem;
+
+    text-align:
+        center;
+
+}
+
+
+.section-heading > span {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        1rem;
+
+    padding:
+        .45rem 1rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.section-heading h2 {
+
+    margin:
+        0 0 1rem;
+
+    font-size:
+        clamp(2rem,4vw,3rem);
+
+}
+
+
+.checklist-panel {
+
+    display:
+        none;
+
+}
+
+
+.checklist-panel.active {
+
+    display:
+        block;
+
+}
+
+
+.panel-heading {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        2rem;
+
+    margin-bottom:
+        2rem;
+
+}
+
+
+.panel-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        .5rem;
+
+    color:
+        var(--primary);
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+.panel-heading h2 {
+
+    margin:
+        0 0 .75rem;
+
+}
+
+
+.panel-heading p {
+
+    max-width:
+        750px;
+
+}
+
+
+.reset-btn {
+
+    flex-shrink:
+        0;
+
+    padding:
+        .65rem 1rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        999px;
+
+    background:
+        #fff;
+
+    color:
+        var(--primary);
+
+    font-size:
+        .75rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+}
+
+
+.reset-btn:hover {
+
+    background:
+        var(--primary-light);
+
+}
+
+
+.checklist-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        1.5rem;
+
+}
+
+
+.checklist-group {
+
+    padding:
+        2rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+        var(--surface);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.checklist-group h3 {
+
+    margin-bottom:
+        1rem;
+
+    color:
+        var(--primary-dark);
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.check-item {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        .8rem;
+
+    padding:
+        .85rem 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+    cursor:
+        pointer;
+
+}
+
+
+.check-item:last-child {
+
+    border-bottom:
+        0;
+
+}
+
+
+.check-item input {
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    flex-shrink:
+        0;
+
+    margin-top:
+        .15rem;
+
+    accent-color:
+        var(--primary);
+
+    cursor:
+        pointer;
+
+}
+
+
+.check-item span {
+
+    font-size:
+        .82rem;
+
+    line-height:
+        1.55;
+
+}
+
+
+.check-item input:checked + span {
+
+    color:
+        var(--text-light);
+
+    text-decoration:
+        line-through;
+
+}
+
+
+/* =========================================================
+   ORGANIZATION
+========================================================= */
+
+.organization-section {
+
+    background:
+        var(--surface-alt);
+
+}
+
+
+.organization-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        1.5rem;
+
+}
+
+
+.organization-card {
+
+    padding:
+        2rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+        #fff;
+
+}
+
+
+.organization-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        1.25rem;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-weight:
+        900;
+
+}
+
+
+.organization-card h3 {
+
+    margin-bottom:
+        .7rem;
+
+}
+
+
+.organization-card p {
+
+    font-size:
+        .82rem;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.checklist-cta {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color:
+        #fff;
+
+    text-align:
+        center;
+
+}
+
+
+.checklist-cta .section-eyebrow {
+
+    background:
+        rgba(255,255,255,.15);
+
+    color:
+        #fff;
+
+}
+
+
+.checklist-cta h2 {
+
+    margin-bottom:
+        1rem;
+
+    color:
+        #fff;
+
+}
+
+
+.checklist-cta p {
+
+    max-width:
+        720px;
+
+    margin:
+        0 auto 2rem;
+
+    color:
+        rgba(255,255,255,.9);
+
+}
+
+
+.cta-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        1rem;
+
+}
+
+
+.checklist-cta .btn-primary {
+
+    background:
+        #fff;
+
+    color:
+        var(--primary);
+
+}
+
+
+.checklist-cta .btn-secondary {
+
+    background:
+        transparent;
+
+    border-color:
+        rgba(255,255,255,.75);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+
+    padding:
+        5rem 0 2rem;
+
+    background:
+        #202431;
+
+}
+
+
+.footer-grid {
+
+    width:
+        min(92%, var(--container));
+
+    margin:
+        0 auto 3rem;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:
+        3rem;
+
+}
+
+
+.footer-brand h3 {
+
+    margin:
+        0 0 12px;
+
+    color:
+        #fff;
+
+    font-size:
+        1.25rem;
+
+}
+
+
+.footer-brand p {
+
+    max-width:
+        350px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:
+        .86rem;
+
+}
+
+
+.footer-column {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+}
+
+
+.footer-column h3 {
+
+    margin:
+        0 0 1rem;
+
+    color:
+        #fff;
+
+    font-size:
+        1rem;
+
+}
+
+
+.footer-column a {
+
+    margin-bottom:
+        .65rem;
+
+    color:
+        rgba(255,255,255,.7);
+
+    font-size:
+        .82rem;
+
+}
+
+
+.footer-column a:hover {
+
+    color:
+        #fff;
+
+}
+
+
+.footer-bottom {
+
+    width:
+        min(92%, var(--container));
+
+    margin:
+        auto;
+
+    padding-top:
+        2rem;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    text-align:
+        center;
+
+}
+
+
+.footer-bottom p {
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size:
+        .75rem;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width:1100px) {
+
+    .main-nav {
+
+        gap:
+            14px;
+
+    }
+
+
+    .hero-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero-copy {
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-lead,
+    .hero-description {
+
+        margin-inline:
+            auto;
+
+    }
+
+
+    .hero-actions {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .hero-checklist {
+
+        max-width:
+            520px;
+
+        margin-inline:
+            auto;
+
+    }
+
+
+    .checklist-card {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .organization-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media (max-width:900px) {
+
+    .mobile-menu {
+
+        display:
+            block;
+
+    }
+
+
+    .main-nav {
+
+        position:
+            absolute;
+
+        top:
+            90px;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            .5rem 0;
+
+        background:
+            #fff;
+
+        border-top:
+            1px solid var(--border);
+
+        box-shadow:
+            var(--shadow);
+
+    }
+
+
+    .main-nav.open {
+
+        display:
+            flex;
+
+    }
+
+
+    .main-nav a {
+
+        padding:
+            1rem 4%;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+
+    .checklist-tabs {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    section {
+
+        padding:
+            4.5rem 0;
+
+    }
+
+
+    .nav-container {
+
+        min-height:
+            78px;
+
+    }
+
+
+    .logo img {
+
+        width:
+            52px;
+
+        height:
+            52px;
+
+    }
+
+
+    .logo-text strong {
+
+        font-size:
+            1.15rem;
+
+    }
+
+
+    .logo-text small {
+
+        font-size:
+            .65rem;
+
+    }
+
+
+    .header-resource-link {
+
+        display:
+            none;
+
+    }
+
+
+    .checklist-navigation {
+
+        margin-top:
+            0;
+
+        padding-top:
+            2rem;
+
+    }
+
+
+    .checklist-tabs {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .panel-heading {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .checklist-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .organization-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .footer-column {
+
+        align-items:
+            center;
+
+    }
+
+
+    .footer-brand p {
+
+        margin-inline:
+            auto;
+
+    }
+
+}
+
+
+@media (max-width:480px) {
+
+    .container,
+    .nav-container {
+
+        width:
+            94%;
+
+    }
+
+
+    .logo img {
+
+        width:
+            46px;
+
+        height:
+            46px;
+
+    }
+
+
+    .logo-text strong {
+
+        font-size:
+            1rem;
+
+    }
+
+
+    .logo-text small {
+
+        font-size:
+            .58rem;
+
+    }
+
+
+    .hero-actions,
+    .cta-actions {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .hero-actions .btn,
+    .cta-actions .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .checklist-preview {
+
+        padding:
+            1.4rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    .site-header,
+    .breadcrumb-bar,
+    .checklist-navigation,
+    .hero-actions,
+    .reset-btn,
+    .organization-section,
+    .checklist-cta,
+    .site-footer {
+
+        display:
+            none !important;
+
+    }
+
+
+    .checklist-hero {
+
+        padding:
+            1rem 0;
+
+        background:
+            #fff;
+
+    }
+
+
+    .hero-checklist {
+
+        display:
+            none;
+
+    }
+
+
+    .checklist-panel {
+
+        display:
+            block !important;
+
+        page-break-before:
+            always;
+
+    }
+
+
+    .checklist-panel:first-of-type {
+
+        page-break-before:
+            auto;
+
+    }
+
+
+    .checklist-card {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+
+    .checklist-group {
+
+        box-shadow:
+            none;
+
+    }
+
+}
