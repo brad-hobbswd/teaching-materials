@@ -12,12 +12,12 @@
 
     <meta
         name="description"
-        content="Editable classroom labels for centers, cubbies, shelves, supplies, storage areas, and classroom organization systems."
+        content="Editable classroom labels for learning centers, cubbies, shelves, supplies, storage, and classroom organization systems."
     >
 
     <meta
         name="keywords"
-        content="classroom labels, editable classroom labels, preschool labels, pre k labels, Head Start classroom labels, cubby labels, classroom organization, learning center labels, teacher printables"
+        content="classroom labels, editable classroom labels, preschool classroom labels, pre k classroom labels, Head Start labels, cubby labels, learning center labels, classroom organization, teacher printables"
     >
 
     <meta
@@ -28,6 +28,31 @@
     <title>
         Classroom Labels | Little Explorers Learning Hub
     </title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CLASSROOM LABELS PAGE STYLES
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -41,25 +66,27 @@
 
 
     <!-- =====================================================
-         HEADER
+         SITE HEADER
     ====================================================== -->
 
     <header class="site-header">
 
-        <div class="header-container">
+        <div class="nav-container">
 
+
+            <!-- LOGO -->
 
             <a
                 href="../index.html"
-                class="site-brand"
+                class="logo"
                 aria-label="Little Explorers Learning Hub Home"
             >
 
-                <span class="brand-icon">
-                    ✦
+                <span class="logo-icon">
+                    <i class="fa-solid fa-shapes"></i>
                 </span>
 
-                <span class="brand-text">
+                <span class="logo-text">
 
                     <strong>
                         Little Explorers
@@ -74,23 +101,11 @@
             </a>
 
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
+            <!-- MAIN NAVIGATION -->
 
             <nav
-                class="main-navigation"
-                id="mainNavigation"
+                class="main-nav"
+                id="mainNav"
                 aria-label="Main navigation"
             >
 
@@ -106,19 +121,23 @@
                     Library
                 </a>
 
+                <a href="../age-groups.html">
+                    Age Groups
+                </a>
+
                 <a href="../lesson-plans.html">
                     Lesson Plans
                 </a>
 
-                <a href="../resources.html">
-                    Teacher Resources
-                </a>
-
                 <a
                     href="index.html"
-                    class="active-parent"
+                    class="active"
                 >
                     Printables
+                </a>
+
+                <a href="../resources.html">
+                    Teacher Resources
                 </a>
 
                 <a href="../about.html">
@@ -131,6 +150,35 @@
 
             </nav>
 
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+                <a
+                    href="../resources.html"
+                    class="header-resource-link"
+                >
+                    Resources
+                </a>
+
+                <button
+                    class="mobile-menu"
+                    id="mobileMenu"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                    aria-controls="mainNav"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
         </div>
 
     </header>
@@ -138,106 +186,193 @@
 
 
     <!-- =====================================================
-         MAIN
+         BREADCRUMB
+    ====================================================== -->
+
+    <div class="breadcrumb-bar">
+
+        <div class="container">
+
+            <nav
+                class="breadcrumb"
+                aria-label="Breadcrumb"
+            >
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <span>
+                    /
+                </span>
+
+                <a href="../resources.html">
+                    Teacher Resources
+                </a>
+
+                <span>
+                    /
+                </span>
+
+                <a href="index.html">
+                    Printables
+                </a>
+
+                <span>
+                    /
+                </span>
+
+                <strong>
+                    Classroom Labels
+                </strong>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
     ====================================================== -->
 
     <main>
 
 
         <!-- =================================================
-             BREADCRUMB
-        ================================================== -->
-
-        <div class="breadcrumb-wrapper">
-
-            <div class="content-container">
-
-                <nav
-                    class="breadcrumb"
-                    aria-label="Breadcrumb"
-                >
-
-                    <a href="../index.html">
-                        Home
-                    </a>
-
-                    <span>
-                        /
-                    </span>
-
-                    <a href="../resources.html">
-                        Teacher Resources
-                    </a>
-
-                    <span>
-                        /
-                    </span>
-
-                    <a href="index.html">
-                        Printables
-                    </a>
-
-                    <span>
-                        /
-                    </span>
-
-                    <strong>
-                        Classroom Labels
-                    </strong>
-
-                </nav>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             HERO
+             CLASSROOM LABELS HERO
         ================================================== -->
 
         <section class="labels-hero">
 
-            <div class="hero-pattern"></div>
+            <div class="container">
 
-            <div class="hero-content">
+                <div class="labels-hero-content">
 
-                <div class="hero-badge">
-                    PRINTABLE RESOURCE
-                </div>
 
-                <h1>
-                    Classroom Labels
-                </h1>
+                    <div class="labels-hero-copy">
 
-                <p class="hero-lead">
-                    Organize your classroom with labels designed
-                    for the way young children learn.
-                </p>
+                        <span class="eyebrow">
+                            PRINTABLE RESOURCE
+                        </span>
 
-                <p class="hero-description">
-                    Editable classroom labels for centers, cubbies,
-                    supplies, shelves, storage areas, classroom materials,
-                    and organization systems. Create a classroom that is
-                    easier for children and teachers to navigate.
-                </p>
+                        <h1>
+                            Classroom Labels
+                        </h1>
 
-                <div class="hero-actions">
+                        <p class="hero-lead">
+                            Editable classroom labels for centers,
+                            cubbies, supplies, shelves, and
+                            organization systems.
+                        </p>
 
-                    <a
-                        href="#label-builder"
-                        class="button button-primary"
-                    >
-                        Create a Label
-                    </a>
+                        <p class="hero-description">
+                            Create a classroom environment that is
+                            organized, welcoming, and easier for
+                            children and teachers to navigate.
+                            Use labels throughout your learning
+                            environment to identify materials,
+                            spaces, storage areas, and classroom
+                            routines.
+                        </p>
 
-                    <a
-                        href="#label-types"
-                        class="button button-secondary"
-                    >
-                        Explore Label Types
-                    </a>
+
+                        <div class="hero-actions">
+
+                            <a
+                                href="#label-library"
+                                class="btn btn-primary"
+                            >
+                                Explore Labels
+                            </a>
+
+                            <a
+                                href="#label-builder"
+                                class="btn btn-secondary"
+                            >
+                                Create a Label
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HERO VISUAL -->
+
+                    <div class="labels-hero-visual">
+
+                        <div class="hero-label-stack">
+
+
+                            <div class="sample-label sample-label-purple">
+
+                                <span class="sample-label-icon">
+                                    🧩
+                                </span>
+
+                                <span class="sample-label-text">
+
+                                    <strong>
+                                        BLOCKS
+                                    </strong>
+
+                                    <small>
+                                        Building Center
+                                    </small>
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="sample-label sample-label-blue">
+
+                                <span class="sample-label-icon">
+                                    📚
+                                </span>
+
+                                <span class="sample-label-text">
+
+                                    <strong>
+                                        BOOKS
+                                    </strong>
+
+                                    <small>
+                                        Library Center
+                                    </small>
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="sample-label sample-label-gold">
+
+                                <span class="sample-label-icon">
+                                    🎨
+                                </span>
+
+                                <span class="sample-label-text">
+
+                                    <strong>
+                                        ART SUPPLIES
+                                    </strong>
+
+                                    <small>
+                                        Creative Area
+                                    </small>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -248,102 +383,105 @@
 
 
         <!-- =================================================
-             RESOURCE SUMMARY
+             RESOURCE HIGHLIGHTS
         ================================================== -->
 
-        <section class="summary-section">
+        <section class="resource-highlights">
 
-            <div class="content-container">
+            <div class="container">
 
-                <div class="summary-grid">
+                <div class="highlight-grid">
 
 
-                    <div class="summary-card">
+                    <article class="highlight-card">
 
-                        <span class="summary-icon">
-                            🏷️
-                        </span>
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-pen"></i>
+                        </div>
 
                         <div>
 
-                            <strong>
+                            <h3>
                                 Editable
-                            </strong>
+                            </h3>
 
                             <p>
-                                Customize labels with your own classroom
-                                words and organization system.
+                                Customize labels to match your
+                                classroom and organization system.
                             </p>
 
                         </div>
 
-                    </div>
+                    </article>
 
 
-                    <div class="summary-card">
 
-                        <span class="summary-icon">
-                            🧩
-                        </span>
+                    <article class="highlight-card">
 
-                        <div>
-
-                            <strong>
-                                Classroom Ready
-                            </strong>
-
-                            <p>
-                                Designed for centers, shelves, supplies,
-                                cubbies, and everyday classroom use.
-                            </p>
-
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-shapes"></i>
                         </div>
 
-                    </div>
-
-
-                    <div class="summary-card">
-
-                        <span class="summary-icon">
-                            👧
-                        </span>
-
                         <div>
 
-                            <strong>
+                            <h3>
                                 Child Friendly
-                            </strong>
+                            </h3>
 
                             <p>
-                                Visual organization can help children
-                                understand where materials belong.
+                                Support children's understanding
+                                of classroom spaces and materials.
                             </p>
 
                         </div>
 
-                    </div>
+                    </article>
 
 
-                    <div class="summary-card">
 
-                        <span class="summary-icon">
-                            🖨️
-                        </span>
+                    <article class="highlight-card">
+
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
 
                         <div>
 
-                            <strong>
-                                Print Ready
-                            </strong>
+                            <h3>
+                                Multiple Uses
+                            </h3>
 
                             <p>
-                                Prepare labels for printing and classroom
-                                organization.
+                                Use labels for centers, cubbies,
+                                shelves, supplies, and storage.
                             </p>
 
                         </div>
 
-                    </div>
+                    </article>
+
+
+
+                    <article class="highlight-card">
+
+                        <div class="highlight-icon">
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Print Ready
+                            </h3>
+
+                            <p>
+                                Prepare your classroom labels for
+                                everyday classroom use.
+                            </p>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
@@ -354,61 +492,64 @@
 
 
         <!-- =================================================
-             LABEL TYPES
+             LABEL CATEGORIES
         ================================================== -->
 
         <section
-            class="label-types-section"
-            id="label-types"
+            class="label-categories section"
+            id="label-categories"
         >
 
-            <div class="content-container">
+            <div class="container">
 
-                <div class="section-heading centered">
 
-                    <span class="section-label">
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
                         CLASSROOM ORGANIZATION
                     </span>
 
                     <h2>
-                        Labels for Every Part of Your Classroom
+                        Find the Labels You Need
                     </h2>
 
                     <p>
-                        Choose a category to find the labels that fit
-                        your classroom organization system.
+                        Explore classroom label categories designed
+                        for the spaces, materials, and routines that
+                        make up your learning environment.
                     </p>
 
                 </div>
 
 
-                <div class="label-category-grid">
 
+                <div class="category-grid">
 
-                    <!-- CENTERS -->
 
                     <button
-                        class="label-category"
+                        type="button"
+                        class="feature-card label-category-card"
                         data-category="centers"
                     >
 
-                        <span class="category-icon">
+                        <span class="feature-icon">
                             🧩
                         </span>
 
-                        <span class="category-content">
+                        <span class="feature-content">
 
                             <strong>
                                 Learning Centers
                             </strong>
 
                             <small>
-                                Blocks • Dramatic Play • Literacy • STEM
+                                Blocks, dramatic play, literacy,
+                                science, STEM, math, and more.
                             </small>
 
                         </span>
 
-                        <span class="category-arrow">
+                        <span class="feature-arrow">
                             →
                         </span>
 
@@ -416,30 +557,30 @@
 
 
 
-                    <!-- CUBBIES -->
-
                     <button
-                        class="label-category"
+                        type="button"
+                        class="feature-card label-category-card"
                         data-category="cubbies"
                     >
 
-                        <span class="category-icon">
+                        <span class="feature-icon">
                             🎒
                         </span>
 
-                        <span class="category-content">
+                        <span class="feature-content">
 
                             <strong>
                                 Cubbies
                             </strong>
 
                             <small>
-                                Children's names • Belongings • Storage
+                                Children's belongings, personal
+                                spaces, and classroom storage.
                             </small>
 
                         </span>
 
-                        <span class="category-arrow">
+                        <span class="feature-arrow">
                             →
                         </span>
 
@@ -447,30 +588,30 @@
 
 
 
-                    <!-- SHELVES -->
-
                     <button
-                        class="label-category"
+                        type="button"
+                        class="feature-card label-category-card"
                         data-category="shelves"
                     >
 
-                        <span class="category-icon">
+                        <span class="feature-icon">
                             📚
                         </span>
 
-                        <span class="category-content">
+                        <span class="feature-content">
 
                             <strong>
                                 Shelves & Storage
                             </strong>
 
                             <small>
-                                Bins • Shelves • Materials • Supplies
+                                Shelves, bins, baskets, containers,
+                                and classroom storage.
                             </small>
 
                         </span>
 
-                        <span class="category-arrow">
+                        <span class="feature-arrow">
                             →
                         </span>
 
@@ -478,30 +619,30 @@
 
 
 
-                    <!-- SUPPLIES -->
-
                     <button
-                        class="label-category"
+                        type="button"
+                        class="feature-card label-category-card"
                         data-category="supplies"
                     >
 
-                        <span class="category-icon">
+                        <span class="feature-icon">
                             ✏️
                         </span>
 
-                        <span class="category-content">
+                        <span class="feature-content">
 
                             <strong>
                                 Classroom Supplies
                             </strong>
 
                             <small>
-                                Art • Writing • Tools • Materials
+                                Art materials, writing tools,
+                                manipulatives, and supplies.
                             </small>
 
                         </span>
 
-                        <span class="category-arrow">
+                        <span class="feature-arrow">
                             →
                         </span>
 
@@ -509,30 +650,30 @@
 
 
 
-                    <!-- ROUTINES -->
-
                     <button
-                        class="label-category"
+                        type="button"
+                        class="feature-card label-category-card"
                         data-category="routines"
                     >
 
-                        <span class="category-icon">
+                        <span class="feature-icon">
                             🕐
                         </span>
 
-                        <span class="category-content">
+                        <span class="feature-content">
 
                             <strong>
-                                Routines
+                                Classroom Routines
                             </strong>
 
                             <small>
-                                Arrival • Cleanup • Bathroom • Meals
+                                Arrival, cleanup, meals, bathroom,
+                                transitions, and daily routines.
                             </small>
 
                         </span>
 
-                        <span class="category-arrow">
+                        <span class="feature-arrow">
                             →
                         </span>
 
@@ -540,34 +681,614 @@
 
 
 
-                    <!-- TEACHER -->
-
                     <button
-                        class="label-category"
+                        type="button"
+                        class="feature-card label-category-card"
                         data-category="teacher"
                     >
 
-                        <span class="category-icon">
+                        <span class="feature-icon">
                             🍎
                         </span>
 
-                        <span class="category-content">
+                        <span class="feature-content">
 
                             <strong>
                                 Teacher Organization
                             </strong>
 
                             <small>
-                                Files • Planning • Staff • Documentation
+                                Files, materials, planning areas,
+                                documentation, and staff spaces.
                             </small>
 
                         </span>
 
-                        <span class="category-arrow">
+                        <span class="feature-arrow">
                             →
                         </span>
 
                     </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LABEL LIBRARY
+        ================================================== -->
+
+        <section
+            class="resource-library section"
+            id="label-library"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        CLASSROOM LABEL LIBRARY
+                    </span>
+
+                    <h2>
+                        Start Organizing Your Classroom
+                    </h2>
+
+                    <p>
+                        Choose from common classroom labels and
+                        adapt them to the needs of your learning
+                        environment.
+                    </p>
+
+                </div>
+
+
+
+                <div
+                    class="printable-grid"
+                    id="printableGrid"
+                >
+
+
+                    <!-- BLOCKS -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                🧩
+                                <strong>
+                                    BLOCKS
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Blocks
+                            </h3>
+
+                            <p>
+                                Building and construction center
+                                organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Blocks"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOKS -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                📚
+                                <strong>
+                                    BOOKS
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Books
+                            </h3>
+
+                            <p>
+                                Library and classroom reading area
+                                organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Books"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ART -->
+
+                    <article
+                        class="printable-card"
+                        data-category="supplies"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                🎨
+                                <strong>
+                                    ART
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                CLASSROOM SUPPLIES
+                            </span>
+
+                            <h3>
+                                Art Supplies
+                            </h3>
+
+                            <p>
+                                Label for art materials and creative
+                                classroom supplies.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Art Supplies"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PUZZLES -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                🧠
+                                <strong>
+                                    PUZZLES
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Puzzles
+                            </h3>
+
+                            <p>
+                                Manipulative and puzzle area
+                                organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Puzzles"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SCIENCE -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                🔬
+                                <strong>
+                                    SCIENCE
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Science
+                            </h3>
+
+                            <p>
+                                Discovery and science center
+                                organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Science"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- DRAMATIC PLAY -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                🎭
+                                <strong>
+                                    DRAMATIC PLAY
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Dramatic Play
+                            </h3>
+
+                            <p>
+                                Pretend play and dramatic play
+                                center organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Dramatic Play"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- WRITING -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                ✏️
+                                <strong>
+                                    WRITING
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Writing
+                            </h3>
+
+                            <p>
+                                Writing and literacy material
+                                organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Writing"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- MUSIC -->
+
+                    <article
+                        class="printable-card"
+                        data-category="centers"
+                    >
+
+                        <div class="print-preview">
+
+                            <div class="label-preview">
+                                🎵
+                                <strong>
+                                    MUSIC
+                                </strong>
+                            </div>
+
+                        </div>
+
+                        <div class="print-content">
+
+                            <span class="print-category">
+                                LEARNING CENTERS
+                            </span>
+
+                            <h3>
+                                Music
+                            </h3>
+
+                            <p>
+                                Music materials and instrument
+                                organization label.
+                            </p>
+
+                            <div class="file-tags">
+
+                                <span>
+                                    Editable
+                                </span>
+
+                                <span>
+                                    Printable
+                                </span>
+
+                            </div>
+
+                            <div class="download-meta">
+
+                                <span>
+                                    Classroom Label
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="download-btn"
+                                    data-label="Music"
+                                >
+                                    Use Label
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
@@ -582,99 +1303,128 @@
         ================================================== -->
 
         <section
-            class="builder-section"
+            class="label-builder-section section"
             id="label-builder"
         >
 
-            <div class="content-container">
+            <div class="container">
 
-                <div class="section-heading centered">
 
-                    <span class="section-label">
-                        LABEL PREVIEW
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        CREATE YOUR OWN
                     </span>
 
                     <h2>
-                        Create Your Classroom Label
+                        Build a Classroom Label
                     </h2>
 
                     <p>
-                        Enter your own label text and choose a classroom
-                        category to preview how your label could look.
+                        Enter your own classroom label information
+                        and preview it before preparing your resource.
                     </p>
 
                 </div>
 
 
+
                 <div class="builder-layout">
 
 
-                    <!-- CONTROLS -->
+                    <!-- BUILDER FORM -->
 
-                    <div class="builder-controls">
+                    <div class="builder-card">
 
-                        <div class="control-group">
+                        <div class="form-group">
 
                             <label for="labelText">
-                                Label Text
+                                Label Name
                             </label>
 
                             <input
                                 type="text"
                                 id="labelText"
+                                name="labelText"
                                 placeholder="Example: Blocks"
-                                maxlength="35"
+                                maxlength="40"
                             >
 
                         </div>
 
 
-                        <div class="control-group">
 
-                            <label for="labelSubtext">
-                                Optional Subtext
+                        <div class="form-group">
+
+                            <label for="labelDescription">
+                                Optional Description
                             </label>
 
                             <input
                                 type="text"
-                                id="labelSubtext"
+                                id="labelDescription"
+                                name="labelDescription"
                                 placeholder="Example: Building Center"
-                                maxlength="45"
+                                maxlength="50"
                             >
 
                         </div>
 
 
-                        <div class="control-group">
 
-                            <label for="labelCategory">
-                                Category
+                        <div class="form-group">
+
+                            <label for="labelIcon">
+                                Label Icon
                             </label>
 
-                            <select id="labelCategory">
+                            <select
+                                id="labelIcon"
+                                name="labelIcon"
+                            >
 
-                                <option value="centers">
-                                    Learning Center
+                                <option value="🧩">
+                                    🧩 Blocks / Center
                                 </option>
 
-                                <option value="cubbies">
-                                    Cubbies
+                                <option value="📚">
+                                    📚 Books
                                 </option>
 
-                                <option value="shelves">
-                                    Shelves & Storage
+                                <option value="🎨">
+                                    🎨 Art
                                 </option>
 
-                                <option value="supplies">
-                                    Classroom Supplies
+                                <option value="✏️">
+                                    ✏️ Writing
                                 </option>
 
-                                <option value="routines">
-                                    Classroom Routine
+                                <option value="🔬">
+                                    🔬 Science
                                 </option>
 
-                                <option value="teacher">
-                                    Teacher Organization
+                                <option value="🎭">
+                                    🎭 Dramatic Play
+                                </option>
+
+                                <option value="🎵">
+                                    🎵 Music
+                                </option>
+
+                                <option value="🎒">
+                                    🎒 Cubbies
+                                </option>
+
+                                <option value="🧸">
+                                    🧸 Toys
+                                </option>
+
+                                <option value="📦">
+                                    📦 Storage
+                                </option>
+
+                                <option value="🏷️">
+                                    🏷️ General Label
                                 </option>
 
                             </select>
@@ -682,13 +1432,17 @@
                         </div>
 
 
-                        <div class="control-group">
+
+                        <div class="form-group">
 
                             <label for="labelSize">
                                 Label Size
                             </label>
 
-                            <select id="labelSize">
+                            <select
+                                id="labelSize"
+                                name="labelSize"
+                            >
 
                                 <option value="standard">
                                     Standard
@@ -707,10 +1461,11 @@
                         </div>
 
 
+
                         <button
-                            class="button button-primary builder-button"
-                            id="updateLabel"
                             type="button"
+                            class="btn btn-primary"
+                            id="updateLabel"
                         >
                             Update Preview
                         </button>
@@ -719,33 +1474,34 @@
 
 
 
-                    <!-- PREVIEW -->
+                    <!-- BUILDER PREVIEW -->
 
-                    <div class="preview-area">
+                    <div class="builder-preview-card">
 
-                        <span class="preview-label">
-                            PREVIEW
+                        <span class="preview-eyebrow">
+                            LABEL PREVIEW
                         </span>
 
+
                         <div
-                            class="label-preview standard"
+                            class="classroom-label-preview standard"
                             id="labelPreview"
                         >
 
                             <div
-                                class="preview-icon"
+                                class="classroom-label-icon"
                                 id="previewIcon"
                             >
                                 🧩
                             </div>
 
-                            <div class="preview-text">
+                            <div class="classroom-label-content">
 
                                 <strong id="previewText">
                                     Blocks
                                 </strong>
 
-                                <small id="previewSubtext">
+                                <small id="previewDescription">
                                     Building Center
                                 </small>
 
@@ -753,9 +1509,10 @@
 
                         </div>
 
-                        <p class="preview-note">
-                            Preview only. Final printable resources may
-                            use different layouts and dimensions.
+
+                        <p class="preview-help">
+                            Preview your label here before using
+                            it in your classroom organization system.
                         </p>
 
                     </div>
@@ -769,108 +1526,125 @@
 
 
         <!-- =================================================
-             ORGANIZATION PRINCIPLES
+             INTENTIONAL ORGANIZATION
         ================================================== -->
 
-        <section class="organization-section">
+        <section class="organization-section section">
 
-            <div class="content-container">
+            <div class="container">
 
-                <div class="section-heading centered">
 
-                    <span class="section-label">
-                        INTENTIONAL ORGANIZATION
+                <div class="section-heading">
+
+                    <span class="section-eyebrow">
+                        INTENTIONAL CLASSROOM DESIGN
                     </span>
 
                     <h2>
-                        Labels Can Support Independence
+                        Organization Can Support Independence
                     </h2>
 
                     <p>
-                        Classroom labels are more than decoration. When
-                        used intentionally, visual labels can help children
-                        understand classroom routines, locate materials,
-                        participate in cleanup, and develop independence.
+                        Classroom labels can help children recognize
+                        familiar spaces, locate materials, participate
+                        in cleanup, and understand where classroom
+                        resources belong.
                     </p>
 
                 </div>
+
 
 
                 <div class="organization-grid">
 
 
-                    <article class="organization-card">
+                    <article class="feature-card">
 
-                        <div class="organization-number">
+                        <span class="feature-icon">
                             01
+                        </span>
+
+                        <div class="feature-content">
+
+                            <h3>
+                                Show Where Things Belong
+                            </h3>
+
+                            <p>
+                                Use labels to identify where materials
+                                and classroom resources are stored.
+                            </p>
+
                         </div>
-
-                        <h3>
-                            Show Where Things Belong
-                        </h3>
-
-                        <p>
-                            Use words, pictures, symbols, or combinations
-                            that help children recognize where materials
-                            should be stored.
-                        </p>
 
                     </article>
 
 
-                    <article class="organization-card">
 
-                        <div class="organization-number">
+                    <article class="feature-card">
+
+                        <span class="feature-icon">
                             02
+                        </span>
+
+                        <div class="feature-content">
+
+                            <h3>
+                                Make Materials Easier to Find
+                            </h3>
+
+                            <p>
+                                Clear organization helps children and
+                                adults navigate classroom materials.
+                            </p>
+
                         </div>
-
-                        <h3>
-                            Make Materials Accessible
-                        </h3>
-
-                        <p>
-                            Place labels where children can see them and
-                            organize materials in ways that support
-                            appropriate independence.
-                        </p>
 
                     </article>
 
 
-                    <article class="organization-card">
 
-                        <div class="organization-number">
+                    <article class="feature-card">
+
+                        <span class="feature-icon">
                             03
+                        </span>
+
+                        <div class="feature-content">
+
+                            <h3>
+                                Connect Words and Pictures
+                            </h3>
+
+                            <p>
+                                Combine familiar visuals with words
+                                to strengthen classroom organization.
+                            </p>
+
                         </div>
-
-                        <h3>
-                            Connect Words and Pictures
-                        </h3>
-
-                        <p>
-                            Visual supports can help children connect
-                            printed language with familiar objects,
-                            spaces, and routines.
-                        </p>
 
                     </article>
 
 
-                    <article class="organization-card">
 
-                        <div class="organization-number">
+                    <article class="feature-card">
+
+                        <span class="feature-icon">
                             04
+                        </span>
+
+                        <div class="feature-content">
+
+                            <h3>
+                                Create Consistency
+                            </h3>
+
+                            <p>
+                                Consistent labels can make classroom
+                                systems easier to understand and use.
+                            </p>
+
                         </div>
-
-                        <h3>
-                            Keep It Consistent
-                        </h3>
-
-                        <p>
-                            Consistent organization makes the classroom
-                            easier for children and adults to understand
-                            and navigate.
-                        </p>
 
                     </article>
 
@@ -883,328 +1657,53 @@
 
 
         <!-- =================================================
-             SUGGESTED LABELS
+             RESOURCE CTA
         ================================================== -->
 
-        <section class="suggestions-section">
+        <section class="resources-cta">
 
-            <div class="content-container">
+            <div class="container">
 
-                <div class="suggestions-layout">
+                <div class="cta-content">
 
-
-                    <div class="suggestions-intro">
-
-                        <span class="section-label">
-                            LABEL IDEAS
-                        </span>
-
-                        <h2>
-                            Need Some Ideas?
-                        </h2>
-
-                        <p>
-                            Start with the areas teachers organize every
-                            day. These are just examples. Customize them
-                            to match your classroom.
-                        </p>
-
-                    </div>
-
-
-                    <div class="suggestion-list">
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Blocks"
-                            data-subtext="Building Center"
-                        >
-                            Blocks
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Books"
-                            data-subtext="Library"
-                        >
-                            Books
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Art Supplies"
-                            data-subtext="Creative Area"
-                        >
-                            Art Supplies
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Puzzles"
-                            data-subtext="Manipulatives"
-                        >
-                            Puzzles
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Science"
-                            data-subtext="Discovery Center"
-                        >
-                            Science
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Dramatic Play"
-                            data-subtext="Pretend & Play"
-                        >
-                            Dramatic Play
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Writing"
-                            data-subtext="Literacy Center"
-                        >
-                            Writing
-                        </button>
-
-                        <button
-                            class="suggestion-item"
-                            data-label="Music"
-                            data-subtext="Music Center"
-                        >
-                            Music
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             PRINTABLE INFORMATION
-        ================================================== -->
-
-        <section class="printable-section">
-
-            <div class="content-container">
-
-                <div class="printable-box">
-
-                    <div class="printable-icon">
-                        🖨️
-                    </div>
-
-                    <div class="printable-content">
-
-                        <span class="section-label">
-                            PRINTABLE RESOURCE
-                        </span>
-
-                        <h2>
-                            Classroom Organization Made Simple
-                        </h2>
-
-                        <p>
-                            Use editable labels to create a consistent
-                            organization system throughout your classroom.
-                            Label centers, materials, storage spaces,
-                            cubbies, supplies, and teacher areas according
-                            to the needs of your learning environment.
-                        </p>
-
-                        <div class="printable-features">
-
-                            <span>
-                                ✓ Editable
-                            </span>
-
-                            <span>
-                                ✓ Classroom Ready
-                            </span>
-
-                            <span>
-                                ✓ Print Friendly
-                            </span>
-
-                            <span>
-                                ✓ Multiple Uses
-                            </span>
-
-                        </div>
-
-                        <button
-                            class="button button-primary"
-                            id="printPage"
-                            type="button"
-                        >
-                            Print This Page
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             RELATED RESOURCES
-        ================================================== -->
-
-        <section class="related-section">
-
-            <div class="content-container">
-
-                <div class="section-heading centered">
-
-                    <span class="section-label">
-                        MORE TEACHER RESOURCES
+                    <span class="section-eyebrow">
+                        KEEP EXPLORING
                     </span>
 
                     <h2>
-                        Continue Exploring
+                        Build a Classroom That Works for Children
                     </h2>
 
                     <p>
-                        Classroom organization works best when it connects
-                        with planning, learning centers, routines, and
-                        intentional classroom management.
+                        Explore more planning tools, teacher resources,
+                        classroom organization materials, and printable
+                        resources throughout Little Explorers Learning Hub.
                     </p>
 
-                </div>
 
+                    <div class="cta-actions">
 
-                <div class="related-grid">
+                        <a
+                            href="../resources.html"
+                            class="btn btn-primary"
+                        >
+                            Explore Teacher Resources
+                        </a>
 
+                        <a
+                            href="index.html"
+                            class="btn btn-secondary"
+                        >
+                            Browse Printables
+                        </a>
 
-                    <a
-                        href="../resources.html"
-                        class="related-card"
-                    >
-
-                        <span>
-                            📚
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                Teacher Resources
-                            </strong>
-
-                            <small>
-                                Explore the complete resource center.
-                            </small>
-
-                        </div>
-
-                        <b>
-                            →
-                        </b>
-
-                    </a>
-
-
-                    <a
-                        href="learning-center-signs.html"
-                        class="related-card"
-                    >
-
-                        <span>
-                            🧩
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                Learning Center Signs
-                            </strong>
-
-                            <small>
-                                Create clear signs for classroom centers.
-                            </small>
-
-                        </div>
-
-                        <b>
-                            →
-                        </b>
-
-                    </a>
-
-
-                    <a
-                        href="../resources/planning.html"
-                        class="related-card"
-                    >
-
-                        <span>
-                            📅
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                Planning Templates
-                            </strong>
-
-                            <small>
-                                Organize your classroom planning.
-                            </small>
-
-                        </div>
-
-                        <b>
-                            →
-                        </b>
-
-                    </a>
-
-
-                    <a
-                        href="../resources.html"
-                        class="related-card"
-                    >
-
-                        <span>
-                            🏫
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                Classroom Management
-                            </strong>
-
-                            <small>
-                                Explore routines, organization, and guidance.
-                            </small>
-
-                        </div>
-
-                        <b>
-                            →
-                        </b>
-
-                    </a>
+                    </div>
 
                 </div>
 
             </div>
 
         </section>
-
 
 
     </main>
@@ -1217,74 +1716,148 @@
 
     <footer class="site-footer">
 
-        <div class="footer-container">
+        <div class="container">
+
+            <div class="footer-grid">
 
 
-            <div class="footer-brand">
+                <div class="footer-brand">
 
-                <strong>
-                    Little Explorers Learning Hub
-                </strong>
+                    <a
+                        href="../index.html"
+                        class="logo"
+                    >
 
-                <p>
-                    Supporting Early Head Start, Head Start, Preschool,
-                    and Pre Kindergarten educators.
-                </p>
+                        <span class="logo-icon">
+                            <i class="fa-solid fa-shapes"></i>
+                        </span>
 
-            </div>
+                        <span class="logo-text">
+
+                            <strong>
+                                Little Explorers
+                            </strong>
+
+                            <small>
+                                Learning Hub
+                            </small>
+
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Practical resources for Early Head Start,
+                        Head Start, Preschool, and Pre Kindergarten
+                        educators.
+                    </p>
+
+                </div>
 
 
-            <div class="footer-links">
 
-                <a href="../index.html">
-                    Home
-                </a>
+                <div class="footer-column">
 
-                <a href="../studies.html">
-                    Studies
-                </a>
+                    <h3>
+                        Explore
+                    </h3>
 
-                <a href="../resources.html">
-                    Resources
-                </a>
+                    <a href="../studies.html">
+                        Studies
+                    </a>
 
-                <a href="index.html">
-                    Printables
-                </a>
+                    <a href="../library/index.html">
+                        Resource Library
+                    </a>
 
-                <a href="../library/index.html">
-                    Library
-                </a>
+                    <a href="../lesson-plans.html">
+                        Lesson Plans
+                    </a>
 
-                <a href="../about.html">
-                    About
-                </a>
+                    <a href="../resources.html">
+                        Teacher Resources
+                    </a>
 
-                <a href="../contact.html">
-                    Contact
-                </a>
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Printables
+                    </h3>
+
+                    <a href="index.html">
+                        Printable Library
+                    </a>
+
+                    <a href="classroom-labels.html">
+                        Classroom Labels
+                    </a>
+
+                    <a href="learning-center-signs.html">
+                        Learning Center Signs
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Connect
+                    </h3>
+
+                    <a href="../about.html">
+                        About
+                    </a>
+
+                    <a href="../contact.html">
+                        Contact
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
 
 
+
         <div class="footer-bottom">
 
-            <p>
-                ©
-                <span id="currentYear"></span>
-                Little Explorers Learning Hub.
-                All Rights Reserved.
-            </p>
+            <div class="container">
+
+                <p>
+                    ©
+                    <span id="currentYear"></span>
+                    Little Explorers Learning Hub.
+                    All Rights Reserved.
+                </p>
+
+            </div>
 
         </div>
 
     </footer>
 
 
+
     <!-- =====================================================
-         JAVASCRIPT
+         FONT AWESOME
+    ====================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+        crossorigin="anonymous"
+    ></script>
+
+
+
+    <!-- =====================================================
+         CLASSROOM LABELS JAVASCRIPT
     ====================================================== -->
 
     <script src="../js/classroom-labels1.js"></script>
