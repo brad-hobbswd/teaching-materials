@@ -3238,13 +3238,12 @@ section {
         grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        2fr 1fr 1fr 1fr;
 
     gap:
         3rem;
 
 }
-
 
 .footer-brand {
 
@@ -3261,6 +3260,9 @@ section {
 
     max-width:
         340px;
+
+    margin:
+        0;
 
     color:
         rgba(255,255,255,.68);
@@ -3290,25 +3292,35 @@ section {
 
 .footer-column h3 {
 
-    color:
-        #fff;
+    margin:
+        0 0 12px;
 
-    margin-bottom:
-        1rem;
+    color:
+        #FFFFFF;
+
+    font-family:
+        "Nunito",
+        sans-serif;
 
     font-size:
-        1.1rem;
+        16px;
+
+    font-weight:
+        800;
 
 }
 
 
 .footer-column a {
 
+    display:
+        block;
+
     margin-bottom:
         .7rem;
 
     color:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.72);
 
     font-size:
         .88rem;
@@ -3319,10 +3331,7 @@ section {
 .footer-column a:hover {
 
     color:
-        #fff;
-
-    padding-left:
-        6px;
+        var(--secondary);
 
 }
 
