@@ -3900,6 +3900,142 @@ section {
 
 }
 
+/* =========================================================
+   CLASSROOM LABELS FOOTER
+   FINAL DESKTOP OVERRIDE
+========================================================= */
+
+.classroom-labels-page .site-footer .footer-grid {
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr !important;
+
+    gap:
+        3rem;
+
+    align-items:
+        start;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-brand {
+
+    max-width:
+        420px;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-brand h3 {
+
+    margin:
+        0 0 12px;
+
+    color:
+        #FFFFFF !important;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        20px;
+
+    font-weight:
+        900;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-brand p {
+
+    margin:
+        0;
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-column {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-column h3 {
+
+    margin:
+        0 0 14px;
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-column a {
+
+    display:
+        block;
+
+    margin:
+        0 0 10px;
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.classroom-labels-page .site-footer .footer-column a:hover {
+
+    color:
+        #FFFFFF !important;
+
+}
+
+/* =========================================================
+   CLASSROOM LABELS FOOTER
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .classroom-labels-page .site-footer .footer-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr) !important;
+
+    }
+
+}
+
+
+@media (max-width: 680px) {
+
+    .classroom-labels-page .site-footer .footer-grid {
+
+        grid-template-columns:
+            1fr !important;
+
+    }
+
+}
+
 
 /* =========================================================
    PRINT
