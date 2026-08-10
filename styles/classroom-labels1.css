@@ -534,41 +534,24 @@ section {
 }
 
 
-.logo-icon {
+.logo img {
 
     width:
-        50px;
+        64px;
 
     height:
-        50px;
+        64px;
 
     display:
-        flex;
+        block;
 
-    align-items:
-        center;
+    flex-shrink:
+        0;
 
-    justify-content:
-        center;
-
-    border-radius:
-        14px;
-
-    background:
-        var(--primary);
-
-    color:
-        #fff;
-
-    font-size:
-        1.25rem;
-
-    box-shadow:
-        var(--shadow-sm);
+    object-fit:
+        contain;
 
 }
-
-
 .logo-text {
 
     display:
@@ -583,14 +566,17 @@ section {
 }
 
 
-.logo-text strong {
+.logo-text h1 {
+
+    margin:
+        0;
+
+    color:
+        var(--primary-dark);
 
     font-family:
         "Nunito",
         sans-serif;
-
-    color:
-        var(--primary-dark);
 
     font-size:
         1.35rem;
@@ -607,13 +593,20 @@ section {
 }
 
 
-.logo-text small {
+.logo-text span {
+
+    display:
+        block;
 
     margin-top:
         4px;
 
     color:
         var(--primary);
+
+    font-family:
+        "Inter",
+        sans-serif;
 
     font-size:
         .72rem;
@@ -623,6 +616,9 @@ section {
 
     letter-spacing:
         .08em;
+
+    line-height:
+        1.2;
 
     text-transform:
         uppercase;
@@ -989,18 +985,18 @@ section {
     }
 
 
-    .logo-icon {
+    .logo img {
 
         width:
-            44px;
+            52px;
 
         height:
-            44px;
+            52px;
 
     }
 
 
-    .logo-text strong {
+    .logo-text h1 {
 
         font-size:
             1.15rem;
@@ -1008,7 +1004,7 @@ section {
     }
 
 
-    .logo-text small {
+    .logo-text span {
 
         font-size:
             .65rem;
@@ -1024,7 +1020,6 @@ section {
     }
 
 }
-
 
 /* =========================================================
    BREADCRUMB
@@ -3258,30 +3253,6 @@ section {
 
     flex-direction:
         column;
-
-}
-
-
-.footer-brand .logo {
-
-    margin-bottom:
-        1rem;
-
-}
-
-
-.footer-brand .logo-text strong {
-
-    color:
-        #fff;
-
-}
-
-
-.footer-brand .logo-text small {
-
-    color:
-        var(--secondary);
 
 }
 
