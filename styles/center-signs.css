@@ -1,0 +1,2362 @@
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   LEARNING CENTER SIGNS
+   center-signs.css
+========================================================= */
+
+:root {
+
+    --primary:
+        #65558F;
+
+    --primary-dark:
+        #4F4372;
+
+    --primary-light:
+        #F3F0FA;
+
+    --secondary:
+        #8BB8E8;
+
+    --secondary-dark:
+        #6799CE;
+
+    --secondary-light:
+        #EEF6FE;
+
+    --accent:
+        #E6B94C;
+
+    --accent-light:
+        #FFF8E5;
+
+    --background:
+        #FAFBFD;
+
+    --surface:
+        #FFFFFF;
+
+    --surface-alt:
+        #F7F8FC;
+
+    --text-dark:
+        #2F2F3A;
+
+    --text:
+        #4A4E59;
+
+    --text-light:
+        #6A6F7C;
+
+    --border:
+        #E4E7F0;
+
+    --shadow-sm:
+        0 4px 12px rgba(101,85,143,.08);
+
+    --shadow:
+        0 12px 30px rgba(101,85,143,.12);
+
+    --shadow-lg:
+        0 22px 55px rgba(101,85,143,.18);
+
+    --radius:
+        18px;
+
+    --radius-lg:
+        28px;
+
+    --transition:
+        .3s ease;
+
+    --container:
+        1280px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    color:
+        var(--text);
+
+    background:
+        var(--background);
+
+    line-height:
+        1.7;
+
+}
+
+
+img {
+
+    max-width:
+        100%;
+
+    display:
+        block;
+
+}
+
+
+a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+button {
+
+    font:
+        inherit;
+
+}
+
+
+.container {
+
+    width:
+        min(92%, var(--container));
+
+    margin-inline:
+        auto;
+
+}
+
+
+section {
+
+    padding:
+        6rem 0;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    color:
+        var(--text-dark);
+
+    line-height:
+        1.2;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        1000;
+
+    background:
+        rgba(255,255,255,.97);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.nav-container {
+
+    width:
+        min(92%, var(--container));
+
+    min-height:
+        90px;
+
+    margin-inline:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        28px;
+
+}
+
+
+.logo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.logo img {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.logo-text {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.logo-text strong {
+
+    color:
+        var(--primary-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.35rem;
+
+    line-height:
+        1.05;
+
+}
+
+
+.logo-text small {
+
+    margin-top:
+        4px;
+
+    color:
+        var(--primary);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.main-nav {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        22px;
+
+    margin-left:
+        auto;
+
+}
+
+
+.main-nav a {
+
+    color:
+        var(--text);
+
+    font-size:
+        .88rem;
+
+    font-weight:
+        700;
+
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+
+    color:
+        var(--primary);
+
+}
+
+
+.header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.header-resource-link {
+
+    padding:
+        .65rem 1rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .78rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.mobile-menu {
+
+    display:
+        none;
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    border:
+        0;
+
+    border-radius:
+        12px;
+
+    background:
+        var(--primary);
+
+    cursor:
+        pointer;
+
+}
+
+
+.mobile-menu span {
+
+    display:
+        block;
+
+    width:
+        20px;
+
+    height:
+        2px;
+
+    margin:
+        4px auto;
+
+    background:
+        #fff;
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.breadcrumb-bar {
+
+    background:
+        var(--primary-light);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.breadcrumb {
+
+    min-height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        .55rem;
+
+    font-size:
+        .8rem;
+
+}
+
+
+.breadcrumb a {
+
+    color:
+        var(--primary);
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        1rem 1.8rem;
+
+    border-radius:
+        999px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition);
+
+}
+
+
+.btn-primary {
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+.btn-primary:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.btn-secondary {
+
+    background:
+        #fff;
+
+    color:
+        var(--primary);
+
+    border:
+        2px solid var(--primary);
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.signs-hero {
+
+    padding:
+        7rem 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            var(--primary-light) 55%,
+            var(--secondary-light)
+        );
+
+}
+
+
+.hero-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    gap:
+        5rem;
+
+    align-items:
+        center;
+
+}
+
+
+.eyebrow,
+.section-eyebrow {
+
+    display:
+        inline-flex;
+
+    margin-bottom:
+        1rem;
+
+    padding:
+        .45rem 1rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .06em;
+
+}
+
+
+.hero-copy h1 {
+
+    margin:
+        0 0 1.2rem;
+
+    font-size:
+        clamp(2.8rem,5vw,4.5rem);
+
+}
+
+
+.hero-lead {
+
+    max-width:
+        700px;
+
+    margin-bottom:
+        1rem;
+
+    color:
+        var(--primary);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.hero-description {
+
+    max-width:
+        680px;
+
+    margin-bottom:
+        2rem;
+
+}
+
+
+.hero-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        1rem;
+
+}
+
+
+/* =========================================================
+   HERO SIGN
+========================================================= */
+
+.hero-preview {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        390px;
+
+}
+
+
+.sign-board {
+
+    width:
+        min(100%,390px);
+
+    aspect-ratio:
+        1 / 1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        2rem;
+
+    border:
+        12px solid #FFFFFF;
+
+    border-radius:
+        28px;
+
+    outline:
+        4px solid var(--primary);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color:
+        #FFFFFF;
+
+    box-shadow:
+        var(--shadow-lg);
+
+    transform:
+        rotate(3deg);
+
+}
+
+
+.sign-decoration {
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        1.2rem;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.16);
+
+    font-size:
+        2rem;
+
+}
+
+
+.sign-board span {
+
+    font-size:
+        .85rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .2em;
+
+}
+
+
+.sign-board strong {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        2.3rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        1;
+
+}
+
+
+.sign-board b {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        2.8rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        1;
+
+}
+
+
+.sign-stars {
+
+    margin-top:
+        1.2rem;
+
+    opacity:
+        .8;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-section {
+
+    padding:
+        0 0 5rem;
+
+    background:
+        #fff;
+
+}
+
+
+.intro-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        1.5rem;
+
+}
+
+
+.intro-card {
+
+    padding:
+        2rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+        #fff;
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.intro-icon {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        1rem;
+
+    border-radius:
+        15px;
+
+    background:
+        var(--primary-light);
+
+    font-size:
+        1.5rem;
+
+}
+
+
+.intro-card h3 {
+
+    margin:
+        0 0 .6rem;
+
+}
+
+
+.intro-card p {
+
+    font-size:
+        .84rem;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto 3rem;
+
+    text-align:
+        center;
+
+}
+
+
+.section-heading > span {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        1rem;
+
+    padding:
+        .45rem 1rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .7rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.section-heading h2 {
+
+    margin:
+        0 0 1rem;
+
+    font-size:
+        clamp(2rem,4vw,3rem);
+
+}
+
+
+/* =========================================================
+   SIGN LIBRARY
+========================================================= */
+
+.sign-library {
+
+    background:
+        var(--surface-alt);
+
+}
+
+
+.sign-filters {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        .65rem;
+
+    margin-bottom:
+        3rem;
+
+}
+
+
+.filter-btn {
+
+    padding:
+        .7rem 1rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        999px;
+
+    background:
+        #fff;
+
+    color:
+        var(--text);
+
+    font-size:
+        .76rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition);
+
+}
+
+
+.filter-btn:hover,
+.filter-btn.active {
+
+    border-color:
+        var(--primary);
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   SIGN GRID
+========================================================= */
+
+.sign-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        1.5rem;
+
+}
+
+
+.sign-card {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+        #fff;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        var(--transition);
+
+}
+
+
+.sign-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.sign-card.hidden {
+
+    display:
+        none;
+
+}
+
+
+.printable-sign {
+
+    min-height:
+        245px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        1.5rem;
+
+    color:
+        #fff;
+
+    text-align:
+        center;
+
+}
+
+
+.printable-sign span {
+
+    margin-bottom:
+        .8rem;
+
+    font-size:
+        2rem;
+
+}
+
+
+.printable-sign strong {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.2rem;
+
+    line-height:
+        1.1;
+
+    letter-spacing:
+        .08em;
+
+}
+
+
+.printable-sign b {
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.7rem;
+
+    line-height:
+        1.1;
+
+}
+
+
+.dramatic-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #65558F,
+            #8B78B5
+        );
+
+}
+
+
+.blocks-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #B97943,
+            #D69B64
+        );
+
+}
+
+
+.literacy-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #4D78A8,
+            #7DA9D8
+        );
+
+}
+
+
+.writing-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #397C83,
+            #68A9AE
+        );
+
+}
+
+
+.stem-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #477C68,
+            #7EB69B
+        );
+
+}
+
+
+.science-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #3C7591,
+            #71AFC8
+        );
+
+}
+
+
+.art-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #B35F76,
+            #D892A5
+        );
+
+}
+
+
+.music-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #7860A4,
+            #A28BC5
+        );
+
+}
+
+
+.sensory-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #A4773E,
+            #D1A868
+        );
+
+}
+
+
+.math-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #597C9B,
+            #89ABC7
+        );
+
+}
+
+
+.books-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #7D634B,
+            #B19471
+        );
+
+}
+
+
+.discovery-sign {
+
+    background:
+        linear-gradient(
+            145deg,
+            #4C807B,
+            #79B2AB
+        );
+
+}
+
+
+.sign-card-content {
+
+    padding:
+        1.5rem;
+
+}
+
+
+.sign-category {
+
+    display:
+        inline-flex;
+
+    margin-bottom:
+        .5rem;
+
+    padding:
+        .3rem .65rem;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        .62rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .05em;
+
+}
+
+
+.sign-card-content h3 {
+
+    margin:
+        0 0 .55rem;
+
+    font-size:
+        1.15rem;
+
+}
+
+
+.sign-card-content p {
+
+    min-height:
+        76px;
+
+    margin:
+        0 0 1rem;
+
+    font-size:
+        .78rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+.print-sign-btn {
+
+    width:
+        100%;
+
+    padding:
+        .8rem 1rem;
+
+    border:
+        0;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--primary);
+
+    color:
+        #fff;
+
+    font-size:
+        .78rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition);
+
+}
+
+
+.print-sign-btn:hover {
+
+    background:
+        var(--primary-dark);
+
+}
+
+
+/* =========================================================
+   DISPLAY SECTION
+========================================================= */
+
+.display-section {
+
+    background:
+        #fff;
+
+}
+
+
+.display-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        1.5rem;
+
+}
+
+
+.display-card {
+
+    padding:
+        2rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+        var(--surface);
+
+}
+
+
+.display-number {
+
+    margin-bottom:
+        1rem;
+
+    color:
+        var(--primary);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.5rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.display-card h3 {
+
+    margin:
+        0 0 .7rem;
+
+}
+
+
+.display-card p {
+
+    font-size:
+        .82rem;
+
+}
+
+
+/* =========================================================
+   PRINTING
+========================================================= */
+
+.printing-section {
+
+    background:
+        var(--secondary-light);
+
+}
+
+
+.printing-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    gap:
+        4rem;
+
+    align-items:
+        center;
+
+}
+
+
+.printing-layout h2 {
+
+    margin:
+        0 0 1rem;
+
+}
+
+
+.printing-list {
+
+    padding:
+        2rem;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    background:
+        #fff;
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.printing-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        1rem;
+
+    padding:
+        .9rem 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.printing-item:last-child {
+
+    border-bottom:
+        0;
+
+}
+
+
+.printing-item span {
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-weight:
+        900;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.signs-cta {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color:
+        #fff;
+
+    text-align:
+        center;
+
+}
+
+
+.signs-cta .section-eyebrow {
+
+    background:
+        rgba(255,255,255,.15);
+
+    color:
+        #fff;
+
+}
+
+
+.signs-cta h2 {
+
+    margin:
+        0 0 1rem;
+
+    color:
+        #fff;
+
+}
+
+
+.signs-cta p {
+
+    max-width:
+        720px;
+
+    margin:
+        0 auto 2rem;
+
+    color:
+        rgba(255,255,255,.9);
+
+}
+
+
+.cta-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        1rem;
+
+}
+
+
+.signs-cta .btn-primary {
+
+    background:
+        #fff;
+
+    color:
+        var(--primary);
+
+}
+
+
+.signs-cta .btn-secondary {
+
+    background:
+        transparent;
+
+    border-color:
+        rgba(255,255,255,.75);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+
+    padding:
+        5rem 0 2rem;
+
+    background:
+        #202431;
+
+}
+
+
+.footer-grid {
+
+    width:
+        min(92%, var(--container));
+
+    margin:
+        0 auto 3rem;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:
+        3rem;
+
+    align-items:
+        start;
+
+}
+
+
+.footer-brand h3 {
+
+    margin:
+        0 0 12px;
+
+    color:
+        #fff;
+
+    font-size:
+        1.25rem;
+
+}
+
+
+.footer-brand p {
+
+    max-width:
+        350px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:
+        .86rem;
+
+}
+
+
+.footer-column {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+}
+
+
+.footer-column h3 {
+
+    margin:
+        0 0 1rem;
+
+    color:
+        #fff;
+
+    font-size:
+        1rem;
+
+}
+
+
+.footer-column a {
+
+    margin-bottom:
+        .65rem;
+
+    color:
+        rgba(255,255,255,.7);
+
+    font-size:
+        .82rem;
+
+}
+
+
+.footer-column a:hover {
+
+    color:
+        #fff;
+
+}
+
+
+.footer-bottom {
+
+    width:
+        min(92%, var(--container));
+
+    margin:
+        auto;
+
+    padding-top:
+        2rem;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+
+    text-align:
+        center;
+
+}
+
+
+.footer-bottom p {
+
+    color:
+        rgba(255,255,255,.55);
+
+    font-size:
+        .75rem;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width:1100px) {
+
+    .main-nav {
+
+        gap:
+            14px;
+
+    }
+
+
+    .hero-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero-copy {
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-lead,
+    .hero-description {
+
+        margin-inline:
+            auto;
+
+    }
+
+
+    .hero-actions {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .sign-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .display-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .printing-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media (max-width:900px) {
+
+    .mobile-menu {
+
+        display:
+            block;
+
+    }
+
+
+    .main-nav {
+
+        position:
+            absolute;
+
+        top:
+            90px;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            .5rem 0;
+
+        background:
+            #fff;
+
+        border-top:
+            1px solid var(--border);
+
+        box-shadow:
+            var(--shadow);
+
+    }
+
+
+    .main-nav.open {
+
+        display:
+            flex;
+
+    }
+
+
+    .main-nav a {
+
+        padding:
+            1rem 4%;
+
+        border-bottom:
+            1px solid var(--border);
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    section {
+
+        padding:
+            4.5rem 0;
+
+    }
+
+
+    .nav-container {
+
+        min-height:
+            78px;
+
+    }
+
+
+    .logo img {
+
+        width:
+            52px;
+
+        height:
+            52px;
+
+    }
+
+
+    .logo-text strong {
+
+        font-size:
+            1.15rem;
+
+    }
+
+
+    .logo-text small {
+
+        font-size:
+            .65rem;
+
+    }
+
+
+    .header-resource-link {
+
+        display:
+            none;
+
+    }
+
+
+    .hero-preview {
+
+        min-height:
+            320px;
+
+    }
+
+
+    .sign-board {
+
+        width:
+            min(80%,340px);
+
+    }
+
+
+    .intro-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .sign-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .display-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .footer-brand p {
+
+        margin-inline:
+            auto;
+
+    }
+
+
+    .footer-column {
+
+        align-items:
+            center;
+
+    }
+
+}
+
+
+@media (max-width:480px) {
+
+    .container,
+    .nav-container {
+
+        width:
+            94%;
+
+    }
+
+
+    .logo img {
+
+        width:
+            46px;
+
+        height:
+            46px;
+
+    }
+
+
+    .logo-text strong {
+
+        font-size:
+            1rem;
+
+    }
+
+
+    .logo-text small {
+
+        font-size:
+            .58rem;
+
+    }
+
+
+    .hero-actions,
+    .cta-actions {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .hero-actions .btn,
+    .cta-actions .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .sign-board {
+
+        width:
+            290px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    .site-header,
+    .breadcrumb-bar,
+    .sign-filters,
+    .hero-actions,
+    .display-section,
+    .printing-section,
+    .signs-cta,
+    .site-footer {
+
+        display:
+            none !important;
+
+    }
+
+
+    .signs-hero {
+
+        padding:
+            1rem 0;
+
+        background:
+            #fff;
+
+    }
+
+
+    .hero-preview {
+
+        display:
+            none;
+
+    }
+
+
+    .sign-library {
+
+        padding:
+            1rem 0;
+
+        background:
+            #fff;
+
+    }
+
+
+    .sign-card {
+
+        break-inside:
+            avoid;
+
+        box-shadow:
+            none;
+
+    }
+
+
+    .sign-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .sign-card-content {
+
+        display:
+            none;
+
+    }
+
+
+    .printable-sign {
+
+        min-height:
+            320px;
+
+        border:
+            2px solid #222;
+
+    }
+
+}
