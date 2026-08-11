@@ -1,0 +1,2063 @@
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   BEGINNING SOUNDS
+   FILE:
+   styles/beginning-sounds.css
+
+   PURPOSE:
+   Dedicated styling for:
+   printables/beginning-sounds.html
+
+   DESIGN:
+   Soft literacy palette
+   Cream, sage, muted blue, gentle coral
+   Inviting, calm, classroom friendly
+========================================================= */
+
+
+/* =========================================================
+   PAGE VARIABLES
+========================================================= */
+
+:root {
+
+    --bs-cream:
+        #fffaf3;
+
+    --bs-paper:
+        #fffdf9;
+
+    --bs-white:
+        #ffffff;
+
+    --bs-ink:
+        #26353c;
+
+    --bs-soft-ink:
+        #5d6c73;
+
+    --bs-sage:
+        #91aa8f;
+
+    --bs-sage-soft:
+        #edf3ea;
+
+    --bs-blue:
+        #82a9c0;
+
+    --bs-blue-soft:
+        #edf4f8;
+
+    --bs-coral:
+        #d98b7d;
+
+    --bs-coral-soft:
+        #faece8;
+
+    --bs-gold:
+        #d8b36a;
+
+    --bs-gold-soft:
+        #fbf3df;
+
+    --bs-lavender:
+        #aaa1c7;
+
+    --bs-lavender-soft:
+        #f1eff8;
+
+    --bs-border:
+        #e5ddd3;
+
+    --bs-shadow:
+        0 18px 50px rgba(50, 60, 65, .09);
+
+    --bs-shadow-small:
+        0 8px 24px rgba(50, 60, 65, .07);
+
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.beginning-sounds-page {
+
+    background:
+        var(--bs-paper);
+
+    color:
+        var(--bs-ink);
+
+}
+
+
+.beginning-sounds-page main {
+
+    overflow:
+        hidden;
+
+}
+
+
+.beginning-sounds-page h1,
+.beginning-sounds-page h2,
+.beginning-sounds-page h3,
+.beginning-sounds-page h4 {
+
+    font-family:
+        "Baloo 2",
+        "Nunito",
+        sans-serif;
+
+}
+
+
+.beginning-sounds-page p {
+
+    color:
+        var(--bs-soft-ink);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.sounds-hero {
+
+    position:
+        relative;
+
+    padding:
+        92px 0 88px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bs-cream) 0%,
+            var(--bs-blue-soft) 58%,
+            #f7f1f7 100%
+        );
+
+}
+
+
+.sounds-hero::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    top:
+        -140px;
+
+    right:
+        -80px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(216, 179, 106, .12);
+
+}
+
+
+.sounds-hero-grid {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(360px, .95fr);
+
+    align-items:
+        center;
+
+    gap:
+        70px;
+
+}
+
+
+.sounds-hero-content {
+
+    max-width:
+        720px;
+
+}
+
+
+.page-tag {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        8px 15px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.8);
+
+    color:
+        var(--bs-coral);
+
+    font-size:
+        .76rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .07em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.sounds-hero h1 {
+
+    margin:
+        20px 0 16px;
+
+    color:
+        var(--bs-ink);
+
+    font-size:
+        clamp(3.3rem, 6vw, 5.7rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        .92;
+
+    letter-spacing:
+        -.035em;
+
+}
+
+
+.sounds-hero h1 span {
+
+    display:
+        block;
+
+    color:
+        var(--bs-coral);
+
+}
+
+
+.hero-description {
+
+    max-width:
+        650px;
+
+    margin:
+        0;
+
+    font-size:
+        1.08rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+    margin-top:
+        28px;
+
+}
+
+
+.sounds-features {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-top:
+        30px;
+
+}
+
+
+.sounds-features div {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        9px 12px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    color:
+        var(--bs-soft-ink);
+
+    font-size:
+        .76rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.sounds-features i {
+
+    color:
+        var(--bs-sage);
+
+}
+
+
+/* =========================================================
+   FLOATING SOUND CARD VISUAL
+========================================================= */
+
+.sound-visual {
+
+    position:
+        relative;
+
+    min-height:
+        420px;
+
+}
+
+
+.sound-card {
+
+    position:
+        absolute;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        235px;
+
+    height:
+        285px;
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    border-radius:
+        28px;
+
+    background:
+        rgba(255,255,255,.93);
+
+    box-shadow:
+        var(--bs-shadow);
+
+    text-align:
+        center;
+
+}
+
+
+.sound-letter {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        82px;
+
+    height:
+        82px;
+
+    border-radius:
+        22px;
+
+    font-family:
+        "Baloo 2",
+        sans-serif;
+
+    font-size:
+        3rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.sound-picture {
+
+    margin:
+        14px 0 7px;
+
+    font-size:
+        4.2rem;
+
+    line-height:
+        1;
+
+}
+
+
+.sound-card strong {
+
+    color:
+        var(--bs-ink);
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.card-one {
+
+    top:
+        12px;
+
+    left:
+        12%;
+
+    transform:
+        rotate(-7deg);
+
+}
+
+
+.card-one .sound-letter {
+
+    background:
+        var(--bs-coral-soft);
+
+    color:
+        var(--bs-coral);
+
+}
+
+
+.card-two {
+
+    top:
+        95px;
+
+    right:
+        3%;
+
+    transform:
+        rotate(6deg);
+
+}
+
+
+.card-two .sound-letter {
+
+    background:
+        var(--bs-blue-soft);
+
+    color:
+        #648ca5;
+
+}
+
+
+.card-three {
+
+    bottom:
+        0;
+
+    left:
+        28%;
+
+    transform:
+        rotate(-2deg);
+
+}
+
+
+.card-three .sound-letter {
+
+    background:
+        var(--bs-sage-soft);
+
+    color:
+        #6f936e;
+
+}
+
+
+/* =========================================================
+   DEVELOPMENTAL NOTE
+========================================================= */
+
+.sounds-note-section {
+
+    padding:
+        34px 0;
+
+    background:
+        var(--bs-white);
+
+}
+
+
+.developmental-note {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        18px;
+
+    padding:
+        24px 28px;
+
+    border:
+        1px solid #dce6da;
+
+    border-radius:
+        20px;
+
+    background:
+        var(--bs-sage-soft);
+
+}
+
+
+.developmental-note-icon {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex:
+        0 0 48px;
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border-radius:
+        15px;
+
+    background:
+        var(--bs-white);
+
+    color:
+        #70956f;
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.developmental-note strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--bs-ink);
+
+    font-family:
+        "Baloo 2",
+        sans-serif;
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.developmental-note p {
+
+    margin:
+        0;
+
+    font-size:
+        .88rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   RESOURCE SECTION
+========================================================= */
+
+.sounds-resources {
+
+    padding:
+        94px 0;
+
+    background:
+        var(--bs-cream);
+
+}
+
+
+.section-heading {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto 45px;
+
+    text-align:
+        center;
+
+}
+
+
+.section-heading .section-tag {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        var(--bs-coral);
+
+    font-size:
+        .74rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section-heading h2 {
+
+    margin:
+        11px 0 12px;
+
+    color:
+        var(--bs-ink);
+
+    font-size:
+        clamp(2rem, 4vw, 3.2rem);
+
+    line-height:
+        1;
+
+}
+
+
+.section-heading p {
+
+    margin:
+        0;
+
+    font-size:
+        .98rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+.sound-resource-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.sound-resource-card {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    padding:
+        28px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        24px;
+
+    background:
+        var(--bs-white);
+
+    box-shadow:
+        var(--bs-shadow-small);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.sound-resource-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--bs-shadow);
+
+}
+
+
+.sound-resource-icon {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    margin-bottom:
+        20px;
+
+    border-radius:
+        16px;
+
+    font-size:
+        1.2rem;
+
+}
+
+
+.sound-resource-icon.picture {
+
+    background:
+        var(--bs-blue-soft);
+
+    color:
+        #668da7;
+
+}
+
+
+.sound-resource-icon.sort {
+
+    background:
+        var(--bs-sage-soft);
+
+    color:
+        #6d926d;
+
+}
+
+
+.sound-resource-icon.clip {
+
+    background:
+        var(--bs-gold-soft);
+
+    color:
+        #b18b3d;
+
+}
+
+
+.sound-resource-icon.phonics {
+
+    background:
+        var(--bs-coral-soft);
+
+    color:
+        var(--bs-coral);
+
+}
+
+
+.sound-resource-card h3 {
+
+    margin:
+        0 0 9px;
+
+    font-size:
+        1.35rem;
+
+}
+
+
+.sound-resource-card p {
+
+    margin:
+        0;
+
+    font-size:
+        .86rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+.sound-resource-card ul {
+
+    display:
+        grid;
+
+    gap:
+        7px;
+
+    margin:
+        20px 0;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+.sound-resource-card li {
+
+    position:
+        relative;
+
+    padding-left:
+        19px;
+
+    color:
+        var(--bs-soft-ink);
+
+    font-size:
+        .77rem;
+
+    line-height:
+        1.45;
+
+}
+
+
+.sound-resource-card li::before {
+
+    content:
+        "✓";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    color:
+        var(--bs-sage);
+
+    font-weight:
+        900;
+
+}
+
+
+.resource-builder-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    width:
+        100%;
+
+    margin-top:
+        auto;
+
+    padding:
+        11px 13px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        999px;
+
+    background:
+        var(--bs-paper);
+
+    color:
+        var(--bs-ink);
+
+    font-size:
+        .77rem;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.resource-builder-button:hover {
+
+    transform:
+        translateY(-1px);
+
+    border-color:
+        var(--bs-sage);
+
+    background:
+        var(--bs-sage-soft);
+
+}
+
+
+/* =========================================================
+   SOUND BUILDER
+========================================================= */
+
+.sound-builder-section {
+
+    padding:
+        95px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bs-blue-soft),
+            var(--bs-cream)
+        );
+
+}
+
+
+.sound-builder-section .builder-panel {
+
+    max-width:
+        1000px;
+
+    margin:
+        0 auto;
+
+    padding:
+        40px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        30px;
+
+    background:
+        var(--bs-white);
+
+    box-shadow:
+        var(--bs-shadow);
+
+}
+
+
+.sound-builder-section .builder-intro {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        17px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.sound-builder-section .builder-icon {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    flex:
+        0 0 54px;
+
+    width:
+        54px;
+
+    height:
+        54px;
+
+    border-radius:
+        16px;
+
+    background:
+        var(--bs-coral-soft);
+
+    color:
+        var(--bs-coral);
+
+    font-size:
+        1.15rem;
+
+}
+
+
+.sound-builder-section .section-tag {
+
+    color:
+        var(--bs-coral);
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.sound-builder-section .builder-intro h2 {
+
+    margin:
+        5px 0 8px;
+
+    font-size:
+        clamp(1.8rem, 4vw, 2.6rem);
+
+    line-height:
+        1;
+
+}
+
+
+.sound-builder-section .builder-intro p {
+
+    max-width:
+        700px;
+
+    margin:
+        0;
+
+    font-size:
+        .87rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   BUILDER CONTROLS
+========================================================= */
+
+.sound-builder-controls {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        18px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.sound-control-group {
+
+    padding:
+        18px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        17px;
+
+    background:
+        var(--bs-paper);
+
+}
+
+
+.sound-control-group label {
+
+    display:
+        block;
+
+    margin-bottom:
+        9px;
+
+    color:
+        var(--bs-ink);
+
+    font-size:
+        .76rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.sound-control-group select {
+
+    width:
+        100%;
+
+    min-height:
+        44px;
+
+    padding:
+        8px 11px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        10px;
+
+    background:
+        var(--bs-white);
+
+    color:
+        var(--bs-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        .82rem;
+
+    font-weight:
+        700;
+
+}
+
+
+.sound-control-group select:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--bs-blue);
+
+    box-shadow:
+        0 0 0 3px rgba(130,169,192,.16);
+
+}
+
+
+.sound-actions {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+}
+
+
+.builder-small-button {
+
+    min-height:
+        38px;
+
+    padding:
+        7px 13px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        999px;
+
+    background:
+        var(--bs-white);
+
+    color:
+        var(--bs-soft-ink);
+
+    font-family:
+        inherit;
+
+    font-size:
+        .74rem;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+}
+
+
+.builder-small-button:hover {
+
+    border-color:
+        var(--bs-sage);
+
+    background:
+        var(--bs-sage-soft);
+
+}
+
+
+/* =========================================================
+   SOUND LETTER GRID
+========================================================= */
+
+.sound-letter-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(10, 1fr);
+
+    gap:
+        8px;
+
+    padding:
+        20px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        18px;
+
+    background:
+        var(--bs-cream);
+
+}
+
+
+.sound-letter-choice {
+
+    aspect-ratio:
+        1;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        12px;
+
+    background:
+        var(--bs-white);
+
+    color:
+        var(--bs-ink);
+
+    font-family:
+        "Baloo 2",
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        1.05rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease,
+        color .18s ease;
+
+}
+
+
+.sound-letter-choice:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--bs-blue);
+
+    background:
+        var(--bs-blue-soft);
+
+}
+
+
+.sound-letter-choice.selected {
+
+    border-color:
+        var(--bs-coral);
+
+    background:
+        var(--bs-coral);
+
+    color:
+        var(--bs-white);
+
+    box-shadow:
+        0 6px 14px rgba(217,139,125,.2);
+
+}
+
+
+.sound-letter-choice:focus-visible {
+
+    outline:
+        3px solid rgba(130,169,192,.3);
+
+    outline-offset:
+        2px;
+
+}
+
+
+.sound-builder-status {
+
+    min-height:
+        24px;
+
+    margin:
+        14px 0;
+
+    color:
+        var(--bs-soft-ink);
+
+    font-size:
+        .8rem;
+
+    font-weight:
+        800;
+
+}
+
+
+.sound-builder-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+}
+
+
+.sound-builder-actions .btn {
+
+    min-height:
+        48px;
+
+}
+
+
+.sound-builder-section .builder-note {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        10px;
+
+    margin-top:
+        22px;
+
+    padding:
+        15px 17px;
+
+    border:
+        1px solid rgba(130,169,192,.25);
+
+    border-radius:
+        14px;
+
+    background:
+        var(--bs-blue-soft);
+
+}
+
+
+.sound-builder-section .builder-note i {
+
+    margin-top:
+        4px;
+
+    color:
+        #5f8da7;
+
+}
+
+
+.sound-builder-section .builder-note p {
+
+    margin:
+        0;
+
+    font-size:
+        .78rem;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================================
+   TEACHING IDEAS
+========================================================= */
+
+.sound-ideas {
+
+    padding:
+        94px 0;
+
+    background:
+        var(--bs-white);
+
+}
+
+
+.sound-ideas-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.sound-ideas-grid article {
+
+    padding:
+        26px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        22px;
+
+    background:
+        var(--bs-paper);
+
+}
+
+
+.sound-ideas-grid article > span {
+
+    display:
+        inline-grid;
+
+    place-items:
+        center;
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--bs-sage-soft);
+
+    color:
+        #6f936e;
+
+    font-size:
+        .72rem;
+
+    font-weight:
+        900;
+
+}
+
+
+.sound-ideas-grid h3 {
+
+    margin:
+        0 0 8px;
+
+    font-size:
+        1.25rem;
+
+}
+
+
+.sound-ideas-grid p {
+
+    margin:
+        0;
+
+    font-size:
+        .82rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.sounds-cta {
+
+    padding:
+        70px 0;
+
+    background:
+        var(--bs-cream);
+
+}
+
+
+.sounds-cta .cta-card {
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto;
+
+    padding:
+        55px 40px;
+
+    border:
+        1px solid var(--bs-border);
+
+    border-radius:
+        30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bs-sage-soft),
+            var(--bs-blue-soft)
+        );
+
+    text-align:
+        center;
+
+}
+
+
+.sounds-cta .section-tag {
+
+    color:
+        #6f936e;
+
+    font-size:
+        .73rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.sounds-cta h2 {
+
+    margin:
+        10px 0;
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+}
+
+
+.sounds-cta p {
+
+    max-width:
+        620px;
+
+    margin:
+        0 auto 25px;
+
+    font-size:
+        .9rem;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sounds-hero-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            40px;
+
+    }
+
+
+    .sounds-hero-content {
+
+        max-width:
+            850px;
+
+        margin:
+            0 auto;
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-description {
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .hero-buttons,
+    .sounds-features {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .sound-visual {
+
+        max-width:
+            620px;
+
+        width:
+            100%;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .sound-resource-grid,
+    .sound-ideas-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sounds-hero {
+
+        padding:
+            70px 0;
+
+    }
+
+
+    .sound-visual {
+
+        min-height:
+            370px;
+
+        transform:
+            scale(.9);
+
+    }
+
+
+    .sound-builder-controls {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .sound-letter-grid {
+
+        grid-template-columns:
+            repeat(7, 1fr);
+
+    }
+
+
+    .sound-builder-section .builder-panel {
+
+        padding:
+            28px 20px;
+
+        border-radius:
+            24px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .sounds-hero h1 {
+
+        font-size:
+            3.2rem;
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            .96rem;
+
+    }
+
+
+    .sounds-features {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .sounds-features div {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .sound-visual {
+
+        min-height:
+            330px;
+
+        transform:
+            scale(.78);
+
+        transform-origin:
+            top center;
+
+        margin-bottom:
+            -55px;
+
+    }
+
+
+    .sound-resource-grid,
+    .sound-ideas-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .developmental-note {
+
+        padding:
+            20px;
+
+    }
+
+
+    .sound-builder-section {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .sound-letter-grid {
+
+        grid-template-columns:
+            repeat(6, 1fr);
+
+        padding:
+            14px;
+
+    }
+
+
+    .sound-builder-actions {
+
+        display:
+            grid;
+
+    }
+
+
+    .sound-builder-actions .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .sounds-cta .cta-card {
+
+        padding:
+            40px 22px;
+
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .sounds-hero h1 {
+
+        font-size:
+            2.75rem;
+
+    }
+
+
+    .sound-visual {
+
+        min-height:
+            300px;
+
+        transform:
+            scale(.66);
+
+        margin-bottom:
+            -85px;
+
+    }
+
+
+    .sounds-features {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .sound-letter-grid {
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+    }
+
+
+    .sound-letter-choice {
+
+        border-radius:
+            9px;
+
+    }
+
+
+    .sounds-cta .cta-card {
+
+        border-radius:
+            22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sound-card,
+    .sound-resource-card,
+    .resource-builder-button,
+    .sound-letter-choice {
+
+        transition:
+            none;
+
+    }
+
+}
