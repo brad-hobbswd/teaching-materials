@@ -1,556 +1,845 @@
-/*==================================================
-  LITTLE EXPLORERS LEARNING HUB
-  Alphabet Cards JavaScript
-==================================================*/
+/* =========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   ALPHABET CARDS PRINTABLES
 
-document.documentElement.classList.add("js");
+   FILE:
+   js/alphabet-cards.js
 
-document.addEventListener("DOMContentLoaded", () => {
+   PURPOSE:
+   Mobile navigation
+   Resource search
+   FAQ accordion
+   Smooth scrolling
+   Back to top
+   Newsletter protection
+   Accessibility
+========================================================= */
 
-"use strict";
+document.addEventListener("DOMContentLoaded", function () {
 
-/*==================================================
-  MOBILE NAVIGATION
-==================================================*/
 
-const mobileButton = document.querySelector(".mobile-menu");
-const navigation = document.querySelector(".main-nav");
+    /* =====================================================
+       MOBILE NAVIGATION
+    ===================================================== */
 
-if (mobileButton && navigation) {
+    const mobileMenu =
+        document.querySelector(".mobile-menu");
 
-    mobileButton.addEventListener("click", (event) => {
+    const mainNav =
+        document.querySelector(".main-nav");
 
-        event.stopPropagation();
 
-        navigation.classList.toggle("active");
+    if (mobileMenu && mainNav) {
 
-        mobileButton.classList.toggle("active");
-
-        const expanded =
-            mobileButton.getAttribute("aria-expanded") === "true";
-
-        mobileButton.setAttribute(
+        mobileMenu.setAttribute(
             "aria-expanded",
-            !expanded
+            "false"
         );
 
-    });
 
-    document.addEventListener("click", (event) => {
+        mobileMenu.addEventListener(
+            "click",
+            function () {
 
-        if (!navigation.contains(event.target) &&
-            !mobileButton.contains(event.target)) {
+                const isOpen =
+                    mobileMenu.getAttribute(
+                        "aria-expanded"
+                    ) === "true";
 
-            navigation.classList.remove("active");
 
-            mobileButton.classList.remove("active");
+                if (isOpen) {
 
-            mobileButton.setAttribute(
-                "aria-expanded",
-                "false"
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    mobileMenu.setAttribute(
+                        "aria-label",
+                        "Open navigation"
+                    );
+
+                    mainNav.classList.remove(
+                        "mobile-open"
+                    );
+
+                } else {
+
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                    mobileMenu.setAttribute(
+                        "aria-label",
+                        "Close navigation"
+                    );
+
+                    mainNav.classList.add(
+                        "mobile-open"
+                    );
+
+                }
+
+            }
+        );
+
+
+        mainNav.querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        if (
+                            window.innerWidth <= 900
+                        ) {
+
+                            mobileMenu.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                            mobileMenu.setAttribute(
+                                "aria-label",
+                                "Open navigation"
+                            );
+
+                            mainNav.classList.remove(
+                                "mobile-open"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth > 900
+                ) {
+
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    mobileMenu.setAttribute(
+                        "aria-label",
+                        "Open navigation"
+                    );
+
+                    mainNav.classList.remove(
+                        "mobile-open"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+    ===================================================== */
+
+    const searchForm =
+        document.querySelector(
+            ".search-form"
+        );
+
+    const searchInput =
+        document.querySelector(
+            ".search-form input"
+        );
+
+
+    if (
+        searchForm &&
+        searchInput
+    ) {
+
+        const searchableItems = [
+
+            ...document.querySelectorAll(
+                ".study-card"
+            ),
+
+            ...document.querySelectorAll(
+                ".why-card"
+            ),
+
+            ...document.querySelectorAll(
+                ".skill-card"
+            ),
+
+            ...document.querySelectorAll(
+                ".application-card"
+            ),
+
+            ...document.querySelectorAll(
+                ".idea-card"
+            ),
+
+            ...document.querySelectorAll(
+                ".favorite-card"
+            ),
+
+            ...document.querySelectorAll(
+                ".resource-card"
+            )
+
+        ];
+
+
+        let searchStatus =
+            document.getElementById(
+                "searchStatus"
+            );
+
+
+        if (!searchStatus) {
+
+            searchStatus =
+                document.createElement(
+                    "div"
+                );
+
+            searchStatus.id =
+                "searchStatus";
+
+            searchStatus.setAttribute(
+                "role",
+                "status"
+            );
+
+            searchStatus.setAttribute(
+                "aria-live",
+                "polite"
+            );
+
+            searchStatus.style.margin =
+                "10px 0 0";
+
+            searchStatus.style.color =
+                "#59676d";
+
+            searchStatus.style.fontSize =
+                ".8rem";
+
+            searchStatus.style.fontWeight =
+                "800";
+
+            searchForm.insertAdjacentElement(
+                "afterend",
+                searchStatus
             );
 
         }
 
-    });
 
-}
+        function runSearch() {
 
-/*==================================================
-  STICKY HEADER EFFECT
-==================================================*/
+            const query =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
 
-const header = document.querySelector(".site-header");
 
-function updateHeader(){
+            let matches = 0;
 
-    if(!header) return;
 
-    if(window.scrollY > 40){
+            searchableItems.forEach(
+                function (item) {
 
-        header.classList.add("scrolled");
+                    const text =
+                        item.textContent
+                            .toLowerCase();
 
-    }else{
 
-        header.classList.remove("scrolled");
+                    const match =
+                        !query ||
+                        text.includes(query);
 
-    }
 
-}
+                    item.hidden =
+                        !match;
 
-window.addEventListener("scroll", updateHeader);
 
-updateHeader();
+                    if (match) {
 
-/*==================================================
-  SMOOTH SCROLL LINKS
-==================================================*/
+                        matches++;
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+                    }
 
-    link.addEventListener("click",(event)=>{
+                }
+            );
 
-        const target=document.querySelector(link.getAttribute("href"));
 
-        if(!target) return;
+            if (!query) {
 
-        event.preventDefault();
+                searchStatus.textContent =
+                    "";
 
-        target.scrollIntoView({
-
-            behavior:"smooth",
-
-            block:"start"
-
-        });
-
-        navigation?.classList.remove("active");
-
-        mobileButton?.classList.remove("active");
-
-    });
-
-});
-
-/*==================================================
-  SEARCH FORM
-==================================================*/
-
-const searchForm=document.querySelector(".search-form");
-
-if(searchForm){
-
-    searchForm.addEventListener("submit",(event)=>{
-
-        event.preventDefault();
-
-        const input=searchForm.querySelector("input");
-
-        if(!input) return;
-
-        const value=input.value.trim();
-
-        if(value===""){
-
-            input.focus();
-
-            return;
-
-        }
-
-        alert(`Searching for "${value}"...`);
-
-    });
-
-}
-
-/*==================================================
-  FAQ ACCORDION
-==================================================*/
-
-const faqItems=document.querySelectorAll(".faq-item");
-
-faqItems.forEach(item=>{
-
-    const button=item.querySelector(".faq-question");
-
-    if(!button) return;
-
-    button.addEventListener("click",()=>{
-
-        const active=item.classList.contains("active");
-
-        faqItems.forEach(faq=>{
-
-            faq.classList.remove("active");
-
-        });
-
-        if(!active){
-
-            item.classList.add("active");
-
-        }
-
-    });
-
-});
-
-/*==================================================
-  SCROLL TO TOP BUTTON
-==================================================*/
-
-const scrollButton=document.createElement("button");
-
-scrollButton.className="scroll-top";
-
-scrollButton.setAttribute("aria-label","Scroll to top");
-
-scrollButton.innerHTML='<i class="fa-solid fa-arrow-up"></i>';
-
-document.body.appendChild(scrollButton);
-
-scrollButton.addEventListener("click",()=>{
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>500){
-
-        scrollButton.classList.add("show");
-
-    }else{
-
-        scrollButton.classList.remove("show");
-
-    }
-
-});
-
-
-  /*==================================================
-  ANIMATED COUNTERS
-==================================================*/
-
-const counters = document.querySelectorAll(".stat-card h2");
-
-const animateCounter = (counter) => {
-
-    const text = counter.textContent.trim();
-
-    const number = parseInt(text.replace(/\D/g, ""), 10);
-
-    if (isNaN(number)) return;
-
-    const suffix = text.replace(/[0-9]/g, "");
-
-    let current = 0;
-
-    const increment = Math.max(1, Math.ceil(number / 80));
-
-    function update() {
-
-        current += increment;
-
-        if (current >= number) {
-
-            counter.textContent = number + suffix;
-
-            return;
-
-        }
-
-        counter.textContent = current + suffix;
-
-        requestAnimationFrame(update);
-
-    }
-
-    update();
-
-};
-
-const counterObserver = new IntersectionObserver((entries, observer) => {
-
-    entries.forEach(entry => {
-
-        if (!entry.isIntersecting) return;
-
-        animateCounter(entry.target);
-
-        observer.unobserve(entry.target);
-
-    });
-
-}, {
-
-    threshold: .4
-
-});
-
-counters.forEach(counter => counterObserver.observe(counter));
-
-/*==================================================
-  SCROLL REVEAL
-==================================================*/
-
-const revealItems = document.querySelectorAll(
-
-    ".study-card," +
-    ".skill-card," +
-    ".why-card," +
-    ".application-card," +
-    ".idea-card," +
-    ".favorite-card," +
-    ".resource-card," +
-    ".featured-image," +
-    ".featured-content"
-
-);
-
-revealItems.forEach(item => {
-
-    item.style.opacity = "0";
-
-    item.style.transform = "translateY(40px)";
-
-    item.style.transition =
-
-        "opacity .7s ease, transform .7s ease";
-
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (!entry.isIntersecting) return;
-
-        entry.target.style.opacity = "1";
-
-        entry.target.style.transform = "translateY(0)";
-
-    });
-
-}, {
-
-    threshold: .15
-
-});
-
-revealItems.forEach(item => revealObserver.observe(item));
-
-/*==================================================
-  BUTTON RIPPLE EFFECT
-==================================================*/
-
-document.querySelectorAll(".btn").forEach(button => {
-
-    button.addEventListener("click", function (event) {
-
-        const ripple = document.createElement("span");
-
-        ripple.className = "ripple";
-
-        const rect = this.getBoundingClientRect();
-
-        ripple.style.left =
-
-            `${event.clientX - rect.left}px`;
-
-        ripple.style.top =
-
-            `${event.clientY - rect.top}px`;
-
-        this.appendChild(ripple);
-
-        setTimeout(() => {
-
-            ripple.remove();
-
-        }, 600);
-
-    });
-
-});
-
-/*==================================================
-  IMAGE HOVER EFFECT
-==================================================*/
-
-document.querySelectorAll(
-
-".featured-image img, .favorite-card img, .resource-card img"
-
-).forEach(image => {
-
-    image.addEventListener("mousemove", (event) => {
-
-        const rect = image.getBoundingClientRect();
-
-        const x = event.clientX - rect.left;
-
-        const y = event.clientY - rect.top;
-
-        image.style.transformOrigin = `${x}px ${y}px`;
-
-    });
-
-    image.addEventListener("mouseleave", () => {
-
-        image.style.transformOrigin = "center";
-
-    });
-
-});
-
-/*==================================================
-  NEWSLETTER FORM
-==================================================*/
-
-const newsletter = document.querySelector(".newsletter-form");
-
-if (newsletter) {
-
-    newsletter.addEventListener("submit", (event) => {
-
-        event.preventDefault();
-
-        const email = newsletter.querySelector("input");
-
-        if (!email) return;
-
-        const value = email.value.trim();
-
-        const valid =
-
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-
-        if (!valid) {
-
-            alert("Please enter a valid email address.");
-
-            email.focus();
-
-            return;
-
-        }
-
-        alert("Thank you for subscribing!");
-
-        newsletter.reset();
-
-    });
-
-}
-
-/*==================================================
-  DOWNLOAD BUTTONS
-==================================================*/
-
-document.querySelectorAll(".download-button").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        button.classList.add("loading");
-
-        button.disabled = true;
-
-        setTimeout(() => {
-
-            button.classList.remove("loading");
-
-            button.disabled = false;
-
-        }, 1200);
-
-    });
-
-});
-
-/*==================================================
-  ACCESSIBILITY
-==================================================*/
-
-document.querySelectorAll("button").forEach(button => {
-
-    button.addEventListener("keyup", (event) => {
-
-        if (event.key === "Enter") {
-
-            button.click();
-
-        }
-
-    });
-
-});
-
-/*==================================================
-  LAZY IMAGE LOADING
-==================================================*/
-
-const lazyImages = document.querySelectorAll("img[data-src]");
-
-const lazyObserver = new IntersectionObserver((entries, observer) => {
-
-    entries.forEach(entry => {
-
-        if (!entry.isIntersecting) return;
-
-        const image = entry.target;
-
-        image.src = image.dataset.src;
-
-        image.removeAttribute("data-src");
-
-        observer.unobserve(image);
-
-    });
-
-});
-
-lazyImages.forEach(image => lazyObserver.observe(image));
-
-/*==================================================
-  ACTIVE NAVIGATION
-==================================================*/
-
-const sections = document.querySelectorAll("section[id]");
-
-const navLinks = document.querySelectorAll(".main-nav a");
-
-const sectionObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (!entry.isIntersecting) return;
-
-        const id = entry.target.id;
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === `#${id}`) {
-
-                link.classList.add("active");
+                return;
 
             }
 
-        });
 
-    });
+            if (matches === 0) {
 
-}, {
+                searchStatus.textContent =
+                    "No matching resources found. Try letters, sounds, pocket charts, games, literacy, or centers.";
 
-    threshold: .55
+            } else {
 
-});
+                searchStatus.textContent =
+                    matches +
+                    " matching resource" +
+                    (
+                        matches === 1
+                            ? ""
+                            : "s"
+                    ) +
+                    " found.";
 
-sections.forEach(section => sectionObserver.observe(section));
+            }
 
-/*==================================================
-  PAGE FINISHED LOADING
-==================================================*/
+        }
 
-window.addEventListener("load", () => {
 
-    document.body.classList.add("loaded");
+        searchInput.addEventListener(
+            "input",
+            runSearch
+        );
 
-});
 
-/*==================================================
-  END INITIALIZATION
-==================================================*/
+        searchForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                runSearch();
+
+
+                const firstMatch =
+                    searchableItems.find(
+                        function (item) {
+
+                            return !item.hidden;
+
+                        }
+                    );
+
+
+                if (
+                    firstMatch &&
+                    searchInput.value.trim()
+                ) {
+
+                    firstMatch.scrollIntoView({
+                        behavior:
+                            "smooth",
+
+                        block:
+                            "center"
+                    });
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FAQ ACCORDION
+    ===================================================== */
+
+    const faqItems =
+        document.querySelectorAll(
+            ".faq-item"
+        );
+
+
+    faqItems.forEach(
+        function (item, index) {
+
+            const button =
+                item.querySelector(
+                    ".faq-question"
+                );
+
+            const answer =
+                item.querySelector(
+                    ".faq-answer"
+                );
+
+
+            if (
+                !button ||
+                !answer
+            ) {
+
+                return;
+
+            }
+
+
+            const answerId =
+                "alphabet-faq-answer-" +
+                (index + 1);
+
+
+            answer.id =
+                answerId;
+
+
+            button.setAttribute(
+                "aria-controls",
+                answerId
+            );
+
+
+            if (
+                !button.hasAttribute(
+                    "aria-expanded"
+                )
+            ) {
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+
+            if (
+                button.getAttribute(
+                    "aria-expanded"
+                ) !== "true"
+            ) {
+
+                answer.hidden =
+                    true;
+
+            }
+
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const isOpen =
+                        button.getAttribute(
+                            "aria-expanded"
+                        ) === "true";
+
+
+                    faqItems.forEach(
+                        function (otherItem) {
+
+                            if (
+                                otherItem === item
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            const otherButton =
+                                otherItem.querySelector(
+                                    ".faq-question"
+                                );
+
+                            const otherAnswer =
+                                otherItem.querySelector(
+                                    ".faq-answer"
+                                );
+
+
+                            if (
+                                otherButton &&
+                                otherAnswer
+                            ) {
+
+                                otherButton.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                                otherAnswer.hidden =
+                                    true;
+
+                            }
+
+                        }
+                    );
+
+
+                    if (isOpen) {
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        answer.hidden =
+                            true;
+
+                    } else {
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+
+                        answer.hidden =
+                            false;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+    ===================================================== */
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    const targetId =
+                        link.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+
+                        return;
+
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+
+                        behavior:
+                            "smooth",
+
+                        block:
+                            "start"
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    const backToTop =
+        document.getElementById(
+            "backToTop"
+        );
+
+
+    if (backToTop) {
+
+
+        function updateBackToTop() {
+
+            if (
+                window.scrollY > 500
+            ) {
+
+                backToTop.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                backToTop.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateBackToTop,
+            {
+                passive:
+                    true
+            }
+        );
+
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+
+                    top:
+                        0,
+
+                    behavior:
+                        "smooth"
+
+                });
+
+            }
+        );
+
+
+        updateBackToTop();
+
+    }
+
+
+    /* =====================================================
+       NEWSLETTER FORM
+    ===================================================== */
+
+    const newsletterForm =
+        document.querySelector(
+            ".newsletter-form"
+        );
+
+
+    if (newsletterForm) {
+
+        const action =
+            newsletterForm.getAttribute(
+                "action"
+            ) || "";
+
+
+        const placeholderForm =
+            action.includes(
+                "YOUR_FORM_ID"
+            ) ||
+            newsletterForm.querySelector(
+                '[name="YOUR_ENTRY_ID"]'
+            );
+
+
+        if (placeholderForm) {
+
+            newsletterForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    let message =
+                        document.getElementById(
+                            "newsletterMessage"
+                        );
+
+
+                    if (!message) {
+
+                        message =
+                            document.createElement(
+                                "p"
+                            );
+
+                        message.id =
+                            "newsletterMessage";
+
+                        message.setAttribute(
+                            "role",
+                            "status"
+                        );
+
+                        message.style.marginTop =
+                            "12px";
+
+                        message.style.color =
+                            "#a95e53";
+
+                        message.style.fontSize =
+                            ".8rem";
+
+                        message.style.fontWeight =
+                            "800";
+
+                        newsletterForm.appendChild(
+                            message
+                        );
+
+                    }
+
+
+                    message.textContent =
+                        "Newsletter signup is not connected yet. Please check back soon.";
+
+                }
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       IMAGE FALLBACK
+    ===================================================== */
+
+    document.querySelectorAll(
+        "img"
+    ).forEach(
+        function (image) {
+
+            image.addEventListener(
+                "error",
+                function () {
+
+                    image.style.background =
+                        "#fbf4df";
+
+                    image.style.objectFit =
+                        "contain";
+
+                    image.style.padding =
+                        "18px";
+
+                },
+                {
+                    once:
+                        true
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CURRENT YEAR
+    ===================================================== */
+
+    const footer =
+        document.querySelector(
+            ".footer-bottom"
+        );
+
+
+    if (footer) {
+
+        footer.innerHTML =
+            footer.innerHTML.replace(
+                /\b20\d{2}\b/g,
+                String(
+                    new Date()
+                        .getFullYear()
+                )
+            );
+
+    }
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key !== "Escape"
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                mobileMenu &&
+                mainNav
+            ) {
+
+                mobileMenu.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
+
+                mainNav.classList.remove(
+                    "mobile-open"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       PAGE READY
+    ===================================================== */
+
+    document.body.classList.add(
+        "alphabet-cards-ready"
+    );
 
 });
