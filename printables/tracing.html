@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracing Practice | Little Explorers Learning Hub</title>
+<meta name="description" content="Free tracing practice resources for pre-writing lines, shapes, letter formation, pencil control, and early handwriting skills.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tracing.css">
+</head>
+<body>
+
+<header class="site-header">
+<div class="nav-container">
+<a href="../index.html" class="logo" aria-label="Little Explorers Learning Hub Home">
+<img src="../logo.png" alt="Little Explorers Learning Hub Logo" width="64" height="64">
+<span class="logo-text"><strong>Little Explorers</strong><small>Learning Hub</small></span>
+</a>
+<nav class="main-nav" id="mainNav" aria-label="Main navigation">
+<a href="../index.html">Home</a>
+<a href="../studies.html">Studies</a>
+<a href="../library/index.html">Library</a>
+<a href="../age-groups.html">Age Groups</a>
+<a href="../lesson-plans.html">Lesson Plans</a>
+<a href="../printables.html" class="active">Printables</a>
+<a href="../resources.html">Teacher Resources</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a href="../resources.html" class="header-resource-link">Resources</a>
+<button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="tracing-hero">
+<div class="container tracing-hero-grid">
+<div class="tracing-hero-content">
+<span class="page-tag">✎ Free Fine Motor Printables</span>
+<h1>Tracing <span>Practice</span></h1>
+<p class="hero-description">Practice lines, shapes, letters, and early handwriting skills while strengthening pencil control, visual coordination, and confidence.</p>
+<div class="hero-buttons">
+<a href="#resources" class="btn btn-primary">Explore Tracing Resources</a>
+<a href="#builder" class="btn btn-secondary">Build a Practice Set</a>
+</div>
+<div class="tracing-features"><span>Pre Writing</span><span>Shapes</span><span>Letters</span><span>Fine Motor</span></div>
+</div>
+<div class="tracing-hero-image">
+<img src="../images/tracing-practice.png" alt="Colorful tracing practice worksheet with dotted letters, pencil, crayons, and classroom materials">
+</div>
+</div>
+</section>
+
+<section class="developmental-section">
+<div class="container">
+<div class="developmental-card">
+<div class="developmental-icon">🌱</div>
+<div>
+<strong>Follow Developmental Readiness</strong>
+<p>Tracing can support fine motor development when children are ready and interested. For infants and young toddlers, focus first on grasping, reaching, manipulating objects, scribbling, drawing, and other hands-on experiences rather than expecting formal handwriting skills.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="resources-section" id="resources">
+<div class="container">
+<div class="section-heading">
+<span>Fine Motor Collection</span>
+<h2>Choose the Practice Resource You Need</h2>
+<p>Start with the level that matches the child's current development. Pre-writing movements and simple shapes can provide a foundation before children are ready for formal letter formation.</p>
+</div>
+
+<div class="resource-grid">
+<article class="resource-card">
+<div class="resource-icon lines">╱</div>
+<h3>Pre-Writing Lines</h3>
+<p>Build control with horizontal, vertical, diagonal, curved, and zigzag tracing paths.</p>
+<ul><li>Straight lines</li><li>Curved paths</li><li>Zigzags</li><li>Pencil control practice</li></ul>
+<button class="resource-button" type="button" data-type="lines">Build This Set →</button>
+</article>
+
+<article class="resource-card">
+<div class="resource-icon shapes">○</div>
+<h3>Shape Tracing</h3>
+<p>Practice tracing simple shapes while developing visual-motor coordination and hand control.</p>
+<ul><li>Circles</li><li>Squares</li><li>Triangles</li><li>Basic shape paths</li></ul>
+<button class="resource-button" type="button" data-type="shapes">Build This Set →</button>
+</article>
+
+<article class="resource-card">
+<div class="resource-icon letters">Aa</div>
+<h3>Letter Formation</h3>
+<p>Practice letter paths when children are ready to connect fine motor control with early writing.</p>
+<ul><li>Uppercase letters</li><li>Lowercase letters</li><li>Formation practice</li><li>Guided letter paths</li></ul>
+<button class="resource-button" type="button" data-type="letters">Build This Set →</button>
+</article>
+
+<article class="resource-card">
+<div class="resource-icon motor">✦</div>
+<h3>Fine Motor Practice</h3>
+<p>Combine tracing with playful hand-strengthening and coordination activities.</p>
+<ul><li>Paths and mazes</li><li>Pencil control</li><li>Follow the path</li><li>Hand-eye coordination</li></ul>
+<button class="resource-button" type="button" data-type="motor">Build This Set →</button>
+</article>
+</div>
+</div>
+</section>
+
+<section class="builder-section" id="builder">
+<div class="container">
+<div class="builder-panel">
+<div class="builder-heading">
+<div class="builder-icon">✎</div>
+<div><span>Free Printable Builder</span><h2>Build Your Own Tracing Practice Set</h2><p>Choose a practice type and select the activities you want to include.</p></div>
+</div>
+
+<div class="builder-controls">
+<div class="control-box">
+<label for="practiceType">Practice Type</label>
+<select id="practiceType">
+<option value="lines">Pre-Writing Lines</option>
+<option value="shapes">Shape Tracing</option>
+<option value="letters">Letter Formation</option>
+<option value="motor">Fine Motor Practice</option>
+</select>
+</div>
+<div class="control-box">
+<label>Select Practice</label>
+<div class="builder-actions-small">
+<button type="button" id="selectAll">Select All</button>
+<button type="button" id="clearAll">Clear</button>
+</div>
+</div>
+</div>
+
+<div class="practice-grid" id="practiceGrid">
+<button type="button" class="practice-choice" data-practice="horizontal" aria-pressed="false">Horizontal</button>
+<button type="button" class="practice-choice" data-practice="vertical" aria-pressed="false">Vertical</button>
+<button type="button" class="practice-choice" data-practice="curved" aria-pressed="false">Curved</button>
+<button type="button" class="practice-choice" data-practice="zigzag" aria-pressed="false">Zigzag</button>
+<button type="button" class="practice-choice" data-practice="circle" aria-pressed="false">Circle</button>
+<button type="button" class="practice-choice" data-practice="square" aria-pressed="false">Square</button>
+<button type="button" class="practice-choice" data-practice="triangle" aria-pressed="false">Triangle</button>
+<button type="button" class="practice-choice" data-practice="path" aria-pressed="false">Follow the Path</button>
+</div>
+
+<p class="builder-status" id="builderStatus">No practice activities selected.</p>
+
+<div class="builder-buttons">
+<button type="button" class="btn btn-primary" id="downloadSet">↓ Download Selected Set</button>
+<button type="button" class="btn btn-secondary" id="printSet">Print / Save as PDF</button>
+</div>
+
+<div class="builder-note"><strong>Need something different?</strong><p>If you need a different tracing level, letter set, shape collection, line style, or classroom format, use your resource request process to tell us what would be more useful.</p></div>
+</div>
+</div>
+</section>
+
+<section class="teaching-section">
+<div class="container">
+<div class="section-heading">
+<span>Teaching Ideas</span>
+<h2>Build Skills Before Expecting Perfect Writing</h2>
+<p>Fine motor development happens through repeated opportunities to move, grasp, draw, manipulate, and explore. Tracing is one tool within that larger learning process.</p>
+</div>
+<div class="ideas-grid">
+<article><strong>01</strong><h3>Start With Movement</h3><p>Let children make large movements with their arms before asking them to control a pencil on a small page.</p></article>
+<article><strong>02</strong><h3>Practice Simple Paths</h3><p>Lines, curves, loops, and simple paths help children experience directional movement without the pressure of letter writing.</p></article>
+<article><strong>03</strong><h3>Make It Playful</h3><p>Use crayons, markers, chalk, sensory materials, easels, and other tools to give children multiple ways to practice.</p></article>
+<article><strong>04</strong><h3>Follow Readiness</h3><p>Introduce letter formation when children show interest and developmental readiness rather than treating handwriting as a one-size-fits-all expectation.</p></article>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<div class="cta-card">
+<span>Little Explorers Learning Hub</span>
+<h2>More Free Printable Resources</h2>
+<p>Explore alphabet activities, beginning sounds, literacy centers, classroom signs, and other practical resources for early learning.</p>
+<a href="alphabet-cards.html" class="btn btn-primary">Explore Literacy Printables →</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div><h3>Little Explorers Learning Hub</h3><p>Practical resources for Early Head Start, Head Start, Preschool, and Pre-Kindergarten educators.</p></div>
+<div><h4>Explore</h4><a href="../studies.html">Studies</a><a href="../library/index.html">Resource Library</a><a href="../lesson-plans.html">Lesson Plans</a><a href="../resources.html">Teacher Resources</a></div>
+<div><h4>Printables</h4><a href="alphabet-cards.html">Alphabet Cards</a><a href="beginning-sounds.html">Beginning Sounds</a><a href="tracing.html">Tracing Practice</a></div>
+<div><h4>Connect</h4><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Little Explorers Learning Hub. All Rights Reserved.</p></div>
+</div>
+</footer>
+
+<script src="../js/tracing.js"></script>
+</body>
+</html>
