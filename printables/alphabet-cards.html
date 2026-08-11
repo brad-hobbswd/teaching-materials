@@ -1488,60 +1488,198 @@ Classroom Activities
 </section>
 
 <!-- ==========================================
-     DOWNLOAD SECTION
+     ALPHABET RESOURCE BUILDER
 ========================================== -->
 
-<section
-class="download-section"
-id="downloads">
+<section class="alphabet-builder" id="downloads">
 
     <div class="container">
 
-        <div class="download-card">
+        <div class="section-heading">
 
-            <span class="download-tag">
-
+            <span class="section-tag">
                 <i class="fa-solid fa-download"></i>
-
-                Ready to Print
-
+                Free Printable Builder
             </span>
 
             <h2>
-
-                Download the Complete Alphabet Cards Collection
-
+                Choose the Alphabet Resources You Need
             </h2>
 
             <p>
-
-                Save planning time with classroom ready alphabet printables designed primarily for Preschool, Pre-K, and Kindergarten. Choose activities intentionally based on children’s developmental readiness and interests.
-
+                Select the letters you want, choose a resource type, and create your own printable set. You do not have to download the entire alphabet when you only need a few letters.
             </p>
 
-            <div class="download-buttons">
+        </div>
+
+
+        <div class="builder-panel">
+
+            <div class="builder-intro">
+
+                <div class="builder-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div>
+                    <h3>
+                        Build Your Own Alphabet Set
+                    </h3>
+
+                    <p>
+                        Choose individual letters or select the complete alphabet. Your selected cards can be prepared as a printable page or downloaded as an HTML file for later use.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="builder-controls">
+
+                <div class="builder-control-group">
+
+                    <label for="alphabetResourceType">
+                        Resource Type
+                    </label>
+
+                    <select id="alphabetResourceType">
+
+                        <option value="both">
+                            Uppercase &amp; Lowercase
+                        </option>
+
+                        <option value="uppercase">
+                            Uppercase Letters
+                        </option>
+
+                        <option value="lowercase">
+                            Lowercase Letters
+                        </option>
+
+                        <option value="beginning">
+                            Beginning Sound Cards
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="builder-control-group">
+
+                    <span class="builder-label">
+                        Select Letters
+                    </span>
+
+                    <div class="letter-actions">
+
+                        <button
+                            type="button"
+                            class="builder-small-button"
+                            id="selectAllLetters"
+                        >
+                            Select All
+                        </button>
+
+                        <button
+                            type="button"
+                            class="builder-small-button"
+                            id="clearLetters"
+                        >
+                            Clear
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="alphabet-selector"
+                id="alphabetSelector"
+                aria-label="Choose alphabet letters"
+            >
+
+                <button type="button" class="letter-choice" data-letter="A">A</button>
+                <button type="button" class="letter-choice" data-letter="B">B</button>
+                <button type="button" class="letter-choice" data-letter="C">C</button>
+                <button type="button" class="letter-choice" data-letter="D">D</button>
+                <button type="button" class="letter-choice" data-letter="E">E</button>
+                <button type="button" class="letter-choice" data-letter="F">F</button>
+                <button type="button" class="letter-choice" data-letter="G">G</button>
+                <button type="button" class="letter-choice" data-letter="H">H</button>
+                <button type="button" class="letter-choice" data-letter="I">I</button>
+                <button type="button" class="letter-choice" data-letter="J">J</button>
+                <button type="button" class="letter-choice" data-letter="K">K</button>
+                <button type="button" class="letter-choice" data-letter="L">L</button>
+                <button type="button" class="letter-choice" data-letter="M">M</button>
+                <button type="button" class="letter-choice" data-letter="N">N</button>
+                <button type="button" class="letter-choice" data-letter="O">O</button>
+                <button type="button" class="letter-choice" data-letter="P">P</button>
+                <button type="button" class="letter-choice" data-letter="Q">Q</button>
+                <button type="button" class="letter-choice" data-letter="R">R</button>
+                <button type="button" class="letter-choice" data-letter="S">S</button>
+                <button type="button" class="letter-choice" data-letter="T">T</button>
+                <button type="button" class="letter-choice" data-letter="U">U</button>
+                <button type="button" class="letter-choice" data-letter="V">V</button>
+                <button type="button" class="letter-choice" data-letter="W">W</button>
+                <button type="button" class="letter-choice" data-letter="X">X</button>
+                <button type="button" class="letter-choice" data-letter="Y">Y</button>
+                <button type="button" class="letter-choice" data-letter="Z">Z</button>
+
+            </div>
+
+
+            <div
+                class="builder-status"
+                id="builderStatus"
+                role="status"
+                aria-live="polite"
+            >
+                No letters selected.
+            </div>
+
+
+            <div class="builder-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="downloadAlphabet"
+                >
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    Download Selected Set
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="printAlphabet"
+                >
+                    <i class="fa-solid fa-print"></i>
+                    Print / Save as PDF
+                </button>
 
                 <a
-                href="#"
-
-                class="btn btn-primary">
-
-                    <i class="fa-solid fa-file-pdf"></i>
-
-                    Download PDF
-
+                    href="../contact.html?subject=Alphabet%20Resource%20Request"
+                    class="btn btn-secondary"
+                >
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Request Something Different
                 </a>
 
-                <a
-                href="#"
+            </div>
 
-                class="btn btn-secondary">
 
-                    <i class="fa-solid fa-folder-open"></i>
+            <div class="builder-note">
 
-                    View Collection
+                <i class="fa-solid fa-circle-info"></i>
 
-                </a>
+                <p>
+                    Need a different letter set, card style, picture theme, classroom format, or another alphabet resource? Use the request link and tell us what would be more useful for your classroom.
+                </p>
 
             </div>
 
@@ -1552,7 +1690,7 @@ id="downloads">
 </section>
 
 
-  <!-- ==========================================
+<!-- ==========================================
      RELATED RESOURCES
 ========================================== -->
 
