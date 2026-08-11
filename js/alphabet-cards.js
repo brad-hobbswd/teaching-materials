@@ -5,14 +5,20 @@
    FILE:
    js/alphabet-cards.js
 
-   PURPOSE:
-   Mobile navigation
-   Resource search
-   FAQ accordion
-   Smooth scrolling
-   Back to top
-   Newsletter protection
-   Accessibility
+   FEATURES:
+   • Mobile navigation
+   • Alphabet resource selection
+   • Individual letter selection
+   • Select all / clear
+   • Resource type selection
+   • Printable alphabet generation
+   • Download selected alphabet set
+   • Print / Save as PDF
+   • Resource card shortcuts
+   • FAQ accordion
+   • Smooth scrolling
+   • Newsletter protection
+   • Accessibility support
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -56,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     mobileMenu.setAttribute(
                         "aria-label",
-                        "Open navigation"
+                        "Open Navigation"
                     );
 
                     mainNav.classList.remove(
@@ -72,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     mobileMenu.setAttribute(
                         "aria-label",
-                        "Close navigation"
+                        "Close Navigation"
                     );
 
                     mainNav.classList.add(
@@ -103,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             mobileMenu.setAttribute(
                                 "aria-label",
-                                "Open navigation"
+                                "Open Navigation"
                             );
 
                             mainNav.classList.remove(
@@ -133,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     mobileMenu.setAttribute(
                         "aria-label",
-                        "Open navigation"
+                        "Open Navigation"
                     );
 
                     mainNav.classList.remove(
@@ -146,6 +152,962 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
+
+
+    /* =====================================================
+       ALPHABET RESOURCE BUILDER
+    ===================================================== */
+
+    const letterChoices =
+        document.querySelectorAll(
+            ".letter-choice"
+        );
+
+    const selectAllLetters =
+        document.getElementById(
+            "selectAllLetters"
+        );
+
+    const clearLetters =
+        document.getElementById(
+            "clearLetters"
+        );
+
+    const builderStatus =
+        document.getElementById(
+            "builderStatus"
+        );
+
+    const resourceType =
+        document.getElementById(
+            "alphabetResourceType"
+        );
+
+    const downloadAlphabet =
+        document.getElementById(
+            "downloadAlphabet"
+        );
+
+    const printAlphabet =
+        document.getElementById(
+            "printAlphabet"
+        );
+
+
+    /* =====================================================
+       BEGINNING SOUND WORDS
+    ===================================================== */
+
+    const soundWords = {
+
+        A: "Apple",
+        B: "Ball",
+        C: "Cat",
+        D: "Dog",
+        E: "Elephant",
+        F: "Fish",
+        G: "Giraffe",
+        H: "Hat",
+        I: "Igloo",
+        J: "Juice",
+        K: "Kite",
+        L: "Lion",
+        M: "Moon",
+        N: "Nest",
+        O: "Orange",
+        P: "Pig",
+        Q: "Queen",
+        R: "Rainbow",
+        S: "Sun",
+        T: "Turtle",
+        U: "Umbrella",
+        V: "Van",
+        W: "Whale",
+        X: "Xylophone",
+        Y: "Yo-yo",
+        Z: "Zebra"
+
+    };
+
+
+    /* =====================================================
+       GET SELECTED LETTERS
+    ===================================================== */
+
+    function getSelectedLetters() {
+
+        return Array.from(
+            letterChoices
+        )
+        .filter(
+            function (button) {
+
+                return button.classList.contains(
+                    "selected"
+                );
+
+            }
+        )
+        .map(
+            function (button) {
+
+                return button.dataset.letter;
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       UPDATE BUILDER STATUS
+    ===================================================== */
+
+    function updateBuilderStatus() {
+
+        if (!builderStatus) {
+
+            return;
+
+        }
+
+
+        const selected =
+            getSelectedLetters();
+
+
+        if (
+            selected.length === 0
+        ) {
+
+            builderStatus.textContent =
+                "No letters selected.";
+
+            return;
+
+        }
+
+
+        if (
+            selected.length === 26
+        ) {
+
+            builderStatus.textContent =
+                "All 26 letters selected.";
+
+            return;
+
+        }
+
+
+        builderStatus.textContent =
+            selected.length +
+            " letter" +
+            (
+                selected.length === 1
+                    ? ""
+                    : "s"
+            ) +
+            " selected: " +
+            selected.join(", ") +
+            ".";
+
+    }
+
+
+    /* =====================================================
+       INDIVIDUAL LETTER BUTTONS
+    ===================================================== */
+
+    letterChoices.forEach(
+        function (button) {
+
+            button.setAttribute(
+                "aria-pressed",
+                "false"
+            );
+
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const selected =
+                        button.classList.toggle(
+                            "selected"
+                        );
+
+
+                    button.setAttribute(
+                        "aria-pressed",
+                        String(selected)
+                    );
+
+
+                    updateBuilderStatus();
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       SELECT ALL
+    ===================================================== */
+
+    if (selectAllLetters) {
+
+        selectAllLetters.addEventListener(
+            "click",
+            function () {
+
+                letterChoices.forEach(
+                    function (button) {
+
+                        button.classList.add(
+                            "selected"
+                        );
+
+                        button.setAttribute(
+                            "aria-pressed",
+                            "true"
+                        );
+
+                    }
+                );
+
+
+                updateBuilderStatus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CLEAR ALL
+    ===================================================== */
+
+    if (clearLetters) {
+
+        clearLetters.addEventListener(
+            "click",
+            function () {
+
+                letterChoices.forEach(
+                    function (button) {
+
+                        button.classList.remove(
+                            "selected"
+                        );
+
+                        button.setAttribute(
+                            "aria-pressed",
+                            "false"
+                        );
+
+                    }
+                );
+
+
+                updateBuilderStatus();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       RESOURCE CARD SHORTCUTS
+    ===================================================== */
+
+    document.querySelectorAll(
+        ".resource-select-button"
+    ).forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const type =
+                        button.dataset.resourceType;
+
+
+                    if (
+                        resourceType &&
+                        type
+                    ) {
+
+                        resourceType.value =
+                            type;
+
+                    }
+
+
+                    const builder =
+                        document.getElementById(
+                            "downloads"
+                        );
+
+
+                    if (builder) {
+
+                        builder.scrollIntoView({
+
+                            behavior:
+                                "smooth",
+
+                            block:
+                                "start"
+
+                        });
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CREATE ALPHABET MARKUP
+    ===================================================== */
+
+    function createAlphabetMarkup() {
+
+        const selected =
+            getSelectedLetters();
+
+
+        const type =
+            resourceType
+                ? resourceType.value
+                : "both";
+
+
+        if (
+            selected.length === 0
+        ) {
+
+            return null;
+
+        }
+
+
+        let cards = "";
+
+
+        selected.forEach(
+            function (letter) {
+
+                let content = "";
+                let title = "";
+
+
+                /* -----------------------------------------
+                   UPPERCASE
+                ----------------------------------------- */
+
+                if (
+                    type === "uppercase"
+                ) {
+
+                    title =
+                        letter;
+
+                    content =
+                        `
+                        <div class="card-letter">
+                            ${letter}
+                        </div>
+                        `;
+
+                }
+
+
+                /* -----------------------------------------
+                   LOWERCASE
+                ----------------------------------------- */
+
+                else if (
+                    type === "lowercase"
+                ) {
+
+                    title =
+                        letter.toLowerCase();
+
+                    content =
+                        `
+                        <div class="card-letter">
+                            ${letter.toLowerCase()}
+                        </div>
+                        `;
+
+                }
+
+
+                /* -----------------------------------------
+                   BEGINNING SOUNDS
+                ----------------------------------------- */
+
+                else if (
+                    type === "beginning"
+                ) {
+
+                    title =
+                        letter +
+                        " Beginning Sound";
+
+                    content =
+                        `
+                        <div class="card-letter">
+                            ${letter}
+                        </div>
+
+                        <div class="card-word">
+                            ${soundWords[letter]}
+                        </div>
+
+                        <div class="card-sound">
+                            / ${letter.toLowerCase()} /
+                        </div>
+                        `;
+
+                }
+
+
+                /* -----------------------------------------
+                   UPPERCASE + LOWERCASE
+                ----------------------------------------- */
+
+                else {
+
+                    title =
+                        letter +
+                        " Letter Card";
+
+                    content =
+                        `
+                        <div class="card-letter">
+                            ${letter}
+                        </div>
+
+                        <div class="card-lower">
+                            ${letter.toLowerCase()}
+                        </div>
+                        `;
+
+                }
+
+
+                cards +=
+                    `
+                    <article class="print-card">
+
+                        ${content}
+
+                        <div class="card-title">
+                            ${title}
+                        </div>
+
+                    </article>
+                    `;
+
+            }
+        );
+
+
+        return {
+
+            cards:
+                cards,
+
+            type:
+                type,
+
+            selected:
+                selected
+
+        };
+
+    }
+
+
+    /* =====================================================
+       CREATE PRINTABLE DOCUMENT
+    ===================================================== */
+
+    function buildDownloadDocument() {
+
+        const result =
+            createAlphabetMarkup();
+
+
+        if (!result) {
+
+            alert(
+                "Please select at least one letter first."
+            );
+
+            return null;
+
+        }
+
+
+        const typeNames = {
+
+            both:
+                "Uppercase and Lowercase Alphabet Cards",
+
+            uppercase:
+                "Uppercase Alphabet Cards",
+
+            lowercase:
+                "Lowercase Alphabet Cards",
+
+            beginning:
+                "Beginning Sound Cards"
+
+        };
+
+
+        const title =
+            typeNames[result.type];
+
+
+        return `
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    ${title} | Little Explorers Learning Hub
+</title>
+
+
+<style>
+
+@page {
+
+    size:
+        Letter portrait;
+
+    margin:
+        .45in;
+
+}
+
+
+* {
+
+    box-sizing:
+        border-box;
+
+}
+
+
+body {
+
+    margin:
+        0;
+
+    background:
+        #fffdf9;
+
+    color:
+        #28343a;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+}
+
+
+.print-header {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.print-header h1 {
+
+    margin:
+        0 0 6px;
+
+    font-size:
+        26px;
+
+}
+
+
+.print-header p {
+
+    margin:
+        0;
+
+    color:
+        #59676d;
+
+    font-size:
+        12px;
+
+}
+
+
+.print-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        14px;
+
+}
+
+
+.print-card {
+
+    min-height:
+        3.35in;
+
+    border:
+        2px solid #e6ddd2;
+
+    border-radius:
+        18px;
+
+    background:
+        #ffffff;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    page-break-inside:
+        avoid;
+
+}
+
+
+.card-letter {
+
+    font-size:
+        105px;
+
+    font-weight:
+        800;
+
+    line-height:
+        .9;
+
+}
+
+
+.card-lower {
+
+    margin-top:
+        8px;
+
+    font-size:
+        58px;
+
+    color:
+        #d98a7d;
+
+    font-weight:
+        700;
+
+}
+
+
+.card-word {
+
+    margin-top:
+        15px;
+
+    font-size:
+        24px;
+
+    font-weight:
+        700;
+
+}
+
+
+.card-sound {
+
+    margin-top:
+        7px;
+
+    color:
+        #59676d;
+
+    font-size:
+        15px;
+
+}
+
+
+.card-title {
+
+    margin-top:
+        18px;
+
+    color:
+        #59676d;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .04em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+@media print {
+
+    body {
+
+        background:
+            #ffffff;
+
+    }
+
+
+    .print-header {
+
+        display:
+            none;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="print-header">
+
+    <h1>
+        ${title}
+    </h1>
+
+    <p>
+        Little Explorers Learning Hub
+    </p>
+
+</header>
+
+
+<main class="print-grid">
+
+    ${result.cards}
+
+</main>
+
+
+</body>
+
+</html>
+`;
+
+    }
+
+
+    /* =====================================================
+       DOWNLOAD SELECTED SET
+    ===================================================== */
+
+    if (downloadAlphabet) {
+
+        downloadAlphabet.addEventListener(
+            "click",
+            function () {
+
+                const documentText =
+                    buildDownloadDocument();
+
+
+                if (!documentText) {
+
+                    return;
+
+                }
+
+
+                const blob =
+                    new Blob(
+                        [documentText],
+                        {
+                            type:
+                                "text/html"
+                        }
+                    );
+
+
+                const url =
+                    URL.createObjectURL(
+                        blob
+                    );
+
+
+                const link =
+                    document.createElement(
+                        "a"
+                    );
+
+
+                link.href =
+                    url;
+
+
+                link.download =
+                    "little-explorers-alphabet-cards.html";
+
+
+                document.body.appendChild(
+                    link
+                );
+
+
+                link.click();
+
+
+                link.remove();
+
+
+                setTimeout(
+                    function () {
+
+                        URL.revokeObjectURL(
+                            url
+                        );
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       PRINT / SAVE AS PDF
+    ===================================================== */
+
+    if (printAlphabet) {
+
+        printAlphabet.addEventListener(
+            "click",
+            function () {
+
+                const documentText =
+                    buildDownloadDocument();
+
+
+                if (!documentText) {
+
+                    return;
+
+                }
+
+
+                const printWindow =
+                    window.open(
+                        "",
+                        "_blank"
+                    );
+
+
+                if (!printWindow) {
+
+                    alert(
+                        "Please allow pop-ups for this site so the printable can open."
+                    );
+
+                    return;
+
+                }
+
+
+                printWindow.document.open();
+
+                printWindow.document.write(
+                    documentText
+                );
+
+                printWindow.document.close();
+
+
+                printWindow.focus();
+
+
+                setTimeout(
+                    function () {
+
+                        printWindow.print();
+
+                    },
+                    500
+                );
+
+            }
+        );
+
+    }
+
+
+    updateBuilderStatus();
 
 
     /* =====================================================
@@ -201,61 +1163,12 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
 
-        let searchStatus =
-            document.getElementById(
-                "searchStatus"
-            );
-
-
-        if (!searchStatus) {
-
-            searchStatus =
-                document.createElement(
-                    "div"
-                );
-
-            searchStatus.id =
-                "searchStatus";
-
-            searchStatus.setAttribute(
-                "role",
-                "status"
-            );
-
-            searchStatus.setAttribute(
-                "aria-live",
-                "polite"
-            );
-
-            searchStatus.style.margin =
-                "10px 0 0";
-
-            searchStatus.style.color =
-                "#59676d";
-
-            searchStatus.style.fontSize =
-                ".8rem";
-
-            searchStatus.style.fontWeight =
-                "800";
-
-            searchForm.insertAdjacentElement(
-                "afterend",
-                searchStatus
-            );
-
-        }
-
-
         function runSearch() {
 
             const query =
                 searchInput.value
                     .trim()
                     .toLowerCase();
-
-
-            let matches = 0;
 
 
             searchableItems.forEach(
@@ -266,53 +1179,14 @@ document.addEventListener("DOMContentLoaded", function () {
                             .toLowerCase();
 
 
-                    const match =
-                        !query ||
-                        text.includes(query);
-
-
                     item.hidden =
-                        !match;
-
-
-                    if (match) {
-
-                        matches++;
-
-                    }
+                        query &&
+                        !text.includes(
+                            query
+                        );
 
                 }
             );
-
-
-            if (!query) {
-
-                searchStatus.textContent =
-                    "";
-
-                return;
-
-            }
-
-
-            if (matches === 0) {
-
-                searchStatus.textContent =
-                    "No matching resources found. Try letters, sounds, pocket charts, games, literacy, or centers.";
-
-            } else {
-
-                searchStatus.textContent =
-                    matches +
-                    " matching resource" +
-                    (
-                        matches === 1
-                            ? ""
-                            : "s"
-                    ) +
-                    " found.";
-
-            }
 
         }
 
@@ -330,32 +1204,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault();
 
                 runSearch();
-
-
-                const firstMatch =
-                    searchableItems.find(
-                        function (item) {
-
-                            return !item.hidden;
-
-                        }
-                    );
-
-
-                if (
-                    firstMatch &&
-                    searchInput.value.trim()
-                ) {
-
-                    firstMatch.scrollIntoView({
-                        behavior:
-                            "smooth",
-
-                        block:
-                            "center"
-                    });
-
-                }
 
             }
         );
@@ -411,31 +1259,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 answerId
             );
 
+            button.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
-            if (
-                !button.hasAttribute(
-                    "aria-expanded"
-                )
-            ) {
-
-                button.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-
-            if (
-                button.getAttribute(
-                    "aria-expanded"
-                ) !== "true"
-            ) {
-
-                answer.hidden =
-                    true;
-
-            }
+            answer.hidden =
+                true;
 
 
             button.addEventListener(
@@ -450,15 +1280,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     faqItems.forEach(
                         function (otherItem) {
-
-                            if (
-                                otherItem === item
-                            ) {
-
-                                return;
-
-                            }
-
 
                             const otherButton =
                                 otherItem.querySelector(
@@ -490,17 +1311,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                    if (isOpen) {
-
-                        button.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                        answer.hidden =
-                            true;
-
-                    } else {
+                    if (!isOpen) {
 
                         button.setAttribute(
                             "aria-expanded",
@@ -593,7 +1404,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (backToTop) {
 
-
         function updateBackToTop() {
 
             if (
@@ -649,150 +1459,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       NEWSLETTER FORM
-    ===================================================== */
-
-    const newsletterForm =
-        document.querySelector(
-            ".newsletter-form"
-        );
-
-
-    if (newsletterForm) {
-
-        const action =
-            newsletterForm.getAttribute(
-                "action"
-            ) || "";
-
-
-        const placeholderForm =
-            action.includes(
-                "YOUR_FORM_ID"
-            ) ||
-            newsletterForm.querySelector(
-                '[name="YOUR_ENTRY_ID"]'
-            );
-
-
-        if (placeholderForm) {
-
-            newsletterForm.addEventListener(
-                "submit",
-                function (event) {
-
-                    event.preventDefault();
-
-
-                    let message =
-                        document.getElementById(
-                            "newsletterMessage"
-                        );
-
-
-                    if (!message) {
-
-                        message =
-                            document.createElement(
-                                "p"
-                            );
-
-                        message.id =
-                            "newsletterMessage";
-
-                        message.setAttribute(
-                            "role",
-                            "status"
-                        );
-
-                        message.style.marginTop =
-                            "12px";
-
-                        message.style.color =
-                            "#a95e53";
-
-                        message.style.fontSize =
-                            ".8rem";
-
-                        message.style.fontWeight =
-                            "800";
-
-                        newsletterForm.appendChild(
-                            message
-                        );
-
-                    }
-
-
-                    message.textContent =
-                        "Newsletter signup is not connected yet. Please check back soon.";
-
-                }
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       IMAGE FALLBACK
-    ===================================================== */
-
-    document.querySelectorAll(
-        "img"
-    ).forEach(
-        function (image) {
-
-            image.addEventListener(
-                "error",
-                function () {
-
-                    image.style.background =
-                        "#fbf4df";
-
-                    image.style.objectFit =
-                        "contain";
-
-                    image.style.padding =
-                        "18px";
-
-                },
-                {
-                    once:
-                        true
-                }
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       CURRENT YEAR
-    ===================================================== */
-
-    const footer =
-        document.querySelector(
-            ".footer-bottom"
-        );
-
-
-    if (footer) {
-
-        footer.innerHTML =
-            footer.innerHTML.replace(
-                /\b20\d{2}\b/g,
-                String(
-                    new Date()
-                        .getFullYear()
-                )
-            );
-
-    }
-
-
-    /* =====================================================
        ESCAPE KEY
     ===================================================== */
 
@@ -821,7 +1487,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 mobileMenu.setAttribute(
                     "aria-label",
-                    "Open navigation"
+                    "Open Navigation"
                 );
 
                 mainNav.classList.remove(
