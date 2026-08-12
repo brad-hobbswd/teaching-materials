@@ -1,0 +1,620 @@
+/* =========================================================
+   BACK TO SCHOOL COLLECTION
+   Little Explorers Learning Hub
+   Warm, colorful, welcoming, classroom-ready design
+   ========================================================= */
+
+:root {
+    --school-navy: #243b53;
+    --school-blue: #3b82c4;
+    --school-sky: #eaf6ff;
+    --school-red: #e85d5d;
+    --school-yellow: #f6c453;
+    --school-gold: #e8a83e;
+    --school-green: #63a875;
+    --school-cream: #fffaf0;
+    --school-paper: #ffffff;
+    --school-text: #334155;
+    --school-muted: #64748b;
+    --school-border: #e5e7eb;
+    --school-shadow: 0 12px 30px rgba(36, 59, 83, 0.10);
+    --school-radius: 18px;
+}
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.family-activities-page {
+    margin: 0;
+    background:
+        linear-gradient(
+            180deg,
+            #fffaf0 0%,
+            #ffffff 32%,
+            #f7fbff 100%
+        );
+    color: var(--school-text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+}
+
+body.family-activities-page img {
+    display: block;
+    max-width: 100%;
+}
+
+body.family-activities-page a {
+    color: inherit;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.family-activities-page .container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.family-activities-page header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: 0 4px 18px rgba(36, 59, 83, 0.07);
+    backdrop-filter: blur(12px);
+}
+
+.family-activities-page .nav-container {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.family-activities-page .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--school-navy);
+    flex-shrink: 0;
+}
+
+.family-activities-page .logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.family-activities-page .logo h1 {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.family-activities-page .logo span {
+    display: block;
+    margin-top: 4px;
+    color: var(--school-blue);
+    font-family: "Nunito", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.family-activities-page nav ul {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.family-activities-page nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    color: var(--school-navy);
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.family-activities-page nav a:hover {
+    color: var(--school-blue);
+    background: var(--school-sky);
+    transform: translateY(-1px);
+}
+
+.family-activities-page nav a.active {
+    color: #ffffff;
+    background: var(--school-blue);
+    box-shadow: 0 5px 14px rgba(59, 130, 196, 0.22);
+}
+
+.family-activities-page .mobile-menu {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--school-navy);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.family-activities-page .study-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0 78px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(246, 196, 83, 0.30), transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(99, 168, 117, 0.22), transparent 24%),
+        linear-gradient(135deg, #eaf6ff 0%, #fffaf0 52%, #fff1e7 100%);
+    border-bottom: 1px solid #f0e5d2;
+}
+
+.family-activities-page .study-hero::before,
+.family-activities-page .study-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.family-activities-page .study-hero::before {
+    width: 220px;
+    height: 220px;
+    right: -70px;
+    bottom: -100px;
+    background: rgba(232, 93, 93, 0.10);
+}
+
+.family-activities-page .study-hero::after {
+    width: 160px;
+    height: 160px;
+    left: -60px;
+    top: -70px;
+    background: rgba(59, 130, 196, 0.10);
+}
+
+.family-activities-page .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+    color: var(--school-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.family-activities-page .breadcrumb a {
+    color: var(--school-blue);
+    text-decoration: none;
+}
+
+.family-activities-page .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.family-activities-page .study-hero h1 {
+    max-width: 850px;
+    margin: 0 0 18px;
+    color: var(--school-navy);
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.6rem);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.family-activities-page .study-hero h1::first-letter {
+    color: var(--school-red);
+}
+
+.family-activities-page .study-hero > .container > p {
+    max-width: 790px;
+    margin: 0;
+    color: #526274;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.family-activities-page .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.family-activities-page .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.family-activities-page .btn:hover {
+    transform: translateY(-2px);
+}
+
+.family-activities-page .btn-primary {
+    color: #ffffff;
+    background: var(--school-red);
+    box-shadow: 0 8px 18px rgba(232, 93, 93, 0.22);
+}
+
+.family-activities-page .btn-primary:hover {
+    background: #d94e4e;
+    box-shadow: 0 12px 24px rgba(232, 93, 93, 0.28);
+}
+
+.family-activities-page .btn-secondary {
+    color: var(--school-navy);
+    background: #ffffff;
+    border: 2px solid #d8e3ec;
+    box-shadow: 0 6px 16px rgba(36, 59, 83, 0.07);
+}
+
+.family-activities-page .btn-secondary:hover {
+    color: var(--school-blue);
+    border-color: var(--school-blue);
+    background: var(--school-sky);
+}
+
+/* =========================================================
+   COLLECTION SECTION
+   ========================================================= */
+
+.family-activities-page .study-section {
+    padding: 82px 0 100px;
+    background: #ffffff;
+}
+
+.family-activities-page .section-header {
+    max-width: 760px;
+    margin: 0 auto 46px;
+    text-align: center;
+}
+
+.family-activities-page .section-header h2 {
+    margin: 0 0 14px;
+    color: var(--school-navy);
+    font-family: "Nunito", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.family-activities-page .section-header p {
+    margin: 0;
+    color: var(--school-muted);
+    font-size: 1.05rem;
+}
+
+/* =========================================================
+   RESOURCE GRID
+   ========================================================= */
+
+.family-activities-page .study-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.family-activities-page .study-card {
+    overflow: hidden;
+    background: var(--school-paper);
+    border: 1px solid var(--school-border);
+    border-radius: var(--school-radius);
+    box-shadow: var(--school-shadow);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.family-activities-page .study-card:nth-child(1) {
+    border-top: 5px solid var(--school-blue);
+}
+
+.family-activities-page .study-card:nth-child(2) {
+    border-top: 5px solid var(--school-yellow);
+}
+
+.family-activities-page .study-card:nth-child(3) {
+    border-top: 5px solid var(--school-red);
+}
+
+.family-activities-page .study-card:nth-child(4) {
+    border-top: 5px solid var(--school-green);
+}
+
+.family-activities-page .study-card:nth-child(5) {
+    border-top: 5px solid var(--school-gold);
+}
+
+.family-activities-page .study-card:hover {
+    transform: translateY(-7px);
+    border-color: #d5e0e9;
+    box-shadow: 0 18px 38px rgba(36, 59, 83, 0.14);
+}
+
+.family-activities-page .study-card > img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: #f3f7fa;
+}
+
+.family-activities-page .study-content {
+    padding: 24px 24px 22px;
+}
+
+.family-activities-page .study-content h3 {
+    margin: 0 0 10px;
+    color: var(--school-navy);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    font-weight: 900;
+}
+
+.family-activities-page .study-content p {
+    margin: 0;
+    color: var(--school-muted);
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.family-activities-page .study-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #edf0f2;
+}
+
+.family-activities-page .study-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--school-blue);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.family-activities-page .study-footer a:hover {
+    color: var(--school-red);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.family-activities-page footer {
+    color: #dce7f0;
+    background:
+        linear-gradient(135deg, #243b53 0%, #1d3145 100%);
+}
+
+.family-activities-page .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 42px;
+    padding-top: 58px;
+    padding-bottom: 52px;
+}
+
+.family-activities-page .footer-brand p {
+    max-width: 330px;
+    margin: 16px 0 0;
+    color: #b9c9d7;
+}
+
+.family-activities-page .footer-logo img {
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+.family-activities-page .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.family-activities-page .footer-column h4 {
+    margin: 0 0 10px;
+    color: var(--school-yellow);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.family-activities-page .footer-column a {
+    width: fit-content;
+    color: #dce7f0;
+    font-size: 0.93rem;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.family-activities-page .footer-column a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.family-activities-page .footer-bottom {
+    padding: 18px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.family-activities-page .footer-bottom p {
+    margin: 0;
+    color: #aebfce;
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+    .family-activities-page .study-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .family-activities-page .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .family-activities-page nav ul {
+        gap: 2px;
+    }
+
+    .family-activities-page nav a {
+        padding-inline: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+    .family-activities-page .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .family-activities-page .nav-container {
+        min-height: 72px;
+    }
+
+    .family-activities-page nav {
+        display: none;
+    }
+
+    .family-activities-page .mobile-menu {
+        display: block;
+    }
+
+    .family-activities-page .study-hero {
+        padding: 52px 0 60px;
+    }
+
+    .family-activities-page .study-hero h1 {
+        font-size: clamp(2.25rem, 12vw, 3.5rem);
+    }
+
+    .family-activities-page .hero-buttons {
+        flex-direction: column;
+    }
+
+    .family-activities-page .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .family-activities-page .study-section {
+        padding: 62px 0 72px;
+    }
+
+    .family-activities-page .section-header {
+        margin-bottom: 34px;
+    }
+
+    .family-activities-page .study-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .family-activities-page .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-top: 46px;
+        padding-bottom: 42px;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .family-activities-page .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .family-activities-page .logo h1 {
+        font-size: 1.05rem;
+    }
+
+    .family-activities-page .logo span {
+        font-size: 0.75rem;
+    }
+
+    .family-activities-page .study-content {
+        padding: 21px 20px;
+    }
+
+    .family-activities-page .study-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .family-activities-page *,
+    .family-activities-page *::before,
+    .family-activities-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
