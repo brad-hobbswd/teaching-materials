@@ -1,15 +1,17 @@
 /* =========================================================
-   BACK TO SCHOOL PAGE JAVASCRIPT
+   BACK TO SCHOOL
    Little Explorers Learning Hub
+   Page JavaScript
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     const page = document.querySelector(".back-to-school-page");
 
     if (!page) {
         return;
     }
+
 
     /* =========================================================
        MOBILE NAVIGATION
@@ -20,28 +22,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mobileMenu && nav) {
 
-        mobileMenu.addEventListener("click", () => {
+        mobileMenu.addEventListener("click", function (event) {
 
-            const isOpen = nav.classList.toggle("mobile-nav-open");
+            event.stopPropagation();
+
+            const isOpen =
+                nav.classList.toggle("mobile-nav-open");
 
             mobileMenu.setAttribute(
                 "aria-expanded",
-                String(isOpen)
+                isOpen ? "true" : "false"
             );
 
-            mobileMenu.textContent = isOpen ? "✕" : "☰";
+            mobileMenu.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+            mobileMenu.textContent =
+                isOpen ? "✕" : "☰";
 
         });
 
-        nav.querySelectorAll("a").forEach(link => {
 
-            link.addEventListener("click", () => {
+        /* Close menu when a navigation link is selected */
 
-                nav.classList.remove("mobile-nav-open");
+        nav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                nav.classList.remove(
+                    "mobile-nav-open"
+                );
 
                 mobileMenu.setAttribute(
                     "aria-expanded",
                     "false"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
                 );
 
                 mobileMenu.textContent = "☰";
@@ -49,34 +72,44 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         });
+
     }
 
 
     /* =========================================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
+       CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
     ========================================================= */
 
-    document.addEventListener("click", event => {
+    document.addEventListener("click", function (event) {
 
         if (!mobileMenu || !nav) {
             return;
         }
 
-        const clickedInside =
-            mobileMenu.contains(event.target) ||
-            nav.contains(event.target);
+        const clickedInsideNavigation =
+            nav.contains(event.target) ||
+            mobileMenu.contains(event.target);
 
-        if (!clickedInside) {
+        if (!clickedInsideNavigation) {
 
-            nav.classList.remove("mobile-nav-open");
+            nav.classList.remove(
+                "mobile-nav-open"
+            );
 
             mobileMenu.setAttribute(
                 "aria-expanded",
                 "false"
             );
 
+            mobileMenu.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
             mobileMenu.textContent = "☰";
+
         }
+
     });
 
 
@@ -84,21 +117,28 @@ document.addEventListener("DOMContentLoaded", () => {
        ESCAPE KEY
     ========================================================= */
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown", function (event) {
 
         if (event.key !== "Escape") {
             return;
         }
 
-        if (!nav || !mobileMenu) {
+        if (!mobileMenu || !nav) {
             return;
         }
 
-        nav.classList.remove("mobile-nav-open");
+        nav.classList.remove(
+            "mobile-nav-open"
+        );
 
         mobileMenu.setAttribute(
             "aria-expanded",
             "false"
+        );
+
+        mobileMenu.setAttribute(
+            "aria-label",
+            "Open navigation menu"
         );
 
         mobileMenu.textContent = "☰";
@@ -113,22 +153,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const resourceLinks =
         page.querySelectorAll(".study-footer a");
 
-    resourceLinks.forEach(link => {
+    resourceLinks.forEach(function (link) {
 
-        link.addEventListener("click", event => {
+        const href =
+            link.getAttribute("href");
 
-            const href = link.getAttribute("href");
+        if (!href || href === "#") {
 
-            /*
-             * Prevent "#" placeholder links from
-             * jumping the page to the top.
-             */
+            link.addEventListener(
+                "click",
+                function (event) {
 
-            if (!href || href === "#") {
-                event.preventDefault();
-            }
+                    event.preventDefault();
 
-        });
+                }
+            );
+
+        }
 
     });
 
@@ -137,17 +178,51 @@ document.addEventListener("DOMContentLoaded", () => {
        FOOTER YEAR
     ========================================================= */
 
-    const yearElement =
+    const footerText =
         page.querySelector(".footer-bottom p");
 
-    if (yearElement) {
+    if (footerText) {
 
         const currentYear =
             new Date().getFullYear();
 
-        yearElement.textContent =
-            `© ${currentYear} Little Explorers Learning Hub. All Rights Reserved.`;
+        footerText.textContent =
+            "© " +
+            currentYear +
+            " Little Explorers Learning Hub. All Rights Reserved.";
 
     }
+
+
+    /* =========================================================
+       CARD KEYBOARD ACCESSIBILITY
+    ========================================================= */
+
+    const cards =
+        page.querySelectorAll(".study-card");
+
+    cards.forEach(function (card) {
+
+        card.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Enter") {
+
+                    const link =
+                        card.querySelector(
+                            ".study-footer a"
+                        );
+
+                    if (link) {
+                        link.click();
+                    }
+
+                }
+
+            }
+        );
+
+    });
 
 });
