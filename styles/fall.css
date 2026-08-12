@@ -1066,3 +1066,24 @@ body.family-activities-page {
         animation-iteration-count: 1 !important;
     }
 }
+
+.footer-site-name {
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    color: #ffffff;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+
+    transition:
+        color 0.28s ease,
+        transform 0.28s ease;
+}
+
+.footer-site-name:hover {
+    color: var(--fall-honey);
+    transform: translateY(-2px);
+}
