@@ -1337,29 +1337,75 @@ section:nth-of-type(even) {
 
 
 .featured-resource-card {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    align-items: stretch;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-    overflow: hidden;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(380px, .9fr)
+        minmax(0, 1.1fr);
+
+    align-items:
+        stretch;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        var(--radius-lg);
+
+    box-shadow:
+        var(--shadow-card);
+
+    overflow:
+        hidden;
+
 }
 
 
 .featured-image {
-    min-height: 520px;
-    overflow: hidden;
-    background: #f7f0e6;
+
+    min-height:
+        520px;
+
+    background:
+        var(--cream);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    overflow:
+        hidden;
+
 }
 
+
 .featured-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center;
+
+    display:
+        block;
+
 }
 
 
