@@ -2464,10 +2464,16 @@ section:nth-of-type(even) {
         100%;
 
     aspect-ratio:
-        1 / .72;
+        1 / 1;
+
+    height:
+        auto;
 
     object-fit:
         cover;
+
+    object-position:
+        center;
 
 }
 
