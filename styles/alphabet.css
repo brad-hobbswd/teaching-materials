@@ -1552,36 +1552,17 @@ section:nth-of-type(even) {
 
 
 .collection-image {
-
-    position:
-        relative;
-
-    aspect-ratio:
-        1 / .72;
-
-    overflow:
-        hidden;
-
-    background:
-        var(--soft-blue);
-
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--soft-blue);
 }
 
-
 .collection-image img {
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        cover;
-
-    transition:
-        transform .4s ease;
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
 }
 
 
