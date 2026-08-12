@@ -1107,6 +1107,32 @@ button,
 
 }
 
+/* ==========================================================
+   TRENDING RESOURCE CARD IMAGES
+========================================================== */
+
+.resource-image {
+    width:100%;
+    aspect-ratio:1 / 1;
+    overflow:hidden;
+    margin-bottom:1.5rem;
+    border-radius:18px;
+    background:var(--surface-alt);
+}
+
+.resource-image img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:transform .6s ease;
+}
+
+.resource-card:hover .resource-image img {
+    transform:scale(1.05);
+}
+
 .resource-card p{
 
     margin-bottom:1.5rem;
