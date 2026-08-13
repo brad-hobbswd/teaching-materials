@@ -1,0 +1,1505 @@
+/* ==========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   TEACHER RESOURCE LIBRARY
+
+   File:
+   styles/teacher-resources-library.css
+
+   Page:
+   library/teacher-resources/index.html
+
+   Theme:
+   Teacher Support • Planning • Professional Practice
+   ========================================================== */
+
+
+/* ==========================================================
+   1. COLOR SYSTEM
+   ========================================================== */
+
+:root {
+    --teacher-navy: #31546b;
+    --teacher-navy-dark: #243f52;
+
+    --teacher-blue: #4f86a8;
+    --teacher-blue-light: #e7f1f7;
+
+    --teacher-green: #6f9678;
+    --teacher-green-light: #e8f1e9;
+
+    --teacher-orange: #d9914d;
+    --teacher-orange-light: #fdf0df;
+
+    --teacher-purple: #8277a3;
+    --teacher-purple-light: #eeeaf5;
+
+    --teacher-coral: #d57963;
+    --teacher-coral-light: #f8e7e2;
+
+    --teacher-aqua: #55a1a0;
+    --teacher-aqua-light: #e3f3f2;
+
+    --teacher-cream: #faf7ef;
+    --teacher-paper: #fffdf9;
+    --teacher-white: #ffffff;
+
+    --teacher-text: #35434d;
+    --teacher-muted: #69757d;
+
+    --teacher-border: #dce5e5;
+    --teacher-border-dark: #c7d4d5;
+
+    --teacher-shadow:
+        0 10px 30px rgba(49, 84, 107, 0.09);
+
+    --teacher-shadow-hover:
+        0 18px 42px rgba(49, 84, 107, 0.16);
+
+    --teacher-radius: 20px;
+    --teacher-transition: 0.28s ease;
+
+    --teacher-width: 1240px;
+}
+
+
+/* ==========================================================
+   2. RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: var(--teacher-text);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--teacher-paper) 0%,
+            #ffffff 55%,
+            var(--teacher-cream) 100%
+        );
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Nunito", sans-serif;
+}
+
+.container {
+    width: min(92%, var(--teacher-width));
+    margin-inline: auto;
+}
+
+
+/* ==========================================================
+   3. HEADER
+   ========================================================== */
+
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background:
+        rgba(255, 253, 249, 0.97);
+
+    border-bottom:
+        1px solid var(--teacher-border);
+
+    box-shadow:
+        0 3px 16px rgba(49, 84, 107, 0.08);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+/* ==========================================================
+   4. HEADER BRAND
+   ========================================================== */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+    flex-shrink: 0;
+
+    color: var(--teacher-navy);
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+
+    object-fit: contain;
+}
+
+.logo > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    margin: 0;
+
+    color: var(--teacher-navy);
+
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.logo span {
+    margin-top: 4px;
+
+    color: var(--teacher-coral);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   5. NAVIGATION
+   ========================================================== */
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+
+    gap: 1.35rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+nav a {
+    position: relative;
+
+    display: inline-flex;
+
+    padding: 0.5rem 0;
+
+    color: var(--teacher-navy);
+
+    font-size: 0.94rem;
+    font-weight: 700;
+
+    transition:
+        color var(--teacher-transition),
+        transform var(--teacher-transition);
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: var(--teacher-coral);
+
+    transition: width var(--teacher-transition);
+}
+
+nav a:hover {
+    color: var(--teacher-coral);
+    transform: translateY(-1px);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: var(--teacher-coral);
+}
+
+
+/* ==========================================================
+   6. MOBILE MENU
+   ========================================================== */
+
+.mobile-menu {
+    display: none;
+
+    width: 46px;
+    height: 46px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: var(--teacher-navy);
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    cursor: pointer;
+
+    transition:
+        background var(--teacher-transition),
+        transform var(--teacher-transition);
+}
+
+.mobile-menu:hover {
+    background: var(--teacher-navy-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   7. HERO
+   ========================================================== */
+
+.study-hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 6rem 0 5.8rem;
+
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(79, 134, 168, 0.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 18%,
+            rgba(217, 145, 77, 0.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 76% 110%,
+            rgba(111, 150, 120, 0.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #edf5f8 0%,
+            #faf7ef 52%,
+            #f8e9e3 100%
+        );
+
+    border-bottom:
+        1px solid var(--teacher-border);
+}
+
+.study-hero::before {
+    content: "📝";
+
+    position: absolute;
+
+    left: 4%;
+    top: 17%;
+
+    font-size:
+        clamp(3rem, 6vw, 5.5rem);
+
+    opacity: 0.10;
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+}
+
+.study-hero::after {
+    content: "📚";
+
+    position: absolute;
+
+    right: 5%;
+    bottom: 10%;
+
+    font-size:
+        clamp(3rem, 6vw, 5.5rem);
+
+    opacity: 0.10;
+
+    transform: rotate(8deg);
+
+    pointer-events: none;
+}
+
+.study-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   8. BREADCRUMB
+   ========================================================== */
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 0.45rem;
+
+    margin-bottom: 1.75rem;
+
+    color: var(--teacher-muted);
+
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--teacher-navy);
+    font-weight: 700;
+
+    transition: color var(--teacher-transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--teacher-coral);
+}
+
+
+/* ==========================================================
+   9. HERO TYPOGRAPHY
+   ========================================================== */
+
+.study-hero h1 {
+    max-width: 950px;
+
+    margin: 0 0 1.2rem;
+
+    color: var(--teacher-navy);
+
+    font-size:
+        clamp(2.7rem, 6vw, 4.8rem);
+
+    font-weight: 800;
+
+    line-height: 1.04;
+
+    letter-spacing: -0.045em;
+}
+
+.study-hero > .container > p {
+    max-width: 900px;
+
+    margin: 0 0 2.3rem;
+
+    color: var(--teacher-text);
+
+    font-size:
+        clamp(1.05rem, 1.8vw, 1.22rem);
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   10. BUTTONS
+   ========================================================== */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+.hero-buttons .btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0.78rem 1.45rem;
+
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    transition:
+        background var(--teacher-transition),
+        color var(--teacher-transition),
+        border-color var(--teacher-transition),
+        transform var(--teacher-transition),
+        box-shadow var(--teacher-transition);
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: var(--teacher-navy);
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(49, 84, 107, 0.22);
+}
+
+.btn-primary:hover {
+    background: var(--teacher-navy-dark);
+
+    box-shadow:
+        0 12px 28px rgba(49, 84, 107, 0.28);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+
+    color: var(--teacher-navy);
+
+    border:
+        1px solid var(--teacher-border-dark);
+}
+
+.btn-secondary:hover {
+    color: var(--teacher-coral);
+    border-color: var(--teacher-coral);
+}
+
+
+/* ==========================================================
+   11. SECTION HEADERS
+   ========================================================== */
+
+.section-header {
+    max-width: 850px;
+
+    margin: 0 auto 3.2rem;
+
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 0.8rem;
+
+    color: var(--teacher-coral);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    margin: 0 0 1rem;
+
+    color: var(--teacher-navy);
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+.section-header p {
+    margin: 0;
+
+    color: var(--teacher-muted);
+
+    font-size: 1.04rem;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   12. FEATURED INTRODUCTION
+   ========================================================== */
+
+.featured-study {
+    padding: 5.6rem 0;
+
+    background: var(--teacher-paper);
+}
+
+.featured-study-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    overflow: hidden;
+
+    background: var(--teacher-white);
+
+    border:
+        1px solid var(--teacher-border);
+
+    border-radius: 24px;
+
+    box-shadow: var(--teacher-shadow);
+}
+
+.featured-image {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--teacher-blue-light),
+            var(--teacher-green-light)
+        );
+}
+
+.featured-image img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 16px;
+}
+
+.featured-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        clamp(2rem, 5vw, 4rem);
+}
+
+.featured-label {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-bottom: 0.9rem;
+
+    color: var(--teacher-coral);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.featured-text h2 {
+    margin: 0 0 1rem;
+
+    color: var(--teacher-navy);
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.12;
+}
+
+.featured-text > p {
+    margin: 0 0 1.7rem;
+
+    color: var(--teacher-muted);
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   13. FEATURED HIGHLIGHTS
+   ========================================================== */
+
+.featured-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 0.65rem;
+}
+
+.featured-highlights div {
+    padding: 0.72rem 0.8rem;
+
+    background: var(--teacher-cream);
+
+    border:
+        1px solid var(--teacher-border);
+
+    border-radius: 10px;
+
+    color: var(--teacher-navy);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* ==========================================================
+   14. GENERAL SECTIONS
+   ========================================================== */
+
+.study-section {
+    padding: 5.8rem 0;
+
+    background: #ffffff;
+}
+
+.study-section.alternate {
+    background:
+        linear-gradient(
+            180deg,
+            var(--teacher-cream),
+            #ffffff
+        );
+}
+
+
+/* ==========================================================
+   15. RESOURCE CATEGORY GRID
+   ========================================================== */
+
+.interest-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    align-items: stretch;
+}
+
+.interest-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 1.8rem;
+
+    background: var(--teacher-white);
+
+    border:
+        1px solid var(--teacher-border);
+
+    border-top-width: 5px;
+
+    border-radius: var(--teacher-radius);
+
+    box-shadow:
+        0 7px 22px rgba(49, 84, 107, 0.06);
+
+    transition:
+        transform var(--teacher-transition),
+        box-shadow var(--teacher-transition),
+        border-color var(--teacher-transition);
+}
+
+.interest-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        var(--teacher-shadow-hover);
+}
+
+
+/* ==========================================================
+   16. CATEGORY COLORS
+   ========================================================== */
+
+.interest-card.blue {
+    border-top-color: var(--teacher-blue);
+}
+
+.interest-card.green {
+    border-top-color: var(--teacher-green);
+}
+
+.interest-card.orange {
+    border-top-color: var(--teacher-orange);
+}
+
+.interest-card.purple {
+    border-top-color: var(--teacher-purple);
+}
+
+.interest-card.coral {
+    border-top-color: var(--teacher-coral);
+}
+
+.interest-card.aqua {
+    border-top-color: var(--teacher-aqua);
+}
+
+
+/* ==========================================================
+   17. CATEGORY ICONS
+   ========================================================== */
+
+.interest-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+
+    border-radius: 15px;
+
+    background: var(--teacher-blue-light);
+
+    font-size: 1.55rem;
+}
+
+.interest-card.green .interest-icon {
+    background: var(--teacher-green-light);
+}
+
+.interest-card.orange .interest-icon {
+    background: var(--teacher-orange-light);
+}
+
+.interest-card.purple .interest-icon {
+    background: var(--teacher-purple-light);
+}
+
+.interest-card.coral .interest-icon {
+    background: var(--teacher-coral-light);
+}
+
+.interest-card.aqua .interest-icon {
+    background: var(--teacher-aqua-light);
+}
+
+.interest-card h3 {
+    margin: 0 0 0.7rem;
+
+    color: var(--teacher-navy);
+
+    font-size: 1.2rem;
+
+    line-height: 1.3;
+}
+
+.interest-card p {
+    flex: 1;
+
+    margin: 0 0 1.1rem;
+
+    color: var(--teacher-muted);
+
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+}
+
+.interest-card a {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: auto;
+
+    color: var(--teacher-navy);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    transition:
+        color var(--teacher-transition),
+        transform var(--teacher-transition);
+}
+
+.interest-card a:hover {
+    color: var(--teacher-coral);
+
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   18. NEWSLETTER
+   ========================================================== */
+
+.newsletter {
+    padding: 5.8rem 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf5f8 0%,
+            #faf7ef 50%,
+            #eef5ed 100%
+        );
+}
+
+.newsletter-box {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(320px, 0.75fr);
+
+    gap: 3rem;
+
+    align-items: center;
+
+    padding:
+        clamp(2rem, 5vw, 4rem);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border:
+        1px solid var(--teacher-border);
+
+    border-radius: 26px;
+
+    box-shadow: var(--teacher-shadow);
+}
+
+.newsletter-tag {
+    display: inline-block;
+
+    margin-bottom: 0.8rem;
+
+    color: var(--teacher-coral);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.newsletter-content h2 {
+    max-width: 650px;
+
+    margin: 0 0 1rem;
+
+    color: var(--teacher-navy);
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.1;
+}
+
+.newsletter-content > p {
+    max-width: 700px;
+
+    margin: 0 0 1.5rem;
+
+    color: var(--teacher-muted);
+
+    line-height: 1.75;
+}
+
+.newsletter-benefits {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0.65rem;
+}
+
+.newsletter-benefits div {
+    padding: 0.7rem 0.85rem;
+
+    background: var(--teacher-paper);
+
+    border:
+        1px solid var(--teacher-border);
+
+    border-radius: 10px;
+
+    color: var(--teacher-navy);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   19. NEWSLETTER CARD
+   ========================================================== */
+
+.newsletter-card {
+    padding: 2rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--teacher-navy),
+            #416a80
+        );
+
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 14px 34px rgba(49, 84, 107, 0.2);
+}
+
+.newsletter-card h3 {
+    margin: 0 0 0.4rem;
+
+    color: #ffffff;
+
+    font-size: 1.5rem;
+}
+
+.newsletter-card > p {
+    margin: 0 0 1.35rem;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.8rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+
+    min-height: 52px;
+
+    padding: 0 0.9rem;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+}
+
+.input-icon {
+    flex-shrink: 0;
+
+    margin-right: 0.6rem;
+
+    font-size: 1rem;
+}
+
+.input-group input {
+    width: 100%;
+
+    min-width: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--teacher-text);
+
+    font-size: 0.94rem;
+}
+
+.input-group input::placeholder {
+    color: #8a949a;
+}
+
+.newsletter-form button {
+    min-height: 52px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: var(--teacher-orange);
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background var(--teacher-transition),
+        transform var(--teacher-transition);
+}
+
+.newsletter-form button:hover {
+    background: #c67c3e;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   20. FOOTER
+   ========================================================== */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #243f52 0%,
+            #31546b 52%,
+            #416a80 100%
+        );
+
+    color: #ffffff;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.35fr repeat(3, 1fr);
+
+    gap: 2.8rem;
+
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+}
+
+
+/* ==========================================================
+   21. FOOTER BRAND
+   NO LOGO
+   ========================================================== */
+
+.footer-site-name {
+    display: inline-block;
+
+    margin-bottom: 1rem;
+
+    color: #ffffff;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    transition:
+        color var(--teacher-transition),
+        transform var(--teacher-transition);
+}
+
+.footer-site-name:hover {
+    color: var(--teacher-orange);
+
+    transform: translateY(-2px);
+}
+
+.footer-brand p {
+    max-width: 340px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   22. FOOTER COLUMNS
+   ========================================================== */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.45rem;
+}
+
+.footer-column h4 {
+    margin: 0 0 0.7rem;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.92rem;
+
+    transition:
+        color var(--teacher-transition),
+        transform var(--teacher-transition);
+}
+
+.footer-column a:hover {
+    color: var(--teacher-orange);
+
+    transform: translateX(3px);
+}
+
+
+/* ==========================================================
+   23. FOOTER BOTTOM
+   ========================================================== */
+
+.footer-bottom {
+    padding: 1.2rem 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0.15rem 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 0.85rem;
+}
+
+
+/* ==========================================================
+   24. ACCESSIBILITY
+   ========================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--teacher-orange);
+
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   25. TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+    nav ul {
+        gap: 0.8rem;
+    }
+
+    .interest-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .newsletter-box {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================================
+   26. MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        min-height: 76px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    nav.mobile-nav-open {
+        display: block;
+
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+        right: 0;
+
+        padding: 1rem;
+
+        background: var(--teacher-paper);
+
+        border-bottom:
+            1px solid var(--teacher-border);
+
+        box-shadow:
+            0 12px 28px rgba(49, 84, 107, 0.12);
+    }
+
+    nav.mobile-nav-open ul {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0.25rem;
+    }
+
+    nav.mobile-nav-open a {
+        display: block;
+
+        padding: 0.85rem 1rem;
+
+        border-radius: 10px;
+    }
+
+    nav.mobile-nav-open a:hover {
+        background: var(--teacher-blue-light);
+    }
+
+    nav.mobile-nav-open a::after {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .study-hero {
+        padding: 4.8rem 0 5rem;
+    }
+
+    .study-hero h1 {
+        font-size:
+            clamp(2.3rem, 10vw, 3.5rem);
+    }
+
+    .study-hero > .container > p {
+        font-size: 1rem;
+    }
+
+
+    /* BUTTONS */
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* FEATURED */
+
+    .featured-study {
+        padding: 4.5rem 0;
+    }
+
+    .featured-study-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        padding: 0.75rem;
+    }
+
+    .featured-text {
+        padding: 2rem 1.5rem 2.3rem;
+    }
+
+    .featured-highlights {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* SECTIONS */
+
+    .study-section,
+    .newsletter {
+        padding: 4.5rem 0;
+    }
+
+
+    /* RESOURCE CARDS */
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.15rem;
+    }
+
+    .interest-card {
+        padding: 1.5rem;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter-box {
+        padding: 1.5rem;
+    }
+
+    .newsletter-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-card {
+        padding: 1.5rem;
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+
+        padding-top: 3.3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+
+/* ==========================================================
+   27. SMALL PHONES
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: min(91%, var(--teacher-width));
+    }
+
+    .logo > div {
+        display: none;
+    }
+
+    .featured-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-text {
+        padding: 1.7rem 1.25rem 2rem;
+    }
+
+    .interest-card {
+        padding: 1.35rem;
+    }
+
+    .interest-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.35rem;
+    }
+
+    .newsletter-box {
+        padding: 1.15rem;
+    }
+
+    .newsletter-card {
+        padding: 1.25rem;
+    }
+}
+
+
+/* ==========================================================
+   28. REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
