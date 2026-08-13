@@ -1,0 +1,1898 @@
+/* ==========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   CURRICULUM RESOURCE LIBRARY
+
+   File:
+   styles/curriculum.css
+
+   Page:
+   library/curriculum/index.html
+
+   Theme:
+   Early Childhood Curriculum & Educator Resources
+   ========================================================== */
+
+
+/* ==========================================================
+   1. CURRICULUM COLOR SYSTEM
+   ========================================================== */
+
+:root {
+    --curriculum-evergreen: #315c4c;
+    --curriculum-evergreen-dark: #244639;
+    --curriculum-sage: #789b78;
+    --curriculum-sage-light: #e7f0e6;
+
+    --curriculum-gold: #e5b84b;
+    --curriculum-gold-light: #fff5d6;
+
+    --curriculum-terracotta: #c8754d;
+    --curriculum-terracotta-dark: #a95d3b;
+    --curriculum-terracotta-light: #f8e5dc;
+
+    --curriculum-blue: #4f8195;
+    --curriculum-blue-light: #e3f0f4;
+
+    --curriculum-purple: #806d9e;
+    --curriculum-purple-light: #eee9f5;
+
+    --curriculum-cream: #faf7ef;
+    --curriculum-paper: #fffdf9;
+    --curriculum-white: #ffffff;
+
+    --curriculum-text: #34413b;
+    --curriculum-muted: #68756d;
+
+    --curriculum-border: #dfe5dc;
+    --curriculum-border-dark: #c7d3c8;
+
+    --curriculum-shadow:
+        0 10px 28px rgba(49, 92, 76, 0.09);
+
+    --curriculum-shadow-hover:
+        0 18px 42px rgba(49, 92, 76, 0.16);
+
+    --curriculum-radius: 20px;
+
+    --curriculum-transition: 0.28s ease;
+
+    --curriculum-width: 1240px;
+}
+
+
+/* ==========================================================
+   2. RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ==========================================================
+   3. BODY
+   ========================================================== */
+
+body {
+    margin: 0;
+
+    min-width: 320px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    color: var(--curriculum-text);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--curriculum-paper) 0%,
+            #ffffff 50%,
+            var(--curriculum-cream) 100%
+        );
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+/* ==========================================================
+   4. GENERAL ELEMENTS
+   ========================================================== */
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Nunito", sans-serif;
+}
+
+.container {
+    width: min(92%, var(--curriculum-width));
+
+    margin-inline: auto;
+}
+
+
+/* ==========================================================
+   5. HEADER
+   ========================================================== */
+
+body > header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 253, 249, 0.97);
+
+    border-bottom:
+        1px solid var(--curriculum-border);
+
+    box-shadow:
+        0 3px 16px rgba(49, 92, 76, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    min-height: 86px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+/* ==========================================================
+   6. HEADER LOGO
+   ========================================================== */
+
+.logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    color: var(--curriculum-evergreen);
+}
+
+.logo img {
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: contain;
+}
+
+.logo > div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.logo h1 {
+    margin: 0;
+
+    color: var(--curriculum-evergreen);
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+    line-height: 1.05;
+}
+
+.logo span {
+    margin-top: 4px;
+
+    color: var(--curriculum-terracotta);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   7. NAVIGATION
+   ========================================================== */
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.6rem;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+nav a {
+    position: relative;
+
+    display: inline-flex;
+
+    padding: 0.5rem 0;
+
+    color: var(--curriculum-evergreen);
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    transition:
+        color var(--curriculum-transition),
+        transform var(--curriculum-transition);
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: var(--curriculum-terracotta);
+
+    transition:
+        width var(--curriculum-transition);
+}
+
+nav a:hover {
+    color: var(--curriculum-terracotta-dark);
+
+    transform: translateY(-1px);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: var(--curriculum-terracotta-dark);
+}
+
+
+/* ==========================================================
+   8. MOBILE MENU
+   ========================================================== */
+
+.mobile-menu {
+    display: none;
+
+    width: 46px;
+
+    height: 46px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: var(--curriculum-evergreen);
+
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    cursor: pointer;
+
+    transition:
+        background var(--curriculum-transition),
+        transform var(--curriculum-transition);
+}
+
+.mobile-menu:hover {
+    background: var(--curriculum-evergreen-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   9. HERO
+   ========================================================== */
+
+.study-hero {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 6.2rem 0 5.8rem;
+
+    background:
+        radial-gradient(
+            circle at 8% 22%,
+            rgba(120, 155, 120, 0.18),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 90% 18%,
+            rgba(229, 184, 75, 0.22),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 78% 110%,
+            rgba(200, 117, 77, 0.14),
+            transparent 29%
+        ),
+
+        linear-gradient(
+            135deg,
+            #eef5ec 0%,
+            #faf7ef 52%,
+            #f8e9e1 100%
+        );
+
+    border-bottom:
+        1px solid var(--curriculum-border);
+}
+
+.study-hero::before {
+    content: "📚";
+
+    position: absolute;
+
+    left: 4%;
+
+    top: 17%;
+
+    font-size:
+        clamp(3rem, 6vw, 5.5rem);
+
+    opacity: 0.10;
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+}
+
+.study-hero::after {
+    content: "🌱";
+
+    position: absolute;
+
+    right: 5%;
+
+    bottom: 10%;
+
+    font-size:
+        clamp(3rem, 6vw, 5.5rem);
+
+    opacity: 0.12;
+
+    transform: rotate(8deg);
+
+    pointer-events: none;
+}
+
+.study-hero .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   10. BREADCRUMB
+   ========================================================== */
+
+.breadcrumb {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 0.45rem;
+
+    margin-bottom: 1.75rem;
+
+    color: var(--curriculum-muted);
+
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--curriculum-evergreen);
+
+    font-weight: 700;
+
+    transition:
+        color var(--curriculum-transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--curriculum-terracotta);
+}
+
+
+/* ==========================================================
+   11. HERO TITLE
+   ========================================================== */
+
+.study-hero h1 {
+    max-width: 950px;
+
+    margin:
+        0 0 1.2rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        clamp(2.7rem, 6vw, 4.8rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        1.04;
+
+    letter-spacing:
+        -0.045em;
+}
+
+.study-hero > .container > p {
+    max-width:
+        850px;
+
+    margin:
+        0 0 2.3rem;
+
+    color:
+        var(--curriculum-text);
+
+    font-size:
+        clamp(1.05rem, 1.8vw, 1.22rem);
+
+    line-height:
+        1.75;
+}
+
+
+/* ==========================================================
+   12. HERO BUTTONS
+   ========================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.9rem;
+}
+
+.hero-buttons .btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding:
+        0.78rem 1.45rem;
+
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+
+    font-weight: 800;
+
+    transition:
+        background var(--curriculum-transition),
+        color var(--curriculum-transition),
+        border-color var(--curriculum-transition),
+        transform var(--curriculum-transition),
+        box-shadow var(--curriculum-transition);
+}
+
+.hero-buttons .btn:hover {
+    transform:
+        translateY(-3px);
+}
+
+.btn-primary {
+    background:
+        var(--curriculum-evergreen);
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(49, 92, 76, 0.22);
+}
+
+.btn-primary:hover {
+    background:
+        var(--curriculum-evergreen-dark);
+
+    box-shadow:
+        0 12px 28px rgba(49, 92, 76, 0.28);
+}
+
+.btn-secondary {
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    color:
+        var(--curriculum-evergreen);
+
+    border:
+        1px solid var(--curriculum-border-dark);
+}
+
+.btn-secondary:hover {
+    color:
+        var(--curriculum-terracotta-dark);
+
+    border-color:
+        var(--curriculum-terracotta);
+}
+
+
+/* ==========================================================
+   13. SHARED SECTION HEADER
+   ========================================================== */
+
+.section-header {
+    max-width:
+        850px;
+
+    margin:
+        0 auto 3.2rem;
+
+    text-align:
+        center;
+}
+
+.section-label {
+    display:
+        inline-block;
+
+    margin-bottom:
+        0.8rem;
+
+    color:
+        var(--curriculum-terracotta);
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+.section-header h2 {
+    margin:
+        0 0 1rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        1.1;
+}
+
+.section-header p {
+    margin:
+        0;
+
+    color:
+        var(--curriculum-muted);
+
+    font-size:
+        1.04rem;
+
+    line-height:
+        1.75;
+}
+
+
+/* ==========================================================
+   14. FEATURED STUDY SECTION
+   ========================================================== */
+
+.featured-study {
+    padding:
+        5.5rem 0;
+
+    background:
+        var(--curriculum-paper);
+}
+
+.featured-study-card {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    overflow:
+        hidden;
+
+    background:
+        var(--curriculum-white);
+
+    border:
+        1px solid var(--curriculum-border);
+
+    border-radius:
+        24px;
+
+    box-shadow:
+        var(--curriculum-shadow);
+}
+
+
+/* ==========================================================
+   15. FEATURED IMAGE
+   ========================================================== */
+
+.featured-image {
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        1rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--curriculum-sage-light),
+            var(--curriculum-gold-light)
+        );
+}
+
+.featured-image img {
+    width:
+        100%;
+
+    aspect-ratio:
+        1 / 1;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center;
+
+    border-radius:
+        16px;
+}
+
+
+/* ==========================================================
+   16. FEATURED TEXT
+   ========================================================== */
+
+.featured-text {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    padding:
+        clamp(2rem, 5vw, 4rem);
+}
+
+.featured-label {
+    display:
+        inline-block;
+
+    width:
+        fit-content;
+
+    margin-bottom:
+        0.9rem;
+
+    color:
+        var(--curriculum-terracotta);
+
+    font-size:
+        0.76rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.11em;
+
+    text-transform:
+        uppercase;
+}
+
+.featured-text h2 {
+    margin:
+        0 0 1rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    line-height:
+        1.12;
+}
+
+.featured-text > p {
+    margin:
+        0 0 1.7rem;
+
+    color:
+        var(--curriculum-muted);
+
+    line-height:
+        1.75;
+}
+
+
+/* ==========================================================
+   17. FEATURED HIGHLIGHTS
+   ========================================================== */
+
+.featured-highlights {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        0.65rem;
+}
+
+.featured-highlights div {
+    padding:
+        0.72rem 0.8rem;
+
+    background:
+        var(--curriculum-cream);
+
+    border:
+        1px solid var(--curriculum-border);
+
+    border-radius:
+        10px;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        0.86rem;
+
+    font-weight:
+        700;
+
+    text-align:
+        center;
+}
+
+
+/* ==========================================================
+   18. GENERAL STUDY SECTION
+   ========================================================== */
+
+.study-section {
+    padding:
+        5.8rem 0;
+
+    background:
+        #ffffff;
+}
+
+.study-section.alternate {
+    background:
+        linear-gradient(
+            180deg,
+            var(--curriculum-cream),
+            #ffffff
+        );
+}
+
+
+/* ==========================================================
+   19. INTEREST GRID
+   ========================================================== */
+
+.interest-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        1.5rem;
+}
+
+.interest-card {
+    position:
+        relative;
+
+    padding:
+        1.7rem;
+
+    background:
+        var(--curriculum-white);
+
+    border:
+        1px solid var(--curriculum-border);
+
+    border-radius:
+        var(--curriculum-radius);
+
+    box-shadow:
+        0 7px 22px rgba(49, 92, 76, 0.06);
+
+    transition:
+        transform var(--curriculum-transition),
+        box-shadow var(--curriculum-transition),
+        border-color var(--curriculum-transition);
+}
+
+.interest-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--curriculum-border-dark);
+
+    box-shadow:
+        var(--curriculum-shadow-hover);
+}
+
+.interest-card:nth-child(1) {
+    border-top:
+        5px solid var(--curriculum-sage);
+}
+
+.interest-card:nth-child(2) {
+    border-top:
+        5px solid var(--curriculum-blue);
+}
+
+.interest-card:nth-child(3) {
+    border-top:
+        5px solid var(--curriculum-terracotta);
+}
+
+.interest-card:nth-child(4) {
+    border-top:
+        5px solid var(--curriculum-evergreen);
+}
+
+.interest-card:nth-child(5) {
+    border-top:
+        5px solid var(--curriculum-gold);
+}
+
+.interest-card:nth-child(6) {
+    border-top:
+        5px solid var(--curriculum-purple);
+}
+
+.interest-card h3 {
+    margin:
+        0 0 0.75rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        1.22rem;
+
+    line-height:
+        1.3;
+}
+
+.interest-card p {
+    margin:
+        0 0 1rem;
+
+    color:
+        var(--curriculum-muted);
+
+    font-size:
+        0.94rem;
+
+    line-height:
+        1.7;
+}
+
+.interest-card a {
+    display:
+        inline-flex;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        800;
+
+    transition:
+        color var(--curriculum-transition),
+        gap var(--curriculum-transition);
+}
+
+.interest-card a:hover {
+    color:
+        var(--curriculum-terracotta);
+
+    text-decoration:
+        underline;
+}
+
+
+/* ==========================================================
+   20. FEATURED STUDY COLLECTIONS
+   ========================================================== */
+
+.featured-studies {
+    padding:
+        5.8rem 0;
+
+    background:
+        var(--curriculum-cream);
+}
+
+.study-card-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        2rem;
+
+    align-items:
+        stretch;
+}
+
+
+/* ==========================================================
+   21. STUDY CARDS
+   ========================================================== */
+
+.study-card {
+    position:
+        relative;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    background:
+        var(--curriculum-white);
+
+    border:
+        1px solid var(--curriculum-border);
+
+    border-radius:
+        var(--curriculum-radius);
+
+    box-shadow:
+        var(--curriculum-shadow);
+
+    transition:
+        transform var(--curriculum-transition),
+        box-shadow var(--curriculum-transition),
+        border-color var(--curriculum-transition);
+}
+
+.study-card:hover {
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--curriculum-shadow-hover);
+
+    border-color:
+        var(--curriculum-border-dark);
+}
+
+
+/* ==========================================================
+   22. STUDY CARD IMAGES
+   ========================================================== */
+
+/*
+   IMPORTANT:
+   The entire image remains visible.
+
+   No cropping.
+   No forced zoom.
+   Square presentation.
+*/
+
+.study-card > img {
+    width:
+        100%;
+
+    height:
+        auto;
+
+    aspect-ratio:
+        1 / 1;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center;
+
+    padding:
+        0.7rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5f8f3,
+            #fff9e8
+        );
+
+    border-bottom:
+        1px solid var(--curriculum-border);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.study-card:hover > img {
+    transform:
+        scale(1.025);
+}
+
+
+/* ==========================================================
+   23. STUDY CARD CONTENT
+   ========================================================== */
+
+.study-content {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    flex:
+        1;
+
+    padding:
+        1.55rem 1.6rem 1.6rem;
+}
+
+.study-content h3 {
+    margin:
+        0 0 0.7rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        1.25rem;
+
+    line-height:
+        1.3;
+}
+
+.study-content p {
+    flex:
+        1;
+
+    margin:
+        0 0 1.25rem;
+
+    color:
+        var(--curriculum-muted);
+
+    font-size:
+        0.95rem;
+
+    line-height:
+        1.7;
+}
+
+.study-footer {
+    margin-top:
+        auto;
+
+    padding-top:
+        1rem;
+
+    border-top:
+        1px solid var(--curriculum-border);
+}
+
+.study-footer a {
+    display:
+        inline-flex;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        0.92rem;
+
+    font-weight:
+        800;
+
+    transition:
+        color var(--curriculum-transition),
+        transform var(--curriculum-transition);
+}
+
+.study-footer a:hover {
+    color:
+        var(--curriculum-terracotta);
+
+    transform:
+        translateX(4px);
+}
+
+
+/* ==========================================================
+   24. RESOURCE CARDS
+   ========================================================== */
+
+.resources-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        1.5rem;
+}
+
+.resource-card {
+    padding:
+        1.8rem;
+
+    background:
+        var(--curriculum-white);
+
+    border:
+        1px solid var(--curriculum-border);
+
+    border-radius:
+        var(--curriculum-radius);
+
+    box-shadow:
+        0 7px 22px rgba(49, 92, 76, 0.06);
+
+    transition:
+        transform var(--curriculum-transition),
+        box-shadow var(--curriculum-transition);
+}
+
+.resource-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--curriculum-shadow-hover);
+}
+
+.resource-card h3 {
+    margin:
+        0 0 0.7rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        1.2rem;
+}
+
+.resource-card p {
+    margin:
+        0 0 1rem;
+
+    color:
+        var(--curriculum-muted);
+
+    font-size:
+        0.94rem;
+
+    line-height:
+        1.7;
+}
+
+.resource-card a {
+    color:
+        var(--curriculum-terracotta);
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        800;
+}
+
+.resource-card a:hover {
+    color:
+        var(--curriculum-evergreen);
+}
+
+
+/* ==========================================================
+   25. CURRICULUM SUPPORT AREAS
+   ========================================================== */
+
+.centers-section {
+    padding:
+        5.8rem 0;
+
+    background:
+        #ffffff;
+}
+
+
+/* ==========================================================
+   26. CUSTOM CURRICULUM
+   ========================================================== */
+
+.custom-curriculum {
+    background:
+        linear-gradient(
+            180deg,
+            var(--curriculum-cream),
+            #ffffff
+        );
+}
+
+
+/* ==========================================================
+   27. FAMILY CONNECTION
+   ========================================================== */
+
+.family-section {
+    padding:
+        5.8rem 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef5ec,
+            #faf7ef
+        );
+}
+
+.family-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        1.5rem;
+}
+
+.family-card {
+    padding:
+        1.8rem;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    border:
+        1px solid var(--curriculum-border);
+
+    border-radius:
+        var(--curriculum-radius);
+
+    box-shadow:
+        0 7px 22px rgba(49, 92, 76, 0.06);
+}
+
+.family-card h3 {
+    margin:
+        0 0 0.7rem;
+
+    color:
+        var(--curriculum-evergreen);
+
+    font-size:
+        1.18rem;
+}
+
+.family-card p {
+    margin:
+        0;
+
+    color:
+        var(--curriculum-muted);
+
+    font-size:
+        0.94rem;
+
+    line-height:
+        1.7;
+}
+
+
+/* ==========================================================
+   28. FOOTER
+   ========================================================== */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #244639 0%,
+            #315c4c 52%,
+            #4f7161 100%
+        );
+
+    color:
+        #ffffff;
+}
+
+.footer-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        1.35fr repeat(3, 1fr);
+
+    gap:
+        2.8rem;
+
+    padding-top:
+        4rem;
+
+    padding-bottom:
+        3.5rem;
+}
+
+
+/* ==========================================================
+   29. FOOTER BRAND
+   ========================================================== */
+
+/*
+   No footer logo.
+
+   The company name is the linked brand.
+*/
+
+.footer-site-name {
+    display:
+        inline-block;
+
+    margin-bottom:
+        1rem;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Nunito", sans-serif;
+
+    font-size:
+        1.35rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.2;
+
+    transition:
+        color var(--curriculum-transition),
+        transform var(--curriculum-transition);
+}
+
+.footer-site-name:hover {
+    color:
+        var(--curriculum-gold);
+
+    transform:
+        translateY(-2px);
+}
+
+.footer-brand p {
+    max-width:
+        330px;
+
+    margin:
+        0;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    line-height:
+        1.7;
+}
+
+
+/* ==========================================================
+   30. FOOTER COLUMNS
+   ========================================================== */
+
+.footer-column {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.45rem;
+}
+
+.footer-column h4 {
+    margin:
+        0 0 0.7rem;
+
+    color:
+        #ffffff;
+
+    font-size:
+        1.05rem;
+
+    font-weight:
+        800;
+}
+
+.footer-column a {
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size:
+        0.92rem;
+
+    transition:
+        color var(--curriculum-transition),
+        transform var(--curriculum-transition);
+}
+
+.footer-column a:hover {
+    color:
+        var(--curriculum-gold);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* ==========================================================
+   31. FOOTER BOTTOM
+   ========================================================== */
+
+.footer-bottom {
+    padding:
+        1.2rem 0;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    text-align:
+        center;
+}
+
+.footer-bottom p {
+    margin:
+        0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size:
+        0.85rem;
+}
+
+
+/* ==========================================================
+   32. ACCESSIBILITY
+   ========================================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline:
+        3px solid var(--curriculum-gold);
+
+    outline-offset:
+        4px;
+}
+
+
+/* ==========================================================
+   33. TABLET
+   ========================================================== */
+
+@media (max-width: 1050px) {
+
+    nav ul {
+        gap:
+            1rem;
+    }
+
+    .study-card-grid,
+    .interest-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .resources-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .family-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================================
+   34. MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        min-height:
+            76px;
+    }
+
+    nav {
+        display:
+            none;
+    }
+
+    .mobile-menu {
+        display:
+            flex;
+    }
+
+
+    /* Mobile Navigation */
+
+    nav.mobile-nav-open {
+        display:
+            block;
+
+        position:
+            absolute;
+
+        top:
+            76px;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        padding:
+            1rem;
+
+        background:
+            var(--curriculum-paper);
+
+        border-bottom:
+            1px solid var(--curriculum-border);
+
+        box-shadow:
+            0 12px 28px rgba(49, 92, 76, 0.12);
+    }
+
+    nav.mobile-nav-open ul {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0.25rem;
+    }
+
+    nav.mobile-nav-open a {
+        display:
+            block;
+
+        padding:
+            0.85rem 1rem;
+
+        border-radius:
+            10px;
+    }
+
+    nav.mobile-nav-open a:hover {
+        background:
+            var(--curriculum-sage-light);
+    }
+
+    nav.mobile-nav-open a::after {
+        display:
+            none;
+    }
+
+
+    /* Hero */
+
+    .study-hero {
+        padding:
+            4.8rem 0 5rem;
+    }
+
+    .study-hero h1 {
+        font-size:
+            clamp(2.3rem, 10vw, 3.5rem);
+    }
+
+    .study-hero > .container > p {
+        font-size:
+            1rem;
+    }
+
+
+    /* Buttons */
+
+    .hero-buttons {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .hero-buttons .btn {
+        width:
+            100%;
+    }
+
+
+    /* Featured */
+
+    .featured-study {
+        padding:
+            4.5rem 0;
+    }
+
+    .featured-study-card {
+        grid-template-columns:
+            1fr;
+    }
+
+    .featured-image {
+        padding:
+            0.75rem;
+    }
+
+    .featured-text {
+        padding:
+            2rem 1.5rem 2.3rem;
+    }
+
+    .featured-highlights {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* Sections */
+
+    .study-section,
+    .featured-studies,
+    .centers-section,
+    .family-section {
+        padding:
+            4.5rem 0;
+    }
+
+
+    /* Grids */
+
+    .study-card-grid,
+    .interest-grid,
+    .resources-grid,
+    .family-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            2rem;
+
+        padding-top:
+            3.3rem;
+
+        padding-bottom:
+            3rem;
+    }
+}
+
+
+/* ==========================================================
+   35. SMALL PHONES
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width:
+            min(91%, var(--curriculum-width));
+    }
+
+    .logo > div {
+        display:
+            none;
+    }
+
+    .study-card > img {
+        padding:
+            0.5rem;
+    }
+
+    .featured-highlights {
+        grid-template-columns:
+            1fr;
+    }
+
+    .featured-text {
+        padding:
+            1.7rem 1.25rem 2rem;
+    }
+
+    .study-content {
+        padding:
+            1.35rem;
+    }
+
+    .interest-card,
+    .resource-card,
+    .family-card {
+        padding:
+            1.45rem;
+    }
+}
+
+
+/* ==========================================================
+   36. REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior:
+            auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration:
+            0.01ms !important;
+
+        animation-duration:
+            0.01ms !important;
+    }
+}
