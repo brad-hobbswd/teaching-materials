@@ -1,0 +1,1309 @@
+/* ==========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   SCIENCE & STEM RESOURCE LIBRARY
+   Page-Specific Theme
+========================================================== */
+
+
+/* ==========================================================
+   SCIENCE & STEM COLOR SYSTEM
+========================================================== */
+
+:root {
+
+    --science-navy: #12344d;
+    --science-blue: #1769aa;
+    --science-sky: #4da8da;
+
+    --science-teal: #168f8b;
+    --science-aqua: #65c8c5;
+
+    --science-green: #4f9d69;
+    --science-leaf: #8bcf88;
+
+    --science-orange: #e98b3a;
+    --science-yellow: #f3c969;
+
+    --science-purple: #7167a8;
+
+    --science-cream: #f8fbf9;
+    --science-light-blue: #edf7fc;
+    --science-light-teal: #edf9f7;
+    --science-light-green: #f1f9f1;
+    --science-light-orange: #fff6eb;
+
+    --science-text: #263746;
+    --science-muted: #60717d;
+
+    --science-white: #ffffff;
+
+    --science-border: #d8e6eb;
+
+    --science-shadow:
+        0 12px 30px rgba(18, 52, 77, 0.09);
+
+    --science-shadow-hover:
+        0 18px 38px rgba(18, 52, 77, 0.15);
+
+}
+
+
+/* ==========================================================
+   PAGE FOUNDATION
+========================================================== */
+
+.science-library-page {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbf9 0%,
+            #ffffff 45%,
+            #f5faf9 100%
+        );
+
+    color: var(--science-text);
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.science-library-page header {
+
+    background: var(--science-white);
+
+    border-bottom:
+        3px solid
+        var(--science-teal);
+
+    box-shadow:
+        0 4px 18px rgba(18, 52, 77, 0.07);
+
+}
+
+
+.science-library-page .logo h1 {
+
+    color: var(--science-navy);
+
+}
+
+
+.science-library-page .logo span {
+
+    color: var(--science-teal);
+
+}
+
+
+.science-library-page nav a {
+
+    color: var(--science-navy);
+
+}
+
+
+.science-library-page nav a:hover {
+
+    color: var(--science-teal);
+
+}
+
+
+.science-library-page nav a.active {
+
+    color: var(--science-blue);
+
+    font-weight: 800;
+
+}
+
+
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
+.science-library-page .mobile-menu {
+
+    color: var(--science-navy);
+
+    border:
+        2px solid
+        var(--science-teal);
+
+    background:
+        var(--science-white);
+
+}
+
+
+.science-library-page .mobile-menu:hover {
+
+    background:
+        var(--science-light-teal);
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.science-library-page .study-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--science-navy) 0%,
+            var(--science-blue) 48%,
+            var(--science-teal) 100%
+        );
+
+    color: var(--science-white);
+
+}
+
+
+.science-library-page .study-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    top: -110px;
+    right: -70px;
+
+    background:
+        rgba(101, 200, 197, 0.18);
+
+}
+
+
+.science-library-page .study-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    bottom: -90px;
+    left: -60px;
+
+    background:
+        rgba(243, 201, 105, 0.14);
+
+}
+
+
+.science-library-page .study-hero .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* ==========================================================
+   HERO BREADCRUMB
+========================================================== */
+
+.science-library-page .breadcrumb {
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+}
+
+
+.science-library-page .breadcrumb a {
+
+    color:
+        var(--science-white);
+
+}
+
+
+.science-library-page .breadcrumb a:hover {
+
+    color:
+        var(--science-yellow);
+
+}
+
+
+/* ==========================================================
+   HERO SECTION LABEL
+========================================================== */
+
+.science-library-page .study-hero .section-label {
+
+    display: inline-block;
+
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+
+    padding:
+        0.45rem
+        0.9rem;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.28);
+
+    color:
+        var(--science-yellow);
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+/* ==========================================================
+   HERO TITLE
+========================================================== */
+
+.science-library-page .study-hero h1 {
+
+    color:
+        var(--science-white);
+
+    max-width: 900px;
+
+}
+
+
+.science-library-page .study-hero p {
+
+    max-width: 850px;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.science-library-page .study-hero .btn-primary {
+
+    background:
+        var(--science-orange);
+
+    color:
+        var(--science-white);
+
+    border:
+        2px solid
+        var(--science-orange);
+
+}
+
+
+.science-library-page .study-hero .btn-primary:hover {
+
+    background:
+        #d97728;
+
+    border-color:
+        #d97728;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.science-library-page .study-hero .btn-secondary {
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    color:
+        var(--science-white);
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.6);
+
+}
+
+
+.science-library-page .study-hero .btn-secondary:hover {
+
+    background:
+        var(--science-white);
+
+    color:
+        var(--science-navy);
+
+}
+
+
+/* ==========================================================
+   FEATURED INTRODUCTION
+========================================================== */
+
+.science-library-page .featured-study {
+
+    background:
+        var(--science-white);
+
+}
+
+
+.science-library-page .featured-study-card {
+
+    border:
+        1px solid
+        var(--science-border);
+
+    border-top:
+        5px solid
+        var(--science-teal);
+
+    box-shadow:
+        var(--science-shadow);
+
+}
+
+
+.science-library-page .featured-image {
+
+    background:
+        var(--science-light-blue);
+
+}
+
+
+.science-library-page .featured-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.science-library-page .featured-label {
+
+    color:
+        var(--science-teal);
+
+    font-weight: 800;
+
+}
+
+
+.science-library-page .featured-text h2 {
+
+    color:
+        var(--science-navy);
+
+}
+
+
+.science-library-page .featured-text p {
+
+    color:
+        var(--science-muted);
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   FEATURED STEM HIGHLIGHTS
+========================================================== */
+
+.science-library-page .featured-highlights {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 0.75rem;
+
+    margin-top: 1.5rem;
+
+}
+
+
+.science-library-page .featured-highlights > div {
+
+    padding:
+        0.8rem
+        1rem;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--science-light-teal);
+
+    border-left:
+        4px solid
+        var(--science-teal);
+
+    color:
+        var(--science-navy);
+
+    font-weight: 700;
+
+}
+
+
+.science-library-page .featured-highlights > div:nth-child(2) {
+
+    background:
+        var(--science-light-blue);
+
+    border-left-color:
+        var(--science-blue);
+
+}
+
+
+.science-library-page .featured-highlights > div:nth-child(3) {
+
+    background:
+        var(--science-light-orange);
+
+    border-left-color:
+        var(--science-orange);
+
+}
+
+
+.science-library-page .featured-highlights > div:nth-child(4) {
+
+    background:
+        var(--science-light-green);
+
+    border-left-color:
+        var(--science-green);
+
+}
+
+
+/* ==========================================================
+   SECTION HEADERS
+========================================================== */
+
+.science-library-page .section-header {
+
+    max-width: 850px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.science-library-page .section-label {
+
+    color:
+        var(--science-teal);
+
+    font-weight: 800;
+
+    letter-spacing:
+        0.08em;
+
+}
+
+
+.science-library-page .section-header h2 {
+
+    color:
+        var(--science-navy);
+
+}
+
+
+.science-library-page .section-header p {
+
+    color:
+        var(--science-muted);
+
+    line-height:
+        1.8;
+
+}
+
+
+/* ==========================================================
+   STUDY CARD GRID
+========================================================== */
+
+.science-library-page .study-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1.75rem;
+
+}
+
+
+/* ==========================================================
+   STUDY CARDS
+========================================================== */
+
+.science-library-page .study-card {
+
+    overflow: hidden;
+
+    background:
+        var(--science-white);
+
+    border:
+        1px solid
+        var(--science-border);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        var(--science-shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.science-library-page .study-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--science-shadow-hover);
+
+    border-color:
+        var(--science-aqua);
+
+}
+
+
+.science-library-page .study-card img {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    display: block;
+
+    background:
+        var(--science-light-blue);
+
+}
+
+
+.science-library-page .study-content {
+
+    padding:
+        1.5rem;
+
+}
+
+
+.science-library-page .study-content h3 {
+
+    color:
+        var(--science-navy);
+
+}
+
+
+.science-library-page .study-content p {
+
+    color:
+        var(--science-muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+.science-library-page .study-footer {
+
+    margin-top:
+        1.25rem;
+
+    padding-top:
+        1rem;
+
+    border-top:
+        1px solid
+        var(--science-border);
+
+}
+
+
+.science-library-page .study-footer a {
+
+    color:
+        var(--science-blue);
+
+    font-weight:
+        800;
+
+}
+
+
+.science-library-page .study-footer a:hover {
+
+    color:
+        var(--science-orange);
+
+}
+
+
+/* ==========================================================
+   ALTERNATE SECTIONS
+========================================================== */
+
+.science-library-page .study-section.alternate {
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--science-light-green),
+            var(--science-light-blue)
+        );
+
+}
+
+
+.science-library-page .study-section.alternate
+.section-label {
+
+    color:
+        var(--science-green);
+
+}
+
+
+/* ==========================================================
+   INTEREST GRID
+========================================================== */
+
+.science-library-page .interest-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 1.25rem;
+
+}
+
+
+/* ==========================================================
+   INTEREST CARDS
+========================================================== */
+
+.science-library-page .interest-card {
+
+    position: relative;
+
+    padding:
+        1.5rem;
+
+    background:
+        var(--science-white);
+
+    border:
+        1px solid
+        var(--science-border);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 8px 22px rgba(18, 52, 77, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.science-library-page .interest-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--science-shadow-hover);
+
+}
+
+
+.science-library-page .interest-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom:
+        1rem;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--science-light-blue);
+
+    font-size:
+        1.7rem;
+
+}
+
+
+.science-library-page .interest-card h3 {
+
+    color:
+        var(--science-navy);
+
+}
+
+
+.science-library-page .interest-card p {
+
+    color:
+        var(--science-muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+.science-library-page .interest-card a {
+
+    display: inline-block;
+
+    margin-top:
+        0.75rem;
+
+    color:
+        var(--science-teal);
+
+    font-weight:
+        800;
+
+}
+
+
+.science-library-page .interest-card a:hover {
+
+    color:
+        var(--science-orange);
+
+}
+
+
+/* ==========================================================
+   STEM CARD ACCENTS
+========================================================== */
+
+.science-library-page .interest-card:nth-child(1) {
+
+    border-top:
+        5px solid
+        var(--science-blue);
+
+}
+
+
+.science-library-page .interest-card:nth-child(2) {
+
+    border-top:
+        5px solid
+        var(--science-orange);
+
+}
+
+
+.science-library-page .interest-card:nth-child(3) {
+
+    border-top:
+        5px solid
+        var(--science-teal);
+
+}
+
+
+.science-library-page .interest-card:nth-child(4) {
+
+    border-top:
+        5px solid
+        var(--science-green);
+
+}
+
+
+/* ==========================================================
+   SCIENCE / STEM VISUAL DIFFERENTIATION
+========================================================== */
+
+.science-library-page .interest-card:nth-child(1)
+.interest-icon {
+
+    background:
+        var(--science-light-blue);
+
+}
+
+
+.science-library-page .interest-card:nth-child(2)
+.interest-icon {
+
+    background:
+        var(--science-light-orange);
+
+}
+
+
+.science-library-page .interest-card:nth-child(3)
+.interest-icon {
+
+    background:
+        var(--science-light-teal);
+
+}
+
+
+.science-library-page .interest-card:nth-child(4)
+.interest-icon {
+
+    background:
+        var(--science-light-green);
+
+}
+
+
+/* ==========================================================
+   STEM DOCUMENTATION
+========================================================== */
+
+.science-library-page
+.study-section.alternate
+.study-card {
+
+    border-top:
+        4px solid
+        var(--science-purple);
+
+}
+
+
+.science-library-page
+.study-section.alternate
+.study-card:nth-child(2) {
+
+    border-top-color:
+        var(--science-blue);
+
+}
+
+
+.science-library-page
+.study-section.alternate
+.study-card:nth-child(3) {
+
+    border-top-color:
+        var(--science-orange);
+
+}
+
+
+.science-library-page
+.study-section.alternate
+.study-card:nth-child(4) {
+
+    border-top-color:
+        var(--science-green);
+
+}
+
+
+/* ==========================================================
+   FAMILY STEM SECTION
+========================================================== */
+
+.science-library-page
+.family-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--science-light-green),
+            var(--science-light-teal)
+        );
+
+}
+
+
+.science-library-page
+.family-card {
+
+    background:
+        var(--science-white);
+
+    border:
+        1px solid
+        var(--science-border);
+
+    border-top:
+        4px solid
+        var(--science-green);
+
+    box-shadow:
+        var(--science-shadow);
+
+}
+
+
+.science-library-page
+.family-card h3 {
+
+    color:
+        var(--science-navy);
+
+}
+
+
+.science-library-page
+.family-card p {
+
+    color:
+        var(--science-muted);
+
+}
+
+
+/* ==========================================================
+   FINAL STEM FEATURE
+========================================================== */
+
+.science-library-page
+.featured-study:last-of-type {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--science-navy),
+            var(--science-blue),
+            var(--science-teal)
+        );
+
+}
+
+
+.science-library-page
+.featured-study:last-of-type
+.featured-study-card {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+        none;
+
+}
+
+
+.science-library-page
+.featured-study:last-of-type
+.featured-label {
+
+    color:
+        var(--science-yellow);
+
+}
+
+
+.science-library-page
+.featured-study:last-of-type
+h2 {
+
+    color:
+        var(--science-white);
+
+}
+
+
+.science-library-page
+.featured-study:last-of-type
+p {
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.science-library-page footer {
+
+    background:
+        var(--science-navy);
+
+    color:
+        var(--science-white);
+
+    border-top:
+        5px solid
+        var(--science-teal);
+
+}
+
+
+.science-library-page
+.footer-site-name {
+
+    color:
+        var(--science-white);
+
+}
+
+
+.science-library-page
+.footer-brand p {
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+}
+
+
+.science-library-page
+.footer-column h4 {
+
+    color:
+        var(--science-yellow);
+
+}
+
+
+.science-library-page
+.footer-column a {
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+}
+
+
+.science-library-page
+.footer-column a:hover {
+
+    color:
+        var(--science-aqua);
+
+}
+
+
+.science-library-page
+.footer-bottom {
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+}
+
+
+.science-library-page
+.footer-bottom p {
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .science-library-page .study-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+    .science-library-page .interest-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .science-library-page .study-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .science-library-page .interest-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .science-library-page
+    .featured-highlights {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .science-library-page
+    .study-hero h1 {
+
+        font-size:
+            clamp(2rem, 8vw, 3rem);
+
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .science-library-page
+    .study-content {
+
+        padding:
+            1.2rem;
+
+    }
+
+    .science-library-page
+    .interest-card {
+
+        padding:
+            1.25rem;
+
+    }
+
+    .science-library-page
+    .study-hero p {
+
+        font-size:
+            1rem;
+
+    }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.science-library-page a:focus-visible,
+.science-library-page button:focus-visible {
+
+    outline:
+        3px solid
+        var(--science-yellow);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .science-library-page * {
+
+        scroll-behavior:
+            auto !important;
+
+        transition:
+            none !important;
+
+        animation:
+            none !important;
+
+    }
+
+}
