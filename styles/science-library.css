@@ -1586,3 +1586,800 @@
     }
 
 }
+
+/* ==========================================================
+   SCIENCE & STEM
+   MOBILE LAYOUT CORRECTIONS
+========================================================== */
+
+@media (max-width: 850px) {
+
+    /* ------------------------------------------------------
+       GLOBAL MOBILE BOX SIZING
+    ------------------------------------------------------ */
+
+    .science-library-page,
+    .science-library-page *,
+    .science-library-page *::before,
+    .science-library-page *::after {
+
+        box-sizing: border-box;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HEADER
+    ------------------------------------------------------ */
+
+    .science-library-page header {
+
+        width: 100%;
+        overflow: visible;
+
+    }
+
+
+    .science-library-page .nav-container {
+
+        width: 100%;
+        min-height: 88px;
+
+        padding:
+            12px 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        position: relative;
+
+    }
+
+
+    .science-library-page .logo {
+
+        display: flex;
+        align-items: center;
+
+        min-width: 0;
+
+        gap: 10px;
+
+    }
+
+
+    .science-library-page .logo img {
+
+        width: 58px;
+        height: 58px;
+
+        flex: 0 0 58px;
+
+    }
+
+
+    .science-library-page .logo h1 {
+
+        font-size: 1.7rem;
+        line-height: 1;
+
+        white-space: nowrap;
+
+    }
+
+
+    .science-library-page .logo span {
+
+        font-size: 0.95rem;
+
+        white-space: nowrap;
+
+    }
+
+
+    /* ------------------------------------------------------
+       MOBILE MENU BUTTON
+    ------------------------------------------------------ */
+
+    .science-library-page .mobile-menu {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 48px;
+        height: 48px;
+
+        margin-left: auto;
+
+        padding: 0;
+
+        flex: 0 0 48px;
+
+        border: 0;
+        border-radius: 10px;
+
+        background: transparent;
+
+        color: var(--science-green-dark);
+
+        font-size: 1.9rem;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+    }
+
+
+    .science-library-page .mobile-menu:hover {
+
+        background: var(--science-green-light);
+
+    }
+
+
+    /* ------------------------------------------------------
+       MOBILE NAVIGATION
+    ------------------------------------------------------ */
+
+    .science-library-page nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        background: #ffffff;
+
+        border-top:
+            1px solid var(--science-border);
+
+        border-bottom:
+            1px solid var(--science-border);
+
+        box-shadow:
+            0 14px 30px rgba(0, 0, 0, 0.10);
+
+        z-index: 2000;
+
+    }
+
+
+    .science-library-page nav.open {
+
+        display: block;
+
+    }
+
+
+    .science-library-page nav ul {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        gap: 4px;
+
+        margin: 0;
+
+        padding: 12px;
+
+    }
+
+
+    .science-library-page nav li {
+
+        width: 100%;
+
+    }
+
+
+    .science-library-page nav a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 15px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO
+    ------------------------------------------------------ */
+
+    .science-library-page .study-hero {
+
+        width: 100%;
+
+        padding:
+            58px 0
+            65px;
+
+        overflow: hidden;
+
+    }
+
+
+    .science-library-page .study-hero .container {
+
+        width: 92%;
+
+        max-width: none;
+
+    }
+
+
+    /* ------------------------------------------------------
+       BREADCRUMB
+    ------------------------------------------------------ */
+
+    .science-library-page .breadcrumb {
+
+        gap: 6px;
+
+        margin-bottom: 22px;
+
+        line-height: 1.5;
+
+        font-size: 0.9rem;
+
+    }
+
+
+    .science-library-page .breadcrumb > span:last-child {
+
+        display: inline;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO STEM LABEL
+    ------------------------------------------------------ */
+
+    .science-library-page
+    .study-hero > .container > .section-label {
+
+        max-width: 100%;
+
+        padding: 9px 14px;
+
+        line-height: 1.45;
+
+        white-space: normal;
+
+        text-align: left;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO TITLE
+    ------------------------------------------------------ */
+
+    .science-library-page .study-hero h1 {
+
+        max-width: 100%;
+
+        margin:
+            0 0 22px;
+
+        font-size:
+            clamp(2.15rem, 9vw, 3.2rem);
+
+        line-height: 1.08;
+
+        overflow-wrap: break-word;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO DESCRIPTION
+    ------------------------------------------------------ */
+
+    .science-library-page .study-hero p {
+
+        max-width: 100%;
+
+        font-size: 1rem;
+
+        line-height: 1.75;
+
+    }
+
+
+    /* ------------------------------------------------------
+       HERO BUTTONS
+       IMPORTANT FIX FOR SCREENSHOT
+    ------------------------------------------------------ */
+
+    .science-library-page .hero-buttons {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+        gap: 14px;
+
+        margin-top: 28px;
+
+    }
+
+
+    .science-library-page .hero-buttons .btn {
+
+        display: flex;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        min-height: 56px;
+
+        padding:
+            14px 18px;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        text-align: center;
+
+        white-space: normal;
+
+        overflow-wrap: break-word;
+
+    }
+
+
+    /* ------------------------------------------------------
+       FEATURED SECTION
+    ------------------------------------------------------ */
+
+    .science-library-page .featured-study {
+
+        width: 100%;
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .science-library-page .featured-study .container {
+
+        width: 92%;
+
+    }
+
+
+    .science-library-page .featured-study-card {
+
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 18px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .science-library-page .featured-image {
+
+        width: 100%;
+
+        border-radius: 16px;
+
+    }
+
+
+    .science-library-page .featured-image img {
+
+        width: 100%;
+
+        aspect-ratio: 4 / 3;
+
+        object-fit: cover;
+
+    }
+
+
+    .science-library-page .featured-text {
+
+        width: 100%;
+
+        padding: 3px;
+
+    }
+
+
+    .science-library-page .featured-text h2 {
+
+        font-size: 1.9rem;
+
+        line-height: 1.2;
+
+    }
+
+
+    .science-library-page .featured-text p {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* ------------------------------------------------------
+       STEM HIGHLIGHTS
+    ------------------------------------------------------ */
+
+    .science-library-page .featured-highlights {
+
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+
+    }
+
+
+    .science-library-page .featured-highlights div {
+
+        width: 100%;
+
+        padding: 11px 13px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       SECTIONS
+    ------------------------------------------------------ */
+
+    .science-library-page .study-section {
+
+        width: 100%;
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .science-library-page .study-section .container {
+
+        width: 92%;
+
+    }
+
+
+    .science-library-page .section-header {
+
+        width: 100%;
+
+        margin-bottom: 32px;
+
+    }
+
+
+    .science-library-page .section-header h2 {
+
+        font-size: 2rem;
+
+        line-height: 1.2;
+
+    }
+
+
+    .science-library-page .section-header p {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* ------------------------------------------------------
+       STUDY CARDS
+    ------------------------------------------------------ */
+
+    .science-library-page .study-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        gap: 20px;
+
+    }
+
+
+    .science-library-page .study-card {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .science-library-page .study-card > img {
+
+        width: 100%;
+
+        aspect-ratio: 16 / 10;
+
+        object-fit: cover;
+
+    }
+
+
+    .science-library-page .study-content {
+
+        width: 100%;
+
+        padding: 21px;
+
+    }
+
+
+    .science-library-page .study-content h3 {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    /* ------------------------------------------------------
+       INTEREST CARDS
+    ------------------------------------------------------ */
+
+    .science-library-page .interest-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        gap: 18px;
+
+    }
+
+
+    .science-library-page .interest-card {
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 21px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       FOOTER
+    ------------------------------------------------------ */
+
+    .science-library-page .footer-grid {
+
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding:
+            50px 0
+            40px;
+
+    }
+
+
+    .science-library-page .footer-brand {
+
+        max-width: 100%;
+
+    }
+
+
+    .science-library-page .footer-column {
+
+        width: 100%;
+
+    }
+
+
+    .science-library-page .footer-bottom {
+
+        width: 92%;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 8px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .science-library-page .nav-container {
+
+        min-height: 82px;
+
+        padding:
+            10px 16px;
+
+    }
+
+
+    .science-library-page .logo img {
+
+        width: 54px;
+        height: 54px;
+
+        flex-basis: 54px;
+
+    }
+
+
+    .science-library-page .logo h1 {
+
+        font-size: 1.45rem;
+
+    }
+
+
+    .science-library-page .logo span {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    .science-library-page .mobile-menu {
+
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+
+        font-size: 1.75rem;
+
+    }
+
+
+    .science-library-page .study-hero {
+
+        padding:
+            48px 0
+            58px;
+
+    }
+
+
+    .science-library-page .study-hero h1 {
+
+        font-size: 2.05rem;
+
+    }
+
+
+    .science-library-page .study-hero p {
+
+        font-size: 0.98rem;
+
+    }
+
+
+    .science-library-page .hero-buttons .btn {
+
+        min-height: 54px;
+
+        padding:
+            13px 15px;
+
+        font-size: 0.98rem;
+
+    }
+
+
+    .science-library-page .featured-study-card {
+
+        padding: 15px;
+
+    }
+
+
+    .science-library-page .featured-text h2 {
+
+        font-size: 1.75rem;
+
+    }
+
+
+    .science-library-page .section-header h2 {
+
+        font-size: 1.8rem;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL PHONES
+========================================================== */
+
+@media (max-width: 375px) {
+
+    .science-library-page .logo h1 {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    .science-library-page .logo span {
+
+        font-size: 0.78rem;
+
+    }
+
+
+    .science-library-page .study-hero h1 {
+
+        font-size: 1.9rem;
+
+    }
+
+
+    .science-library-page
+    .study-hero > .container > .section-label {
+
+        font-size: 0.7rem;
+
+    }
+
+}
