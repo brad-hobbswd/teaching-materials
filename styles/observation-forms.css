@@ -2698,3 +2698,527 @@ input:focus-visible{
 /*==================================================
   END OF STYLESHEET
 ==================================================*/
+
+
+/*==================================================
+  HTML COMPLETENESS FIXES
+  These selectors are required by observation-forms.html
+==================================================*/
+
+/*--------------------------------------------------
+  PRIMARY BUTTON
+--------------------------------------------------*/
+
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.65rem;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    border:2px solid var(--primary);
+
+    box-shadow:var(--shadow-xs);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    border-color:var(--primary-dark);
+
+    color:#ffffff;
+
+}
+
+
+/*--------------------------------------------------
+  RESOURCE LISTS
+--------------------------------------------------*/
+
+.resource-list{
+
+    display:grid;
+
+    gap:.65rem;
+
+    margin:0 0 1.5rem;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+
+.resource-list li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.55rem;
+
+    margin:0;
+
+    padding:.7rem .85rem;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface-alt);
+
+    color:var(--text);
+
+    font-size:.84rem;
+
+    font-weight:600;
+
+    line-height:1.45;
+
+}
+
+
+.resource-list li::first-letter{
+
+    color:var(--green);
+
+}
+
+
+/*--------------------------------------------------
+  RESOURCE DOWNLOAD BUTTONS
+--------------------------------------------------*/
+
+.resource-buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:.75rem;
+
+    margin-top:auto;
+
+}
+
+
+.resource-buttons a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.5rem;
+
+    min-height:46px;
+
+    padding:.75rem 1rem;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    color:var(--primary);
+
+    font-size:.82rem;
+
+    font-weight:800;
+
+    text-decoration:none;
+
+    box-shadow:var(--shadow-xs);
+
+    transition:var(--transition);
+
+}
+
+
+.resource-buttons a:hover{
+
+    transform:translateY(-3px);
+
+    border-color:var(--primary);
+
+    background:var(--primary-light);
+
+    color:var(--primary-dark);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+.resource-buttons a:first-child{
+
+    background:var(--primary);
+
+    border-color:var(--primary);
+
+    color:#ffffff;
+
+}
+
+
+.resource-buttons a:first-child:hover{
+
+    background:var(--primary-dark);
+
+    border-color:var(--primary-dark);
+
+    color:#ffffff;
+
+}
+
+
+.resource-buttons i{
+
+    font-size:.9rem;
+
+}
+
+
+/*--------------------------------------------------
+  STUDY CONTENT WITH RESOURCE LISTS
+--------------------------------------------------*/
+
+.study-content{
+
+    min-height:100%;
+
+}
+
+
+.study-content > p{
+
+    margin-bottom:1.25rem;
+
+}
+
+
+.study-content .resource-list{
+
+    margin-top:auto;
+
+}
+
+
+.study-content .study-tag + h3{
+
+    margin-top:.1rem;
+
+}
+
+
+/*--------------------------------------------------
+  FEATURED STUDY IMAGE SAFETY
+--------------------------------------------------*/
+
+.featured-image img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    min-height:360px;
+
+    object-fit:cover;
+
+}
+
+
+.featured-image{
+
+    min-width:0;
+
+}
+
+
+.featured-study-card{
+
+    overflow:hidden;
+
+}
+
+
+.featured-study-card > *{
+
+    min-width:0;
+
+}
+
+
+/*--------------------------------------------------
+  HERO ACTION ICON ALIGNMENT
+--------------------------------------------------*/
+
+.hero-actions .btn i{
+
+    flex:0 0 auto;
+
+}
+
+
+/*--------------------------------------------------
+  STATS
+--------------------------------------------------*/
+
+.stat-card h2{
+
+    margin:0;
+
+}
+
+
+/*--------------------------------------------------
+  NEWSLETTER FORM
+--------------------------------------------------*/
+
+.input-group{
+
+    width:100%;
+
+}
+
+
+.input-group input{
+
+    display:block;
+
+    min-height:52px;
+
+    background:#ffffff;
+
+    color:var(--heading);
+
+    font-size:.95rem;
+
+}
+
+
+.input-group input::placeholder{
+
+    color:var(--muted);
+
+    opacity:1;
+
+}
+
+
+/*--------------------------------------------------
+  FOOTER
+  Intentionally NO logo.
+--------------------------------------------------*/
+
+.site-footer .footer-column:first-child h3{
+
+    font-size:1.35rem;
+
+    line-height:1.2;
+
+}
+
+
+.site-footer .footer-column:first-child p{
+
+    max-width:420px;
+
+}
+
+
+/*--------------------------------------------------
+  RESPONSIVE RESOURCE BUTTONS
+--------------------------------------------------*/
+
+@media (max-width:600px){
+
+    .resource-buttons{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .resource-buttons a{
+
+        width:100%;
+
+    }
+
+}
+
+
+/*--------------------------------------------------
+  RESPONSIVE FEATURED STUDIES
+--------------------------------------------------*/
+
+@media (max-width:768px){
+
+    .featured-study-card{
+
+        padding:2rem;
+
+    }
+
+    .featured-image img{
+
+        min-height:280px;
+
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .featured-study-card{
+
+        padding:1.5rem;
+
+        border-radius:24px;
+
+    }
+
+    .featured-image{
+
+        border-radius:22px;
+
+    }
+
+    .featured-image img{
+
+        min-height:230px;
+
+        border-radius:22px;
+
+    }
+
+}
+
+
+/*--------------------------------------------------
+  MOBILE HERO
+--------------------------------------------------*/
+
+@media (max-width:768px){
+
+    .study-hero h1{
+
+        font-size:clamp(2.5rem,11vw,4rem);
+
+    }
+
+    .study-hero p{
+
+        font-size:1rem;
+
+    }
+
+}
+
+
+/*--------------------------------------------------
+  MOBILE NAVIGATION
+--------------------------------------------------*/
+
+@media (max-width:600px){
+
+    .nav-container{
+
+        min-height:76px;
+
+    }
+
+    .logo img{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+    .logo-text h1{
+
+        font-size:1.05rem;
+
+    }
+
+    .logo-text span{
+
+        font-size:.64rem;
+
+    }
+
+    .header-actions{
+
+        gap:.45rem;
+
+    }
+
+    .search-toggle{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .mobile-menu{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+}
+
+
+/*--------------------------------------------------
+  ACCESSIBILITY FOR DOWNLOAD LINKS
+--------------------------------------------------*/
+
+.resource-buttons a:focus-visible,
+.btn:focus-visible,
+.footer-button:focus-visible{
+
+    outline:3px solid rgba(244,198,77,.75);
+
+    outline-offset:3px;
+
+}
+
+
+/*--------------------------------------------------
+  REDUCED MOTION
+--------------------------------------------------*/
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        scroll-behavior:auto !important;
+
+        transition:none !important;
+
+        animation:none !important;
+
+    }
+
+}
