@@ -1,0 +1,2324 @@
+/* ==========================================================
+   LITTLE EXPLORERS LEARNING HUB
+   LEARNING CENTERS
+   Page Specific Stylesheet
+
+   File:
+   /styles/learning-centers.css
+========================================================== */
+
+
+/* ==========================================================
+   FOUNDATION
+========================================================== */
+
+.learning-centers-page {
+
+    --lc-green: #3f8062;
+    --lc-green-dark: #285b45;
+    --lc-green-light: #eaf5ee;
+
+    --lc-blue: #4384a8;
+    --lc-blue-dark: #2d617f;
+    --lc-blue-light: #eaf4f9;
+
+    --lc-yellow: #e5ad3d;
+    --lc-yellow-light: #fff7df;
+
+    --lc-orange: #d97a3d;
+    --lc-orange-light: #fff0e5;
+
+    --lc-purple: #8063a8;
+    --lc-purple-light: #f2edfa;
+
+    --lc-pink: #c96d83;
+    --lc-pink-light: #fbecef;
+
+    --lc-teal: #3b9996;
+    --lc-teal-light: #e8f7f6;
+
+    --lc-red: #c65e56;
+
+    --lc-cream: #fbfaf5;
+    --lc-white: #ffffff;
+
+    --lc-text: #26352f;
+    --lc-muted: #65736d;
+
+    --lc-border: #dce7e0;
+
+    --lc-shadow:
+        0 10px 28px rgba(38, 65, 52, 0.08);
+
+    --lc-shadow-hover:
+        0 18px 40px rgba(38, 65, 52, 0.14);
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfaf5 0%,
+            #ffffff 32%,
+            #f8fbf8 100%
+        );
+
+    color: var(--lc-text);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+}
+
+
+/* ==========================================================
+   BOX SIZING
+========================================================== */
+
+.learning-centers-page,
+.learning-centers-page *,
+.learning-centers-page *::before,
+.learning-centers-page *::after {
+
+    box-sizing: border-box;
+
+}
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+.learning-centers-page img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+.learning-centers-page a {
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.learning-centers-page .container {
+
+    width: min(1180px, 92%);
+
+    margin-inline: auto;
+
+}
+
+
+.learning-centers-page section {
+
+    position: relative;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.learning-centers-page header {
+
+    position: relative;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 255, 255, 0.98);
+
+    border-bottom:
+        1px solid var(--lc-border);
+
+}
+
+
+.learning-centers-page .nav-container {
+
+    min-height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.learning-centers-page .logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.learning-centers-page .logo img {
+
+    width: 56px;
+
+    height: 56px;
+
+    flex: 0 0 56px;
+
+    object-fit: contain;
+
+}
+
+
+.learning-centers-page .logo h1 {
+
+    margin: 0;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size: 1.45rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+}
+
+
+.learning-centers-page .logo span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        var(--lc-blue);
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.learning-centers-page nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.learning-centers-page nav a {
+
+    display: block;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    color:
+        var(--lc-text);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.learning-centers-page nav a:hover {
+
+    background:
+        var(--lc-green-light);
+
+    color:
+        var(--lc-green-dark);
+
+}
+
+
+.learning-centers-page nav a.active {
+
+    background:
+        var(--lc-green);
+
+    color:
+        var(--lc-white);
+
+    box-shadow:
+        0 5px 14px rgba(63, 128, 98, 0.18);
+
+}
+
+
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
+.learning-centers-page .mobile-menu {
+
+    display: none;
+
+    width: 46px;
+
+    height: 46px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        transparent;
+
+    color:
+        var(--lc-green-dark);
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+.learning-centers-page .mobile-menu:hover {
+
+    background:
+        var(--lc-green-light);
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.learning-centers-page .study-hero {
+
+    overflow: hidden;
+
+    padding:
+        82px 0
+        95px;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(63, 128, 98, 0.14),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(229, 173, 61, 0.17),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 75% 90%,
+            rgba(67, 132, 168, 0.12),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #edf7f0 0%,
+            #edf6f8 52%,
+            #fff8e9 100%
+        );
+
+    border-bottom:
+        1px solid var(--lc-border);
+
+}
+
+
+.learning-centers-page .study-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    left: -90px;
+
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(67, 132, 168, 0.08);
+
+}
+
+
+.learning-centers-page .study-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    right: -130px;
+
+    top: -160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(229, 173, 61, 0.09);
+
+}
+
+
+/* ==========================================================
+   BREADCRUMB
+========================================================== */
+
+.learning-centers-page .breadcrumb {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--lc-muted);
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+}
+
+
+.learning-centers-page .breadcrumb a {
+
+    color:
+        var(--lc-blue-dark);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.learning-centers-page .breadcrumb a:hover {
+
+    color:
+        var(--lc-green);
+
+}
+
+
+/* ==========================================================
+   SECTION LABEL
+========================================================== */
+
+.learning-centers-page .section-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    padding:
+        8px 14px;
+
+    border:
+        1px solid rgba(63, 128, 98, 0.18);
+
+    border-radius: 999px;
+
+    background:
+        rgba(63, 128, 98, 0.09);
+
+    color:
+        var(--lc-green-dark);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1.4;
+
+}
+
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.learning-centers-page .study-hero h1 {
+
+    max-width: 900px;
+
+    margin:
+        18px 0
+        20px;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        clamp(2.6rem, 6vw, 4.7rem);
+
+    font-weight: 800;
+
+    line-height: 1.03;
+
+}
+
+
+.learning-centers-page .study-hero p {
+
+    max-width: 850px;
+
+    margin: 0;
+
+    color:
+        var(--lc-text);
+
+    font-size: 1.12rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.learning-centers-page .hero-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 30px;
+
+}
+
+
+.learning-centers-page .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding:
+        13px 20px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+}
+
+
+.learning-centers-page .btn-primary {
+
+    background:
+        var(--lc-green);
+
+    color:
+        var(--lc-white);
+
+    box-shadow:
+        0 8px 18px rgba(63, 128, 98, 0.2);
+
+}
+
+
+.learning-centers-page .btn-primary:hover {
+
+    background:
+        var(--lc-green-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(63, 128, 98, 0.24);
+
+}
+
+
+.learning-centers-page .btn-secondary {
+
+    background:
+        var(--lc-white);
+
+    color:
+        var(--lc-blue-dark);
+
+    border:
+        1px solid var(--lc-border);
+
+}
+
+
+.learning-centers-page .btn-secondary:hover {
+
+    background:
+        var(--lc-blue-light);
+
+    border-color:
+        rgba(67, 132, 168, 0.35);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   INTRODUCTION
+========================================================== */
+
+.learning-centers-page .learning-centers-intro {
+
+    padding:
+        85px 0;
+
+    background:
+        #ffffff;
+
+}
+
+
+.learning-centers-page .intro-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    max-width: 1050px;
+
+    margin-inline: auto;
+
+    padding:
+        50px 55px;
+
+    border:
+        1px solid var(--lc-border);
+
+    border-radius: 28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fcf9 55%,
+            #f4fafb 100%
+        );
+
+    box-shadow:
+        var(--lc-shadow);
+
+}
+
+
+.learning-centers-page .intro-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 210px;
+
+    right: -90px;
+
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(229, 173, 61, 0.10);
+
+}
+
+
+.learning-centers-page .intro-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 900px;
+
+}
+
+
+.learning-centers-page .intro-content h2 {
+
+    margin:
+        18px 0
+        18px;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        clamp(2rem, 4vw, 3.1rem);
+
+    line-height: 1.12;
+
+}
+
+
+.learning-centers-page .intro-content p {
+
+    max-width: 850px;
+
+    margin:
+        0 0
+        16px;
+
+    color:
+        var(--lc-muted);
+
+    font-size: 1.04rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   INTRO HIGHLIGHTS
+========================================================== */
+
+.learning-centers-page .intro-highlights {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+}
+
+
+.learning-centers-page .intro-highlights span {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 48px;
+
+    padding:
+        11px 14px;
+
+    border:
+        1px solid var(--lc-border);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    color:
+        var(--lc-text);
+
+    font-weight: 800;
+
+    box-shadow:
+        0 4px 12px rgba(38, 65, 52, 0.04);
+
+}
+
+
+/* ==========================================================
+   MAIN LEARNING CENTER SECTION
+========================================================== */
+
+.learning-centers-page .learning-centers-section {
+
+    padding:
+        90px 0
+        100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f6faf7 0%,
+            #ffffff 100%
+        );
+
+    border-top:
+        1px solid var(--lc-border);
+
+}
+
+
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.learning-centers-page .section-header {
+
+    max-width: 800px;
+
+    margin:
+        0 auto
+        48px;
+
+    text-align: center;
+
+}
+
+
+.learning-centers-page .section-header h2 {
+
+    margin:
+        17px 0
+        14px;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.12;
+
+}
+
+
+.learning-centers-page .section-header p {
+
+    margin: 0;
+
+    color:
+        var(--lc-muted);
+
+    font-size: 1.03rem;
+
+    line-height: 1.75;
+
+}
+
+
+/* ==========================================================
+   LEARNING CENTER GRID
+========================================================== */
+
+.learning-centers-page .study-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+
+}
+
+
+/* ==========================================================
+   LEARNING CENTER CARDS
+========================================================== */
+
+.learning-centers-page .study-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--lc-border);
+
+    border-radius: 22px;
+
+    background:
+        var(--lc-white);
+
+    box-shadow:
+        0 8px 24px rgba(38, 65, 52, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.learning-centers-page .study-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--lc-shadow-hover);
+
+}
+
+
+/* ==========================================================
+   CARD IMAGE
+========================================================== */
+
+.learning-centers-page .card-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 16 / 10;
+
+    background:
+        var(--lc-green-light);
+
+}
+
+
+.learning-centers-page .card-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.learning-centers-page .study-card:hover
+.card-image img {
+
+    transform:
+        scale(1.045);
+
+}
+
+
+/* ==========================================================
+   CARD CATEGORY
+========================================================== */
+
+.learning-centers-page .card-category {
+
+    position: absolute;
+
+    left: 15px;
+
+    bottom: 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    color:
+        var(--lc-green-dark);
+
+    font-size: 0.68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.07em;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+
+.learning-centers-page .study-content {
+
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    padding:
+        24px 24px 25px;
+
+}
+
+
+.learning-centers-page .study-content h3 {
+
+    margin:
+        0 0
+        11px;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size: 1.38rem;
+
+    line-height: 1.25;
+
+}
+
+
+.learning-centers-page .study-content p {
+
+    margin: 0;
+
+    color:
+        var(--lc-muted);
+
+    font-size: 0.96rem;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   CARD FOOTER
+========================================================== */
+
+.learning-centers-page .study-footer {
+
+    margin-top: auto;
+
+    padding-top: 22px;
+
+}
+
+
+.learning-centers-page .study-footer a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        var(--lc-blue-dark);
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+}
+
+
+.learning-centers-page .study-footer a:hover {
+
+    color:
+        var(--lc-green);
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* ==========================================================
+   CENTER COLOR IDENTITIES
+========================================================== */
+
+/* Blocks */
+
+.learning-centers-page .center-blocks {
+
+    border-top:
+        5px solid var(--lc-orange);
+
+}
+
+
+/* Art */
+
+.learning-centers-page .center-art {
+
+    border-top:
+        5px solid var(--lc-pink);
+
+}
+
+
+/* Writing */
+
+.learning-centers-page .center-writing {
+
+    border-top:
+        5px solid var(--lc-purple);
+
+}
+
+
+/* Library */
+
+.learning-centers-page .center-library {
+
+    border-top:
+        5px solid var(--lc-blue);
+
+}
+
+
+/* Science */
+
+.learning-centers-page .center-science {
+
+    border-top:
+        5px solid var(--lc-green);
+
+}
+
+
+/* Music */
+
+.learning-centers-page .center-music {
+
+    border-top:
+        5px solid var(--lc-yellow);
+
+}
+
+
+/* Dramatic Play */
+
+.learning-centers-page .center-dramatic-play {
+
+    border-top:
+        5px solid var(--lc-purple);
+
+}
+
+
+/* Sensory */
+
+.learning-centers-page .center-sensory {
+
+    border-top:
+        5px solid var(--lc-teal);
+
+}
+
+
+/* Math */
+
+.learning-centers-page .center-math {
+
+    border-top:
+        5px solid var(--lc-blue);
+
+}
+
+
+/* Technology */
+
+.learning-centers-page .center-technology {
+
+    border-top:
+        5px solid var(--lc-orange);
+
+}
+
+
+/* Outdoor */
+
+.learning-centers-page .center-outdoor {
+
+    border-top:
+        5px solid var(--lc-green);
+
+}
+
+
+/* ==========================================================
+   HOVER COLOR ACCENTS
+========================================================== */
+
+.learning-centers-page .center-blocks:hover {
+
+    border-color:
+        var(--lc-orange);
+
+}
+
+
+.learning-centers-page .center-art:hover {
+
+    border-color:
+        var(--lc-pink);
+
+}
+
+
+.learning-centers-page .center-writing:hover {
+
+    border-color:
+        var(--lc-purple);
+
+}
+
+
+.learning-centers-page .center-library:hover {
+
+    border-color:
+        var(--lc-blue);
+
+}
+
+
+.learning-centers-page .center-science:hover {
+
+    border-color:
+        var(--lc-green);
+
+}
+
+
+.learning-centers-page .center-music:hover {
+
+    border-color:
+        var(--lc-yellow);
+
+}
+
+
+.learning-centers-page .center-dramatic-play:hover {
+
+    border-color:
+        var(--lc-purple);
+
+}
+
+
+.learning-centers-page .center-sensory:hover {
+
+    border-color:
+        var(--lc-teal);
+
+}
+
+
+.learning-centers-page .center-math:hover {
+
+    border-color:
+        var(--lc-blue);
+
+}
+
+
+.learning-centers-page .center-technology:hover {
+
+    border-color:
+        var(--lc-orange);
+
+}
+
+
+.learning-centers-page .center-outdoor:hover {
+
+    border-color:
+        var(--lc-green);
+
+}
+
+
+/* ==========================================================
+   LEARNING CENTER PHILOSOPHY
+========================================================== */
+
+.learning-centers-page .learning-centers-message {
+
+    padding:
+        90px 0
+        100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7f0 0%,
+            #edf7fa 50%,
+            #fff8e8 100%
+        );
+
+    border-top:
+        1px solid var(--lc-border);
+
+}
+
+
+.learning-centers-page .message-card {
+
+    max-width: 1000px;
+
+    margin-inline: auto;
+
+    padding:
+        52px;
+
+    border:
+        1px solid rgba(63, 128, 98, 0.16);
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    text-align: center;
+
+    box-shadow:
+        var(--lc-shadow);
+
+}
+
+
+.learning-centers-page .message-card h2 {
+
+    max-width: 800px;
+
+    margin:
+        18px auto
+        18px;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size:
+        clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.12;
+
+}
+
+
+.learning-centers-page .message-card > p {
+
+    max-width: 800px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--lc-muted);
+
+    font-size: 1.03rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   MESSAGE HIGHLIGHTS
+========================================================== */
+
+.learning-centers-page .message-highlights {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-top: 35px;
+
+}
+
+
+.learning-centers-page .message-highlights div {
+
+    min-height: 120px;
+
+    padding:
+        20px 16px;
+
+    border:
+        1px solid var(--lc-border);
+
+    border-radius: 16px;
+
+    background:
+        #ffffff;
+
+    text-align: center;
+
+}
+
+
+.learning-centers-page .message-highlights strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--lc-green-dark);
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size: 1.15rem;
+
+}
+
+
+.learning-centers-page .message-highlights span {
+
+    display: block;
+
+    color:
+        var(--lc-muted);
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.learning-centers-page footer {
+
+    background:
+        linear-gradient(
+            135deg,
+            #183e2f,
+            #194d5d
+        );
+
+    color:
+        #ffffff;
+
+}
+
+
+.learning-centers-page .footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        1fr
+        1fr
+        1.25fr;
+
+    gap: 45px;
+
+    padding:
+        65px 0
+        50px;
+
+}
+
+
+.learning-centers-page .footer-brand {
+
+    max-width: 340px;
+
+}
+
+
+.learning-centers-page .footer-logo {
+
+    display: inline-flex;
+
+    margin-bottom: 16px;
+
+}
+
+
+.learning-centers-page .footer-logo img {
+
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: contain;
+
+}
+
+
+.learning-centers-page .footer-brand p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    line-height: 1.7;
+
+}
+
+
+.learning-centers-page .footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.learning-centers-page .footer-column h4 {
+
+    margin:
+        0 0
+        10px;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Nunito",
+        sans-serif;
+
+    font-size: 1.05rem;
+
+}
+
+
+.learning-centers-page .footer-column a {
+
+    color:
+        rgba(255, 255, 255, 0.73);
+
+    text-decoration: none;
+
+}
+
+
+.learning-centers-page .footer-column a:hover {
+
+    color:
+        #ffffff;
+
+    transform:
+        translateX(3px);
+
+}
+
+
+/* ==========================================================
+   FOOTER BOTTOM
+========================================================== */
+
+.learning-centers-page .footer-bottom {
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.13);
+
+}
+
+
+.learning-centers-page .footer-bottom .container {
+
+    padding:
+        20px 0;
+
+}
+
+
+.learning-centers-page .footer-bottom p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.62);
+
+    font-size: 0.88rem;
+
+    text-align: center;
+
+}
+
+
+/* ==========================================================
+   FOCUS ACCESSIBILITY
+========================================================== */
+
+.learning-centers-page a:focus-visible,
+.learning-centers-page button:focus-visible {
+
+    outline:
+        3px solid var(--lc-yellow);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 950px) {
+
+    .learning-centers-page .study-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .learning-centers-page .message-highlights {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .learning-centers-page .footer-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .learning-centers-page .nav-container {
+
+        min-height: 78px;
+
+        padding:
+            10px 0;
+
+    }
+
+
+    .learning-centers-page .mobile-menu {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex: 0 0 46px;
+
+    }
+
+
+    .learning-centers-page nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        right: 0;
+
+        width: 100%;
+
+        background:
+            #ffffff;
+
+        border-top:
+            1px solid var(--lc-border);
+
+        border-bottom:
+            1px solid var(--lc-border);
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.1);
+
+        z-index: 2000;
+
+    }
+
+
+    .learning-centers-page nav.open {
+
+        display: block;
+
+    }
+
+
+    .learning-centers-page nav ul {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+
+        padding: 12px;
+
+    }
+
+
+    .learning-centers-page nav li {
+
+        width: 100%;
+
+    }
+
+
+    .learning-centers-page nav a {
+
+        width: 100%;
+
+        padding:
+            13px 15px;
+
+    }
+
+
+    .learning-centers-page .study-hero {
+
+        padding:
+            65px 0
+            75px;
+
+    }
+
+
+    .learning-centers-page .intro-card {
+
+        padding:
+            40px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 700px) {
+
+    .learning-centers-page .container {
+
+        width: 92%;
+
+    }
+
+
+    .learning-centers-page .logo {
+
+        gap: 9px;
+
+    }
+
+
+    .learning-centers-page .logo img {
+
+        width: 52px;
+
+        height: 52px;
+
+        flex-basis: 52px;
+
+    }
+
+
+    .learning-centers-page .logo h1 {
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .learning-centers-page .logo span {
+
+        font-size: 0.82rem;
+
+    }
+
+
+    .learning-centers-page .study-hero {
+
+        padding:
+            55px 0
+            65px;
+
+    }
+
+
+    .learning-centers-page .study-hero h1 {
+
+        font-size:
+            clamp(2.15rem, 9vw, 3.2rem);
+
+    }
+
+
+    .learning-centers-page .study-hero p {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    .learning-centers-page .hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+
+    .learning-centers-page .hero-buttons .btn {
+
+        width: 100%;
+
+        min-height: 54px;
+
+    }
+
+
+    .learning-centers-page .learning-centers-intro {
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .learning-centers-page .intro-card {
+
+        padding:
+            30px 24px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .learning-centers-page .intro-content h2 {
+
+        font-size:
+            2rem;
+
+    }
+
+
+    .learning-centers-page .intro-content p {
+
+        font-size:
+            0.98rem;
+
+    }
+
+
+    .learning-centers-page .intro-highlights {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .learning-centers-page .learning-centers-section {
+
+        padding:
+            65px 0
+            75px;
+
+    }
+
+
+    .learning-centers-page .section-header {
+
+        margin-bottom:
+            32px;
+
+    }
+
+
+    .learning-centers-page .section-header h2 {
+
+        font-size:
+            2rem;
+
+    }
+
+
+    .learning-centers-page .study-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            18px;
+
+    }
+
+
+    .learning-centers-page .study-content {
+
+        padding:
+            19px;
+
+    }
+
+
+    .learning-centers-page .study-content h3 {
+
+        font-size:
+            1.18rem;
+
+    }
+
+
+    .learning-centers-page .study-content p {
+
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.6;
+
+    }
+
+
+    .learning-centers-page .card-category {
+
+        left:
+            11px;
+
+        bottom:
+            11px;
+
+        font-size:
+            0.6rem;
+
+    }
+
+
+    .learning-centers-page .learning-centers-message {
+
+        padding:
+            65px 0
+            75px;
+
+    }
+
+
+    .learning-centers-page .message-card {
+
+        padding:
+            35px 24px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .learning-centers-page .message-card h2 {
+
+        font-size:
+            2rem;
+
+    }
+
+
+    .learning-centers-page .message-highlights {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .learning-centers-page .footer-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            30px;
+
+        padding:
+            50px 0
+            40px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .learning-centers-page .nav-container {
+
+        padding:
+            9px 0;
+
+    }
+
+
+    .learning-centers-page .logo img {
+
+        width:
+            48px;
+
+        height:
+            48px;
+
+        flex-basis:
+            48px;
+
+    }
+
+
+    .learning-centers-page .logo h1 {
+
+        font-size:
+            1.15rem;
+
+    }
+
+
+    .learning-centers-page .logo span {
+
+        font-size:
+            0.75rem;
+
+    }
+
+
+    .learning-centers-page .mobile-menu {
+
+        width:
+            43px;
+
+        height:
+            43px;
+
+        flex-basis:
+            43px;
+
+    }
+
+
+    .learning-centers-page .breadcrumb {
+
+        font-size:
+            0.82rem;
+
+    }
+
+
+    .learning-centers-page .study-hero h1 {
+
+        font-size:
+            2rem;
+
+    }
+
+
+    .learning-centers-page .study-hero .section-label {
+
+        font-size:
+            0.67rem;
+
+    }
+
+
+    .learning-centers-page .intro-highlights {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .learning-centers-page .study-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+
+    }
+
+
+    .learning-centers-page .card-image {
+
+        aspect-ratio:
+            16 / 10;
+
+    }
+
+
+    .learning-centers-page .study-content {
+
+        padding:
+            21px;
+
+    }
+
+
+    .learning-centers-page .study-content h3 {
+
+        font-size:
+            1.3rem;
+
+    }
+
+
+    .learning-centers-page .study-content p {
+
+        font-size:
+            0.95rem;
+
+    }
+
+
+    .learning-centers-page .message-highlights {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .learning-centers-page .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .learning-centers-page .footer-brand {
+
+        max-width:
+            100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   EXTRA SMALL PHONES
+========================================================== */
+
+@media (max-width: 375px) {
+
+    .learning-centers-page .logo h1 {
+
+        font-size:
+            1.05rem;
+
+    }
+
+
+    .learning-centers-page .logo span {
+
+        font-size:
+            0.7rem;
+
+    }
+
+
+    .learning-centers-page .study-hero {
+
+        padding:
+            48px 0
+            58px;
+
+    }
+
+
+    .learning-centers-page .study-hero h1 {
+
+        font-size:
+            1.85rem;
+
+    }
+
+
+    .learning-centers-page .intro-card {
+
+        padding:
+            25px 19px;
+
+    }
+
+
+    .learning-centers-page .message-card {
+
+        padding:
+            30px 19px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .learning-centers-page *,
+    .learning-centers-page *::before,
+    .learning-centers-page *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        transition:
+            none !important;
+
+        animation:
+            none !important;
+
+    }
+
+}
