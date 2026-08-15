@@ -159,10 +159,10 @@ section{
 
 }
 
-/* Give only the header a little extra room */
+/* Keep the header aligned with the same page-wide container */
 .site-header .container{
 
-    width:min(94%,1320px);
+    width:min(92%,1280px);
 
 }
 
@@ -2053,6 +2053,369 @@ button:hover{
 
         scroll-behavior:auto !important;
 
+    }
+
+}
+
+
+/*==========================================================
+  FINAL LAYOUT COORDINATION
+  Keeps the HTML structure aligned across desktop, tablet,
+  and mobile without changing the page content.
+==========================================================*/
+
+/* Consistent horizontal alignment */
+.container{
+    width:min(92%,1280px);
+    max-width:1280px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Prevent flex/grid children from forcing horizontal overflow */
+.hero-grid > *,
+.collection-grid > *,
+.category-grid > *,
+.trending-grid > *,
+.recent-grid > *,
+.finder-grid > *,
+.benefits-grid > *,
+.stats-grid > *,
+.membership-wrapper > *,
+.footer-grid > *{
+    min-width:0;
+}
+
+/* Make large text stay inside its intended column */
+.library-hero-content h1,
+.section-heading h2,
+.collection-content h3,
+.category-card h3,
+.resource-card h3,
+.recent-content h3,
+.finder-card h3,
+.benefit-card h3,
+.stat-card h3,
+.membership-content h2,
+.membership-card h3{
+    overflow-wrap:break-word;
+}
+
+/*==========================================================
+  TABLET
+==========================================================*/
+
+@media (max-width:1100px){
+
+    .container{
+        width:min(92%,1100px);
+    }
+
+    .site-header .container{
+        width:min(92%,1100px);
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr 1fr;
+        gap:3rem;
+    }
+
+    .hero-stats{
+        grid-template-columns:repeat(2,1fr);
+        gap:1rem;
+    }
+
+    .membership-wrapper{
+        grid-template-columns:1fr;
+        gap:3rem;
+    }
+
+    .membership-content{
+        max-width:900px;
+        margin:0 auto;
+    }
+
+    .membership-card{
+        width:min(100%,600px);
+        margin:0 auto;
+    }
+
+    .footer-grid{
+        grid-template-columns:2fr 1fr 1fr;
+    }
+
+    .footer-column:first-child{
+        grid-column:1 / -1;
+    }
+
+}
+
+/*==========================================================
+  MOBILE
+==========================================================*/
+
+@media (max-width:768px){
+
+    section{
+        padding:4.5rem 0;
+    }
+
+    .container,
+    .site-header .container{
+        width:min(90%,100% - 32px);
+        max-width:none;
+    }
+
+    /* Header */
+    .nav-container{
+        min-height:72px;
+        gap:.75rem;
+    }
+
+    .logo{
+        gap:12px;
+        min-width:0;
+    }
+
+    .logo img{
+        width:50px;
+        height:50px;
+    }
+
+    .logo-text{
+        min-width:0;
+    }
+
+    .logo-text h1{
+        font-size:1.1rem;
+        white-space:normal;
+    }
+
+    .logo-text span{
+        font-size:.7rem;
+    }
+
+    .header-actions{
+        margin-left:auto;
+    }
+
+    /* Hero */
+    .library-hero{
+        padding:4.5rem 0;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:2.5rem;
+    }
+
+    .hero-image{
+        order:-1;
+        margin-bottom:0;
+    }
+
+    .hero-image::before{
+        inset:-10px;
+    }
+
+    .hero-image::after{
+        width:90px;
+        height:90px;
+        top:-18px;
+        right:-18px;
+    }
+
+    .library-hero-content{
+        max-width:none;
+    }
+
+    .library-hero-content h1{
+        font-size:clamp(2.25rem,9vw,3.2rem);
+        margin-bottom:1.25rem;
+    }
+
+    .hero-description{
+        font-size:1.05rem;
+        margin-bottom:1.75rem;
+    }
+
+    .library-search{
+        flex-direction:column;
+        gap:.75rem;
+    }
+
+    .library-search input,
+    .library-search button{
+        width:100%;
+    }
+
+    .popular-searches{
+        gap:.6rem;
+        margin-bottom:2rem;
+    }
+
+    .popular-searches span{
+        width:100%;
+    }
+
+    .hero-stats{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:.75rem;
+        margin-top:2rem;
+    }
+
+    .hero-stats div{
+        padding:1.25rem .75rem;
+    }
+
+    .hero-stats strong{
+        font-size:1.5rem;
+    }
+
+    .hero-stats span{
+        font-size:.85rem;
+    }
+
+    /* Section headings */
+    .section-heading{
+        max-width:none;
+        margin-bottom:3rem;
+    }
+
+    .section-heading h2{
+        font-size:clamp(1.9rem,7vw,2.5rem);
+    }
+
+    .section-heading p{
+        font-size:1rem;
+    }
+
+    /* Cards */
+    .collection-grid,
+    .category-grid,
+    .trending-grid,
+    .recent-grid,
+    .finder-grid,
+    .benefits-grid,
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .collection-content,
+    .recent-content{
+        padding:1.5rem;
+    }
+
+    .category-card,
+    .resource-card,
+    .finder-card,
+    .benefit-card,
+    .stat-card{
+        padding:1.75rem;
+    }
+
+    /* Membership */
+    .membership-wrapper{
+        grid-template-columns:1fr;
+        gap:2rem;
+    }
+
+    .membership-features{
+        grid-template-columns:1fr;
+        gap:.85rem;
+    }
+
+    .membership-card{
+        width:100%;
+        padding:2rem 1.5rem;
+    }
+
+    /* Footer */
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:2rem;
+    }
+
+    .footer-column:first-child{
+        grid-column:auto;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.75rem;
+    }
+
+    .footer-divider{
+        margin:3rem 0 1.5rem;
+    }
+
+}
+
+/*==========================================================
+  SMALL PHONES
+==========================================================*/
+
+@media (max-width:480px){
+
+    .container,
+    .site-header .container{
+        width:calc(100% - 24px);
+    }
+
+    .library-hero{
+        padding:3.5rem 0;
+    }
+
+    .breadcrumb{
+        margin-bottom:1.25rem;
+        font-size:.85rem;
+    }
+
+    .hero-badge{
+        font-size:.7rem;
+        padding:.5rem .8rem;
+    }
+
+    .hero-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-stats div{
+        padding:1rem .5rem;
+    }
+
+    .hero-stats strong{
+        font-size:1.3rem;
+    }
+
+    .hero-stats span{
+        font-size:.78rem;
+    }
+
+    .collection-image{
+        aspect-ratio:1 / 1;
+    }
+
+    .recent-meta{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.5rem;
+    }
+
+    .membership-card{
+        padding:1.5rem 1rem;
+    }
+
+    .membership-icon{
+        width:72px;
+        height:72px;
+        font-size:2rem;
+    }
+
+    .footer-badges{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
 }
