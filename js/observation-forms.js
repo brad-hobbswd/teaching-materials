@@ -1,402 +1,475 @@
-/*==================================================
-  LITTLE EXPLORERS LEARNING HUB
-  OBSERVATION FORMS
+/* =========================================================
+   OBSERVATION FORMS
+   Little Explorers Learning Hub
 
-  observation-forms.js
+   JavaScript for:
+   observation-forms.html
+   ========================================================= */
 
-  Part 1
-  Initialization
-==================================================*/
+document.addEventListener("DOMContentLoaded", function () {
 
-"use strict";
+    /* =====================================================
+       MOBILE NAVIGATION
+       ===================================================== */
 
-/*==================================================
-  WAIT FOR PAGE TO LOAD
-==================================================*/
+    const menuButton = document.querySelector(".mobile-menu");
+    const navigation = document.querySelector("#primary-navigation");
 
-document.addEventListener("DOMContentLoaded", () => {
+    if (menuButton && navigation) {
 
-    initializePage();
+        function openMenu() {
+            navigation.classList.add("open");
 
-});
-
-
-/*==================================================
-  GLOBAL VARIABLES
-==================================================*/
-
-let header;
-let mobileMenuButton;
-let navigation;
-let navigationLinks;
-
-let backToTopButton;
-
-let fadeElements;
-let cards;
-
-let downloadButtons;
-
-let newsletterForm;
-
-let statisticCards;
-
-
-/*==================================================
-  INITIALIZE PAGE
-==================================================*/
-
-function initializePage(){
-
-    cacheElements();
-
-    initializeNavigation();
-
-    initializeHeader();
-
-    initializeBackToTop();
-
-    initializeSmoothScrolling();
-
-    initializeAnimations();
-
-    initializeButtons();
-
-    initializeForms();
-
-    initializeUtilities();
-
-}
-
-
-/*==================================================
-  CACHE DOM ELEMENTS
-==================================================*/
-
-function cacheElements(){
-
-    header = document.querySelector(".site-header");
-
-    mobileMenuButton = document.querySelector(".mobile-menu");
-
-    navigation = document.querySelector(".main-nav");
-
-    navigationLinks = document.querySelectorAll(".main-nav a");
-
-    backToTopButton = document.querySelector(".back-to-top");
-
-    fadeElements = document.querySelectorAll(
-        ".fade-up, .study-card, .interest-card, .favorite-card, .why-card, .featured-study-card, .stat-card"
-    );
-
-    cards = document.querySelectorAll(
-        ".study-card, .interest-card, .favorite-card, .why-card"
-    );
-
-    downloadButtons = document.querySelectorAll(
-        ".study-content a, .btn"
-    );
-
-    newsletterForm = document.querySelector(
-        ".newsletter-form"
-    );
-
-    statisticCards = document.querySelectorAll(
-        ".stat-card h2"
-    );
-
-}
-
-/*==================================================
-  MOBILE NAVIGATION
-==================================================*/
-
-function initializeNavigation(){
-
-    if(!mobileMenuButton || !navigation){
-
-        return;
-
-    }
-
-    mobileMenuButton.addEventListener("click", toggleMobileMenu);
-
-    navigationLinks.forEach(link => {
-
-        link.addEventListener("click", closeMobileMenu);
-
-    });
-
-    document.addEventListener("click", handleOutsideClick);
-
-    document.addEventListener("keydown", handleEscapeKey);
-
-    window.addEventListener("resize", handleWindowResize);
-
-}
-
-
-/*==================================================
-  TOGGLE MOBILE MENU
-==================================================*/
-
-function toggleMobileMenu(){
-
-    navigation.classList.toggle("active");
-
-    const expanded = navigation.classList.contains("active");
-
-    mobileMenuButton.setAttribute(
-        "aria-expanded",
-        expanded
-    );
-
-    mobileMenuButton.innerHTML = expanded ? "✕" : "☰";
-
-}
-
-
-/*==================================================
-  CLOSE MOBILE MENU
-==================================================*/
-
-function closeMobileMenu(){
-
-    if(!navigation.classList.contains("active")){
-
-        return;
-
-    }
-
-    navigation.classList.remove("active");
-
-    mobileMenuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    mobileMenuButton.innerHTML = "☰";
-
-}
-
-
-/*==================================================
-  CLOSE MENU WHEN CLICKING OUTSIDE
-==================================================*/
-
-function handleOutsideClick(event){
-
-    if(window.innerWidth > 1100){
-
-        return;
-
-    }
-
-    const clickedMenu = navigation.contains(event.target);
-
-    const clickedButton = mobileMenuButton.contains(event.target);
-
-    if(!clickedMenu && !clickedButton){
-
-        closeMobileMenu();
-
-    }
-
-}
-
-
-/*==================================================
-  ESCAPE KEY SUPPORT
-==================================================*/
-
-function handleEscapeKey(event){
-
-    if(event.key === "Escape"){
-
-        closeMobileMenu();
-
-    }
-
-}
-
-
-/*==================================================
-  DESKTOP RESET
-==================================================*/
-
-function handleWindowResize(){
-
-    if(window.innerWidth > 1100){
-
-        closeMobileMenu();
-
-    }
-
-}
-
-/*==================================================
-  STICKY HEADER
-==================================================*/
-
-function initializeHeader(){
-
-    if(!header){
-
-        return;
-
-    }
-
-    updateHeader();
-
-    window.addEventListener(
-
-        "scroll",
-
-        throttle(updateHeader, 15),
-
-        { passive:true }
-
-    );
-
-}
-
-
-/*==================================================
-  UPDATE HEADER
-==================================================*/
-
-function updateHeader(){
-
-    const scrollPosition = window.scrollY;
-
-    if(scrollPosition > 20){
-
-        header.classList.add("scrolled");
-
-    }
-
-    else{
-
-        header.classList.remove("scrolled");
-
-    }
-
-}
-
-
-/*==================================================
-  BACK TO TOP BUTTON
-==================================================*/
-
-function initializeBackToTop(){
-
-    if(!backToTopButton){
-
-        return;
-
-    }
-
-    updateBackToTop();
-
-    window.addEventListener(
-
-        "scroll",
-
-        throttle(updateBackToTop, 15),
-
-        { passive:true }
-
-    );
-
-    backToTopButton.addEventListener(
-
-        "click",
-
-        scrollToTop
-
-    );
-
-}
-
-
-/*==================================================
-  SHOW / HIDE BUTTON
-==================================================*/
-
-function updateBackToTop(){
-
-    if(window.scrollY > 500){
-
-        backToTopButton.classList.add("visible");
-
-    }
-
-    else{
-
-        backToTopButton.classList.remove("visible");
-
-    }
-
-}
-
-
-/*==================================================
-  SCROLL TO TOP
-==================================================*/
-
-function scrollToTop(){
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-}
-
-
-/*==================================================
-  SMOOTH INTERNAL LINKS
-==================================================*/
-
-function initializeSmoothScrolling(){
-
-    const links = document.querySelectorAll(
-
-        'a[href^="#"]:not([href="#"])'
-
-    );
-
-    links.forEach(link=>{
-
-        link.addEventListener("click",event=>{
-
-            const target = document.querySelector(
-
-                link.getAttribute("href")
-
+            menuButton.setAttribute(
+                "aria-expanded",
+                "true"
             );
 
-            if(!target){
+            menuButton.setAttribute(
+                "aria-label",
+                "Close Navigation"
+            );
 
-                return;
+            const icon = menuButton.querySelector("i");
+
+            if (icon) {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            }
+        }
+
+        function closeMenu() {
+            navigation.classList.remove("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open Navigation"
+            );
+
+            const icon = menuButton.querySelector("i");
+
+            if (icon) {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        }
+
+        menuButton.addEventListener("click", function () {
+
+            const isOpen =
+                navigation.classList.contains("open");
+
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+
+        });
+
+        /*
+         * Close the mobile navigation after
+         * selecting a navigation link.
+         */
+
+        navigation
+            .querySelectorAll("a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+                    closeMenu();
+                });
+
+            });
+
+        /*
+         * Close navigation when clicking outside it.
+         */
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                navigation.classList.contains("open") &&
+                !navigation.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                closeMenu();
+            }
+
+        });
+
+        /*
+         * Close navigation with Escape.
+         */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                if (
+                    navigation.classList.contains("open")
+                ) {
+                    closeMenu();
+                    menuButton.focus();
+                }
 
             }
 
-            event.preventDefault();
+        });
 
-            target.scrollIntoView({
+        /*
+         * Reset mobile navigation when returning
+         * to desktop width.
+         */
 
-                behavior:"smooth",
+        window.addEventListener("resize", function () {
 
-                block:"start"
+            if (window.innerWidth > 760) {
+                closeMenu();
+            }
+
+        });
+
+    }
+
+
+    /* =====================================================
+       FAQ ACCORDION
+       ===================================================== */
+
+    const faqCards =
+        document.querySelectorAll(".faq-card");
+
+    faqCards.forEach(function (card) {
+
+        const question =
+            card.querySelector(".faq-question");
+
+        const answer =
+            card.querySelector(".faq-answer");
+
+        if (!question || !answer) {
+            return;
+        }
+
+        /*
+         * Establish the initial accessibility state.
+         */
+
+        question.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        /*
+         * Give each answer a unique ID so the
+         * question can control it.
+         */
+
+        const answerId =
+            "faq-answer-" +
+            Math.random()
+                .toString(36)
+                .substring(2, 10);
+
+        answer.id = answerId;
+
+        question.setAttribute(
+            "aria-controls",
+            answerId
+        );
+
+        question.addEventListener("click", function () {
+
+            const currentlyOpen =
+                card.classList.contains("open");
+
+            /*
+             * Close every other FAQ item.
+             */
+
+            faqCards.forEach(function (otherCard) {
+
+                if (otherCard !== card) {
+
+                    otherCard.classList.remove("open");
+
+                    const otherQuestion =
+                        otherCard.querySelector(
+                            ".faq-question"
+                        );
+
+                    if (otherQuestion) {
+
+                        otherQuestion.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
 
             });
+
+            /*
+             * Toggle the selected FAQ.
+             */
+
+            if (currentlyOpen) {
+
+                card.classList.remove("open");
+
+                question.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            } else {
+
+                card.classList.add("open");
+
+                question.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
 
         });
 
     });
 
-}
+
+    /* =====================================================
+       OBSERVATION METHOD BUTTONS
+       ===================================================== */
+
+    const themeButtons =
+        document.querySelectorAll(".theme-button");
+
+    themeButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const card =
+                button.closest(".theme-card");
+
+            if (!card) {
+                return;
+            }
+
+            const heading =
+                card.querySelector("h3");
+
+            if (!heading) {
+                return;
+            }
+
+            /*
+             * These buttons currently do not have
+             * individual destination pages.
+             *
+             * For now, take the user to the main
+             * observation resources section.
+             */
+
+            const resources =
+                document.querySelector("#resources");
+
+            if (resources) {
+
+                resources.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       BACK TO TOP
+       ===================================================== */
+
+    const backToTop =
+        document.querySelector(".back-to-top");
+
+    if (backToTop) {
+
+        function updateBackToTop() {
+
+            if (window.scrollY > 500) {
+
+                backToTop.classList.add("visible");
+
+            } else {
+
+                backToTop.classList.remove("visible");
+
+            }
+
+        }
+
+        window.addEventListener(
+            "scroll",
+            updateBackToTop,
+            {
+                passive: true
+            }
+        );
+
+        backToTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+        updateBackToTop();
+
+    }
+
+
+    /* =====================================================
+       NEWSLETTER FORM
+       ===================================================== */
+
+    const newsletterForm =
+        document.querySelector(".newsletter-form");
+
+    if (newsletterForm) {
+
+        newsletterForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const emailInput =
+                    newsletterForm.querySelector(
+                        'input[type="email"]'
+                    );
+
+                if (!emailInput) {
+                    return;
+                }
+
+                const email =
+                    emailInput.value.trim();
+
+                /*
+                 * Do not submit an empty email address.
+                 */
+
+                if (!email) {
+
+                    emailInput.focus();
+
+                    return;
+
+                }
+
+                /*
+                 * The HTML does not currently provide
+                 * a real newsletter service or endpoint.
+                 *
+                 * Therefore this does not pretend to
+                 * actually subscribe the visitor.
+                 */
+
+                let message =
+                    newsletterForm.querySelector(
+                        ".newsletter-message"
+                    );
+
+                if (!message) {
+
+                    message =
+                        document.createElement("p");
+
+                    message.className =
+                        "newsletter-message";
+
+                    message.setAttribute(
+                        "role",
+                        "status"
+                    );
+
+                    newsletterForm.appendChild(
+                        message
+                    );
+
+                }
+
+                message.textContent =
+                    "Thank you! Your request has been received.";
+
+                emailInput.value = "";
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+       ===================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]:not([href="#"])'
+        );
+
+    internalLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    link.getAttribute("href");
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (!target) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       INITIALIZE CURRENT PAGE
+       ===================================================== */
+
+    document.body.classList.add(
+        "js-ready"
+    );
+
+});
