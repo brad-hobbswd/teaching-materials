@@ -1,264 +1,100 @@
-/* ==========================================================
-   LITTLE EXPLORERS LEARNING HUB
-   HEAD START & ELOF RESOURCE LIBRARY
-
-   File:
-   js/head-start-library.js
-
-   Page:
-   library/head-start/index.html
-
-   Purpose:
-   Mobile navigation • Current year • Smooth scrolling
-   ========================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* ======================================================
-       1. MOBILE NAVIGATION
-    ====================================================== */
-
     const menuButton = document.querySelector(".mobile-menu");
     const navigation = document.querySelector("nav");
 
     if (menuButton && navigation) {
-
         menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute(
-            "aria-label",
-            "Open navigation menu"
-        );
-
+        menuButton.setAttribute("aria-label", "Open navigation menu");
         menuButton.addEventListener("click", () => {
-
-            const isOpen =
-                navigation.classList.toggle("mobile-nav-open");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-            menuButton.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close navigation menu"
-                    : "Open navigation menu"
-            );
-
-            menuButton.textContent =
-                isOpen ? "✕" : "☰";
+            const isOpen = navigation.classList.toggle("mobile-nav-open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+            menuButton.textContent = isOpen ? "✕" : "☰";
         });
-
-
-        /* Close menu when a navigation link is selected */
-
-        navigation.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navigation.classList.remove(
-                    "mobile-nav-open"
-                );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                menuButton.textContent = "☰";
-            });
-
-        });
-
-
-        /* Close menu when clicking outside */
-
+        navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+            navigation.classList.remove("mobile-nav-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+            menuButton.textContent = "☰";
+        }));
         document.addEventListener("click", event => {
-
-            const clickedInsideNavigation =
-                navigation.contains(event.target);
-
-            const clickedMenuButton =
-                menuButton.contains(event.target);
-
-            if (
-                !clickedInsideNavigation &&
-                !clickedMenuButton &&
-                navigation.classList.contains(
-                    "mobile-nav-open"
-                )
-            ) {
-
-                navigation.classList.remove(
-                    "mobile-nav-open"
-                );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
+            if (!navigation.contains(event.target) && !menuButton.contains(event.target) && navigation.classList.contains("mobile-nav-open")) {
+                navigation.classList.remove("mobile-nav-open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Open navigation menu");
                 menuButton.textContent = "☰";
             }
-
         });
-
     }
-
-
-    /* ======================================================
-       2. CLOSE MOBILE MENU WHEN WINDOW EXPANDS
-    ====================================================== */
 
     window.addEventListener("resize", () => {
-
-        if (
-            window.innerWidth > 768 &&
-            navigation &&
-            menuButton
-        ) {
-
-            navigation.classList.remove(
-                "mobile-nav-open"
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
-
+        if (window.innerWidth > 768 && navigation && menuButton) {
+            navigation.classList.remove("mobile-nav-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
             menuButton.textContent = "☰";
         }
-
     });
 
-
-    /* ======================================================
-       3. CURRENT YEAR
-    ====================================================== */
-
-    const yearElements =
-        document.querySelectorAll(".year");
-
-    if (yearElements.length) {
-
-        const currentYear =
-            new Date().getFullYear();
-
-        yearElements.forEach(element => {
-            element.textContent = currentYear;
-        });
-
-    }
-
-
-    /* ======================================================
-       4. SMOOTH INTERNAL LINKS
-    ====================================================== */
-
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            const targetId =
-                link.getAttribute("href");
-
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
-            }
-
-            const target =
-                document.querySelector(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        });
-
+    document.querySelectorAll(".year").forEach(element => {
+        element.textContent = new Date().getFullYear();
     });
 
+    const resourceLinks = {
+        "Performance Standards": "resources/performance-standards.html",
+        "ELOF Domains": "resources/elof-domains.html",
+        "School Readiness Goals": "resources/school-readiness.html",
+        "Classroom Implementation": "resources/classroom-implementation.html",
+        "Observation & Documentation": "resources/observation-documentation.html",
+        "Teacher Planning": "resources/teacher-planning.html"
+    };
 
-    /* ======================================================
-       5. ESCAPE KEY CLOSES MOBILE NAVIGATION
-    ====================================================== */
+    document.querySelectorAll(".resource-card").forEach(card => {
+        const heading = card.querySelector("h3");
+        const link = card.querySelector("a");
+        const image = card.querySelector(".resource-card-image img");
+        if (!heading) return;
+        const title = heading.textContent.trim();
+        if (resourceLinks[title] && link) link.href = resourceLinks[title];
+        if (image) {
+            const imageMap = {
+                "Performance Standards": "images/head-start-standards.svg",
+                "ELOF Domains": "images/elof-domains.svg",
+                "School Readiness Goals": "images/school-readiness.svg"
+            };
+            if (imageMap[title]) image.src = imageMap[title];
+        } else {
+            const imageMap = {
+                "Classroom Implementation": "images/classroom-implementation.svg",
+                "Observation & Documentation": "images/observation-documentation.svg",
+                "Teacher Planning": "images/teacher-planning.svg"
+            };
+            if (imageMap[title]) {
+                const wrapper = card.querySelector(".resource-card-image");
+                if (wrapper) {
+                    wrapper.classList.remove("resource-placeholder");
+                    wrapper.textContent = "";
+                    const newImage = document.createElement("img");
+                    newImage.src = imageMap[title];
+                    newImage.alt = `${title} resources`;
+                    wrapper.appendChild(newImage);
+                }
+            }
+        }
+    });
+
+    const legacyLinks = document.querySelectorAll('a[href="../../teacher-resources.html"], a[href="../../family-resources.html"]');
+    legacyLinks.forEach(link => {
+        if (link.textContent.includes("Teacher")) link.href = "../teacher-resources/index.html";
+        if (link.textContent.includes("Family")) link.href = "../family-engagement/index.html";
+    });
 
     document.addEventListener("keydown", event => {
-
-        if (
-            event.key === "Escape" &&
-            navigation &&
-            navigation.classList.contains(
-                "mobile-nav-open"
-            )
-        ) {
-
-            navigation.classList.remove(
-                "mobile-nav-open"
-            );
-
-            if (menuButton) {
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                menuButton.textContent = "☰";
-            }
-
+        if (event.key === "Escape" && navigation && navigation.classList.contains("mobile-nav-open") && menuButton) {
+            navigation.classList.remove("mobile-nav-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+            menuButton.textContent = "☰";
         }
-
     });
-
-
-    /* ======================================================
-       6. PREVENT EMPTY RESOURCE LINKS
-    ====================================================== */
-
-    document.querySelectorAll(
-        '.resource-card a[href="#"]'
-    ).forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            event.preventDefault();
-
-        });
-
-    });
-
 });
