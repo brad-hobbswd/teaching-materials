@@ -1,0 +1,50 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 625 >>
+stream
+BT
+/F1 18 Tf
+50 790 Td
+(Observation Planning Tool) Tj
+/F1 10 Tf
+0 -28 Td
+(Child/group: __________________________ Date: __________) Tj
+0 -18 Td
+(Focus question: _________________________________________________________________) Tj
+0 -18 Td
+(Setting/routine: _______________________________________________________________) Tj
+0 -18 Td
+(Evidence to collect: [ ] Language [ ] Actions [ ] Interactions [ ] Problem solving) Tj
+0 -18 Td
+(Observation notes: _____________________________________________________________) Tj
+0 -18 Td
+(Reflection / next step: ________________________________________________________) Tj
+0 -18 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+986
+%%EOF
