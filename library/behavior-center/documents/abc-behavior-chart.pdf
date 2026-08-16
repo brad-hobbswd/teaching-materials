@@ -1,0 +1,51 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 441 >>
+stream
+BT
+/F1 10 Tf
+54 625 Td (Child / Date / Time) Tj
+54 607 Td () Tj
+54 607 m 558 607 l S
+54 577 Td (Setting / Activity) Tj
+54 559 Td () Tj
+54 559 m 558 559 l S
+54 529 Td (A: What happened before?) Tj
+54 511 Td () Tj
+54 511 m 558 511 l S
+54 481 Td (B: What did you observe?) Tj
+54 463 Td () Tj
+54 463 m 558 463 l S
+54 433 Td (C: What happened after?) Tj
+54 415 Td () Tj
+54 415 m 558 415 l S
+54 385 Td (Notes / Evidence) Tj
+54 350 m 558 350 l S
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000733 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+803
+%%EOF
