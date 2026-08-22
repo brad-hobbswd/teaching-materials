@@ -1,4 +1,3 @@
-
 /* ==========================================
    LITTLE EXPLORERS LEARNING HUB
    Master JavaScript
@@ -16,22 +15,31 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileButton.setAttribute("aria-expanded", "false");
 
     mobileButton.addEventListener("click", () => {
-      navigation.classList.toggle("show");
-      const expanded = navigation.classList.contains("show");
-      mobileButton.setAttribute("aria-expanded", expanded);
+      const isOpen = navigation.classList.contains("show") || navigation.classList.contains("active");
+
+      navigation.classList.toggle("show", !isOpen);
+      navigation.classList.toggle("active", !isOpen);
+      mobileButton.classList.toggle("active", !isOpen);
+
+      mobileButton.setAttribute("aria-expanded", String(!isOpen));
+      mobileButton.setAttribute("aria-label", !isOpen ? "Close Navigation" : "Open Navigation");
     });
 
     navigation.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
-        navigation.classList.remove("show");
+        navigation.classList.remove("show", "active");
+        mobileButton.classList.remove("active");
         mobileButton.setAttribute("aria-expanded", "false");
+        mobileButton.setAttribute("aria-label", "Open Navigation");
       });
     });
 
     document.addEventListener("click", e => {
       if (!navigation.contains(e.target) && !mobileButton.contains(e.target)) {
-        navigation.classList.remove("show");
+        navigation.classList.remove("show", "active");
+        mobileButton.classList.remove("active");
         mobileButton.setAttribute("aria-expanded", "false");
+        mobileButton.setAttribute("aria-label", "Open Navigation");
       }
     });
   }
