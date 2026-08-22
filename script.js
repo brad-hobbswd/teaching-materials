@@ -75,26 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ======================================
-   Newsletter
-  ====================================== */
-  const newsletter = document.querySelector(".newsletter-form");
-
-  if (newsletter) {
-    newsletter.addEventListener("submit", function () {
-      const button = newsletter.querySelector("button");
-      if (!button) return;
-      button.textContent = "Joining...";
-      button.disabled = true;
-
-      setTimeout(() => {
-        button.textContent = "✓ Welcome!";
-        newsletter.reset();
-        button.disabled = false;
-      }, 1500);
-    });
-  }
-
-  /* ======================================
    Smooth Scroll
   ====================================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
