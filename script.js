@@ -119,8 +119,17 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const input = form.querySelector('input[type="search"], input[type="text"]');
       if (!input) return;
+
       const query = input.value.trim();
-      if (query) window.location.href = "search.html?q=" + encodeURIComponent(query);
+      if (!query) return;
+
+      const searchLink = document.querySelector('a[href$="search.html"]');
+      const searchUrl = searchLink
+        ? new URL(searchLink.href, window.location.href)
+        : new URL("search.html", window.location.href);
+
+      searchUrl.searchParams.set("q", query);
+      window.location.href = searchUrl.href;
     });
   });
 
