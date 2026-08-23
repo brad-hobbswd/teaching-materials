@@ -11,24 +11,167 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="../../../styles/newsletters.css">
-
 <style>
-body {
-    background: #f5f3f8;
+/* =========================================================
+   DECEMBER 2026 TEACHING RESOURCE
+   MATCHES OCTOBER TEACHING RESOURCE STYLE
+   ========================================================= */
+
+:root {
+    --purple: #65558f;
+    --purple-dark: #4f4372;
+    --purple-light: #f3f0fa;
+    --purple-soft: #e9e5f3;
+    --border: #d7d1e4;
+    --text: #222;
+    --white: #ffffff;
+    --page: #f5f3f8;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-container {
+    width: min(1280px, 92%);
+    margin: 0 auto;
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-text strong {
+    color: var(--purple-dark);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.logo-text small {
+    color: #777;
+    font-size: .78rem;
+    margin-top: 3px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.main-nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: .88rem;
+    font-weight: 700;
+    transition: color .2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--purple);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-resource-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    border-radius: 999px;
+    background: var(--purple);
+    color: #fff;
+    text-decoration: none;
+    font-size: .82rem;
+    font-weight: 800;
+}
+
+.mobile-menu {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--purple-light);
+    cursor: pointer;
+}
+
+.mobile-menu span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--purple-dark);
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
 
 .resource-toolbar {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 90;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    padding: 12px;
-    background: #ffffff;
+    padding: 14px 20px;
+    background: rgba(255,255,255,.97);
     border-bottom: 1px solid #ddd;
 }
 
@@ -36,64 +179,98 @@ body {
 .resource-toolbar a {
     border: 0;
     border-radius: 999px;
-    padding: 10px 16px;
-    background: #65558f;
-    color: #ffffff;
+    padding: 11px 17px;
+    background: var(--purple);
+    color: #fff;
+    font-family: inherit;
+    font-size: .86rem;
     font-weight: 800;
     text-decoration: none;
     cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.resource-toolbar button:hover,
+.resource-toolbar a:hover {
+    background: var(--purple-dark);
+    transform: translateY(-1px);
 }
 
 .resource-toolbar a.secondary {
-    background: #e9e5f3;
-    color: #4f4372;
+    background: var(--purple-soft);
+    color: var(--purple-dark);
 }
+
+/* =========================================================
+   RESOURCE SHEET
+   ========================================================= */
 
 .resource-sheet {
-    max-width: 8.5in;
-    margin: 24px auto;
-    background: #ffffff;
-    padding: 28px;
-    border-top: 6px solid #65558f;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: min(8.5in, 94%);
+    margin: 28px auto;
+    padding: 32px;
+    background: var(--white);
+    border-top: 6px solid var(--purple);
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
 }
 
-.resource-sheet header {
+.resource-sheet > header {
     text-align: center;
-    padding-bottom: 20px;
+    padding: 4px 0 24px;
     border-bottom: 1px solid #ddd;
 }
 
 .brand {
-    font-size: 11px;
+    color: var(--purple);
+    font-size: .7rem;
     font-weight: 800;
     letter-spacing: 3px;
-    color: #65558f;
 }
 
 .resource-sheet h1 {
-    font-size: 31px;
-    margin: 7px 0;
+    margin: 8px 0;
+    color: var(--purple-dark);
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+    line-height: 1.2;
 }
 
-.resource-sheet h2 {
-    color: #4f4372;
-    font-size: 20px;
-    margin-top: 0;
+.resource-sheet > header p {
+    margin: 0;
+    color: #666;
+    font-size: .98rem;
 }
+
+/* =========================================================
+   INTRO
+   ========================================================= */
 
 .intro {
-    margin: 20px 0;
-    padding: 18px;
-    background: #f3f0fa;
-    border-left: 5px solid #65558f;
+    margin: 22px 0;
+    padding: 18px 20px;
+    background: var(--purple-light);
+    border-left: 5px solid var(--purple);
+    border-radius: 0 10px 10px 0;
 }
 
+/* =========================================================
+   WEEKLY SECTIONS
+   ========================================================= */
+
 .week {
-    border: 1px solid #d7d1e4;
+    margin: 18px 0;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 18px;
-    margin: 16px 0;
+}
+
+.week h2 {
+    margin: 0 0 10px;
+    color: var(--purple-dark);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.18rem;
 }
 
 .week ul {
@@ -105,64 +282,250 @@ body {
     margin-bottom: 8px;
 }
 
+/* =========================================================
+   CARD GRID
+   ========================================================= */
+
 .resource-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 18px;
 }
 
 .card {
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 16px;
+    padding: 19px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
 }
 
 .card h2 {
-    margin-top: 0;
+    margin: 0 0 9px;
+    color: var(--purple-dark);
+    font-family: "Nunito", sans-serif;
+    font-size: 1.15rem;
 }
 
+.card p {
+    margin: 0;
+}
+
+/* =========================================================
+   PLANNING REMINDER
+   ========================================================= */
+
 .resource-note {
-    margin-top: 16px;
-    padding: 14px;
-    border: 1px solid #ddd;
+    margin-top: 18px;
+    padding: 16px 18px;
     background: #faf9fc;
-    font-size: 13px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: .9rem;
 }
 
 .resource-note strong {
-    color: #4f4372;
+    color: var(--purple-dark);
 }
 
-@media (max-width: 650px) {
-    .resource-sheet {
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    margin-top: 50px;
+    background: #29233b;
+    color: #fff;
+}
+
+footer .container {
+    width: min(1280px, 92%);
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 35px;
+    padding: 45px 0;
+}
+
+.footer-grid h3,
+.footer-grid h4 {
+    margin-top: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+.footer-grid h3 {
+    font-size: 1.25rem;
+}
+
+.footer-grid h4 {
+    margin-bottom: 12px;
+}
+
+.footer-grid p {
+    color: #ddd;
+}
+
+.footer-grid ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-grid li {
+    margin-bottom: 8px;
+}
+
+.footer-grid a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-grid a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    padding: 18px 20px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #ccc;
+    font-size: .82rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-container {
+        gap: 14px;
+    }
+
+    .main-nav {
+        gap: 13px;
+    }
+
+    .main-nav a {
+        font-size: .78rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        min-height: 78px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .header-resource-link {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        width: 100%;
         margin: 0;
+        padding: 18px 4%;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 0 12px 24px rgba(0,0,0,.08);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 14px;
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .resource-toolbar {
+        position: static;
+        padding: 14px;
+    }
+
+    .resource-toolbar button,
+    .resource-toolbar a {
+        width: 100%;
+        max-width: 340px;
+        text-align: center;
+    }
+
+    .resource-sheet {
+        width: 100%;
+        margin: 0;
+        padding: 22px 16px;
+        border-radius: 0;
         box-shadow: none;
+    }
+
+    .resource-sheet h1 {
+        font-size: 1.65rem;
     }
 
     .resource-grid {
         grid-template-columns: 1fr;
     }
 
-    .resource-sheet h1 {
-        font-size: 26px;
-    }
-
-    .resource-toolbar {
-        position: static;
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 35px 0;
     }
 }
 
+/* =========================================================
+   PRINT
+   ========================================================= */
+
 @media print {
-    .resource-toolbar {
-        display: none;
+
+    @page {
+        size: Letter;
+        margin: .55in;
     }
 
     body {
-        background: #ffffff;
+        background: #fff;
+    }
+
+    .site-header,
+    .resource-toolbar,
+    footer {
+        display: none !important;
     }
 
     .resource-sheet {
+        width: 100%;
         margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
         box-shadow: none;
     }
 
