@@ -57,4 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    /* ==========================================
+       LITTLE EXPLORERS MONTHLY
+       Add a direct path to the monthly resource
+       archive in the existing Explore footer.
+    ========================================== */
+
+    const exploreLists = document.querySelectorAll(".site-footer .footer-column ul");
+    const exploreList = exploreLists[0];
+
+    if (exploreList && !exploreList.querySelector('a[href="resources/monthly/index.html"]')) {
+
+        const monthlyItem = document.createElement("li");
+        const monthlyLink = document.createElement("a");
+
+        monthlyLink.href = "resources/monthly/index.html";
+        monthlyLink.textContent = "Little Explorers Monthly";
+
+        monthlyItem.appendChild(monthlyLink);
+        exploreList.appendChild(monthlyItem);
+
+    }
+
 });
