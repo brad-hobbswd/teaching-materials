@@ -1,6 +1,7 @@
 /* =========================================================
    LITTLE EXPLORERS LEARNING HUB
    BLOCKS LEARNING CENTER
+   COMMUNITY HELPERS THEME
    Dedicated blocks.css
    ========================================================= */
 
@@ -8,12 +9,19 @@
     --purple: #65558f;
     --purple-dark: #4f4372;
     --purple-light: #f3f0fa;
-    --ink: #243047;
+    --police-navy: #183b63;
+    --police-blue: #4f86b8;
+    --fire-red: #c94b3c;
+    --fire-gold: #e2a52d;
+    --hospital-teal: #4d9a98;
+    --construction-yellow: #e7b83e;
+    --street-gray: #59616d;
+    --ink: #263342;
     --muted: #687184;
-    --border: #ddd8e8;
+    --border: #d9dde2;
     --white: #fff;
-    --page: #f7f6fa;
-    --shadow: 0 14px 38px rgba(48,39,75,.10);
+    --page: #f5f7f8;
+    --shadow: 0 14px 38px rgba(34,48,64,.11);
     margin: 0;
     background: var(--page);
     color: var(--ink);
@@ -26,7 +34,8 @@
 .blocks-page a { color: inherit; }
 .blocks-page .container { width: min(1180px, 92%); margin: auto; }
 
-.blocks-page .site-header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+/* Header keeps the Little Explorers identity, while the Blocks page uses community-helper accents. */
+.blocks-page .site-header { background: #fff; border-bottom: 4px solid var(--construction-yellow); position: sticky; top: 0; z-index: 100; }
 .blocks-page .nav-container { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
 .blocks-page .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
 .blocks-page .logo img { width: 56px; height: 56px; object-fit: contain; }
@@ -34,58 +43,77 @@
 .blocks-page .logo span { font-size: .75rem; color: #777; }
 .blocks-page .main-nav { display: flex; gap: 22px; align-items: center; }
 .blocks-page .main-nav a { font-size: .86rem; font-weight: 800; text-decoration: none; color: #444; }
-.blocks-page .main-nav a:hover { color: var(--purple); }
+.blocks-page .main-nav a:hover { color: var(--police-navy); }
 .blocks-page .header-actions { display: flex; align-items: center; }
 .blocks-page .resource-link { padding: 9px 15px; border-radius: 999px; background: var(--purple); color: #fff; text-decoration: none; font-size: .8rem; font-weight: 800; }
 .blocks-page .mobile-menu { display: none; border: 0; background: var(--purple-light); border-radius: 10px; width: 44px; height: 44px; cursor: pointer; }
 .blocks-page .mobile-menu span { display: block; width: 23px; height: 2px; background: var(--purple-dark); margin: 5px auto; }
 
-.blocks-page .hero { background: linear-gradient(135deg,#fff 0%,#f3f0fa 58%,#ece8f7 100%); padding: 68px 0 62px; border-bottom: 1px solid var(--border); }
-.blocks-page .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; color: #7b7588; font-size: .8rem; margin-bottom: 22px; }
-.blocks-page .breadcrumb a { text-decoration: none; color: var(--purple); font-weight: 700; }
-.blocks-page .eyebrow { display: inline-block; color: var(--purple); font-size: .72rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
-.blocks-page .hero h1 { font: 900 clamp(2.3rem,5vw,4.2rem)/1.05 Nunito,sans-serif; color: var(--purple-dark); margin: 10px 0 18px; }
-.blocks-page .hero p { max-width: 760px; color: #596274; font-size: 1.08rem; margin: 0; }
-.blocks-page .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+/* Community street scene inspired hero */
+.blocks-page .hero { background: linear-gradient(135deg,#eef4f8 0%,#f8faf9 45%,#fff5d8 100%); padding: 68px 0 62px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+.blocks-page .hero::after { content:""; position:absolute; left:-5%; right:-5%; bottom:-30px; height:58px; background: repeating-linear-gradient(90deg, transparent 0 45px, rgba(89,97,109,.18) 45px 62px); transform: skewY(-2deg); }
+.blocks-page .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; color: #7b7588; font-size: .8rem; margin-bottom: 22px; position:relative; z-index:1; }
+.blocks-page .breadcrumb a { text-decoration: none; color: var(--police-navy); font-weight: 700; }
+.blocks-page .eyebrow { display: inline-block; color: var(--police-navy); font-size: .72rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; position:relative; z-index:1; }
+.blocks-page .hero h1 { font: 900 clamp(2.3rem,5vw,4.2rem)/1.05 Nunito,sans-serif; color: var(--police-navy); margin: 10px 0 18px; position:relative; z-index:1; }
+.blocks-page .hero p { max-width: 760px; color: #596274; font-size: 1.08rem; margin: 0; position:relative; z-index:1; }
+.blocks-page .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; position:relative; z-index:1; }
 .blocks-page .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: .88rem; }
-.blocks-page .btn-primary { background: var(--purple); color: #fff; }
+.blocks-page .btn-primary { background: var(--police-navy); color: #fff; }
 .blocks-page .btn-secondary { background: #fff; color: var(--purple-dark); border: 1px solid var(--border); }
 .blocks-page .btn:hover { transform: translateY(-1px); }
 
+/* Helper stations */
 .blocks-page .intro { padding: 48px 0 20px; }
 .blocks-page .intro-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 25px; align-items: stretch; }
 .blocks-page .welcome,.blocks-page .quick-card { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); }
-.blocks-page .welcome h2,.blocks-page .quick-card h2 { font: 900 1.55rem Nunito,sans-serif; color: var(--purple-dark); margin: 0 0 10px; }
+.blocks-page .welcome { border-top: 7px solid var(--construction-yellow); }
+.blocks-page .quick-card { border-top: 7px solid var(--hospital-teal); }
+.blocks-page .welcome h2,.blocks-page .quick-card h2 { font: 900 1.55rem Nunito,sans-serif; color: var(--police-navy); margin: 0 0 10px; }
 .blocks-page .welcome p { margin: 0; color: var(--muted); }
 .blocks-page .quick-list { display: grid; gap: 10px; margin-top: 15px; }
-.blocks-page .quick-list div { padding: 11px 13px; border-radius: 11px; background: var(--purple-light); font-weight: 700; font-size: .88rem; }
+.blocks-page .quick-list div { padding: 11px 13px; border-radius: 11px; background: #edf4f7; font-weight: 700; font-size: .88rem; }
 
 .blocks-page .section { padding: 48px 0; }
 .blocks-page .section-heading { text-align: center; max-width: 760px; margin: 0 auto 30px; }
-.blocks-page .section-heading span { font-size: .7rem; font-weight: 900; letter-spacing: 2px; color: var(--purple); }
-.blocks-page .section-heading h2 { font: 900 2rem Nunito,sans-serif; color: var(--purple-dark); margin: 6px 0; }
+.blocks-page .section-heading span { font-size: .7rem; font-weight: 900; letter-spacing: 2px; color: var(--police-navy); }
+.blocks-page .section-heading h2 { font: 900 2rem Nunito,sans-serif; color: var(--police-navy); margin: 6px 0; }
 .blocks-page .section-heading p { margin: 0; color: var(--muted); }
 .blocks-page .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.blocks-page .card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 25px; box-shadow: 0 8px 25px rgba(48,39,75,.06); transition: transform .2s ease,box-shadow .2s ease; }
+.blocks-page .card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 25px; box-shadow: 0 8px 25px rgba(34,48,64,.06); transition: transform .2s ease,box-shadow .2s ease; }
+.blocks-page .card:nth-child(1) { border-top: 7px solid var(--fire-red); }
+.blocks-page .card:nth-child(2) { border-top: 7px solid var(--hospital-teal); }
+.blocks-page .card:nth-child(3) { border-top: 7px solid var(--police-blue); }
 .blocks-page .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.blocks-page .icon { width: 48px; height: 48px; border-radius: 14px; background: var(--purple-light); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 16px; }
-.blocks-page .card h3 { font: 900 1.18rem Nunito,sans-serif; color: var(--purple-dark); margin: 0 0 8px; }
+.blocks-page .icon { width: 48px; height: 48px; border-radius: 14px; background: #f0f3f5; display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 16px; }
+.blocks-page .card:nth-child(1) .icon { background:#fff0ed; }
+.blocks-page .card:nth-child(2) .icon { background:#eaf7f6; }
+.blocks-page .card:nth-child(3) .icon { background:#eaf2f9; }
+.blocks-page .card h3 { font: 900 1.18rem Nunito,sans-serif; color: var(--police-navy); margin: 0 0 8px; }
 .blocks-page .card p { color: var(--muted); margin: 0; }
+
+/* Community Helpers theme */
 .blocks-page .focus { background: #fff; }
 .blocks-page .focus-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
-.blocks-page .focus-card { border: 1px solid var(--border); border-radius: 16px; padding: 21px; background: linear-gradient(135deg,#fff,var(--purple-light)); }
-.blocks-page .focus-card h3 { font: 900 1.1rem Nunito,sans-serif; color: var(--purple-dark); margin: 0 0 6px; }
+.blocks-page .focus-card { border: 1px solid var(--border); border-radius: 18px; padding: 24px; background:#fff; position:relative; overflow:hidden; }
+.blocks-page .focus-card::before { content:""; position:absolute; left:0; top:0; bottom:0; width:7px; background:var(--police-blue); }
+.blocks-page .focus-card:nth-child(1)::before { background:var(--police-navy); }
+.blocks-page .focus-card:nth-child(2)::before { background:var(--fire-red); }
+.blocks-page .focus-card:nth-child(3)::before { background:var(--hospital-teal); }
+.blocks-page .focus-card:nth-child(4)::before { background:var(--construction-yellow); }
+.blocks-page .focus-card h3 { font: 900 1.1rem Nunito,sans-serif; color: var(--police-navy); margin: 0 0 6px; }
 .blocks-page .focus-card p { margin: 0; color: var(--muted); }
 
-.blocks-page .teacher { padding: 52px 0; }
-.blocks-page .teacher-box { background: var(--purple-dark); color: #fff; border-radius: 24px; padding: 36px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 28px; align-items: center; }
+/* Community stations */
+.blocks-page .teacher { padding: 52px 0; background: linear-gradient(90deg,#edf3f7,#fff7dc,#edf7f6); }
+.blocks-page .teacher-box { background: var(--police-navy); color: #fff; border-radius: 24px; padding: 36px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 28px; align-items: center; border-bottom: 8px solid var(--fire-red); }
 .blocks-page .teacher-box h2 { font: 900 1.9rem Nunito,sans-serif; margin: 0 0 10px; }
 .blocks-page .teacher-box p { margin: 0; color: rgba(255,255,255,.86); }
 .blocks-page .teacher-actions { display: flex; flex-direction: column; gap: 10px; }
-.blocks-page .teacher-actions a { padding: 11px 16px; border-radius: 999px; text-align: center; text-decoration: none; font-weight: 800; background: #fff; color: var(--purple-dark); }
+.blocks-page .teacher-actions a { padding: 11px 16px; border-radius: 999px; text-align: center; text-decoration: none; font-weight: 800; background: #fff; color: var(--police-navy); }
 .blocks-page .teacher-actions a.alt { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.25); }
 
-.blocks-page .site-footer { margin-top: 20px; background: #29233b; color: #fff; }
+.blocks-page .site-footer { margin-top: 20px; background: #202f40; color: #fff; border-top: 7px solid var(--construction-yellow); }
 .blocks-page .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; padding: 45px 0; }
 .blocks-page .site-footer h3,.blocks-page .site-footer h4 { font-family: Nunito,sans-serif; margin-top: 0; }
 .blocks-page .site-footer p,.blocks-page .site-footer a { color: rgba(255,255,255,.78); }
