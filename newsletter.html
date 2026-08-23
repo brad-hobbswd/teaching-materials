@@ -4,26 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Little Explorers Monthly Newsletter | Little Explorers Learning Hub</title>
-<meta name="description" content="Subscribe to the Little Explorers Monthly newsletter and receive the latest classroom resources and teaching materials by email.">
+<meta name="description" content="Subscribe to the Little Explorers Monthly newsletter and explore current monthly classroom newsletters and teaching resources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://brad-hobbswd.github.io/teaching-materials/styles/landing.css">
 <style>
-.newsletter-page{padding:100px 20px;background:#f8fbfd;min-height:70vh;display:flex;align-items:center;justify-content:center}
-.newsletter-card{width:min(100%,680px);padding:52px;background:#fff;border:1px solid #dbe7f2;border-radius:26px;box-shadow:0 22px 55px rgba(25,45,65,.12);text-align:center}
-.newsletter-card h2{margin-bottom:16px}
-.newsletter-card p{max-width:560px;margin:0 auto 28px}
-.newsletter-form{display:flex;gap:12px;max-width:560px;margin:0 auto;align-items:stretch}
-.newsletter-form input{flex:1;min-width:0;padding:16px 18px;border:1px solid #dbe7f2;border-radius:999px;font-size:1rem;outline:none}
-.newsletter-form input:focus{border-color:#2f6fa5;box-shadow:0 0 0 3px rgba(47,111,165,.12)}
-.newsletter-form button{border:0}
-.newsletter-note{font-size:.88rem;margin-top:18px}
-.newsletter-status{min-height:24px;margin-top:18px;font-weight:700;color:#2f6fa5}
-@media(max-width:640px){.newsletter-card{padding:34px 22px}.newsletter-form{flex-direction:column}.newsletter-form input,.newsletter-form button{width:100%}}
+.newsletter-page{padding:90px 20px;background:#f8fbfd;min-height:62vh;display:flex;align-items:center}
+.newsletter-layout{width:min(1100px,100%);margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:stretch}
+.newsletter-card,.resource-card{background:#fff;border:1px solid #dbe7f2;border-radius:26px;box-shadow:0 22px 55px rgba(25,45,65,.10)}
+.newsletter-card{padding:52px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.newsletter-card h2{margin:10px 0 16px}.newsletter-card p{max-width:560px;margin:0 auto 28px}.newsletter-form{display:flex;gap:12px;max-width:560px;margin:0 auto;align-items:stretch;width:100%}.newsletter-form input{flex:1;min-width:0;padding:16px 18px;border:1px solid #dbe7f2;border-radius:999px;font-size:1rem;outline:none}.newsletter-form input:focus{border-color:#2f6fa5;box-shadow:0 0 0 3px rgba(47,111,165,.12)}.newsletter-form button{border:0}.newsletter-note{font-size:.88rem!important;margin-top:18px!important;margin-bottom:0!important}.newsletter-status{min-height:24px;margin-top:18px;font-weight:700;color:#2f6fa5}
+.resource-card{padding:42px;display:flex;flex-direction:column;justify-content:center}.resource-card .resource-icon{width:58px;height:58px;border-radius:16px;background:#eef5fb;color:#2f6fa5;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}.resource-card h2{margin:0 0 12px}.resource-card p{margin:0 0 22px}.resource-card .btn{align-self:flex-start}
+.newsletter-intro{padding:65px 20px 10px;text-align:center}.newsletter-intro h1{margin:0 0 12px}.newsletter-intro p{max-width:760px;margin:0 auto;color:#555}
+@media(max-width:850px){.newsletter-layout{grid-template-columns:1fr}.newsletter-card,.resource-card{padding:36px}.newsletter-page{padding-top:60px}}
+@media(max-width:640px){.newsletter-form{flex-direction:column}.newsletter-form input,.newsletter-form button{width:100%}}
 </style>
 </head>
-<body>
+<body class="landing-page">
 <header class="site-header">
 <div class="container nav-container">
 <a href="index.html" class="logo">
@@ -54,9 +53,18 @@
 </header>
 
 <main>
+<section class="newsletter-intro">
+<div class="container">
+<span class="eyebrow">LITTLE EXPLORERS MONTHLY</span>
+<h1>Stay Connected With Little Explorers</h1>
+<p>Subscribe to receive announcements about new monthly classroom newsletters, teaching resources, and materials created for early childhood educators.</p>
+</div>
+</section>
+
 <section class="newsletter-page">
+<div class="newsletter-layout">
 <div class="newsletter-card">
-<span class="eyebrow">Little Explorers Monthly</span>
+<span class="eyebrow">Email Subscription</span>
 <h2>Get the Monthly Newsletter</h2>
 <p>Enter your email address to receive the latest Little Explorers classroom resource and newsletter announcements.</p>
 <form class="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeRp_gzmz8DHa70VeEOcyA2Q5EESCku9uO1fJ4EVqCeMpjJeQ/formResponse" method="POST" target="newsletter-submit-frame">
@@ -67,8 +75,27 @@
 <p class="newsletter-note">Your email address is used for the Little Explorers Monthly newsletter.</p>
 <iframe name="newsletter-submit-frame" id="newsletter-submit-frame" title="Newsletter submission" hidden></iframe>
 </div>
+
+<div class="resource-card">
+<div class="resource-icon" aria-hidden="true"><i class="fa-solid fa-calendar-days"></i></div>
+<span class="eyebrow">Monthly Resources</span>
+<h2>Explore the Monthly Resource Archive</h2>
+<p>Browse the current monthly classroom newsletter and its companion teaching resource. Each issue is designed to be personalized and printed for classroom use.</p>
+<a class="btn btn-secondary" href="resources/monthly/index.html">Explore Monthly Resources →</a>
+</div>
+</div>
 </section>
 </main>
+
+<footer>
+<div class="container footer-grid">
+<div><h3>Little Explorers Learning Hub</h3><p>Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten educators create engaging learning experiences through affordable curriculum studies, lesson plans, printable resources, classroom activities, and professional teaching tools.</p></div>
+<div><h4>Curriculum</h4><ul><li><a href="studies.html">All Studies</a></li><li><a href="ages/index.html">Age Groups</a></li><li><a href="activities.html">Activities</a></li><li><a href="library/index.html">Library</a></li></ul></div>
+<div><h4>Teacher Resources</h4><ul><li><a href="lesson-plans.html">Lesson Plans</a></li><li><a href="printables.html">Printables</a></li><li><a href="resources.html">Teacher Resources</a></li><li><a href="assessment-center.html">Assessment Center</a></li><li><a href="behavior-center.html">Behavior Center</a></li><li><a href="interest-areas.html">Interest Areas</a></li><li><a href="family-engagement.html">Family Engagement</a></li></ul></div>
+<div><h4>About</h4><ul><li><a href="about.html">About Little Explorers</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="copyright.html">Copyright</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>© 2026 Little Explorers Learning Hub. All Rights Reserved.</p></div>
+</footer>
 
 <script src="script.js"></script>
 <script>
@@ -77,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const status = document.getElementById("newsletterStatus");
     const button = form?.querySelector("button");
     if (!form || !status || !button) return;
-
     form.addEventListener("submit", () => {
         button.disabled = true;
         button.textContent = "Submitting...";
