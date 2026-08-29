@@ -15,7 +15,6 @@
     --balls-cream: #fff8e8;
     --balls-paper: #fffdf8;
     --balls-line: #e6dfd1;
-
     background: var(--balls-paper);
 }
 
@@ -24,23 +23,14 @@
     border-bottom: 2px solid rgba(230, 223, 209, .8);
 }
 
-.balls-study-page .nav-container {
-    min-height: 82px;
-}
+.balls-study-page .nav-container { min-height: 82px; }
 
 .balls-study-page .logo h1,
 .balls-study-page .logo span,
-.balls-study-page nav a {
-    color: var(--balls-navy);
-}
+.balls-study-page nav a { color: var(--balls-navy); }
 
-.balls-study-page .logo span {
-    color: var(--balls-green);
-}
-
-.balls-study-page nav a:hover {
-    color: var(--balls-blue);
-}
+.balls-study-page .logo span { color: var(--balls-green); }
+.balls-study-page nav a:hover { color: var(--balls-blue); }
 
 .balls-study-page .study-hero {
     position: relative;
@@ -53,20 +43,9 @@
         linear-gradient(135deg, #eaf8ff 0%, #fff8e8 52%, #f3fbe9 100%);
 }
 
-.balls-study-page .study-hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-.balls-study-page .breadcrumb {
-    margin-bottom: 24px;
-    color: var(--balls-navy);
-    font-weight: 700;
-}
-
-.balls-study-page .breadcrumb a:hover {
-    color: var(--balls-blue);
-}
+.balls-study-page .study-hero .container { position: relative; z-index: 1; }
+.balls-study-page .breadcrumb { margin-bottom: 24px; color: var(--balls-navy); font-weight: 700; }
+.balls-study-page .breadcrumb a:hover { color: var(--balls-blue); }
 
 .balls-study-page .study-hero h1 {
     max-width: 900px;
@@ -84,10 +63,7 @@
     line-height: 1.85;
 }
 
-.balls-study-page .featured-study {
-    padding: 72px 0;
-    background: var(--balls-paper);
-}
+.balls-study-page .featured-study { padding: 72px 0; background: var(--balls-paper); }
 
 .balls-study-page .featured-study-card {
     display: grid;
@@ -101,23 +77,9 @@
     box-shadow: 0 20px 55px rgba(36, 71, 107, .10);
 }
 
-.balls-study-page .featured-image {
-    overflow: hidden;
-    border-radius: 26px;
-    background: var(--balls-sky);
-}
-
-.balls-study-page .featured-image img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-
-.balls-study-page .featured-label {
-    color: var(--balls-orange);
-    font-weight: 800;
-    letter-spacing: .12em;
-}
+.balls-study-page .featured-image { overflow: hidden; border-radius: 26px; background: var(--balls-sky); }
+.balls-study-page .featured-image img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.balls-study-page .featured-label { color: var(--balls-orange); font-weight: 800; letter-spacing: .12em; }
 
 .balls-study-page .featured-text h2 {
     color: var(--balls-navy);
@@ -125,10 +87,7 @@
     margin: 14px 0 18px;
 }
 
-.balls-study-page .featured-text p {
-    color: #526579;
-    line-height: 1.85;
-}
+.balls-study-page .featured-text p { color: #526579; line-height: 1.85; }
 
 .balls-study-page .featured-highlights {
     display: grid;
@@ -147,93 +106,35 @@
     text-align: center;
 }
 
-.balls-study-page .site-stats {
-    padding: 34px 0;
-    background: var(--balls-navy);
-}
-
-.balls-study-page .stat-card {
-    background: rgba(255, 255, 255, .10);
-    border: 1px solid rgba(255, 255, 255, .18);
-    box-shadow: none;
-}
-
+.balls-study-page .site-stats { padding: 34px 0; background: var(--balls-navy); }
+.balls-study-page .stat-card { background: rgba(255, 255, 255, .10); border: 1px solid rgba(255, 255, 255, .18); box-shadow: none; }
 .balls-study-page .stat-card h2,
-.balls-study-page .stat-card p {
-    color: #fff;
-}
+.balls-study-page .stat-card p { color: #fff; }
 
 .balls-study-page .teacher-favorites,
 .balls-study-page .featured-studies,
 .balls-study-page .interest-areas,
 .balls-study-page .season-section,
 .balls-study-page .why-section,
-.balls-study-page .new-activities {
-    position: relative;
-}
+.balls-study-page .new-activities { position: relative; }
 
-.balls-study-page .featured-studies {
-    background: var(--balls-cream);
-}
+.balls-study-page .featured-studies { background: var(--balls-cream); }
+.balls-study-page .interest-areas { background: #eef9ff; }
+.balls-study-page .season-section { background: #fffdf5; }
+.balls-study-page .why-section { background: #f4fbed; }
+.balls-study-page .new-activities { background: #fff1ed; }
+.balls-study-page .teacher-favorites { background: #fff; }
+.balls-study-page .section-title h2 { color: var(--balls-navy); }
+.balls-study-page .section-title p { color: #607286; }
 
-.balls-study-page .interest-areas {
-    background: #eef9ff;
-}
+/* Compact content cards. Never stretch short cards to fill empty vertical space. */
+.balls-study-page .study-grid { align-items: start; grid-auto-rows: max-content; }
+.balls-study-page .study-card { height: auto; min-height: 0; align-self: start; }
+.balls-study-page .study-card:not(:has(img)) { display: flex; flex-direction: column; min-height: 0 !important; }
+.balls-study-page .study-card:not(:has(img)) .study-content { flex: 0 0 auto; min-height: 0; }
+.balls-study-page .study-card:not(:has(img)) .study-content p { flex: 0 0 auto; margin-bottom: 0; }
 
-.balls-study-page .season-section {
-    background: #fffdf5;
-}
-
-.balls-study-page .why-section {
-    background: #f4fbed;
-}
-
-.balls-study-page .new-activities {
-    background: #fff1ed;
-}
-
-.balls-study-page .teacher-favorites {
-    background: #fff;
-}
-
-.balls-study-page .section-title h2 {
-    color: var(--balls-navy);
-}
-
-.balls-study-page .section-title p {
-    color: #607286;
-}
-
-/* Keep cards compact instead of stretching empty space below text. */
-.balls-study-page .study-grid {
-    align-items: start;
-    grid-auto-rows: max-content;
-}
-
-.balls-study-page .study-card {
-    height: auto;
-    min-height: 0;
-    align-self: start;
-}
-
-.balls-study-page .study-card:not(:has(img)) {
-    display: flex;
-    flex-direction: column;
-    grid-template-rows: none;
-    min-height: 0 !important;
-}
-
-.balls-study-page .study-card:not(:has(img)) .study-content {
-    flex: 0 0 auto;
-    min-height: 0;
-}
-
-.balls-study-page .study-card:not(:has(img)) .study-content p {
-    flex: 0 0 auto;
-    margin-bottom: 0;
-}
-
-/* All image cards on this study use square image areas. */
+/* All image cards use true square image areas. */
 .balls-study-page .study-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -242,30 +143,17 @@
     object-position: center;
 }
 
-.balls-study-page .balls-related-studies .study-card {
-    overflow: hidden;
-}
-
-.balls-study-page .balls-related-studies .study-card img {
-    border-radius: 0;
-}
+.balls-study-page .balls-related-studies .study-card { overflow: hidden; }
+.balls-study-page .balls-related-studies .study-card img { border-radius: 0; }
 
 .balls-study-page .featured-studies .study-card {
     border: 2px solid rgba(230, 223, 209, .85);
     box-shadow: 0 12px 28px rgba(36, 71, 107, .08);
 }
 
-.balls-study-page .featured-studies .study-card:hover {
-    border-color: rgba(61, 155, 233, .45);
-}
-
-.balls-study-page .study-content h3 {
-    color: var(--balls-navy);
-}
-
-.balls-study-page .study-content p {
-    color: #5b6d80;
-}
+.balls-study-page .featured-studies .study-card:hover { border-color: rgba(61, 155, 233, .45); }
+.balls-study-page .study-content h3 { color: var(--balls-navy); }
+.balls-study-page .study-content p { color: #5b6d80; }
 
 .balls-study-page .favorite-card,
 .balls-study-page .interest-card,
@@ -280,43 +168,80 @@
 .balls-study-page .interest-card:hover,
 .balls-study-page .season-card:hover,
 .balls-study-page .why-card:hover,
-.balls-study-page .activity-card:hover {
-    border-color: rgba(61, 155, 233, .45);
+.balls-study-page .activity-card:hover { border-color: rgba(61, 155, 233, .45); }
+
+/* Family Connection: center the incomplete final row instead of leaving it stuck to the left. */
+.balls-study-page .family-connection-grid,
+.balls-study-page .family-connection .favorite-grid {
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.balls-study-page .family-connection .favorite-grid { justify-content: center; }
+
+/* More Ball Activities: these are quick extensions, so keep the cards proportionate. */
+.balls-study-page .activity-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: start;
+}
+
+.balls-study-page .activity-card {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 24px 22px !important;
+}
+
+.balls-study-page .activity-card h3 { margin-bottom: 10px; }
+.balls-study-page .activity-card p { margin-bottom: 0; line-height: 1.65; }
+
+/* Suggested Materials stays balanced when the page adds the container card or other materials. */
+.balls-study-page .why-grid {
+    align-items: start;
+    justify-content: center;
+}
+
+.balls-study-page .why-card { min-height: 0; height: auto; }
+
+/* Sensory Ball Play cards remain compact and easy to scan. */
+.balls-study-page .season-grid { align-items: start; }
+.balls-study-page .season-card { min-height: 0; height: auto; }
+
+/* Theme-matched footer restored for the Balls Study. */
+.balls-study-page footer {
+    background: var(--balls-navy);
+    color: #f8fbff;
+    border-top: 5px solid var(--balls-yellow);
+}
+
+.balls-study-page footer h3,
+.balls-study-page footer h4 { color: #fff; }
+.balls-study-page footer p,
+.balls-study-page footer li,
+.balls-study-page footer a { color: rgba(255,255,255,.86); }
+.balls-study-page footer a:hover { color: var(--balls-yellow); }
+.balls-study-page .footer-bottom { border-top-color: rgba(255,255,255,.18); }
+.balls-study-page .footer-bottom p { color: rgba(255,255,255,.72); }
+
+@media (max-width: 1100px) {
+    .balls-study-page .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
 }
 
 @media (max-width: 900px) {
-    .balls-study-page .featured-study-card {
-        grid-template-columns: 1fr;
-    }
-
-    .balls-study-page .featured-highlights {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    .balls-study-page .featured-study-card { grid-template-columns: 1fr; }
+    .balls-study-page .featured-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {
-    .balls-study-page .study-hero {
-        padding: 54px 0 64px;
-    }
-
-    .balls-study-page .study-hero h1 {
-        font-size: clamp(2.7rem, 14vw, 4rem);
-    }
-
-    .balls-study-page .featured-study-card {
-        padding: 16px;
-        border-radius: 24px;
-    }
-
-    .balls-study-page .featured-highlights {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .balls-study-page .section-title {
-        margin-bottom: 46px;
-    }
-
-    .balls-study-page .section-title h2 {
-        font-size: 2.15rem;
-    }
+    .balls-study-page .study-hero { padding: 54px 0 64px; }
+    .balls-study-page .study-hero h1 { font-size: clamp(2.7rem, 14vw, 4rem); }
+    .balls-study-page .featured-study-card { padding: 16px; border-radius: 24px; }
+    .balls-study-page .featured-highlights { grid-template-columns: 1fr 1fr; }
+    .balls-study-page .section-title { margin-bottom: 46px; }
+    .balls-study-page .section-title h2 { font-size: 2.15rem; }
+    .balls-study-page .activity-grid { grid-template-columns: 1fr; max-width: 440px; }
 }
