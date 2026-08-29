@@ -1,0 +1,42 @@
+name: Week One Print Control
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  add-print-control:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Add print script to Week One
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("studies/trees/week1.html")
+          text = path.read_text(encoding="utf-8")
+          marker = '<script src="../../script.js"></script>'
+          addition = '    <script src="week1-pdf.js"></script>\n\n' + marker
+
+          if "week1-pdf.js" not in text and marker in text:
+              path.write_text(text.replace(marker, addition, 1), encoding="utf-8")
+          PY
+
+      - name: Commit the page connection
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studies/trees/week1.html
+          if git diff --cached --quiet; then
+            echo "Print script is already connected."
+          else
+            git commit -m "Connect Week One print control"
+            git push
+          fi
