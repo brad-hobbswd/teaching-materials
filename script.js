@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileButton.setAttribute("aria-expanded", String(!open));
       mobileButton.setAttribute("aria-label", open ? "Open Navigation" : "Close Navigation");
     });
-
     navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
       navigation.classList.remove("show", "active");
       mobileButton.classList.remove("active");
@@ -45,9 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Sticky header */
   const header = document.querySelector(".site-header");
-  if (header) {
-    window.addEventListener("scroll", () => header.classList.toggle("sticky", window.scrollY > 40));
-  }
+  if (header) window.addEventListener("scroll", () => header.classList.toggle("sticky", window.scrollY > 40));
 
   /* Smooth internal links */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -96,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    /* Use CSS drawn icons for the few icons whose emoji glyphs are missing in some browsers. */
     const safeIcon = (card, className) => {
       if (!card) return;
       card.querySelectorAll(".balls-safe-icon, .season-icon").forEach(icon => icon.remove());
@@ -110,7 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
       .find(card => text(card.querySelector("h3")).toLowerCase() === title.toLowerCase());
 
     const lightCard = findCard("Light");
-    if (lightCard) safeIcon(lightCard, "icon-light");
+    if (lightCard) {
+      safeIcon(lightCard, "icon-light");
+      const icon = lightCard.querySelector(".icon-light");
+      if (icon) {
+        icon.innerHTML = `
+          <svg viewBox="0 0 64 64" role="img" aria-label="Feather" xmlns="http://www.w3.org/2000/svg">
+            <path d="M53 8C36 9 18 17 11 31c-5 10-1 19 7 19 13 0 28-15 35-35 2-5 2-7 0-7Z" fill="#dff4ff" stroke="#3d9be9" stroke-width="3.5" stroke-linejoin="round"/>
+            <path d="M10 56C19 43 30 30 50 12" fill="none" stroke="#24476b" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M18 43 11 42M24 37 15 34M31 30 21 27M38 24 29 20M44 18 37 14" fill="none" stroke="#3d9be9" stroke-width="3" stroke-linecap="round"/>
+          </svg>`;
+      }
+    }
 
     const materials = sectionByTitle("Suggested Materials");
     if (materials) {
@@ -142,26 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (grid) {
         grid.innerHTML = `
-          <div class="season-card">
-            <div class="balls-safe-icon icon-water" aria-hidden="true"></div>
-            <h3>Water Balls</h3>
-            <p>Explore balls in water tubs with cups, scoops, and containers.</p>
-          </div>
-          <div class="season-card">
-            <div class="balls-safe-icon icon-texture" aria-hidden="true"></div>
-            <h3>Texture Bins</h3>
-            <p>Hide and find different balls in rice, oats, shredded paper, or other safe sensory materials.</p>
-          </div>
-          <div class="season-card">
-            <div class="balls-safe-icon icon-temperature" aria-hidden="true"></div>
-            <h3>Cold &amp; Warm</h3>
-            <p>Compare balls stored at different temperatures and describe how they feel.</p>
-          </div>
-          <div class="season-card">
-            <div class="balls-safe-icon icon-squeeze" aria-hidden="true"></div>
-            <h3>Squeeze &amp; Press</h3>
-            <p>Explore soft balls that can be squeezed, pressed, and manipulated.</p>
-          </div>`;
+          <div class="season-card"><div class="balls-safe-icon icon-water" aria-hidden="true"></div><h3>Water Balls</h3><p>Explore balls in water tubs with cups, scoops, and containers.</p></div>
+          <div class="season-card"><div class="balls-safe-icon icon-texture" aria-hidden="true"></div><h3>Texture Bins</h3><p>Hide and find different balls in rice, oats, shredded paper, or other safe sensory materials.</p></div>
+          <div class="season-card"><div class="balls-safe-icon icon-temperature" aria-hidden="true"></div><h3>Cold &amp; Warm</h3><p>Compare balls stored at different temperatures and describe how they feel.</p></div>
+          <div class="season-card"><div class="balls-safe-icon icon-squeeze" aria-hidden="true"></div><h3>Squeeze &amp; Press</h3><p>Explore soft balls that can be squeezed, pressed, and manipulated.</p></div>`;
       }
     }
 
@@ -178,26 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (grid) {
         grid.className = "favorite-grid balls-family-grid";
         grid.innerHTML = `
-          <div class="favorite-card">
-            <div class="balls-safe-icon icon-home" aria-hidden="true"></div>
-            <h3>Ball Hunt at Home</h3>
-            <p>Invite families to find and compare balls around their home.</p>
-          </div>
-          <div class="favorite-card">
-            <div class="balls-safe-icon icon-photo" aria-hidden="true"></div>
-            <h3>Share a Photo</h3>
-            <p>Invite families to share a favorite ball activity.</p>
-          </div>
-          <div class="favorite-card">
-            <div class="balls-safe-icon icon-question" aria-hidden="true"></div>
-            <h3>Ask a Question</h3>
-            <p>Send home one investigation question for families to discuss.</p>
-          </div>
-          <div class="favorite-card">
-            <div class="balls-safe-icon icon-book" aria-hidden="true"></div>
-            <h3>Read Together</h3>
-            <p>Visit your local library and explore books about sports, movement, and teamwork.</p>
-          </div>`;
+          <div class="favorite-card"><div class="balls-safe-icon icon-home" aria-hidden="true"></div><h3>Ball Hunt at Home</h3><p>Invite families to find and compare balls around their home.</p></div>
+          <div class="favorite-card"><div class="balls-safe-icon icon-photo" aria-hidden="true"></div><h3>Share a Photo</h3><p>Invite families to share a favorite ball activity.</p></div>
+          <div class="favorite-card"><div class="balls-safe-icon icon-question" aria-hidden="true"></div><h3>Ask a Question</h3><p>Send home one investigation question for families to discuss.</p></div>
+          <div class="favorite-card"><div class="balls-safe-icon icon-book" aria-hidden="true"></div><h3>Read Together</h3><p>Visit your local library and explore books about sports, movement, and teamwork.</p></div>`;
       }
     }
 
@@ -206,45 +181,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (footer) {
       footer.innerHTML = `
         <div class="container footer-grid">
-          <div>
-            <h3>Little Explorers Learning Hub</h3>
-            <p>Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten educators create engaging learning experiences through affordable curriculum studies, lesson plans, printable resources, classroom activities, and professional teaching tools.</p>
-          </div>
-          <div>
-            <h4>Curriculum</h4>
-            <ul>
-              <li><a href="../../studies.html">All Studies</a></li>
-              <li><a href="../../ages/index.html">Age Groups</a></li>
-              <li><a href="../../activities.html">Activities</a></li>
-              <li><a href="../../library/index.html">Library</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Teacher Resources</h4>
-            <ul>
-              <li><a href="../../lesson-plans.html">Lesson Plans</a></li>
-              <li><a href="../../printables.html">Printables</a></li>
-              <li><a href="../../resources.html">Teacher Resources</a></li>
-              <li><a href="../../assessment-center.html">Assessment Center</a></li>
-              <li><a href="../../behavior-center.html">Behavior Center</a></li>
-              <li><a href="../../interest-areas.html">Interest Areas</a></li>
-              <li><a href="../../family-engagement.html">Family Engagement</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>About</h4>
-            <ul>
-              <li><a href="../../about.html">About Little Explorers</a></li>
-              <li><a href="../../contact.html">Contact</a></li>
-              <li><a href="../../privacy.html">Privacy Policy</a></li>
-              <li><a href="../../terms.html">Terms of Use</a></li>
-              <li><a href="../../copyright.html">Copyright</a></li>
-            </ul>
-          </div>
+          <div><h3>Little Explorers Learning Hub</h3><p>Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten educators create engaging learning experiences through affordable curriculum studies, lesson plans, printable resources, classroom activities, and professional teaching tools.</p></div>
+          <div><h4>Curriculum</h4><ul><li><a href="../../studies.html">All Studies</a></li><li><a href="../../ages/index.html">Age Groups</a></li><li><a href="../../activities.html">Activities</a></li><li><a href="../../library/index.html">Library</a></li></ul></div>
+          <div><h4>Teacher Resources</h4><ul><li><a href="../../lesson-plans.html">Lesson Plans</a></li><li><a href="../../printables.html">Printables</a></li><li><a href="../../resources.html">Teacher Resources</a></li><li><a href="../../assessment-center.html">Assessment Center</a></li><li><a href="../../behavior-center.html">Behavior Center</a></li><li><a href="../../interest-areas.html">Interest Areas</a></li><li><a href="../../family-engagement.html">Family Engagement</a></li></ul></div>
+          <div><h4>About</h4><ul><li><a href="../../about.html">About Little Explorers</a></li><li><a href="../../contact.html">Contact</a></li><li><a href="../../privacy.html">Privacy Policy</a></li><li><a href="../../terms.html">Terms of Use</a></li><li><a href="../../copyright.html">Copyright</a></li></ul></div>
         </div>
-        <div class="footer-bottom">
-          <p>© 2026 Little Explorers Learning Hub. All Rights Reserved.</p>
-        </div>`;
+        <div class="footer-bottom"><p>© 2026 Little Explorers Learning Hub. All Rights Reserved.</p></div>`;
     }
 
     /* Remove the legacy emoji text nodes from the two cards. */
@@ -258,13 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (node.nodeValue.includes(emoji)) node.nodeValue = node.nodeValue.replaceAll(emoji, "");
       });
     };
-
-    const light = [...document.querySelectorAll(".season-card")]
-      .find(card => (card.querySelector("h3")?.textContent || "").trim() === "Light");
+    removeLegacyEmoji(lightCard, "🪶");
     const containers = [...document.querySelectorAll(".why-card")]
       .find(card => (card.querySelector("h3")?.textContent || "").trim() === "Containers");
-
-    removeLegacyEmoji(light, "🪶");
     removeLegacyEmoji(containers, "🪣");
   }
 
