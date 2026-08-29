@@ -93,6 +93,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    /* Desktop Balls Study navigation uses the full worded menu. */
+    const navStyle = document.createElement("style");
+    navStyle.id = "balls-desktop-navigation-style";
+    navStyle.textContent = `
+      @media (min-width: 769px) {
+        body.balls-study-page .mobile-menu {
+          display: none !important;
+        }
+        body.balls-study-page nav {
+          display: block !important;
+          width: auto !important;
+          order: initial !important;
+        }
+        body.balls-study-page nav ul {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          justify-content: flex-end !important;
+          gap: 22px !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        body.balls-study-page nav li {
+          display: block !important;
+          width: auto !important;
+          border: 0 !important;
+        }
+        body.balls-study-page nav a {
+          display: inline-block !important;
+          white-space: nowrap !important;
+          padding: 10px 0 !important;
+          color: var(--balls-navy) !important;
+          font-weight: 800 !important;
+          text-decoration: none !important;
+        }
+        body.balls-study-page nav a:hover,
+        body.balls-study-page nav a.active {
+          color: var(--balls-blue) !important;
+        }
+      }
+    `;
+    document.head.appendChild(navStyle);
+
     const safeIcon = (card, className) => {
       if (!card) return;
       card.querySelectorAll(".balls-safe-icon, .season-icon").forEach(icon => icon.remove());
