@@ -1,0 +1,32 @@
+name: Apply Trees Week One Theme
+
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-trees-week1-theme.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Connect Week One theme
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('studies/trees/week1.html')
+          s = p.read_text()
+          marker = 'href="../../styles.css">'
+          link = 'href="../../styles.css">\n\n<link rel="stylesheet" href="week1.css">'
+          if 'href="week1.css"' not in s:
+              s = s.replace(marker, link, 1)
+              p.write_text(s)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add studies/trees/week1.html
+          git commit -m 'Connect Trees Week One theme' || exit 0
+          git push
