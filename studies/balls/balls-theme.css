@@ -24,11 +24,9 @@
 }
 
 .balls-study-page .nav-container { min-height: 82px; }
-
 .balls-study-page .logo h1,
 .balls-study-page .logo span,
 .balls-study-page nav a { color: var(--balls-navy); }
-
 .balls-study-page .logo span { color: var(--balls-green); }
 .balls-study-page nav a:hover { color: var(--balls-blue); }
 
@@ -80,13 +78,7 @@
 .balls-study-page .featured-image { overflow: hidden; border-radius: 26px; background: var(--balls-sky); }
 .balls-study-page .featured-image img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .balls-study-page .featured-label { color: var(--balls-orange); font-weight: 800; letter-spacing: .12em; }
-
-.balls-study-page .featured-text h2 {
-    color: var(--balls-navy);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    margin: 14px 0 18px;
-}
-
+.balls-study-page .featured-text h2 { color: var(--balls-navy); font-size: clamp(2rem, 4vw, 3.2rem); margin: 14px 0 18px; }
 .balls-study-page .featured-text p { color: #526579; line-height: 1.85; }
 
 .balls-study-page .featured-highlights {
@@ -127,7 +119,6 @@
 .balls-study-page .section-title h2 { color: var(--balls-navy); }
 .balls-study-page .section-title p { color: #607286; }
 
-/* Keep short informational cards proportional to their content. */
 .balls-study-page .study-grid,
 .balls-study-page .season-grid,
 .balls-study-page .why-grid,
@@ -140,7 +131,6 @@
 .balls-study-page .study-card:not(:has(img)) .study-content { flex: 0 0 auto; min-height: 0; }
 .balls-study-page .study-card:not(:has(img)) .study-content p { flex: 0 0 auto; margin-bottom: 0; }
 
-/* All study image cards use true square image areas. */
 .balls-study-page .study-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -178,10 +168,7 @@
 
 /* =========================================================
    SAFE, WEB-RENDERED ICONS
-   These replace a few emoji glyphs that render as empty boxes
-   in browsers without the newer emoji font set.
 ========================================================= */
-
 .balls-study-page .balls-safe-icon {
     width: 58px;
     height: 58px;
@@ -191,238 +178,113 @@
     place-items: center;
     flex: 0 0 58px;
 }
-
 .balls-study-page .balls-safe-icon::before,
 .balls-study-page .balls-safe-icon::after { content: ""; position: absolute; box-sizing: border-box; }
 
-/* Light: feather inspired mark */
+/* Hide the original emoji text in the two existing HTML cards. */
+.balls-study-page .season-card:has(.icon-light),
+.balls-study-page .why-card:has(.icon-container) { font-size: 0; }
+.balls-study-page .season-card:has(.icon-light) h3,
+.balls-study-page .why-card:has(.icon-container) h3 { font-size: 1.25rem; }
+.balls-study-page .season-card:has(.icon-light) p,
+.balls-study-page .why-card:has(.icon-container) p { font-size: 1rem; }
+
+/* Light / feather */
 .balls-study-page .icon-light::before {
-    width: 25px;
-    height: 42px;
-    border: 4px solid var(--balls-blue);
-    border-radius: 100% 0 100% 0;
-    transform: rotate(38deg);
-    background: #eaf8ff;
+    width: 25px; height: 42px; border: 4px solid var(--balls-blue);
+    border-radius: 100% 0 100% 0; transform: rotate(38deg); background: #eaf8ff;
 }
 .balls-study-page .icon-light::after {
-    width: 4px;
-    height: 40px;
-    background: var(--balls-navy);
-    transform: rotate(38deg);
+    width: 4px; height: 40px; background: var(--balls-navy); transform: rotate(38deg);
     box-shadow: 8px 9px 0 -1px var(--balls-blue), 12px 17px 0 -1px var(--balls-blue);
 }
 
-/* Containers: bucket and handle */
+/* Containers / bucket */
 .balls-study-page .icon-container::before {
-    width: 34px;
-    height: 29px;
-    top: 20px;
-    border: 4px solid var(--balls-orange);
-    border-radius: 5px 5px 12px 12px;
-    background: #fff4dc;
+    width: 34px; height: 29px; top: 20px; border: 4px solid var(--balls-orange);
+    border-radius: 5px 5px 12px 12px; background: #fff4dc;
 }
 .balls-study-page .icon-container::after {
-    width: 30px;
-    height: 25px;
-    top: 7px;
-    border: 4px solid var(--balls-navy);
-    border-bottom: 0;
-    border-radius: 20px 20px 0 0;
+    width: 30px; height: 25px; top: 7px; border: 4px solid var(--balls-navy);
+    border-bottom: 0; border-radius: 20px 20px 0 0;
 }
 
-/* Water: simple water drop */
+/* Water */
 .balls-study-page .icon-water::before {
-    width: 34px;
-    height: 43px;
-    top: 7px;
-    border: 4px solid var(--balls-blue);
-    border-radius: 50% 50% 55% 55%;
-    transform: rotate(45deg) scale(.78);
+    width: 34px; height: 43px; top: 7px; border: 4px solid var(--balls-blue);
+    border-radius: 50% 50% 55% 55%; transform: rotate(45deg) scale(.78);
     background: linear-gradient(135deg, #ffffff 0%, var(--balls-sky) 48%, #9ddcff 100%);
 }
 .balls-study-page .icon-water::after {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #fff;
-    top: 18px;
-    left: 22px;
+    width: 10px; height: 10px; border-radius: 50%; background: #fff; top: 18px; left: 22px;
 }
 
-/* Texture bins: woven/grid symbol */
+/* Texture bin */
 .balls-study-page .icon-texture::before {
-    width: 43px;
-    height: 37px;
-    border: 4px solid var(--balls-green);
-    border-radius: 5px;
+    width: 43px; height: 37px; border: 4px solid var(--balls-green); border-radius: 5px;
     background:
         linear-gradient(90deg, transparent 43%, var(--balls-green) 44% 56%, transparent 57%),
         linear-gradient(0deg, transparent 43%, var(--balls-green) 44% 56%, transparent 57%),
         #f3fbe9;
 }
 .balls-study-page .icon-texture::after {
-    width: 32px;
-    height: 5px;
-    top: 10px;
-    border-radius: 5px;
-    background: var(--balls-orange);
+    width: 32px; height: 5px; top: 10px; border-radius: 5px; background: var(--balls-orange);
 }
 
-/* Temperature: thermometer */
+/* Temperature */
 .balls-study-page .icon-temperature::before {
-    width: 15px;
-    height: 39px;
-    top: 7px;
-    border: 4px solid var(--balls-blue);
-    border-radius: 12px;
-    background: linear-gradient(to top, var(--balls-coral) 0 48%, transparent 49%);
+    width: 15px; height: 39px; top: 7px; border: 4px solid var(--balls-blue);
+    border-radius: 12px; background: linear-gradient(to top, var(--balls-coral) 0 48%, transparent 49%);
 }
 .balls-study-page .icon-temperature::after {
-    width: 27px;
-    height: 27px;
-    bottom: 2px;
-    border: 4px solid var(--balls-coral);
-    border-radius: 50%;
-    background: #fff1ed;
+    width: 27px; height: 27px; bottom: 2px; border: 4px solid var(--balls-coral);
+    border-radius: 50%; background: #fff1ed;
 }
 
-/* Squeeze: two soft circles */
+/* Squeeze */
 .balls-study-page .icon-squeeze::before {
-    width: 27px;
-    height: 27px;
-    left: 9px;
-    top: 15px;
-    border: 4px solid var(--balls-purple);
-    border-radius: 50%;
-    background: #f1edff;
+    width: 27px; height: 27px; left: 9px; top: 15px; border: 4px solid var(--balls-purple);
+    border-radius: 50%; background: #f1edff;
     box-shadow: 20px 8px 0 -2px #fff1ed, 20px 8px 0 2px var(--balls-orange);
 }
 .balls-study-page .icon-squeeze::after {
-    width: 32px;
-    height: 4px;
-    background: var(--balls-navy);
-    transform: rotate(24deg);
+    width: 32px; height: 4px; background: var(--balls-navy); transform: rotate(24deg);
 }
 
 /* Family icons */
-.balls-study-page .icon-home::before {
-    width: 35px;
-    height: 28px;
-    top: 24px;
-    border: 4px solid var(--balls-green);
-    background: #f3fbe9;
-}
-.balls-study-page .icon-home::after {
-    width: 28px;
-    height: 28px;
-    top: 9px;
-    border-left: 4px solid var(--balls-green);
-    border-top: 4px solid var(--balls-green);
-    transform: rotate(45deg);
-    background: #f3fbe9;
-}
-
-.balls-study-page .icon-photo::before {
-    width: 43px;
-    height: 32px;
-    border: 4px solid var(--balls-blue);
-    border-radius: 6px;
-    background: #eaf8ff;
-}
-.balls-study-page .icon-photo::after {
-    width: 15px;
-    height: 15px;
-    border: 4px solid var(--balls-orange);
-    border-radius: 50%;
-    background: #fff;
-}
-
-.balls-study-page .icon-question::before {
-    width: 44px;
-    height: 44px;
-    border: 4px solid var(--balls-purple);
-    border-radius: 50%;
-    background: #f1edff;
-}
-.balls-study-page .icon-question::after {
-    content: "?";
-    color: var(--balls-purple);
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.balls-study-page .icon-book::before {
-    width: 39px;
-    height: 43px;
-    border: 4px solid var(--balls-coral);
-    border-radius: 4px;
-    background: linear-gradient(to right, #fff1ed 0 48%, #fff 49% 52%, #fff1ed 53%);
-}
-.balls-study-page .icon-book::after {
-    width: 22px;
-    height: 4px;
-    top: 22px;
-    background: var(--balls-coral);
-    box-shadow: 0 9px 0 var(--balls-orange);
-}
+.balls-study-page .icon-home::before { width: 35px; height: 28px; top: 24px; border: 4px solid var(--balls-green); background: #f3fbe9; }
+.balls-study-page .icon-home::after { width: 28px; height: 28px; top: 9px; border-left: 4px solid var(--balls-green); border-top: 4px solid var(--balls-green); transform: rotate(45deg); background: #f3fbe9; }
+.balls-study-page .icon-photo::before { width: 43px; height: 32px; border: 4px solid var(--balls-blue); border-radius: 6px; background: #eaf8ff; }
+.balls-study-page .icon-photo::after { width: 15px; height: 15px; border: 4px solid var(--balls-orange); border-radius: 50%; background: #fff; }
+.balls-study-page .icon-question::before { width: 44px; height: 44px; border: 4px solid var(--balls-purple); border-radius: 50%; background: #f1edff; }
+.balls-study-page .icon-question::after { content: "?"; color: var(--balls-purple); font-size: 28px; font-weight: 900; line-height: 1; }
+.balls-study-page .icon-book::before { width: 39px; height: 43px; border: 4px solid var(--balls-coral); border-radius: 4px; background: linear-gradient(to right, #fff1ed 0 48%, #fff 49% 52%, #fff1ed 53%); }
+.balls-study-page .icon-book::after { width: 22px; height: 4px; top: 22px; background: var(--balls-coral); box-shadow: 0 9px 0 var(--balls-orange); }
 
 /* Family Connection: four compact cards, centered. */
 .balls-study-page .family-connection .balls-family-grid {
-    width: 100%;
-    max-width: 1120px;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    justify-content: center;
-    align-items: start;
+    width: 100%; max-width: 1120px; margin-left: auto; margin-right: auto;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px; justify-content: center; align-items: start;
 }
+.balls-study-page .family-connection .favorite-card { min-height: 0 !important; height: auto !important; align-self: start; }
 
-.balls-study-page .family-connection .favorite-card {
-    min-height: 0 !important;
-    height: auto !important;
-    align-self: start;
-}
-
-/* More Ball Activities: small cards for short activity descriptions. */
+/* More Ball Activities: compact cards. */
 .balls-study-page .activity-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-    max-width: 1120px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 22px; max-width: 1120px; margin-left: auto; margin-right: auto;
 }
-
-.balls-study-page .activity-card {
-    min-height: 0 !important;
-    height: auto !important;
-    padding: 24px 22px !important;
-}
-
+.balls-study-page .activity-card { min-height: 0 !important; height: auto !important; padding: 24px 22px !important; }
 .balls-study-page .activity-card h3 { margin-bottom: 10px; }
 .balls-study-page .activity-card p { margin-bottom: 0; line-height: 1.65; }
 
-/* Suggested Materials stays balanced. */
-.balls-study-page .why-grid {
-    justify-content: center;
-    align-items: start;
-}
-
+.balls-study-page .why-grid { justify-content: center; align-items: start; }
 .balls-study-page .why-card { min-height: 0; height: auto; }
-
-/* Sensory cards stay compact. */
 .balls-study-page .season-grid { align-items: start; }
 .balls-study-page .season-card { min-height: 0; height: auto; }
 
-/* Theme-matched footer restored for the Balls Study. */
-.balls-study-page footer {
-    background: var(--balls-navy);
-    color: #f8fbff;
-    border-top: 5px solid var(--balls-yellow);
-}
-
+/* Theme-matched footer. */
+.balls-study-page footer { background: var(--balls-navy); color: #f8fbff; border-top: 5px solid var(--balls-yellow); }
 .balls-study-page footer h3,
 .balls-study-page footer h4 { color: #fff; }
 .balls-study-page footer p,
