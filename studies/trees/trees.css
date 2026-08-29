@@ -1,0 +1,165 @@
+/* ==========================================
+   LITTLE EXPLORERS LEARNING HUB
+   TREES STUDY PAGE
+   Dedicated Study Styles
+========================================== */
+
+body.trees-study-page{
+    --tree-deep:#315C3B;
+    --tree-green:#4F7A3A;
+    --tree-leaf:#7BAE4A;
+    --tree-sage:#EAF3E3;
+    --tree-moss:#DCE8D1;
+    --tree-gold:#D9A441;
+    --tree-cream:#FBF8EF;
+    --tree-text:#344238;
+    --tree-muted:#66756A;
+    --tree-border:#D7E1D0;
+    background:var(--tree-cream)!important;
+    color:var(--tree-text)!important;
+}
+
+body.trees-study-page header{background:rgba(251,248,239,.98)!important;border-bottom:1px solid var(--tree-border)!important}
+body.trees-study-page .logo span{color:var(--tree-green)!important}
+
+@media(min-width:769px){
+    body.trees-study-page .mobile-menu{display:none!important}
+    body.trees-study-page nav{display:block!important;width:auto!important}
+    body.trees-study-page nav ul{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;gap:22px!important}
+    body.trees-study-page nav a{display:inline-block!important;white-space:nowrap!important;color:var(--tree-deep)!important;font-weight:800!important}
+    body.trees-study-page nav a:hover,body.trees-study-page nav a.active{color:var(--tree-green)!important}
+    body.trees-study-page nav a::after{background:var(--tree-gold)!important}
+}
+
+/* INTRODUCTION */
+body.trees-study-page .study-banner{background:radial-gradient(circle at 86% 16%,rgba(123,174,74,.18),transparent 28%),linear-gradient(135deg,#F7F3E8 0%,#EAF3E3 100%)!important;padding:58px 0 72px!important;border-bottom:1px solid var(--tree-border)}
+body.trees-study-page .breadcrumb{margin-bottom:30px!important;color:var(--tree-muted)!important}
+body.trees-study-page .breadcrumb a{color:var(--tree-green)!important;font-weight:700}
+body.trees-study-page .study-banner-grid{grid-template-columns:minmax(0,1.05fr) minmax(330px,.75fr)!important;gap:52px!important;align-items:center!important}
+body.trees-study-page .study-banner-grid>div:first-child{max-width:720px}
+body.trees-study-page .study-banner-grid>div:last-child img{width:100%!important;max-width:620px!important;margin-left:auto!important;border-radius:28px!important;border:7px solid rgba(255,255,255,.82)!important;box-shadow:0 22px 55px rgba(49,92,59,.18)!important}
+body.trees-study-page .study-label{display:inline-block!important;background:var(--tree-deep)!important;color:#fff!important;border-radius:999px!important;padding:8px 17px!important;font-weight:800!important}
+body.trees-study-page .study-banner h1{color:var(--tree-deep)!important;font-size:clamp(3rem,6vw,5rem)!important;line-height:1!important;margin:28px 0!important}
+body.trees-study-page .study-banner p{color:var(--tree-muted)!important;font-size:1.08rem!important;line-height:1.8!important;max-width:700px!important}
+body.trees-study-page .study-highlights{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important;margin-top:24px!important}
+body.trees-study-page .study-highlights div{min-height:46px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;padding:8px 9px!important;background:rgba(255,255,255,.9)!important;border:1px solid var(--tree-border)!important;border-radius:12px!important;color:var(--tree-deep)!important;font-size:.82rem!important;font-weight:800!important;text-align:center!important}
+body.trees-study-page .hero-buttons{margin-top:25px!important}
+body.trees-study-page .btn-primary{background:var(--tree-deep)!important}
+body.trees-study-page .btn-primary:hover{background:var(--tree-green)!important}
+body.trees-study-page .btn-secondary:hover{background:var(--tree-gold)!important;border-color:var(--tree-gold)!important;color:#fff!important}
+
+/* DASHBOARD */
+body.trees-study-page .study-dashboard{background:var(--tree-deep)!important;color:#fff!important;padding:52px 0!important}
+body.trees-study-page .study-dashboard h2,body.trees-study-page .study-dashboard>.container>p{color:#fff!important}
+body.trees-study-page .study-dashboard h2{font-size:2.35rem!important;margin-bottom:8px!important}
+body.trees-study-page .study-dashboard>.container>p{opacity:.9!important}
+body.trees-study-page .dashboard-grid{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:12px!important;margin-top:26px!important}
+body.trees-study-page .dashboard-card{min-height:92px!important;height:auto!important;padding:14px 10px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;background:rgba(255,255,255,.09)!important;border:1px solid rgba(255,255,255,.2)!important;border-radius:16px!important;color:#fff!important;box-shadow:none!important;transition:transform .2s ease,background .2s ease!important}
+body.trees-study-page .dashboard-card:hover{background:rgba(255,255,255,.17)!important;transform:translateY(-3px)!important}
+body.trees-study-page .dashboard-card h3{color:#fff!important;font-size:.93rem!important;line-height:1.2!important;margin-top:7px!important}
+
+/* SECTION RHYTHM */
+body.trees-study-page #overview{background:#fff!important;padding:58px 0!important}
+body.trees-study-page #weeks,body.trees-study-page #songs{background:#F7FBF4!important;padding:72px 0!important}
+body.trees-study-page #materials,body.trees-study-page #assessment,body.trees-study-page #family,body.trees-study-page #downloads{background:#F5F1E7!important;padding:72px 0!important}
+body.trees-study-page #questions,body.trees-study-page #books,body.trees-study-page #centers{background:#fff!important;padding:72px 0!important}
+body.trees-study-page #vocabulary{background:var(--tree-sage)!important;padding:72px 0!important}
+body.trees-study-page .section-title{margin-bottom:34px!important}
+body.trees-study-page .section-title h2{color:var(--tree-deep)!important;font-size:2.35rem!important;margin-bottom:12px!important}
+body.trees-study-page .section-title p{color:var(--tree-muted)!important}
+
+/* OVERVIEW */
+body.trees-study-page #overview .section-title{max-width:900px!important;margin:0 auto!important;padding:26px 30px!important;background:var(--tree-sage)!important;border:1px solid var(--tree-border)!important;border-left:6px solid var(--tree-green)!important;border-radius:18px!important}
+body.trees-study-page #overview .section-title p{line-height:1.8!important}
+
+/* GRIDS */
+body.trees-study-page .week-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important;align-items:start!important}
+body.trees-study-page .materials-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important;align-items:start!important}
+body.trees-study-page .question-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;align-items:start!important}
+body.trees-study-page .books-grid,body.trees-study-page .songs-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;align-items:start!important}
+body.trees-study-page .center-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;align-items:start!important}
+body.trees-study-page .observation-grid,body.trees-study-page .download-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:15px!important;align-items:start!important}
+
+/* CARD RESET */
+body.trees-study-page .week-card,body.trees-study-page .material-card,body.trees-study-page .question-card,body.trees-study-page .book-card,body.trees-study-page .song-card,body.trees-study-page .center-card,body.trees-study-page .observation-card,body.trees-study-page .download-card{height:auto!important;min-height:0!important;align-self:start!important;background:#fff!important;border:1px solid var(--tree-border)!important;border-radius:16px!important;box-shadow:0 7px 20px rgba(49,92,59,.07)!important}
+
+/* WEEK CARDS */
+body.trees-study-page .week-card{padding:21px!important}
+body.trees-study-page .week-number{display:inline-block!important;background:var(--tree-deep)!important;color:#fff!important;padding:5px 10px!important;border-radius:999px!important;font-size:.8rem!important;font-weight:800!important}
+body.trees-study-page .week-card h3{color:var(--tree-deep)!important;font-size:1.12rem!important;line-height:1.3!important;margin:12px 0 8px!important}
+body.trees-study-page .week-card p,body.trees-study-page .week-card li{color:var(--tree-muted)!important;font-size:.9rem!important}
+body.trees-study-page .week-card ul{margin:11px 0 16px!important;padding-left:18px!important;list-style:disc!important}
+body.trees-study-page .week-card li{margin:4px 0!important}
+body.trees-study-page .study-button{color:var(--tree-green)!important;font-weight:800!important;font-size:.9rem!important}
+
+/* MATERIALS */
+body.trees-study-page .material-card{min-height:52px!important;padding:10px 12px!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;font-size:.9rem!important;font-weight:800!important;color:var(--tree-deep)!important}
+
+/* QUESTIONS */
+body.trees-study-page .question-card{padding:15px 16px!important;text-align:center!important;color:var(--tree-deep)!important;font-size:.92rem!important;line-height:1.45!important;font-weight:800!important}
+
+/* VOCABULARY */
+body.trees-study-page .vocabulary-grid{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:8px!important;max-width:950px!important;margin:0 auto!important}
+body.trees-study-page .vocabulary-grid span{display:inline-flex!important;align-items:center!important;justify-content:center!important;padding:7px 13px!important;background:#fff!important;border:1px solid var(--tree-border)!important;border-radius:999px!important;color:var(--tree-deep)!important;font-size:.88rem!important;font-weight:800!important}
+
+/* BOOKS */
+body.trees-study-page .book-card{padding:18px 15px!important;text-align:center!important}
+body.trees-study-page .book-card h3,body.trees-study-page .song-card h3,body.trees-study-page .center-card h3{color:var(--tree-deep)!important;font-size:1.02rem!important;line-height:1.35!important;margin:8px 0 5px!important}
+body.trees-study-page .book-card p,body.trees-study-page .song-card p,body.trees-study-page .center-card p{color:var(--tree-muted)!important;font-size:.86rem!important;line-height:1.55!important}
+
+/* SONGS */
+body.trees-study-page .song-card{padding:18px 15px!important;text-align:center!important}
+
+/* INTEREST AREAS */
+body.trees-study-page .center-card{padding:19px 16px!important;text-align:center!important}
+
+/* OBSERVATION */
+body.trees-study-page .observation-card{padding:19px 17px!important;text-align:center!important}
+body.trees-study-page .observation-card h3,body.trees-study-page .download-card h3{color:var(--tree-deep)!important;font-size:1rem!important;line-height:1.3!important;margin:8px 0 6px!important}
+body.trees-study-page .observation-card p,body.trees-study-page .download-card p{color:var(--tree-muted)!important;font-size:.87rem!important;line-height:1.55!important}
+
+/* DOWNLOADS */
+body.trees-study-page .download-card{padding:19px 17px!important;text-align:center!important}
+body.trees-study-page .download-status{display:inline-block!important;margin-top:10px!important;padding:5px 10px!important;border-radius:999px!important;background:var(--tree-sage)!important;color:var(--tree-deep)!important;font-size:.76rem!important;font-weight:800!important}
+
+/* FOOTER */
+body.trees-study-page footer{display:block!important;background:var(--tree-deep)!important;color:var(--tree-moss)!important;border-top:5px solid var(--tree-gold)!important;padding:48px 0 0!important}
+body.trees-study-page footer .footer-grid{display:grid!important;grid-template-columns:1.5fr 1fr 1.25fr 1fr!important;gap:28px!important}
+body.trees-study-page footer h3,body.trees-study-page footer h4{color:#fff!important;margin-bottom:10px!important}
+body.trees-study-page footer p,body.trees-study-page footer li,body.trees-study-page footer a{color:var(--tree-moss)!important}
+body.trees-study-page footer p{font-size:.88rem!important;line-height:1.7!important}
+body.trees-study-page footer ul{list-style:none!important;margin:0!important;padding:0!important}
+body.trees-study-page footer li{margin:5px 0!important;font-size:.86rem!important}
+body.trees-study-page footer a:hover{color:#fff!important}
+body.trees-study-page .footer-bottom{margin-top:28px!important;padding:16px 0!important;text-align:center!important;border-top:1px solid rgba(255,255,255,.14)!important}
+
+/* HOVER */
+body.trees-study-page .week-card,body.trees-study-page .material-card,body.trees-study-page .book-card,body.trees-study-page .song-card,body.trees-study-page .center-card,body.trees-study-page .observation-card,body.trees-study-page .download-card{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease!important}
+body.trees-study-page .week-card:hover,body.trees-study-page .material-card:hover,body.trees-study-page .book-card:hover,body.trees-study-page .song-card:hover,body.trees-study-page .center-card:hover,body.trees-study-page .observation-card:hover,body.trees-study-page .download-card:hover{transform:translateY(-4px)!important;border-color:var(--tree-leaf)!important;box-shadow:0 12px 26px rgba(49,92,59,.11)!important}
+
+/* TABLET */
+@media(max-width:1100px){
+    body.trees-study-page .dashboard-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+    body.trees-study-page .week-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    body.trees-study-page .materials-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+    body.trees-study-page .books-grid,body.trees-study-page .songs-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    body.trees-study-page .center-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    body.trees-study-page footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    body.trees-study-page .study-banner{padding:38px 0 52px!important}
+    body.trees-study-page .study-banner-grid{grid-template-columns:1fr!important;gap:28px!important}
+    body.trees-study-page .study-banner-grid>div:last-child{order:-1!important}
+    body.trees-study-page .study-banner-grid>div:last-child img{max-width:100%!important;border-width:5px!important;border-radius:22px!important}
+    body.trees-study-page .study-banner h1{font-size:3.2rem!important;margin:22px 0!important}
+    body.trees-study-page .study-highlights{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    body.trees-study-page .hero-buttons{flex-direction:column!important;align-items:stretch!important}
+    body.trees-study-page .hero-buttons .btn{width:100%!important;min-width:0!important}
+    body.trees-study-page .dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    body.trees-study-page .week-grid,body.trees-study-page .materials-grid,body.trees-study-page .question-grid,body.trees-study-page .books-grid,body.trees-study-page .songs-grid,body.trees-study-page .center-grid,body.trees-study-page .observation-grid,body.trees-study-page .download-grid{grid-template-columns:1fr!important}
+    body.trees-study-page #overview,body.trees-study-page #weeks,body.trees-study-page #materials,body.trees-study-page #questions,body.trees-study-page #vocabulary,body.trees-study-page #books,body.trees-study-page #songs,body.trees-study-page #centers,body.trees-study-page #assessment,body.trees-study-page #family,body.trees-study-page #downloads{padding:52px 0!important}
+    body.trees-study-page .section-title h2{font-size:2rem!important}
+    body.trees-study-page footer .footer-grid{grid-template-columns:1fr!important}
+}
