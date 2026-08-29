@@ -249,6 +249,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  /* Remove legacy emoji characters from the two cards now using CSS icons. */
+  if (document.body.classList.contains("balls-study-page")) {
+    const removeLegacyEmoji = (card, emoji) => {
+      if (!card) return;
+      const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        if (node.parentElement?.matches("h3, p")) return;
+        if (node.nodeValue.includes(emoji)) {
+          node.nodeValue = node.nodeValue.replaceAll(emoji, "");
+        }
+      });
+    };
+
+    const light = [...document.querySelectorAll(".season-card")]
+      .find(card => text(card.querySelector("h3")) === "Light");
+    const containers = [...document.querySelectorAll(".why-card")]
+      .find(card => text(card.querySelector("h3")) === "Containers");
+
+    removeLegacyEmoji(light, "🪶");
+    removeLegacyEmoji(containers, "🪣");
+  }
+
   /* Section reveal */
   const sections = document.querySelectorAll("section");
   if ("IntersectionObserver" in window) {
