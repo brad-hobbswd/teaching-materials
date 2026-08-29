@@ -294,6 +294,30 @@
 .balls-study-page .footer-bottom { border-top-color: rgba(255,255,255,.18); }
 .balls-study-page .footer-bottom p { color: rgba(255,255,255,.72); }
 
+/* =========================================================
+   LIGHT: CLEAN FEATHER ICON
+   Use an inline SVG so the feather is crisp and consistent
+   on Windows, mobile, and every browser without emoji fonts.
+========================================================= */
+.balls-study-page .icon-light {
+    width: 64px !important;
+    height: 64px !important;
+    display: block !important;
+    position: relative !important;
+    margin: 0 auto 18px !important;
+    font-size: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M17 61 C29 46 39 27 63 15 C67 13 70 14 68 19 C62 39 46 57 22 65' fill='%23dff4ff' stroke='%233d9be9' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cpath d='M19 64 C33 50 45 35 65 17' fill='none' stroke='%2324476b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M28 51 L19 50 M34 44 L25 41 M41 37 L32 33 M48 31 L40 26 M55 25 L48 20 M61 20 L56 17' fill='none' stroke='%233d9be9' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+.balls-study-page .icon-light::before,
+.balls-study-page .icon-light::after {
+    content: none !important;
+    display: none !important;
+}
+
 @media (max-width: 1100px) {
     .balls-study-page .activity-grid,
     .balls-study-page .family-connection .balls-family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
