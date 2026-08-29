@@ -249,6 +249,296 @@ document.addEventListener("DOMContentLoaded", () => {
     removeLegacyEmoji(containers, "🪣");
   }
 
+  /* ======================================
+     TREES STUDY PAGE
+  ====================================== */
+  const treeBannerImage = document.querySelector('img[src*="trees-banner.png"]');
+
+  if (treeBannerImage) {
+    document.body.classList.add("trees-study-page");
+
+    /* Trees uses the same clean study navigation as Balls, but with a forest palette. */
+    document.querySelectorAll(".search-bar, .hero-search, .study-search, .search-container").forEach(el => el.remove());
+    document.querySelectorAll("input").forEach(input => {
+      const placeholder = (input.getAttribute("placeholder") || "").toLowerCase();
+      if (placeholder.includes("search this study") || placeholder.includes("search activities in this study")) {
+        input.closest("form")?.remove();
+        input.remove();
+      }
+    });
+
+    const treeStyle = document.createElement("style");
+    treeStyle.id = "trees-study-theme";
+    treeStyle.textContent = `
+      body.trees-study-page {
+        --tree-deep: #315C3B;
+        --tree-green: #4F7A3A;
+        --tree-leaf: #7BAE4A;
+        --tree-sage: #EAF3E3;
+        --tree-moss: #DCE8D1;
+        --tree-bark: #7A5134;
+        --tree-gold: #D9A441;
+        --tree-cream: #FBF8EF;
+        --tree-text: #344238;
+        --tree-muted: #66756A;
+        --tree-border: #D7E1D0;
+        background: var(--tree-cream) !important;
+        color: var(--tree-text) !important;
+      }
+
+      body.trees-study-page header {
+        background: rgba(251,248,239,.97) !important;
+        border-bottom: 1px solid var(--tree-border) !important;
+      }
+
+      body.trees-study-page .logo span { color: var(--tree-green) !important; }
+
+      body.trees-study-page nav {
+        display: block !important;
+        width: auto !important;
+      }
+
+      body.trees-study-page nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 22px !important;
+      }
+
+      body.trees-study-page nav a {
+        color: var(--tree-deep) !important;
+        font-weight: 800 !important;
+      }
+
+      body.trees-study-page nav a:hover,
+      body.trees-study-page nav a.active {
+        color: var(--tree-green) !important;
+      }
+
+      body.trees-study-page nav a::after {
+        background: var(--tree-gold) !important;
+      }
+
+      body.trees-study-page .study-banner {
+        background:
+          radial-gradient(circle at 85% 15%, rgba(123,174,74,.18), transparent 28%),
+          linear-gradient(135deg, #F7F3E8 0%, #EAF3E3 100%) !important;
+        padding: 72px 0 84px !important;
+        border-bottom: 1px solid var(--tree-border);
+      }
+
+      body.trees-study-page .study-label {
+        background: var(--tree-deep) !important;
+        color: #fff !important;
+        border-radius: 999px !important;
+        padding: 9px 18px !important;
+        font-weight: 800 !important;
+      }
+
+      body.trees-study-page .study-banner h1 {
+        color: var(--tree-deep) !important;
+        font-size: clamp(3rem, 6vw, 5.2rem) !important;
+        letter-spacing: -1px;
+      }
+
+      body.trees-study-page .study-banner p { color: var(--tree-muted) !important; }
+
+      body.trees-study-page .study-banner-grid > div:last-child img {
+        border-radius: 34px !important;
+        border: 8px solid rgba(255,255,255,.75) !important;
+        box-shadow: 0 24px 60px rgba(49,92,59,.20) !important;
+      }
+
+      body.trees-study-page .study-highlights div {
+        background: rgba(255,255,255,.82) !important;
+        border: 1px solid var(--tree-border) !important;
+        color: var(--tree-deep) !important;
+      }
+
+      body.trees-study-page .btn-primary {
+        background: var(--tree-deep) !important;
+      }
+
+      body.trees-study-page .btn-primary:hover { background: var(--tree-green) !important; }
+
+      body.trees-study-page .btn-secondary:hover {
+        background: var(--tree-gold) !important;
+        border-color: var(--tree-gold) !important;
+        color: #fff !important;
+      }
+
+      body.trees-study-page .study-dashboard {
+        background: var(--tree-deep) !important;
+        color: #fff !important;
+      }
+
+      body.trees-study-page .study-dashboard h2,
+      body.trees-study-page .study-dashboard > .container > p { color: #fff !important; }
+
+      body.trees-study-page .dashboard-card {
+        background: rgba(255,255,255,.10) !important;
+        border: 1px solid rgba(255,255,255,.20) !important;
+        color: #fff !important;
+        border-radius: 20px !important;
+        transition: transform .25s ease, background .25s ease !important;
+      }
+
+      body.trees-study-page .dashboard-card:hover {
+        background: rgba(255,255,255,.18) !important;
+        transform: translateY(-5px) !important;
+      }
+
+      body.trees-study-page .dashboard-card h3 { color: #fff !important; }
+
+      body.trees-study-page #overview,
+      body.trees-study-page #books,
+      body.trees-study-page #centers {
+        background: var(--tree-cream) !important;
+      }
+
+      body.trees-study-page #weeks,
+      body.trees-study-page #vocabulary,
+      body.trees-study-page #songs {
+        background: var(--tree-sage) !important;
+      }
+
+      body.trees-study-page #materials,
+      body.trees-study-page #questions,
+      body.trees-study-page #assessment,
+      body.trees-study-page #family,
+      body.trees-study-page #downloads {
+        background: #F5F1E7 !important;
+      }
+
+      body.trees-study-page .section-title h2 {
+        color: var(--tree-deep) !important;
+      }
+
+      body.trees-study-page .section-title p { color: var(--tree-muted) !important; }
+
+      body.trees-study-page .week-grid,
+      body.trees-study-page .materials-grid,
+      body.trees-study-page .question-grid,
+      body.trees-study-page .vocabulary-grid,
+      body.trees-study-page .books-grid,
+      body.trees-study-page .songs-grid,
+      body.trees-study-page .center-grid {
+        align-items: start !important;
+        grid-auto-rows: auto !important;
+      }
+
+      body.trees-study-page .week-card,
+      body.trees-study-page .material-card,
+      body.trees-study-page .question-card,
+      body.trees-study-page .book-card,
+      body.trees-study-page .song-card,
+      body.trees-study-page .center-card {
+        height: auto !important;
+        min-height: 0 !important;
+        align-self: start !important;
+        background: rgba(255,255,255,.96) !important;
+        border: 1px solid var(--tree-border) !important;
+        box-shadow: 0 12px 28px rgba(49,92,59,.08) !important;
+        color: var(--tree-text) !important;
+      }
+
+      body.trees-study-page .week-card:hover,
+      body.trees-study-page .material-card:hover,
+      body.trees-study-page .book-card:hover,
+      body.trees-study-page .song-card:hover,
+      body.trees-study-page .center-card:hover {
+        border-color: var(--tree-leaf) !important;
+        transform: translateY(-6px) !important;
+      }
+
+      body.trees-study-page .week-number {
+        background: var(--tree-deep) !important;
+        color: #fff !important;
+      }
+
+      body.trees-study-page .week-card h3,
+      body.trees-study-page .book-card h3,
+      body.trees-study-page .song-card h3,
+      body.trees-study-page .center-card h3 {
+        color: var(--tree-deep) !important;
+      }
+
+      body.trees-study-page .week-card p,
+      body.trees-study-page .book-card p,
+      body.trees-study-page .song-card p,
+      body.trees-study-page .center-card p {
+        color: var(--tree-muted) !important;
+      }
+
+      body.trees-study-page .study-button {
+        background: var(--tree-green) !important;
+        color: #fff !important;
+        border-radius: 999px !important;
+      }
+
+      body.trees-study-page .material-card {
+        font-weight: 800 !important;
+        color: var(--tree-deep) !important;
+      }
+
+      body.trees-study-page .vocabulary-grid span {
+        background: #fff !important;
+        color: var(--tree-deep) !important;
+        border: 1px solid var(--tree-border) !important;
+        box-shadow: none !important;
+      }
+
+      body.trees-study-page .question-card {
+        color: var(--tree-deep) !important;
+        font-weight: 800 !important;
+      }
+
+      body.trees-study-page .question-card::before {
+        color: var(--tree-gold) !important;
+      }
+
+      body.trees-study-page footer {
+        background: var(--tree-deep) !important;
+        color: #EAF3E3 !important;
+        border-top: 5px solid var(--tree-gold) !important;
+      }
+
+      body.trees-study-page footer h3,
+      body.trees-study-page footer h4 { color: #fff !important; }
+      body.trees-study-page footer p,
+      body.trees-study-page footer li,
+      body.trees-study-page footer a { color: #DCE8D1 !important; }
+      body.trees-study-page footer a:hover { color: #fff !important; }
+      body.trees-study-page .footer-bottom {
+        border-top-color: rgba(255,255,255,.18) !important;
+      }
+
+      @media (max-width: 900px) {
+        body.trees-study-page .nav-container {
+          flex-wrap: wrap !important;
+          padding-bottom: 14px !important;
+        }
+        body.trees-study-page nav {
+          width: 100% !important;
+          order: 3 !important;
+        }
+        body.trees-study-page nav ul {
+          justify-content: center !important;
+          flex-wrap: wrap !important;
+          gap: 12px 20px !important;
+        }
+        body.trees-study-page .study-banner-grid {
+          grid-template-columns: 1fr !important;
+        }
+        body.trees-study-page .study-banner-grid > div:last-child {
+          order: -1;
+        }
+      }
+    `;
+    document.head.appendChild(treeStyle);
+  }
+
   /* Section reveal */
   const sections = document.querySelectorAll("section");
   if ("IntersectionObserver" in window) {
