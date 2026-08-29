@@ -127,14 +127,20 @@
 .balls-study-page .section-title h2 { color: var(--balls-navy); }
 .balls-study-page .section-title p { color: #607286; }
 
-/* Compact content cards. Never stretch short cards to fill empty vertical space. */
-.balls-study-page .study-grid { align-items: start; grid-auto-rows: max-content; }
+/* Keep short informational cards proportional to their content. */
+.balls-study-page .study-grid,
+.balls-study-page .season-grid,
+.balls-study-page .why-grid,
+.balls-study-page .favorite-grid,
+.balls-study-page .activity-grid { align-items: start; }
+
+.balls-study-page .study-grid { grid-auto-rows: max-content; }
 .balls-study-page .study-card { height: auto; min-height: 0; align-self: start; }
 .balls-study-page .study-card:not(:has(img)) { display: flex; flex-direction: column; min-height: 0 !important; }
 .balls-study-page .study-card:not(:has(img)) .study-content { flex: 0 0 auto; min-height: 0; }
 .balls-study-page .study-card:not(:has(img)) .study-content p { flex: 0 0 auto; margin-bottom: 0; }
 
-/* All image cards use true square image areas. */
+/* All study image cards use true square image areas. */
 .balls-study-page .study-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -170,24 +176,223 @@
 .balls-study-page .why-card:hover,
 .balls-study-page .activity-card:hover { border-color: rgba(61, 155, 233, .45); }
 
-/* Family Connection: center the incomplete final row instead of leaving it stuck to the left. */
-.balls-study-page .family-connection-grid,
-.balls-study-page .family-connection .favorite-grid {
-    max-width: 980px;
-    margin-left: auto;
-    margin-right: auto;
+/* =========================================================
+   SAFE, WEB-RENDERED ICONS
+   These replace a few emoji glyphs that render as empty boxes
+   in browsers without the newer emoji font set.
+========================================================= */
+
+.balls-study-page .balls-safe-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex: 0 0 58px;
 }
 
-.balls-study-page .family-connection .favorite-grid { justify-content: center; }
+.balls-study-page .balls-safe-icon::before,
+.balls-study-page .balls-safe-icon::after { content: ""; position: absolute; box-sizing: border-box; }
 
-/* More Ball Activities: these are quick extensions, so keep the cards proportionate. */
+/* Light: feather inspired mark */
+.balls-study-page .icon-light::before {
+    width: 25px;
+    height: 42px;
+    border: 4px solid var(--balls-blue);
+    border-radius: 100% 0 100% 0;
+    transform: rotate(38deg);
+    background: #eaf8ff;
+}
+.balls-study-page .icon-light::after {
+    width: 4px;
+    height: 40px;
+    background: var(--balls-navy);
+    transform: rotate(38deg);
+    box-shadow: 8px 9px 0 -1px var(--balls-blue), 12px 17px 0 -1px var(--balls-blue);
+}
+
+/* Containers: bucket and handle */
+.balls-study-page .icon-container::before {
+    width: 34px;
+    height: 29px;
+    top: 20px;
+    border: 4px solid var(--balls-orange);
+    border-radius: 5px 5px 12px 12px;
+    background: #fff4dc;
+}
+.balls-study-page .icon-container::after {
+    width: 30px;
+    height: 25px;
+    top: 7px;
+    border: 4px solid var(--balls-navy);
+    border-bottom: 0;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Water: simple water drop */
+.balls-study-page .icon-water::before {
+    width: 34px;
+    height: 43px;
+    top: 7px;
+    border: 4px solid var(--balls-blue);
+    border-radius: 50% 50% 55% 55%;
+    transform: rotate(45deg) scale(.78);
+    background: linear-gradient(135deg, #ffffff 0%, var(--balls-sky) 48%, #9ddcff 100%);
+}
+.balls-study-page .icon-water::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    top: 18px;
+    left: 22px;
+}
+
+/* Texture bins: woven/grid symbol */
+.balls-study-page .icon-texture::before {
+    width: 43px;
+    height: 37px;
+    border: 4px solid var(--balls-green);
+    border-radius: 5px;
+    background:
+        linear-gradient(90deg, transparent 43%, var(--balls-green) 44% 56%, transparent 57%),
+        linear-gradient(0deg, transparent 43%, var(--balls-green) 44% 56%, transparent 57%),
+        #f3fbe9;
+}
+.balls-study-page .icon-texture::after {
+    width: 32px;
+    height: 5px;
+    top: 10px;
+    border-radius: 5px;
+    background: var(--balls-orange);
+}
+
+/* Temperature: thermometer */
+.balls-study-page .icon-temperature::before {
+    width: 15px;
+    height: 39px;
+    top: 7px;
+    border: 4px solid var(--balls-blue);
+    border-radius: 12px;
+    background: linear-gradient(to top, var(--balls-coral) 0 48%, transparent 49%);
+}
+.balls-study-page .icon-temperature::after {
+    width: 27px;
+    height: 27px;
+    bottom: 2px;
+    border: 4px solid var(--balls-coral);
+    border-radius: 50%;
+    background: #fff1ed;
+}
+
+/* Squeeze: two soft circles */
+.balls-study-page .icon-squeeze::before {
+    width: 27px;
+    height: 27px;
+    left: 9px;
+    top: 15px;
+    border: 4px solid var(--balls-purple);
+    border-radius: 50%;
+    background: #f1edff;
+    box-shadow: 20px 8px 0 -2px #fff1ed, 20px 8px 0 2px var(--balls-orange);
+}
+.balls-study-page .icon-squeeze::after {
+    width: 32px;
+    height: 4px;
+    background: var(--balls-navy);
+    transform: rotate(24deg);
+}
+
+/* Family icons */
+.balls-study-page .icon-home::before {
+    width: 35px;
+    height: 28px;
+    top: 24px;
+    border: 4px solid var(--balls-green);
+    background: #f3fbe9;
+}
+.balls-study-page .icon-home::after {
+    width: 28px;
+    height: 28px;
+    top: 9px;
+    border-left: 4px solid var(--balls-green);
+    border-top: 4px solid var(--balls-green);
+    transform: rotate(45deg);
+    background: #f3fbe9;
+}
+
+.balls-study-page .icon-photo::before {
+    width: 43px;
+    height: 32px;
+    border: 4px solid var(--balls-blue);
+    border-radius: 6px;
+    background: #eaf8ff;
+}
+.balls-study-page .icon-photo::after {
+    width: 15px;
+    height: 15px;
+    border: 4px solid var(--balls-orange);
+    border-radius: 50%;
+    background: #fff;
+}
+
+.balls-study-page .icon-question::before {
+    width: 44px;
+    height: 44px;
+    border: 4px solid var(--balls-purple);
+    border-radius: 50%;
+    background: #f1edff;
+}
+.balls-study-page .icon-question::after {
+    content: "?";
+    color: var(--balls-purple);
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.balls-study-page .icon-book::before {
+    width: 39px;
+    height: 43px;
+    border: 4px solid var(--balls-coral);
+    border-radius: 4px;
+    background: linear-gradient(to right, #fff1ed 0 48%, #fff 49% 52%, #fff1ed 53%);
+}
+.balls-study-page .icon-book::after {
+    width: 22px;
+    height: 4px;
+    top: 22px;
+    background: var(--balls-coral);
+    box-shadow: 0 9px 0 var(--balls-orange);
+}
+
+/* Family Connection: four compact cards, centered. */
+.balls-study-page .family-connection .balls-family-grid {
+    width: 100%;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    justify-content: center;
+    align-items: start;
+}
+
+.balls-study-page .family-connection .favorite-card {
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: start;
+}
+
+/* More Ball Activities: small cards for short activity descriptions. */
 .balls-study-page .activity-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 22px;
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
-    align-items: start;
 }
 
 .balls-study-page .activity-card {
@@ -199,15 +404,15 @@
 .balls-study-page .activity-card h3 { margin-bottom: 10px; }
 .balls-study-page .activity-card p { margin-bottom: 0; line-height: 1.65; }
 
-/* Suggested Materials stays balanced when the page adds the container card or other materials. */
+/* Suggested Materials stays balanced. */
 .balls-study-page .why-grid {
-    align-items: start;
     justify-content: center;
+    align-items: start;
 }
 
 .balls-study-page .why-card { min-height: 0; height: auto; }
 
-/* Sensory Ball Play cards remain compact and easy to scan. */
+/* Sensory cards stay compact. */
 .balls-study-page .season-grid { align-items: start; }
 .balls-study-page .season-card { min-height: 0; height: auto; }
 
@@ -228,7 +433,8 @@
 .balls-study-page .footer-bottom p { color: rgba(255,255,255,.72); }
 
 @media (max-width: 1100px) {
-    .balls-study-page .activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
+    .balls-study-page .activity-grid,
+    .balls-study-page .family-connection .balls-family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
 }
 
 @media (max-width: 900px) {
@@ -243,5 +449,6 @@
     .balls-study-page .featured-highlights { grid-template-columns: 1fr 1fr; }
     .balls-study-page .section-title { margin-bottom: 46px; }
     .balls-study-page .section-title h2 { font-size: 2.15rem; }
-    .balls-study-page .activity-grid { grid-template-columns: 1fr; max-width: 440px; }
+    .balls-study-page .activity-grid,
+    .balls-study-page .family-connection .balls-family-grid { grid-template-columns: 1fr; max-width: 440px; }
 }
