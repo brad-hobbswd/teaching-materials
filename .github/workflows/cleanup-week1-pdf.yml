@@ -1,0 +1,64 @@
+name: Move Week One PDF Link
+
+on:
+  push:
+    paths:
+      - '.github/workflows/cleanup-week1-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Move PDF button to bottom of lesson plan
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          html = Path('studies/trees/week1.html')
+          text = html.read_text(encoding='utf-8')
+
+          pdf_button = '''<a\n  href="Trees_Study_Week_1_Lesson_Plan.pdf"\n  class="btn btn-primary"\n  target="_blank"\n  rel="noopener">\n\n📄 Week One PDF\n\n</a>'''
+
+          text = text.replace(pdf_button + '\n\n', '', 1)
+
+          marker = '<!-- ==========================================\n     WEEK NAVIGATION\n========================================== -->'
+
+          download_section = '''<!-- ==========================================\n     DOWNLOAD LESSON PLAN\n========================================== -->\n\n<section class="week-pdf-download">\n\n<div class="container">\n\n<div class="pdf-download-card">\n\n<h2>\n\nReady to Print or Save?\n\n</h2>\n\n<p>\n\nYou have reached the end of Week One. Download the complete Week One lesson plan as a PDF for printing, saving, or classroom use.\n\n</p>\n\n<a\nhref="Trees_Study_Week_1_Lesson_Plan.pdf"\nclass="btn btn-primary"\ntarget="_blank"\nrel="noopener">\n\n📄 Download Week One Lesson Plan PDF\n\n</a>\n\n</div>\n\n</div>\n\n</section>\n\n'''
+
+          if 'class="week-pdf-download"' not in text:
+              text = text.replace(marker, download_section + marker, 1)
+
+          html.write_text(text, encoding='utf-8')
+
+          css = Path('studies/trees/week1.css')
+          css_text = css.read_text(encoding='utf-8')
+
+          css_block = '''\n\n/* =========================================================\n   WEEK ONE PDF DOWNLOAD\n   ========================================================= */\n.week-pdf-download{padding:54px 0;background:var(--trees-sage)}\n.pdf-download-card{max-width:900px;margin:0 auto;padding:38px 34px;background:#fff;border:1px solid var(--trees-border);border-top:5px solid var(--trees-gold);border-radius:22px;box-shadow:var(--trees-shadow);text-align:center}\n.pdf-download-card h2{margin-bottom:12px;color:var(--trees-deep);font-size:clamp(1.8rem,4vw,2.5rem)}\n.pdf-download-card p{max-width:720px;margin:0 auto 24px;color:var(--trees-muted);font-size:1rem;line-height:1.75}\n.pdf-download-card .btn{display:inline-flex;align-items:center;justify-content:center;min-width:280px}\n@media(max-width:700px){.pdf-download-card{padding:28px 20px}.pdf-download-card .btn{width:100%;min-width:0}}\n'''
+
+          if 'WEEK ONE PDF DOWNLOAD' not in css_text:
+              css.write_text(css_text + css_block, encoding='utf-8')
+          PY
+
+      - name: Remove temporary workflows
+        shell: bash
+        run: |
+          rm -f .github/workflows/fix-week1-pdf.yml
+          rm -f .github/workflows/add-week1-print-control.yml
+          rm -f .github/workflows/cleanup-week1-pdf.yml
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add studies/trees/week1.html studies/trees/week1.css .github/workflows
+          git diff --cached --quiet && exit 0
+          git commit -m 'Move Week One PDF download to bottom'
+          git push
