@@ -5,26 +5,19 @@
 document.documentElement.classList.add("js");
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ======================================
-   Mobile Navigation
-  ====================================== */
   const mobileButton = document.querySelector(".mobile-menu");
   const navigation = document.querySelector(".main-nav") || document.querySelector("nav");
 
   if (mobileButton && navigation) {
     mobileButton.setAttribute("aria-expanded", "false");
-
     mobileButton.addEventListener("click", () => {
       const isOpen = navigation.classList.contains("show") || navigation.classList.contains("active");
-
       navigation.classList.toggle("show", !isOpen);
       navigation.classList.toggle("active", !isOpen);
       mobileButton.classList.toggle("active", !isOpen);
-
       mobileButton.setAttribute("aria-expanded", String(!isOpen));
       mobileButton.setAttribute("aria-label", !isOpen ? "Close Navigation" : "Open Navigation");
     });
-
     navigation.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navigation.classList.remove("show", "active");
@@ -33,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileButton.setAttribute("aria-label", "Open Navigation");
       });
     });
-
     document.addEventListener("click", e => {
       if (!navigation.contains(e.target) && !mobileButton.contains(e.target)) {
         navigation.classList.remove("show", "active");
@@ -44,39 +36,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ======================================
-   Active Navigation
-  ====================================== */
   const currentPath = window.location.pathname;
-
   document.querySelectorAll("nav a").forEach(link => {
     link.classList.remove("active");
     const href = new URL(link.href).pathname;
-
     if (
       currentPath === href ||
       (currentPath.startsWith("/teaching-materials/studies/") && href.endsWith("/studies.html")) ||
       (currentPath.startsWith("/teaching-materials/library/") && href.endsWith("/library/index.html")) ||
       (currentPath.startsWith("/teaching-materials/ages/") && href.endsWith("/ages/index.html"))
-    ) {
-      link.classList.add("active");
-    }
+    ) link.classList.add("active");
   });
 
-  /* ======================================
-   Sticky Header
-  ====================================== */
   const header = document.querySelector(".site-header");
-
   if (header) {
     window.addEventListener("scroll", () => {
       header.classList.toggle("sticky", window.scrollY > 40);
     });
   }
 
-  /* ======================================
-   Smooth Scroll
-  ====================================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
@@ -88,44 +66,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ======================================
-   Search
-  ====================================== */
   document.querySelectorAll(".search-bar, .hero-search").forEach(search => {
     const form = search.tagName === "FORM" ? search : search.closest("form");
     if (!form) return;
-
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const input = form.querySelector('input[type="search"], input[type="text"]');
       if (!input) return;
-
       const query = input.value.trim();
       if (!query) return;
-
       const searchLink = document.querySelector('a[href$="search.html"]');
       const searchUrl = searchLink
         ? new URL(searchLink.href, window.location.href)
         : new URL("search.html", window.location.href);
-
       searchUrl.searchParams.set("q", query);
       window.location.href = searchUrl.href;
     });
   });
 
-  /* ======================================
-   Card Animation
-  ====================================== */
   document.querySelectorAll(".study-card,.favorite-card,.activity-card,.interest-card,.season-card,.why-card,.age-card").forEach(card => {
     card.addEventListener("mouseenter", () => { card.style.transform = "translateY(-8px)"; });
     card.addEventListener("mouseleave", () => { card.style.transform = ""; });
   });
 
-  /* ======================================
-   Fade In Sections
-  ====================================== */
   const sections = document.querySelectorAll("section");
-
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -135,44 +99,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
     sections.forEach(section => observer.observe(section));
   } else {
     sections.forEach(section => section.classList.add("visible"));
   }
 
-  /* ======================================
-   Back To Top Button
-  ====================================== */
   const backToTop = document.querySelector(".back-to-top");
-
   if (backToTop) {
     window.addEventListener("scroll", () => {
       backToTop.classList.toggle("show", window.scrollY > 500);
     });
-
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
   /* ======================================
-   Balls Study Page Enhancements
+     Balls Study Page Enhancements
   ====================================== */
   if (document.body.classList.contains("balls-study-page")) {
 
-    /* Remove any study-specific search controls if an older cached HTML copy still contains them. */
     document.querySelectorAll(".search-bar, .hero-search").forEach(el => el.remove());
 
-    /* Identify the Family Connection section so its three cards can be centered. */
     document.querySelectorAll("section").forEach(section => {
       const heading = section.querySelector("h2");
       if (heading && heading.textContent.trim() === "Family Connection") {
         section.classList.add("family-connection");
+
+        const grid = section.querySelector(".favorite-grid");
+        if (grid) {
+          const hasReadTogether = [...grid.querySelectorAll("h3")].some(h => h.textContent.trim() === "Read Together");
+          if (!hasReadTogether) {
+            grid.insertAdjacentHTML("beforeend", `
+              <div class="favorite-card">
+                <div class="favorite-icon">📚</div>
+                <h3>Read Together</h3>
+                <p>Visit your local library and explore books about sports, movement, and teamwork.</p>
+              </div>
+            `);
+          }
+        }
       }
     });
 
-    /* Ensure Suggested Materials contains the expected classroom container item. */
     const materialsSection = [...document.querySelectorAll("section")].find(section => {
       const heading = section.querySelector("h2");
       return heading && heading.textContent.trim() === "Suggested Materials";
@@ -194,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    /* Make sure the sensory section includes both Water Balls and Texture Bins. */
     const sensorySection = [...document.querySelectorAll("section")].find(section => {
       const heading = section.querySelector("h2");
       return heading && heading.textContent.trim() === "Sensory Ball Play";
@@ -225,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    /* Restore the full site-style footer while recoloring it for the Balls theme. */
     const footer = document.querySelector("body.balls-study-page footer");
     if (footer) {
       footer.innerHTML = `
