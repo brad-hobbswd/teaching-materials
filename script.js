@@ -131,8 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    /* Replace the sensory grid with exactly the requested four cards.
-       This prevents the previous script from creating duplicate Texture Bins. */
+    /* Replace the sensory grid with exactly the requested four cards. */
     const sensory = sectionByTitle("Sensory Ball Play", "Sensory Play");
     if (sensory) {
       let grid = sensory.querySelector(".season-grid");
@@ -247,10 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>© 2026 Little Explorers Learning Hub. All Rights Reserved.</p>
         </div>`;
     }
-  }
 
-  /* Remove legacy emoji characters from the two cards now using CSS icons. */
-  if (document.body.classList.contains("balls-study-page")) {
+    /* Remove the legacy emoji text nodes from the two cards. */
     const removeLegacyEmoji = (card, emoji) => {
       if (!card) return;
       const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
@@ -258,16 +255,14 @@ document.addEventListener("DOMContentLoaded", () => {
       while (walker.nextNode()) nodes.push(walker.currentNode);
       nodes.forEach(node => {
         if (node.parentElement?.matches("h3, p")) return;
-        if (node.nodeValue.includes(emoji)) {
-          node.nodeValue = node.nodeValue.replaceAll(emoji, "");
-        }
+        if (node.nodeValue.includes(emoji)) node.nodeValue = node.nodeValue.replaceAll(emoji, "");
       });
     };
 
     const light = [...document.querySelectorAll(".season-card")]
-      .find(card => text(card.querySelector("h3")) === "Light");
+      .find(card => (card.querySelector("h3")?.textContent || "").trim() === "Light");
     const containers = [...document.querySelectorAll(".why-card")]
-      .find(card => text(card.querySelector("h3")) === "Containers");
+      .find(card => (card.querySelector("h3")?.textContent || "").trim() === "Containers");
 
     removeLegacyEmoji(light, "🪶");
     removeLegacyEmoji(containers, "🪣");
