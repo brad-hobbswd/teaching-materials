@@ -90,9 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.body.classList.contains("balls-study-page")) {
 
     const headingText = element => (element?.textContent || "").replace(/\s+/g, " ").trim();
-    const findSection = title => [...document.querySelectorAll("section")].find(section => {
+
+    const findSection = (...titles) => [...document.querySelectorAll("section")].find(section => {
       const heading = section.querySelector("h2");
-      return heading && headingText(heading).toLowerCase() === title.toLowerCase();
+      if (!heading) return false;
+      const text = headingText(heading).toLowerCase();
+      return titles.some(title => text === title.toLowerCase());
     });
 
     /* No search bars on the Balls Study. */
@@ -107,26 +110,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".search-bar, .hero-search").forEach(el => el.remove());
 
-    /* Vocabulary: make absolutely certain Light has its feather icon. */
+    /* --------------------------------------
+       Vocabulary: Light must have its icon.
+    -------------------------------------- */
     const lightHeading = [...document.querySelectorAll("h3")].find(h => headingText(h).toLowerCase() === "light");
     if (lightHeading) {
       const card = lightHeading.closest(".season-card, .vocabulary-card, .card");
-      if (card) {
-        const firstText = card.firstChild?.textContent?.trim() || "";
-        if (!firstText.includes("🪶") && !card.querySelector(".season-icon")) {
-          const icon = document.createElement("div");
-          icon.className = "season-icon";
-          icon.setAttribute("aria-hidden", "true");
-          icon.textContent = "🪶";
-          card.insertBefore(icon, card.firstChild);
-        }
+      if (card && !card.querySelector(".season-icon, .why-icon, .interest-icon, .favorite-icon")) {
+        const icon = document.createElement("div");
+        icon.className = "season-icon";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = "🪶";
+        card.insertBefore(icon, card.firstChild);
       }
     }
 
-    /* Suggested Materials: Containers. */
+    /* --------------------------------------
+       Suggested Materials: Containers.
+    -------------------------------------- */
     const materialsSection = findSection("Suggested Materials");
     if (materialsSection) {
-      const grid = materialsSection.querySelector(".why-grid");
+      let grid = materialsSection.querySelector(".why-grid");
+      if (!grid) {
+        grid = document.createElement("div");
+        grid.className = "why-grid";
+        materialsSection.querySelector(".container")?.appendChild(grid);
+      }
+
       if (grid) {
         const hasContainers = [...grid.querySelectorAll("h3")].some(h => headingText(h).toLowerCase() === "containers");
         if (!hasContainers) {
@@ -141,8 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    /* Sensory Ball Play: create the whole section if the older page does not have it. */
-    let sensorySection = findSection("Sensory Ball Play");
+    /* --------------------------------------
+       Sensory Ball Play: always provide the
+       requested four cards with icons.
+    -------------------------------------- */
+    let sensorySection = findSection("Sensory Ball Play", "Sensory Play");
 
     if (!sensorySection) {
       sensorySection = document.createElement("section");
@@ -180,45 +193,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const engineeringSection = findSection("Engineering Challenges");
       if (engineeringSection) engineeringSection.parentNode.insertBefore(sensorySection, engineeringSection);
-    } else {
-      const grid = sensorySection.querySelector(".season-grid");
+    }
+
+    if (sensorySection) {
+      let grid = sensorySection.querySelector(".season-grid");
+      if (!grid) {
+        grid = document.createElement("div");
+        grid.className = "season-grid";
+        sensorySection.querySelector(".container")?.appendChild(grid);
+      }
+
       if (grid) {
-        const titles = [...grid.querySelectorAll("h3")].map(h => headingText(h).toLowerCase());
+        const ensureSensoryCard = (title, icon, description) => {
+          const normalizedTitle = title.toLowerCase();
+          const existingHeading = [...grid.querySelectorAll("h3")].find(h => headingText(h).toLowerCase() === normalizedTitle);
 
-        if (!titles.includes("water balls")) {
-          grid.insertAdjacentHTML("afterbegin", `
-            <div class="season-card">
-              <div class="season-icon">🫧</div>
-              <h3>Water Balls</h3>
-              <p>Explore balls in water tubs with cups, scoops, and containers.</p>
-            </div>
-          `);
-        }
+          if (existingHeading) {
+            const card = existingHeading.closest(".season-card, .card");
+            if (card && !card.querySelector(".season-icon")) {
+              const iconElement = document.createElement("div");
+              iconElement.className = "season-icon";
+              iconElement.setAttribute("aria-hidden", "true");
+              iconElement.textContent = icon;
+              card.insertBefore(iconElement, card.firstChild);
+            }
+            return;
+          }
 
-        if (!titles.includes("texture bins") && !titles.includes("texture bin")) {
           grid.insertAdjacentHTML("beforeend", `
             <div class="season-card">
-              <div class="season-icon">🫘</div>
-              <h3>Texture Bins</h3>
-              <p>Hide and find different balls in rice, oats, shredded paper, or other safe sensory materials.</p>
+              <div class="season-icon">${icon}</div>
+              <h3>${title}</h3>
+              <p>${description}</p>
             </div>
           `);
-        } else {
-          const textureHeading = [...grid.querySelectorAll("h3")].find(h => headingText(h).toLowerCase() === "texture bin");
-          if (textureHeading) textureHeading.textContent = "Texture Bins";
-        }
+        };
+
+        ensureSensoryCard("Water Balls", "🫧", "Explore balls in water tubs with cups, scoops, and containers.");
+        ensureSensoryCard("Texture Bins", "🫘", "Hide and find different balls in rice, oats, shredded paper, or other safe sensory materials.");
+        ensureSensoryCard("Cold & Warm", "🧊", "Compare balls stored at different temperatures and describe how they feel.");
+        ensureSensoryCard("Squeeze & Press", "👐", "Explore soft balls that can be squeezed, pressed, and manipulated.");
+
+        const oldTexture = [...grid.querySelectorAll("h3")].find(h => headingText(h).toLowerCase() === "texture bin");
+        if (oldTexture) oldTexture.textContent = "Texture Bins";
       }
     }
 
-    /* Family Connection: center the complete set of cards. */
-    const familySection = findSection("Family Connection") || findSection("Family Engagement");
+    /* --------------------------------------
+       Family Connection / Family Engagement:
+       restore the complete four-card set.
+    -------------------------------------- */
+    const familySection = findSection("Family Connection", "Family Engagement");
     if (familySection) {
       familySection.classList.add("family-connection");
-      const grid = familySection.querySelector(".favorite-grid, .interest-grid, .study-grid, .why-grid");
-      if (grid) grid.classList.add("balls-family-grid");
+
+      let grid = familySection.querySelector(".favorite-grid, .interest-grid, .study-grid, .why-grid");
+      if (!grid) {
+        grid = document.createElement("div");
+        grid.className = "favorite-grid balls-family-grid";
+        familySection.querySelector(".container")?.appendChild(grid);
+      }
+
+      if (grid) {
+        grid.classList.add("balls-family-grid");
+
+        const familyCards = [
+          ["Ball Hunt at Home", "🏠", "Invite families to find and compare balls around their home."],
+          ["Share a Photo", "📸", "Invite families to share a favorite ball activity."],
+          ["Ask a Question", "💬", "Send home one investigation question for families to discuss."],
+          ["Read Together", "📚", "Visit your local library and explore books about sports, movement, and teamwork."]
+        ];
+
+        familyCards.forEach(([title, icon, description]) => {
+          const existingHeading = [...grid.querySelectorAll("h3")].find(h => headingText(h).toLowerCase() === title.toLowerCase());
+
+          if (existingHeading) {
+            const card = existingHeading.closest(".favorite-card, .interest-card, .study-card, .why-card, .card");
+            if (card && !card.querySelector(".favorite-icon, .interest-icon, .why-icon, .season-icon")) {
+              const iconElement = document.createElement("div");
+              iconElement.className = "favorite-icon";
+              iconElement.setAttribute("aria-hidden", "true");
+              iconElement.textContent = icon;
+              card.insertBefore(iconElement, card.firstChild);
+            }
+            return;
+          }
+
+          grid.insertAdjacentHTML("beforeend", `
+            <div class="favorite-card">
+              <div class="favorite-icon">${icon}</div>
+              <h3>${title}</h3>
+              <p>${description}</p>
+            </div>
+          `);
+        });
+      }
     }
 
-    /* Restore the full Balls-themed footer. */
+    /* --------------------------------------
+       Balls-themed footer.
+    -------------------------------------- */
     const footer = document.querySelector("body.balls-study-page footer");
     if (footer) {
       footer.innerHTML = `
