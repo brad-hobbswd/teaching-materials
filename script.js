@@ -156,4 +156,121 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* ======================================
+   Balls Study Page Enhancements
+  ====================================== */
+  if (document.body.classList.contains("balls-study-page")) {
+
+    /* Remove any study-specific search controls if an older cached HTML copy still contains them. */
+    document.querySelectorAll(".search-bar, .hero-search").forEach(el => el.remove());
+
+    /* Identify the Family Connection section so its three cards can be centered. */
+    document.querySelectorAll("section").forEach(section => {
+      const heading = section.querySelector("h2");
+      if (heading && heading.textContent.trim() === "Family Connection") {
+        section.classList.add("family-connection");
+      }
+    });
+
+    /* Ensure Suggested Materials contains the expected classroom container item. */
+    const materialsSection = [...document.querySelectorAll("section")].find(section => {
+      const heading = section.querySelector("h2");
+      return heading && heading.textContent.trim() === "Suggested Materials";
+    });
+
+    if (materialsSection) {
+      const grid = materialsSection.querySelector(".why-grid");
+      if (grid) {
+        const hasContainers = [...grid.querySelectorAll("h3")].some(h => h.textContent.trim().toLowerCase() === "containers");
+        if (!hasContainers) {
+          grid.insertAdjacentHTML("beforeend", `
+            <div class="why-card">
+              <div class="why-icon">🪣</div>
+              <h3>Containers</h3>
+              <p>Buckets, baskets, hoops, cones, and bins for sorting, carrying, and movement activities.</p>
+            </div>
+          `);
+        }
+      }
+    }
+
+    /* Make sure the sensory section includes both Water Balls and Texture Bins. */
+    const sensorySection = [...document.querySelectorAll("section")].find(section => {
+      const heading = section.querySelector("h2");
+      return heading && heading.textContent.trim() === "Sensory Ball Play";
+    });
+
+    if (sensorySection) {
+      const grid = sensorySection.querySelector(".season-grid");
+      if (grid) {
+        const titles = [...grid.querySelectorAll("h3")].map(h => h.textContent.trim().toLowerCase());
+        if (!titles.includes("water balls")) {
+          grid.insertAdjacentHTML("afterbegin", `
+            <div class="season-card">
+              🫧
+              <h3>Water Balls</h3>
+              <p>Explore balls in water tubs with cups, scoops, and containers.</p>
+            </div>
+          `);
+        }
+        if (!titles.includes("texture bins") && !titles.includes("texture bin")) {
+          grid.insertAdjacentHTML("beforeend", `
+            <div class="season-card">
+              🫘
+              <h3>Texture Bins</h3>
+              <p>Hide and find different balls in rice, oats, shredded paper, or other safe sensory materials.</p>
+            </div>
+          `);
+        }
+      }
+    }
+
+    /* Restore the full site-style footer while recoloring it for the Balls theme. */
+    const footer = document.querySelector("body.balls-study-page footer");
+    if (footer) {
+      footer.innerHTML = `
+        <div class="container footer-grid">
+          <div>
+            <h3>Little Explorers Learning Hub</h3>
+            <p>Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten educators create engaging learning experiences through affordable curriculum studies, lesson plans, printable resources, classroom activities, and professional teaching tools.</p>
+          </div>
+          <div>
+            <h4>Curriculum</h4>
+            <ul>
+              <li><a href="../../studies.html">All Studies</a></li>
+              <li><a href="../../ages/index.html">Age Groups</a></li>
+              <li><a href="../../activities.html">Activities</a></li>
+              <li><a href="../../library/index.html">Library</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Teacher Resources</h4>
+            <ul>
+              <li><a href="../../lesson-plans.html">Lesson Plans</a></li>
+              <li><a href="../../printables.html">Printables</a></li>
+              <li><a href="../../resources.html">Teacher Resources</a></li>
+              <li><a href="../../assessment-center.html">Assessment Center</a></li>
+              <li><a href="../../behavior-center.html">Behavior Center</a></li>
+              <li><a href="../../interest-areas.html">Interest Areas</a></li>
+              <li><a href="../../family-engagement.html">Family Engagement</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>About</h4>
+            <ul>
+              <li><a href="../../about.html">About Little Explorers</a></li>
+              <li><a href="../../contact.html">Contact</a></li>
+              <li><a href="../../privacy.html">Privacy Policy</a></li>
+              <li><a href="../../terms.html">Terms of Use</a></li>
+              <li><a href="../../copyright.html">Copyright</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Little Explorers Learning Hub. All Rights Reserved.</p>
+        </div>
+      `;
+    }
+  }
+
 });
