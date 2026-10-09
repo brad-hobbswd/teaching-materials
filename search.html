@@ -100,7 +100,7 @@ type="submit">
 
 <nav id="primary-navigation" class="main-nav" aria-label="Primary Navigation"><ul><li><a href="index.html">Home</a></li><li><a href="studies.html">Curriculum</a></li><li><a href="library/head-start/index.html">School Readiness</a></li><li><a href="behavior-center.html">Behavior &amp; Inclusion</a></li><li><a href="library/index.html" class="active" aria-current="page">Resource Library</a></li><li><a href="resources.html">Teacher &amp; Family Support</a></li></ul></nav>
 
-<button class="mobile-menu">
+<button class="mobile-menu" type="button" aria-label="Open Navigation" aria-controls="primary-navigation" aria-expanded="false">
 
 ☰
 
@@ -162,7 +162,7 @@ placeholder="Try searching for Trees, Water, Leaves, Math, Art..."
 autocomplete="off">
 
 <button
-id="searchButton">
+id="searchButton" type="button">
 
 Search
 
@@ -190,54 +190,36 @@ Search Categories
 
 <div class="filter-buttons">
 
-<button class="active">
+<button class="active" type="button" data-category="Everything">
 
 Everything
 
 </button>
 
-<button>
+<button type="button" data-category="Studies">Studies</button>
 
-Studies
+<button type="button" data-category="Activities">Activities</button>
 
-</button>
+<button type="button" data-category="Lesson Plans">Lesson Plans</button>
 
-<button>
+<button type="button" data-category="Printables">Printables</button>
 
-Activities
+<button type="button" data-category="Interest Areas">Interest Areas</button>
 
-</button>
+<button type="button" data-category="Books">Books</button>
 
-<button>
+<button type="button" data-category="Songs">Songs</button>
 
-Lesson Plans
+</div>
 
-</button>
-
-<button>
-
-Printables
-
-</button>
-
-<button>
-
-Interest Areas
-
-</button>
-
-<button>
-
-Books
-
-</button>
-
-<button>
-
-Songs
-
-</button>
-
+<div class="search-refinements" aria-label="Refine search results">
+<label for="ageFilter">Age group
+<select id="ageFilter"><option value="">All age groups</option><option>Early Head Start</option><option>Head Start</option><option>Preschool</option><option>Pre-K</option></select>
+</label>
+<label for="domainFilter">Learning focus
+<select id="domainFilter"><option value="">All learning focuses</option><option>Science</option><option>Cognition</option><option>Language and Literacy</option><option>Physical Development</option><option>Social and Emotional Development</option><option>Assessment</option><option>Family Engagement</option><option>Planning</option></select>
+</label>
+<button type="button" id="clearSearchFilters" class="clear-search-filters">Clear filters</button>
 </div>
 
 </div>
@@ -260,11 +242,7 @@ Search Results
 
 </h2>
 
-<p>
-
-Results will appear below.
-
-</p>
+<p id="searchSummary" aria-live="polite">Browse resources or enter a keyword to begin.</p>
 
 </div>
 
@@ -413,7 +391,7 @@ Weekly classroom planning resources.
 
 </a>
 
-<a href="interest-areas/art.html" class="favorite-card">
+<a href="library/interest-areas/index.html" class="favorite-card">
 
 <div class="favorite-icon">
 
@@ -1105,6 +1083,7 @@ Support
 </footer>
 
 <script src="search-index.js"></script>
+<script src="search.js"></script>
 
 <script src="script.js"></script>
 
