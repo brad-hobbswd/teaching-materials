@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "School Readiness Goals": "resources/school-readiness.html",
         "Classroom Implementation": "resources/classroom-implementation.html",
         "Observation & Documentation": "resources/observation-documentation.html",
-        "Teacher Planning": "resources/teacher-planning.html"
+        "Assessment & Progress Monitoring": "../assessment-center/index.html"
     };
 
     document.querySelectorAll(".resource-card").forEach(card => {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const imageMap = {
                 "Classroom Implementation": "images/classroom-implementation.svg",
                 "Observation & Documentation": "images/observation-documentation.svg",
-                "Teacher Planning": "images/teacher-planning.svg"
+                "Assessment & Progress Monitoring": "images/teacher-planning.svg"
             };
             if (imageMap[title]) {
                 const wrapper = card.querySelector(".resource-card-image");
