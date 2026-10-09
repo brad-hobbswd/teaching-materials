@@ -492,52 +492,6 @@
 
 <script src="script.js"></script>
 
-<script>
-    (() => {
-        const menuButton = document.querySelector(".mobile-menu");
-        const navigation = document.getElementById("primary-navigation");
-
-        if (!menuButton || !navigation) {
-            return;
-        }
-
-        const closeMenu = () => {
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation menu");
-            navigation.classList.remove("is-open");
-        };
-
-        menuButton.addEventListener("click", () => {
-            const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
-            const shouldOpen = !isExpanded;
-
-            menuButton.setAttribute("aria-expanded", String(shouldOpen));
-            menuButton.setAttribute(
-                "aria-label",
-                shouldOpen ? "Close navigation menu" : "Open navigation menu"
-            );
-
-            navigation.classList.toggle("is-open", shouldOpen);
-        });
-
-        navigation.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", closeMenu);
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                closeMenu();
-                menuButton.focus();
-            }
-        });
-
-        window.addEventListener("resize", () => {
-            if (window.matchMedia("(min-width: 769px)").matches) {
-                closeMenu();
-            }
-        });
-    })();
-</script>
 
 </body>
 </html>
