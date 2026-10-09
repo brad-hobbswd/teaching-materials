@@ -2497,3 +2497,17 @@ section{
     object-fit:cover;
   }
 }
+
+
+/* Taller full-width card image panels so more of each source image is visible. */
+.teacher-support-page .ts-card>img{
+  height:300px;
+  object-fit:cover;
+  object-position:center;
+}
+@media(max-width:1000px){
+  .teacher-support-page .ts-card>img{height:280px}
+}
+@media(max-width:700px){
+  .teacher-support-page .ts-card>img{height:300px}
+}
