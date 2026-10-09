@@ -132,11 +132,7 @@ Request a Custom Study
 
 <div class="hero-search">
 
-<form>
-
-<input
-type="search"
-placeholder="Search curriculum studies...">
+<form id="hero-study-search" role="search"><input id="heroStudySearch" type="search" placeholder="Search curriculum studies..." aria-label="Search curriculum studies">
 
 <button type="submit">
 
@@ -232,21 +228,14 @@ Study Categories
 
 <div class="category-chips">
 
-<a href="#" class="chip active">All Studies</a>
-
-<a href="#" class="chip">Nature</a>
-
-<a href="#" class="chip">STEM</a>
-
-<a href="#" class="chip">Literacy</a>
-
-<a href="#" class="chip">Sensory</a>
-
-<a href="#" class="chip">Art</a>
-
-<a href="#" class="chip">Community</a>
-
-<a href="#" class="chip">Health</a>
+<button type="button" class="chip active" data-study-category="all" aria-pressed="true">All Studies</button>
+<button type="button" class="chip" data-study-category="nature" aria-pressed="false">Nature</button>
+<button type="button" class="chip" data-study-category="stem" aria-pressed="false">STEM &amp; Engineering</button>
+<button type="button" class="chip" data-study-category="literacy" aria-pressed="false">Literacy</button>
+<button type="button" class="chip" data-study-category="sensory" aria-pressed="false">Sensory</button>
+<button type="button" class="chip" data-study-category="art" aria-pressed="false">Art</button>
+<button type="button" class="chip" data-study-category="community" aria-pressed="false">Community</button>
+<button type="button" class="chip" data-study-category="health" aria-pressed="false">Health &amp; Movement</button>
 
 </div>
 
@@ -603,32 +592,18 @@ Each curriculum study includes engaging lesson plans, printable resources, class
 
 <div class="library-search">
 
-<input
-type="search"
-placeholder="Search curriculum studies...">
+<input id="studySearch" type="search" placeholder="Search curriculum studies..." aria-label="Search curriculum studies">
 
 </div>
 
 <div class="library-options">
 
-<select>
-
-<option>All Categories</option>
-<option>Nature</option>
-<option>STEM</option>
-<option>Literacy</option>
-<option>Sensory</option>
-<option>Art</option>
-<option>Community</option>
+<select id="studyCategoryFilter" aria-label="Filter by category"><option value="all">All Categories</option>
+<option value="nature">Nature</option><option value="stem">STEM &amp; Engineering</option><option value="literacy">Literacy</option><option value="sensory">Sensory</option><option value="art">Art</option><option value="community">Community</option><option value="health">Health &amp; Movement</option>
 
 </select>
 
-<select>
-
-<option>Sort By</option>
-<option>Newest</option>
-<option>Alphabetical</option>
-<option>Most Popular</option>
+<select id="studySort" aria-label="Sort studies"><option value="featured">Sort: Featured</option><option value="alphabetical">Alphabetical</option>
 
 </select>
 
@@ -636,15 +611,7 @@ placeholder="Search curriculum studies...">
 
 </div>
 
-<div class="library-summary">
-
-<p>
-
-Showing our growing collection of curriculum studies for Early Head Start, Head Start, Preschool, and Pre Kindergarten.
-
-</p>
-
-</div>
+<div class="library-summary" aria-live="polite"><p id="studyResultsSummary">Explore investigations for Early Head Start, Head Start, Preschool, and Pre-K. Filter by topic or search for a child’s interest.</p></div>
 
 <div class="study-grid">
 
@@ -1456,69 +1423,7 @@ We're continually creating new curriculum studies and classroom resources to hel
 
 <div class="stats-grid">
 
-<div class="stat-card">
-
-<h3>
-
-20+
-
-</h3>
-
-<p>
-
-Curriculum Studies
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>
-
-1,000+
-
-</h3>
-
-<p>
-
-Hands On Activities
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>
-
-500+
-
-</h3>
-
-<p>
-
-Printable Resources
-
-</p>
-
-</div>
-
-<div class="stat-card">
-
-<h3>
-
-100+
-
-</h3>
-
-<p>
-
-Lesson Plans
-
-</p>
-
-</div>
+<div class="stat-card"><h3>Inquiry</h3><p>Start with children’s questions</p></div><div class="stat-card"><h3>Explore</h3><p>Learn through hands-on experiences</p></div><div class="stat-card"><h3>Observe</h3><p>Notice children’s thinking and growth</p></div><div class="stat-card"><h3>Reflect</h3><p>Use observations to plan next steps</p></div>
 
 </div>
 
@@ -1530,79 +1435,7 @@ Lesson Plans
      NEWSLETTER
 ========================================== -->
 
-<section class="newsletter">
-
-    <div class="container">
-
-        <div class="newsletter-box">
-
-            <div class="newsletter-content">
-
-                <span class="newsletter-tag">
-                    Join the Little Explorers Community
-                </span>
-
-                <h2>Never Miss a New Curriculum Study</h2>
-
-                <p>
-                    Receive updates whenever new curriculum studies, printable resources,
-                    lesson plans, classroom activities, and teaching ideas are added to
-                    Little Explorers Learning Hub.
-                </p>
-
-                <div class="newsletter-benefits">
-
-                    <div>🌳 <span>New Curriculum Studies</span></div>
-
-                    <div>📅 <span>Weekly Lesson Plans</span></div>
-
-                    <div>🖨️ <span>Printable Resources</span></div>
-
-                    <div>🎨 <span>Classroom Activities</span></div>
-
-                    <div>📚 <span>Teaching Tips</span></div>
-
-                    <div>⭐ <span>Exclusive Updates</span></div>
-
-                </div>
-
-            </div>
-
-            <div class="newsletter-card">
-
-                <h3>Join Free Today</h3>
-
-                <p>
-                    Join our growing community of early childhood educators and receive
-                    classroom inspiration delivered straight to your inbox.
-                </p>
-
-                <form class="newsletter-form">
-
-                    <input
-                        type="email"
-                        placeholder="Enter your email address"
-                        aria-label="Email Address"
-                    >
-
-                    <button class="btn btn-primary" type="submit">
-                        Join the Community
-                    </button>
-
-                </form>
-
-                <small>
-                    Always free. No spam. Unsubscribe anytime.
-                </small>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+<section class="newsletter curriculum-next-steps"><div class="container"><div class="newsletter-box"><div class="newsletter-content"><span class="newsletter-tag">Keep the learning connected</span><h2>From a Study to Your Classroom Plan</h2><p>Choose a study, adapt experiences to the children in your care, and use observations to decide what to offer next. Pair curriculum ideas with practical planning tools and developmentally appropriate guidance.</p></div><div class="newsletter-card"><h3>Continue Planning</h3><p>Move from an investigation to a practical weekly plan, or explore guidance that supports children’s learning and development.</p><div class="hero-actions"><a class="btn btn-primary" href="library/lesson-plans/index.html">Explore Lesson Plans</a><a class="btn btn-secondary" href="library/head-start/index.html">Explore School Readiness</a></div></div></div></div></section>
 </main>
 
 <!-- ==========================================
@@ -1715,6 +1548,34 @@ Support
 
 <script src="js/studies.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+ const grid=document.querySelector(".study-grid");if(!grid)return;
+ const cards=Array.from(grid.querySelectorAll(".study-card"));
+ const searchInputs=[document.getElementById("studySearch"),document.getElementById("heroStudySearch")].filter(Boolean);
+ const categorySelect=document.getElementById("studyCategoryFilter"),sortSelect=document.getElementById("studySort"),summary=document.getElementById("studyResultsSummary");
+ const chips=Array.from(document.querySelectorAll("[data-study-category]"));
+ function categoryFor(card){const tag=card.querySelector(".study-tag"),t=((tag&&tag.textContent)||"").toLowerCase(),cl=((tag&&tag.className)||"").toLowerCase(),name=((card.querySelector("h3")&&card.querySelector("h3").textContent)||"").toLowerCase(),v=t+" "+name;
+ if(/nature|garden|tree|water/.test(v)||/nature/.test(cl))return "nature";
+ if(/stem|engineering|construction|transportation/.test(v)||/stem|engineering/.test(cl))return "stem";
+ if(/literacy|signs|bread/.test(v)||/literacy/.test(cl))return "literacy";
+ if(/sensory|sand|tubes/.test(v)||/sensory/.test(cl))return "sensory";
+ if(/art|creative/.test(v)||/art/.test(cl))return "art";
+ if(/community|daily life|clothes|pets/.test(v)||/community/.test(cl))return "community";
+ if(/health|movement|exercise|balls/.test(v)||/health|movement/.test(cl))return "health";
+ return "other";}
+ function applyFilters(){const query=(searchInputs.find(i=>i.value.trim())?.value||"").trim().toLowerCase(),category=categorySelect?categorySelect.value:"all";
+ const sorted=cards.slice();if(sortSelect&&sortSelect.value==="alphabetical")sorted.sort((a,b)=>(a.querySelector("h3")?.textContent||"").localeCompare(b.querySelector("h3")?.textContent||""));
+ sorted.forEach(card=>{card.hidden=!!query&&!card.textContent.toLowerCase().includes(query)||category!=="all"&&categoryFor(card)!==category;grid.appendChild(card);});
+ const count=sorted.filter(card=>!card.hidden).length;if(summary)summary.textContent=count+(count===1?" study matches":" studies match")+(query?' for "'+query+'"':"")+". Select a study to explore its classroom investigation.";
+ chips.forEach(chip=>{const active=chip.dataset.studyCategory===category;chip.classList.toggle("active",active);chip.setAttribute("aria-pressed",String(active));});}
+ searchInputs.forEach(input=>input.addEventListener("input",()=>{searchInputs.forEach(other=>{if(other!==input)other.value=input.value;});applyFilters();}));
+ document.querySelector("#hero-study-search")?.addEventListener("submit",event=>{event.preventDefault();applyFilters();document.getElementById("study-library")?.scrollIntoView({behavior:"smooth"});});
+ categorySelect?.addEventListener("change",applyFilters);sortSelect?.addEventListener("change",applyFilters);
+ chips.forEach(chip=>chip.addEventListener("click",()=>{if(categorySelect)categorySelect.value=chip.dataset.studyCategory;applyFilters();document.getElementById("study-library")?.scrollIntoView({behavior:"smooth"});}));
+ applyFilters();
+});
+</script>
 </body>
 
 </html>
