@@ -2449,3 +2449,21 @@ section{
  .teacher-support-page .ts-search button{padding:10px 12px;font-size:.88rem}
 }
 @media(prefers-reduced-motion:reduce){.teacher-support-page *, .teacher-support-page *:before,.teacher-support-page *:after{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Keep the full card artwork visible without cropping. */
+.teacher-support-page .ts-card>img{
+  width:100%;
+  height:auto;
+  aspect-ratio: 16 / 9;
+  object-fit:contain;
+  object-position:center;
+  background:#f4f6f8;
+}
+@media(max-width:700px){
+  .teacher-support-page .ts-card>img{
+    height:auto;
+    aspect-ratio:16 / 9;
+    object-fit:contain;
+  }
+}
