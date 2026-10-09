@@ -74,11 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
     applyFilters();
     document.getElementById("study-library")?.scrollIntoView({behavior:"smooth",block:"start"});
   }));
-  [search,heroSearch].filter(Boolean).forEach(input => input.addEventListener("input", () => {
-    const other = input === search ? heroSearch : search;
-    if (other) other.value = input.value;
-    applyFilters();
-  }));
+  [search,heroSearch].filter(Boolean).forEach(input => {
+    input.addEventListener("input", () => {
+      const other = input === search ? heroSearch : search;
+      if (other) other.value = input.value;
+      applyFilters();
+    });
+    input.closest("form")?.addEventListener("submit", event => {
+      event.preventDefault();
+      const other = input === search ? heroSearch : search;
+      if (other) other.value = input.value;
+      applyFilters();
+      document.getElementById("study-library")?.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
   categorySelect?.addEventListener("change", () => { activeCategory = categorySelect.value; applyFilters(); });
   sortSelect?.addEventListener("change", applyFilters);
   applyFilters();
