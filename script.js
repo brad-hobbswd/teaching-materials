@@ -5,6 +5,79 @@
 document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* =========================================================
+     SHARED SITE NAVIGATION
+     One consistent header across the Learning Hub.
+  ========================================================= */
+  const siteRoot = location.pathname.includes("/teaching-materials/")
+    ? "/teaching-materials/"
+    : "/";
+  const sharedHeader = document.querySelector("header");
+  if (sharedHeader) {
+    sharedHeader.className = "site-header shared-site-header";
+    sharedHeader.innerHTML = `
+      <div class="shared-nav-container">
+        <a href="${siteRoot}index.html" class="shared-brand" aria-label="Little Explorers Learning Hub home">
+          <img src="${siteRoot}logo.png" alt="Little Explorers Learning Hub logo">
+          <span class="shared-brand-text"><strong>Little Explorers</strong><span>Learning Hub</span></span>
+        </a>
+        <nav class="shared-main-nav" id="primary-navigation" aria-label="Primary navigation">
+          <a href="${siteRoot}index.html" data-nav="home">Home</a>
+          <a href="${siteRoot}studies.html" data-nav="curriculum">Curriculum</a>
+          <a href="${siteRoot}library/head-start/index.html" data-nav="readiness">School Readiness</a>
+          <a href="${siteRoot}behavior-center.html" data-nav="behavior">Behavior &amp; Inclusion</a>
+          <a href="${siteRoot}library/index.html" data-nav="library">Resource Library</a>
+          <a href="${siteRoot}resources.html" data-nav="support">Teacher &amp; Family Support</a>
+        </nav>
+        <div class="shared-nav-actions">
+          <a href="${siteRoot}search.html" class="shared-search" aria-label="Search the website"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Search</span></a>
+          <button class="shared-mobile-menu" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">☰</span></button>
+        </div>
+      </div>`;
+    let navStyle = document.getElementById("shared-site-navigation-style");
+    if (!navStyle) {
+      navStyle = document.createElement("style");
+      navStyle.id = "shared-site-navigation-style";
+      navStyle.textContent = `
+        .shared-site-header{position:relative;z-index:1000;width:100%;background:#fff;border-bottom:1px solid #dce6ef;box-shadow:0 3px 14px rgba(27,52,78,.06);font-family:Inter,Arial,sans-serif}
+        .shared-nav-container{width:min(1280px,94%);min-height:84px;margin:0 auto;display:flex;align-items:center;gap:clamp(16px,2vw,32px)}
+        .shared-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;text-decoration:none;color:#29384a;min-width:245px}
+        .shared-brand img{display:block;width:64px;height:64px;object-fit:contain}
+        .shared-brand-text{display:flex;flex-direction:column;line-height:1.2;gap:5px}
+        .shared-brand-text strong{font-size:21px;font-weight:800;letter-spacing:-.3px}
+        .shared-brand-text>span{font-size:16px;font-weight:600;color:#3477b9}
+        .shared-main-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.7vw,25px);flex:1}
+        .shared-main-nav a{display:flex;align-items:center;min-height:44px;color:#2d3948;text-decoration:none;font-size:15px;font-weight:650;white-space:nowrap;border-bottom:3px solid transparent;padding:4px 0 1px;transition:color .18s,border-color .18s}
+        .shared-main-nav a:hover,.shared-main-nav a:focus-visible,.shared-main-nav a[aria-current="page"]{color:#3477b9;border-bottom-color:#3477b9}
+        .shared-nav-actions{display:flex;align-items:center;gap:12px}
+        .shared-search{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:38px;min-height:42px;color:#26374a;text-decoration:none;font-size:18px}
+        .shared-search span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+        .shared-mobile-menu{display:none;border:0;background:transparent;color:#26374a;font-size:26px;cursor:pointer;padding:8px}
+        @media(max-width:1100px){.shared-nav-container{gap:16px}.shared-brand{min-width:205px}.shared-brand img{width:54px;height:54px}.shared-brand-text strong{font-size:18px}.shared-brand-text>span{font-size:14px}.shared-main-nav{gap:12px}.shared-main-nav a{font-size:13px}}
+        @media(max-width:850px){.shared-nav-container{min-height:76px;flex-wrap:wrap;padding:8px 0;box-sizing:border-box}.shared-brand{min-width:0;flex:1}.shared-brand img{width:52px;height:52px}.shared-main-nav{display:none;order:3;flex:0 0 100%;width:100%;padding:8px 0 12px;align-items:stretch;flex-direction:column;gap:0}.shared-main-nav.is-open{display:flex}.shared-main-nav a{white-space:normal;padding:12px 8px;border-bottom:1px solid #e7edf2;min-height:unset;font-size:15px}.shared-main-nav a:last-child{border-bottom:0}.shared-mobile-menu{display:inline-flex;align-items:center;justify-content:center}.shared-nav-actions{margin-left:auto}}
+        @media(prefers-reduced-motion:reduce){.shared-main-nav a{transition:none}}
+      `;
+      document.head.appendChild(navStyle);
+    }
+    const path = location.pathname;
+    const activeKey = path === siteRoot || path.endsWith("/index.html") && path.split("/").filter(Boolean).length === 1 ? "home"
+      : /studies\.html|curriculum/.test(path) ? "curriculum"
+      : /head-start|school-readiness|readiness/.test(path) ? "readiness"
+      : /behavior-center|behavior|inclusion/.test(path) ? "behavior"
+      : /library|printable|lesson-plan|assessment-center|interest-areas|activities/.test(path) ? "library"
+      : /resources|family|teacher|contact|faq/.test(path) ? "support" : "";
+    const activeLink = sharedHeader.querySelector('[data-nav="' + activeKey + '"]');
+    if (activeLink) activeLink.setAttribute("aria-current", "page");
+    const menuButton = sharedHeader.querySelector(".shared-mobile-menu");
+    const nav = sharedHeader.querySelector(".shared-main-nav");
+    if (menuButton && nav) menuButton.addEventListener("click", () => {
+      const open = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!open));
+      menuButton.setAttribute("aria-label", open ? "Open navigation menu" : "Close navigation menu");
+      menuButton.querySelector("span").textContent = open ? "☰" : "✕";
+      nav.classList.toggle("is-open", !open);
+    });
+  }
   /* Accessible mobile navigation */
   const mobileButton = document.querySelector(".mobile-menu");
   const navigation = document.querySelector(".main-nav") || document.querySelector("nav");
