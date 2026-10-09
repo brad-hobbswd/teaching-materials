@@ -1,1606 +1,1642 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Resource Library | Little Explorers Learning Hub</title>
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Explore the Little Explorers Learning Hub Resource Library, with curriculum resources, lesson plans, school readiness, STEM activities, literacy supports, assessments, behavior guidance, family engagement, and printable materials for early childhood educators."
+    >
 
-<title>
+    <meta name="theme-color" content="#173B57">
 
-Little Explorers Library | Early Childhood Teacher Resource Library
+    <link rel="icon" href="../logo.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/learning-hub-polish.css">
 
-</title>
+    <style>
+        :root {
+            --rl-navy: #173B57;
+            --rl-navy-dark: #102B40;
+            --rl-green: #397A5B;
+            --rl-green-light: #E8F1E9;
+            --rl-gold: #F0B44D;
+            --rl-cream: #F2EBDD;
+            --rl-white: #FFFFFF;
+            --rl-text: #344451;
+            --rl-muted: #687783;
+            --rl-border: #DDE5E8;
+            --rl-shadow: 0 12px 32px rgba(23, 59, 87, 0.09);
+            --rl-radius: 20px;
+        }
 
-<meta
-name="description"
-content="Browse thousands of free curriculum studies, lesson plans, printable classroom resources, assessments, behavior documentation tools, and professional development resources for Early Head Start, Head Start, Preschool, and Pre Kindergarten teachers.">
+        * {
+            box-sizing: border-box;
+        }
 
-<meta
-name="author"
-content="Bradley Hobbs">
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
 
-<meta
-name="keywords"
-content="Early Childhood Library, Preschool Resources, Head Start, Creative Curriculum, Teaching Strategies, Lesson Plans, Printables, Teacher Resources">
+        body {
+            margin: 0;
+            background: #FAFBF9;
+            color: var(--rl-text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.65;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+        body,
+        input,
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        a {
+            color: inherit;
+        }
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@700;800&display=swap"
-rel="stylesheet">
+        img {
+            max-width: 100%;
+        }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        .rl-container {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
 
-<link rel="stylesheet" href="https://brad-hobbswd.github.io/teaching-materials/styles/library.css">
+        .rl-skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            z-index: 9999;
+            padding: 12px 18px;
+            background: var(--rl-white);
+            color: var(--rl-navy);
+            border-radius: 8px;
+        }
 
-<link
-rel="icon"
-href="../logo.png"
-type="image/png">
+        .rl-skip-link:focus {
+            top: 12px;
+        }
 
+        /* HEADER */
 
-<link rel="stylesheet" href="../styles/learning-hub-polish.css">
+        .rl-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--rl-border);
+            box-shadow: 0 4px 18px rgba(23, 59, 87, 0.04);
+            backdrop-filter: blur(12px);
+        }
+
+        .rl-header-inner {
+            min-height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .rl-brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .rl-brand img {
+            display: block;
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .rl-brand-copy {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .rl-brand-copy strong {
+            color: var(--rl-navy);
+            font-size: 1.05rem;
+            letter-spacing: -0.3px;
+        }
+
+        .rl-brand-copy span {
+            margin-top: 5px;
+            color: var(--rl-green);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        .rl-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .rl-nav a {
+            color: var(--rl-navy);
+            font-size: 0.91rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .rl-nav a:hover,
+        .rl-nav a:focus-visible {
+            color: var(--rl-green);
+        }
+
+        .rl-nav .rl-nav-cta {
+            padding: 11px 17px;
+            background: var(--rl-green);
+            color: var(--rl-white);
+            border-radius: 999px;
+        }
+
+        .rl-nav .rl-nav-cta:hover,
+        .rl-nav .rl-nav-cta:focus-visible {
+            background: var(--rl-navy);
+            color: var(--rl-white);
+        }
+
+        .rl-menu-toggle {
+            display: none;
+            padding: 10px 13px;
+            background: var(--rl-navy);
+            color: var(--rl-white);
+            border: 0;
+            border-radius: 9px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .rl-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 88px 0 82px;
+            background:
+                radial-gradient(
+                    circle at 88% 16%,
+                    rgba(240, 180, 77, 0.22),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 5% 100%,
+                    rgba(57, 122, 91, 0.22),
+                    transparent 35%
+                ),
+                linear-gradient(135deg, #173B57 0%, #204F68 58%, #397A5B 100%);
+            color: var(--rl-white);
+        }
+
+        .rl-hero::after {
+            content: "";
+            position: absolute;
+            width: 310px;
+            height: 310px;
+            right: -105px;
+            bottom: -180px;
+            border: 42px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .rl-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .rl-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            color: #FFE0A0;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .rl-eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 3px;
+            flex-shrink: 0;
+            border-radius: 5px;
+            background: var(--rl-gold);
+        }
+
+        .rl-hero h1 {
+            max-width: 800px;
+            margin: 0 0 22px;
+            color: var(--rl-white);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.08;
+            letter-spacing: -1.8px;
+        }
+
+        .rl-hero h1 span {
+            color: #FFE0A0;
+        }
+
+        .rl-hero p {
+            max-width: 720px;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.12rem;
+            line-height: 1.85;
+        }
+
+        .rl-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .rl-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 21px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            font-size: 0.94rem;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .rl-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .rl-button-primary {
+            background: var(--rl-gold);
+            color: var(--rl-navy-dark);
+        }
+
+        .rl-button-primary:hover {
+            background: #FFD078;
+        }
+
+        .rl-button-secondary {
+            border-color: rgba(255, 255, 255, 0.65);
+            color: var(--rl-white);
+        }
+
+        .rl-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* INTRODUCTION */
+
+        .rl-intro {
+            padding: 66px 0 28px;
+        }
+
+        .rl-section-heading {
+            max-width: 760px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .rl-section-label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--rl-green);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        .rl-section-heading h2 {
+            margin: 0 0 15px;
+            color: var(--rl-navy);
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            letter-spacing: -0.8px;
+        }
+
+        .rl-section-heading p {
+            margin: 0;
+            color: var(--rl-muted);
+            font-size: 1.03rem;
+        }
+
+        /* SEARCH */
+
+        .rl-search-panel {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            background: var(--rl-white);
+            border: 1px solid var(--rl-border);
+            border-radius: var(--rl-radius);
+            box-shadow: var(--rl-shadow);
+        }
+
+        .rl-search-panel label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--rl-navy);
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .rl-search-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .rl-search-row input {
+            width: 100%;
+            min-width: 0;
+            min-height: 50px;
+            padding: 13px 16px;
+            background: #FAFBFC;
+            color: var(--rl-text);
+            border: 1px solid #CBD6DC;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .rl-search-row input:focus {
+            outline: 3px solid rgba(57, 122, 91, 0.2);
+            border-color: var(--rl-green);
+        }
+
+        .rl-search-row button {
+            min-height: 50px;
+            padding: 12px 20px;
+            background: var(--rl-green);
+            color: var(--rl-white);
+            border: 0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .rl-search-row button:hover {
+            background: var(--rl-navy);
+        }
+
+        .rl-search-hint {
+            margin: 10px 0 0;
+            color: var(--rl-muted);
+            font-size: 0.85rem;
+        }
+
+        .rl-filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px;
+            margin: 25px 0 35px;
+        }
+
+        .rl-filter {
+            padding: 9px 15px;
+            background: var(--rl-white);
+            color: var(--rl-navy);
+            border: 1px solid var(--rl-border);
+            border-radius: 999px;
+            font-size: 0.86rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .rl-filter:hover,
+        .rl-filter.active {
+            background: var(--rl-navy);
+            color: var(--rl-white);
+            border-color: var(--rl-navy);
+        }
+
+        /* RESOURCE CARDS */
+
+        .rl-library-section {
+            padding: 22px 0 78px;
+        }
+
+        .rl-resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .rl-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 25px;
+            background: var(--rl-white);
+            border: 1px solid var(--rl-border);
+            border-radius: var(--rl-radius);
+            box-shadow: 0 6px 20px rgba(23, 59, 87, 0.04);
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .rl-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(57, 122, 91, 0.45);
+            box-shadow: var(--rl-shadow);
+        }
+
+        .rl-card[hidden] {
+            display: none !important;
+        }
+
+        .rl-card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            margin-bottom: 19px;
+            background: var(--rl-green-light);
+            border-radius: 16px;
+            font-size: 1.75rem;
+        }
+
+        .rl-card:nth-child(3n + 2) .rl-card-icon {
+            background: #FFF2D8;
+        }
+
+        .rl-card:nth-child(3n) .rl-card-icon {
+            background: #E7EFF5;
+        }
+
+        .rl-card-category {
+            margin-bottom: 7px;
+            color: var(--rl-green);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        .rl-card h3 {
+            margin: 0 0 11px;
+            color: var(--rl-navy);
+            font-size: 1.25rem;
+            line-height: 1.3;
+        }
+
+        .rl-card p {
+            flex-grow: 1;
+            margin: 0 0 20px;
+            color: var(--rl-muted);
+            font-size: 0.94rem;
+            line-height: 1.75;
+        }
+
+        .rl-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            align-self: flex-start;
+            color: var(--rl-green);
+            font-size: 0.93rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .rl-card-link span {
+            transition: transform 0.2s ease;
+        }
+
+        .rl-card-link:hover {
+            color: var(--rl-navy);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .rl-card-link:hover span {
+            transform: translateX(4px);
+        }
+
+        .rl-no-results {
+            display: none;
+            margin: 30px 0;
+            padding: 30px;
+            background: var(--rl-white);
+            border: 1px dashed var(--rl-border);
+            border-radius: var(--rl-radius);
+            text-align: center;
+        }
+
+        .rl-no-results.visible {
+            display: block;
+        }
+
+        .rl-no-results h3 {
+            margin-top: 0;
+            color: var(--rl-navy);
+        }
+
+        /* FEATURED LINKS */
+
+        .rl-featured {
+            padding: 75px 0;
+            background: var(--rl-cream);
+        }
+
+        .rl-featured-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .rl-featured-copy .rl-section-label {
+            text-align: left;
+        }
+
+        .rl-featured-copy h2 {
+            margin: 0 0 17px;
+            color: var(--rl-navy);
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            line-height: 1.2;
+        }
+
+        .rl-featured-copy p {
+            margin: 0 0 24px;
+            color: var(--rl-muted);
+        }
+
+        .rl-featured-copy .rl-button {
+            background: var(--rl-green);
+            color: var(--rl-white);
+        }
+
+        .rl-featured-copy .rl-button:hover {
+            background: var(--rl-navy);
+        }
+
+        .rl-study-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .rl-study-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            min-height: 86px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(23, 59, 87, 0.1);
+            border-radius: 14px;
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .rl-study-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(23, 59, 87, 0.08);
+        }
+
+        .rl-study-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            background: var(--rl-green-light);
+            border-radius: 12px;
+            font-size: 1.4rem;
+        }
+
+        .rl-study-link strong {
+            display: block;
+            color: var(--rl-navy);
+            font-size: 0.95rem;
+        }
+
+        .rl-study-link small {
+            display: block;
+            margin-top: 3px;
+            color: var(--rl-muted);
+            font-size: 0.79rem;
+        }
+
+        /* QUICK ACCESS */
+
+        .rl-quick-access {
+            padding: 72px 0;
+            background: var(--rl-white);
+        }
+
+        .rl-quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .rl-quick-card {
+            padding: 24px;
+            border-left: 4px solid var(--rl-gold);
+            background: #FAFBF9;
+            border-radius: 0 14px 14px 0;
+        }
+
+        .rl-quick-card h3 {
+            margin: 0 0 9px;
+            color: var(--rl-navy);
+            font-size: 1.1rem;
+        }
+
+        .rl-quick-card p {
+            margin: 0 0 14px;
+            color: var(--rl-muted);
+            font-size: 0.91rem;
+        }
+
+        .rl-quick-card a {
+            color: var(--rl-green);
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .rl-quick-card a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* CALL TO ACTION */
+
+        .rl-cta {
+            padding: 68px 0;
+            background: var(--rl-navy);
+            color: var(--rl-white);
+            text-align: center;
+        }
+
+        .rl-cta h2 {
+            margin: 0 0 15px;
+            color: var(--rl-white);
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+            line-height: 1.2;
+        }
+
+        .rl-cta p {
+            max-width: 720px;
+            margin: 0 auto 25px;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .rl-cta .rl-button {
+            background: var(--rl-gold);
+            color: var(--rl-navy-dark);
+        }
+
+        /* FOOTER */
+
+        .rl-footer {
+            padding: 36px 0 22px;
+            background: var(--rl-navy-dark);
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .rl-footer-main {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 30px;
+            padding-bottom: 25px;
+        }
+
+        .rl-footer-brand {
+            max-width: 440px;
+        }
+
+        .rl-footer-brand strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--rl-white);
+            font-size: 1.12rem;
+        }
+
+        .rl-footer-brand p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .rl-footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        .rl-footer-links a {
+            color: var(--rl-white);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .rl-footer-links a:hover {
+            color: var(--rl-gold);
+            text-decoration: underline;
+        }
+
+        .rl-footer-bottom {
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.82rem;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 980px) {
+            .rl-nav {
+                gap: 12px;
+            }
+
+            .rl-nav a {
+                font-size: 0.83rem;
+            }
+
+            .rl-resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .rl-featured-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .rl-container {
+                width: min(100% - 30px, 600px);
+            }
+
+            .rl-header-inner {
+                min-height: 75px;
+                gap: 12px;
+            }
+
+            .rl-brand img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .rl-brand-copy strong {
+                font-size: 0.94rem;
+            }
+
+            .rl-brand-copy span {
+                font-size: 0.64rem;
+                letter-spacing: 0.7px;
+            }
+
+            .rl-menu-toggle {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                flex-shrink: 0;
+            }
+
+            .rl-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: none;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 20px 18px;
+                background: var(--rl-white);
+                border-bottom: 1px solid var(--rl-border);
+                box-shadow: 0 12px 18px rgba(23, 59, 87, 0.08);
+            }
+
+            .rl-nav.is-open {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .rl-nav a {
+                padding: 13px 8px;
+                border-bottom: 1px solid #EDF0F2;
+                font-size: 0.95rem;
+            }
+
+            .rl-nav .rl-nav-cta {
+                margin-top: 10px;
+                padding: 12px 16px;
+                border-bottom: 0;
+                text-align: center;
+            }
+
+            .rl-hero {
+                padding: 65px 0 62px;
+            }
+
+            .rl-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .rl-hero p {
+                font-size: 1rem;
+            }
+
+            .rl-intro {
+                padding-top: 48px;
+            }
+
+            .rl-search-panel {
+                padding: 18px;
+            }
+
+            .rl-search-row {
+                flex-direction: column;
+            }
+
+            .rl-search-row button {
+                width: 100%;
+            }
+
+            .rl-resource-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .rl-card {
+                padding: 22px;
+            }
+
+            .rl-featured,
+            .rl-quick-access {
+                padding: 52px 0;
+            }
+
+            .rl-study-grid,
+            .rl-quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rl-footer-main {
+                flex-direction: column;
+                gap: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="resource-library-page">
 
-<!-- ==========================================
-     SITE HEADER
-========================================== -->
-<header class="site-header">
+    <a class="rl-skip-link" href="#main-content">
+        Skip to main content
+    </a>
 
-    <div class="container nav-container">
+    <!-- HEADER -->
+    <header class="rl-header">
+        <div class="rl-container rl-header-inner">
 
-        <a href="../index.html" class="logo">
+            <a class="rl-brand" href="../index.html" aria-label="Little Explorers Learning Hub home">
+                <img
+                    src="../logo.png"
+                    alt="Little Explorers Learning Hub logo"
+                >
 
-            <img
-                src="../logo.png"
-                alt="Little Explorers Learning Hub Logo">
-
-            <div class="logo-text">
-                <h1>Little Explorers</h1>
-                <span>Learning Hub</span>
-            </div>
-
-        </a>
-
-        <nav id="primary-navigation" class="main-nav" aria-label="Primary Navigation"><ul><li><a href="../index.html">Home</a></li><li><a href="../studies.html">Curriculum</a></li><li><a href="../library/head-start/index.html">School Readiness</a></li><li><a href="../behavior-center.html">Behavior &amp; Inclusion</a></li><li><a href="../library/index.html" class="active" aria-current="page">Resource Library</a></li><li><a href="../resources.html">Teacher &amp; Family Support</a></li></ul></nav>
-
-        <div class="header-actions">
-
-            <a
-                href="../search.html"
-                class="search-toggle"
-                aria-label="Search">
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
+                <span class="rl-brand-copy">
+                    <strong>Little Explorers</strong>
+                    <span>Learning Hub</span>
+                </span>
             </a>
 
             <button
-                class="mobile-menu"
+                class="rl-menu-toggle"
+                id="rl-menu-toggle"
                 type="button"
-                aria-label="Open Navigation"
-                aria-controls="primary-navigation"
-                aria-expanded="false">
-
-                <i class="fa-solid fa-bars"></i>
-
+                aria-expanded="false"
+                aria-controls="rl-navigation"
+            >
+                <span aria-hidden="true">☰</span>
+                Menu
             </button>
 
+            <nav class="rl-nav" id="rl-navigation" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="../curriculum.html">Curriculum</a>
+                <a href="../school-readiness.html">School Readiness</a>
+                <a href="../behavior-center.html">Behavior &amp; Inclusion</a>
+                <a href="../resources.html">Resources</a>
+                <a class="rl-nav-cta" href="../search.html">Search the Hub</a>
+            </nav>
+
         </div>
+    </header>
 
-    </div>
+    <main id="main-content">
 
-</header>
-     
-<!-- ==========================================
-     LIBRARY HERO
-========================================== -->
+        <!-- HERO -->
+        <section class="rl-hero">
+            <div class="rl-container">
+                <div class="rl-hero-inner">
 
-<section class="library-hero">
+                    <div class="rl-eyebrow">
+                        Your Early Childhood Resource Center
+                    </div>
 
-    <div class="container">
+                    <h1>
+                        The Resource Library
+                        <span>for Little Learners.</span>
+                    </h1>
 
-        <nav class="breadcrumb">
+                    <p>
+                        Find practical teaching tools, classroom activities,
+                        curriculum support, assessment resources, printable
+                        materials, and strategies for helping every child learn,
+                        grow, and thrive. Everything is organized to help
+                        educators spend less time searching and more time
+                        supporting children.
+                    </p>
 
-            <a href="../index.html">Home</a>
+                    <div class="rl-hero-actions">
+                        <a class="rl-button rl-button-primary" href="#browse-library">
+                            Browse the Library
+                        </a>
 
-            <span>/</span>
+                        <a class="rl-button rl-button-secondary" href="#featured-studies">
+                            Explore Learning Studies
+                        </a>
+                    </div>
 
-            <span>Library</span>
+                </div>
+            </div>
+        </section>
 
-        </nav>
+        <!-- INTRODUCTION AND SEARCH -->
+        <section class="rl-intro" id="browse-library">
+            <div class="rl-container">
 
-        <div class="hero-grid">
+                <div class="rl-section-heading">
+                    <span class="rl-section-label">Explore and Discover</span>
 
-            <!-- LEFT SIDE -->
+                    <h2>What Do You Need for Your Classroom?</h2>
 
-            <div class="library-hero-content">
+                    <p>
+                        Start with a resource category below, or search by
+                        topic, teaching need, or classroom support. Use the
+                        filters to narrow the collection.
+                    </p>
+                </div>
 
-                <span class="hero-badge">
+                <div class="rl-search-panel">
+                    <label for="rl-library-search">
+                        Search the Resource Library
+                    </label>
 
-                    FREE DIGITAL RESOURCE LIBRARY
+                    <div class="rl-search-row">
+                        <input
+                            type="search"
+                            id="rl-library-search"
+                            placeholder="Try literacy, assessment, STEM, behavior..."
+                            autocomplete="off"
+                            aria-describedby="rl-search-hint"
+                        >
 
-                </span>
+                        <button type="button" id="rl-search-button">
+                            Search
+                        </button>
+                    </div>
 
-                <h1>
+                    <p class="rl-search-hint" id="rl-search-hint">
+                        Search the category cards on this page. For a broader
+                        site search, use the Search the Hub link in the menu.
+                    </p>
+                </div>
 
-                    Discover Thousands of Resources for Early Childhood Educators
-
-                </h1>
-
-                <p class="hero-description">
-
-                    Explore curriculum studies, complete lesson plans, classroom printables, assessments, behavior documentation, Head Start resources, family engagement materials, professional development, and educator tools created to support every stage of teaching.
-
-                </p>
-
-                <form class="library-search" action="../search.html" method="get" role="search" aria-label="Search the resource library">
-
-                    <label class="visually-hidden" for="library-search-input">Search the resource library</label>
-
-                    <input
-                        id="library-search-input"
-                        name="q"
-                        type="search"
-                        placeholder="Search curriculum, lesson plans, printables, assessments and more..."
-                        autocomplete="off">
-
-                    <button type="submit">
-
-                        Search Library
-
+                <div class="rl-filter-row" aria-label="Filter resource categories">
+                    <button class="rl-filter active" type="button" data-filter="all" aria-pressed="true">
+                        All Resources
                     </button>
 
-                </form>
-
-                <div class="popular-searches">
-
-                    <span>Popular Searches</span>
-
-                    <a href="../studies/trees/">🌳 Trees</a>
-
-                    <a href="../studies/insects/">🐞 Insects</a>
-
-                    <a href="assessment-center/index.html">📋 Assessments</a>
-
-                    <a href="behavior-center/index.html">❤️ Behavior</a>
-
-                    <a href="printable-library/index.html">🖨 Printables</a>
-
-                    <a href="../lesson-plans.html">📅 Lesson Plans</a>
-
-                    <a href="head-start/index.html">🌱 Head Start</a>
-
-                </div>
-
-                <div class="hero-stats">
-
-                    <div>
-
-                        <strong>5,000+</strong>
-
-                        <span>Resources</span>
-
-                    </div>
-
-                    <div>
-
-                        <strong>100+</strong>
-
-                        <span>Studies</span>
-
-                    </div>
-
-                    <div>
-
-                        <strong>1,000+</strong>
-
-                        <span>Lesson Plans</span>
-
-                    </div>
-
-                    <div>
-
-                        <strong>Always</strong>
-
-                        <span>Free</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT SIDE -->
-
-            <div class="hero-image">
-
-                <img
-                    src="../libraryhero.png"
-                    alt="Early childhood teacher organizing curriculum studies, lesson plans, printables, assessments, and classroom resources">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     FEATURED COLLECTIONS
-========================================== -->
-
-<section class="featured-collections">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                FEATURED COLLECTIONS
-
-            </span>
-
-            <h2>
-
-                Start with Our Most Popular Teaching Collections
-
-            </h2>
-
-            <p>
-
-                Carefully curated resource collections combining curriculum studies, lesson plans, classroom printables, books, songs, STEM investigations, family engagement ideas, and teaching tools around the topics educators use most throughout the year.
-
-            </p>
-
-        </div>
-
-        <div class="collection-grid">
-
-            <article class="collection-card">
-
-                <div class="collection-image">
-
-                    <img
-                        src="../backtoschool.png"
-                        alt="Back to School Collection">
-
-                </div>
-
-                <div class="collection-content">
-
-                    <span class="collection-type">
-
-                        Featured Collection
-
-                    </span>
-
-                    <h3>
-
-                        Back to School
-
-                    </h3>
-
-                    <p>
-
-                        Everything you need to launch a successful school year including classroom setup, labels, schedules, newsletters, learning centers, classroom expectations, and organization resources.
-
-                    </p>
-
-                    <a
-                        href="collections/back-to-school.html"
-                        class="collection-button">
-
-                        Explore Collection →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="collection-card">
-
-                <div class="collection-image">
-
-                    <img
-                        src="../fallLearning.png"
-                        alt="Fall Collection">
-
-                </div>
-
-                <div class="collection-content">
-
-                    <span class="collection-type">
-
-                        Seasonal Collection
-
-                    </span>
-
-                    <h3>
-
-                        Fall Learning
-
-                    </h3>
-
-                    <p>
-
-                        Autumn investigations, literacy experiences, STEM activities, sensory exploration, printable classroom resources, and seasonal learning ideas.
-
-                    </p>
-
-                    <a
-                        href="collections/fall.html"
-                        class="collection-button">
-
-                        Explore Collection →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="collection-card">
-
-                <div class="collection-image">
-
-                    <img
-                        src="../communityhelpers.png"
-                        alt="Community Helpers">
-
-                </div>
-
-                <div class="collection-content">
-
-                    <span class="collection-type">
-
-                        Curriculum Collection
-
-                    </span>
-
-                    <h3>
-
-                        Community Helpers
-
-                    </h3>
-
-                    <p>
-
-                        Dramatic play, STEM, literacy, math, social studies, family engagement, and classroom activities centered around community workers.
-
-                    </p>
-
-                    <a
-                        href="collections/community-helpers.html"
-                        class="collection-button">
-
-                        Explore Collection →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="collection-card">
-
-                <div class="collection-image">
-
-                    <img
-                        src="../youngScientists.png"
-                        alt="Young Scientists">
-
-                </div>
-
-                <div class="collection-content">
-
-                    <span class="collection-type">
-
-                        STEM Collection
-
-                    </span>
-
-                    <h3>
-
-                        Young Scientists
-
-                    </h3>
-
-                    <p>
-
-                        Encourage curiosity through engineering challenges, science investigations, coding, inquiry learning, and hands on STEM experiences.
-
-                    </p>
-
-                    <a
-                        href="collections/stem.html"
-                        class="collection-button">
-
-                        Explore Collection →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- ==========================================
-     EXPLORE THE LIBRARY
-========================================== -->
-
-<section class="library-categories">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                EXPLORE THE LIBRARY
-
-            </span>
-
-            <h2>
-
-                Find Exactly What You Need
-
-            </h2>
-
-            <p>
-
-                Every resource is organized into carefully designed collections so you can quickly locate curriculum studies, lesson plans, classroom printables, assessment tools, behavior supports, and professional resources.
-
-            </p>
-
-        </div>
-
-        <div class="category-grid">
-
-            <a href="curriculum/index.html" class="category-card">
-
-                <div class="category-icon">📚</div>
-
-                <h3>Curriculum</h3>
-
-                <p>Studies, investigations, books, songs, and learning experiences.</p>
-
-            </a>
-
-            <a href="lesson-plans/index.html" class="category-card">
-
-                <div class="category-icon">📅</div>
-
-                <h3>Lesson Plans</h3>
-
-                <p>Daily, weekly, monthly, and theme based planning resources.</p>
-
-            </a>
-
-            <a href="printable-library/index.html" class="category-card">
-
-                <div class="category-icon">🖨️</div>
-
-                <h3>Printables</h3>
-
-                <p>Labels, classroom décor, calendars, certificates, posters, and forms.</p>
-
-            </a>
-
-            <a href="assessment-center/index.html" class="category-card">
-
-                <div class="category-icon">📋</div>
-
-                <h3>Assessments</h3>
-
-                <p>Documentation, screenings, observations, and developmental tools.</p>
-
-            </a>
-
-            <a href="behavior-center/index.html" class="category-card">
-
-                <div class="category-icon">❤️</div>
-
-                <h3>Behavior</h3>
-
-                <p>Behavior documentation, guidance strategies, and social emotional supports.</p>
-
-            </a>
-
-            <a href="teacher-resources/index.html" class="category-card">
-
-                <div class="category-icon">🏫</div>
-
-                <h3>Teacher Resources</h3>
-
-                <p>Planning tools, organization, classroom management, and leadership.</p>
-
-            </a>
-
-            <a href="family-engagement/index.html" class="category-card">
-
-                <div class="category-icon">👨‍👩‍👧</div>
-
-                <h3>Family Engagement</h3>
-
-                <p>Newsletters, conferences, home learning, and family partnerships.</p>
-
-            </a>
-
-            <a href="head-start/index.html" class="category-card">
-
-                <div class="category-icon">🌱</div>
-
-                <h3>Head Start</h3>
-
-                <p>ELOF, Program Performance Standards, and school readiness resources.</p>
-
-            </a>
-
-            <a href="professional-development/index.html" class="category-card">
-
-                <div class="category-icon">🎓</div>
-
-                <h3>Professional Development</h3>
-
-                <p>CDA support, coaching, leadership, and educator growth.</p>
-
-            </a>
-
-            <a href="books/index.html" class="category-card">
-
-                <div class="category-icon">📖</div>
-
-                <h3>Literacy</h3>
-
-                <p>Children's literature, storytelling, vocabulary, and language development.</p>
-
-            </a>
-
-            <a href="science/index.html" class="category-card">
-
-                <div class="category-icon">🔬</div>
-
-                <h3>STEM</h3>
-
-                <p>Science, engineering, coding, experiments, and inquiry learning.</p>
-
-            </a>
-
-            <a href="interest-areas/index.html" class="category-card">
-
-                <div class="category-icon">🧩</div>
-
-                <h3>Learning Centers</h3>
-
-                <p>Blocks, art, science, writing, dramatic play, sensory, music, and more.</p>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-     <!-- ==========================================
-     TRENDING RESOURCES
-========================================== -->
-
-<section class="trending-resources">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                TRENDING NOW
-
-            </span>
-
-            <h2>
-
-                Resources Educators Love
-
-            </h2>
-
-            <p>
-
-                These are the classroom resources teachers visit most throughout the year. From printable classroom materials to lesson planning and assessment tools, these favorites continue to support educators every day.
-
-            </p>
-
-        </div>
-
-        <div class="trending-grid">
-
-            <article class="resource-card">
-
-                <span class="resource-badge popular">
-
-                    Most Downloaded
-
-                </span>
-
-                <div class="resource-icon">
-
-                    🏷️
-
-                </div>
-
-                <h3>
-
-                    Editable Classroom Labels
-
-                </h3>
-
-                <p>
-
-                    Printable labels for shelves, centers, cubbies, storage bins, and classroom organization.
-
-                </p>
-
-                <a href="printable-library/classroom-labels.html">
-
-                    View Resource →
-
-                </a>
-
-            </article>
-
-            <article class="resource-card">
-
-                <span class="resource-badge popular">
-
-                    Teacher Favorite
-
-                </span>
-
-                <div class="resource-icon">
-
-                    📝
-
-                </div>
-
-                <h3>
-
-                    Observation Forms
-
-                </h3>
-
-                <p>
-
-                    Anecdotal notes, observation forms, documentation templates, and authentic assessment resources.
-
-                </p>
-
-                <a href="assessment-center/observation-forms.html">
-
-                    View Resource →
-
-                </a>
-
-            </article>
-
-            <article class="resource-card">
-
-                <span class="resource-badge popular">
-
-                    Popular
-
-                </span>
-
-                <div class="resource-icon">
-
-                    ❤️
-
-                </div>
-
-                <h3>
-
-                    Behavior Documentation
-
-                </h3>
-
-                <p>
-
-                    ABC charts, behavior logs, positive guidance strategies, and classroom documentation.
-
-                </p>
-
-                <a href="behavior-center/behavior-logs.html">
-
-                    View Resource →
-
-                </a>
-
-            </article>
-
-            <article class="resource-card">
-
-                <span class="resource-badge popular">
-
-                    Top Rated
-
-                </span>
-
-                <div class="resource-icon">
-
-                    📅
-
-                </div>
-
-                <h3>
-
-                    Lesson Plan Templates
-
-                </h3>
-
-                <p>
-
-                    Editable lesson planning templates for infants, toddlers, preschool, and Pre Kindergarten classrooms.
-
-                </p>
-
-                <a href="lesson-plans/weekly-template.html">
-
-                    View Resource →
-
-                </a>
-
-            </article>
-
-            <article class="resource-card">
-
-                <span class="resource-badge popular">
-
-                    Classroom Essential
-
-                </span>
-
-                <div class="resource-icon">
-
-                    📆
-
-                </div>
-
-                <h3>
-
-                    Calendar Resource Kit
-
-                </h3>
-
-                <p>
-
-                    Months, days, numbers, weather cards, seasons, holidays, and classroom calendar materials.
-
-                </p>
-
-                <a href="printable-library/calendar-kit.html">
-
-                    View Resource →
-
-                </a>
-
-            </article>
-
-            <article class="resource-card">
-
-                <span class="resource-badge popular">
-
-                    Staff Pick
-
-                </span>
-
-                <div class="resource-icon">
-
-                    📂
-
-                </div>
-
-                <h3>
-
-                    Teacher Forms
-
-                </h3>
-
-                <p>
-
-                    Attendance sheets, planning templates, parent communication logs, inventory forms, and classroom checklists.
-
-                </p>
-
-                <a href="teacher-resources/teacher-forms.html">
-
-                    View Resource →
-
-                </a>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-     <!-- ==========================================
-     RECENTLY ADDED
-========================================== -->
-
-<section class="recently-added">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                RECENTLY ADDED
-
-            </span>
-
-            <h2>
-
-                Fresh Resources Added to the Library
-
-            </h2>
-
-            <p>
-
-                New curriculum studies, classroom printables, lesson plans, assessment resources, and educator tools are continually added to help keep your classroom engaging, organized, and developmentally appropriate.
-
-            </p>
-
-        </div>
-
-        <div class="recent-grid">
-
-            <article class="recent-card">
-
-                <span class="recent-badge new">
-
-                    NEW
-
-                </span>
-
-                <div class="recent-content">
-
-                    <h3>
-
-                        Ocean Adventures Study
-
-                    </h3>
-
-                    <p>
-
-                        A complete curriculum study including STEM, literacy, math, art, sensory exploration, books, songs, family engagement, and printable resources.
-
-                    </p>
-
-                    <div class="recent-meta">
-
-                        <span>🌊 Curriculum Study</span>
-
-                        <span>Added This Week</span>
-
-                    </div>
-
-                    <a href="collections/ocean.html">
-
-                        Explore Study →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="recent-card">
-
-                <span class="recent-badge updated">
-
-                    UPDATED
-
-                </span>
-
-                <div class="recent-content">
-
-                    <h3>
-
-                        Behavior Documentation Toolkit
-
-                    </h3>
-
-                    <p>
-
-                        Expanded with new ABC charts, observation forms, classroom documentation, positive guidance resources, and intervention supports.
-
-                    </p>
-
-                    <div class="recent-meta">
-
-                        <span>❤️ Behavior Resources</span>
-
-                        <span>Recently Updated</span>
-
-                    </div>
-
-                    <a href="behavior-center/index.html">
-
-                        View Updates →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="recent-card">
-
-                <span class="recent-badge new">
-
-                    NEW
-
-                </span>
-
-                <div class="recent-content">
-
-                    <h3>
-
-                        Assessment Resource Collection
-
-                    </h3>
-
-                    <p>
-
-                        Observation templates, developmental screenings, documentation organizers, family reports, and assessment support materials.
-
-                    </p>
-
-                    <div class="recent-meta">
-
-                        <span>📋 Assessment</span>
-
-                        <span>New Collection</span>
-
-                    </div>
-
-                    <a href="assessment-center/index.html">
-
-                        Browse Collection →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="recent-card">
-
-                <span class="recent-badge coming">
-
-                    COMING SOON
-
-                </span>
-
-                <div class="recent-content">
-
-                    <h3>
-
-                        Interactive Teacher Tools
-
-                    </h3>
-
-                    <p>
-
-                        Create classroom labels, newsletters, lesson plans, certificates, observation forms, behavior reports, and more directly within the Library.
-
-                    </p>
-
-                    <div class="recent-meta">
-
-                        <span>🚀 Library Tools</span>
-
-                        <span>In Development</span>
-
-                    </div>
-
-                    <a href="../contact.html">
-
-                        Suggest a Tool →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-     <!-- ==========================================
-     QUICK RESOURCE FINDER
-========================================== -->
-
-<section class="resource-finder">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                QUICK RESOURCE FINDER
-
-            </span>
-
-            <h2>
-
-                Choose Your Next Teaching Step
-
-            </h2>
-
-            <p>
-
-                Choose a practical next step for your classroom. These pathways connect planning, observation, individualized support, school readiness, family partnership, and professional growth.
-
-            </p>
-
-        </div>
-
-        <div class="finder-grid">
-
-            <a href="lesson-plans/weekly-template.html" class="finder-card">
-                <div class="finder-icon">📅</div>
-                <h3>Plan the Week</h3>
-                <p>Build a responsive weekly plan with learning goals, intentional teaching, individualization, observations, and family connections.</p>
-            </a>
-
-            <a href="printable-library/weekly-observation-record.html" class="finder-card">
-                <div class="finder-icon">📝</div>
-                <h3>Document Children's Learning</h3>
-                <p>Capture objective observations, children's words, emerging skills, reflection, and practical next steps.</p>
-            </a>
-
-            <a href="behavior-center/individual-support-plan.html" class="finder-card">
-                <div class="finder-icon">❤️</div>
-                <h3>Plan Individualized Behavior Support</h3>
-                <p>Identify patterns, adjust the environment, teach replacement skills, and coordinate supportive responses with families and the team.</p>
-            </a>
-
-            <a href="head-start/index.html" class="finder-card">
-                <div class="finder-icon">🌱</div>
-                <h3>Connect to School Readiness</h3>
-                <p>Use the Head Start ELOF and related program guidance to inform goals, observation, and developmentally appropriate planning.</p>
-            </a>
-
-            <a href="family-engagement/index.html" class="finder-card">
-                <div class="finder-icon">👨‍👩‍👧</div>
-                <h3>Partner with Families</h3>
-                <p>Find ideas for two-way communication, family knowledge, home learning connections, and shared planning.</p>
-            </a>
-
-            <a href="professional-development/coaching.html" class="finder-card">
-                <div class="finder-icon">🎓</div>
-                <h3>Strengthen Teaching Practice</h3>
-                <p>Use reflective coaching prompts, practice goals, evidence, and follow-up steps to support educator growth.</p>
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-     <!-- ==========================================
-     WHY EDUCATORS CHOOSE LITTLE EXPLORERS
-========================================== -->
-
-<section class="why-library">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                WHY LITTLE EXPLORERS
-
-            </span>
-
-            <h2>
-
-                Created by Educators, Designed for Educators
-
-            </h2>
-
-            <p>
-
-                Every resource inside the Little Explorers Library is created with real classrooms in mind. Our mission is to save teachers time while providing engaging, developmentally appropriate resources they can confidently use every day.
-
-            </p>
-
-        </div>
-
-        <div class="benefits-grid">
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">📚</div>
-
-                <h3>Teacher Created</h3>
-
-                <p>
-
-                    Every lesson, printable, and classroom resource is designed from real classroom experience.
-
-                </p>
-
-            </article>
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">💲</div>
-
-                <h3>Always Free</h3>
-
-                <p>
-
-                    Thousands of professional classroom resources available without subscriptions or hidden costs.
-
-                </p>
-
-            </article>
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">🌱</div>
-
-                <h3>Head Start Aligned</h3>
-
-                <p>
-
-                    Resources support ELOF domains, school readiness goals, and developmentally appropriate practice.
-
-                </p>
-
-            </article>
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">🧠</div>
-
-                <h3>Research Based</h3>
-
-                <p>
-
-                    Activities encourage exploration, inquiry, creativity, problem solving, and meaningful learning.
-
-                </p>
-
-            </article>
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">🚀</div>
-
-                <h3>Growing Every Week</h3>
-
-                <p>
-
-                    New curriculum studies, printables, lesson plans, and classroom resources are continually added.
-
-                </p>
-
-            </article>
-
-            <article class="benefit-card">
-
-                <div class="benefit-icon">❤️</div>
-
-                <h3>Built to Save Time</h3>
-
-                <p>
-
-                    Spend less time creating materials and more time teaching, interacting, and inspiring children.
-
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-     <!-- ==========================================
-     LIBRARY BY THE NUMBERS
-========================================== -->
-
-<section class="library-statistics">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-
-                THE LIBRARY BY THE NUMBERS
-
-            </span>
-
-            <h2>
-
-                A Growing Resource Library for Every Early Childhood Educator
-
-            </h2>
-
-            <p>
-
-                Little Explorers Learning Hub continues to expand with curriculum studies, printable classroom resources, lesson plans, assessment tools, and educator support materials created to help teachers succeed.
-
-            </p>
-
-        </div>
-
-        <div class="stats-grid">
-
-            <article class="stat-card">
-
-                <h3>5,000+</h3>
-
-                <span>Printable Resources</span>
-
-            </article>
-
-            <article class="stat-card">
-
-                <h3>1,000+</h3>
-
-                <span>Lesson Plans</span>
-
-            </article>
-
-            <article class="stat-card">
-
-                <h3>100+</h3>
-
-                <span>Curriculum Studies</span>
-
-            </article>
-
-            <article class="stat-card">
-
-                <h3>500+</h3>
-
-                <span>Teacher Forms</span>
-
-            </article>
-
-            <article class="stat-card">
-
-                <h3>250+</h3>
-
-                <span>Head Start Resources</span>
-
-            </article>
-
-            <article class="stat-card">
-
-                <h3>300+</h3>
-
-                <span>Professional Development Resources</span>
-
-            </article>
-
-            <article class="stat-card">
-
-                <h3>400+</h3>
-
-                <span>Family Engagement Resources</span>
-
-            </article>
-
-            <article class="stat-card highlight">
-
-                <h3>Always Growing</h3>
-
-                <span>
-
-                    New resources are added regularly to help educators stay inspired throughout the school year.
-
-                </span>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ==========================================
-     JOIN THE LITTLE EXPLORERS COMMUNITY
-========================================== -->
-
-<section class="library-membership">
-
-    <div class="container">
-
-        <div class="membership-wrapper">
-
-            <div class="membership-content">
-
-                <span class="section-tag">
-
-                    JOIN THE COMMUNITY
-
-                </span>
-
-                <h2>
-
-                    Stay Connected with Little Explorers Learning Hub
-
-                </h2>
-
-                <p>
-
-                    Join thousands of early childhood educators who use Little Explorers Learning Hub to discover curriculum studies, lesson plans, classroom printables, assessment resources, family engagement ideas, and professional development materials designed specifically for Early Head Start, Head Start, Preschool, and Pre Kindergarten classrooms.
-
-                </p>
-
-                <div class="membership-features">
-
-                    <div>
-                        <span>✔</span>
-                        <p>Free lifetime membership</p>
-                    </div>
-
-                    <div>
-                        <span>✔</span>
-                        <p>Notifications when new resources are added</p>
-                    </div>
-
-                    <div>
-                        <span>✔</span>
-                        <p>Early access to featured collections</p>
-                    </div>
-
-                    <div>
-                        <span>✔</span>
-                        <p>Exclusive educator tools and downloads</p>
-                    </div>
-
-                    <div>
-                        <span>✔</span>
-                        <p>No spam. Ever.</p>
-                    </div>
-
-                    <div>
-                        <span>✔</span>
-                        <p>Created by educators for educators</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <aside class="membership-card">
-
-                <div class="membership-icon">
-
-                    🌟
-
-                </div>
-
-                <h3>
-
-                    Join Free Today
-
-                </h3>
-
-                <p>
-
-                    Enter your email address to receive updates whenever new resources are added to the Library.
-
-                </p>
-
-                <form
-                    class="membership-form"
-                    action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
-                    method="POST"
-                    target="hidden_iframe">
-
-                    <input
-                        type="email"
-                        name="YOUR_ENTRY_ID"
-                        placeholder="Enter your email address"
-                        required>
-
-                    <button type="submit">
-
-                        Join the Community →
-
+                    <button class="rl-filter" type="button" data-filter="planning" aria-pressed="false">
+                        Planning
                     </button>
 
-                </form>
+                    <button class="rl-filter" type="button" data-filter="learning" aria-pressed="false">
+                        Learning Activities
+                    </button>
 
-                <small>
+                    <button class="rl-filter" type="button" data-filter="assessment" aria-pressed="false">
+                        Assessment
+                    </button>
 
-                    Free forever • Unsubscribe anytime • Your information is never shared
+                    <button class="rl-filter" type="button" data-filter="support" aria-pressed="false">
+                        Child Support
+                    </button>
 
-                </small>
+                    <button class="rl-filter" type="button" data-filter="families" aria-pressed="false">
+                        Family Engagement
+                    </button>
 
-            </aside>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-     <!-- ==========================================
-     SITE FOOTER
-========================================== -->
-
-<footer class="site-footer">
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div class="footer-column">
-
-                <a href="../index.html" class="footer-logo">
-
-                    Little Explorers Learning Hub
-
-                </a>
-
-                <p>
-
-                    Empowering Early Head Start, Head Start, Preschool, and Pre Kindergarten educators with high quality curriculum studies, classroom resources, lesson plans, assessments, and professional development materials.
-
-                </p>
-
-                <div class="footer-badges">
-
-                    <span>Teacher Created</span>
-                    <span>Always Free</span>
-                    <span>Growing Weekly</span>
-
+                    <button class="rl-filter" type="button" data-filter="printables" aria-pressed="false">
+                        Printables
+                    </button>
                 </div>
 
             </div>
+        </section>
 
-            <div class="footer-column">
+        <!-- RESOURCE CATEGORY GRID -->
+        <section class="rl-library-section" aria-label="Resource categories">
+            <div class="rl-container">
 
-                <h3>
+                <div class="rl-resource-grid" id="rl-resource-grid">
 
-                    Explore
+                    <article
+                        class="rl-card"
+                        data-category="planning"
+                        data-search="curriculum teaching strategies planning frameworks learning objectives creative curriculum early head start head start preschool"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">📚</div>
+                        <div class="rl-card-category">Planning and Instruction</div>
+                        <h3>Curriculum Resources</h3>
+                        <p>
+                            Organize classroom instruction with curriculum
+                            guidance, teaching ideas, learning objectives,
+                            and practical support for planning meaningful
+                            experiences.
+                        </p>
+                        <a class="rl-card-link" href="curriculum/index.html">
+                            Explore Curriculum <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                </h3>
+                    <article
+                        class="rl-card"
+                        data-category="planning"
+                        data-search="lesson plans weekly daily activities intentional teaching small group large group individual planning classroom themes"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">📝</div>
+                        <div class="rl-card-category">Classroom Planning</div>
+                        <h3>Lesson Plans</h3>
+                        <p>
+                            Find planning support for daily routines, small
+                            groups, large groups, learning centers, and
+                            developmentally appropriate classroom experiences.
+                        </p>
+                        <a class="rl-card-link" href="lesson-plans/index.html">
+                            Browse Lesson Plans <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                <ul>
+                    <article
+                        class="rl-card"
+                        data-category="learning"
+                        data-search="interest areas learning centers blocks dramatic play art library reading science discovery sensory manipulatives classroom environment"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🧩</div>
+                        <div class="rl-card-category">Classroom Environment</div>
+                        <h3>Interest Areas</h3>
+                        <p>
+                            Build engaging learning centers with ideas for
+                            blocks, dramatic play, art, sensory exploration,
+                            reading, discovery, and hands-on learning.
+                        </p>
+                        <a class="rl-card-link" href="interest-areas/index.html">
+                            Explore Interest Areas <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                    <li><a href="../index.html">Home</a></li>
+                    <article
+                        class="rl-card"
+                        data-category="learning"
+                        data-search="stem science technology engineering mathematics experiments exploration inquiry nature water measurement problem solving"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🔬</div>
+                        <div class="rl-card-category">Discovery and Exploration</div>
+                        <h3>STEM and Science</h3>
+                        <p>
+                            Encourage curiosity through science, technology,
+                            engineering, mathematics, experiments, nature
+                            exploration, and early problem-solving.
+                        </p>
+                        <a class="rl-card-link" href="stem/index.html">
+                            Discover STEM Resources <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                    <li><a href="../studies.html">Studies</a></li>
+                    <article
+                        class="rl-card"
+                        data-category="learning"
+                        data-search="literacy language communication vocabulary books read aloud phonological awareness emergent writing print awareness storytelling"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">📖</div>
+                        <div class="rl-card-category">Language and Literacy</div>
+                        <h3>Literacy Resources</h3>
+                        <p>
+                            Support early language, vocabulary, storytelling,
+                            read-alouds, print awareness, emergent writing,
+                            and children's love of books.
+                        </p>
+                        <a class="rl-card-link" href="literacy/index.html">
+                            Explore Literacy <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                    <li><a href="lesson-plans/index.html">Lesson Plans</a></li>
+                    <article
+                        class="rl-card"
+                        data-category="assessment"
+                        data-search="assessment developmental screening observation documentation progress monitoring child development milestones individualization family conference"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">📊</div>
+                        <div class="rl-card-category">Observation and Progress</div>
+                        <h3>Assessment Center</h3>
+                        <p>
+                            Find support for observing children, documenting
+                            development, monitoring progress, and using
+                            assessment information to guide instruction.
+                        </p>
+                        <a class="rl-card-link" href="assessment-center/index.html">
+                            Visit Assessment Center <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                    <li><a href="../library/index.html">Library</a></li>
+                    <article
+                        class="rl-card"
+                        data-category="support"
+                        data-search="behavior inclusion social emotional learning guidance regulation challenging behavior relationships disability accommodations accessibility individualized supports specialists"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">💚</div>
+                        <div class="rl-card-category">Behavior and Inclusion</div>
+                        <h3>Behavior and Inclusion Resources</h3>
+                        <p>
+                            Explore positive guidance, social-emotional
+                            development, inclusive practices, accessibility,
+                            behavior documentation, and individualized support.
+                        </p>
+                        <a class="rl-card-link" href="behavior-center/index.html">
+                            Explore Behavior Support <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                    <li><a href="teacher-resources/index.html">Teacher Resources</a></li>
+                    <article
+                        class="rl-card"
+                        data-category="families"
+                        data-search="family engagement parents caregivers home school partnership communication conferences community resources take home activities"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🏡</div>
+                        <div class="rl-card-category">Home and School Partnerships</div>
+                        <h3>Family Engagement</h3>
+                        <p>
+                            Strengthen relationships with families through
+                            communication tools, home learning ideas,
+                            family partnerships, and collaborative planning.
+                        </p>
+                        <a class="rl-card-link" href="family-engagement/index.html">
+                            Explore Family Engagement <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                    <li><a href="printable-library/index.html">Printables</a></li>
+                    <article
+                        class="rl-card"
+                        data-category="printables"
+                        data-search="printable library free downloads forms classroom visuals activity sheets checklists planning templates learning materials"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🖨️</div>
+                        <div class="rl-card-category">Ready-to-Use Materials</div>
+                        <h3>Printable Library</h3>
+                        <p>
+                            Locate printable classroom tools, activity
+                            materials, planning aids, visual supports,
+                            and other resources for everyday teaching.
+                        </p>
+                        <a class="rl-card-link" href="printable-library/index.html">
+                            Browse Printables <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
 
-                </ul>
+                    <article
+                        class="rl-card"
+                        data-category="planning"
+                        data-search="school readiness kindergarten transition foundational skills self help independence social emotional literacy mathematics routines"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🎒</div>
+                        <div class="rl-card-category">Transitions and Development</div>
+                        <h3>School Readiness</h3>
+                        <p>
+                            Support children's growing independence,
+                            foundational learning, social skills, routines,
+                            and transition toward kindergarten.
+                        </p>
+                        <a class="rl-card-link" href="../school-readiness.html">
+                            Visit School Readiness <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article
+                        class="rl-card"
+                        data-category="learning"
+                        data-search="activities hands on play based learning art music movement sensory fine motor gross motor outdoor activities"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🎨</div>
+                        <div class="rl-card-category">Hands-On Learning</div>
+                        <h3>Classroom Activities</h3>
+                        <p>
+                            Find activity inspiration for play-based learning,
+                            art, music, movement, sensory exploration,
+                            fine motor skills, and outdoor experiences.
+                        </p>
+                        <a class="rl-card-link" href="../activities.html">
+                            Explore Activities <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <article
+                        class="rl-card"
+                        data-category="planning"
+                        data-search="monthly resources themes seasonal ideas newsletters classroom calendars family updates monthly activities"
+                    >
+                        <div class="rl-card-icon" aria-hidden="true">🗓️</div>
+                        <div class="rl-card-category">Monthly Planning</div>
+                        <h3>Monthly Resources</h3>
+                        <p>
+                            Explore monthly ideas and planning inspiration
+                            that can help organize seasonal topics,
+                            classroom experiences, and family communication.
+                        </p>
+                        <a class="rl-card-link" href="monthly/index.html">
+                            Explore Monthly Resources <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                </div>
+
+                <div class="rl-no-results" id="rl-no-results" role="status" aria-live="polite">
+                    <h3>No matching categories found</h3>
+                    <p>
+                        Try another keyword or select “All Resources” to
+                        see the complete category collection.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FEATURED LEARNING STUDIES -->
+        <section class="rl-featured" id="featured-studies">
+            <div class="rl-container">
+                <div class="rl-featured-layout">
+
+                    <div class="rl-featured-copy">
+                        <span class="rl-section-label">Project-Based Exploration</span>
+
+                        <h2>Learning Comes Alive Through Studies.</h2>
+
+                        <p>
+                            Children's questions can become meaningful
+                            investigations. Explore study topics that invite
+                            children to observe, ask questions, experiment,
+                            create, communicate, and make connections with
+                            the world around them.
+                        </p>
+
+                        <a class="rl-button" href="../curriculum.html">
+                            Explore the Curriculum
+                        </a>
+                    </div>
+
+                    <div class="rl-study-grid">
+
+                        <a class="rl-study-link" href="../studies/balls/index.html">
+                            <span class="rl-study-icon" aria-hidden="true">⚽</span>
+                            <span>
+                                <strong>The Ball Study</strong>
+                                <small>Movement, motion, and discovery</small>
+                            </span>
+                        </a>
+
+                        <a class="rl-study-link" href="../studies/trees/index.html">
+                            <span class="rl-study-icon" aria-hidden="true">🌳</span>
+                            <span>
+                                <strong>The Tree Study</strong>
+                                <small>Nature, seasons, and observation</small>
+                            </span>
+                        </a>
+
+                        <a class="rl-study-link" href="../studies/buildings/index.html">
+                            <span class="rl-study-icon" aria-hidden="true">🏗️</span>
+                            <span>
+                                <strong>The Building Study</strong>
+                                <small>Structures, design, and community</small>
+                            </span>
+                        </a>
+
+                        <a class="rl-study-link" href="../studies/water/index.html">
+                            <span class="rl-study-icon" aria-hidden="true">💧</span>
+                            <span>
+                                <strong>The Water Study</strong>
+                                <small>Science, properties, and exploration</small>
+                            </span>
+                        </a>
+
+                        <a class="rl-study-link" href="../studies/pets/index.html">
+                            <span class="rl-study-icon" aria-hidden="true">🐾</span>
+                            <span>
+                                <strong>The Pet Study</strong>
+                                <small>Animals, care, and responsibility</small>
+                            </span>
+                        </a>
+
+                        <a class="rl-study-link" href="../studies/gardening/index.html">
+                            <span class="rl-study-icon" aria-hidden="true">🌱</span>
+                            <span>
+                                <strong>The Gardening Study</strong>
+                                <small>Plants, growth, and living things</small>
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK ACCESS -->
+        <section class="rl-quick-access">
+            <div class="rl-container">
+
+                <div class="rl-section-heading">
+                    <span class="rl-section-label">Additional Support</span>
+
+                    <h2>More Ways to Use the Hub</h2>
+
+                    <p>
+                        Move between the major areas of Little Explorers
+                        Learning Hub to find the type of support you need.
+                    </p>
+                </div>
+
+                <div class="rl-quick-grid">
+
+                    <article class="rl-quick-card">
+                        <h3>For Teachers</h3>
+                        <p>
+                            Find classroom planning resources, teaching
+                            strategies, learning activities, and curriculum
+                            support for everyday instruction.
+                        </p>
+                        <a href="../curriculum.html">
+                            Visit Curriculum →
+                        </a>
+                    </article>
+
+                    <article class="rl-quick-card">
+                        <h3>For Specialists</h3>
+                        <p>
+                            Explore assessment support, inclusive practices,
+                            observation tools, behavior resources, and
+                            strategies for individual needs.
+                        </p>
+                        <a href="../behavior-center.html">
+                            Visit Behavior &amp; Inclusion →
+                        </a>
+                    </article>
+
+                    <article class="rl-quick-card">
+                        <h3>For Families</h3>
+                        <p>
+                            Find family engagement ideas and ways to connect
+                            children's learning experiences between home
+                            and the classroom.
+                        </p>
+                        <a href="family-engagement/index.html">
+                            Visit Family Engagement →
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="rl-cta">
+            <div class="rl-container">
+
+                <h2>Every Child Deserves the Chance to Explore.</h2>
+
+                <p>
+                    Keep discovering new ways to encourage curiosity,
+                    support development, strengthen relationships, and
+                    create meaningful early learning experiences.
+                </p>
+
+                <a class="rl-button" href="../index.html">
+                    Return to Little Explorers Home
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="rl-footer">
+        <div class="rl-container">
+
+            <div class="rl-footer-main">
+
+                <div class="rl-footer-brand">
+                    <strong>Little Explorers Learning Hub</strong>
+
+                    <p>
+                        A resource hub for early childhood educators,
+                        teachers, specialists, and families supporting
+                        Early Head Start, Head Start, preschool, and
+                        pre-kindergarten learning.
+                    </p>
+                </div>
+
+                <nav class="rl-footer-links" aria-label="Footer navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="../curriculum.html">Curriculum</a>
+                    <a href="../school-readiness.html">School Readiness</a>
+                    <a href="../behavior-center.html">Behavior &amp; Inclusion</a>
+                    <a href="../resources.html">Resources</a>
+                    <a href="../search.html">Search</a>
+                </nav>
 
             </div>
 
-            <div class="footer-column">
-
-                <h3>
-
-                    Resource Centers
-
-                </h3>
-
-                <ul>
-
-                    <li><a href="assessment-center/index.html">Assessment Center</a></li>
-
-                    <li><a href="behavior-center/index.html">Behavior Center</a></li>
-
-                    <li><a href="family-engagement/index.html">Family Engagement</a></li>
-
-                    <li><a href="head-start/index.html">Head Start</a></li>
-
-                    <li><a href="professional-development/index.html">Professional Development</a></li>
-
-                    <li><a href="curriculum/index.html">Curriculum</a></li>
-
-                </ul>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h3>
-
-                    About
-
-                </h3>
-
-                <ul>
-
-                    <li><a href="../about.html">About</a></li>
-
-                    <li><a href="../contact.html">Contact</a></li>
-
-                    <li><a href="../faq.html">Frequently Asked Questions</a></li>
-
-                    <li><a href="../privacy.html">Privacy Policy</a></li>
-
-                    <li><a href="../terms.html">Terms of Use</a></li>
-
-                    <li><a href="../accessibility.html">Accessibility</a></li>
-
-                </ul>
-
+            <div class="rl-footer-bottom">
+                <p>
+                    &copy; <span id="rl-current-year">2026</span>
+                    Little Explorers Learning Hub. Supporting children's
+                    learning, growth, and discovery.
+                </p>
             </div>
 
         </div>
+    </footer>
 
-        <div class="footer-divider"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("rl-menu-toggle");
+            const navigation = document.getElementById("rl-navigation");
 
-        <div class="footer-bottom">
+            const searchInput = document.getElementById("rl-library-search");
+            const searchButton = document.getElementById("rl-search-button");
+            const filterButtons = document.querySelectorAll(".rl-filter");
+            const resourceCards = document.querySelectorAll(".rl-card");
+            const noResults = document.getElementById("rl-no-results");
+            const currentYear = document.getElementById("rl-current-year");
 
-            <p>
+            let activeFilter = "all";
 
-                © 2026 Little Explorers Learning Hub. All Rights Reserved.
+            if (currentYear) {
+                currentYear.textContent = new Date().getFullYear();
+            }
 
-            </p>
+            /* Mobile navigation */
+            if (menuToggle && navigation) {
+                menuToggle.addEventListener("click", function () {
+                    const isOpen = navigation.classList.toggle("is-open");
 
-            <p>
+                    menuToggle.setAttribute("aria-expanded", String(isOpen));
+                    menuToggle.innerHTML = isOpen
+                        ? '<span aria-hidden="true">✕</span> Close'
+                        : '<span aria-hidden="true">☰</span> Menu';
+                });
 
-                Created by educators. Designed to inspire curiosity, creativity, and lifelong learning.
+                navigation.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        navigation.classList.remove("is-open");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                        menuToggle.innerHTML =
+                            '<span aria-hidden="true">☰</span> Menu';
+                    });
+                });
 
-            </p>
+                document.addEventListener("keydown", function (event) {
+                    if (event.key === "Escape") {
+                        navigation.classList.remove("is-open");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                        menuToggle.innerHTML =
+                            '<span aria-hidden="true">☰</span> Menu';
+                    }
+                });
+            }
 
-        </div>
+            /* Resource filtering and keyword search */
+            function filterResources() {
+                const query = searchInput.value.trim().toLowerCase();
+                let visibleCount = 0;
 
-    </div>
+                resourceCards.forEach(function (card) {
+                    const category = card.dataset.category || "";
+                    const searchText = (
+                        card.innerText + " " + (card.dataset.search || "")
+                    ).toLowerCase();
 
-</footer>
-<script src="../js/library.js"></script>
-<script src="/teaching-materials/script.js"></script>
+                    const matchesCategory =
+                        activeFilter === "all" || category === activeFilter;
+
+                    const matchesQuery =
+                        query === "" || searchText.includes(query);
+
+                    const shouldShow = matchesCategory && matchesQuery;
+
+                    card.hidden = !shouldShow;
+
+                    if (shouldShow) {
+                        visibleCount++;
+                    }
+                });
+
+                if (noResults) {
+                    noResults.classList.toggle("visible", visibleCount === 0);
+                }
+            }
+
+            filterButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    activeFilter = button.dataset.filter || "all";
+
+                    filterButtons.forEach(function (filterButton) {
+                        const isActive = filterButton === button;
+
+                        filterButton.classList.toggle("active", isActive);
+                        filterButton.setAttribute(
+                            "aria-pressed",
+                            String(isActive)
+                        );
+                    });
+
+                    filterResources();
+                });
+            });
+
+            if (searchButton && searchInput) {
+                searchButton.addEventListener("click", filterResources);
+
+                searchInput.addEventListener("input", filterResources);
+
+                searchInput.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        filterResources();
+                    }
+                });
+            }
+
+            filterResources();
+        });
+    </script>
+
 </body>
 </html>
