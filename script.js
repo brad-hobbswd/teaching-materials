@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </a>
         <nav class="shared-main-nav" id="primary-navigation" aria-label="Primary navigation">
           <a href="${siteRoot}index.html" data-nav="home">Home</a>
-          <a href="${siteRoot}studies.html" data-nav="curriculum">Curriculum</a>
+          <a href="${siteRoot}curriculum.html" data-nav="curriculum">Curriculum</a>
           <a href="${siteRoot}library/head-start/index.html" data-nav="readiness">School Readiness</a>
           <a href="${siteRoot}behavior-center.html" data-nav="behavior">Behavior &amp; Inclusion</a>
           <a href="${siteRoot}library/index.html" data-nav="library">Resource Library</a>
