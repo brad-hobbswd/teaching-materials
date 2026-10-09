@@ -1610,34 +1610,6 @@ Support
 
 <script src="js/studies.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded",function(){
- const grid=document.querySelector(".study-grid");if(!grid)return;
- const cards=Array.from(grid.querySelectorAll(".study-card"));
- const searchInputs=[document.getElementById("studySearch"),document.getElementById("heroStudySearch")].filter(Boolean);
- const categorySelect=document.getElementById("studyCategoryFilter"),sortSelect=document.getElementById("studySort"),summary=document.getElementById("studyResultsSummary");
- const chips=Array.from(document.querySelectorAll("[data-study-category]"));
- function categoryFor(card){const tag=card.querySelector(".study-tag"),t=((tag&&tag.textContent)||"").toLowerCase(),cl=((tag&&tag.className)||"").toLowerCase(),name=((card.querySelector("h3")&&card.querySelector("h3").textContent)||"").toLowerCase(),v=t+" "+name;
- if(/nature|garden|tree|water/.test(v)||/nature/.test(cl))return "nature";
- if(/stem|engineering|construction|transportation/.test(v)||/stem|engineering/.test(cl))return "stem";
- if(/literacy|signs|bread/.test(v)||/literacy/.test(cl))return "literacy";
- if(/sensory|sand|tubes/.test(v)||/sensory/.test(cl))return "sensory";
- if(/art|creative/.test(v)||/art/.test(cl))return "art";
- if(/community|daily life|clothes|pets/.test(v)||/community/.test(cl))return "community";
- if(/health|movement|exercise|balls/.test(v)||/health|movement/.test(cl))return "health";
- return "other";}
- function applyFilters(){const query=(searchInputs.find(i=>i.value.trim())?.value||"").trim().toLowerCase(),category=categorySelect?categorySelect.value:"all";
- const sorted=cards.slice();if(sortSelect&&sortSelect.value==="alphabetical")sorted.sort((a,b)=>(a.querySelector("h3")?.textContent||"").localeCompare(b.querySelector("h3")?.textContent||""));
- sorted.forEach(card=>{card.hidden=!!query&&!card.textContent.toLowerCase().includes(query)||category!=="all"&&categoryFor(card)!==category;grid.appendChild(card);});
- const count=sorted.filter(card=>!card.hidden).length;if(summary)summary.textContent=count+(count===1?" study matches":" studies match")+(query?' for "'+query+'"':"")+". Select a study to explore its classroom investigation.";
- chips.forEach(chip=>{const active=chip.dataset.studyCategory===category;chip.classList.toggle("active",active);chip.setAttribute("aria-pressed",String(active));});}
- searchInputs.forEach(input=>input.addEventListener("input",()=>{searchInputs.forEach(other=>{if(other!==input)other.value=input.value;});applyFilters();}));
- document.querySelector("#hero-study-search")?.addEventListener("submit",event=>{event.preventDefault();applyFilters();document.getElementById("study-library")?.scrollIntoView({behavior:"smooth"});});
- categorySelect?.addEventListener("change",applyFilters);sortSelect?.addEventListener("change",applyFilters);
- chips.forEach(chip=>chip.addEventListener("click",()=>{if(categorySelect)categorySelect.value=chip.dataset.studyCategory;applyFilters();document.getElementById("study-library")?.scrollIntoView({behavior:"smooth"});}));
- applyFilters();
-});
-</script>
 </body>
 
 </html>
