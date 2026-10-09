@@ -626,5 +626,56 @@ const SEARCH_INDEX = [
       "pre-k",
       "development"
     ]
+  },
+  {
+    "title": "Classroom Activities",
+    "category": "Activities",
+    "url": "activities.html",
+    "description": "Browse hands-on experiences for movement, sensory exploration, art, science, and play.",
+    "age": "All ages",
+    "domain": "Planning",
+    "keywords": [
+      "activities",
+      "classroom",
+      "movement",
+      "sensory",
+      "art",
+      "science",
+      "play",
+      "hands-on"
+    ]
+  },
+  {
+    "title": "Books and Early Literacy",
+    "category": "Books",
+    "url": "library/literacy/index.html",
+    "description": "Explore books, storytelling, language, print awareness, and early literacy experiences.",
+    "age": "All ages",
+    "domain": "Language and Literacy",
+    "keywords": [
+      "books",
+      "reading",
+      "storytelling",
+      "stories",
+      "literacy",
+      "language",
+      "print"
+    ]
+  },
+  {
+    "title": "Songs and Movement",
+    "category": "Songs",
+    "url": "activities.html",
+    "description": "Find ways to connect music, rhythm, movement, and language during everyday learning.",
+    "age": "All ages",
+    "domain": "Physical Development",
+    "keywords": [
+      "songs",
+      "music",
+      "rhythm",
+      "movement",
+      "dance",
+      "language"
+    ]
   }
 ];
