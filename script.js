@@ -12,8 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const siteRoot = location.pathname.includes("/teaching-materials/")
     ? "/teaching-materials/"
     : "/";
-  const sharedHeader = document.querySelector("header");
-  if (sharedHeader) {
+  let sharedHeader = document.querySelector("header");
+  if (!sharedHeader) {
+    sharedHeader = document.createElement("header");
+    const main = document.querySelector("main");
+    if (main) document.body.insertBefore(sharedHeader, main);
+    else document.body.insertBefore(sharedHeader, document.body.firstChild);
+  }
+  if (!sharedHeader.classList.contains("shared-site-header")) {
     sharedHeader.className = "site-header shared-site-header";
     sharedHeader.innerHTML = `
       <div class="shared-nav-container">
