@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         currentPath === href ||
         (currentPath.startsWith("/teaching-materials/studies/") && href.endsWith("/studies.html")) ||
         (currentPath.startsWith("/teaching-materials/library/") && href.endsWith("/library/index.html")) ||
-        (currentPath.startsWith("/teaching-materials/ages/") && href.endsWith("/ages/index.html"))
+        (currentPath.startsWith("/teaching-materials/ages/") && href.endsWith("/ages/index.html")) ||
+        (currentPath.startsWith("/teaching-materials/lesson-plans/") && href.endsWith("/studies.html"))
       ) link.classList.add("active");
     } catch (_) {}
   });
