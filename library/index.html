@@ -84,20 +84,22 @@
             top: 12px;
         }
 
-        /* HEADER */
+        /* STANDARD SITE NAVIGATION */
 
         .rl-header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.97);
-            border-bottom: 1px solid var(--rl-border);
-            box-shadow: 0 4px 18px rgba(23, 59, 87, 0.04);
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid #DDE5E8;
+            box-shadow: 0 3px 12px rgba(23, 59, 87, 0.04);
             backdrop-filter: blur(12px);
         }
 
         .rl-header-inner {
+            width: min(1260px, calc(100% - 40px));
             min-height: 84px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -107,15 +109,16 @@
         .rl-brand {
             display: flex;
             align-items: center;
-            gap: 13px;
+            gap: 14px;
             min-width: 0;
+            flex-shrink: 0;
             text-decoration: none;
         }
 
         .rl-brand img {
             display: block;
-            width: 62px;
-            height: 62px;
+            width: 64px;
+            height: 64px;
             object-fit: contain;
             flex-shrink: 0;
         }
@@ -123,66 +126,141 @@
         .rl-brand-copy {
             display: flex;
             flex-direction: column;
-            line-height: 1.2;
+            gap: 5px;
+            line-height: 1.15;
         }
 
         .rl-brand-copy strong {
-            color: var(--rl-navy);
-            font-size: 1.05rem;
+            color: #29394B;
+            font-size: 1.3rem;
+            font-weight: 800;
             letter-spacing: -0.3px;
         }
 
         .rl-brand-copy span {
-            margin-top: 5px;
-            color: var(--rl-green);
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 1.1px;
-            text-transform: uppercase;
+            margin-top: 0;
+            color: #3377B9;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0;
+            text-transform: none;
         }
 
         .rl-nav {
             display: flex;
             align-items: center;
-            gap: 20px;
+            justify-content: flex-end;
+            gap: 24px;
         }
 
         .rl-nav a {
-            color: var(--rl-navy);
-            font-size: 0.91rem;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            min-height: 84px;
+            color: #29394B;
+            font-size: 0.98rem;
             font-weight: 700;
             text-decoration: none;
+            white-space: nowrap;
             transition: color 0.2s ease;
         }
 
         .rl-nav a:hover,
-        .rl-nav a:focus-visible {
-            color: var(--rl-green);
+        .rl-nav a:focus-visible,
+        .rl-nav a[aria-current="page"] {
+            color: #3377B9;
         }
 
-        .rl-nav .rl-nav-cta {
-            padding: 11px 17px;
-            background: var(--rl-green);
-            color: var(--rl-white);
-            border-radius: 999px;
+        .rl-nav a:not(.rl-search-link)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 19px;
+            left: 0;
+            height: 3px;
+            background: #3377B9;
+            border-radius: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.2s ease;
         }
 
-        .rl-nav .rl-nav-cta:hover,
-        .rl-nav .rl-nav-cta:focus-visible {
-            background: var(--rl-navy);
-            color: var(--rl-white);
+        .rl-nav a:not(.rl-search-link):hover::after,
+        .rl-nav a:not(.rl-search-link):focus-visible::after,
+        .rl-nav a[aria-current="page"]::after {
+            transform: scaleX(1);
+        }
+
+        .rl-nav .rl-search-link {
+            justify-content: center;
+            width: 32px;
+            min-width: 32px;
+            color: #29394B;
         }
 
         .rl-menu-toggle {
             display: none;
+            align-items: center;
+            gap: 8px;
             padding: 10px 13px;
-            background: var(--rl-navy);
-            color: var(--rl-white);
-            border: 0;
+            background: #FFFFFF;
+            color: #29394B;
+            border: 1px solid #DDE5E8;
             border-radius: 9px;
             font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
+        }
+
+        @media (max-width: 1100px) {
+            .rl-header-inner { gap: 16px; }
+            .rl-nav { gap: 15px; }
+            .rl-nav a { font-size: 0.87rem; }
+            .rl-brand img { width: 56px; height: 56px; }
+            .rl-brand-copy strong { font-size: 1.12rem; }
+            .rl-brand-copy span { font-size: 0.91rem; }
+        }
+
+        @media (max-width: 900px) {
+            .rl-header-inner { min-height: 76px; }
+            .rl-menu-toggle { display: inline-flex; }
+            .rl-nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                display: none;
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 20px 18px;
+                background: #FFFFFF;
+                border-bottom: 1px solid #DDE5E8;
+                box-shadow: 0 10px 20px rgba(23, 59, 87, 0.08);
+            }
+            .rl-nav.is-open { display: flex; }
+            .rl-nav a {
+                min-height: auto;
+                padding: 14px 6px;
+                white-space: normal;
+                border-bottom: 1px solid #EDF0F2;
+                font-size: 0.96rem;
+            }
+            .rl-nav a:not(.rl-search-link)::after { display: none; }
+            .rl-nav .rl-search-link {
+                justify-content: flex-start;
+                width: 100%;
+                padding: 14px 6px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .rl-header-inner { width: calc(100% - 24px); }
+            .rl-brand { gap: 9px; }
+            .rl-brand img { width: 48px; height: 48px; }
+            .rl-brand-copy strong { font-size: 1rem; }
+            .rl-brand-copy span { font-size: 0.82rem; }
         }
 
         /* HERO */
@@ -940,16 +1018,12 @@
         Skip to main content
     </a>
 
-    <!-- HEADER -->
+    <!-- STANDARD SITE NAVIGATION -->
     <header class="rl-header">
         <div class="rl-container rl-header-inner">
 
-            <a class="rl-brand" href="../index.html" aria-label="Little Explorers Learning Hub home">
-                <img
-                    src="../logo.png"
-                    alt="Little Explorers Learning Hub logo"
-                >
-
+            <a class="rl-brand" href="../index.html" aria-label="Little Explorers Learning Hub Home">
+                <img src="../logo.png" alt="Little Explorers Learning Hub logo">
                 <span class="rl-brand-copy">
                     <strong>Little Explorers</strong>
                     <span>Learning Hub</span>
@@ -964,7 +1038,7 @@
                 aria-controls="rl-navigation"
             >
                 <span aria-hidden="true">☰</span>
-                Menu
+                <span>Menu</span>
             </button>
 
             <nav class="rl-nav" id="rl-navigation" aria-label="Main navigation">
@@ -972,16 +1046,20 @@
                 <a href="../curriculum.html">Curriculum</a>
                 <a href="../school-readiness.html">School Readiness</a>
                 <a href="../behavior-center.html">Behavior &amp; Inclusion</a>
-                <a href="../resources.html">Resources</a>
-                <a class="rl-nav-cta" href="../search.html">Search the Hub</a>
+                <a href="index.html" aria-current="page">Resource Library</a>
+                <a href="../resources.html">Teacher &amp; Family Support</a>
+                <a class="rl-search-link" href="../search.html" aria-label="Search the Learning Hub" title="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+                </a>
             </nav>
 
         </div>
     </header>
 
-    <main id="main-content">
-
-        <!-- HERO -->
+    <!-- HERO -->
         <section class="rl-hero">
             <div class="rl-container">
                 <div class="rl-hero-inner">
@@ -1548,17 +1626,16 @@
                     const isOpen = navigation.classList.toggle("is-open");
 
                     menuToggle.setAttribute("aria-expanded", String(isOpen));
-                    menuToggle.innerHTML = isOpen
-                        ? '<span aria-hidden="true">✕</span> Close'
-                        : '<span aria-hidden="true">☰</span> Menu';
+                    menuToggle.querySelector("span").textContent = isOpen ? "✕" : "☰";
+                    menuToggle.querySelectorAll("span")[1].textContent = isOpen ? "Close" : "Menu";
                 });
 
                 navigation.querySelectorAll("a").forEach(function (link) {
                     link.addEventListener("click", function () {
                         navigation.classList.remove("is-open");
                         menuToggle.setAttribute("aria-expanded", "false");
-                        menuToggle.innerHTML =
-                            '<span aria-hidden="true">☰</span> Menu';
+                        menuToggle.querySelector("span").textContent = "☰";
+                        menuToggle.querySelectorAll("span")[1].textContent = "Menu";
                     });
                 });
 
@@ -1566,8 +1643,8 @@
                     if (event.key === "Escape") {
                         navigation.classList.remove("is-open");
                         menuToggle.setAttribute("aria-expanded", "false");
-                        menuToggle.innerHTML =
-                            '<span aria-hidden="true">☰</span> Menu';
+                        menuToggle.querySelector("span").textContent = "☰";
+                        menuToggle.querySelectorAll("span")[1].textContent = "Menu";
                     }
                 });
             }
