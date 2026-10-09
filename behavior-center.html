@@ -76,88 +76,7 @@
             outline-offset: 4px;
         }
 
-        /* HEADER */
-
-        .behavior-page .behavior-header {
-            position: relative;
-            z-index: 20;
-            background: var(--behavior-white);
-            border-bottom: 1px solid var(--behavior-border);
-        }
-
-        .behavior-page .behavior-header-inner {
-            min-height: 88px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .behavior-page .behavior-brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--behavior-navy);
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .behavior-page .behavior-brand img {
-            width: 58px;
-            height: 58px;
-            object-fit: contain;
-        }
-
-        .behavior-page .behavior-brand strong {
-            display: block;
-            font-family: "Nunito", sans-serif;
-            font-size: 1.15rem;
-            font-weight: 800;
-        }
-
-        .behavior-page .behavior-brand span {
-            display: block;
-            font-size: 0.82rem;
-            color: var(--behavior-green);
-            margin-top: 2px;
-        }
-
-        .behavior-page .behavior-nav ul {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 6px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .behavior-page .behavior-nav a {
-            display: block;
-            padding: 10px 12px;
-            border-radius: 9px;
-            color: var(--behavior-navy);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 700;
-        }
-
-        .behavior-page .behavior-nav a:hover,
-        .behavior-page .behavior-nav a[aria-current="page"] {
-            color: var(--behavior-green);
-            background: #EEF5F0;
-        }
-
-        .behavior-page .behavior-menu-toggle {
-            display: none;
-            border: 1px solid var(--behavior-border);
-            border-radius: 10px;
-            background: white;
-            color: var(--behavior-navy);
-            padding: 10px 13px;
-            font-size: 1.25rem;
-            cursor: pointer;
-        }
+        /* HEADER STYLES ARE PROVIDED BY THE SITE-WIDE NAVIGATION BELOW */
 
         /* HERO */
 
@@ -694,10 +613,6 @@
         /* RESPONSIVE */
 
         @media (max-width: 1050px) {
-            .behavior-page .behavior-nav a {
-                padding: 9px 8px;
-                font-size: 0.81rem;
-            }
 
             .behavior-page .behavior-card-grid-four {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -709,40 +624,6 @@
         }
 
         @media (max-width: 820px) {
-            .behavior-page .behavior-header-inner {
-                min-height: 76px;
-            }
-
-            .behavior-page .behavior-menu-toggle {
-                display: block;
-            }
-
-            .behavior-page .behavior-nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                padding: 12px 20px 20px;
-                border-bottom: 1px solid var(--behavior-border);
-                background: white;
-                box-shadow: 0 14px 20px rgba(23, 59, 87, 0.08);
-            }
-
-            .behavior-page .behavior-nav.is-open {
-                display: block;
-            }
-
-            .behavior-page .behavior-nav ul {
-                align-items: stretch;
-                flex-direction: column;
-                gap: 4px;
-            }
-
-            .behavior-page .behavior-nav a {
-                padding: 12px;
-                font-size: 0.95rem;
-            }
 
             .behavior-page .behavior-hero {
                 padding: 55px 0;
@@ -1078,7 +959,7 @@
                     </p>
                     <a
                         class="behavior-card-link"
-                        href="library/behavior-center/inclusion-accessibility.html"
+                        href="library/behavior-center/index.html"
                     >Explore Inclusion →</a>
                 </article>
 
@@ -1106,7 +987,7 @@
                     </p>
                     <a
                         class="behavior-card-link"
-                        href="library/behavior-center/behavior-logs.html"
+                        href="library/behavior-center/index.html"
                     >Explore Behavior Logs →</a>
                 </article>
 
@@ -1470,9 +1351,9 @@
 
             <div class="behavior-actions" style="justify-content:center;">
                 <a
-                    href="library/behavior-center/behavior-logs.html"
+                    href="library/behavior-center/index.html"
                     class="behavior-button behavior-button-primary"
-                >Explore Observation &amp; Behavior Logs →</a>
+                >Explore Observation &amp; Behavior Log Resources →</a>
             </div>
 
         </div>
@@ -1656,8 +1537,8 @@
                 <h2>Behavior &amp; Inclusion</h2>
                 <a href="behavior-center.html">Behavior Center</a>
                 <a href="library/behavior-center/index.html">Behavior Resource Library</a>
-                <a href="library/behavior-center/inclusion-accessibility.html">Inclusion &amp; Accessibility</a>
-                <a href="library/behavior-center/behavior-logs.html">Observation &amp; Behavior Logs</a>
+                <a href="library/behavior-center/index.html">Inclusion &amp; Accessibility Resources</a>
+                <a href="library/behavior-center/index.html">Observation &amp; Behavior Log Resources</a>
                 <a href="library/printable-library/index.html">Printable Library</a>
             </div>
 
@@ -1684,48 +1565,10 @@
 </footer>
 
 <script>
-    (() => {
-        const menuButton = document.querySelector(".behavior-menu-toggle");
-        const navigation = document.querySelector("#behavior-navigation");
-
-        if (menuButton && navigation) {
-            menuButton.addEventListener("click", () => {
-                const isOpen = navigation.classList.toggle("is-open");
-
-                menuButton.setAttribute("aria-expanded", String(isOpen));
-                menuButton.setAttribute(
-                    "aria-label",
-                    isOpen ? "Close navigation menu" : "Open navigation menu"
-                );
-                menuButton.textContent = isOpen ? "✕" : "☰";
-            });
-
-            navigation.querySelectorAll("a").forEach((link) => {
-                link.addEventListener("click", () => {
-                    navigation.classList.remove("is-open");
-                    menuButton.setAttribute("aria-expanded", "false");
-                    menuButton.setAttribute("aria-label", "Open navigation menu");
-                    menuButton.textContent = "☰";
-                });
-            });
-
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "Escape") {
-                    navigation.classList.remove("is-open");
-                    menuButton.setAttribute("aria-expanded", "false");
-                    menuButton.setAttribute("aria-label", "Open navigation menu");
-                    menuButton.textContent = "☰";
-                    menuButton.focus();
-                }
-            });
-        }
-
-        const year = document.querySelector("#behavior-current-year");
-
-        if (year) {
-            year.textContent = new Date().getFullYear();
-        }
-    })();
+(() => {
+    const year = document.querySelector("#behavior-current-year");
+    if (year) year.textContent = new Date().getFullYear();
+})();
 </script>
 
 <script id="le-standard-navigation-js">(function(){const t=document.querySelector(".le-standard-toggle"),n=document.querySelector("#le-standard-navigation");if(!t||!n)return;t.addEventListener("click",function(){const o=n.classList.toggle("is-open");t.setAttribute("aria-expanded",String(o));t.querySelector('[aria-hidden="true"]').textContent=o?"✕":"☰";t.querySelector(".le-toggle-label").textContent=o?"Close":"Menu"});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("is-open");t.setAttribute("aria-expanded","false");t.querySelector('[aria-hidden="true"]').textContent="☰";t.querySelector(".le-toggle-label").textContent="Menu"})})})();</script></body>
