@@ -1,0 +1,78 @@
+/* Little Explorers Learning Hub — shared visual polish
+   A small, site-wide layer that unifies page rhythm, readability, cards and forms.
+   Page-specific styles remain in their original stylesheets. */
+:root {
+  --leh-forest: #315c4c;
+  --leh-forest-deep: #244639;
+  --leh-sage: #e7f0e6;
+  --leh-cream: #faf7ef;
+  --leh-gold: #e5b84b;
+  --leh-clay: #b96745;
+  --leh-ink: #2e3c35;
+  --leh-muted: #68756d;
+  --leh-line: #dfe5dc;
+  --leh-paper: #fff;
+  --leh-shadow: 0 12px 32px rgba(36,70,57,.08);
+}
+html { scroll-behavior: smooth; }
+body {
+  color: var(--leh-ink);
+  background: #fbfcfa;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4 { letter-spacing: -.025em; }
+p { text-wrap: pretty; }
+a { text-underline-offset: .18em; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(197,145,54,.75);
+  outline-offset: 3px;
+}
+main > section { scroll-margin-top: 24px; }
+.breadcrumb { font-size: .92rem; color: var(--leh-muted); }
+.breadcrumb a { color: var(--leh-forest); font-weight: 700; }
+.featured-study-card, .featured-text, .resource-card, .feature-card, .interest-card,
+.family-card, .inclusion-card, .plan-paper, .curriculum-card, .cycle-step {
+  border-color: var(--leh-line);
+}
+.featured-study-card, .resource-card, .feature-card, .interest-card, .family-card,
+.inclusion-card, .plan-paper, .curriculum-card {
+  box-shadow: var(--leh-shadow);
+}
+.featured-study-card, .inclusion-card, .plan-paper { border-radius: 20px; }
+.btn, .hero-buttons a, .resource-links a, .action-link, button[type="submit"] {
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+.btn:hover, .hero-buttons a:hover, .resource-links a:hover, .action-link:hover, button[type="submit"]:hover {
+  transform: translateY(-2px);
+}
+.study-hero, .hero, .curriculum-hero {
+  isolation: isolate;
+}
+.study-hero h1, .hero h1, .hero h2, .curriculum-hero h1 {
+  text-wrap: balance;
+}
+.study-hero p, .hero p, .section-heading p, .section-title p {
+  max-width: 760px;
+}
+.inclusion-intro { background: linear-gradient(180deg,#f3f8f3 0%,#fbfcfa 100%); }
+.inclusion-card { height: 100%; }
+.inclusion-card h3 { line-height: 1.3; }
+.inclusion-card li { margin: .35rem 0; line-height: 1.6; }
+.audience-note { line-height: 1.75; }
+.plan-wrap { max-width: 1040px; }
+.plan-paper { box-shadow: 0 18px 44px rgba(36,70,57,.09); }
+.plan-section { padding-top: 8px; border-top: 1px solid #edf0eb; }
+.plan-section h2 { color: var(--leh-forest-deep); }
+input, textarea, select { accent-color: var(--leh-forest); }
+footer { margin-top: 36px; }
+footer a:hover { color: var(--leh-clay); }
+@media (max-width: 760px) {
+  section { scroll-margin-top: 12px; }
+  .inclusion-intro { padding-top: 34px; padding-bottom: 38px; }
+  .resource-links a { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
