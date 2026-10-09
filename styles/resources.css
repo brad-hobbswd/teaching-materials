@@ -2467,3 +2467,33 @@ section{
     object-fit:contain;
   }
 }
+
+
+/* Card images fill the image panel edge to edge; text stays in its own body. */
+.teacher-support-page .ts-card{
+  padding:0;
+}
+.teacher-support-page .ts-card>img{
+  display:block;
+  width:100%;
+  height:210px;
+  aspect-ratio:auto;
+  object-fit:cover;
+  object-position:center;
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:#eef2f6;
+}
+.teacher-support-page .ts-card-body{
+  position:relative;
+  z-index:1;
+  background:#fff;
+}
+@media(max-width:700px){
+  .teacher-support-page .ts-card>img{
+    height:205px;
+    aspect-ratio:auto;
+    object-fit:cover;
+  }
+}
