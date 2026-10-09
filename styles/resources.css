@@ -2511,3 +2511,30 @@ section{
 @media(max-width:700px){
   .teacher-support-page .ts-card>img{height:300px}
 }
+
+
+/* iPad/tablet: give card images more vertical space and preserve the full image. */
+@media (min-width:701px) and (max-width:1180px){
+  .teacher-support-page .ts-card>img{
+    height:320px !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:#f4f6f8;
+  }
+}
+@media (min-width:1181px){
+  .teacher-support-page .ts-card>img{
+    height:300px !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:#f4f6f8;
+  }
+}
+@media (max-width:700px){
+  .teacher-support-page .ts-card>img{
+    height:280px !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    background:#f4f6f8;
+  }
+}
