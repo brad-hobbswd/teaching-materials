@@ -1,95 +1,1620 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Curriculum | Little Explorers Learning Hub</title>
-  <meta name="description" content="Plan meaningful early childhood curriculum with connected guidance for investigations, lesson planning, developmentally appropriate learning, classroom environments, intentional teaching, and reflection.">
-  <meta name="theme-color" content="#315c4c">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/curriculum.css">
-  <style>
-    .curriculum-home{max-width:1240px;width:min(92%,1240px);margin:0 auto;padding:42px 0 80px}
-    .curriculum-home .curriculum-hero{position:relative;overflow:hidden;border-radius:28px;padding:clamp(32px,6vw,76px);background:radial-gradient(circle at 88% 14%,rgba(229,184,75,.28),transparent 26%),radial-gradient(circle at 8% 88%,rgba(120,155,120,.24),transparent 30%),linear-gradient(135deg,#f1f6ed,#fff8e8);border:1px solid #dfe5dc}
-    .curriculum-home .eyebrow{display:inline-block;color:#315c4c;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
-    .curriculum-home h1{max-width:850px;color:#244639;font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.06;margin:16px 0 20px}
-    .curriculum-home .hero-copy{max-width:760px;font-size:1.12rem;line-height:1.8;color:#46584c}
-    .curriculum-home .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-    .curriculum-home .action-link{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:999px;font-weight:800;background:#315c4c;color:white}
-    .curriculum-home .action-link.secondary{background:#fff;color:#315c4c;border:1px solid #c7d3c8}
-    .curriculum-home .section-block{padding:58px 0 0}
-    .curriculum-home .section-heading{max-width:760px;margin-bottom:24px}
-    .curriculum-home .section-heading h2{font-size:clamp(1.8rem,3.5vw,2.7rem);line-height:1.15;color:#244639;margin:8px 0 12px}
-    .curriculum-home .section-heading p{color:#68756d;line-height:1.75}
-    .curriculum-home .curriculum-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .curriculum-home .curriculum-card{display:flex;flex-direction:column;align-items:flex-start;min-height:245px;padding:25px;border:1px solid #dfe5dc;border-radius:20px;background:#fff;box-shadow:0 10px 28px rgba(49,92,76,.06);transition:transform .2s ease,box-shadow .2s ease}
-    .curriculum-home .curriculum-card:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(49,92,76,.12)}
-    .curriculum-home .card-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#e7f0e6;font-size:1.45rem;margin-bottom:17px}
-    .curriculum-home .curriculum-card h3{font-size:1.25rem;line-height:1.3;color:#315c4c;margin:0 0 10px}
-    .curriculum-home .curriculum-card p{line-height:1.7;color:#68756d;margin:0 0 18px}
-    .curriculum-home .curriculum-card a{font-weight:800;color:#a95d3b;margin-top:auto}
-    .curriculum-home .planning-cycle{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-    .curriculum-home .cycle-step{padding:18px;border-radius:16px;background:#f7f5ed;border:1px solid #e8e1d0}
-    .curriculum-home .cycle-step strong{display:block;color:#315c4c;margin-bottom:6px}
-    .curriculum-home .cycle-step span{font-size:.94rem;line-height:1.6;color:#68756d}
-    .curriculum-home .curriculum-note{margin-top:26px;padding:20px 24px;border-left:4px solid #c8754d;border-radius:12px;background:#fbf1eb;line-height:1.75;color:#4b554d}
-    @media(max-width:900px){.curriculum-home .curriculum-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.curriculum-home .planning-cycle{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:560px){.curriculum-home{padding-top:20px}.curriculum-home .curriculum-grid,.curriculum-home .planning-cycle{grid-template-columns:1fr}.curriculum-home .curriculum-card{min-height:0}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="styles/learning-hub-polish.css">
+    <title>Curriculum Hub | Little Explorers Learning Hub</title>
+
+    <meta name="description" content="Explore curriculum planning tools, studies and investigations, lesson plans, learning environments, teaching strategies, and observation resources for early childhood educators.">
+
+    <meta name="theme-color" content="#173B57">
+
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/curriculum.css">
+    <link rel="stylesheet" href="styles/learning-hub-polish.css">
+
+    <style>
+        :root {
+            --curriculum-navy: #173B57;
+            --curriculum-green: #397A5B;
+            --curriculum-gold: #F0B44D;
+            --curriculum-cream: #F2EBDD;
+            --curriculum-orange: #E98252;
+            --curriculum-white: #FFFFFF;
+            --curriculum-text: #334155;
+            --curriculum-muted: #64748B;
+            --curriculum-border: #E2E8E0;
+            --curriculum-background: #F8F8F3;
+            --curriculum-radius: 20px;
+            --curriculum-shadow: 0 10px 30px rgba(23, 59, 87, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            color: var(--curriculum-text);
+            background: var(--curriculum-background);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .curriculum-page {
+            min-height: 100vh;
+        }
+
+        .curriculum-container {
+            width: min(1160px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        /* HEADER */
+
+        .curriculum-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--curriculum-border);
+            backdrop-filter: blur(12px);
+        }
+
+        .curriculum-header-inner {
+            min-height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .curriculum-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .curriculum-brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .curriculum-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .curriculum-brand-text strong {
+            font-family: "Nunito", sans-serif;
+            color: var(--curriculum-navy);
+            font-size: 1.05rem;
+            font-weight: 900;
+        }
+
+        .curriculum-brand-text span {
+            color: var(--curriculum-muted);
+            font-size: 0.74rem;
+        }
+
+        .curriculum-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 22px;
+        }
+
+        .curriculum-nav a {
+            color: var(--curriculum-navy);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .curriculum-nav a:hover,
+        .curriculum-nav a:focus-visible {
+            color: var(--curriculum-green);
+        }
+
+        .curriculum-nav .curriculum-nav-home {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: var(--curriculum-navy);
+            color: white;
+        }
+
+        .curriculum-menu-toggle {
+            display: none;
+            min-width: 44px;
+            min-height: 44px;
+            border: 1px solid var(--curriculum-border);
+            border-radius: 12px;
+            background: white;
+            color: var(--curriculum-navy);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .curriculum-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 88px 0 82px;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(240, 180, 77, 0.22),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 5% 90%,
+                    rgba(57, 122, 91, 0.15),
+                    transparent 32%
+                ),
+                linear-gradient(135deg, #F2EBDD 0%, #FFFFFF 62%, #EAF2EA 100%);
+        }
+
+        .curriculum-hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+            align-items: center;
+            gap: 56px;
+        }
+
+        .curriculum-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 18px;
+            color: var(--curriculum-green);
+            font-size: 0.79rem;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .curriculum-eyebrow::before {
+            content: "";
+            display: block;
+            width: 28px;
+            height: 3px;
+            border-radius: 10px;
+            background: var(--curriculum-orange);
+        }
+
+        .curriculum-hero h1 {
+            max-width: 760px;
+            margin: 0 0 22px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.045em;
+        }
+
+        .curriculum-hero h1 span {
+            color: var(--curriculum-green);
+        }
+
+        .curriculum-hero-copy {
+            max-width: 690px;
+            margin: 0;
+            color: #4D5C68;
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+
+        .curriculum-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .curriculum-button {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 20px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .curriculum-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .curriculum-button-primary {
+            background: var(--curriculum-navy);
+            color: white;
+            box-shadow: 0 8px 18px rgba(23, 59, 87, 0.16);
+        }
+
+        .curriculum-button-primary:hover {
+            background: #214F70;
+        }
+
+        .curriculum-button-secondary {
+            border-color: #D7E2D9;
+            background: white;
+            color: var(--curriculum-navy);
+        }
+
+        .curriculum-button-secondary:hover {
+            background: #F2F7F1;
+        }
+
+        .curriculum-hero-art {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .curriculum-art-card {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 22px 60px rgba(23, 59, 87, 0.12);
+        }
+
+        .curriculum-art-icon {
+            display: grid;
+            width: 76px;
+            height: 76px;
+            margin-bottom: 22px;
+            place-items: center;
+            border-radius: 22px;
+            background: var(--curriculum-cream);
+            font-size: 2.5rem;
+        }
+
+        .curriculum-art-card h2 {
+            margin: 0 0 9px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.55rem;
+            font-weight: 900;
+            line-height: 1.25;
+        }
+
+        .curriculum-art-card p {
+            margin: 0;
+            color: var(--curriculum-muted);
+            font-size: 0.94rem;
+        }
+
+        .curriculum-art-tag {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #E7F2E8;
+            color: var(--curriculum-green);
+            font-size: 0.77rem;
+            font-weight: 800;
+        }
+
+        /* QUICK LINKS */
+
+        .curriculum-quick-links {
+            position: relative;
+            z-index: 2;
+            margin-top: -28px;
+        }
+
+        .curriculum-quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .curriculum-quick-card {
+            display: flex;
+            min-height: 108px;
+            align-items: center;
+            gap: 13px;
+            padding: 19px;
+            border: 1px solid var(--curriculum-border);
+            border-radius: 16px;
+            background: white;
+            box-shadow: var(--curriculum-shadow);
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .curriculum-quick-card:hover {
+            transform: translateY(-4px);
+            border-color: #B7D0BB;
+        }
+
+        .curriculum-quick-icon {
+            display: grid;
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--curriculum-cream);
+            font-size: 1.45rem;
+        }
+
+        .curriculum-quick-card strong {
+            display: block;
+            color: var(--curriculum-navy);
+            font-size: 0.9rem;
+            line-height: 1.35;
+        }
+
+        .curriculum-quick-card span {
+            display: block;
+            margin-top: 4px;
+            color: var(--curriculum-muted);
+            font-size: 0.77rem;
+            line-height: 1.5;
+        }
+
+        /* SECTIONS */
+
+        .curriculum-section {
+            padding: 82px 0;
+        }
+
+        .curriculum-section-white {
+            background: white;
+        }
+
+        .curriculum-section-heading {
+            max-width: 750px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .curriculum-section-heading .curriculum-eyebrow {
+            justify-content: center;
+        }
+
+        .curriculum-section-heading h2 {
+            margin: 0 0 14px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.85rem);
+            font-weight: 900;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+
+        .curriculum-section-heading p {
+            margin: 0;
+            color: var(--curriculum-muted);
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        /* PATHWAYS */
+
+        .curriculum-pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .curriculum-pathway-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 270px;
+            padding: 27px;
+            border: 1px solid var(--curriculum-border);
+            border-radius: var(--curriculum-radius);
+            background: white;
+            box-shadow: 0 6px 20px rgba(23, 59, 87, 0.035);
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .curriculum-pathway-card:hover {
+            transform: translateY(-5px);
+            border-color: #C3D9C5;
+            box-shadow: var(--curriculum-shadow);
+        }
+
+        .curriculum-pathway-icon {
+            display: grid;
+            width: 58px;
+            height: 58px;
+            margin-bottom: 21px;
+            place-items: center;
+            border-radius: 17px;
+            background: var(--curriculum-cream);
+            font-size: 1.8rem;
+        }
+
+        .curriculum-pathway-card h3 {
+            margin: 0 0 10px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.22rem;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .curriculum-pathway-card p {
+            margin: 0 0 20px;
+            color: var(--curriculum-muted);
+            font-size: 0.91rem;
+            line-height: 1.8;
+        }
+
+        .curriculum-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            color: var(--curriculum-green);
+            font-size: 0.86rem;
+            font-weight: 800;
+        }
+
+        /* STUDIES */
+
+        .curriculum-studies-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            gap: 42px;
+            align-items: center;
+            padding: 38px;
+            border: 1px solid #E2E9DF;
+            border-radius: 26px;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(240, 180, 77, 0.15), transparent 35%),
+                #F7F8F1;
+        }
+
+        .curriculum-studies-copy h2 {
+            margin: 0 0 15px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .curriculum-studies-copy p {
+            margin: 0 0 23px;
+            color: var(--curriculum-muted);
+            line-height: 1.85;
+        }
+
+        .curriculum-study-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .curriculum-study-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            border: 1px solid #E2E8DF;
+            border-radius: 13px;
+            background: white;
+            color: var(--curriculum-navy);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .curriculum-study-link:hover {
+            transform: translateY(-2px);
+            border-color: var(--curriculum-green);
+        }
+
+        .curriculum-study-link span {
+            font-size: 1.4rem;
+        }
+
+        /* PLANNING CYCLE */
+
+        .curriculum-cycle-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .curriculum-cycle-step {
+            position: relative;
+            padding: 23px 18px;
+            border: 1px solid var(--curriculum-border);
+            border-radius: 18px;
+            background: white;
+            text-align: center;
+        }
+
+        .curriculum-cycle-number {
+            display: grid;
+            width: 43px;
+            height: 43px;
+            margin: 0 auto 15px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--curriculum-navy);
+            color: white;
+            font-family: "Nunito", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+        .curriculum-cycle-step h3 {
+            margin: 0 0 9px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.08rem;
+            font-weight: 900;
+        }
+
+        .curriculum-cycle-step p {
+            margin: 0;
+            color: var(--curriculum-muted);
+            font-size: 0.84rem;
+            line-height: 1.75;
+        }
+
+        .curriculum-cycle-note {
+            max-width: 780px;
+            margin: 28px auto 0;
+            padding: 19px 23px;
+            border-left: 4px solid var(--curriculum-gold);
+            border-radius: 0 13px 13px 0;
+            background: #FFF9EB;
+            color: #65532D;
+            font-size: 0.92rem;
+        }
+
+        /* RESOURCE DIRECTORY */
+
+        .curriculum-directory-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .curriculum-directory-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            padding: 24px;
+            border: 1px solid var(--curriculum-border);
+            border-radius: 17px;
+            background: white;
+        }
+
+        .curriculum-directory-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 14px;
+            background: #E8F1E8;
+            font-size: 1.5rem;
+        }
+
+        .curriculum-directory-item h3 {
+            margin: 0 0 7px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+        .curriculum-directory-item p {
+            margin: 0 0 12px;
+            color: var(--curriculum-muted);
+            font-size: 0.88rem;
+            line-height: 1.75;
+        }
+
+        .curriculum-directory-item a {
+            color: var(--curriculum-green);
+            font-size: 0.86rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .curriculum-directory-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* SEPARATE HUB AREAS */
+
+        .curriculum-boundaries {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .curriculum-boundary-card {
+            padding: 25px;
+            border: 1px solid var(--curriculum-border);
+            border-radius: 17px;
+            background: #FFFFFF;
+        }
+
+        .curriculum-boundary-card h3 {
+            margin: 0 0 9px;
+            color: var(--curriculum-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.12rem;
+            font-weight: 900;
+        }
+
+        .curriculum-boundary-card p {
+            margin: 0 0 15px;
+            color: var(--curriculum-muted);
+            font-size: 0.88rem;
+            line-height: 1.8;
+        }
+
+        .curriculum-boundary-card a {
+            color: var(--curriculum-green);
+            font-size: 0.87rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .curriculum-boundary-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        .curriculum-footer {
+            padding: 36px 0;
+            background: var(--curriculum-navy);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .curriculum-footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .curriculum-footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .curriculum-footer-brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .curriculum-footer-brand strong {
+            display: block;
+            color: white;
+            font-family: "Nunito", sans-serif;
+            font-size: 0.98rem;
+            font-weight: 900;
+        }
+
+        .curriculum-footer-brand span {
+            display: block;
+            font-size: 0.77rem;
+        }
+
+        .curriculum-footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .curriculum-footer-links a {
+            color: white;
+            font-size: 0.82rem;
+            text-decoration: none;
+        }
+
+        .curriculum-footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .curriculum-footer-bottom {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+
+        /* ACCESSIBILITY */
+
+        .curriculum-page a:focus-visible,
+        .curriculum-page button:focus-visible {
+            outline: 3px solid var(--curriculum-orange);
+            outline-offset: 4px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .curriculum-nav {
+                gap: 13px;
+            }
+
+            .curriculum-nav a {
+                font-size: 0.81rem;
+            }
+
+            .curriculum-hero-grid {
+                gap: 30px;
+            }
+
+            .curriculum-quick-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .curriculum-pathway-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .curriculum-cycle-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .curriculum-container {
+                width: min(100% - 30px, 600px);
+            }
+
+            .curriculum-header-inner {
+                min-height: 74px;
+            }
+
+            .curriculum-brand img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .curriculum-brand-text strong {
+                font-size: 0.92rem;
+            }
+
+            .curriculum-brand-text span {
+                font-size: 0.68rem;
+            }
+
+            .curriculum-menu-toggle {
+                display: inline-grid;
+                place-items: center;
+            }
+
+            .curriculum-nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                display: none;
+                align-items: stretch;
+                padding: 15px 20px 22px;
+                border-bottom: 1px solid var(--curriculum-border);
+                background: white;
+                box-shadow: 0 15px 20px rgba(23, 59, 87, 0.08);
+            }
+
+            .curriculum-nav.is-open {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .curriculum-nav a {
+                padding: 13px 5px;
+                font-size: 0.92rem;
+            }
+
+            .curriculum-nav .curriculum-nav-home {
+                margin-top: 8px;
+                padding: 12px 15px;
+                text-align: center;
+            }
+
+            .curriculum-hero {
+                padding: 60px 0 62px;
+            }
+
+            .curriculum-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .curriculum-hero h1 {
+                font-size: clamp(2.45rem, 10vw, 3.5rem);
+            }
+
+            .curriculum-hero-copy {
+                font-size: 1rem;
+            }
+
+            .curriculum-hero-art {
+                min-height: auto;
+            }
+
+            .curriculum-art-card {
+                max-width: none;
+                padding: 25px;
+            }
+
+            .curriculum-quick-links {
+                margin-top: -18px;
+            }
+
+            .curriculum-quick-grid {
+                gap: 10px;
+            }
+
+            .curriculum-quick-card {
+                min-height: 100px;
+                padding: 13px;
+                gap: 10px;
+            }
+
+            .curriculum-quick-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
+
+            .curriculum-quick-card strong {
+                font-size: 0.82rem;
+            }
+
+            .curriculum-quick-card span {
+                font-size: 0.72rem;
+            }
+
+            .curriculum-section {
+                padding: 62px 0;
+            }
+
+            .curriculum-section-heading {
+                margin-bottom: 28px;
+            }
+
+            .curriculum-pathway-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .curriculum-pathway-card {
+                min-height: auto;
+                padding: 23px;
+            }
+
+            .curriculum-studies-panel {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 23px;
+            }
+
+            .curriculum-study-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curriculum-cycle-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .curriculum-cycle-step {
+                padding: 20px 14px;
+            }
+
+            .curriculum-directory-grid,
+            .curriculum-boundaries {
+                grid-template-columns: 1fr;
+            }
+
+            .curriculum-footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .curriculum-quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curriculum-quick-card {
+                min-height: auto;
+            }
+
+            .curriculum-cycle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .curriculum-hero-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .curriculum-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header></header>
-  <main class="curriculum-home">
-    <section class="curriculum-hero" aria-labelledby="curriculum-title">
-      <span class="eyebrow">The Teaching &amp; Planning Hub</span>
-      <h1 id="curriculum-title">Build a Curriculum Around How Children Learn</h1>
-      <p class="hero-copy">Curriculum is the connected process of noticing children's interests, planning purposeful experiences, preparing an environment, teaching responsively, observing learning, and deciding what to offer next. Start with the work you are doing today, then follow the pathway that supports it.</p>
-      <div class="hero-actions">
-        <a class="action-link" href="studies.html">Explore Studies &amp; Investigations</a>
-        <a class="action-link secondary" href="library/curriculum/index.html">Open the Planning Guide</a>
-      </div>
-    </section>
+<div class="curriculum-page">
 
-    <section class="section-block" aria-labelledby="curriculum-pathways-title">
-      <div class="section-heading">
-        <span class="eyebrow">Explore Curriculum</span>
-        <h2 id="curriculum-pathways-title">The Parts of a Strong Curriculum</h2>
-        <p>These areas work together. You may begin with a child's question, a learning goal, an observation, or a classroom interest. Use the pathways to plan, teach, and reflect without losing sight of the whole child.</p>
-      </div>
-      <div class="curriculum-grid">
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🧭</span><h3>Planning &amp; Reflection</h3><p>Connect children's interests, learning intentions, teaching decisions, observations, and next steps in a continuous planning cycle.</p><a href="library/curriculum/index.html">Use the Planning Guide →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🔎</span><h3>Studies &amp; Investigations</h3><p>Build deeper learning from children's questions and real-world topics through exploration, conversation, and hands-on discovery.</p><a href="studies.html">Browse Curriculum Studies →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">📅</span><h3>Weekly &amp; Daily Plans</h3><p>Organize experiences, materials, questions, small-group opportunities, and flexible extensions into usable plans.</p><a href="library/lesson-plans/index.html">Open Lesson Plan Library →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🌱</span><h3>Age &amp; Development</h3><p>Adapt experiences, materials, expectations, and adult support for infants, toddlers, preschoolers, and Pre-K learners.</p><a href="ages/index.html">Choose an Age Group →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🧱</span><h3>Learning Centers &amp; Environments</h3><p>Prepare engaging spaces for construction, art, literacy, dramatic play, science, sensory exploration, and collaboration.</p><a href="library/interest-areas/index.html">Explore Learning Centers →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🔬</span><h3>Learning Domains</h3><p>Connect investigations across science, STEM, engineering, mathematics, literacy, communication, creativity, and problem solving.</p><a href="library/stem/index.html">Explore STEM &amp; Discovery →</a><br><a href="library/literacy/index.html">Explore Literacy →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🪴</span><h3>Intentional Teaching</h3><p>Use thoughtful questions, responsive interactions, modeling, open-ended materials, and play to deepen children's thinking.</p><a href="activities/approaches.html">Explore Teaching Approaches →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">📝</span><h3>Observation &amp; Adaptation</h3><p>Notice what children say and do, document meaningful learning, reflect on progress, and adapt upcoming experiences.</p><a href="library/assessment-center/index.html">Explore Observation Resources →</a></article>
-        <article class="curriculum-card"><span class="card-icon" aria-hidden="true">🏡</span><h3>Family Partnerships</h3><p>Bring family knowledge, home languages, community experiences, and children's discoveries into curriculum planning.</p><a href="library/family-engagement/index.html">Explore Family Engagement →</a></article>
-      </div>
-    </section>
+    <header class="curriculum-header">
+        <div class="curriculum-container curriculum-header-inner">
 
-    <section class="section-block" aria-labelledby="planning-cycle-title">
-      <div class="section-heading">
-        <span class="eyebrow">A Connected Process</span>
-        <h2 id="planning-cycle-title">From Children's Curiosity to Your Next Step</h2>
-        <p>Curriculum is not a binder of disconnected activities. It is a responsive cycle that changes as you learn more about the children in your care.</p>
-      </div>
-      <div class="planning-cycle">
-        <div class="cycle-step"><strong>1. Notice</strong><span>Listen, watch, and identify interests, questions, strengths, and needs.</span></div>
-        <div class="cycle-step"><strong>2. Plan</strong><span>Choose a focus, set intentions, and prepare materials and experiences.</span></div>
-        <div class="cycle-step"><strong>3. Engage</strong><span>Explore alongside children and respond to their ideas as learning unfolds.</span></div>
-        <div class="cycle-step"><strong>4. Document</strong><span>Capture meaningful examples of children's words, actions, and strategies.</span></div>
-        <div class="cycle-step"><strong>5. Reflect</strong><span>Use what you noticed to adapt, extend, or choose the next experience.</span></div>
-      </div>
-      <div class="curriculum-note"><strong>Keep the pathways distinct:</strong> Curriculum supports planning and teaching. School Readiness provides readiness and framework guidance; Behavior &amp; Inclusion supports individual access and behavior; the Resource Library houses practical tools and printables; and Teacher &amp; Family Support provides professional and family resources.</div>
-    </section>
-  </main>
-  <script src="script.js"></script>
+            <a class="curriculum-brand" href="index.html" aria-label="Little Explorers Learning Hub home">
+                <img src="logo.png" alt="Little Explorers Learning Hub logo">
+                <span class="curriculum-brand-text">
+                    <strong>Little Explorers</strong>
+                    <span>Learning Hub for Educators</span>
+                </span>
+            </a>
+
+            <button
+                class="curriculum-menu-toggle"
+                id="curriculumMenuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="curriculumNavigation">
+                ☰
+            </button>
+
+            <nav class="curriculum-nav" id="curriculumNavigation" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="curriculum.html" aria-current="page">Curriculum</a>
+                <a href="library/head-start/index.html">Head Start</a>
+                <a href="resources.html">Resources</a>
+                <a href="behavior-center.html">Behavior &amp; Inclusion</a>
+                <a class="curriculum-nav-home" href="search.html">Search Resources ↗</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="curriculum-hero">
+            <div class="curriculum-container curriculum-hero-grid">
+
+                <div>
+                    <p class="curriculum-eyebrow">The Curriculum Center</p>
+
+                    <h1>
+                        Build a Curriculum Around
+                        <span>How Children Learn</span>
+                    </h1>
+
+                    <p class="curriculum-hero-copy">
+                        Meaningful curriculum begins with children's curiosity.
+                        Explore planning tools, classroom studies, learning
+                        experiences, teaching strategies, and observation
+                        resources that help you turn everyday discoveries
+                        into purposeful learning.
+                    </p>
+
+                    <div class="curriculum-hero-actions">
+                        <a class="curriculum-button curriculum-button-primary"
+                           href="#curriculum-pathways">
+                            Explore Curriculum Resources <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a class="curriculum-button curriculum-button-secondary"
+                           href="library/curriculum/index.html">
+                            Open Planning Guide
+                        </a>
+                    </div>
+                </div>
+
+                <div class="curriculum-hero-art" aria-label="Curriculum planning introduction">
+                    <div class="curriculum-art-card">
+                        <div class="curriculum-art-icon" aria-hidden="true">🌱</div>
+                        <h2>Every Child Is a Learner.</h2>
+                        <p>
+                            Observe their interests, create meaningful
+                            experiences, and make room for discovery.
+                        </p>
+                        <span class="curriculum-art-tag">
+                            Explore · Plan · Teach · Reflect
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- QUICK LINKS -->
+
+        <section class="curriculum-quick-links" aria-label="Quick curriculum links">
+            <div class="curriculum-container curriculum-quick-grid">
+
+                <a class="curriculum-quick-card" href="library/curriculum/index.html">
+                    <div class="curriculum-quick-icon" aria-hidden="true">📝</div>
+                    <div>
+                        <strong>Planning Guide</strong>
+                        <span>Organize your teaching</span>
+                    </div>
+                </a>
+
+                <a class="curriculum-quick-card" href="studies.html">
+                    <div class="curriculum-quick-icon" aria-hidden="true">🔎</div>
+                    <div>
+                        <strong>Studies &amp; Investigations</strong>
+                        <span>Follow children's questions</span>
+                    </div>
+                </a>
+
+                <a class="curriculum-quick-card" href="library/lesson-plans/index.html">
+                    <div class="curriculum-quick-icon" aria-hidden="true">📅</div>
+                    <div>
+                        <strong>Lesson Plans</strong>
+                        <span>Plan purposeful experiences</span>
+                    </div>
+                </a>
+
+                <a class="curriculum-quick-card" href="ages/index.html">
+                    <div class="curriculum-quick-icon" aria-hidden="true">🧒</div>
+                    <div>
+                        <strong>Age &amp; Development</strong>
+                        <span>Plan for children's stages</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- MAIN CURRICULUM PATHWAYS -->
+
+        <section class="curriculum-section" id="curriculum-pathways">
+            <div class="curriculum-container">
+
+                <div class="curriculum-section-heading">
+                    <p class="curriculum-eyebrow">Explore the Pathways</p>
+                    <h2>Everything You Need to Plan With Purpose</h2>
+                    <p>
+                        Use these curriculum pathways to move from planning
+                        and preparation to engaging learning experiences,
+                        documentation, and reflection.
+                    </p>
+                </div>
+
+                <div class="curriculum-pathway-grid">
+
+                    <a class="curriculum-pathway-card" href="library/curriculum/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">📝</div>
+                        <h3>Planning &amp; Reflection</h3>
+                        <p>
+                            Organize curriculum goals, plan learning
+                            experiences, reflect on teaching, and identify
+                            meaningful next steps.
+                        </p>
+                        <span class="curriculum-card-link">Open planning guide →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="studies.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">🔍</div>
+                        <h3>Studies &amp; Investigations</h3>
+                        <p>
+                            Build extended learning around children's
+                            questions, observations, interests, and
+                            discoveries about the world.
+                        </p>
+                        <span class="curriculum-card-link">Explore the studies →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="library/lesson-plans/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">📆</div>
+                        <h3>Weekly &amp; Daily Plans</h3>
+                        <p>
+                            Connect learning objectives with group
+                            experiences, small groups, routines, and
+                            flexible classroom activities.
+                        </p>
+                        <span class="curriculum-card-link">Explore lesson plans →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="ages/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">🧩</div>
+                        <h3>Age &amp; Development</h3>
+                        <p>
+                            Consider children's developmental abilities,
+                            individual interests, emerging skills, and
+                            appropriate learning opportunities.
+                        </p>
+                        <span class="curriculum-card-link">Explore age groups →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="library/interest-areas/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">🏡</div>
+                        <h3>Learning Centers &amp; Environments</h3>
+                        <p>
+                            Prepare engaging spaces, accessible materials,
+                            and inviting learning centers that encourage
+                            exploration and independence.
+                        </p>
+                        <span class="curriculum-card-link">Explore environments →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="library/stem/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">🔬</div>
+                        <h3>STEM &amp; Discovery</h3>
+                        <p>
+                            Encourage early science, technology,
+                            engineering, mathematics, problem-solving,
+                            prediction, and experimentation.
+                        </p>
+                        <span class="curriculum-card-link">Explore STEM resources →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="library/literacy/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">📚</div>
+                        <h3>Language &amp; Literacy</h3>
+                        <p>
+                            Support communication, vocabulary, storytelling,
+                            early writing, shared reading, and meaningful
+                            conversations throughout the day.
+                        </p>
+                        <span class="curriculum-card-link">Explore literacy resources →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="activities/approaches.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">🎨</div>
+                        <h3>Intentional Teaching &amp; Activities</h3>
+                        <p>
+                            Choose experiences with a purpose while
+                            remaining responsive to children's ideas,
+                            questions, and individual learning needs.
+                        </p>
+                        <span class="curriculum-card-link">Explore teaching approaches →</span>
+                    </a>
+
+                    <a class="curriculum-pathway-card" href="library/assessment-center/index.html">
+                        <div class="curriculum-pathway-icon" aria-hidden="true">📋</div>
+                        <h3>Observation &amp; Adaptation</h3>
+                        <p>
+                            Use observations and documentation to understand
+                            children's learning and adjust experiences
+                            to support progress.
+                        </p>
+                        <span class="curriculum-card-link">Explore observation resources →</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDIES AND INVESTIGATIONS -->
+
+        <section class="curriculum-section curriculum-section-white">
+            <div class="curriculum-container">
+
+                <div class="curriculum-studies-panel">
+
+                    <div class="curriculum-studies-copy">
+                        <p class="curriculum-eyebrow">Follow Their Curiosity</p>
+                        <h2>Turn Children's Questions Into Learning</h2>
+                        <p>
+                            A study begins with something children notice,
+                            wonder about, or want to understand. Use these
+                            investigations to connect discussion, books,
+                            hands-on experiences, creative expression,
+                            and discoveries across learning domains.
+                        </p>
+                        <a class="curriculum-button curriculum-button-primary"
+                           href="studies.html">
+                            View All Studies →
+                        </a>
+                    </div>
+
+                    <div class="curriculum-study-grid">
+
+                        <a class="curriculum-study-link" href="studies/balls/index.html">
+                            <span aria-hidden="true">⚽</span> Balls
+                        </a>
+
+                        <a class="curriculum-study-link" href="studies/trees/index.html">
+                            <span aria-hidden="true">🌳</span> Trees
+                        </a>
+
+                        <a class="curriculum-study-link" href="studies/buildings/index.html">
+                            <span aria-hidden="true">🏗️</span> Buildings
+                        </a>
+
+                        <a class="curriculum-study-link" href="studies/water/index.html">
+                            <span aria-hidden="true">💧</span> Water
+                        </a>
+
+                        <a class="curriculum-study-link" href="studies/pets/index.html">
+                            <span aria-hidden="true">🐾</span> Pets
+                        </a>
+
+                        <a class="curriculum-study-link" href="studies/gardening/index.html">
+                            <span aria-hidden="true">🌱</span> Gardening
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRICULUM PLANNING CYCLE -->
+
+        <section class="curriculum-section">
+            <div class="curriculum-container">
+
+                <div class="curriculum-section-heading">
+                    <p class="curriculum-eyebrow">A Repeatable Process</p>
+                    <h2>The Curriculum Planning Cycle</h2>
+                    <p>
+                        Effective curriculum is not a one-time checklist.
+                        It is a continuous process of noticing, planning,
+                        engaging, documenting, and reflecting.
+                    </p>
+                </div>
+
+                <div class="curriculum-cycle-grid">
+
+                    <article class="curriculum-cycle-step">
+                        <div class="curriculum-cycle-number">1</div>
+                        <h3>Notice</h3>
+                        <p>
+                            Observe children's play, interests,
+                            conversations, questions, and emerging skills.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-cycle-step">
+                        <div class="curriculum-cycle-number">2</div>
+                        <h3>Plan</h3>
+                        <p>
+                            Identify goals, select materials, and prepare
+                            meaningful learning opportunities.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-cycle-step">
+                        <div class="curriculum-cycle-number">3</div>
+                        <h3>Engage</h3>
+                        <p>
+                            Interact with children, ask open-ended
+                            questions, and extend their thinking.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-cycle-step">
+                        <div class="curriculum-cycle-number">4</div>
+                        <h3>Document</h3>
+                        <p>
+                            Record observations, conversations, work
+                            samples, and evidence of learning.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-cycle-step">
+                        <div class="curriculum-cycle-number">5</div>
+                        <h3>Reflect</h3>
+                        <p>
+                            Consider what children learned and determine
+                            what to introduce or adapt next.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="curriculum-cycle-note">
+                    <strong>Remember:</strong> Follow children's interests
+                    while intentionally connecting experiences to
+                    developmental goals, individual needs, and your
+                    program's curriculum framework.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ADDITIONAL RESOURCE DIRECTORY -->
+
+        <section class="curriculum-section curriculum-section-white">
+            <div class="curriculum-container">
+
+                <div class="curriculum-section-heading">
+                    <p class="curriculum-eyebrow">More Teaching Tools</p>
+                    <h2>Build Your Curriculum Toolkit</h2>
+                    <p>
+                        Connect curriculum planning to practical classroom
+                        materials, family partnerships, and teaching resources.
+                    </p>
+                </div>
+
+                <div class="curriculum-directory-grid">
+
+                    <article class="curriculum-directory-item">
+                        <div class="curriculum-directory-icon" aria-hidden="true">🧸</div>
+                        <div>
+                            <h3>Classroom Activities</h3>
+                            <p>
+                                Find hands-on experiences that can support
+                                children's interests, skills, and learning goals.
+                            </p>
+                            <a href="activities.html">Explore activities →</a>
+                        </div>
+                    </article>
+
+                    <article class="curriculum-directory-item">
+                        <div class="curriculum-directory-icon" aria-hidden="true">📖</div>
+                        <div>
+                            <h3>Head Start Resources</h3>
+                            <p>
+                                Access your Head Start resource area for
+                                curriculum and program-related materials.
+                            </p>
+                            <a href="library/head-start/index.html">Open Head Start resources →</a>
+                        </div>
+                    </article>
+
+                    <article class="curriculum-directory-item">
+                        <div class="curriculum-directory-icon" aria-hidden="true">🗂️</div>
+                        <div>
+                            <h3>Resource Library</h3>
+                            <p>
+                                Browse the broader collection of teaching
+                                materials and classroom support resources.
+                            </p>
+                            <a href="library/index.html">Browse the library →</a>
+                        </div>
+                    </article>
+
+                    <article class="curriculum-directory-item">
+                        <div class="curriculum-directory-icon" aria-hidden="true">👨‍👩‍👧</div>
+                        <div>
+                            <h3>Family Engagement</h3>
+                            <p>
+                                Connect classroom learning with family
+                                knowledge, home experiences, and partnerships.
+                            </p>
+                            <a href="library/family-engagement/index.html">Explore family partnerships →</a>
+                        </div>
+                    </article>
+
+                    <article class="curriculum-directory-item">
+                        <div class="curriculum-directory-icon" aria-hidden="true">🧠</div>
+                        <div>
+                            <h3>Assessment Resources</h3>
+                            <p>
+                                Find observation and assessment materials
+                                to help inform individual learning plans.
+                            </p>
+                            <a href="assessment-center.html">Open assessment center →</a>
+                        </div>
+                    </article>
+
+                    <article class="curriculum-directory-item">
+                        <div class="curriculum-directory-icon" aria-hidden="true">🔎</div>
+                        <div>
+                            <h3>Search the Learning Hub</h3>
+                            <p>
+                                Look across the site for a specific activity,
+                                topic, teaching tool, or resource.
+                            </p>
+                            <a href="search.html">Search the hub →</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEPARATE HUB PATHWAYS -->
+
+        <section class="curriculum-section">
+            <div class="curriculum-container">
+
+                <div class="curriculum-section-heading">
+                    <p class="curriculum-eyebrow">Connected, Not Combined</p>
+                    <h2>Explore Other Areas of the Learning Hub</h2>
+                    <p>
+                        Curriculum is one part of a strong early childhood
+                        program. These separate sections provide additional
+                        support without overcrowding the Curriculum Center.
+                    </p>
+                </div>
+
+                <div class="curriculum-boundaries">
+
+                    <article class="curriculum-boundary-card">
+                        <h3>🎒 School Readiness</h3>
+                        <p>
+                            Explore resources focused on school transition,
+                            foundational skills, developmental progress,
+                            and preparing children for their next learning stage.
+                        </p>
+                        <a href="resources.html">Visit related resources →</a>
+                    </article>
+
+                    <article class="curriculum-boundary-card">
+                        <h3>💚 Behavior &amp; Inclusion</h3>
+                        <p>
+                            Find support for positive guidance, inclusive
+                            environments, individualized strategies, and
+                            responsive classroom practices.
+                        </p>
+                        <a href="behavior-center.html">Open Behavior &amp; Inclusion →</a>
+                    </article>
+
+                    <article class="curriculum-boundary-card">
+                        <h3>🤝 Teacher &amp; Family Support</h3>
+                        <p>
+                            Use the wider resource collection to support
+                            communication, collaboration, professional practice,
+                            and partnerships with families.
+                        </p>
+                        <a href="library/index.html">Explore support resources →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="curriculum-footer">
+        <div class="curriculum-container">
+
+            <div class="curriculum-footer-inner">
+
+                <a class="curriculum-footer-brand" href="index.html" style="text-decoration:none;">
+                    <img src="logo.png" alt="">
+                    <span>
+                        <strong>Little Explorers Learning Hub</strong>
+                        <span>Resources for early childhood educators</span>
+                    </span>
+                </a>
+
+                <nav class="curriculum-footer-links" aria-label="Footer navigation">
+                    <a href="index.html">Home</a>
+                    <a href="curriculum.html">Curriculum</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="search.html">Search</a>
+                </nav>
+
+            </div>
+
+            <div class="curriculum-footer-bottom">
+                © <span id="curriculumYear">2026</span>
+                Little Explorers Learning Hub. Supporting meaningful learning
+                in early childhood.
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    (function () {
+        const menuButton = document.getElementById("curriculumMenuToggle");
+        const navigation = document.getElementById("curriculumNavigation");
+
+        if (menuButton && navigation) {
+            menuButton.addEventListener("click", function () {
+                const isOpen = navigation.classList.toggle("is-open");
+
+                menuButton.setAttribute("aria-expanded", String(isOpen));
+                menuButton.setAttribute(
+                    "aria-label",
+                    isOpen ? "Close navigation menu" : "Open navigation menu"
+                );
+
+                menuButton.textContent = isOpen ? "✕" : "☰";
+            });
+
+            navigation.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    navigation.classList.remove("is-open");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Open navigation menu");
+                    menuButton.textContent = "☰";
+                });
+            });
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 760) {
+                    navigation.classList.remove("is-open");
+                    menuButton.setAttribute("aria-expanded", "false");
+                    menuButton.setAttribute("aria-label", "Open navigation menu");
+                    menuButton.textContent = "☰";
+                }
+            });
+        }
+
+        const year = document.getElementById("curriculumYear");
+
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+    })();
+</script>
+
 </body>
 </html>
