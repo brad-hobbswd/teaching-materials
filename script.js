@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="${siteRoot}resources.html" data-nav="support">Teacher &amp; Family Support</a>
         </nav>
         <div class="shared-nav-actions">
-          <a href="${siteRoot}search.html" class="shared-search" aria-label="Search the website"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Search</span></a>
+          <a href="${siteRoot}search.html" class="shared-search" aria-label="Search the website" title="Search"><svg class="shared-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.6"></circle><path d="m16 16 4.2 4.2"></path></svg><span>Search</span></a>
           <button class="shared-mobile-menu" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"><span aria-hidden="true">☰</span></button>
         </div>
       </div>`;
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .shared-main-nav a:hover,.shared-main-nav a:focus-visible,.shared-main-nav a[aria-current="page"]{color:#3477b9;border-bottom-color:#3477b9}
         .shared-nav-actions{display:flex;align-items:center;gap:12px}
         .shared-search{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:38px;min-height:42px;color:#26374a;text-decoration:none;font-size:18px}
+        .shared-search-icon{display:block;width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
         .shared-search span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
         .shared-mobile-menu{display:none;border:0;background:transparent;color:#26374a;font-size:26px;cursor:pointer;padding:8px}
         @media(max-width:1100px){.shared-nav-container{gap:16px}.shared-brand{min-width:205px}.shared-brand img{width:54px;height:54px}.shared-brand-text strong{font-size:18px}.shared-brand-text>span{font-size:14px}.shared-main-nav{gap:12px}.shared-main-nav a{font-size:13px}}
