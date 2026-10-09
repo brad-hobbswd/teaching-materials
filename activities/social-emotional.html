@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="../styles.css">
 
 
-</head>
+<style id="le-standard-navigation-css">.le-standard-header{position:sticky;top:0;z-index:1000;width:100%;background:#fff;border-bottom:1px solid #dce5eb;box-shadow:0 3px 12px rgba(23,59,87,.04)}.le-standard-inner{width:min(1260px,calc(100% - 40px));min-height:84px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}.le-standard-brand{display:flex;align-items:center;gap:14px;flex-shrink:0;color:#29394b;text-decoration:none}.le-standard-brand img{display:block;width:64px;height:64px;object-fit:contain}.le-standard-brand span{display:flex;flex-direction:column;gap:5px;line-height:1.15}.le-standard-brand strong{color:#29394b;font-size:1.3rem;font-weight:800}.le-standard-brand small{color:#3377b9;font-size:1rem;font-weight:500}.le-standard-nav{display:flex;align-items:center;justify-content:flex-end;gap:24px}.le-standard-nav a{position:relative;display:inline-flex;align-items:center;min-height:84px;color:#29394b;font-size:.98rem;font-weight:700;text-decoration:none;white-space:nowrap}.le-standard-nav a:hover,.le-standard-nav a:focus-visible,.le-standard-nav a[aria-current=page]{color:#3377b9}.le-standard-nav a:not(.le-standard-search)::after{content:"";position:absolute;right:0;bottom:19px;left:0;height:3px;background:#3377b9;border-radius:3px;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}.le-standard-nav a:not(.le-standard-search):hover::after,.le-standard-nav a:not(.le-standard-search):focus-visible::after,.le-standard-nav a[aria-current=page]::after{transform:scaleX(1)}.le-standard-nav .le-standard-search{justify-content:center;width:32px;min-width:32px}.le-standard-toggle{display:none;align-items:center;gap:8px;padding:10px 13px;background:#fff;color:#29394b;border:1px solid #dce5eb;border-radius:9px;font-size:.95rem;font-weight:700;cursor:pointer}@media(max-width:1100px){.le-standard-inner{gap:16px}.le-standard-nav{gap:15px}.le-standard-nav a{font-size:.87rem}.le-standard-brand img{width:56px;height:56px}.le-standard-brand strong{font-size:1.12rem}.le-standard-brand small{font-size:.91rem}}@media(max-width:900px){.le-standard-inner{min-height:76px}.le-standard-toggle{display:inline-flex}.le-standard-nav{position:absolute;top:100%;right:0;left:0;display:none;align-items:stretch;flex-direction:column;gap:0;padding:8px 20px 18px;background:#fff;border-bottom:1px solid #dce5eb;box-shadow:0 10px 20px rgba(23,59,87,.08)}.le-standard-nav.is-open{display:flex}.le-standard-nav a{min-height:auto;padding:14px 6px;white-space:normal;border-bottom:1px solid #edf0f2;font-size:.96rem}.le-standard-nav a:not(.le-standard-search)::after{display:none}.le-standard-nav .le-standard-search{justify-content:flex-start;width:100%;padding:14px 6px}}@media(max-width:420px){.le-standard-inner{width:calc(100% - 24px)}.le-standard-brand{gap:9px}.le-standard-brand img{width:48px;height:48px}.le-standard-brand strong{font-size:1rem}.le-standard-brand small{font-size:.82rem}}</style></head>
 
 
 
@@ -44,97 +44,7 @@
 <!-- HEADER -->
 
 
-<header>
-
-
-<div class="container nav-container">
-
-
-
-<a href="../index.html" class="logo">
-
-
-<img src="../logo.png" alt="Little Explorers Learning Hub Logo">
-
-
-
-<div>
-
-<h1>
-Little Explorers
-</h1>
-
-
-<span>
-Learning Hub
-</span>
-
-
-</div>
-
-
-</a>
-
-
-
-
-
-
-
-<form class="search-bar">
-
-
-<input 
-type="search"
-placeholder="Search activities, studies, lesson plans, printables...">
-
-
-<button type="submit">
-
-🔍
-
-</button>
-
-
-</form>
-
-
-
-
-
-
-<nav id="primary-navigation" class="main-nav" aria-label="Primary Navigation"><ul><li><a href="../index.html">Home</a></li><li><a href="../studies.html">Curriculum</a></li><li><a href="../library/head-start/index.html">School Readiness</a></li><li><a href="../behavior-center.html">Behavior &amp; Inclusion</a></li><li><a href="../library/index.html">Resource Library</a></li><li><a href="../resources.html">Teacher &amp; Family Support</a></li></ul></nav>
-
-
-
-
-
-<button class="mobile-menu" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
-
-
-<span class="menu-star">
-
-🌟
-
-</span>
-
-
-<span class="menu-close">
-
-✖
-
-</span>
-
-
-</button>
-
-
-
-
-</div>
-
-
-</header>
+<header class="le-standard-header"><div class="le-standard-inner"><a class="le-standard-brand" href="../index.html" aria-label="Little Explorers Learning Hub Home"><img src="../logo.png" alt="Little Explorers Learning Hub logo"><span><strong>Little Explorers</strong><small>Learning Hub</small></span></a><button class="le-standard-toggle" type="button" aria-expanded="false" aria-controls="le-standard-navigation" aria-label="Toggle navigation"><span aria-hidden="true">☰</span><span class="le-toggle-label">Menu</span></button><nav class="le-standard-nav" id="le-standard-navigation" aria-label="Main navigation"><a href="../index.html">Home</a><a href="../curriculum.html">Curriculum</a><a href="../school-readiness.html">School Readiness</a><a href="../behavior-center.html">Behavior &amp; Inclusion</a><a href="../library/index.html">Resource Library</a><a href="../resources.html">Teacher &amp; Family Support</a><a class="le-standard-search" href="../search.html" aria-label="Search the Learning Hub"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></a></nav></div></header>
 
 
 
@@ -2776,7 +2686,7 @@ Created by educators for educators.
 
 
 
-</body>
+<script id="le-standard-navigation-js">(function(){const t=document.querySelector(".le-standard-toggle"),n=document.querySelector("#le-standard-navigation");if(!t||!n)return;t.addEventListener("click",function(){const o=n.classList.toggle("is-open");t.setAttribute("aria-expanded",String(o));t.querySelector('[aria-hidden="true"]').textContent=o?"✕":"☰";t.querySelector(".le-toggle-label").textContent=o?"Close":"Menu"});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("is-open");t.setAttribute("aria-expanded","false");t.querySelector('[aria-hidden="true"]').textContent="☰";t.querySelector(".le-toggle-label").textContent="Menu"})})})();</script></body>
 
 
 </html>
