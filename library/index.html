@@ -142,11 +142,16 @@ type="image/png">
 
                 </p>
 
-                <form class="library-search">
+                <form class="library-search" action="../search.html" method="get" role="search" aria-label="Search the resource library">
+
+                    <label class="visually-hidden" for="library-search-input">Search the resource library</label>
 
                     <input
+                        id="library-search-input"
+                        name="q"
                         type="search"
-                        placeholder="Search curriculum, lesson plans, printables, assessments and more...">
+                        placeholder="Search curriculum, lesson plans, printables, assessments and more..."
+                        autocomplete="off">
 
                     <button type="submit">
 
