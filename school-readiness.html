@@ -1,0 +1,1397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Readiness | Little Explorers Learning Hub</title>
+
+    <meta name="description" content="Explore early childhood school readiness resources, developmental goals, Head Start Program Performance Standards, ELOF, observation, documentation, assessment, and family partnerships.">
+
+    <meta name="theme-color" content="#173B57">
+
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/head-start-library.css">
+    <link rel="stylesheet" href="styles/learning-hub-polish.css">
+
+    <style>
+        :root {
+            --sr-navy: #173B57;
+            --sr-green: #397A5B;
+            --sr-gold: #F0B44D;
+            --sr-cream: #F2EBDD;
+            --sr-orange: #E98252;
+            --sr-white: #FFFFFF;
+            --sr-text: #334155;
+            --sr-muted: #64748B;
+            --sr-border: #E2E8E0;
+            --sr-background: #F8F8F3;
+            --sr-radius: 20px;
+            --sr-shadow: 0 10px 30px rgba(23, 59, 87, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--sr-background);
+            color: var(--sr-text);
+            font-family: "Inter", sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sr-container {
+            width: min(1160px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        /* HEADER */
+
+        .sr-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--sr-border);
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+        }
+
+        .sr-header-inner {
+            display: flex;
+            min-height: 82px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .sr-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .sr-brand img {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .sr-brand-name {
+            display: block;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.08rem;
+            font-weight: 900;
+            line-height: 1.25;
+        }
+
+        .sr-brand-subtitle {
+            display: block;
+            margin-top: 3px;
+            color: var(--sr-muted);
+            font-size: 0.75rem;
+        }
+
+        .sr-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sr-nav a {
+            color: var(--sr-navy);
+            font-size: 0.86rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .sr-nav a:hover,
+        .sr-nav a:focus-visible {
+            color: var(--sr-green);
+        }
+
+        .sr-nav a[aria-current="page"] {
+            color: var(--sr-green);
+        }
+
+        .sr-nav .sr-nav-search {
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: var(--sr-navy);
+            color: white;
+        }
+
+        .sr-menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--sr-border);
+            border-radius: 12px;
+            background: white;
+            color: var(--sr-navy);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .sr-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 82px 0 88px;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(240,180,77,.22), transparent 28%),
+                radial-gradient(circle at 5% 100%, rgba(57,122,91,.15), transparent 34%),
+                linear-gradient(135deg, var(--sr-cream), #FFFFFF 62%, #EAF2EA);
+        }
+
+        .sr-breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 30px;
+            color: var(--sr-muted);
+            font-size: 0.82rem;
+        }
+
+        .sr-breadcrumb a {
+            color: var(--sr-green);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .sr-hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(250px, 0.7fr);
+            align-items: center;
+            gap: 55px;
+        }
+
+        .sr-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 17px;
+            color: var(--sr-green);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .sr-eyebrow::before {
+            width: 27px;
+            height: 3px;
+            border-radius: 10px;
+            background: var(--sr-orange);
+            content: "";
+        }
+
+        .sr-hero h1 {
+            margin: 0 0 22px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.035em;
+        }
+
+        .sr-hero h1 span {
+            color: var(--sr-green);
+        }
+
+        .sr-hero-copy {
+            max-width: 700px;
+            margin: 0;
+            color: #4D5C68;
+            font-size: 1.04rem;
+            line-height: 1.9;
+        }
+
+        .sr-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .sr-button {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 19px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            transition: transform .2s ease, background .2s ease;
+        }
+
+        .sr-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .sr-button-primary {
+            background: var(--sr-navy);
+            color: white;
+        }
+
+        .sr-button-primary:hover {
+            background: #245575;
+        }
+
+        .sr-button-secondary {
+            border-color: #D7E2D9;
+            background: white;
+            color: var(--sr-navy);
+        }
+
+        .sr-button-secondary:hover {
+            background: #F0F6EF;
+        }
+
+        .sr-hero-visual {
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,.85);
+            border-radius: 26px;
+            background: rgba(255,255,255,.88);
+            box-shadow: 0 20px 55px rgba(23,59,87,.11);
+        }
+
+        .sr-hero-icon {
+            display: grid;
+            width: 76px;
+            height: 76px;
+            margin-bottom: 20px;
+            place-items: center;
+            border-radius: 22px;
+            background: var(--sr-cream);
+            font-size: 2.5rem;
+        }
+
+        .sr-hero-visual h2 {
+            margin: 0 0 10px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.55rem;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .sr-hero-visual p {
+            margin: 0;
+            color: var(--sr-muted);
+            font-size: 0.92rem;
+        }
+
+        .sr-hero-tag {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #E7F2E8;
+            color: var(--sr-green);
+            font-size: 0.76rem;
+            font-weight: 800;
+        }
+
+        /* QUICK LINKS */
+
+        .sr-quick {
+            position: relative;
+            z-index: 2;
+            margin-top: -28px;
+        }
+
+        .sr-quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .sr-quick-card {
+            display: flex;
+            min-height: 105px;
+            align-items: center;
+            gap: 13px;
+            padding: 18px;
+            border: 1px solid var(--sr-border);
+            border-radius: 16px;
+            background: white;
+            box-shadow: var(--sr-shadow);
+            text-decoration: none;
+            transition: transform .2s ease;
+        }
+
+        .sr-quick-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .sr-quick-icon {
+            display: grid;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 13px;
+            background: var(--sr-cream);
+            font-size: 1.4rem;
+        }
+
+        .sr-quick-card strong {
+            display: block;
+            color: var(--sr-navy);
+            font-size: 0.88rem;
+            line-height: 1.4;
+        }
+
+        .sr-quick-card span {
+            display: block;
+            margin-top: 4px;
+            color: var(--sr-muted);
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .sr-section {
+            padding: 78px 0;
+        }
+
+        .sr-section-white {
+            background: white;
+        }
+
+        .sr-section-heading {
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .sr-section-heading .sr-eyebrow {
+            justify-content: center;
+        }
+
+        .sr-section-heading h2 {
+            margin: 0 0 14px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .sr-section-heading p {
+            margin: 0;
+            color: var(--sr-muted);
+            line-height: 1.85;
+        }
+
+        /* RESOURCE CARDS */
+
+        .sr-resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .sr-card {
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 26px;
+            border: 1px solid var(--sr-border);
+            border-radius: var(--sr-radius);
+            background: white;
+            box-shadow: 0 6px 20px rgba(23,59,87,.035);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .sr-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sr-shadow);
+        }
+
+        .sr-card-icon {
+            display: grid;
+            width: 57px;
+            height: 57px;
+            margin-bottom: 20px;
+            place-items: center;
+            border-radius: 17px;
+            background: var(--sr-cream);
+            font-size: 1.8rem;
+        }
+
+        .sr-card h3 {
+            margin: 0 0 10px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 900;
+            line-height: 1.35;
+        }
+
+        .sr-card p {
+            margin: 0 0 20px;
+            color: var(--sr-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .sr-card a {
+            margin-top: auto;
+            color: var(--sr-green);
+            font-size: 0.88rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .sr-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* SCHOOL READINESS EXPLAINER */
+
+        .sr-explainer {
+            display: grid;
+            grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+            align-items: center;
+            gap: 40px;
+            padding: 35px;
+            border: 1px solid #E2E9DF;
+            border-radius: 25px;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(240,180,77,.15), transparent 35%),
+                #F7F8F1;
+        }
+
+        .sr-explainer h2 {
+            margin: 0 0 15px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 900;
+            line-height: 1.25;
+        }
+
+        .sr-explainer p {
+            margin: 0 0 20px;
+            color: var(--sr-muted);
+            line-height: 1.85;
+        }
+
+        .sr-highlight-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .sr-highlight {
+            padding: 15px;
+            border: 1px solid var(--sr-border);
+            border-radius: 13px;
+            background: white;
+            color: var(--sr-navy);
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+
+        /* PRACTICE CYCLE */
+
+        .sr-cycle-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .sr-cycle-card {
+            padding: 23px 20px;
+            border: 1px solid var(--sr-border);
+            border-radius: 17px;
+            background: white;
+        }
+
+        .sr-cycle-number {
+            display: grid;
+            width: 43px;
+            height: 43px;
+            margin-bottom: 16px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--sr-navy);
+            color: white;
+            font-family: "Nunito", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+        .sr-cycle-card h3 {
+            margin: 0 0 9px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+        .sr-cycle-card p {
+            margin: 0;
+            color: var(--sr-muted);
+            font-size: 0.87rem;
+            line-height: 1.8;
+        }
+
+        .sr-note {
+            max-width: 820px;
+            margin: 28px auto 0;
+            padding: 19px 22px;
+            border-left: 4px solid var(--sr-gold);
+            border-radius: 0 12px 12px 0;
+            background: #FFF9EB;
+            color: #65532D;
+            font-size: 0.91rem;
+        }
+
+        /* CONNECTED AREAS */
+
+        .sr-connected-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .sr-connected-card {
+            padding: 25px;
+            border: 1px solid var(--sr-border);
+            border-radius: 17px;
+            background: white;
+        }
+
+        .sr-connected-card h3 {
+            margin: 0 0 10px;
+            color: var(--sr-navy);
+            font-family: "Nunito", sans-serif;
+            font-size: 1.15rem;
+            font-weight: 900;
+        }
+
+        .sr-connected-card p {
+            margin: 0 0 15px;
+            color: var(--sr-muted);
+            font-size: 0.89rem;
+            line-height: 1.8;
+        }
+
+        .sr-connected-card a {
+            color: var(--sr-green);
+            font-size: 0.87rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .sr-connected-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        .sr-footer {
+            padding: 40px 0 20px;
+            background: var(--sr-navy);
+            color: rgba(255,255,255,.84);
+        }
+
+        .sr-footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .sr-footer h2,
+        .sr-footer h3 {
+            margin: 0 0 13px;
+            color: white;
+            font-family: "Nunito", sans-serif;
+            font-weight: 900;
+        }
+
+        .sr-footer h2 {
+            font-size: 1.1rem;
+        }
+
+        .sr-footer h3 {
+            font-size: 0.95rem;
+        }
+
+        .sr-footer p {
+            margin: 0;
+            font-size: 0.86rem;
+            line-height: 1.8;
+        }
+
+        .sr-footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 9px;
+        }
+
+        .sr-footer-links a {
+            color: rgba(255,255,255,.9);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .sr-footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .sr-footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.16);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+
+        .sr-page a:focus-visible,
+        .sr-page button:focus-visible {
+            outline: 3px solid var(--sr-orange);
+            outline-offset: 4px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .sr-nav {
+                gap: 12px;
+            }
+
+            .sr-nav a {
+                font-size: 0.79rem;
+            }
+
+            .sr-quick-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sr-resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sr-cycle-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .sr-container {
+                width: min(100% - 30px, 600px);
+            }
+
+            .sr-header-inner {
+                min-height: 73px;
+            }
+
+            .sr-brand img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .sr-brand-name {
+                font-size: .96rem;
+            }
+
+            .sr-brand-subtitle {
+                font-size: .68rem;
+            }
+
+            .sr-menu-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .sr-nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                display: none;
+                align-items: stretch;
+                padding: 14px 20px 22px;
+                border-bottom: 1px solid var(--sr-border);
+                background: white;
+                box-shadow: 0 15px 22px rgba(23,59,87,.08);
+            }
+
+            .sr-nav.is-open {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .sr-nav a {
+                padding: 12px 5px;
+                font-size: .91rem;
+            }
+
+            .sr-nav .sr-nav-search {
+                margin-top: 8px;
+                padding: 12px;
+                text-align: center;
+            }
+
+            .sr-hero {
+                padding: 50px 0 62px;
+            }
+
+            .sr-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .sr-hero h1 {
+                font-size: clamp(2.35rem, 9vw, 3.3rem);
+            }
+
+            .sr-hero-copy {
+                font-size: .98rem;
+            }
+
+            .sr-hero-visual {
+                padding: 24px;
+            }
+
+            .sr-quick {
+                margin-top: -18px;
+            }
+
+            .sr-quick-card {
+                min-height: 94px;
+                gap: 9px;
+                padding: 12px;
+            }
+
+            .sr-quick-icon {
+                width: 37px;
+                height: 37px;
+                font-size: 1.2rem;
+            }
+
+            .sr-quick-card strong {
+                font-size: .81rem;
+            }
+
+            .sr-quick-card span {
+                font-size: .7rem;
+            }
+
+            .sr-section {
+                padding: 60px 0;
+            }
+
+            .sr-resource-grid,
+            .sr-connected-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .sr-card {
+                padding: 23px;
+            }
+
+            .sr-explainer {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 23px;
+            }
+
+            .sr-highlight-list {
+                grid-template-columns: 1fr;
+            }
+
+            .sr-cycle-grid {
+                gap: 12px;
+            }
+
+            .sr-footer-grid {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .sr-quick-grid,
+            .sr-cycle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sr-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .sr-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="sr-page">
+
+    <!-- HEADER -->
+
+    <header class="sr-header">
+        <div class="sr-container sr-header-inner">
+
+            <a class="sr-brand" href="index.html" aria-label="Little Explorers Learning Hub home">
+                <img src="logo.png" alt="Little Explorers Learning Hub logo">
+                <span>
+                    <span class="sr-brand-name">Little Explorers</span>
+                    <span class="sr-brand-subtitle">Learning Hub for Educators</span>
+                </span>
+            </a>
+
+            <button
+                class="sr-menu-toggle"
+                id="srMenuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="srNavigation">
+                ☰
+            </button>
+
+            <nav class="sr-nav" id="srNavigation" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="curriculum.html">Curriculum</a>
+                <a href="school-readiness.html" aria-current="page">School Readiness</a>
+                <a href="behavior-center.html">Behavior &amp; Inclusion</a>
+                <a href="library/index.html">Resource Library</a>
+                <a href="resources.html">Teacher &amp; Family Support</a>
+                <a class="sr-nav-search" href="search.html">Search Resources ↗</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="sr-hero">
+            <div class="sr-container">
+
+                <div class="sr-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span aria-hidden="true">›</span>
+                    <span aria-current="page">School Readiness</span>
+                </div>
+
+                <div class="sr-hero-grid">
+
+                    <div>
+                        <p class="sr-eyebrow">Development · Progress · Preparation</p>
+
+                        <h1>
+                            School Readiness Begins With
+                            <span>Everyday Learning</span>
+                        </h1>
+
+                        <p class="sr-hero-copy">
+                            School readiness is an ongoing process that supports
+                            children's development, confidence, relationships,
+                            and growing knowledge. Explore resources that help
+                            educators connect developmental goals with
+                            meaningful experiences, observations, assessment,
+                            and partnerships with families.
+                        </p>
+
+                        <div class="sr-actions">
+                            <a class="sr-button sr-button-primary" href="#readiness-resources">
+                                Explore Readiness Resources →
+                            </a>
+
+                            <a class="sr-button sr-button-secondary" href="library/assessment-center/index.html">
+                                Assessment &amp; Progress
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside class="sr-hero-visual">
+                        <div class="sr-hero-icon" aria-hidden="true">🌱</div>
+                        <h2>Every Child Develops Along a Journey.</h2>
+                        <p>
+                            Notice strengths, understand developmental progress,
+                            partner with families, and create opportunities
+                            that help every child keep learning.
+                        </p>
+                        <span class="sr-hero-tag">Observe · Understand · Support</span>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK LINKS -->
+
+        <section class="sr-quick" aria-label="School readiness quick links">
+            <div class="sr-container sr-quick-grid">
+
+                <a class="sr-quick-card" href="library/head-start/resources/performance-standards.html">
+                    <div class="sr-quick-icon" aria-hidden="true">📑</div>
+                    <div>
+                        <strong>Program Standards</strong>
+                        <span>Understand expectations</span>
+                    </div>
+                </a>
+
+                <a class="sr-quick-card" href="library/head-start/resources/elof-domains.html">
+                    <div class="sr-quick-icon" aria-hidden="true">📚</div>
+                    <div>
+                        <strong>ELOF Domains</strong>
+                        <span>Explore development</span>
+                    </div>
+                </a>
+
+                <a class="sr-quick-card" href="library/assessment-center/index.html">
+                    <div class="sr-quick-icon" aria-hidden="true">📋</div>
+                    <div>
+                        <strong>Assessment</strong>
+                        <span>Use evidence of learning</span>
+                    </div>
+                </a>
+
+                <a class="sr-quick-card" href="library/printable-library/index.html">
+                    <div class="sr-quick-icon" aria-hidden="true">🖨️</div>
+                    <div>
+                        <strong>Printables</strong>
+                        <span>Find practical tools</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+
+        <section class="sr-section">
+            <div class="sr-container">
+
+                <div class="sr-explainer">
+
+                    <div>
+                        <p class="sr-eyebrow">A Whole-Child Approach</p>
+                        <h2>Understand the Child, Not Just the Checklist</h2>
+                        <p>
+                            School readiness is more than a test or a list
+                            of skills. It includes children's development,
+                            relationships, approaches to learning, and
+                            opportunities to participate in meaningful
+                            experiences at home and in the classroom.
+                        </p>
+                        <a class="sr-button sr-button-primary" href="#readiness-cycle">
+                            See the Practice Cycle →
+                        </a>
+                    </div>
+
+                    <div class="sr-highlight-list">
+                        <div class="sr-highlight">📑 Program Standards</div>
+                        <div class="sr-highlight">📚 ELOF Domains</div>
+                        <div class="sr-highlight">🎯 Developmental Goals</div>
+                        <div class="sr-highlight">👀 Observation</div>
+                        <div class="sr-highlight">📝 Documentation</div>
+                        <div class="sr-highlight">🤝 Family Partnerships</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOURCE COLLECTIONS -->
+
+        <section class="sr-section sr-section-white" id="readiness-resources">
+            <div class="sr-container">
+
+                <div class="sr-section-heading">
+                    <p class="sr-eyebrow">Resource Collections</p>
+                    <h2>Explore the School Readiness Toolkit</h2>
+                    <p>
+                        Start with the framework, learn how to recognize
+                        children's development, and use what you observe
+                        to inform responsive teaching and support.
+                    </p>
+                </div>
+
+                <div class="sr-resource-grid">
+
+                    <article class="sr-card">
+                        <div class="sr-card-icon" aria-hidden="true">📑</div>
+                        <h3>Head Start Program Performance Standards</h3>
+                        <p>
+                            Find educator resources related to program
+                            expectations, teaching practice, family
+                            engagement, and child development.
+                        </p>
+                        <a href="library/head-start/resources/performance-standards.html">
+                            Explore Standards Resources →
+                        </a>
+                    </article>
+
+                    <article class="sr-card">
+                        <div class="sr-card-icon" aria-hidden="true">📚</div>
+                        <h3>Early Learning Outcomes Framework</h3>
+                        <p>
+                            Explore the ELOF framework and its developmental
+                            domains to help connect children's learning
+                            with classroom experiences.
+                        </p>
+                        <a href="library/head-start/resources/elof-domains.html">
+                            Explore ELOF Domains →
+                        </a>
+                    </article>
+
+                    <article class="sr-card">
+                        <div class="sr-card-icon" aria-hidden="true">🎯</div>
+                        <h3>School Readiness Goals</h3>
+                        <p>
+                            Connect program goals and developmental
+                            expectations to learning opportunities,
+                            observations, and planning.
+                        </p>
+                        <a href="library/head-start/resources/school-readiness.html">
+                            Explore Readiness Goals →
+                        </a>
+                    </article>
+
+                    <article class="sr-card">
+                        <div class="sr-card-icon" aria-hidden="true">🏫</div>
+                        <h3>Classroom Implementation</h3>
+                        <p>
+                            Consider how classroom environments, routines,
+                            interactions, and intentional teaching support
+                            children's development.
+                        </p>
+                        <a href="library/head-start/resources/classroom-implementation.html">
+                            Explore Classroom Practice →
+                        </a>
+                    </article>
+
+                    <article class="sr-card">
+                        <div class="sr-card-icon" aria-hidden="true">👀</div>
+                        <h3>Observation &amp; Documentation</h3>
+                        <p>
+                            Learn how to notice meaningful learning,
+                            record observations, collect work samples,
+                            and use documentation to guide next steps.
+                        </p>
+                        <a href="library/head-start/resources/observation-documentation.html">
+                            Explore Documentation →
+                        </a>
+                    </article>
+
+                    <article class="sr-card">
+                        <div class="sr-card-icon" aria-hidden="true">📋</div>
+                        <h3>Assessment &amp; Progress Monitoring</h3>
+                        <p>
+                            Find assessment-related resources to help
+                            educators understand developmental progress
+                            and plan responsive learning support.
+                        </p>
+                        <a href="library/assessment-center/index.html">
+                            Open Assessment Center →
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRACTICE CYCLE -->
+
+        <section class="sr-section" id="readiness-cycle">
+            <div class="sr-container">
+
+                <div class="sr-section-heading">
+                    <p class="sr-eyebrow">From Knowledge to Practice</p>
+                    <h2>A Practical School Readiness Cycle</h2>
+                    <p>
+                        Use this process to connect developmental
+                        expectations with real experiences and decisions
+                        that support each child.
+                    </p>
+                </div>
+
+                <div class="sr-cycle-grid">
+
+                    <article class="sr-cycle-card">
+                        <div class="sr-cycle-number">01</div>
+                        <h3>Understand</h3>
+                        <p>
+                            Review applicable frameworks, developmental
+                            domains, program goals, and expectations.
+                        </p>
+                    </article>
+
+                    <article class="sr-cycle-card">
+                        <div class="sr-cycle-number">02</div>
+                        <h3>Observe</h3>
+                        <p>
+                            Notice children's interests, strengths,
+                            emerging skills, interactions, and questions.
+                        </p>
+                    </article>
+
+                    <article class="sr-cycle-card">
+                        <div class="sr-cycle-number">03</div>
+                        <h3>Document</h3>
+                        <p>
+                            Record meaningful evidence through
+                            observations, conversations, and work samples.
+                        </p>
+                    </article>
+
+                    <article class="sr-cycle-card">
+                        <div class="sr-cycle-number">04</div>
+                        <h3>Respond</h3>
+                        <p>
+                            Plan appropriate experiences, collaborate
+                            with families, and identify helpful next steps.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="sr-note">
+                    <strong>Educator reminder:</strong> Use observations and
+                    assessment information as part of an ongoing process.
+                    Interpret evidence in context, consider each child's
+                    strengths and needs, and follow your program's applicable
+                    assessment and documentation procedures.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONNECTED HUB AREAS -->
+
+        <section class="sr-section sr-section-white">
+            <div class="sr-container">
+
+                <div class="sr-section-heading">
+                    <p class="sr-eyebrow">Connected Areas of Support</p>
+                    <h2>Find the Right Resource for Your Next Step</h2>
+                    <p>
+                        School readiness works alongside curriculum,
+                        inclusive teaching, and partnerships with families.
+                        Each area has its own place in the Learning Hub.
+                    </p>
+                </div>
+
+                <div class="sr-connected-grid">
+
+                    <article class="sr-connected-card">
+                        <h3>📘 Curriculum</h3>
+                        <p>
+                            Explore studies, lesson planning, learning
+                            environments, teaching strategies, and
+                            developmentally appropriate experiences.
+                        </p>
+                        <a href="curriculum.html">Open Curriculum →</a>
+                    </article>
+
+                    <article class="sr-connected-card">
+                        <h3>💚 Behavior &amp; Inclusion</h3>
+                        <p>
+                            Find support for positive guidance, inclusion,
+                            individualized strategies, and responsive
+                            classroom environments.
+                        </p>
+                        <a href="behavior-center.html">Open Behavior &amp; Inclusion →</a>
+                    </article>
+
+                    <article class="sr-connected-card">
+                        <h3>🤝 Teacher &amp; Family Support</h3>
+                        <p>
+                            Explore resources for communication,
+                            family partnerships, classroom support,
+                            and educator collaboration.
+                        </p>
+                        <a href="resources.html">Explore Support Resources →</a>
+                    </article>
+
+                    <article class="sr-connected-card">
+                        <h3>🗂️ Resource Library</h3>
+                        <p>
+                            Browse the wider collection of early childhood
+                            materials and educator tools.
+                        </p>
+                        <a href="library/index.html">Browse the Library →</a>
+                    </article>
+
+                    <article class="sr-connected-card">
+                        <h3>🖨️ Printable Library</h3>
+                        <p>
+                            Find printable classroom materials and
+                            practical resources for teaching and planning.
+                        </p>
+                        <a href="library/printable-library/index.html">Browse Printables →</a>
+                    </article>
+
+                    <article class="sr-connected-card">
+                        <h3>🔎 Search the Learning Hub</h3>
+                        <p>
+                            Search for a topic, activity, teaching
+                            resource, or support tool across the site.
+                        </p>
+                        <a href="search.html">Search Resources →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="sr-footer">
+        <div class="sr-container">
+
+            <div class="sr-footer-grid">
+
+                <div>
+                    <h2>Little Explorers Learning Hub</h2>
+                    <p>
+                        Supporting educators with practical resources
+                        for early childhood learning, development,
+                        and family partnerships.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Explore the Hub</h3>
+                    <nav class="sr-footer-links" aria-label="Explore links">
+                        <a href="index.html">Home</a>
+                        <a href="curriculum.html">Curriculum</a>
+                        <a href="school-readiness.html">School Readiness</a>
+                        <a href="behavior-center.html">Behavior &amp; Inclusion</a>
+                        <a href="library/index.html">Resource Library</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h3>Educator Resources</h3>
+                    <nav class="sr-footer-links" aria-label="Educator resource links">
+                        <a href="library/assessment-center/index.html">Assessment Center</a>
+                        <a href="library/printable-library/index.html">Printable Library</a>
+                        <a href="resources.html">Teacher &amp; Family Support</a>
+                        <a href="search.html">Search Resources</a>
+                    </nav>
+                </div>
+
+            </div>
+
+            <div class="sr-footer-bottom">
+                © <span id="srYear">2026</span> Little Explorers Learning Hub.
+                All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+<script>
+(function () {
+    const menuButton = document.getElementById("srMenuToggle");
+    const navigation = document.getElementById("srNavigation");
+
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", function () {
+            const isOpen = navigation.classList.toggle("is-open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+        });
+
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("is-open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Open navigation menu");
+                menuButton.textContent = "☰";
+            });
+        });
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 760) {
+                navigation.classList.remove("is-open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Open navigation menu");
+                menuButton.textContent = "☰";
+            }
+        });
+    }
+
+    const year = document.getElementById("srYear");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+})();
+</script>
+
+</body>
+</html>
