@@ -14,11 +14,12 @@
 <link rel="stylesheet" href="../../styles/learning-hub-polish.css">
 </head>
 <body>
-<header><div class="container nav-container">
-<a href="../../index.html" class="logo"><img src="../../logo.png" alt="Little Explorers Learning Hub Logo"><div><h1>Little Explorers</h1><span>Learning Hub</span></div></a>
-<nav id="primary-navigation" class="main-nav" aria-label="Primary Navigation"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../curriculum.html">Curriculum</a></li><li><a href="../head-start/index.html">School Readiness</a></li><li><a href="../../behavior-center.html" class="active" aria-current="page">Behavior &amp; Inclusion</a></li><li><a href="../index.html">Resource Library</a></li><li><a href="../../resources.html">Teacher &amp; Family Support</a></li></ul></nav>
-<button class="mobile-menu" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">☰</button>
-</div></header>
+<header class="le-standard-header"><div class="le-standard-inner">
+<a class="le-standard-brand" href="../../index.html" aria-label="Little Explorers Learning Hub Home"><img src="../../logo.png" alt="Little Explorers Learning Hub logo"><span><strong>Little Explorers</strong><small>Learning Hub</small></span></a>
+<button class="le-standard-toggle" type="button" aria-expanded="false" aria-controls="le-standard-navigation" aria-label="Toggle navigation"><span aria-hidden="true">☰</span><span class="le-toggle-label">Menu</span></button>
+<nav class="le-standard-nav" id="le-standard-navigation" aria-label="Main navigation">
+<a href="../../index.html">Home</a><a href="../../curriculum.html">Curriculum</a><a href="../../school-readiness.html">School Readiness</a><a href="../../behavior-center.html" aria-current="page">Behavior &amp; Inclusion</a><a href="../index.html">Resource Library</a><a href="../../resources.html">Teacher &amp; Family Support</a>
+<a class="le-standard-search" href="../../search.html" aria-label="Search the Learning Hub" title="Search"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></a></nav></div></header>
 <section class="study-hero"><div class="container">
 <div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a href="../../behavior-center.html">Behavior &amp; Inclusion</a><span>›</span><span>Inclusion &amp; Accessibility</span></div>
 <h1>🧩 Inclusion &amp; Accessibility</h1>
@@ -44,5 +45,6 @@
 </div></section>
 <footer><div class="container"><p>Little Explorers Learning Hub · Supporting inclusive early learning through collaboration, responsive teaching, and meaningful participation.</p></div></footer>
 <script src="../../script.js"></script>
+<script id="le-standard-navigation-js">(function(){const t=document.querySelector(".le-standard-toggle"),n=document.querySelector("#le-standard-navigation");if(!t||!n)return;t.addEventListener("click",function(){const o=n.classList.toggle("is-open");t.setAttribute("aria-expanded",String(o));t.querySelector('[aria-hidden="true"]').textContent=o?"✕":"☰";t.querySelector(".le-toggle-label").textContent=o?"Close":"Menu"});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("is-open");t.setAttribute("aria-expanded","false");t.querySelector('[aria-hidden="true"]').textContent="☰";t.querySelector(".le-toggle-label").textContent="Menu"})})})();</script>
 </body>
 </html>
