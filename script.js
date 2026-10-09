@@ -5,26 +5,55 @@
 document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* Mobile navigation */
+  /* Accessible mobile navigation */
   const mobileButton = document.querySelector(".mobile-menu");
   const navigation = document.querySelector(".main-nav") || document.querySelector("nav");
 
   if (mobileButton && navigation) {
-    mobileButton.setAttribute("aria-expanded", "false");
+    if (!navigation.id) navigation.id = "primary-navigation";
+
+    const setMenuOpen = open => {
+      navigation.classList.toggle("show", open);
+      navigation.classList.toggle("active", open);
+      mobileButton.classList.toggle("active", open);
+      mobileButton.setAttribute("aria-controls", navigation.id);
+      mobileButton.setAttribute("aria-expanded", String(open));
+      mobileButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    };
+
+    setMenuOpen(false);
+
     mobileButton.addEventListener("click", () => {
-      const open = navigation.classList.contains("show") || navigation.classList.contains("active");
-      navigation.classList.toggle("show", !open);
-      navigation.classList.toggle("active", !open);
-      mobileButton.classList.toggle("active", !open);
-      mobileButton.setAttribute("aria-expanded", String(!open));
-      mobileButton.setAttribute("aria-label", open ? "Open Navigation" : "Close Navigation");
+      const isOpen = mobileButton.getAttribute("aria-expanded") === "true";
+      setMenuOpen(!isOpen);
     });
-    navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-      navigation.classList.remove("show", "active");
-      mobileButton.classList.remove("active");
-      mobileButton.setAttribute("aria-expanded", "false");
-      mobileButton.setAttribute("aria-label", "Open Navigation");
-    }));
+
+    navigation.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && mobileButton.getAttribute("aria-expanded") === "true") {
+        setMenuOpen(false);
+        mobileButton.focus();
+      }
+    });
+
+    document.addEventListener("click", event => {
+      if (
+        mobileButton.getAttribute("aria-expanded") === "true" &&
+        !navigation.contains(event.target) &&
+        !mobileButton.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 1101px)").matches) {
+        setMenuOpen(false);
+      }
+    });
   }
 
   /* Active navigation */
