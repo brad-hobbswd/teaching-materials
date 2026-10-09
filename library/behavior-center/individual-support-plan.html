@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Individualized Positive Behavior Support Plan | Little Explorers Learning Hub</title>
+<meta name="description" content="A free, printable early childhood positive behavior support planning form for objective observations, proactive classroom supports, replacement skills, and progress review.">
+<link rel="stylesheet" href="../../styles/behavior-center.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+.plan-wrap{width:min(1000px,92%);margin:0 auto 64px}.plan-paper{background:#fff;border:1px solid #d9e2ec;border-radius:16px;padding:clamp(18px,4vw,38px);box-shadow:0 12px 34px rgba(25,45,65,.08)}.plan-note{background:#eef6fb;border-left:4px solid #2f6fa5;padding:14px 18px;border-radius:8px;margin:18px 0 26px}.plan-section{margin:28px 0}.plan-section h2{font-size:1.35rem;margin:0 0 8px}.plan-section>p{margin:0 0 14px;color:#526477}.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:.9rem;font-weight:700;color:#233242}.field input,.field textarea,.field select{width:100%;border:1px solid #b9c8d6;border-radius:7px;padding:10px;font:inherit;color:#233242;background:#fff}.field textarea{min-height:88px;resize:vertical}.check-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check-item{display:flex;align-items:flex-start;gap:9px;border:1px solid #d9e2ec;border-radius:8px;padding:10px}.check-item input{margin-top:5px}.plan-actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 20px}.plan-actions button,.plan-actions a{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer;text-decoration:none}.print-btn{background:#21557f;color:white}.back-btn{background:#eef6fb;color:#233242}.footer-reminder{font-size:.9rem;color:#526477;border-top:1px solid #d9e2ec;padding-top:16px;margin-top:26px}
+@media(max-width:650px){.field-grid,.check-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.plan-paper{padding:16px}.plan-actions{flex-direction:column}.plan-actions button,.plan-actions a{text-align:center}}
+@media print{body{background:#fff!important;color:#000!important;font-size:10pt}.site-header,.study-hero,.plan-actions,footer,.plan-note .screen-only{display:none!important}.plan-wrap{width:100%;margin:0}.plan-paper{border:0;border-radius:0;box-shadow:none;padding:0}.plan-section{margin:16px 0;break-inside:avoid}.field input,.field textarea,.field select{border:1px solid #888;border-radius:0;padding:6px;background:#fff!important;color:#000!important}.field textarea{min-height:60px}.plan-section h2{font-size:12pt}.check-item{padding:6px;border-color:#aaa}input,textarea,select{print-color-adjust:exact}a{color:#000;text-decoration:none}}
+</style>
+</head>
+<body>
+<header><div class="container nav-container">
+<a href="../../index.html" class="logo"><img src="../../logo.png" alt="Little Explorers Learning Hub Logo"><div><h1>Little Explorers</h1><span>Learning Hub</span></div></a>
+<nav id="primary-navigation" class="main-nav" aria-label="Primary Navigation"><ul><li><a href="../../index.html">Home</a></li><li><a href="../../studies.html">Curriculum</a></li><li><a href="../head-start/index.html">School Readiness</a></li><li><a href="../../behavior-center.html" class="active" aria-current="page">Behavior &amp; Inclusion</a></li><li><a href="../index.html">Resource Library</a></li><li><a href="../../resources.html">Teacher &amp; Family Support</a></li></ul></nav>
+<button class="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+</div></header>
+<section class="study-hero"><div class="container"><div class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><a href="../index.html">Resource Library</a><span>›</span><a href="index.html">Behavior Center</a><span>›</span><span>Positive Behavior Support Plan</span></div><h1>🌱 Individualized Positive Behavior Support Plan</h1><p>A practical form for observing patterns, planning supportive responses, teaching new skills, and reviewing progress with families and the teaching team.</p></div></section>
+<main class="plan-wrap">
+<div class="plan-actions"><button class="print-btn" type="button" onclick="window.print()">Print or Save as PDF</button><a class="back-btn" href="index.html">Back to Behavior Library</a></div>
+<div class="plan-paper">
+<div class="plan-note"><strong>Use strengths based, objective language.</strong> Describe what you can see and hear rather than labeling a child. This tool supports classroom planning and is not a diagnostic instrument. Follow program procedures and consult the appropriate specialist or supervisor when additional support is needed.</div>
+<form>
+<section class="plan-section"><h2>1. Child and Planning Team</h2><div class="field-grid">
+<div class="field"><label for="child">Child's name or identifier</label><input id="child" name="child"></div>
+<div class="field"><label for="dob">Date of birth / age group</label><input id="dob" name="dob"></div>
+<div class="field"><label for="date">Plan start date</label><input id="date" name="date" type="date"></div>
+<div class="field"><label for="review">Review date</label><input id="review" name="review" type="date"></div>
+<div class="field"><label for="team">Team members</label><input id="team" name="team" placeholder="Educators, family, support staff"></div>
+<div class="field"><label for="setting">Setting or routine</label><input id="setting" name="setting" placeholder="Arrival, centers, meals, transitions"></div>
+</div></section>
+<section class="plan-section"><h2>2. Strengths, Interests, and What Works</h2><p>Start with what the child enjoys, communicates well, and already does successfully.</p><div class="field-grid">
+<div class="field full"><label for="strengths">Child's strengths, interests, and successful experiences</label><textarea id="strengths" name="strengths"></textarea></div>
+<div class="field full"><label for="relationships">Helpful relationships, preferred materials, languages, or communication methods</label><textarea id="relationships" name="relationships"></textarea></div>
+</div></section>
+<section class="plan-section"><h2>3. Describe the Concern Objectively</h2><p>Record observable actions and words. Avoid assumptions about intent or character.</p><div class="field-grid">
+<div class="field full"><label for="behavior">What exactly do you see or hear?</label><textarea id="behavior" name="behavior" placeholder="Example: During cleanup, the child drops to the floor and says 'no' for about two minutes."></textarea></div>
+<div class="field"><label for="frequency">How often does it occur?</label><input id="frequency" name="frequency" placeholder="Count or estimate"></div>
+<div class="field"><label for="duration">Typical duration</label><input id="duration" name="duration"></div>
+<div class="field full"><label for="impact">What is the impact on safety, participation, or learning?</label><textarea id="impact" name="impact"></textarea></div>
+</div></section>
+<section class="plan-section"><h2>4. ABC Observation: Before, Behavior, After</h2><div class="field-grid">
+<div class="field full"><label for="before">A. Antecedent: What happened immediately before?</label><textarea id="before" name="before" placeholder="Activity, transition, demand, noise, peer interaction, wait time, or other context"></textarea></div>
+<div class="field full"><label for="action">B. Behavior: What was seen or heard?</label><textarea id="action" name="action"></textarea></div>
+<div class="field full"><label for="after">C. Consequence: What happened immediately after?</label><textarea id="after" name="after" placeholder="Adult response, peer response, task changed, access gained, break offered"></textarea></div>
+<div class="field full"><label for="pattern">Patterns across observations (time, setting, people, sensory factors, communication, or unmet needs)</label><textarea id="pattern" name="pattern"></textarea></div>
+</div></section>
+<section class="plan-section"><h2>5. Possible Purpose and Missing Skills</h2><p>Use observations to form a tentative hypothesis, not a diagnosis. Gather more evidence when the pattern is unclear.</p><div class="check-grid">
+<label class="check-item"><input type="checkbox" name="purpose" value="communication"> Communicating a need or seeking connection</label>
+<label class="check-item"><input type="checkbox" name="purpose" value="access"> Seeking an item, activity, or turn</label>
+<label class="check-item"><input type="checkbox" name="purpose" value="escape"> Avoiding or delaying a difficult task or transition</label>
+<label class="check-item"><input type="checkbox" name="purpose" value="sensory"> Responding to sensory input or seeking movement</label>
+<label class="check-item"><input type="checkbox" name="purpose" value="unclear"> Not yet clear; collect more observations</label>
+</div><div class="field-grid" style="margin-top:14px"><div class="field full"><label for="skill">Skill to teach (for example, asking for help, requesting a break, waiting, or naming a feeling)</label><textarea id="skill" name="skill"></textarea></div></div></section>
+<section class="plan-section"><h2>6. Proactive Supports and Environment</h2><p>Select and describe supports to try before the behavior occurs.</p><div class="check-grid">
+<label class="check-item"><input type="checkbox" name="support" value="visual"> Visual schedule or first/then cue</label>
+<label class="check-item"><input type="checkbox" name="support" value="transition"> Transition warning, song, or timer</label>
+<label class="check-item"><input type="checkbox" name="support" value="choice"> Meaningful choices and child participation</label>
+<label class="check-item"><input type="checkbox" name="support" value="communication"> Picture, gesture, sign, or communication support</label>
+<label class="check-item"><input type="checkbox" name="support" value="environment"> Adjust noise, space, materials, or group size</label>
+<label class="check-item"><input type="checkbox" name="support" value="connection"> Predictable connection and positive attention</label>
+<label class="check-item"><input type="checkbox" name="support" value="task"> Break task into smaller, achievable steps</label>
+<label class="check-item"><input type="checkbox" name="support" value="sensory"> Safe movement, sensory options, or regulation break</label>
+</div><div class="field-grid" style="margin-top:14px"><div class="field full"><label for="other-supports">Specific supports, who will prepare them, and when they will be used</label><textarea id="other-supports" name="other-supports"></textarea></div></div></section>
+<section class="plan-section"><h2>7. Teach and Reinforce Replacement Skills</h2><div class="field-grid">
+<div class="field full"><label for="teach">How will adults model and practice the new skill during calm moments?</label><textarea id="teach" name="teach"></textarea></div>
+<div class="field full"><label for="reinforce">How will adults notice, acknowledge, and reinforce the skill?</label><textarea id="reinforce" name="reinforce"></textarea></div>
+<div class="field full"><label for="response">When the behavior occurs, how will adults respond calmly and consistently?</label><textarea id="response" name="response" placeholder="Prioritize safety, co-regulation, simple language, dignity, and returning to learning when ready."></textarea></div>
+</div></section>
+<section class="plan-section"><h2>8. Safety and Dignity</h2><div class="field-grid">
+<div class="field full"><label for="safety">Known safety concerns and prevention steps</label><textarea id="safety" name="safety"></textarea></div>
+<div class="field full"><label for="escalation">Who to contact and what to do if immediate safety is at risk, following program policy</label><textarea id="escalation" name="escalation"></textarea></div>
+</div><p>Do not use this form to authorize punishment, humiliation, exclusion, or unsafe restraint. Follow applicable law, program policy, and required supervision procedures.</p></section>
+<section class="plan-section"><h2>9. Family Partnership and Team Communication</h2><div class="field-grid">
+<div class="field full"><label for="family">Family perspective, strengths, priorities, and strategies that work at home (as shared by family)</label><textarea id="family" name="family"></textarea></div>
+<div class="field full"><label for="communication-plan">How and when will the team communicate updates with the family?</label><textarea id="communication-plan" name="communication-plan"></textarea></div>
+</div></section>
+<section class="plan-section"><h2>10. Progress Review and Next Steps</h2><div class="field-grid">
+<div class="field full"><label for="measure">What observable measure will the team track?</label><textarea id="measure" name="measure" placeholder="For example: number of successful transition requests, duration, frequency, or participation."></textarea></div>
+<div class="field full"><label for="results">What changed after supports were introduced?</label><textarea id="results" name="results"></textarea></div>
+<div class="field full"><label for="next">Next steps, responsible person, and target date</label><textarea id="next" name="next"></textarea></div>
+<div class="field"><label for="prepared">Prepared by</label><input id="prepared" name="prepared"></div>
+<div class="field"><label for="reviewed">Reviewed with team / family on</label><input id="reviewed" name="reviewed" type="date"></div>
+</div></section>
+<div class="footer-reminder">Planning reminder: gather information across multiple observations, use culturally and linguistically responsive practices, protect confidentiality, and partner with families. Seek support from your program's disability, mental health, behavior, or early intervention specialists when appropriate.</div>
+</form>
+</div>
+</main>
+<footer><div class="container footer-grid"><div class="footer-brand"><a href="../../index.html" class="footer-site-name">Little Explorers Learning Hub</a><p>Free classroom tools for intentional teaching, positive guidance, inclusion, and school readiness.</p></div><div class="footer-column"><h4>Explore</h4><a href="../../index.html">Home</a><a href="../index.html">Resource Library</a><a href="../head-start/index.html">School Readiness</a></div><div class="footer-column"><h4>Behavior Support</h4><a href="index.html">Behavior Library</a><a href="../../assessment-center.html">Assessment Center</a><a href="../../contact.html">Contact</a></div></div><div class="footer-bottom"><p>© <span class="year"></span> Little Explorers Learning Hub.</p></div></footer>
+<script>
+document.addEventListener("DOMContentLoaded",function(){const button=document.querySelector(".mobile-menu");const nav=document.querySelector(".main-nav");if(button&&nav){button.addEventListener("click",function(){const open=button.getAttribute("aria-expanded")==="true";button.setAttribute("aria-expanded",String(!open));nav.classList.toggle("active",!open);});nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){button.setAttribute("aria-expanded","false");nav.classList.remove("active");});});}document.querySelectorAll(".footer-bottom .year").forEach(function(el){el.textContent=new Date().getFullYear();});});
+</script>
+</body>
+</html>
