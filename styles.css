@@ -10587,3 +10587,79 @@ footer a:hover {
     font-size: 1rem;
   }
 }
+
+
+/* ==========================================
+   SITEWIDE NAVIGATION ACCESSIBILITY OVERRIDE
+   Keep the full navigation visible on desktop.
+   On mobile, script.js opens the menu with .active.
+========================================== */
+@media (min-width: 769px) {
+  .nav-container > nav,
+  .nav-container .main-nav {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-left: auto;
+  }
+
+  .nav-container > nav ul,
+  .nav-container .main-nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(12px, 1.6vw, 28px) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav-container > nav a,
+  .nav-container .main-nav a {
+    white-space: normal;
+  }
+
+  .nav-container > .mobile-menu,
+  .nav-container .header-actions > .mobile-menu {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container > nav:not(.active):not(.show),
+  .nav-container .main-nav:not(.active):not(.show) {
+    display: none;
+  }
+
+  .nav-container > nav.active,
+  .nav-container > nav.show,
+  .nav-container .main-nav.active,
+  .nav-container .main-nav.show {
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+
+  .nav-container > nav.active ul,
+  .nav-container > nav.show ul,
+  .nav-container .main-nav.active ul,
+  .nav-container .main-nav.show ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .nav-container > nav.active a,
+  .nav-container > nav.show a,
+  .nav-container .main-nav.active a,
+  .nav-container .main-nav.show a {
+    display: block;
+    padding: 12px 16px;
+  }
+}
