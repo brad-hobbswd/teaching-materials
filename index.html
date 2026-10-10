@@ -30,7 +30,7 @@
 <body class="landing-page">
 
     <!-- HEADER -->
-    <header class="le-standard-header"><div class="le-standard-inner">
+    <header class="le-standard-header shared-site-header"><div class="le-standard-inner">
 <a class="le-standard-brand" href="index.html" aria-label="Little Explorers Learning Hub Home"><img src="logo.png" alt="Little Explorers Learning Hub logo"><span><strong>Little Explorers</strong><small>Learning Hub</small></span></a>
 <button class="le-standard-toggle" type="button" aria-expanded="false" aria-controls="le-standard-navigation" aria-label="Toggle navigation"><span aria-hidden="true">☰</span><span class="le-toggle-label">Menu</span></button>
 <nav class="le-standard-nav" id="le-standard-navigation" aria-label="Main navigation">
@@ -566,48 +566,7 @@
     <script>
         // Keep the displayed copyright year current.
         const yearElement = document.getElementById("current-year");
-        if (yearElement) {
-            yearElement.textContent = new Date().getFullYear();
-        }
-
-        // Accessible mobile navigation.
-        const menuButton = document.querySelector(".mobile-menu");
-        const primaryNavigation = document.getElementById("primary-navigation");
-
-        if (menuButton && primaryNavigation) {
-            menuButton.addEventListener("click", function () {
-                const isExpanded =
-                    menuButton.getAttribute("aria-expanded") === "true";
-
-                menuButton.setAttribute("aria-expanded", String(!isExpanded));
-                menuButton.setAttribute(
-                    "aria-label",
-                    isExpanded ? "Open navigation menu" : "Close navigation menu"
-                );
-
-                primaryNavigation.classList.toggle("is-open", !isExpanded);
-
-                const menuIcon = menuButton.querySelector("i");
-                if (menuIcon) {
-                    menuIcon.classList.toggle("fa-bars", isExpanded);
-                    menuIcon.classList.toggle("fa-times", !isExpanded);
-                }
-            });
-
-            primaryNavigation.querySelectorAll("a").forEach(function (link) {
-                link.addEventListener("click", function () {
-                    primaryNavigation.classList.remove("is-open");
-                    menuButton.setAttribute("aria-expanded", "false");
-                    menuButton.setAttribute("aria-label", "Open navigation menu");
-
-                    const menuIcon = menuButton.querySelector("i");
-                    if (menuIcon) {
-                        menuIcon.classList.add("fa-bars");
-                        menuIcon.classList.remove("fa-times");
-                    }
-                });
-            });
-        }
+        if (yearElement) yearElement.textContent = new Date().getFullYear();
     </script>
 
 <script id="le-standard-navigation-js">(function(){const t=document.querySelector(".le-standard-toggle"),n=document.querySelector("#le-standard-navigation");if(!t||!n)return;t.addEventListener("click",function(){const o=n.classList.toggle("is-open");t.setAttribute("aria-expanded",String(o));t.querySelector('[aria-hidden="true"]').textContent=o?"✕":"☰";t.querySelector(".le-toggle-label").textContent=o?"Close":"Menu"});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("is-open");t.setAttribute("aria-expanded","false");t.querySelector('[aria-hidden="true"]').textContent="☰";t.querySelector(".le-toggle-label").textContent="Menu"})})})();</script></body>
