@@ -1944,3 +1944,98 @@ order:-1;
         min-height:0;
     }
 }
+
+
+/* =========================================================
+   HOMEPAGE SPACING + TABLET LAYOUT REPAIR
+   Keeps the sticky header from crowding section headings and
+   removes excessive whitespace before the footer.
+========================================================= */
+.landing-page main > section {
+    scroll-margin-top: 100px;
+}
+
+.landing-page .newsletter-section {
+    padding: 64px 0 68px;
+    min-height: 0;
+}
+
+.landing-page .newsletter-section .section-title {
+    margin-bottom: 28px;
+}
+
+.landing-page .newsletter-section .section-title h2 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.landing-page .newsletter-section .section-title p:last-child {
+    margin-bottom: 0;
+}
+
+.landing-page .newsletter-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 0 auto;
+}
+
+.landing-page .newsletter-actions .btn {
+    margin: 0;
+}
+
+.landing-page footer.site-footer {
+    margin-top: 0;
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .landing-page main > section {
+        scroll-margin-top: 92px;
+    }
+
+    .landing-page .newsletter-section {
+        padding: 54px 0 58px;
+    }
+
+    .landing-page .newsletter-section .section-title {
+        margin-bottom: 24px;
+    }
+
+    .landing-page .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 36px;
+    }
+}
+
+@media (max-width: 700px) {
+    .landing-page main > section {
+        scroll-margin-top: 82px;
+    }
+
+    .landing-page .newsletter-section {
+        padding: 42px 0 46px;
+    }
+
+    .landing-page .newsletter-section .section-title {
+        margin-bottom: 22px;
+    }
+
+    .landing-page .newsletter-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .landing-page .newsletter-actions .btn {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .landing-page html {
+        scroll-behavior: auto;
+    }
+}
