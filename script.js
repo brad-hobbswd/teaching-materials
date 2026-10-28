@@ -68,12 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const path = location.pathname;
     const relativePath = path.startsWith(siteRoot) ? path.slice(siteRoot.length) : path.replace(/^\/+/, "");
-    const activeKey = !relativePath || relativePath === "index.html" ? "home"
-      : /studies\.html|curriculum/.test(path) ? "curriculum"
-      : /head-start|school-readiness|readiness/.test(path) ? "readiness"
-      : /behavior-center|behavior|inclusion/.test(path) ? "behavior"
-      : /library|printable|lesson-plan|assessment-center|interest-areas|activities/.test(path) ? "library"
-      : /resources|family|teacher|contact|faq/.test(path) ? "support" : "";
+    const normalizedPath = relativePath.toLowerCase();
+    const activeKey = !normalizedPath || normalizedPath === "index.html" ? "home"
+      : /behavior-center|behavior|inclusion/.test(normalizedPath) ? "behavior"
+      : /school-readiness|readiness|elof|^library\/head-start\//.test(normalizedPath) ? "readiness"
+      : /curriculum|studies|lesson-plans|activities|ages|interest-areas|learning-centers/.test(normalizedPath) ? "curriculum"
+      : /resources|family-engagement|teacher-resources|professional-development|contact|faq/.test(normalizedPath) ? "support"
+      : /library|printable|assessment-center|stem|literacy/.test(normalizedPath) ? "library" : "";
     const activeLink = sharedHeader.querySelector('[data-nav="' + activeKey + '"]');
     if (activeLink) activeLink.setAttribute("aria-current", "page");
     const menuButton = sharedHeader.querySelector(".shared-mobile-menu");
@@ -171,22 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  /* Active navigation */
-  const currentPath = window.location.pathname;
-  document.querySelectorAll(".shared-main-nav a").forEach(link => {
-    link.classList.remove("active");
-    try {
-      const href = new URL(link.href).pathname;
-      if (
-        currentPath === href ||
-        (currentPath.startsWith("/teaching-materials/studies/") && href.endsWith("/studies.html")) ||
-        (currentPath.startsWith("/teaching-materials/library/") && href.endsWith("/library/index.html")) ||
-        (currentPath.startsWith("/teaching-materials/ages/") && href.endsWith("/ages/index.html")) ||
-        (currentPath.startsWith("/teaching-materials/lesson-plans/") && href.endsWith("/studies.html"))
-      ) link.classList.add("active");
-    } catch (_) {}
-  });
 
   /* Sticky header */
   const header = document.querySelector(".site-header");
