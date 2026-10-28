@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (main) document.body.insertBefore(sharedHeader, main);
     else document.body.insertBefore(sharedHeader, document.body.firstChild);
   }
-  if (!sharedHeader.classList.contains("shared-site-header")) {
+  if (sharedHeader) {
     sharedHeader.className = "site-header shared-site-header";
     sharedHeader.innerHTML = `
       <div class="shared-nav-container">
@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.head.appendChild(navStyle);
     }
     const path = location.pathname;
-    const activeKey = path === siteRoot || path.endsWith("/index.html") && path.split("/").filter(Boolean).length === 1 ? "home"
+    const relativePath = path.startsWith(siteRoot) ? path.slice(siteRoot.length) : path.replace(/^\/+/, "");
+    const activeKey = !relativePath || relativePath === "index.html" ? "home"
       : /studies\.html|curriculum/.test(path) ? "curriculum"
       : /head-start|school-readiness|readiness/.test(path) ? "readiness"
       : /behavior-center|behavior|inclusion/.test(path) ? "behavior"
@@ -90,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
      One consistent path to learning, planning, and support.
   ========================================================= */
   let sharedFooter = document.querySelector("footer");
-  const pageFooterContent = sharedFooter?.innerHTML.trim() || "";
   if (!sharedFooter) {
     sharedFooter = document.createElement("footer");
     document.body.appendChild(sharedFooter);
@@ -99,46 +99,61 @@ document.addEventListener("DOMContentLoaded", () => {
   sharedFooter.className = "shared-site-footer";
   sharedFooter.innerHTML = `
     <div class="shared-footer-container">
-      <div class="shared-footer-main">
-        <div class="shared-footer-brand">
-          <a href="${siteRoot}index.html" aria-label="Little Explorers Learning Hub home"><img src="${siteRoot}logo.png" alt="" width="56" height="56"><span>Little Explorers<br><strong>Learning Hub</strong></span></a>
-          <p>Practical early learning resources for educators, classrooms, and families.</p>
+      <div class="shared-footer-intro">
+        <a class="shared-footer-brand" href="${siteRoot}index.html" aria-label="Little Explorers Learning Hub home">
+          <img src="${siteRoot}logo.png" alt="" width="52" height="52">
+          <span><strong>Little Explorers</strong><small>Learning Hub</small></span>
+        </a>
+        <div class="shared-footer-copy">
+          <p class="shared-footer-kicker">Explore the hub</p>
+          <h2>Find what you need, all in one place.</h2>
+          <p>Start with a section below to explore learning, classroom practice, and family support.</p>
         </div>
-        <nav class="shared-footer-links" aria-label="Footer navigation">
-          <div><h2>Explore</h2><a href="${siteRoot}curriculum.html">Curriculum</a><a href="${siteRoot}ages/index.html">Age Groups</a><a href="${siteRoot}school-readiness.html">School Readiness</a><a href="${siteRoot}library/index.html">Resource Library</a></div>
-          <div><h2>Plan &amp; Teach</h2><a href="${siteRoot}lesson-plans.html">Lesson Plans</a><a href="${siteRoot}activities.html">Activities</a><a href="${siteRoot}resources/monthly/index.html">Monthly Resources</a><a href="${siteRoot}assessment-center.html">Assessment</a></div>
-          <div><h2>Support</h2><a href="${siteRoot}behavior-center.html">Behavior &amp; Inclusion</a><a href="${siteRoot}resources.html">Teacher &amp; Family Support</a><a href="${siteRoot}family-engagement.html">Family Engagement</a><a href="${siteRoot}search.html">Search</a></div>
-          <div><h2>About</h2><a href="${siteRoot}about.html">About the Hub</a><a href="${siteRoot}contact.html">Contact</a><a href="${siteRoot}accessibility.html">Accessibility</a></div>
-        </nav>
       </div>
-      <div class="shared-footer-bottom"><span>© ${new Date().getFullYear()} Little Explorers Learning Hub</span><div><a href="${siteRoot}privacy.html">Privacy</a><a href="${siteRoot}terms.html">Terms</a><a href="${siteRoot}copyright.html">Copyright</a></div></div>
-      ${pageFooterContent ? `<details class="shared-footer-extra"><summary>More links and resources from this page</summary><div>${pageFooterContent}</div></details>` : ""}
+      <nav class="shared-footer-links" aria-label="Learning Hub sections">
+        <a href="${siteRoot}index.html"><strong>Home</strong><span>Start at the Learning Hub</span></a>
+        <a href="${siteRoot}curriculum.html"><strong>Curriculum</strong><span>Studies, lessons, and learning goals</span></a>
+        <a href="${siteRoot}school-readiness.html"><strong>School Readiness</strong><span>Skills for a confident transition</span></a>
+        <a href="${siteRoot}behavior-center.html"><strong>Behavior &amp; Inclusion</strong><span>Positive guidance and inclusive support</span></a>
+        <a href="${siteRoot}library/index.html"><strong>Resource Library</strong><span>Activities, printables, and teaching tools</span></a>
+        <a href="${siteRoot}resources.html"><strong>Teacher &amp; Family Support</strong><span>Practical support for educators and families</span></a>
+      </nav>
+      <div class="shared-footer-bottom">
+        <span>© ${new Date().getFullYear()} Little Explorers Learning Hub</span>
+        <nav aria-label="Legal information"><a href="${siteRoot}privacy.html">Privacy</a><a href="${siteRoot}terms.html">Terms</a><a href="${siteRoot}copyright.html">Copyright</a></nav>
+      </div>
     </div>`;
 
   if (!document.getElementById("shared-site-footer-style")) {
     const footerStyle = document.createElement("style");
     footerStyle.id = "shared-site-footer-style";
     footerStyle.textContent = `
-      #shared-site-footer{box-sizing:border-box;width:100%;margin:0;background:#17283d!important;color:#f5f8fb!important;padding:0!important;font-family:Inter,Arial,sans-serif!important;line-height:1.6}
+      #shared-site-footer{box-sizing:border-box;width:100%;margin:0;padding:0!important;background:#f2f7fa!important;color:#263a4c!important;border-top:1px solid #d8e4eb;font-family:Inter,Arial,sans-serif!important;line-height:1.5}
       #shared-site-footer *{box-sizing:border-box}
-      #shared-site-footer .shared-footer-container{width:min(1280px,calc(100% - 40px));margin:0 auto;padding:44px 0 18px}
-      #shared-site-footer .shared-footer-main{display:grid;grid-template-columns:minmax(220px,1.1fr) 2.5fr;gap:48px;padding-bottom:32px}
-      #shared-site-footer .shared-footer-brand a{display:inline-flex;align-items:center;gap:12px;color:#fff!important;text-decoration:none;font-size:18px;font-weight:700;line-height:1.2}
-      #shared-site-footer .shared-footer-brand img{display:block;width:56px;height:56px;object-fit:contain}
-      #shared-site-footer .shared-footer-brand p{max-width:280px;margin:16px 0 0;color:#d9e3ec!important;font-size:14px}
-      #shared-site-footer .shared-footer-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-      #shared-site-footer .shared-footer-links h2{margin:0 0 12px;color:#fff!important;font-size:15px;font-weight:800;letter-spacing:.01em}
-      #shared-site-footer .shared-footer-links a{display:block;width:max-content;max-width:100%;margin:7px 0;color:#d9e3ec!important;text-decoration:none;font-size:14px}
-      #shared-site-footer a:hover,#shared-site-footer a:focus-visible{color:#fff!important;text-decoration:underline;text-underline-offset:3px}
-      #shared-site-footer .shared-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);color:#d9e3ec!important;font-size:13px}
-      #shared-site-footer .shared-footer-bottom div{display:flex;flex-wrap:wrap;gap:18px}
-      #shared-site-footer .shared-footer-bottom a{color:#d9e3ec!important;text-decoration:none}
-      #shared-site-footer .shared-footer-extra{margin-top:14px;color:#d9e3ec;font-size:13px}
-      #shared-site-footer .shared-footer-extra summary{width:max-content;max-width:100%;cursor:pointer;color:#d9e3ec}
-      #shared-site-footer .shared-footer-extra>div{margin-top:12px;padding:18px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.04)}
-      #shared-site-footer .shared-footer-extra,#shared-site-footer .shared-footer-extra *{color:#e4ebf1!important}
-      @media(max-width:900px){#shared-site-footer .shared-footer-main{grid-template-columns:1fr;gap:30px}#shared-site-footer .shared-footer-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media(max-width:560px){#shared-site-footer .shared-footer-container{width:calc(100% - 32px);padding-top:34px}#shared-site-footer .shared-footer-links{gap:22px 14px}#shared-site-footer .shared-footer-bottom{align-items:flex-start;flex-direction:column;gap:10px}}
+      #shared-site-footer .shared-footer-container{width:min(1200px,calc(100% - 40px));margin:0 auto;padding:42px 0 18px}
+      #shared-site-footer .shared-footer-intro{display:flex;align-items:center;justify-content:space-between;gap:36px;margin-bottom:26px}
+      #shared-site-footer .shared-footer-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;color:#263a4c!important;text-decoration:none}
+      #shared-site-footer .shared-footer-brand img{display:block;width:52px;height:52px;object-fit:contain}
+      #shared-site-footer .shared-footer-brand span{display:flex;flex-direction:column;gap:4px;line-height:1.15}
+      #shared-site-footer .shared-footer-brand strong{font-size:17px;font-weight:800}
+      #shared-site-footer .shared-footer-brand small{color:#3477b9;font-size:14px;font-weight:700}
+      #shared-site-footer .shared-footer-copy{max-width:540px;text-align:right}
+      #shared-site-footer .shared-footer-copy p{margin:0;color:#526678!important;font-size:14px}
+      #shared-site-footer .shared-footer-copy .shared-footer-kicker{margin-bottom:5px;color:#3477b9!important;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+      #shared-site-footer .shared-footer-copy h2{margin:0 0 5px;color:#20364b!important;font-size:22px;line-height:1.25}
+      #shared-site-footer .shared-footer-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+      #shared-site-footer .shared-footer-links>a{display:flex;flex-direction:column;gap:5px;min-height:76px;padding:14px 16px;border:1px solid #d7e3eb;border-radius:12px;background:#fff;color:#263a4c!important;text-decoration:none;transition:border-color .18s,transform .18s,box-shadow .18s}
+      #shared-site-footer .shared-footer-links>a strong{color:#263a4c!important;font-size:14px;font-weight:800}
+      #shared-site-footer .shared-footer-links>a span{color:#607486!important;font-size:12px;line-height:1.4}
+      #shared-site-footer .shared-footer-links>a:hover,#shared-site-footer .shared-footer-links>a:focus-visible{border-color:#7bb1d6;box-shadow:0 5px 14px rgba(36,76,109,.08);transform:translateY(-2px);text-decoration:none}
+      #shared-site-footer a:focus-visible{outline:3px solid #3477b9;outline-offset:3px}
+      #shared-site-footer .shared-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding-top:14px;border-top:1px solid #d8e4eb;color:#607486!important;font-size:12px}
+      #shared-site-footer .shared-footer-bottom nav{display:flex;flex-wrap:wrap;gap:18px}
+      #shared-site-footer .shared-footer-bottom a{color:#526678!important;text-decoration:none}
+      #shared-site-footer .shared-footer-bottom a:hover{text-decoration:underline;text-underline-offset:3px}
+      @media(max-width:760px){#shared-site-footer .shared-footer-intro{align-items:flex-start;flex-direction:column;gap:20px}#shared-site-footer .shared-footer-copy{text-align:left}#shared-site-footer .shared-footer-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:520px){#shared-site-footer .shared-footer-container{width:calc(100% - 32px);padding-top:32px}#shared-site-footer .shared-footer-links{grid-template-columns:1fr;gap:9px}#shared-site-footer .shared-footer-links>a{min-height:unset;padding:13px}#shared-site-footer .shared-footer-bottom{align-items:flex-start;flex-direction:column;gap:10px}}
+      @media(prefers-reduced-motion:reduce){#shared-site-footer .shared-footer-links>a{transition:none}}
     `;
     document.head.appendChild(footerStyle);
   }
@@ -268,12 +283,12 @@ document.addEventListener("DOMContentLoaded", () => {
         body.balls-study-page .mobile-menu {
           display: none !important;
         }
-        body.balls-study-page nav {
+        body.balls-study-page header:not(.shared-site-header) nav {
           display: block !important;
           width: auto !important;
           order: initial !important;
         }
-        body.balls-study-page nav ul {
+        body.balls-study-page header:not(.shared-site-header) nav ul {
           display: flex !important;
           flex-direction: row !important;
           align-items: center !important;
@@ -282,12 +297,12 @@ document.addEventListener("DOMContentLoaded", () => {
           margin: 0 !important;
           padding: 0 !important;
         }
-        body.balls-study-page nav li {
+        body.balls-study-page header:not(.shared-site-header) nav li {
           display: block !important;
           width: auto !important;
           border: 0 !important;
         }
-        body.balls-study-page nav a {
+        body.balls-study-page header:not(.shared-site-header) nav a {
           display: inline-block !important;
           white-space: nowrap !important;
           padding: 10px 0 !important;
@@ -295,8 +310,8 @@ document.addEventListener("DOMContentLoaded", () => {
           font-weight: 800 !important;
           text-decoration: none !important;
         }
-        body.balls-study-page nav a:hover,
-        body.balls-study-page nav a.active {
+        body.balls-study-page header:not(.shared-site-header) nav a:hover,
+        body.balls-study-page header:not(.shared-site-header) nav a.active {
           color: var(--balls-blue) !important;
         }
       }
@@ -460,12 +475,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       body.trees-study-page .logo span { color: var(--tree-green) !important; }
 
-      body.trees-study-page nav {
+      body.trees-study-page header:not(.shared-site-header) nav {
         display: block !important;
         width: auto !important;
       }
 
-      body.trees-study-page nav ul {
+      body.trees-study-page header:not(.shared-site-header) nav ul {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
@@ -473,17 +488,17 @@ document.addEventListener("DOMContentLoaded", () => {
         gap: 22px !important;
       }
 
-      body.trees-study-page nav a {
+      body.trees-study-page header:not(.shared-site-header) nav a {
         color: var(--tree-deep) !important;
         font-weight: 800 !important;
       }
 
-      body.trees-study-page nav a:hover,
-      body.trees-study-page nav a.active {
+      body.trees-study-page header:not(.shared-site-header) nav a:hover,
+      body.trees-study-page header:not(.shared-site-header) nav a.active {
         color: var(--tree-green) !important;
       }
 
-      body.trees-study-page nav a::after {
+      body.trees-study-page header:not(.shared-site-header) nav a::after {
         background: var(--tree-gold) !important;
       }
 
@@ -686,11 +701,11 @@ document.addEventListener("DOMContentLoaded", () => {
           flex-wrap: wrap !important;
           padding-bottom: 14px !important;
         }
-        body.trees-study-page nav {
+        body.trees-study-page header:not(.shared-site-header) nav {
           width: 100% !important;
           order: 3 !important;
         }
-        body.trees-study-page nav ul {
+        body.trees-study-page header:not(.shared-site-header) nav ul {
           justify-content: center !important;
           flex-wrap: wrap !important;
           gap: 12px 20px !important;
