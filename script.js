@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Active navigation */
   const currentPath = window.location.pathname;
-  document.querySelectorAll("nav a").forEach(link => {
+  document.querySelectorAll(".shared-main-nav a").forEach(link => {
     link.classList.remove("active");
     try {
       const href = new URL(link.href).pathname;
