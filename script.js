@@ -85,6 +85,63 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.toggle("is-open", !open);
     });
   }
+  /* =========================================================
+     SHARED SITE FOOTER
+     One consistent path to learning, planning, and support.
+  ========================================================= */
+  let sharedFooter = document.querySelector("footer");
+  const pageFooterContent = sharedFooter?.innerHTML.trim() || "";
+  if (!sharedFooter) {
+    sharedFooter = document.createElement("footer");
+    document.body.appendChild(sharedFooter);
+  }
+  sharedFooter.id = "shared-site-footer";
+  sharedFooter.className = "shared-site-footer";
+  sharedFooter.innerHTML = `
+    <div class="shared-footer-container">
+      <div class="shared-footer-main">
+        <div class="shared-footer-brand">
+          <a href="${siteRoot}index.html" aria-label="Little Explorers Learning Hub home"><img src="${siteRoot}logo.png" alt="" width="56" height="56"><span>Little Explorers<br><strong>Learning Hub</strong></span></a>
+          <p>Practical early learning resources for educators, classrooms, and families.</p>
+        </div>
+        <nav class="shared-footer-links" aria-label="Footer navigation">
+          <div><h2>Explore</h2><a href="${siteRoot}curriculum.html">Curriculum</a><a href="${siteRoot}ages/index.html">Age Groups</a><a href="${siteRoot}library/head-start/index.html">School Readiness</a><a href="${siteRoot}library/index.html">Resource Library</a></div>
+          <div><h2>Plan &amp; Teach</h2><a href="${siteRoot}lesson-plans.html">Lesson Plans</a><a href="${siteRoot}activities.html">Activities</a><a href="${siteRoot}resources/monthly/index.html">Monthly Resources</a><a href="${siteRoot}assessment-center.html">Assessment</a></div>
+          <div><h2>Support</h2><a href="${siteRoot}behavior-center.html">Behavior &amp; Inclusion</a><a href="${siteRoot}resources.html">Teacher &amp; Family Support</a><a href="${siteRoot}family-engagement.html">Family Engagement</a><a href="${siteRoot}search.html">Search</a></div>
+          <div><h2>About</h2><a href="${siteRoot}about.html">About the Hub</a><a href="${siteRoot}contact.html">Contact</a><a href="${siteRoot}accessibility.html">Accessibility</a></div>
+        </nav>
+      </div>
+      <div class="shared-footer-bottom"><span>© ${new Date().getFullYear()} Little Explorers Learning Hub</span><div><a href="${siteRoot}privacy.html">Privacy</a><a href="${siteRoot}terms.html">Terms</a><a href="${siteRoot}copyright.html">Copyright</a></div></div>
+      ${pageFooterContent ? `<details class="shared-footer-extra"><summary>More links and resources from this page</summary><div>${pageFooterContent}</div></details>` : ""}
+    </div>`;
+
+  if (!document.getElementById("shared-site-footer-style")) {
+    const footerStyle = document.createElement("style");
+    footerStyle.id = "shared-site-footer-style";
+    footerStyle.textContent = `
+      #shared-site-footer{box-sizing:border-box;width:100%;margin:0;background:#17283d!important;color:#f5f8fb!important;padding:0!important;font-family:Inter,Arial,sans-serif!important;line-height:1.6}
+      #shared-site-footer *{box-sizing:border-box}
+      #shared-site-footer .shared-footer-container{width:min(1280px,calc(100% - 40px));margin:0 auto;padding:44px 0 18px}
+      #shared-site-footer .shared-footer-main{display:grid;grid-template-columns:minmax(220px,1.1fr) 2.5fr;gap:48px;padding-bottom:32px}
+      #shared-site-footer .shared-footer-brand a{display:inline-flex;align-items:center;gap:12px;color:#fff!important;text-decoration:none;font-size:18px;font-weight:700;line-height:1.2}
+      #shared-site-footer .shared-footer-brand img{display:block;width:56px;height:56px;object-fit:contain}
+      #shared-site-footer .shared-footer-brand p{max-width:280px;margin:16px 0 0;color:#d9e3ec!important;font-size:14px}
+      #shared-site-footer .shared-footer-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+      #shared-site-footer .shared-footer-links h2{margin:0 0 12px;color:#fff!important;font-size:15px;font-weight:800;letter-spacing:.01em}
+      #shared-site-footer .shared-footer-links a{display:block;width:max-content;max-width:100%;margin:7px 0;color:#d9e3ec!important;text-decoration:none;font-size:14px}
+      #shared-site-footer a:hover,#shared-site-footer a:focus-visible{color:#fff!important;text-decoration:underline;text-underline-offset:3px}
+      #shared-site-footer .shared-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);color:#d9e3ec!important;font-size:13px}
+      #shared-site-footer .shared-footer-bottom div{display:flex;flex-wrap:wrap;gap:18px}
+      #shared-site-footer .shared-footer-bottom a{color:#d9e3ec!important;text-decoration:none}
+      #shared-site-footer .shared-footer-extra{margin-top:14px;color:#d9e3ec;font-size:13px}
+      #shared-site-footer .shared-footer-extra summary{width:max-content;max-width:100%;cursor:pointer;color:#d9e3ec}
+      #shared-site-footer .shared-footer-extra>div{margin-top:12px;padding:18px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.04)}
+      #shared-site-footer .shared-footer-extra,#shared-site-footer .shared-footer-extra *{color:#e4ebf1!important}
+      @media(max-width:900px){#shared-site-footer .shared-footer-main{grid-template-columns:1fr;gap:30px}#shared-site-footer .shared-footer-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(max-width:560px){#shared-site-footer .shared-footer-container{width:calc(100% - 32px);padding-top:34px}#shared-site-footer .shared-footer-links{gap:22px 14px}#shared-site-footer .shared-footer-bottom{align-items:flex-start;flex-direction:column;gap:10px}}
+    `;
+    document.head.appendChild(footerStyle);
+  }
   /* Accessible mobile navigation */
   const mobileButton = document.querySelector(".mobile-menu");
   const navigation = document.querySelector(".main-nav") || document.querySelector("nav");
@@ -329,9 +386,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    /* Restore the full footer content. */
+    /* Keep the shared site footer on study pages too. */
     const footer = document.querySelector("footer");
-    if (footer) {
+    if (footer && !footer.classList.contains("shared-site-footer")) {
       footer.innerHTML = `
         <div class="container footer-grid">
           <div><h3>Little Explorers Learning Hub</h3><p>Helping Early Head Start, Head Start, Preschool, and Pre Kindergarten educators create engaging learning experiences through affordable curriculum studies, lesson plans, printable resources, classroom activities, and professional teaching tools.</p></div>
