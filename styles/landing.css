@@ -1933,47 +1933,6 @@ order:-1;
     line-height:1.75;
 }
 
-/* Make the homepage's main destinations easy to scan and use. */
-.home-hubs{
-    background:var(--surface-alt);
-}
-
-.home-hubs .features-grid{
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
-}
-
-.home-hubs .feature-card{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    min-height:100%;
-    padding:32px 24px;
-}
-
-.home-hubs .feature-card p{
-    flex:1;
-}
-
-.home-hub-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:22px;
-    color:var(--primary);
-    font-weight:800;
-}
-
-.home-hubs .feature-card:hover .home-hub-link,
-.home-hubs .feature-card:focus-visible .home-hub-link{
-    color:var(--primary-dark);
-}
-
-.home-hubs .feature-card:focus-visible{
-    outline:3px solid var(--primary);
-    outline-offset:3px;
-}
-
 .teacher-resources-home .section-button{
     display:flex;
     justify-content:center;
