@@ -233,6 +233,10 @@
             line-height: 1.9;
         }
 
+        .curriculum-hero-copy + .curriculum-hero-copy {
+            margin-top: 14px;
+        }
+
         .curriculum-hero-actions {
             display: flex;
             flex-wrap: wrap;
@@ -1048,6 +1052,13 @@
                         into purposeful learning.
                     </p>
 
+                    <p class="curriculum-hero-copy">
+                        Little Explorers offers supplementary planning ideas;
+                        it does not replace your program's adopted curriculum,
+                        applicable learning standards, or individualized supports.
+                        <a href="library/curriculum/index.html">Read the planning guide</a>.
+                    </p>
+
                     <div class="curriculum-hero-actions">
                         <a class="curriculum-button curriculum-button-primary"
                            href="#curriculum-pathways">
@@ -1594,3 +1605,4 @@
 
 <script id="le-standard-navigation-js">(function(){const t=document.querySelector(".le-standard-toggle"),n=document.querySelector("#le-standard-navigation");if(!t||!n)return;t.addEventListener("click",function(){const o=n.classList.toggle("is-open");t.setAttribute("aria-expanded",String(o));t.querySelector('[aria-hidden="true"]').textContent=o?"✕":"☰";t.querySelector(".le-toggle-label").textContent=o?"Close":"Menu"});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("is-open");t.setAttribute("aria-expanded","false");t.querySelector('[aria-hidden="true"]').textContent="☰";t.querySelector(".le-toggle-label").textContent="Menu"})})})();</script><script src="script.js"></script></body>
 </html>
+
