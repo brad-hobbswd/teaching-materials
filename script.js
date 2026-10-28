@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <nav class="shared-main-nav" id="primary-navigation" aria-label="Primary navigation">
           <a href="${siteRoot}index.html" data-nav="home">Home</a>
           <a href="${siteRoot}curriculum.html" data-nav="curriculum">Curriculum</a>
-          <a href="${siteRoot}library/head-start/index.html" data-nav="readiness">School Readiness</a>
+          <a href="${siteRoot}school-readiness.html" data-nav="readiness">School Readiness</a>
           <a href="${siteRoot}behavior-center.html" data-nav="behavior">Behavior &amp; Inclusion</a>
           <a href="${siteRoot}library/index.html" data-nav="library">Resource Library</a>
           <a href="${siteRoot}resources.html" data-nav="support">Teacher &amp; Family Support</a>
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>Practical early learning resources for educators, classrooms, and families.</p>
         </div>
         <nav class="shared-footer-links" aria-label="Footer navigation">
-          <div><h2>Explore</h2><a href="${siteRoot}curriculum.html">Curriculum</a><a href="${siteRoot}ages/index.html">Age Groups</a><a href="${siteRoot}library/head-start/index.html">School Readiness</a><a href="${siteRoot}library/index.html">Resource Library</a></div>
+          <div><h2>Explore</h2><a href="${siteRoot}curriculum.html">Curriculum</a><a href="${siteRoot}ages/index.html">Age Groups</a><a href="${siteRoot}school-readiness.html">School Readiness</a><a href="${siteRoot}library/index.html">Resource Library</a></div>
           <div><h2>Plan &amp; Teach</h2><a href="${siteRoot}lesson-plans.html">Lesson Plans</a><a href="${siteRoot}activities.html">Activities</a><a href="${siteRoot}resources/monthly/index.html">Monthly Resources</a><a href="${siteRoot}assessment-center.html">Assessment</a></div>
           <div><h2>Support</h2><a href="${siteRoot}behavior-center.html">Behavior &amp; Inclusion</a><a href="${siteRoot}resources.html">Teacher &amp; Family Support</a><a href="${siteRoot}family-engagement.html">Family Engagement</a><a href="${siteRoot}search.html">Search</a></div>
           <div><h2>About</h2><a href="${siteRoot}about.html">About the Hub</a><a href="${siteRoot}contact.html">Contact</a><a href="${siteRoot}accessibility.html">Accessibility</a></div>
@@ -726,3 +726,4 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 });
+
