@@ -33,8 +33,9 @@ Search remains a separate utility link in the header. Do not repeat the six prim
 | Resource library | `library/index.html` | One searchable library landing page |
 | Printables | `printables.html` and `printables/` | One printable directory; avoid a second competing library |
 | Learning/interest areas | `interest-areas.html` and `interest-areas/` | One public entry point for classroom centers |
-| Teacher support | `resources.html` and `library/professional-development/` | Separate practical teacher resources from professional learning |
-| Family engagement | `family-engagement.html` and related library pages | One entry point, with specific tools underneath |
+| Teacher & Family Support | `resources.html` | Shared hub with clear educator and family pathways; route each audience to its focused resource collection |
+| Teacher resources | `teacher-resources.html` and `library/teacher-resources/` | Planning, classroom practice, documentation, and professional learning |
+| Family resources | `family-resources.html` and `library/family-engagement/` | Family-facing activities, routines, printables, and ways to connect with educators |
 | Monthly resources | `resources/monthly/index.html` and `resources/monthly/<year>/` | Keep dated resources in a year-specific archive and label past, current, and upcoming months accurately |
 | Search | `search.html` plus `search-index.js` | Search index must match live pages and valid links |
 
