@@ -824,6 +824,24 @@ header{
 
 }
 
+.age-card-image{
+
+    display:block;
+
+    width:100%;
+
+    aspect-ratio:4 / 3;
+
+    margin:0 auto 22px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    object-fit:cover;
+
+}
+
 .age-card:hover{
 
     transform:translateY(-10px);
