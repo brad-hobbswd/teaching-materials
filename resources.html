@@ -32,6 +32,16 @@
 .teacher-support-page .le-standard-nav .le-standard-search{display:inline-flex;flex:0 0 42px;align-items:center;justify-content:center;width:42px;min-width:42px;height:42px;padding:0;border:1px solid #dce6ef;border-radius:12px;background:#fff}
 .teacher-support-page .le-standard-nav .le-standard-search:hover{background:#f0f6fb;border-color:#bfd4e5}
 .teacher-support-page .le-standard-toggle{display:none;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:0 15px;border:1px solid #d4e0ea;border-radius:12px;background:#fff;color:#29394b;font-size:.94rem;font-weight:800;box-shadow:0 2px 6px rgba(31,54,78,.04)}
+.teacher-support-page .ts-pathways{padding:46px 0 18px;background:#f6f9fb}
+.teacher-support-page .ts-pathway-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.teacher-support-page .ts-pathway-card{padding:clamp(22px,3vw,34px);border:1px solid #dce6ed;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(31,54,78,.06)}
+.teacher-support-page .ts-pathway-card h3{margin:8px 0 10px;color:#20364b;font-family:Nunito,sans-serif;font-size:1.45rem;line-height:1.25}
+.teacher-support-page .ts-pathway-card p{color:#536575;line-height:1.7}
+.teacher-support-page .ts-pathway-card ul{padding-left:20px;color:#405466;line-height:1.8}
+.teacher-support-page .ts-pathway-label{display:inline-block;padding:5px 10px;border-radius:999px;background:#eaf3fa;color:#245f8a;font-size:.77rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.teacher-support-page .ts-pathway-links{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:20px}
+.teacher-support-page .ts-pathway-links a{font-weight:800;text-underline-offset:3px}
+@media(max-width:760px){.teacher-support-page .ts-pathway-grid{grid-template-columns:1fr}.teacher-support-page .ts-pathways{padding-top:34px}}
 @media(max-width:1180px){
  .teacher-support-page .le-standard-inner{width:calc(100% - 32px);gap:13px}
  .teacher-support-page .le-standard-brand{min-width:190px}
@@ -84,9 +94,9 @@
 <section class="ts-hero">
   <div class="container ts-hero-grid">
     <div class="ts-hero-copy">
-      <span class="ts-kicker">A practical support center for educators and families</span>
-      <h1>Tools, guidance, and encouragement for the people who help children grow.</h1>
-      <p>Find classroom-ready resources for Early Head Start, Head Start, preschool, and pre-kindergarten. Explore planning templates, observation tools, family partnership materials, professional learning, and inclusive teaching strategies in one organized place.</p>
+      <span class="ts-kicker">A starting place for teachers and families</span>
+      <h1>Teacher &amp; Family Support</h1>
+      <p>Choose the support that fits you. Educators can find help with planning, classroom practice, observation, and professional learning. Families can find simple ways to learn together at home, support everyday routines, and connect with their child’s educators.</p>
       <div class="ts-actions">
         <a class="btn btn-primary" href="#support-areas">Explore Support Areas</a>
         <a class="btn btn-secondary" href="library/printable-library/index.html">Browse Printables</a>
@@ -105,6 +115,46 @@
   </div>
 </section>
 
+<section class="ts-pathways" aria-labelledby="support-pathways-title">
+  <div class="container">
+    <div class="ts-heading">
+      <span class="ts-kicker">Choose your path</span>
+      <h2 id="support-pathways-title">What kind of support are you looking for?</h2>
+      <p>Teachers and families bring different knowledge and strengths. Start with the resources designed for your role, then explore ways to work together.</p>
+    </div>
+    <div class="ts-pathway-grid">
+      <article class="ts-pathway-card">
+        <span class="ts-pathway-label">For teachers &amp; educators</span>
+        <h3>Plan, teach, and reflect with confidence</h3>
+        <p>Find practical help for the everyday work of supporting young children’s learning and development.</p>
+        <ul>
+          <li>Plan lessons and prepare engaging classroom experiences.</li>
+          <li>Observe children’s learning and choose responsive next steps.</li>
+          <li>Build classroom skills through professional learning and reflection.</li>
+        </ul>
+        <div class="ts-pathway-links">
+          <a href="teacher-resources.html">Open Teacher Resources →</a>
+          <a href="library/professional-development/index.html">Professional Learning →</a>
+        </div>
+      </article>
+      <article class="ts-pathway-card">
+        <span class="ts-pathway-label">For families &amp; caregivers</span>
+        <h3>Learn together at home and in your community</h3>
+        <p>Find easy activities and ideas that fit into play, conversations, stories, and routines you already share.</p>
+        <ul>
+          <li>Try learning activities using everyday materials.</li>
+          <li>Find ideas for routines, transitions, and family conversations.</li>
+          <li>Share your child’s interests, strengths, and needs with educators.</li>
+        </ul>
+        <div class="ts-pathway-links">
+          <a href="family-resources.html">Open Family Resources →</a>
+          <a href="library/family-engagement/family-printables.html">Family Printables →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="ts-quick-strip" aria-label="Quick links">
   <div class="container ts-quick-grid">
     <a href="lesson-plans.html"><span aria-hidden="true">▤</span><span><strong>Lesson Planning</strong><small>Plan with purpose</small></span></a>
@@ -117,12 +167,12 @@
 <section class="ts-section" id="support-areas">
   <div class="container">
     <div class="ts-heading">
-      <span class="ts-kicker">Find the right kind of help</span>
-      <h2>Support for the work you do every day</h2>
-      <p>Start with a topic below. Each area brings together practical guidance and related tools so you can spend less time searching and more time supporting children.</p>
+      <span class="ts-kicker">Shared resources for teaching and learning</span>
+      <h2>Explore support topics</h2>
+      <p>Browse guidance and tools used by educators and families to plan, understand children’s development, and strengthen learning across home and classroom.</p>
     </div>
     <div class="ts-card-grid">
-      <article class="ts-card"><img src="resources/planningtemplates.png" alt="" loading="lazy"><div class="ts-card-body"><span class="ts-tag">Plan &amp; prepare</span><h3>Planning and Curriculum Support</h3><p>Build intentional plans, organize routines, connect activities to developmental goals, and adapt experiences for different ages and needs.</p><ul><li>Weekly planning and lesson templates</li><li>Classroom schedules and routines</li><li>ELOF-informed activity ideas</li></ul><a class="ts-text-link" href="resources/planning.html">Explore planning tools <span aria-hidden="true">→</span></a></div></article>
+      <article class="ts-card"><img src="resources/planningtemplates.png" alt="" loading="lazy"><div class="ts-card-body"><span class="ts-tag">Plan &amp; prepare</span><h3>Planning and Curriculum Support</h3><p>Build intentional plans, organize routines, connect activities to developmental goals, and adapt experiences for different ages and needs.</p><ul><li>Weekly planning and lesson templates</li><li>Classroom schedules and routines</li><li>Activities connected to developmental goals</li></ul><a class="ts-text-link" href="resources/planning.html">Explore planning tools <span aria-hidden="true">→</span></a></div></article>
       <article class="ts-card"><img src="resources/observationassesment.png" alt="" loading="lazy"><div class="ts-card-body"><span class="ts-tag">Notice &amp; document</span><h3>Observation and Assessment</h3><p>Capture meaningful evidence of children’s learning and use observations to guide responsive next steps. These forms support documentation; they do not diagnose or replace the screening and assessment processes used by your program.</p><ul><li>Anecdotal notes and observation forms</li><li>Developmental checklists and trackers</li><li>Portfolios and next-step planning</li></ul><a class="ts-text-link" href="library/assessment-center/index.html">Visit assessment center <span aria-hidden="true">→</span></a></div></article>
       <article class="ts-card"><img src="resources/classroommanagement.png" alt="" loading="lazy"><div class="ts-card-body"><span class="ts-tag">Build a supportive room</span><h3>Classroom Management and Guidance</h3><p>Use predictable routines, relationship-based guidance, engaging environments, and proactive supports to help children participate.</p><ul><li>Transitions and classroom routines</li><li>Positive guidance strategies</li><li>Learning environment organization</li></ul><a class="ts-text-link" href="resources/classroom-management.html">Explore classroom support <span aria-hidden="true">→</span></a></div></article>
       <article class="ts-card"><img src="resources/familyengagement.png" alt="" loading="lazy"><div class="ts-card-body"><span class="ts-tag">Partner with families</span><h3>Family Engagement and Home Connections</h3><p>Strengthen two-way communication and create respectful partnerships that recognize family knowledge, culture, strengths, and priorities.</p><ul><li>Conversation prompts and communication logs</li><li>Family activities and take-home ideas</li><li>Transitions, workshops, and conferences</li></ul><a class="ts-text-link" href="library/family-engagement/index.html">Visit family engagement center <span aria-hidden="true">→</span></a></div></article>
@@ -157,9 +207,9 @@
   <div class="container ts-family-panel">
     <div class="ts-family-copy">
       <span class="ts-kicker">Children grow across settings</span>
-      <h2>Teachers and families are on the same team.</h2>
-      <p>Strong home-school partnerships begin with listening, shared goals, and communication that respects each family’s language, culture, experience, and priorities. Use these resources to invite family voice and create meaningful connections between classroom learning and home life.</p>
-      <div class="ts-actions"><a class="btn btn-primary" href="library/family-engagement/index.html">Explore Family Resources</a><a class="ts-text-link" href="library/family-engagement/conversation-prompts.html">Start with conversation prompts →</a></div>
+      <h2>Share what helps each child learn.</h2>
+      <p>Families know their children’s interests, languages, routines, and strengths. Educators can use that knowledge alongside classroom observations to plan experiences that feel relevant and supportive. Start with respectful conversation and choose next steps together.</p>
+      <div class="ts-actions"><a class="btn btn-primary" href="library/family-engagement/home-school-connections.html">Explore Home–School Connections</a><a class="ts-text-link" href="library/family-engagement/conversation-prompts.html">Find conversation prompts →</a></div>
     </div>
     <img src="resources/teacherreading.png" alt="Teacher sharing a book with young children" loading="lazy">
   </div>
