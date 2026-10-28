@@ -33,6 +33,7 @@ Keep Home, About, and Contact available through the logo and footer rather than 
 | Learning/interest areas | `interest-areas.html` and `interest-areas/` | One public entry point for classroom centers |
 | Teacher support | `resources.html` and `library/professional-development/` | Separate practical teacher resources from professional learning |
 | Family engagement | `family-engagement.html` and related library pages | One entry point, with specific tools underneath |
+| Monthly resources | esources/monthly/index.html and esources/monthly/<year>/ | Keep dated resources in a year-specific archive and label past, current, and upcoming months accurately |
 | Search | `search.html` plus `search-index.js` | Search index must match live pages and valid links |
 
 ## Required content model for curriculum resources
@@ -63,6 +64,7 @@ Use positive, developmentally appropriate guidance. Prioritize prevention, co-re
 3. Where duplicate pages exist, select one canonical URL, migrate unique content, update internal links and search data, then retire the duplicate.
 4. Never remove an asset until all references to it have been checked.
 5. Keep the shared header, footer, navigation, typography, spacing, and mobile menu consistent.
+   Every published HTML page must load the shared root script.js using a path relative to its directory; that script supplies the canonical responsive header and navigation.
 6. Check every changed page at desktop and mobile widths, verify all links and downloads, and inspect print styles.
 7. Do not claim ELOF or Head Start compliance merely because a resource mentions a domain. Map goals accurately and label resources as planning supports, not official assessment instruments.
 
