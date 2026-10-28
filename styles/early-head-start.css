@@ -2965,6 +2965,18 @@ nav a.active {
         box-shadow var(--transition);
 }
 
+.activity-card:link,
+.activity-card:visited {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.activity-card:focus-visible {
+    outline: 3px solid var(--sky-blue);
+    outline-offset: 3px;
+}
+
 .activity-card:hover {
     transform: translateY(-6px);
 
@@ -4997,3 +5009,4 @@ img {
     }
 
 }
+
