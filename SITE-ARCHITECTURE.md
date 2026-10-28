@@ -6,7 +6,7 @@ A free, practical planning and teaching hub for Early Head Start, Head Start, pr
 
 ## Site-wide navigation
 
-Use the same six destinations in the header and footer on every page:
+Use the same six destinations in the primary header on every page. Keep the labels concise; each destination page is a content hub that explains its topic and routes people to the relevant material:
 
 1. **Home** — the starting point and overview of the Learning Hub.
 2. **Curriculum** — studies, weekly plans, daily activities, and learning experiences.
@@ -15,7 +15,7 @@ Use the same six destinations in the header and footer on every page:
 5. **Resource Library** — one searchable entry point for printables, forms, visuals, classroom tools, and downloadable resources.
 6. **Teacher & Family Support** — professional development, coaching, family engagement, and home learning.
 
-Search remains a separate utility link in the header. About, Contact, and legal information stay in the relevant pages and the footer legal row.
+Search remains a separate utility link in the header. Do not repeat the six primary destinations in a second footer menu. Keep the footer compact, with About, Contact, Accessibility, and legal links only.
 
 ## Canonical content map
 
@@ -66,7 +66,7 @@ Use positive, developmentally appropriate guidance. Prioritize prevention, co-re
 3. Where duplicate pages exist, select one canonical URL, migrate unique content, update internal links and search data, then retire the duplicate.
 4. Never remove an asset until all references to it have been checked.
 5. Keep the shared header, footer, navigation, typography, spacing, and mobile menu consistent.
-   Every published HTML page must load the shared root `script.js` using a path relative to its directory. It supplies the same six-section responsive navigation and matching footer hubs everywhere. Keep page-specific resource links in the page content rather than adding separate footer menus.
+   Every published HTML page must load the shared root `script.js` using a path relative to its directory. It supplies the same six-section responsive header navigation everywhere. Each hub page should include a clear introduction, organized topic areas, and working links to its supporting pages. Keep the footer compact and limited to site information and legal links.
 6. Check every changed page at desktop and mobile widths, verify all links and downloads, and inspect print styles.
 7. Do not claim ELOF or Head Start compliance merely because a resource mentions a domain. Map goals accurately and label resources as planning supports, not official assessment instruments.
 
