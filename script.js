@@ -6,6 +6,24 @@ document.documentElement.classList.add("js");
 
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================================================
+     SITE-WIDE TYPOGRAPHY
+     Use one typeface for every page and component.
+  ========================================================= */
+  if (!document.querySelector('link[href*="fonts.googleapis.com/css"][href*="Inter"]')) {
+    const interFont = document.createElement("link");
+    interFont.rel = "stylesheet";
+    interFont.href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap";
+    document.head.appendChild(interFont);
+  }
+
+  if (!document.getElementById("site-wide-font-style")) {
+    const fontStyle = document.createElement("style");
+    fontStyle.id = "site-wide-font-style";
+    fontStyle.textContent = "html, body, body * { font-family: Inter, Arial, sans-serif !important; }";
+    document.head.appendChild(fontStyle);
+  }
+
+  /* =========================================================
      SHARED SITE NAVIGATION
      One consistent header across the Learning Hub.
   ========================================================= */
