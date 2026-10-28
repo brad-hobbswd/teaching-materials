@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   /* =========================================================
      SHARED SITE FOOTER
-     One consistent path to learning, planning, and support.
+     Keep the footer quiet; the header is the site-wide hub navigation.
   ========================================================= */
   let sharedFooter = document.querySelector("footer");
   if (!sharedFooter) {
@@ -99,28 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
   sharedFooter.className = "shared-site-footer";
   sharedFooter.innerHTML = `
     <div class="shared-footer-container">
-      <div class="shared-footer-intro">
-        <a class="shared-footer-brand" href="${siteRoot}index.html" aria-label="Little Explorers Learning Hub home">
-          <img src="${siteRoot}logo.png" alt="" width="52" height="52">
-          <span><strong>Little Explorers</strong><small>Learning Hub</small></span>
-        </a>
-        <div class="shared-footer-copy">
-          <p class="shared-footer-kicker">Explore the hub</p>
-          <h2>Find what you need, all in one place.</h2>
-          <p>Start with a section below to explore learning, classroom practice, and family support.</p>
-        </div>
-      </div>
-      <nav class="shared-footer-links" aria-label="Learning Hub sections">
-        <a href="${siteRoot}index.html"><strong>Home</strong><span>Start at the Learning Hub</span></a>
-        <a href="${siteRoot}curriculum.html"><strong>Curriculum</strong><span>Studies, lessons, and learning goals</span></a>
-        <a href="${siteRoot}school-readiness.html"><strong>School Readiness</strong><span>Skills for a confident transition</span></a>
-        <a href="${siteRoot}behavior-center.html"><strong>Behavior &amp; Inclusion</strong><span>Positive guidance and inclusive support</span></a>
-        <a href="${siteRoot}library/index.html"><strong>Resource Library</strong><span>Activities, printables, and teaching tools</span></a>
-        <a href="${siteRoot}resources.html"><strong>Teacher &amp; Family Support</strong><span>Practical support for educators and families</span></a>
-      </nav>
       <div class="shared-footer-bottom">
         <span>© ${new Date().getFullYear()} Little Explorers Learning Hub</span>
-        <nav aria-label="Legal information"><a href="${siteRoot}privacy.html">Privacy</a><a href="${siteRoot}terms.html">Terms</a><a href="${siteRoot}copyright.html">Copyright</a></nav>
+        <nav aria-label="Site information"><a href="${siteRoot}about.html">About</a><a href="${siteRoot}contact.html">Contact</a><a href="${siteRoot}accessibility.html">Accessibility</a><a href="${siteRoot}privacy.html">Privacy</a><a href="${siteRoot}terms.html">Terms</a><a href="${siteRoot}copyright.html">Copyright</a></nav>
       </div>
     </div>`;
 
@@ -128,32 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const footerStyle = document.createElement("style");
     footerStyle.id = "shared-site-footer-style";
     footerStyle.textContent = `
-      #shared-site-footer{box-sizing:border-box;width:100%;margin:0;padding:0!important;background:#f2f7fa!important;color:#263a4c!important;border-top:1px solid #d8e4eb;font-family:Inter,Arial,sans-serif!important;line-height:1.5}
+      #shared-site-footer{box-sizing:border-box;width:100%;margin:0;padding:0!important;background:#fff!important;color:#607486!important;border-top:1px solid #d8e4eb;font-family:Inter,Arial,sans-serif!important;line-height:1.5}
       #shared-site-footer *{box-sizing:border-box}
-      #shared-site-footer .shared-footer-container{width:min(1200px,calc(100% - 40px));margin:0 auto;padding:42px 0 18px}
-      #shared-site-footer .shared-footer-intro{display:flex;align-items:center;justify-content:space-between;gap:36px;margin-bottom:26px}
-      #shared-site-footer .shared-footer-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;color:#263a4c!important;text-decoration:none}
-      #shared-site-footer .shared-footer-brand img{display:block;width:52px;height:52px;object-fit:contain}
-      #shared-site-footer .shared-footer-brand span{display:flex;flex-direction:column;gap:4px;line-height:1.15}
-      #shared-site-footer .shared-footer-brand strong{font-size:17px;font-weight:800}
-      #shared-site-footer .shared-footer-brand small{color:#3477b9;font-size:14px;font-weight:700}
-      #shared-site-footer .shared-footer-copy{max-width:540px;text-align:right}
-      #shared-site-footer .shared-footer-copy p{margin:0;color:#526678!important;font-size:14px}
-      #shared-site-footer .shared-footer-copy .shared-footer-kicker{margin-bottom:5px;color:#3477b9!important;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-      #shared-site-footer .shared-footer-copy h2{margin:0 0 5px;color:#20364b!important;font-size:22px;line-height:1.25}
-      #shared-site-footer .shared-footer-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-      #shared-site-footer .shared-footer-links>a{display:flex;flex-direction:column;gap:5px;min-height:76px;padding:14px 16px;border:1px solid #d7e3eb;border-radius:12px;background:#fff;color:#263a4c!important;text-decoration:none;transition:border-color .18s,transform .18s,box-shadow .18s}
-      #shared-site-footer .shared-footer-links>a strong{color:#263a4c!important;font-size:14px;font-weight:800}
-      #shared-site-footer .shared-footer-links>a span{color:#607486!important;font-size:12px;line-height:1.4}
-      #shared-site-footer .shared-footer-links>a:hover,#shared-site-footer .shared-footer-links>a:focus-visible{border-color:#7bb1d6;box-shadow:0 5px 14px rgba(36,76,109,.08);transform:translateY(-2px);text-decoration:none}
       #shared-site-footer a:focus-visible{outline:3px solid #3477b9;outline-offset:3px}
-      #shared-site-footer .shared-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;padding-top:14px;border-top:1px solid #d8e4eb;color:#607486!important;font-size:12px}
+      #shared-site-footer .shared-footer-container{width:min(1200px,calc(100% - 40px));margin:0 auto;padding:17px 0}
+      #shared-site-footer .shared-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;color:#607486!important;font-size:12px}
       #shared-site-footer .shared-footer-bottom nav{display:flex;flex-wrap:wrap;gap:18px}
       #shared-site-footer .shared-footer-bottom a{color:#526678!important;text-decoration:none}
       #shared-site-footer .shared-footer-bottom a:hover{text-decoration:underline;text-underline-offset:3px}
-      @media(max-width:760px){#shared-site-footer .shared-footer-intro{align-items:flex-start;flex-direction:column;gap:20px}#shared-site-footer .shared-footer-copy{text-align:left}#shared-site-footer .shared-footer-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media(max-width:520px){#shared-site-footer .shared-footer-container{width:calc(100% - 32px);padding-top:32px}#shared-site-footer .shared-footer-links{grid-template-columns:1fr;gap:9px}#shared-site-footer .shared-footer-links>a{min-height:unset;padding:13px}#shared-site-footer .shared-footer-bottom{align-items:flex-start;flex-direction:column;gap:10px}}
-      @media(prefers-reduced-motion:reduce){#shared-site-footer .shared-footer-links>a{transition:none}}
+      @media(max-width:600px){#shared-site-footer .shared-footer-container{width:calc(100% - 32px)}#shared-site-footer .shared-footer-bottom{align-items:flex-start;flex-direction:column;gap:10px}#shared-site-footer .shared-footer-bottom nav{gap:12px}}
     `;
     document.head.appendChild(footerStyle);
   }
